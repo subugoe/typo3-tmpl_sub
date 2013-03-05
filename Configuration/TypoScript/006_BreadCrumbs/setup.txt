@@ -1,0 +1,191 @@
+# Breadcrumbs
+lib.rootline = COA
+# should be ordered list semantically
+lib.rootline.wrap = <ol>|</ol>
+lib.rootline.10 = HMENU
+lib.rootline.10 {
+	includeNotInMenu = 1
+	special = rootline
+	special.range = 0|-1
+	1 = TMENU
+	1 {
+		noBlur = 1
+		excludeUidList = {$ids.excludeFromBeardcrumb}
+		NO = 1
+		NO {
+			allWrap =  <li>|</li>   |*| <li>|</li>   |*| <li>|</li>
+		}
+		CUR {
+			wrap = <li>|</li>
+		}
+		ACT {
+			wrap = <li>|</li>
+		}
+	}
+}
+
+[globalVar = GP:tx_nkwsubfeprojects_pi2|project > 0]
+	lib.rootline.10.special.range = 0|-1
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		dontCheckPid = 1
+		tables = tx_nkwsubfeprojects_domain_model_project
+		source.data = GP:tx_nkwsubfeprojects_pi2|project
+		conf {
+			tx_nkwsubfeprojects_domain_model_project >
+			tx_nkwsubfeprojects_domain_model_project = TEXT
+			tx_nkwsubfeprojects_domain_model_project.field = title
+			tx_nkwsubfeprojects_domain_model_project.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+		wrap = <li>|</li>
+	}
+[end]
+
+
+[globalVar = GP:tx_nkwsubfeprojects_pi6|institution > 0]
+	lib.rootline.10.special.range = 0|-1
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		dontCheckPid = 1
+		tables = tx_nkwsubfeprojects_domain_model_institution
+		source.data = GP:tx_nkwsubfeprojects_pi6|institution
+		conf {
+			tx_nkwsubfeprojects_domain_model_institution >
+			tx_nkwsubfeprojects_domain_model_institution = TEXT
+			tx_nkwsubfeprojects_domain_model_institution.field = title
+			tx_nkwsubfeprojects_domain_model_institution.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+		wrap = <li>|</li>
+	}
+[end]
+
+[globalVar = GP:tx_nkwsubfeprojects_pi4|keyword > 0]
+	lib.rootline.10.special.range = 0|-1
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		dontCheckPid = 1
+		tables = tx_nkwsubfeprojects_domain_model_keywords
+		source.data = GP:tx_nkwsubfeprojects_pi4|keyword
+		conf {
+			tx_nkwsubfeprojects_domain_model_keywords >
+			tx_nkwsubfeprojects_domain_model_keywords = TEXT
+			tx_nkwsubfeprojects_domain_model_keywords.field = title
+			tx_nkwsubfeprojects_domain_model_keywords.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+		wrap = <li>|</li>
+	}
+[end]
+
+# Bibliotheken / Fakultaeten
+[globalVar = GP:tx_standorte_pi1|fakultaet > 0]
+	lib.rootline.10.special.range = 0|-1
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		dontCheckPid = 1
+		tables = tx_standorte_domain_model_fakultaet
+		source.data = GP:tx_standorte_pi1|fakultaet
+		conf {
+			tx_standorte_domain_model_fakultaet >
+			tx_standorte_domain_model_fakultaet = TEXT
+			tx_standorte_domain_model_fakultaet.field = titel
+			tx_standorte_domain_model_fakultaet.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+		wrap = <li>|</li>
+	}
+[end]
+
+# Staff Department
+[globalVar = GP:tx_substaff_groupdetails|group > 0]
+	lib.rootline.10.special.range = 0|-2
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		dontCheckPid = 1
+		tables = tt_address_group
+		source.data = GP:tx_substaff_groupdetails|group
+		conf {
+			tt_address_group >
+			tt_address_group = TEXT
+			tt_address_group.field = title
+			tt_address_group.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+		wrap = <li>|</li>
+	}
+[end]
+
+#Staff person
+[globalVar = GP:tx_substaff_persondetails|person > 0]
+	lib.rootline.10.special.range = 0|-2
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		dontCheckPid = 1
+		tables = tt_address
+		source.data = GP:tx_substaff_persondetails|person
+		conf {
+			tt_address >
+			tt_address = TEXT
+			tt_address.field = last_name
+			tt_address.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+		wrap = <li>|</li>
+	}
+[end]
+
+
+#schulungen
+[globalVar = GP:tx_schulungen_schulungen|schulung > 0]
+	lib.rootline.10.special.range = 0|-1
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		tables = tx_schulungen_domain_model_schulung
+		source.data = GP:tx_schulungen_schulungen|schulung
+		conf {
+			tx_schulungen_domain_model_schulung >
+			tx_schulungen_domain_model_schulung = TEXT
+			tx_schulungen_domain_model_schulung.field = titel
+			tx_schulungen_domain_model_schulung.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+		wrap = <li>|</li>
+	}
+[end]
+
+#Keywords
+[globalVar = GP:tx_nkwkeywords|id > 0]
+	lib.rootline.10.special.range = 0|-2
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		dontCheckPid = 1
+		tables = tx_nkwkeywords_keywords
+		source.data = GP:tx_nkwkeywords|id
+		conf {
+			tx_nkwkeywords_keywords >
+			tx_nkwkeywords_keywords = TEXT
+			tx_nkwkeywords_keywords.field = title_de
+			tx_nkwkeywords_keywords.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+		wrap = <li>|</li>
+	}
+[end]

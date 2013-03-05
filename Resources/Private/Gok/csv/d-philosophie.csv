@@ -1,0 +1,8 @@
+"NED";"NE";"Philosophie";;;
+"NED01000";"NED";"Philosophie";;;
+"NED01010";"NED01000";"Allgemeine Religionswissenschaft";"lkl=d ?";;"page=614"
+"NED01020";"NED01000";"Philosophie allgemein";"lkl=da?";;"page=614"
+"NED01030";"NED01000";"Philosophiegeschichte";"lkl=db?";;"page=614"
+"NED01040";"NED01000";"Philosophie außerhalb des europäischen Kulturkreises";"lkl=dc?";;"page=614"
+"NED01050";"NED01000";"Abendländische Philosophie";"lkl=df? or lkl=dh? or lkl=di? or lkl=dk? or lkl=dm? or lkl=dn? or lkl=do? or lkl=dq? or lkl=dr? or lkl=ds? or lkl=du?";;"page=614"
+"NED01060";"NED01000";"Systematische Philosophie";"lkl=d ?";;"page=614"

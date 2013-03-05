@@ -1,0 +1,47 @@
+[globalVar = TSFE:type = 1345790301]
+	lib.stdheader >
+	tt_content.stdWrap.innerWrap >
+	tt_content.stdWrap.wrap >
+	# get away <div class="feEditAdvanced-firstWrapper" ...> if your logged into the backend
+	styles.content.get.stdWrap >
+
+	pageNewsRSS = PAGE
+	pageNewsRSS.typeNum = 1345790301
+	pageNewsRSS.10 < styles.content.get
+	pageNewsRSS.10.select.where = colPos=0 AND list_type = "news_pi1"
+	pageNewsRSS.10.select {
+		orderBy = sorting ASC
+		max = 1
+	}
+
+	config {
+		# deactivate Standard-Header
+		disableAllHeaderCode = 1
+		# no xhtml tags
+		xhtml_cleaning = none
+		admPanel = 0
+		metaCharset = utf-8
+		# you need an english locale to get correct rfc values for <lastBuildDate>, ...
+		locale_all = en_EN
+		# define charset
+		additionalHeaders = Content-Type:text/xml;charset=utf-8
+		disablePrefixComment = 1
+		baseURL = http://www.sub.uni-goettingen.de/
+		absRefPrefix = http://www.sub.uni-goettingen.de/
+	}
+
+	# set the format
+	plugin.tx_news.settings.format = xml
+[global]
+
+plugin {
+	tx_news {
+		settings {
+			detail {
+				showSocialShareButtons = 0
+			}
+			displayDummyIfNoMedia = 0
+		}
+		_LOCAL_LANG.de.more-link = mehr …
+	}
+}

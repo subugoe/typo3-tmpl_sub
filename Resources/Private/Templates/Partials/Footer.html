@@ -1,0 +1,17 @@
+<div id="fleft">
+	<f:cObject typoscriptObjectPath="lib.fleft" />
+</div>
+<div id="fright">
+	<!-- Link to top -->
+	<f:link.page section="top" noCacheHash="true"><f:translate key="page.toTop" /></f:link.page>
+	|{pageUid} 
+	<!-- Feedback -->
+	<f:link.page pageUid="290" noCacheHash="true" rel="nofollow" additionalParams="{tx_nkwuserfeedback:{page:'{currentPid}'}}">
+		<f:translate key="page.feedBack" />
+	</f:link.page>
+
+	<!-- Permalink -->
+
+	<f:cObject typoscriptObjectPath="lib.fright" />
+</div>
+<div class="clear"></div>

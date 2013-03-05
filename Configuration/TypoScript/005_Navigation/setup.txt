@@ -1,0 +1,213 @@
+lib.navInterface = HMENU
+lib.navInterface {
+	wrap = <div class="submenu">|</div>
+	1 = TMENU
+	1 {
+		wrap = <ul id="menu1" class="submenu-l1 expand">|</ul>
+		expAll = 1
+		noBlur = 1
+		NO = 1
+		NO {
+			wrapItemAndSub = <li class="submenu-l1">|</li>
+			ATagParams = class="submenu-trigger"
+		}
+		ACT = 1
+		ACT {
+			wrapItemAndSub = <li class="submenu-selected">|</li>
+			ATagParams = class="submenu-highlight submenu-trigger"
+		}
+		ACTIFSUB = 1
+		ACTIFSUB{
+			wrapItemAndSub = <li class="submenu-selected">|</li>
+			ATagParams = class="submenu-highlight-parent submenu-trigger"
+		}
+		CUR = 1
+		CUR {
+			wrapItemAndSub = <li class="submenu-selected">|</li>
+			ATagParams = class="submenu-highlight submenu-trigger cur"
+		}
+	}
+	2 = TMENU
+	2 {
+		noBlur = 1
+		expAll = 0
+		wrap = <ul class="submenu-l2 js">|</ul>
+		NO = 1
+		NO {
+			wrapItemAndSub = <li class="submenu-l2 submenu-l2-{field:uid}">|</li>
+			wrapItemAndSub.insertData = 1
+		}
+		CUR = 1
+		CUR {
+			wrapItemAndSub = <li class="submenu-selected">|</li>
+			ATagParams = class="submenu-highlight"
+		}
+		ACT = 1
+		ACT {
+			wrapItemAndSub = <li class="submenu-selected">|</li>
+			ATagParams = class="submenu-highlight"
+		}
+		ACTIFSUB = 1
+		ACTIFSUB {
+			wrapItemAndSub = <li>|</li>
+			ATagParams = class="submenu-l2-actifsub"
+		}
+	}
+	3 = TMENU
+	3 {
+		noBlur = 1
+		expAll = 0
+		wrap = <ul class="submenu-l3">|</ul>
+		NO = 1
+		NO {
+			wrapItemAndSub = <li>|</li>
+		}
+		CUR = 1
+		CUR {
+			wrapItemAndSub = <li class="submenu-selected">|</li>
+			ATagParams = class="submenu-highlight"
+		}
+		ACT = 1
+		ACT {
+			wrapItemAndSub = <li class="submenu-selected">|</li>
+			ATagParams = class="submenu-highlight"
+		}
+		ACTIFSUB = 1
+		ACTIFSUB {
+			wrapItemAndSub = <li>|</li>
+			ATagParams = class="submenu-l3-actifsub"
+		}
+	}
+	4 < .3
+	4 {
+		wrap = <ul class="submenu-l4">|</ul>
+	}
+	5 < .4
+	5 {
+		wrap = <ul class="submenu-l5">|</ul>
+	}
+
+}
+
+### Hauptnavigation ###
+lib.navNeu =< lib.navInterface
+lib.navNeu {
+	excludeUidList = {$notInMainMenu}, {$fachknoten}
+}
+
+[PIDinRootline = {$fachknotenMountPoints}]
+	lib.navNeu.3 >
+[global]
+
+[PIDinRootline = {$fachknoten}]
+lib.navNeu = COA
+lib.navNeu {
+	wrap = <div class="submenu">|</div>
+	10 = TEXT
+	10 {
+		typolink {
+			parameter = {$startseitenId}
+			ATagParams = class="submenu-trigger"
+		}
+		wrapItemAndSub = <li>|</li>
+		wrap = <ul id="menu1" class="submenu-l1 expand"><li>|
+	}
+	15 = TEXT
+	15 {
+		wrap = <li class="submenu-l1 selected">|</li>
+		data = leveltitle:2
+		value = {page:title}
+		insertData = 1
+		typolink {
+			parameter.data = leveluid:2
+			ATagParams = class="submenu-highlight-parent submenu-trigger"
+		}
+	}
+	20 = HMENU
+	20 {
+		entryLevel = 2
+		#1 < lib.navInterface
+		excludeUidList >
+	}
+	30 = TEXT
+	30 {
+		wrap = </li></ul>
+	}
+}
+[global]
+
+### Medizin usw ###
+
+[PIDinRootline = {$fachknotenLevelOne}]
+lib.navNeu = COA
+lib.navNeu {
+	wrap = <div class="submenu">|</div>
+	10 = TEXT
+	10 {
+		typolink {
+			parameter = {$startseitenId}
+			ATagParams = class="submenu-trigger"
+		}
+		wrapItemAndSub = <li>|</li>
+		wrap = <ul id="menu1" class="submenu-l1 expand"><li>|
+	}
+	15 = TEXT
+	15 {
+		wrap = <li class="submenu-l1 selected">|</li>
+		data = leveltitle:2
+		value = {page:title}
+		insertData = 1
+		typolink {
+			parameter.data = leveluid:2
+			ATagParams = class="submenu-highlight-parent submenu-trigger"
+		}
+	}
+	20 = HMENU
+	20 {
+		entryLevel = 2
+		1 < lib.navInterface.1
+		2 < lib.navInterface.2
+	}
+	30 = TEXT
+	30 {
+		wrap = </li></ul>
+	}
+}
+[global]
+
+[PIDinRootline = {$fachknotenOnTopLevel}]
+lib.navNeu = COA
+lib.navNeu {
+	wrap = <div class="submenu">|</div>
+	10 = TEXT
+	10 {
+		typolink {
+			parameter = {$startseitenId}
+			ATagParams = class="submenu-trigger"
+		}
+		wrapItemAndSub = <li>|</li>
+		wrap = <ul id="menu1" class="submenu-l1 expand"><li>|
+	}
+	15 = TEXT
+	15 {
+		wrap = <li class="submenu-l1 selected">|</li>
+		data = leveltitle:1
+		value = {page:title}
+		insertData = 1
+		typolink {
+			parameter.data = leveluid:1
+			ATagParams = class="submenu-highlight-parent submenu-trigger"
+		}
+	}
+	20 = HMENU
+	20 {
+		entryLevel = 1
+		1 < lib.navInterface.1
+		2 < lib.navInterface.2
+	}
+	30 = TEXT
+	30 {
+		wrap = </li></ul>
+	}
+}
+[global]

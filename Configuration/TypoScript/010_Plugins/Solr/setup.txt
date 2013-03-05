@@ -1,0 +1,405 @@
+plugin.tx_solr {
+	enableDebugMode = 0
+	addDefaultCss = 0
+	index {
+		enableFileIndexing = 1
+		files {
+			allowedTypes = doc, pdf, ppt, pptx
+		}
+		queue {
+			buchpatenschaften_buecher = 1
+			buchpatenschaften_buecher {
+				table = tx_patenschaften_buecher
+				additionalWhereClause = hidden = 0 AND deleted = 0
+				fields {
+					type = TEXT
+					type.value = Buchpatenschaften
+					content = TEXT
+					content {
+						field = description
+						stripHtml = 1
+						stripHtml.addWhitespaceBetweenTags = 1
+					}
+					author_stringS = SOLR_CONTENT
+					author_stringS {
+						field = author
+					}
+					signature_stringS = SOLR_CONTENT
+					signature_stringS {
+						field = signature
+					}
+					category_stringS = SOLR_RELATION
+					category_stringS {
+						field = category
+					}
+					uid = uid
+					title = titel
+					url = TEXT
+					url {
+						typolink {
+							parameter = {$solr_plugin.index.buchpatenschaften_buecher.target}
+							useCacheHash = 1
+							additionalParams = &tx_patenschaften_pi1[showBook]={field:uid}
+							additionalParams.insertData = 1
+							returnLast = url
+						}
+					}
+				}
+			}
+			pages = 1
+			pages {
+				fields {
+					keywords >
+					keywords_stringM = SOLR_RELATION
+					keywords_stringM {
+						localField = keywords
+						multiValue = 1
+					}
+				}
+			}
+			projects = 1
+			projects {
+				table = tx_nkwsubfeprojects_domain_model_project
+				additionalWhereClause = hidden = 0 AND deleted = 0
+				fields {
+					type = TEXT
+					type.value = Projekte
+					content = TEXT
+					content {
+						field = descr
+						stripHtml = 1
+					}
+					uid = uid
+					title = title
+					url = TEXT
+					url {
+						typolink {
+							parameter = {$solr_plugin.index.projects.target}
+							useCacheHash = 1
+							additionalParams = &tx_nkwsubfeprojects_pi2[project]={field:uid}
+							additionalParams.insertData = 1
+							returnLast = url
+						}
+					}
+				}
+			}
+			projects_institution = 1
+			projects_institution {
+				table = tx_nkwsubfeprojects_domain_model_institution
+				additionalWhereClause = hidden = 0 AND deleted = 0
+				fields {
+					type = TEXT
+					type.value = Institutionen
+
+					address_stringS = SOLR_CONTENT
+					address_stringS {
+						field = address
+					}
+					institutionUrl_stringS = SOLR_CONTENT
+					institutionUrl_stringS {
+						field = url
+					}
+					logo_stringS = SOLR_CONTENT
+					logo_stringS {
+						field = logo
+					}
+					description_textS = SOLR_CONTENT
+					description_textS {
+						field = descr
+					}
+					uid = uid
+					title = title
+					url = TEXT
+					url {
+						typolink {
+							parameter = {$solr_plugin.index.projects_institution.target}
+							useCacheHash = 1
+							additionalParams = &tx_nkwsubfeprojects_pi6[institution]={field:uid}
+							additionalParams.insertData = 1
+							returnLast = url
+						}
+					}
+				}
+			}
+			schulung = 1
+			schulung {
+				table = tx_schulungen_domain_model_schulung
+				additionalWhereClause = hidden = 0 AND deleted = 0
+				fields {
+					type = TEXT
+					type.value = {LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:solr.trainings}
+					type.value.insertData = 1
+					content = TEXT
+					content {
+						field = beschreibung
+						stripHtml = 1
+					}
+					uid = uid
+					title = titel
+					url = TEXT
+					url {
+						typolink {
+							parameter = {$solr_plugin.index.schulung.target}
+							useCacheHash = 1
+							additionalParams = &tx_schulungen_schulungen[schulung]={field:uid}&tx_schulungen_schulungen[action]=show&tx_schulungen_schulungen[controller]=Schulung
+							additionalParams.insertData = 1
+							returnLast = url
+						}
+					}
+				}
+			}
+			staff = 1
+			staff {
+				table = tt_address
+				additionalWhereClause = hidden = 0
+				fields {
+					type = TEXT
+					type {
+						dataWrap = staff
+						insertData = 1
+					}
+					email_stringS = SOLR_CONTENT
+					email_stringS {
+						field = email
+					}
+					addressgroup_stringM = SOLR_RELATION
+					addressgroup_stringM {
+						localField = addressgroup
+						multiValue = 1
+					}
+					photo_stringS = SOLR_CONTENT
+					photo_stringS {
+						field = image
+					}
+					phone_stringS = SOLR_CONTENT
+					phone_stringS {
+						field = phone
+					}
+					uid = uid
+					title = name
+					url = TEXT
+					url {
+						typolink {
+							parameter = {$solr_plugin.index.staff.target}
+							useCacheHash = 1
+							additionalParams = &tx_substaff_persondetails[person]={field:uid}
+							additionalParams.insertData = 1
+							returnLast = url
+						}
+					}
+				}
+			}
+			staff_department = 1
+			staff_department {
+				table = tt_address_group
+				additionalWhereClause = hidden = 0 AND deleted = 0
+				fields {
+					type = TEXT
+					type.value = staff_department
+					content = TEXT
+					content {
+						field = description
+						stripHtml = 1
+						stripHtml.addWhitespaceBetweenTags = 1
+					}
+					uid = uid
+					title = title
+					url = TEXT
+					url {
+						typolink {
+							parameter = {$solr_plugin.index.staff_department.target}
+							useCacheHash = 1
+							additionalParams = &tx_substaff_groupdetails[group]={field:uid}
+							additionalParams.insertData = 1
+							returnLast = url
+						}
+					}
+				}
+			}
+			standorte_bibliotheken = 1
+			standorte_bibliotheken {
+				table = tx_standorte_domain_model_bibliothek
+				additionalWhereClause = hidden = 0 AND deleted = 0
+				fields {
+					type = TEXT
+					type.value = Bibliotheken
+					uid = uid
+					title = titel
+					inventory_stringS = SOLR_CONTENT
+					inventory_stringS {
+						field = bestand
+					}
+					street_stringS = SOLR_CONTENT
+					street_stringS {
+						field = strasse
+					}
+					additional_stringS = SOLR_CONTENT
+					additional_stringS {
+						field = adresszusatz
+					}
+					zip_stringS = SOLR_CONTENT
+					zip_stringS {
+						field = plz
+					}
+					city_stringS = SOLR_CONTENT
+					city_stringS {
+						field = ort
+					}
+					faculty_stringS = SOLR_RELATION
+					faculty_stringS {
+						field = fakultaet
+					}
+					contact_stringS = SOLR_CONTENT
+					contact_stringS {
+						field = ansprechpartner
+					}
+					sigel_stringS = SOLR_CONTENT
+					sigel_stringS {
+						field = sigel
+					}
+					openingHours_stringS = SOLR_CONTENT
+					openingHours_stringS {
+						field = oeffnungszeiten
+					}
+					url = TEXT
+					url {
+						typolink {
+							parameter = {$solr_plugin.index.standorte_bibliotheken.target}
+							useCacheHash = 1
+							additionalParams = &tx_standorte_pi1[bibliothek]={field:uid}&tx_standorte_pi1[action]=single&tx_standorte_pi1[controller]=Bibliothek
+							additionalParams.insertData = 1
+							returnLast = url
+						}
+					}
+				}
+			}
+			standorte_fakultaeten = 1
+			standorte_fakultaeten {
+				table = tx_standorte_domain_model_fakultaet
+				additionalWhereClause = hidden = 0 AND deleted = 0
+				fields {
+					type = TEXT
+					type.value = Orte
+					uid = uid
+					title = titel
+					url = TEXT
+					url {
+						typolink {
+							parameter = {$solr_plugin.index.standorte_fakultaeten.target}
+							useCacheHash = 1
+							additionalParams = &tx_standorte_pi1[fakultaet]={field:uid}&tx_standorte_pi1[action]=list&tx_standorte_pi1[controller]=Bibliothek
+							additionalParams.insertData = 1
+							returnLast = url
+						}
+					}
+				}
+			}
+		}
+	}
+	logging {
+		indexing {
+			indexQueuePageIndexerGetData = {$solr_plugin.logging}
+			pageIndexed = {$solr_plugin.logging}
+			scheduler.optimize = {$solr_plugin.logging}
+		}
+		query {
+			rawPost = {$solr_plugin.logging}
+			rawGet = {$solr_plugin.logging}
+			queryString = {$solr_plugin.logging}
+			searchWords = {$solr_plugin.logging}
+		}
+	}
+	search {
+		sorting = {$plugin.solr.search.sorting}
+		highlighting = {$plugin.solr.search.highlighting}
+		targetPage = {$plugin.solr.search.targetPage}
+		faceting = 1
+		faceting {
+			limit = 25
+			facetOrder = parent
+			facets {
+				type {
+					label = Inhaltstyp
+					renderingInstruction = CASE
+					renderingInstruction {
+						key.field = optionValue
+
+						pages = TEXT
+						pages.value = Pages
+						pages.lang.de = Seiten
+
+						Projekte = TEXT
+						Projekte.value = Projects
+						Projekte.lang.de = Projekte
+
+						tx_solr_file = TEXT
+						tx_solr_file.value = Files
+						tx_solr_file.lang.de = Dateien
+
+						staff_department = TEXT
+						staff_department.value = Departments / Units
+						staff_department.lang.de = Abteilungen / Gruppen
+
+						Buchpatenschaften = TEXT
+						Buchpatenschaften.value = Adopt a book
+						Buchpatenschaften.lang.de = Buchpatenschaften
+
+						Orte = TEXT
+						Orte.value = Places
+						Orte.lang.de = Orte
+
+						Bibliotheken = TEXT
+						Bibliotheken.value = Libraries
+						Bibliotheken.lang.de = Bibliotheken
+
+						Schulungen = TEXT
+						Schulungen.value = Library Training
+						Schulungen.lang.de = Schulungen
+
+						Institutionen = TEXT
+						Institutionen.lang = Institutions
+						Institutionen.value.de = Institutionen
+
+						staff = TEXT
+						staff.value = Staff
+						staff.lang.de = Personen
+					}
+				}
+			}
+		}
+		results {
+			resultsHighlighting = 1
+			fieldRenderingInstructions {
+			photo_stringS = CASE
+			photo_stringS {
+				key.field = type
+				default = COA
+				default {
+					10 = IMAGE
+					10.params = class="photo"
+					10.altText.field =
+					10.titleText.field =
+					10.file {
+						import.field = photo_stringS
+						import =  uploads/pics/
+						import.listNum = 0
+						height = 70
+				  		}
+					}
+				}
+			}
+		}
+	}
+	suggest = 1
+	suggest {
+		loadJQuery = 0
+	}
+	_LOCAL_LANG {
+		de {
+			results_found = Es wurden @resultsTotal Ergebnisse gefunden.
+		}
+		en {
+			results_found = Found @resultsTotal results.
+		}
+	}
+}

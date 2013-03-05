@@ -1,0 +1,6 @@
+"NEJL";"NE";"Finno-Ugristik";;;
+"NEJL01000";"NEJL";"Finno-Ugristik";;;"page=474"
+"NEJL01010";"NEJL01000";"Finnougristik";"lkl=jl? not lkl=jln? not lkl=jls? not lkl=jlv? or lkl=jjd? or lkl=jjm? or lkl=qme 500 or lkl=qmm 500";;"page=474"
+"NEJL01020";"NEJL01000";"Finnland";"lkl=pnn? or lkl=pno? or lkl=pnp? or lkl=pnq? or lkl=pnr? or lkl=jln? or lkl=qve 600 or lkl=pyc 260 or lkl=pyd 260 or lkl=pye 260 or lkl=pyf 260 or lkl=pyg 260 or lkl=pbd 270 or lkl=pbe 270 or lkl=pbf 270 or lkl=pfr 228 or lkl=pef ? or lkl=okc 10?";;"page=474"
+"NEJL01030";"NEJL01000";"Ungarn";"lkl=pma? or lkl=pmb? or lkl=pme? or lkl=pmh? or lkl=pmk? or lkl=jlv? or lkl=qvi 200 or lkl=pyc 240 or lkl=pyd 240 or lkl=pye 240 or lkl=pyf 240 or lkl=pyg 240 or lkl=pbd 520 or lkl=pbe 520 or lkl=pbf 520 or lkl=pfr 254 or lkl=pfp 615 or lkl=pep? or lkl=okf 10?";;"page=474"
+"NEJL01040";"NEJL01000";"Estnische Sprache und Literatur";"lkl=jls? or lkl=qvh 700";;"page=474"

@@ -1,0 +1,9 @@
+setup.override.edit_docModuleUpload = 0
+options.saveDocNew = 1
+options.file_list.enableDisplayThumbnails = 1
+options.workspaces.previewLinkTTLHours = 128
+options {
+	RTESmallWidth = 650
+	RTESmallHeight = 800
+	uploadFieldsInTopOfEB = 0
+}

@@ -1,0 +1,13 @@
+"NEFK";"NE";"Bildungswesen";;;
+"NEFK01000";"NEFK";"Bildungswesen";;;"page=915"
+"NEFK01010";"NEFK01000";"Bildungswesen";"lkl=fk?";;"page=915"
+"NEFK01020";"NEFK01000";"Pädagogik, Allgemeines";"lkl=fl?";;"page=915"
+"NEFK01030";"NEFK01000";"Theoretische Pädagogik";"lkl=fm?";;"page=915"
+"NEFK01040";"NEFK01000";"Pädagogische Psychologie und Soziologie";"lkl=fn? or lkl=fo?";;"page=915"
+"NEFK01050";"NEFK01000";"Sonderpädagogik";"lkl=fp?";;"page=915"
+"NEFK01060";"NEFK01000";"Außerschulische Pädagogik";"lkl=fq?";;"page=915"
+"NEFK01070";"NEFK01000";"Didaktik / Unterrichtsprozess";"lkl=fr?";;"page=915"
+"NEFK01080";"NEFK01000";"Schulwesen";"lkl=fs?";;"page=915"
+"NEFK01090";"NEFK01000";"Hochschulwesen";"lkl=ft?";;"page=915"
+"NEFK01100";"NEFK01000";"Berufsbildung / Erwachsenenbildung";"lkl=fu? or lkl=fv?";;"page=915"
+"NEFK01110";"NEFK01000";"Kinder- und Jugendliteratur";"lkl=fw?";;"page=915"

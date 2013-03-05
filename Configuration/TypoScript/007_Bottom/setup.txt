@@ -1,0 +1,59 @@
+### BOTTOM ###
+
+lib.bottom = HMENU
+lib.bottom {
+	special = directory
+	1 = TMENU
+	1 {
+		wrap = <ul>|</ul>
+		NO {
+			doNotLinkIt = 1
+			wrapItemAndSub = <li>|</li>
+			stdWrap.cObject = CASE
+			stdWrap.cObject {
+				key.field = doktype
+				default = TEXT
+				default {
+					field = title
+					typolink.parameter.field = uid
+					typolink.title.field = title
+					stdWrap.htmlSpecialChars = 1
+				}
+				4 = TEXT
+				4 {
+					field = title
+					typolink.parameter.field = shortcut
+					typolink.title.field = title
+				}
+				3 = TEXT
+				3 {
+					field = title
+					typolink.parameter.field = url
+					typolink.extTarget = _blank
+					typolink.title.field = title
+					typolink.ATagParams = class="external-link-new-window"
+				}
+			}
+		}
+	}
+}
+
+lib.bottom1 < lib.bottom
+lib.bottom1 {
+	special.value = {$ids.linkliste_1}
+}
+
+lib.bottom2 < lib.bottom
+lib.bottom2 {
+	special.value = {$ids.linkliste_2}
+}
+
+lib.bottom3 < lib.bottom
+lib.bottom3 {
+	special.value = {$ids.linkliste_3}
+}
+
+lib.bottom4 < lib.bottom
+lib.bottom4 {
+	special.value = {$ids.linkliste_4}
+}

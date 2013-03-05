@@ -1,0 +1,67 @@
+	// smartphones
+@media only screen and (max-width: 480px) {
+	#bottom, #werbung, #bigpicture, #unilogo, #menubox {
+		display: none;
+	}
+	.submenu {
+		.submenu-highlight {
+			background: none;
+		}
+	}
+	#pathline {
+		margin-left: 0;
+		background: $lightblue;
+		width: 100%;
+		padding: 0;
+		a {
+			color: white;
+		}
+	}
+	#centercontent {
+		width: 96%;
+		padding: 1% 2%;
+		&.fullwidth {
+			width: 96%;
+		}
+	}
+	#headerline {
+		position: absolute;
+		padding: 0 5px;
+		top: 0;
+		right: 0;
+	}
+	#header {
+		overflow: hidden;
+	}
+	.tabs {
+		width: 80%;
+		height: auto!important;
+		.tabNavigation {
+			height: auto;
+			font-size: 0.8em;
+			a {
+				padding: 4px;
+			}
+		}
+		.tabsContent {
+			width: 80%;
+			font-size: 0.8em;
+			padding: 6px;
+		}
+		.tabsContentLarge {
+			height: 2.3em;
+		}
+		form {
+			input[type="search"] {
+				height: auto!important;
+				padding: 0!important;
+				line-height: 1.8em!important;
+				font-size: 1.2em!important;
+			}
+		}
+		.formButton {
+			padding: 0!important;
+			height: 2.5em!important;
+		}
+	}
+}

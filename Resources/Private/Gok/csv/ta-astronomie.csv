@@ -1,0 +1,12 @@
+"NETA";"NE";"Astronomie, Astrophysik, Weltraumforschung";;;
+"NETA01000";"NETA";"Astronomie, Astrophysik, Weltraumforschung";;;"page=719"
+"NETA01010";"NETA01000";"Astronomie allgemein";"lkl=ta?";;"page=719"
+"NETA01020";"NETA01000";"Praktische Astronomie";"lkl=tb? or lkl=tc?";;"page=719"
+"NETA01030";"NETA01000";"Astronomie, Himmelsmechanik";"lkl=td?";;"page=719"
+"NETA01040";"NETA01000";"Kosmologie, Kosmogonie";"lkl=te?";;"page=719"
+"NETA01050";"NETA01000";"Astrophysik";"lkl=tf?";;"page=719"
+"NETA01060";"NETA01000";"Sonnensystem";"lkl=tg?";;"page=719"
+"NETA01070";"NETA01000";"Sterne";"lkl=th?";;"page=719"
+"NETA01080";"NETA01000";"Sternsysteme, Galaxienhaufen, Interstellare Materie";"lkl=ti?";;"page=719"
+"NETA01090";"NETA01000";"Weltraumforschung";"lkl=tj?";;"page=719"
+"NETA01100";"NETA01000";"Astrologie";"lkl=tl?";;"page=719"

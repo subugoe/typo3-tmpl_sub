@@ -1,0 +1,395 @@
+### CONFIG ###
+
+config {
+	xmlprologue = none
+	admPanel = {$admPanel}
+	sendCacheHeaders = 1
+	uniqueLinkVars = 1
+	linkVars = L(0-1),type(0-99)
+	sys_language_uid = 0
+	language = de
+	locale_all = de_DE.UTF-8
+	htmlTag_langKey = de
+	no_cache = 0
+	sys_language_mode = content_fallback
+	sys_language_overlay = 1
+	prefixLocalAnchors = all
+	doctype = html5
+	removeDefaultJS = 1
+	disablePrefixComment = 1
+	simulateStaticDocuments = 0
+	baseURL = {$baseURL}
+	tx_realurl_enable = 1
+	index_enable = 1
+	linkVars = L
+	uniqueLinkVars = 1
+	meaningfulTempFilePrefix = 50
+	tx_piwik {
+		piwik_host = {$plugin.piwik.host}
+		piwik_idsite = {$plugin.piwik.id}
+	}
+}
+includeLibs.user_template = typo3conf/ext/tmpl_{$page_template}/Resources/Private/Scripts/TemplateScripts.php
+includeLibs.displayKeywords = EXT:nkwkeywords/lib/lib.php
+
+### Language = en ###
+[globalVar = GP:L = 1]
+config {
+	sys_language_uid = 1
+	locale_all = en_GB.utf8
+	language = en
+	htmlTag_langKey = en-Gb
+}
+
+[global]
+
+### BIGPICTURE ###
+
+lib.BIGPICTURE  = USER
+lib.BIGPICTURE {
+	userFunc = user_template->bigPicture
+}
+
+### Headerbild ###
+
+lib.bigPicture = IMAGE
+lib.bigPicture {
+	stdWrap {
+		wrap = <div id="bigpicture">|</div>
+		required = 1
+	}
+ 	file {
+		import = uploads/media/
+		import {
+			data = levelmedia:-1, slide
+			listNum = 0
+		}
+	width = 1000c
+	height = 228c
+}
+}
+### CRIGHT ###
+
+lib.cright = COA
+
+[globalVar = TSFE:page|tx_nkwsubmenu_showsidebar=1]
+lib.cright {
+	10 = RECORDS
+	10 {
+		tables = tt_content
+		source = {$ids.infobox}
+		donCheckPid = 1
+	}
+}
+
+[global]
+lib.cright.20 = CONTENT
+lib.cright.20 {
+	table = tt_content
+	select {
+		pidInList = this
+		orderBy = sorting
+		where = colPos = 2
+		languageField = sys_language_uid
+	}
+}
+
+### Letzte Aenderung ###
+lib.lastChanged = TEXT
+lib.lastChanged {
+	data = page:SYS_LASTCHANGED
+	strftime = %d.%m.%Y
+}
+
+### Footer rechts ###
+
+lib.fright = COA
+lib.fright {
+	# URL shortener
+	26 < tt_content.list.20.shorts_shortener
+}
+
+[globalVar = GP:L = 1]
+	lib.FRIGHT {
+		15 {
+			value = {$translation.fright.str2.en}
+			typolink.title = {$translation.fright.str3.en}
+		}
+	}
+[global]
+
+
+### BIX Zaehlpixel ###
+[globalVar = TSFE:id = 1]
+	lib.fright.44 = TEXT
+	lib.fright.44.value = <img src="http://dbspixel.hbz-nrw.de/count?id=AF007&amp;page=1" alt="" />
+[global]
+
+lib.mainContent < styles.content.get
+
+### FLEFT ###
+# Footer left #
+
+lib.fleft = HMENU
+lib.fleft {
+	special = directory
+	special.value = 21
+	1 = TMENU
+	1 {
+		expAll = 0
+		noBlur = 1
+		wrap = <ul>|</ul>
+		NO.ATagTitle.field = subtitle // title
+		NO.wrapItemAndSub = <li>|</li>
+	}
+}
+
+### PAGE ###
+
+lib.subTemplateVars {
+	pageTitle = TEXT
+	pageTitle.data = page:title
+
+	currentPid = TEXT
+	currentPid.data = page:uid
+
+	navigation < lib.navNeu
+}
+
+lib.ohneInfobox = FLUIDTEMPLATE
+lib.ohneInfobox {
+	file = EXT:tmpl_{$page_template}/Resources/Private/Templates/Page/Einspalter.html
+	variables < lib.subTemplateVars
+}
+lib.mitInfobox = FLUIDTEMPLATE
+lib.mitInfobox {
+	file = EXT:tmpl_{$page_template}/Resources/Private/Templates/Page/Infobox.html
+	variables < lib.subTemplateVars
+}
+
+lib.layoutTemplate = FLUIDTEMPLATE
+lib.layoutTemplate {
+	file = EXT:tmpl_{$page_template}/Resources/Private/Templates/fluidtemplate.html
+	extbase.controllerExtensionName = tmpl_{$page_template}
+	partialRootPath = EXT:tmpl_{$page_template}/Resources/Private/Templates/Partials/
+	layoutRootPath = EXT:tmpl_{$page_template}/Resources/Private/Templates/Layouts/
+	variables {
+
+		currentPid = TEXT
+		currentPid.data = page:uid
+
+		# Auswaehlen welches Template genommen wird - abhaengig von der Wahl des BackendLayouts
+		subTemplate = CASE
+		subTemplate {
+			key.data = levelfield:-1,backend_layout_next_level,slide
+			key.override.field = backend_layout
+			1 < lib.ohneInfobox
+			default < lib.mitInfobox
+		}
+
+		ads = CONTENT
+		ads {
+			table = tt_content
+			select.pidInList.dataWrap = {$plugin.tx_tmplsub.adFolder}
+			select.where = 1=1
+			select.orderBy = sorting
+		}
+	}
+}
+
+
+temp.body = TEXT
+temp.body.field = uid
+temp.body.wrap = <body id=page-|>
+
+page = PAGE
+page {
+	typeNum = 0
+	bodyTagCObject  < temp.body
+	includeJS {
+		navigation = EXT:tmpl_{$page_template}/Resources/Public/Js/Site.min.js
+		navigation.forceOnTop = 1
+	#	backbone = EXT:tmpl_{$page_template}/Resources/Public/Js/backbone-min.js
+	#	backbone.forceOnTop = 1
+	#	underscore = EXT:tmpl_{$page_template}/Resources/Public/Js/underscore-min.js
+	#	underscore.forceOnTop = 1
+	#	modernizr = EXT:tmpl_{$page_template}/Resources/Public/Js/modernizr.js
+	#	modernizr.forceOnTop = 1
+	}
+
+	meta {
+		description = {$meta.description}
+		description {
+			override {
+				field = description
+			}
+		}
+		#keywords.stdWrap.cObject = COA
+		#keywords.stdWrap.cObject {
+		#	10 = CONTENT
+		#	10 {
+		#		table =  tx_nkwkeywords_domain_model_keywords
+		#		select {
+		#				# the pid where the records are stored
+		#			pidInList = 294
+		#			selectFields = *
+		#			join = tx_nkwkeywords_pages_keywords_mm
+		#			where = tx_nkwkeywords_domain_model_keywords.uid = tx_nkwkeywords_pages_keywords_mm.uid_foreign
+		#			andWhere = tx_nkwkeywords_pages_keywords_mm.uid_local = {field:uid}
+		#			andWhere.insertData = 1
+		#		}
+		#		renderObj = TEXT
+		#		renderObj {
+		#			field = title
+		#			wrap = ,|
+		#		}
+		#		stdWrap.substring = 1
+		#	}
+		#}
+		ICBM = 51.539763,9.935385
+	}
+	### TEMPLATE ###
+	10 = FLUIDTEMPLATE
+	10 < lib.layoutTemplate
+
+	### Header Data ###
+	headerData {
+		2 = USER
+		2 {
+			userFunc = user_displayKeywords
+		}
+		10 = HTML
+		10 {
+			value(
+				<meta name="geo.placename" content="Göttingen" />
+				<meta name="geo.region" content="DE-NI" />
+				<meta name="geo.position" content="51.539763;9.935385" />
+				<!--[if lt IE 8]>
+				<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+				<![endif]-->
+			)
+		}
+	}
+}
+
+lib.pageHeader = IMAGE
+lib.pageHeader {
+	file = GIFBUILDER
+	file {
+		backColor = #1a3771
+		XY = 1000,110
+		format = png
+		30 = IMAGE
+		30 {
+			file = EXT:tmpl_sub/Resources/Public/Img/logo_print.png
+			offset = 21, 17
+		}
+		20 = IMAGE
+		20 {
+			file.import = fileadmin/media/bilder/Seitenkopf/
+			file.import.override.data = levelfield : -1 , tx_nkwsubmenu_knotheader, slide
+			ifEmpty = header.png
+		}
+	}
+}
+
+[globalVar = GP:L = 1]
+lib.pageHeader.file.20.file.import = fileadmin/media/bilder/Seitenkopf/en/
+[global]
+
+[globalVar = GP:tx_nkwsubstaff|department_id > 0]
+page.headerData.100.22 = TEXT
+page.headerData.100.22.value = :&nbsp;
+page.headerData.100.23 < lib.nkwsubstaff.departmentTitle
+[global]
+
+[globalVar = GP:tx_nkwsubstaff|staff_id > 0]
+page.headerData.100.22 = TEXT
+page.headerData.100.22.value = :&nbsp;
+page.headerData.100.23 < lib.nkwsubstaff.staffTitle
+[global]
+
+[globalVar = GP:tx_nkwkeywords|id > 0]
+page.headerData.100.22 = TEXT
+page.headerData.100.22.value = :&nbsp;
+page.headerData.100.23 < lib.nkwkeywords.keywordTitle
+[global]
+
+temp.calculation = TEXT
+temp.calculation.dataWrap = {date:U} - {page:SYS_LASTCHANGED}
+
+temp.ageInSeconds = TEXT
+temp.ageInSeconds {
+	cObject < temp.calculation
+	prioriCalc = 1
+}
+
+temp.updated = TEXT
+temp.updated {
+	value = 365*24*60*60
+	prioriCalc = 1
+}
+
+temp.lastUpdated = COA_INT
+temp.lastUpdated.10 < styles.content.lastUpdate
+	temp.lastUpdated.10.if {
+	value.cObject < temp.ageInSeconds
+	isGreaterThan.cObject < temp.updated
+}
+
+tt_content.menu = COA
+tt_content.menu.20.5 {
+	special.mode = SYS_LASTCHANGED
+	special.depth = 8
+	special.maxAge = 3600*24*14
+	special.limit = 25
+	wrap = <ul class="sitemap_ul1">|</ul>
+	1.NO {
+		after.data = field:SYS_LASTCHANGED
+		after.date = d.m.Y
+		after.wrap = &nbsp;(&nbsp; | &nbsp;)
+		wrap = <li class="sitemap_li1">|</li>
+	}
+}
+
+### uebernahme des Page TS Setup aus dem T3 BE ###
+
+module.tx_standorte.persistence.storagePid = 1536
+plugin.tx_standorte.persistence.storagePid = 1536
+lib.tx_standorte.storagePid.value = 1536
+
+plugin.tx_subtabs.persistence.storagePid = 1606
+page.10.subparts.LASTUPDATE < temp.lastUpdated.10
+plugin.tx_subtabs.features.rewrittenPropertyMapper = 1
+
+# in der Latest-Ansicht im Subheader Ausgabe von HTML-Tags aktivieren
+plugin.tt_news.displayLatest.content_stdWrap.stripHtml = 0
+# Ausgabe durch den RTE-Parser schicken
+plugin.tt_news.displayLatest.content_stdWrap.parseFunc < lib.parseFunc_RTE
+
+
+#feld in Powermail vorbelegen
+plugin.tx_powermail_pi1.email.recipient_mail.sender.name.value = SUB Göttingen
+
+plugin.tx_subforms {
+	settings {
+		persistence.storagePid = 1540
+		mail {
+			buecherwunsch {
+				toMail = {$plugin.tx_subforms.mail.buecherwunsch.toMail}
+			}
+			feedback {
+				toMail = {$plugin.tx_subforms.mail.feedback.toMail}
+			}
+		}
+	}
+	persistence.storagePid = 1540
+}
+
+plugin.tx_nkwgok_pi1.shallowSearch = 1
+plugin.tx_pazpar2.settings.preferSUBOpac = 1
+plugin.tx_nkwuserfeedback_pi1.mail.tomail = www@sub.uni-goettingen.de
+plugin.tx_tmplsub._CSS_DEFAULT_STYLE (
+	span.boldFont { font-weight: bold; }
+	span.italicFont { font-style: italic; }
+)

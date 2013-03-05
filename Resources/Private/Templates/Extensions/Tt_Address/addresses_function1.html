@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Person (SUB mit Funktions-E-Mail)</title>
+</head>
+<body>
+
+<!-- $Id$ -->
+
+<!--
+Markers you can use:
+
+###UID###
+###GENDER###
+###FIRSTNAME###
+###MIDDLENAME###
+###LASTNAME###
+###TITLE###
+###EMAIL###
+###PHONE###
+###MOBILE###
+###WWW###
+###ADDRESS###
+###BUILDING###
+###ROOM###
+###BIRTHDAY###
+###ORGANIZATION###
+###COMPANY### (only here for backwards compatibility, this is an alias for ORGANIZATION)
+###CITY###
+###ZIP###
+###REGION###
+###COUNTRY###
+###IMAGE### (###IMAGE1-5### are available, too if multiple images are added to the address record)
+###FAX###
+###DESCRIPTION###
+###MAINGROUP###
+###GROUPLIST###
+
+
+-->
+
+<!-- ###TEMPLATE_ADDRESS### beginn -->
+<div class="singleAddress vcard">
+	<!-- addresses_function1 -->
+	<!-- ###SUBPART_NAMESTART### --><!-- ###SUBPART_NAMESTART### -->
+	###TITLE### ###FIRSTNAME### ###MIDDLENAME### ###LASTNAME###
+	<!-- ###SUBPART_NAMEEND### --><!-- ###SUBPART_NAMEEND### -->
+	###IMAGE###
+	<!-- ###SUBPART_MORESTART### --><!-- ###SUBPART_MORESTART### -->
+	<p>
+	###ADDRESS###
+	<!-- ###SUBPART_ADR### -->###ZIP### ###CITY### ###COUNTRY###<!-- ###SUBPART_ADR### -->
+	###ROOM###
+	###PHONE###
+	###TX_NKWADDRESSEXTEND_PHONE2###
+	###FAX###
+	###TX_NKWADDRESSEXTEND_MAIL2###
+	</p>
+	<!-- ###SUBPART_MOREEND### --><!-- ###SUBPART_MOREEND### -->
+</div>
+<!-- ###TEMPLATE_ADDRESS### end -->
+</body>
+</html>

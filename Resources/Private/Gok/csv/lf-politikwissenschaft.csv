@@ -1,0 +1,19 @@
+"NELF";"NE";"Politikwissenschaft, Verwaltungswissenschaft, Wehrwissenschaft";;;
+"NELF01000";"NELF";"Politikwissenschaft, Verwaltungswissenschaft, Wehrwissenschaft";;;"page=901"
+"NELF01010";"NELF01000";"Politische Wissenschaft im Allgemeinen";"lkl=lf?";;"page=901"
+"NELF01020";"NELF01000";"Staatsphilosophie und politische Philosophie";"lkl=lfc?";;"page=901"
+;;;;;
+"NELF02000";"NELF";"Geschichte des politischen Denkens";;;"page=901"
+"NELF02010";"NELF02000";"Geschichte des politischen Denkens";"lkl=lfe?";;"page=901"
+"NELF02020";"NELF02000";"Politisches Denken einzelner Persönlichkeiten";"lkl=lfg?";;"page=901"
+"NELF02030";"NELF02000";"Politische Theorien und Ideologien";"lkl=lfk?";;"page=901"
+"NELF02040";"NELF02000";"Politische Soziologie. Politische Psychologie.";"lkl=lfn?";;"page=901"
+;;;;;
+"NELF03000";"NELF";"Staatslehre";;;"page=901"
+"NELF03010";"NELF03000";"Staatslehre im engeren Sinn";"lkl=lfq?";;"page=901"
+"NELF03020";"NELF03000";"Staatsformen und -type";"lkl=lfr?";;"page=901"
+"NELF03030";"NELF03000";"Staatsaufbau. Staatsfunktionen. Internationale Beziehungen. Friedenswissenschaft, Abrüstung.";"lkl=lfs?";;"page=901"
+;;;;;
+"NELF04010";"NELF01000";"Geopolitik (einschl. Wehrgeopolitik)";"lkl=lfu?";;"page=901"
+"NELF04020";"NELF01000";"Verwaltungswissenschaft und -lehre";"lkl=lg?";;"page=901"
+"NELF04030";"NELF01000";"Wehrwissenschaft";"lkl=lh?";;"page=901"

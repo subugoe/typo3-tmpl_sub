@@ -1,0 +1,13 @@
+"NEK0";"NE";"Außereuropäische Kulturwissenschaften";;;
+"NEK001000";"NEK0";"Außereuropäische Kulturwissenschaften";;;"page=586"
+"NEK001010";"NEK001000";"Philologien Asiens und Afrikas allgemein";"(lkl=k ? or lkl=ka? or lkl=kb?)";;"page=586"
+"NEK001020";"NEK001000";"Afroasiatische Philologien (u.a. Ägyptisch, Arabisch, Berberisch, Hebräisch, Kuschitisch)";"(lkl=kc? or lkl=kd? or lkl=ke?)";;"page=586"
+"NEK001030";"NEK001000";"Afrikanische Philologien";"lkl=kf?";;"page=586"
+"NEK001040";"NEK001000";"Kaukasische Philologien";"lkl=kg?";;"page=586"
+"NEK001050";"NEK001000";"Indogermanische und Indoiranische Philologien (u.a. Armenisch, Hethitisch, Persisch)";"(lkl=kh? or lkl=ki? or lkl=kj?)";;"page=586"
+"NEK001060";"NEK001000";"Südasiatische Philologien (einschl. Sinotibetisch)";"(lkl=kk? or lkl=kl? or lkl=km? or lkl=ks?)";;"page=586"
+"NEK001070";"NEK001000";"Ostasiatische Philologien (u.a. Chinesisch, Japanisch, Koreanisch)";"(lkl=kn? or lkl=jy?)";;"page=586"
+"NEK001080";"NEK001000";"Südostasiatische, Austronesische, Ozeanische, Australische und Tasmanische Philologien";"(lkl=kt? or lkl=ku? or lkl=kv? or lkl=kw? or lkl=ky?)";;"page=586"
+"NEK001090";"NEK001000";"Türkische Philologien";"(lkl=jo? or lkl=jp?)";;"page=586"
+"NEK001100";"NEK001000";"Paläoasiatische, Mongolische und Tungusische Philologien";"(lkl=kp? or lkl=jt? or lkl=jv? or lkl=jw?)";;"page=586"
+"NEK001110";"NEK001000";"Indianersprachliche Philologie";"lkl=kq?";;"page=586"

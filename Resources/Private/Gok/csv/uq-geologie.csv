@@ -1,0 +1,20 @@
+"NEUQ";"NE";"Geologische Wissenschaften";;;
+"NEUQ01000";"NEUQ";"Geologische Wissenschaften";"lkl=v?";;"Page=803"
+"NEUQ01050";"NEUQ01000";"Geologische Wissenschaften";"lkl=v 0? or lkl=v 1? or lkl=v 2? or lkl=v 3? or lkl=v 4? or lkl=v 6?";;"page=803"
+"NEUQ01060";"NEUQ01000";"Allgemeine Geologie (endogene/exogene Dynamik)";"lkl=va?";;"page=803"
+"NEUQ01070";"NEUQ01000";"Angewandte Geologie";"lkl=vb?";;"page=803"
+"NEUQ01080";"NEUQ01000";"Historische Geologie u. Stratigraphie";"lkl=vc? or lkl=vd?";;"page=803"
+"NEUQ01090";"NEUQ01000";"Regionale Geologie";"lkl=ve?";;"page=803"
+"NEUQ01100";"NEUQ01000";"Mineralogie und Kristallographie";"lkl=vf? or lkl=vg? or lkl=vh? or lkl=vi?";;"page=803"
+"NEUQ01110";"NEUQ01000";"Geochemie";"lkl=vj?";;"page=803"
+"NEUQ01120";"NEUQ01000";"Petrologie";"lkl=vk?";;"page=803"
+"NEUQ01130";"NEUQ01000";"Bodenkunde";"lkl=vn? or lkl=vo? or lkl=vp?";;"page=803"
+"NEUQ01140";"NEUQ01000";"Lagerstättenkunde";"lkl=vq? or lkl=vr? or lkl=vs? or lkl=vt?";;"page=803"
+"NEUQ01150";"NEUQ01000";"Geobiologie und Paläontologie";"lkl=vu? or lkl=vw? or lkl=vv? or lkl=vx? or lkl=vy? or lkl=vz?";;"page=803"
+;;;;;
+"NETM";"NE";"Geophysik";;;
+"NETM01000";"NETM";"Geophysik s.I.";;;"Page=803"
+"NETM01010";"NETM01000";"Geophysik s.str.";"lkl=tm? or lkl=tn? or lkl=to? or lkl=tq? or lkl=ts? or lkl=vbm? or lkl=vbn? or lkl=vbo? or lkl=vbp 4? or lkl=vae? or lkl=vka 15? or lkl=vgd?";;"page=803"
+"NETM01020";"NETM01000";"Geodäsie";"lkl=un? or lkl=up?";;"page=803"
+"NETM01030";"NETM01000";"Physik der Hydrosphäre";"lkl=ua 4? or lkl=uba 1? or lkl=uhb? or lkl=uhf?";;"page=803"
+"NETM01040";"NETM01000";"Meteorologie und Klimatologie";"lkl=tt? or lkl=tu? or lkl=tv? or lkl=tw? or lkl=ty?";;"page=803"

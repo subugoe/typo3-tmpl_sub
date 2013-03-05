@@ -1,0 +1,106 @@
+.submenu {
+	max-width: 100%;
+	ul {
+		padding: 0 !important;
+		margin: 0 !important;
+		@include no-bullets;
+	}
+	a {
+		display: block;
+		padding: 3px 6px;
+		@include link-colors($white, $white, $white, $white, $white);
+		&:hover {
+			background-color: $darkblue;
+		}
+		&.submenu-highlight-parent {
+			background-color: #405680;
+			border-bottom: 0;
+		}
+	}
+	.submenu-l1 {
+		background-color: $bluegrey;
+		>li {
+			border-top: 1px solid lighten($bluegrey, 10%);
+			border-bottom: 1px solid darken($bluegrey, 20%);
+		}
+		a {
+			font-weight: bold;
+			&.submenu-selected {
+				background-color: $darkblue;
+				border-top: 1px solid lighten($bluegrey, 10%);
+				border-bottom: 0;
+				>a {
+					&:hover {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+	.submenu-l2 {
+		a {
+			padding: 1px 6px;
+			@include link-colors($darkblue, $white, $white, $darkblue, $white);
+			font-weight: normal;
+			&.submenu-highlight {
+				padding: 1px 5px;
+			}
+		}
+		li {
+			background-color: $lightgrey;
+		}
+		.submenu-selected {
+			background-color: $darkblue;
+			>a {
+				border-top: 0;
+				&:hover {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+	.submenu-l3 {
+		a {
+			padding: 0 6px 0 1.5em;
+			@include adjust-font-size-to($base-font-size);
+		}
+	}
+	.submenu-l4 {
+		a {
+			padding: 0 6px 0 2.5em;
+			@include adjust-font-size-to($base-font-size);
+		}
+	}
+	.submenu-trigger {
+		a {
+			font-weight: bold;
+			color: $white;
+			// @include single-text-shadow;
+			background-color: $bluegrey;
+		}
+	}
+	.submenu-highlight {
+		width: 100%;
+		color: $white !important;
+		background-image: url($arrowLink);
+		background-repeat: no-repeat;
+		background-position: right;
+		padding-right: 2%;
+	}
+	.submenu-selected {
+		background-color: $darkblue;
+		>a {
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+	.submenu-l2-actifsub {
+		color: $white !important;
+		background-color: $darkblue !important;
+	}
+	.submenu-l3-actifsub {
+		color: $white !important;
+		background-color: lighten($darkblue, 5%) !important;
+	}
+}

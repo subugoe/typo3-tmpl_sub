@@ -1,0 +1,12 @@
+"NEJK";"NE";"Ost- und Zentralasien / Altaistik / Sibirische & Paläoasiatische Sprachen";;;
+"NEJK01000";"NEJK";"Altaistische Philologie";;;"page=474"
+"NEJK01010";"NEJK01000";"Altaistik";"lkl=jj? or lkl=jn? or lkl=jo? or lkl=jp? or lkl=jt? or lkl=jw? or lkl=jy?";;"page=474"
+"NEJK01020";"NEJK01000";"Paläosibirisch";"lkl=kp?";;"page=474"
+;;;;;
+"NEJK02000";"NEJK";"Außereuropäische Philologien";;;"page=474"
+"NEJK02010";"NEJK02000";"Ostasiatische Philologien (u.a. Chinesisch, Japanisch, Koreanisch)";"lkl=kn? or lkl=jy?";;"page=474"
+"NEJK02020";"NEJK02000";"Türkische Philologien";"lkl=jo? or lkl=jp?";;"page=474"
+"NEJK02030";"NEJK02000";"Paläoasiatische, Mongolische und Tungusische Philologien";"lkl=kp? or lkl=jt? or lkl=jv? or lkl=jw?";;"page=474"
+;;;;;
+"NEJK03000";"NEJK";"Ethnologie / Völkerkunde";;;"page=474"
+"NEJK03010";"NEJK03000";"Ethnologie / Völkerkunde";"lkl=qm?";;"page=474"

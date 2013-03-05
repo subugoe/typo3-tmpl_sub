@@ -1,0 +1,81 @@
+<f:layout name="Main" />
+
+<f:section name="Body">
+	<f:cObject typoscriptObjectPath="lib.BIGPICTURE" />
+	<div id="middle" data-role="content">
+		<div id="menubox">
+			<f:cObject typoscriptObjectPath="lib.navNeu" />
+			<div id="unilogo">
+				<f:link.external uri="{f:translate(key:'page.uniLogo.link')}" title="{f:translate(key:'page.uniLogo')}">
+					<f:image src="{f:uri.resource(path:'Img/unilogo.png')}" alt="{f:translate(key:'page.uniLogo')}" />
+				</f:link.external>
+			</div>
+			<f:if condition="{currentPid} == 1">
+				<div id="werbung">
+					{ads -> f:format.raw()}
+				</div>
+			</f:if>
+		</div>
+
+		<div id="contentbox">
+			<div id="pathline">
+				<f:cObject typoscriptObjectPath="lib.rootline" />
+			</div>
+			{layoutTyp}
+			{subTemplate -> f:format.raw()}
+
+			<div class="clear"></div>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+</f:section>
+
+	<!-- Section Bottom -->
+
+<f:section name="Bottom">
+	<div id="bottom">
+		<f:for each="{0:1, 1:2, 2:3, 3:4}" as="bott">
+			<div id="bottom{bott}" class="bottommenu">
+				<span class="highlight">
+					<f:translate key="page.bottom{bott}" />
+				</span>
+				<f:cObject typoscriptObjectPath="lib.bottom{bott}" />
+			</div>
+		</f:for>
+
+		<div class="clear"></div>
+	</div>
+</f:section>
+
+		<!-- Section Footer -->
+<f:section name="Footer">
+	<div id="footer" data-role="footer">
+		<div id="fleft">
+			<f:cObject typoscriptObjectPath="lib.fleft" />
+		</div>
+		<div id="fright">
+			<ul>
+			<!-- Link to top -->
+			<li>
+				<f:link.page section="top" noCacheHash="true"><f:translate key="page.toTop" /></f:link.page>
+			</li>
+
+			<f:if condition="{currentPid} == 290">
+				<f:else>
+					<!-- Feedback -->
+					<li>
+					<f:link.action pageUid="290" noCacheHash="true" title="{f:translate(key:'page.feedBackTitle')}" action="index" controller="Feedback" extensionName="subforms" pluginName="Feedback" additionalParams="{tx_subforms_feedback:{pageId:'{currentPid}'}}">
+						<f:translate key="page.feedBack" />
+					</f:link.action>
+					</li>
+				</f:else>
+			</f:if>
+			<li>
+				<f:cObject typoscriptObjectPath="lib.fright" />
+			</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</f:section>

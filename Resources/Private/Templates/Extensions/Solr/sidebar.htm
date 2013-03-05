@@ -1,0 +1,78 @@
+<!-- ###SOLR_SEARCH### begin -->
+
+
+
+<!-- ###SOLR_SEARCH_FACETING### begin -->
+<div id="tx-solr-faceting">
+	
+	<!-- ###AVAILABLE_FACETS### begin -->
+	<div id="tx-solr-facets-available">
+		<!--<h3>###LLL:faceting_narrowSearch###</h3>-->
+		<h3>Suchtreffer filtern</h3>
+		<!--<ul class="facets">-->
+			<!-- ###SINGLE_FACET### begin -->
+			<!--<li class="facet facet-###FACET.name###">-->
+				<div class="facet-label">###FACET.label###</div>
+				<ul>
+					<!-- ###SINGLE_FACET_OPTION### begin -->
+					<!-- ###LOOP:FACET_LINKS### begin -->
+					<!-- ###LOOP_CONTENT### -->
+					<li class="###FACET_LINK.HIDDEN###">
+						###FACET_LINK.LINK###&nbsp;(###FACET_LINK.COUNT###)
+					</li>
+					<!-- ###LOOP_CONTENT### -->
+					<!-- ###LOOP:FACET_LINKS### end -->
+					<!-- ###SINGLE_FACET_OPTION### end -->
+					###FACET.showAllLink###
+				</ul>
+			<!--</li>-->
+			<!-- ###SINGLE_FACET### end -->
+		<!--</ul>-->
+	</div>
+	<!-- ###AVAILABLE_FACETS### end -->
+
+	<!-- ###USED_FACETS### begin -->
+	<div id="tx-solr-facets-in-use">
+		<!--<div class="facet-label">###LLL:faceting_resultsNarrowedBy###</div>-->
+		<div class="facet-label">Treffer eingeschränkt auf:</div>
+		<ul>
+			<!-- ###LOOP:FACETS_IN_USE### begin -->
+			<!-- ###LOOP_CONTENT### -->
+			<li>
+				<a href="###REMOVE_FACET.url###">###REMOVE_FACET.text###</a>
+			</li>
+			<!-- ###LOOP_CONTENT### -->
+			<!-- ###LOOP:FACETS_IN_USE### end -->
+			<!--
+			<li>
+				<a href="###REMOVE_ALL_FACETS.url###">###REMOVE_ALL_FACETS.text###</a>
+			</li>
+			-->
+		</ul>
+	</div>
+	<!-- ###USED_FACETS### end -->
+
+</div>
+<!-- ###SOLR_SEARCH_FACETING### end -->
+
+
+
+<!-- ###SOLR_SEARCH_SORTING### begin -->
+<div id="tx-solr-sorting">
+	<h6>###LLL:sorting_sortBy###</h6>
+	<ul>
+		<!-- ###LOOP:SORT### begin -->
+		<!-- ###LOOP_CONTENT### -->
+		<li>
+			###SORT_INDICATOR:###SORT.CURRENT_DIRECTION###### ###SORT.LINK###
+		</li>
+		<!-- ###LOOP_CONTENT### -->
+		<!-- ###LOOP:SORT### end -->
+	</ul>
+</div>
+<!-- ###SOLR_SEARCH_SORTING### end -->
+
+
+
+
+<!-- ###SOLR_SEARCH### end -->

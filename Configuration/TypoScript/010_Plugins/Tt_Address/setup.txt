@@ -1,0 +1,101 @@
+plugin.tx_ttaddress_pi1 = USER
+plugin.tx_ttaddress_pi1 {
+	userFunc = tx_ttaddress_pi1->main
+	pidList = {$plugin.ttaddress.pi1.pidList}
+	templatePath = EXT:tmpl_{$page_template}/Resources/Private/Templates/Extensions/Tt_Address/
+	defaultTemplateFileName = {$plugin.ttaddress.pi1.defaultTemplateFileName}
+	recursive = 1
+	sortByColumn = last_name
+	sortOrder = ASC
+	listMaxItems = 0
+	templates {
+		default {
+			image {
+				params = class="photo" style=""
+				altText = Photo of {field:first_name} {field:middle_name} {field:last_name}
+				altText.insertData = 1
+				titleText = {field:first_name} {field:middle_name} {field:last_name}
+				titleText.insertData = 1
+				debugData = 1
+				wrap = | <br />
+			}
+			first_name {
+				innerWrap.if.isFalse.field = middle_name
+				innerWrap2.if.isTrue.field = middle_name
+				outerWrap.if.isTrue.field = middle_name
+			}
+			last_name {
+				innerWrap.if.isFalse.field = middle_name
+				innerWrap2.if.isTrue.field = middle_name
+				outerWrap.if.isTrue.field = middle_name
+			}
+			organization {
+				wrap = <span class="organization">|</span>
+				required = 1
+			}
+			email {
+				wrap = <span class="email">|</span>
+				typolink.parameter.field = email
+				required = 1
+			}
+			tx_nkwaddressextend_mail2 {
+				wrap = <span class="email">|</span>
+				typolink.parameter.field = tx_nkwaddressextend_mail2
+				required = 1
+			}
+			tx_nkwaddressextend_phone2 {
+				wrap = <span class="tel">|&nbsp;(Tel. 2)</span><br />
+				innerWrap = <span class="value">|</span>
+				required = 1
+			}
+			fax {
+				wrap = <span class="tel">|&nbsp;(Fax)</span><br />
+				innerWrap = <span class="value">|</span>
+				required = 1
+			}
+			address {
+				required = 1
+				wrap = <span class="street=address">|</span><br />
+			}
+			city {
+				wrap = <span class="locality">|</span>
+				required = 1
+				outerWrap = |,
+			}
+			room {
+				wrap = <span class="room">Raum&nbsp;|</span><br />
+				required = 1
+			}
+			zip {
+				wrap = <span class="postal-code">|</span>
+				required = 1
+			}
+			www {
+				wrap = <span class="url">|</span>
+				typolink.parameter.field = www
+				required = 1
+			}
+			country {
+				wrap = <span class="country-name">|</span><br />
+				required = 1
+			}
+			phone {
+				wrap = <span class="tel">|&nbsp;(Tel.)</span><br />
+				innerWrap = <span class="value">|</span>
+				required = 1
+			}
+			subparts {
+				adr.wrap = <span class="adr">|</span>
+				namestart.wrap = <h3 class="fn" itemprop="name">|
+				nameend.wrap = |</h3>
+				morestart.wrap >
+				moreend.wrap >
+			}
+		}
+		addresses < plugin.tx_ttaddress_pi1.templates.default
+		addresses_sub < plugin.tx_ttaddress_pi1.templates.default
+		addresses_function1 < plugin.tx_ttaddress_pi1.templates.default
+		addresses_function2 < plugin.tx_ttaddress_pi1.templates.default
+		addresses_no_image < plugin.tx_ttaddress_pi1.templates.default
+	}
+}

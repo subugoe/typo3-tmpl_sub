@@ -1,0 +1,185 @@
+
+/* powermail */
+.tx-powermail-pi1 {
+	color: $darkgrey;
+	.powermail_all_td {
+	   padding: 4px;
+	}
+	.tx-powermail-pi1_fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+		legend {
+			white-space: normal;
+			color: $darkgrey;
+			font-weight: bold;
+		}
+	}
+	label {
+		width: 200px;
+		clear: both;
+		float: left;
+	}
+	.tx_powermail_pi1_fieldwrap_html {
+		margin: 10px 0;
+	}
+	input {
+		margin-left: 0;
+		border: 1px solid $anotherLightGrey;
+		padding: 3px;
+		width: 300px;
+		color: $darkgrey;
+		&.powermail_submit .tx-powermail-pi1_confirmation{
+			width: auto;
+			border-width: 1px;
+			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
+			@include border-radius(3px);
+			background: url($buttonBackground) repeat-x scroll 0 100% #f3f6fb;
+			border-style: solid;
+			margin-left: 0;
+			text-align: center;
+			text-decoration: none;
+			text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+			text-transform: uppercase;
+			line-height: 100%;
+			padding: 3px 12px!important;
+			float: left;
+			height: 28px;
+			color: $darkgrey;
+		}
+		&.tx-powermail-pi1_confirmation, &.tx-powermail-pi1_mandatory_submit {
+		    width: auto;
+		    border: 1px solid #434343;
+		    border-width: 1px;
+		    border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
+		    @include border-radius(3px);
+		    background: url($buttonBackground) repeat-x scroll 0 100% #f3f6fb;
+		    border-style: solid;
+			font-weight: bold;
+		    text-align: center;
+		    text-decoration: none;
+		    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+		    text-transform: uppercase;
+		    line-height: 100%;
+		    padding: 3px 12px!important;
+		    height: 28px;
+		    color: $darkgrey;
+    	}
+	}
+	textarea {
+		margin-left: 0;
+		border: 1px solid $anotherLightGrey;
+		padding: 3px;
+		width: 300px;
+		color: $darkgrey;
+	}
+	select {
+		margin-left: 0;
+		border: 1px solid $anotherLightGrey;
+		padding: 3px;
+		width: 300px;
+		color: $darkgrey;
+	}
+	.powermail_all_td {
+		padding: 4px;
+	}
+	.tx-powermail-pi1_fieldset_ihrebuchpatenschaft select {
+		width: 308px;
+	}
+	.tx-powermail-pi1_fieldset_ihrebuchpatenschaft legend {
+		display: none;
+	}
+	.tx-powermail-pi1_fieldset_15 legend {
+		display: none;
+	}
+	.powermail_all {
+		.powermail_all_table {
+			width: 555px;
+		}
+	}
+	.tx-powermail-pi1_fieldset {
+		margin: 4px;
+		padding: 8px !important;
+	}
+	.tx-powermail-pi1_fieldset legend {
+		padding-top: 8px;
+	}
+	label {
+		font-weight: normal !important;
+	}
+}
+
+.tx_powermail_pi1_fieldwrap_html_date input {
+	width: 100px;
+}
+
+.tx-powermail-pi1_confirmation input, .tx-powermail-pi1_mandatory_submit input {
+	width: 150px;
+	border: 1px solid $lightblue;
+	background-color: $lightgrey;
+	margin: 3px 0;
+	color: $darkgrey;
+}
+
+.tx_powermail_pi1_fieldwrap_html_submit {
+	clear: both;
+	float: left;
+}
+
+.powermail_radio_inner, .powermail_check_inner {
+	margin: 8px 0;
+	input {
+		clear: none !important;
+		width: 30px;
+	}
+}
+
+.tx-powermail-pi1_fieldset_ihrebuchpatenschaft legend {
+	display: none;
+}
+
+.tx-powermail-pi1_fieldset_15 legend {
+	display: none;
+}
+
+.tx-powermail-pi1_fieldset_ihrebuchpatenschaft select {
+	width: 308px;
+}
+
+.powermail_all .powermail_all_table {
+	width: 555px;
+}
+
+.tx_powermail_pi1_fieldwrap_html_checkbox_title {
+	padding-top: 0 !important;
+	font-weight: normal !important;
+}
+
+.tx_powermail_pi1_fieldwrap_html_radio_title {
+	padding-top: 0 !important;
+	font-weight: normal !important;
+}
+
+span.powermail_mandatory {
+	padding-left: 3px;
+}
+
+.tx-powermail-pi1 h3 {
+	padding-top: 8px;
+}
+
+fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fieldset input:focus:not([type="submit"]) {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid $darkgrey;
+	box-shadow: none;
+	color: $darkgrey;
+}
+
+.powermail_uid177, .powermail_uid178 {
+	width: 20px !important;
+	text-align: center;
+}
+
+.tx_powermail_pi1_fieldwrap_html_177, .tx_powermail_pi1_fieldwrap_html_178 {
+	// text-align: right
+}

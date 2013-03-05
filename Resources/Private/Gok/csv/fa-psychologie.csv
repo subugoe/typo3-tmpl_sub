@@ -1,0 +1,13 @@
+"NEFA";"NE";"Psychologie";;;
+"NEFA01000";"NEFA";"Psychologie";;;"page=873"
+"NEFA01010";"NEFA01000";"Psychologie: Allgemeines, Richtungen der Psychologie";"lkl=fa ?";;"page=873"
+"NEFA01020";"NEFA01000";"Allgemeine Psychologie";"lkl=faa? or lkl=fab? or lkl=fac? or lkl=fad? or lkl=fae? or lkl=faf? or lkl=fag? or lkl=fah?";;"page=873"
+"NEFA01030";"NEFA01000";"Geschichte der Psychologie";"lkl=faw 000";;"page=873"
+"NEFA01040";"NEFA01000";"Differentielle Psychologie";"lkl=fb?";;"page=873"
+"NEFA01050";"NEFA01000";"Entwicklungspsychologie";"lkl=fc?";;"page=873"
+"NEFA01060";"NEFA01000";"Tiefenpsychologie";"lkl=fd?";;"page=873"
+"NEFA01070";"NEFA01000";"Sozialpsychologie";"lkl=fe?";;"page=873"
+"NEFA01080";"NEFA01000";"Angewandte Psychologie";"lkl=ff?";;"page=873"
+"NEFA01090";"NEFA01000";"Psychologische Diagnostik, Tests";"lkl=fg?";;"page=873"
+"NEFA01100";"NEFA01000";"Klinische Psychologie";"lkl=fha? or lkl=fhb? or lkl=fhc?";;"page=873"
+"NEFA01110";"NEFA01000";"Psychotherapie, Behandlung, Rehabilitation";"lkl=fho?";;"page=873"

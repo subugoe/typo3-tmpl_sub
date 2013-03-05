@@ -1,0 +1,219 @@
+2012-05-04 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Sidebar standardmaessig aktiviert (WWW-1201)
+
+2012-04-18 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Korrektur bei der Darstellung im Adressen Plugin (WWW-1194)
+	* Anpassung der Labels im Footer (WWW-1031)
+
+2012-04-17 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Solr Konfiguration aus Haupttemplate extrahiert
+
+2012-04-04 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Clicktracking beim GOK Browsing (WWW-157)
+
+2012-03-22 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Default fuer den linkToTop geaendert (WWW-1164)
+
+2012-03-16 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Titel der Seite in locallang.xml (WWW-1119)
+	* Aenderung der Adresslayouts (WWW-1155)
+
+2012-03-06 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Breadcrumbs fuer Schulungen angepasst
+
+2012-03-01 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Aktualisierung der breadcrumbs
+
+2012-02-29 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Widget Caseinsensitive
+
+2012-02-14 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Timezone in .htacces hinzugefuegt (WWW-1124)
+
+2012-02-10 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Entfernen des RSS Links aus dem Header (WWW-1011)
+
+2012-02-09 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Anpassung des Print Stylesheets (WWW-1109)
+
+2012-02-08 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Titletag fuer den Feedbacklink (WWW-1116)
+	* Anpassung der Mailempfaenger (WWW-1118)
+	* Entfernen des Feedbacklinks beim Feedbackformular (WWW-1118)
+
+2012-02-02 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Anpassung Print Stylesheet (WWW-1109)
+
+2012-01-26 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Integration Powermail Frontend Templates
+
+2012-01-24 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Powermail Templates integriert (WWW-1081)
+
+2012-01-13 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Buttons im Contentbereich vereinheitlicht (WWW-1043)
+
+2011-12-20 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Anpassung der Reiter (WWW-1041)
+
+2011-12-19 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Anpassungen an tt_news
+	* RTE Einstellungen aus nkwtcarte integriert
+
+2011-12-16 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* CSS fuer Infobox angepasst
+	* Permalinkfunktion wiederhergestellt
+	* Entfernen des Permalinks
+	* RealUrl fuer Sigelliste (WWW-1035)
+
+2011-12-13 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* GOK Root ausgeblendet (WWW-950)
+
+2011-12-12 Nils Windisch <windisch@sub.uni-goettingen.de>
+	* Bug-Fix WWW-1003 Bei Doppelklick auf Menüpunkte der obersten Ebene gelangt man auf den Seiteninhalt
+	* Aenderung des GOK Layouts - Einrueckungen (WWW-951)
+
+2011-12-02 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Performancetunings
+	* Solr CSS optimiert
+	* Firefox SuchXMLs in Extension eingebunden
+	* Ueberfluessige Variabeln aus dem Setup genommen
+
+2011-12-01 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Chashcahce reenabled
+	* DBIS Css integriert (WWW-964)
+
+2011-11-30 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Bilder mit Links nicht mit Border versehen
+	* Scriptmerger mit IE aktiviert (WWW-958)
+
+2011-11-29 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Abstand zwischen den Adressen korrigiert (WWW-944)
+	* Template fuer Newsmodul integriert (WWW-917)
+	* Falsche Bannerbilder (WWW-948, WWW-925)
+
+2011-11-28 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Fachnknotennavigation korrigiert (WWW-686, WWW-687, WWW-799)
+	* Linkanzeige im Pazpar2 optimiert
+	* Headerbilder integration (WWW-487)
+	* Styling der GOKs (WWW-933)
+	* Ausrichtung des Logos (WWW-938)
+
+2011-11-25 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Ueberschriften in Bottom Menue fett (WWW-918)
+	* Abstaende der ul im nkwgok optimiert
+
+2011-11-24 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Layout der Kontaktboxen angepasst (WWW-672)
+
+2011-11-24 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* padding-right für ULs in Infobox (WWW-886)
+	* RealURL optimiert
+
+2011-11-23 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Templates fuer tt_address integriert
+	* Bullet Icon geaendert
+	* CSS Dateien aus Repository geloescht
+	* Realurl fuer Patenschaftskategorien (WWW-891)
+
+2011-11-18 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* RealUrl Anpassung fuer die Patenschaften (WWW-812)
+	* Favicon ausgetauscht (WWW-878)
+
+2011-11-17 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Abgerundete Ecken beim Inhaltsverzeichnis (WWW-864)
+
+2011-11-16 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Optimierung des Hovern. Statt ueber Link nun ueber Title (WWW-852)
+
+2011-11-15 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Vererbung der Headerbilder implementiert (WWW-845)
+	* Fix der Bannerbildverlinkungen (WWW-844)
+	* Migration von nkwtcaaddress
+	* Mauszeiger als Fragezeichen beim hovern der Copyrightinformationen (WWW-852)
+
+2011-11-14 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Austausch der Copyrightbilder (WWW-843)
+
+2011-11-11 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* GOK CSS Styling optimiert (WWW-830)
+
+2011-11-10 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Copyright Informationen bezueglich des Headerbildes implmentiert (WWW-633)
+	* CSS Styling von pazpar2 optimiert (WWW-796)
+	* Bildinformationen werden aus dem Captionfeld angezeigt (WWW-806)
+
+2011-11-09 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Optimiertes Uni-Logo eingebunden und vertikalen Abstand optimiert (WWW-824)
+	* Integration der neuen Grafiken in Repository (WWW-633)
+
+2011-11-08 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Kompatibilitaet der Spaltennamen zu TYPO3 4.6
+	* Stylen externer Links mit https (WWW-770)
+
+2011-11-04 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Fachknotennavigation mit zusaetzlichem Attribut versehen (WWW-799)
+
+2011-11-03 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Neues Logo eingebunden (WWW-794)
+
+2011-11-01 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Anzeige der Bannerbilder aus den entsprechenden Ressourcen (WWW-779)
+	* Powermail Formulare per CSS aufgehuebscht (WWW-790)
+
+2011-10-31 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Sprachumschaltungsfehler behoben (WWW-784)
+
+2011-10-14 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Changed user friendly Settings in User and Page TS
+
+2011-10-13 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Changed default language settings in realUrl
+
+2011-10-10 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Added Compatibility to TYPO3 4.6 in TS
+
+2011-10-05 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Added RealUrl Configuration (WWW-702)
+	* Changed CSS for Addresses in the Infobox (WWW-746)
+
+2011-09-29 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Switched visibility for Pazpar2 Sidebar
+	* Changed Backendlayout Order
+
+2011-09-15 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Switched from future Fluid raw format ViewHelper to <fed:raw>
+	* Performance optimizations
+
+2011-09-14 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Cleanups
+	* Reinclusion of Js Files
+	* Added contents from nkwsubinstaller
+
+2011-09-13 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Backend/Frontendlayoutcouping
+
+2011-09-09 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Fixed CSS for infocontent header h1
+
+2011-09-07 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Template cleanups
+	* Added Uni logo and translations
+	* CSS for nkwgok tree
+	* Protection for configuration and private resources directories
+
+2011-09-06 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Menu and CSS improvements
+
+2011-09-05 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Template optimizations
+	* Lowering number of requests
+	* Added extension icon
+
+2011-09-02 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Performance Improvements
+	* Integration of userFunctions
+
+2011-08-31 Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
+	* Integrated nkwtcamidcol
+	* Integrated nkwtcabasic

@@ -1,0 +1,33 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<fed:favicon href="typo3conf/ext/tmpl_sub/Resources/Public/Img/favicon.ico" />
+<fed:script src="typo3conf/ext/subtabs/Resources/Public/JavaScript/SubTabs.min.js" />
+<fed:style href="typo3conf/ext/tmpl_sub/Resources/Public/Css/main.css" />
+<fed:style href="typo3conf/ext/tmpl_sub/Resources/Public/Css/print.css" media="print"/>
+<fed:style href="typo3conf/ext/subtabs/Resources/Public/Css/Tabs.css" />
+<fed:pageRenderer.addHeaderData><link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<f:uri.page additionalParams="{type:1345790301}"/>" /></fed:pageRenderer.addHeaderData>
+
+<span id="top">
+	<f:link.page class="skip" addQueryString="TRUE" section="menubox" title="{f:translate(key:'page.skipToNavigation')}">{f:translate(key:'page.skipToNavigation')}</f:link.page>
+	<f:link.page class="skip" addQueryString="TRUE" section="centercontent" title="{f:translate(key:'page.skipToContent')}">{f:translate(key:'page.skipToContent')}</f:link.page>
+</span>
+
+<div id="wrap" data-role="page">
+	<header id="header" data-role="header">
+		<f:link.page pageUid="1" class="linkHome"><h1>Niedersächsische Staats-und Universitätsbibliothek Göttingen</h1></f:link.page>
+		<f:render partial="Header" />
+	</header>
+	<div id="headerline">
+		<f:link.page additionalParams="{L:\"{f:translate(key:'page.language.switchId')}\"}" addQueryString="TRUE"><f:translate key="page.language" /></f:link.page>
+	</div>
+
+	<f:render section="Body" />
+
+	<f:render section="Footer" />
+
+	<f:render section="Bottom" />
+
+	<div id="last">
+		<f:format.html><f:translate key="page.lastChanged" /> <f:cObject typoscriptObjectPath="lib.lastChanged" /></f:format.html>
+	</div>
+</div>

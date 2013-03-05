@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Template for the search results view for EXT:solr</title>
+</head>
+<body>
+
+<!-- ###SOLR_SEARCH### begin -->
+
+<div id="tx-solr-search">
+	<!-- ###SOLR_SEARCH_FORM### begin -->
+	###FORM.SUGGEST_URL###
+	<form id="tx-solr-search-form-pi-results" action="###FORM.ACTION###" method="get" accept-charset="###FORM.ACCEPT-CHARSET###">
+		<!--###LLL:searchWord###--><input type="search" class="tx-solr-q" name="###TX_SOLR.QUERY_PARAMETER###" value="###FORM.Q###" />
+		<!--<input type="submit" value="###LLL:submit###" />-->
+		<!--<input type="submit" value="###LLL:fileadmin/locallang.xml:submit###" />-->
+		<input type="hidden" name="id" value="###FORM.ACTION_ID###" />
+		<input type="hidden" name="###FORM.ACTION_LANGUAGE_PARAMETER###" value="###FORM.ACTION_LANGUAGE###" />
+		<input type="submit" class="formButton" value="###LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:solr.submit###" />
+	</form>
+
+	###FORM.SUGGESTION###
+	<!-- ###SOLR_SEARCH_FORM### end -->
+
+
+
+	<!-- ###SOLR_SEARCH_FORM_ADVANCED### begin -->
+
+	<!-- ###SOLR_SEARCH_FORM_ADVANCED### end -->
+
+
+
+	<!-- ###SOLR_SEARCH_RESULTS### begin -->
+	<!--###RESULTS.SEARCHED_FOR###-->
+	<p class="results-info">###RESULTS.FOUND###<p>
+	<!--###RESULTS.RANGE###-->
+	<ol start="###RESULTS.OFFSET###" class="results-list">
+		<!-- ###LOOP:RESULT_DOCUMENTS### begin -->
+		<!-- ###LOOP_CONTENT### -->
+		<li class="results-entry">
+			<div class="results-topic"><a href="###RESULT_DOCUMENT.URL###">###RESULT_DOCUMENT.TITLE###</a>
+				<!-- ###IF:###RESULT_DOCUMENT.photo_stringS###|!=|### begin -->
+						###RESULT_DOCUMENT.photo_stringS###
+				<!-- ###IF:###RESULT_DOCUMENT.photo_stringS###|!=|### end -->
+			</div>
+			<div class="results-teaser">
+
+				<!-- ###IF:###RESULT_DOCUMENT.TYPE###|==|staff### begin -->
+					<p>
+					###MULTIVALUE:###RESULT_DOCUMENT.addressgroup_stringM###|, ###
+					<br />
+
+					###RESULT_DOCUMENT.phone_stringS### (Tel.) ###LINK:###RESULT_DOCUMENT.email_stringS###|###RESULT_DOCUMENT.email_stringS###|additionalParameters|useCache###
+					</p>
+				<!-- ###IF:###RESULT_DOCUMENT.TYPE###|==|staff### end -->
+
+				<!-- ###IF:###RESULT_DOCUMENT.TYPE###|==|Buchpatenschaften### begin -->
+						<p>
+							<!-- ###IF:###RESULT_DOCUMENT.signature_stringS###|!=|### begin -->
+							###RESULT_DOCUMENT.signature_stringS### -
+							<!-- ###IF:###RESULT_DOCUMENT.signature_stringS###|!=|### end -->
+							<!-- ###IF:###RESULT_DOCUMENT.category_stringS###|!=|### begin -->
+								###RESULT_DOCUMENT.category_stringS###<br />
+							<!-- ###IF:###RESULT_DOCUMENT.category_stringS###|!=|### end -->
+							<!-- ###IF:###RESULT_DOCUMENT.author_stringS###|!=|### begin -->
+
+							###LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:solr.author###: ###RESULT_DOCUMENT.author_stringS###
+							<!-- ###IF:###RESULT_DOCUMENT.author_stringS###|!=|### end -->
+						</p>
+				<!-- ###IF:###RESULT_DOCUMENT.TYPE###|==|Buchpatenschaften### end -->
+
+				<!-- ###IF:###RESULT_DOCUMENT.TYPE###|==|Bibliotheken### begin -->
+					<p>
+						###LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:solr.sigel###: 7/###RESULT_DOCUMENT.sigel_stringS###<br />
+						<!-- ###IF:###RESULT_DOCUMENT.inventory_stringS###|==|DUMMY### begin -->
+							###LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:solr.inventory###: ###RESULT_DOCUMENT.inventory_stringS###<br />
+						<!-- ###IF:###RESULT_DOCUMENT.inventory_stringS###|==|DUMMY### end -->
+
+						<!-- ###IF:###RESULT_DOCUMENT.street_stringS###|!=|### begin -->
+						###RESULT_DOCUMENT.street_stringS###<!-- ###IF:###RESULT_DOCUMENT.additional_stringS###|!=|### begin --> ###RESULT_DOCUMENT.additional_stringS###<!-- ###IF:###RESULT_DOCUMENT.additional_stringS###|!=|### end -->, ###RESULT_DOCUMENT.zip_stringS### ###RESULT_DOCUMENT.city_stringS###
+						<!-- ###IF:###RESULT_DOCUMENT.street_stringS###|!=|### end -->
+					</p>
+					<!-- ###IF:###RESULT_DOCUMENT.openingHours_stringS###|!=|### begin -->
+						<p>
+						###LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:solr.openingHours###: ###RESULT_DOCUMENT.openingHours_stringS###
+						</p>
+					<!-- ###IF:###RESULT_DOCUMENT.openingHours_stringS###|!=|### end -->
+
+					<!-- ###IF:###RESULT_DOCUMENT.contact_stringS###|!=|### begin -->
+						<p>
+							###CROP:###RESULT_DOCUMENT.contact_stringS###|250###
+						</p>
+					<!-- ###IF:###RESULT_DOCUMENT.contact_stringS###|!=|### end -->
+
+				<!-- ###IF:###RESULT_DOCUMENT.TYPE###|==|Bibliotheken### end -->
+
+				<!-- ###IF:###RESULT_DOCUMENT.TYPE###|==|Institutionen### begin -->
+					<p>
+						<!-- ###IF:###RESULT_DOCUMENT.description_textS###|!=|### begin -->
+								###RESULT_DOCUMENT.description_textS###<br />
+						<!-- ###IF:###RESULT_DOCUMENT.description_textS###|!=|### end -->
+						<!-- ###IF:###RESULT_DOCUMENT.address_stringS###|!=|### begin -->
+							###RESULT_DOCUMENT.address_stringS### <br />
+						<!-- ###IF:###RESULT_DOCUMENT.address_stringS###|!=|### end -->
+						<!-- ###IF:###RESULT_DOCUMENT.institutionUrl_stringS###|!=|### begin -->
+							###LINK:###RESULT_DOCUMENT.institutionUrl_stringS###|###RESULT_DOCUMENT.institutionUrl_stringS###|additionalParameters|useCache###
+						<!-- ###IF:###RESULT_DOCUMENT.institutionUrl_stringS###|!=|### begin -->
+					</p>
+				<!-- ###IF:###RESULT_DOCUMENT.TYPE###|==|Institutionen### end -->
+
+
+				<p>
+					###CROP:###RESULT_DOCUMENT.CONTENT###|250###
+					<!--<span class="results-info">###RELEVANCE:###RESULT_DOCUMENT.SCORE######% ###LLL:relevance###</span>-->
+					<span class="results-info">###RELEVANCE_BAR:###RESULT_DOCUMENT.SCORE######</span>
+				</p>
+
+			</div>
+		</li>
+		<!-- ###LOOP_CONTENT### -->
+		<!-- ###LOOP:RESULT_DOCUMENTS### end -->
+	</ol>
+
+	###RESULTS.PAGEBROWSER###
+
+	<!-- ###SOLR_SEARCH_RESULTS### end -->
+
+
+
+	<!-- ###SOLR_SEARCH_NO_RESULTS### begin -->
+	###NO_RESULTS.NOTHING_FOUND###
+	<!-- ###SOLR_SEARCH_NO_RESULTS### end -->
+</div>
+
+
+<!-- ###SOLR_SEARCH### end -->
+
+
+
+<!-- ###SOLR_SEARCH_UNAVAILABLE### begin -->
+	###LLL:searchUnavailable###
+<!-- ###SOLR_SEARCH_UNAVAILABLE### end -->
+
+<!-- ###SOLR_SEARCH_ERROR### begin -->
+	###LLL:searchFailed###
+<!-- ###SOLR_SEARCH_ERROR### end -->
+
+</body>
+</html>

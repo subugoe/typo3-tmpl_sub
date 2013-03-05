@@ -1,0 +1,193 @@
+### Rewrite ###
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{SERVER_PORT} ^443$
+RewriteRule ^robots.txt$ robots_ssl.txt
+
+# Opac To Atom Script
+RewriteRule opac.atom fileadmin/opac/opac-feed2.php [L]
+
+RewriteRule ^-(.*)$ index.php?eID=shorts&shortUrl=$1 [L,NC,QSA]
+RewriteRule ^(zdb/|zdb-local/|typo3/|t3lib/|tslib/|fileadmin/|typo3conf/|typo3temp/|uploads/|showpic\.php|favicon\.ico) - [L]
+RewriteRule ^typo3$ typo3/index_re.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule .* /index.php [L]
+#### Rewrite (END) ####
+
+### Redirect ###
+Redirect 301 /t3 https://www.sub.uni-goettingen.de/typo3
+
+Redirect 301 /user-accounts http://www.sub.uni-goettingen.de/en/borrowing-renewing/user-accounts/
+Redirect 301 /benutzerkonten http://www.sub.uni-goettingen.de/ausleihen-verlaengern/benutzerkonten/
+Redirect 301 /schulungsangebote http://www.sub.uni-goettingen.de/lernen-lehren/informationskompetenz/
+Redirect 301 /informationskompetenz http://www.sub.uni-goettingen.de/lernen-lehren/informationskompetenz/
+
+# temporary
+
+Redirect 301 /standorte-raumangebote/standorte-mit-oeffnungszeiten/gesamtuebersicht-ueber-die-bibliotheken-in-goettingen http://www.sub.uni-goettingen.de/standorte-raumangebote/standorte-mit-oeffnungszeiten/bibliotheken-in-goettingen/sigelliste/
+
+#### Permanente Redirects aus (teilweise aelteren Datums) ###################################
+	# -> GDZ-Website
+Redirect permanent /gdz http://gdz.sub.uni-goettingen.de
+	# -> GDZ-Website
+Redirect permanent /GDZ http://gdz.sub.uni-goettingen.de
+	# -> MathGuide
+Redirect permanent /ssgfi/math http://www.MathGuide.de
+	# -> Historyguide
+Redirect permanent /ssgfi/aac-hist http://www.HistoryGuide.de
+	# -> GeoGuide
+Redirect permanent /ssgfi/geo http://www.Geo-Guide.de
+	#-> AnglistikGuide
+Redirect permanent /ssgfi/aac-lit http://www.AnglistikGuide.de
+	# -> ForestryGuide
+Redirect permanent /ssgfi/forst http://www.forestryguide.de
+	# -> alte Seite der Frankfurt-Group
+Redirect permanent /frankfurtgroup http://frankfurtgroup.d-nb.de/
+	# DBIS CSS
+Redirect permanent /css/dbis.css http://w3a.sub.uni-goettingen.de/css/dbis.css
+
+# ### Redirects fuer neue virtuelle Hosts bei WWW-Server-Relaunch ###
+# !!! Verwandeln in -> RedirectMatch 301 ... falls (PERMANENT Redirect) gewuenscht wird ! #
+	# Redirect Fachinformation Indologie
+RedirectMatch \/ebene_1\/orient\/fiorient.htm http://fiorient.sub.uni-goettingen.de/fiorient.htm
+	# Redirect Afrika-Asien-Bibliothek
+RedirectMatch \/ebene_1\/orient\/1_aab.htm http://aab.sub.uni-goettingen.de/
+	# Redirect Virtuelle Fachbibliothek BBI
+RedirectMatch ^\/vlib\/vifabbi(.*) http://www.vifabbi.de$1
+	# Redirect Einstiegsseite Anglo American Culture (AAC)
+RedirectMatch ^\/vlib\/history\/(.*) http://aac.sub.uni-goettingen.de/history/$1
+	# Redirect VLib AAC Literature
+RedirectMatch ^\/vlib\/lit\/(.*) http://aac.sub.uni-goettingen.de/lit/$1
+	# Redirect VLib AAC History
+RedirectMatch ^\/vlib\/(.*) http://aac.sub.uni-goettingen.de/$1
+	# Redirect Buch und Papier
+RedirectMatch ^\/bup\/(.*) http://bup.sub.uni-goettingen.de/$1
+	# Redirect Fachinformation Indologie: GRETIL - Göngen Register of Electronic Texts in Indian Languages
+RedirectMatch ^\/ebene_1\/fiindolo\/gretil.htm http://gretil.sub.uni-goettingen.de/gretil.htm
+	# Redirect Fachinformation Sued- und Suedostasiatische Sprachen und Kulturen
+RedirectMatch ^\/ebene_1\/fiindolo\/(.*) http://fiindolo.sub.uni-goettingen.de/$1
+	# Redirect Fachinformation Mathematik
+RedirectMatch ^\/ebene_1\/fimathe.htm http://fimathe.sub.uni-goettingen.de/fimathe.htm
+	# Redirect HANS-Datenbank (DB zu Handschriften, Autographen, Nachlaesse, Sonderbestaende)
+RedirectMatch ^\/hans\/index.html http://hans.sub.uni-goettingen.de/index.html
+	# Redirect Alte DD/IT-Seite
+RedirectMatch ^\/it\/(.*) http://iti.sub.uni-goettingen.de/$1
+	# Redirect Einstiegsseite SSG-Fachinformation
+RedirectMatch ^www.sub.uni-goettingen.de\/ssgfi\/(.*) http://ssgfi.sub.uni-goettingen.de/$1
+	# Redirect Virtuelle Fachbibliothek BBI
+RedirectMatch vifabbi\.sub\.uni-goettingen\.de(.*) http://www.vifabbi.de($1)
+	# Redirect Zeitkorrektur
+RedirectMatch ^\/archiv\/mitarbeiter\/korrzeit.html http://w3a.sub.uni-goettingen.de/archiv/mitarbeiter/korrzeit.html
+	# Redirect Antwortformular
+RedirectMatch ^\/cgi-bin_user\/(.*) http://w3a.sub.uni-goettingen.de/cgi-bin_user/$1
+	# Redirect MyMetaMaker
+RedirectMatch ^\/MMMfT\/(.*) http://w3a.sub.uni-goettingen.de/MMMfT/$1
+	# Metamaker Editor (WWW-993)
+RedirectMatch ^\/cgi-bin\/MMMfT\/sub\/(.*) http://w3a.sub.uni-goettingen.de/cgi-bin/MMMfT/sub/$1
+	# Upload Tool
+RedirectMatch ^\/scripts\/upload\/(.*) http://w3a.sub.uni-goettingen.de/scripts/upload/$1
+	# Suchliste eDiss
+RedirectMatch ^\/ebene_1\/1_ediss(.*) http://w3a.sub.uni-goettingen.de/ebene_1/1_ediss$1
+	# Diss Singleview
+RedirectMatch ^\/ebene_1\/diss\/(.*) http://w3a.sub.uni-goettingen.de/ebene_1/diss/$1
+	# Ebene 2 Diss Infos
+RedirectMatch ^\/ebene_2\/diss\/(.*) http://w3a.sub.uni-goettingen.de/ebene_2/diss/$1
+	# Englische Startseite
+RedirectMatch ^\/index-e\.html http://www.sub.uni-goettingen.de/en/news/
+	# Deutsche Startseite
+RedirectMatch ^\/index\.html http://www.sub.uni-goettingen.de/
+	# ESS
+RedirectMatch ^\/ess\/ https://ess.med.uni-goettingen.de:8144/irj/portal
+	# metaport
+RedirectMatch ^\/scripts\/query_convert\/(.*) http://w3a.sub.uni-goettingen.de/scripts/query_convert/$1
+	# Ediss Signatur
+RedirectMatch ^\/ebene_2\/diss\/signatur\/(.*) http://w3a.sub.uni-goettingen.de/ebene_2/diss/signatur/$1
+	# Bilder webdoc
+RedirectMatch ^\/bilder\/buttons\/(.*) http://w3a.sub.uni-goettingen.de/bilder/buttons/$1
+	# Legacy Neuerwerbungslisten
+RedirectMatch ^\/archiv\/nel\/(.*) http://w3a.sub.uni-goettingen.de/archiv/nel/$1
+
+
+### Redirect (END) ###
+
+### PHP optimisation ###
+php_flag allow_call_time_pass_reference off
+php_flag register_globals off
+php_flag register_argc_argv off
+php_flag magic_quotes_gpc off
+php_value variables_order GPCS
+php_value max_execution_time 600
+#### PHP optimisation (END) ####
+
+#### GZIP ####
+<IfModule mod_deflate.c>
+	<FilesMatch "\.(css|js|x?html?|php)$">
+		SetOutputFilter DEFLATE
+	</FilesMatch>
+</IfModule>
+<FilesMatch "\.js\.gzip$">
+	AddType "text/javascript" .gzip
+</FilesMatch>
+<FilesMatch "\.css\.gzip$">
+	AddType "text/css" .gzip
+</FilesMatch>
+AddEncoding gzip .gzip
+#### GZIP (END) ####
+
+#### Expires ####
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault A0
+	<FilesMatch "\.(xml|txt|html|js|css|ico)$">
+		ExpiresDefault A29030400
+		Header append Cache-Control "proxy-revalidate"
+	</FilesMatch>
+	<FilesMatch "\.(gif|jpg|jpeg|png|swf)$">
+		ExpiresDefault A604800
+		Header append Cache-Control "public"
+	</FilesMatch>
+</IfModule>
+#### Expires (END) ####
+
+#### Custom ####
+php_value mail.force_extra_parameters -fwww@sub.uni-goettingen.de
+php_value post_max_size 10M
+php_value upload_max_filesize 10M
+php_value memory_limit 512M
+php_flag display_errors On
+php_flag log_errors On
+php_value error_log /var/www/w3l/logs/w3l-php-error.log
+php_value date.timezone "Europe/Berlin"
+#### Custom (END) ####
+
+
+### BEGIN EXT:scriptmerger ###
+
+# Removal of ETag (saves some bytes; the last modified header is still there)
+FileETag MTime Size
+<IfModule mod_headers.c>
+	FileETag none
+</IfModule>
+
+# Client caching of JS/CSS files (because they are merged with an applied hash!)
+# Note: Unsetting of the last modified header causes a permant 200 Ok status
+<FilesMatch "\.(merge|min|gz)(\.gz)?\.(js|css)">
+	<IfModule mod_expires.c>
+		ExpiresActive on
+		ExpiresDefault "access plus 1 year"
+	</IfModule>
+
+	<IfModule mod_headers.c>
+		Header append Cache-Control "public"
+	</IfModule>
+</FilesMatch>
+
+# deliver the uncompressed file if gzip encoding isn't accepted
+AddEncoding x-gzip .gz
+RewriteCond %{HTTP:accept-encoding} !gzip [NC]
+RewriteRule ^typo3temp/scriptmerger/compressed/(.+)\.gz\.(js|css) typo3temp/scriptmerger/uncompressed/$1.$2 [L,NC]
+
+### END EXT:scriptmerger ###

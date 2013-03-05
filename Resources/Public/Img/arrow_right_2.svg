@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="0.48"
+   width="10"
+   height="20"
+   id="svg2">
+  <namedview
+     current-layer="layer1"
+     window-maximized="1"
+     window-y="24"
+     window-x="65"
+     cy="12.272215"
+     cx="5.8133338"
+     zoom="47.2"
+     showgrid="false"
+     id="namedview3806"
+     window-height="1416"
+     window-width="2495"
+     pageshadow="2"
+     pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <RDF
+       id="RDF2989">
+      <Work
+         id="Work2991"
+         about="">
+        <format
+           id="format2993">image/svg+xml</format>
+        <type
+           id="type2995"
+           resource="http://purl.org/dc/dcmitype/StillImage" />
+        <title
+           id="title2997" />
+      </Work>
+    </RDF>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="matrix(0.04928298,0,0,0.05034803,0.01948533,0.00689483)"
+     id="layer1">
+    <path
+       d="M 0,200 C 0,90 0,0 0,0 c 0,0 200,200 200,200 0,0 -42.37863,39.66159 -100,95.497 L 0,397.01591 z"
+       id="path3755"
+       style="fill:#1a3771;fill-opacity:1;stroke-width:6.66200018;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+</svg>

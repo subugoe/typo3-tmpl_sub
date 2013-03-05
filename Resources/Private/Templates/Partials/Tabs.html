@@ -1,0 +1,94 @@
+<div class="tx-subtabs-tabs">
+	<div class="tabs">
+		<ul class="tabNavigation">
+			<li><a href="sub-aktuell/#Katalog">Kataloge</a></li>
+
+			<li><a href="sub-aktuell/#Faechersammlungen">Fächer/Sammlungen</a></li>
+
+			<li><a href="sub-aktuell/#Webseite">Webseite</a></li>
+		</ul>
+
+		<div id="Katalog">
+			<div class="tabsContent">
+				<form method="get" id="catalogueSearchForm"
+					  action="sub-aktuell/?tx_subtabs_tabs%5Baction%5D=%2F&amp;tx_subtabs_tabs%5Bcontroller%5D=Tab&amp;cHash=30d0972e7b8b1b853c2fff782aff5bea">
+					<div style="display: none">
+						<input type="hidden" name="tx_subtabs_tabs[__referrer][extensionName]" value="Subtabs"/> <input
+							type="hidden" name="tx_subtabs_tabs[__referrer][controllerName]" value="Tab"/> <input
+							type="hidden" name="tx_subtabs_tabs[__referrer][actionName]" value="list"/> <input
+							type="hidden" name="tx_subtabs_tabs[__hmac]"
+							value="a:3:{s:8:&quot;kataloge&quot;;i:1;s:6:&quot;action&quot;;i:1;s:10:&quot;controller&quot;;i:1;}b9c4c6a5f198dc75815bc31bca15b348faf88806"/>
+					</div>
+					<input type="text" id="mytextbox" size="40" class="field" name="search"
+						   placeholder="Suche in den Onlinekatalogen der SUB Göttingen"/> <input type="submit" value="Suchen" class="formButton"/>
+
+					<div class="tabsContentPlus">
+						<br/>
+						<input id="katalog-2" type="radio" name="tx_subtabs_tabs[kataloge]"
+							   value="http://opac.sub.uni-goettingen.de/DB=1/LNG=DU/CMD?ACT=SRCHA&amp;IKT=1016&amp;SRT=YOP"
+							   checked="checked"/><label for="katalog-2">GUK - Göttinger
+						Universitätskatalog</label><br/>
+						<input id="katalog-3" type="radio" name="tx_subtabs_tabs[kataloge]"
+							   value="http://gso.gbv.de/xslt/DB=2.1/LNG=DU/CMD?ACT=SRCHA&amp;IKT=1016&amp;SRT=YOP"/><label
+							for="katalog-3">GVK - Fernleihe: Gemeinsamer Verbundkatalog</label><br/>
+						<input id="katalog-4" type="radio" name="tx_subtabs_tabs[kataloge]"
+							   value="http://rzblx10.uni-regensburg.de/dbinfo/dbliste.php?bib_id=subgo"/><label
+							for="katalog-4">DBIS - Suche nach Datenbanken</label><br/>
+						<input id="katalog-5" type="radio" name="tx_subtabs_tabs[kataloge]"
+							   value="http://rzblx1.uni-regensburg.de/ezeit/searchres.phtml?bibid=SUBGO&amp;colors=7&amp;lang=de&amp;jq_type1=KT"/><label
+							for="katalog-5">EZB - Suche nach Elektronischen Zeitschriften</label><br/>
+						<input id="katalog-6" type="radio" name="tx_subtabs_tabs[kataloge]"
+							   value="suche/pazpar2/?tx_pazpar2_pazpar2%5BqueryString%5D="/><label for="katalog-6">Aufsätze
+						und elektronische Volltexte</label>
+					</div>
+				</form>
+
+				<ul>
+					<li><a href="weitere-informationen/weitere-sucheinstiege-recherchetipps/">Weitere Sucheinstiege
+						&amp; Recherchetipps</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="Faechersammlungen">
+			<div class="tabsContent">
+				<form action="" id="tabsFormThird">
+					<input class="field" type="search" id="q"
+						   placeholder="Suche nach Stichworten, Fachgebieten und Sammlungen"/>
+				</form>
+
+				<div class="tabsContentPlus" id="FaechersammlungenContentPlus">
+					<ul id="third_select" style="overflow:auto; width: 100%; margin-left: 0px;">
+						<li><a href="faecher-geisteswissenschaften-und-theologie/">Fächer Geisteswissenschaften und
+							Theologie</a></li>
+
+						<li><a href="faecher-naturwissenschaften-mathematik-und-informatik/">Fächer Naturwissenschaften,
+							Mathematik und Informatik</a></li>
+
+						<li><a href="faecher-rechts-wirtschafts-und-sozialwissenschaften/">Fächer Rechts-, Wirtschafts-
+							und Sozialwissenschaften</a></li>
+
+						<li><a href="fach-medizin/">Fach Medizin</a></li>
+
+						<li><a href="sammlungen/">Sammlungen</a></li>
+					</ul>
+
+					<ul id="third_list">
+						<li><a href="elektronisches-publizieren/publizieren/">Publizieren</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="Webseite">
+			<div class="tabsContent">
+				<form action="" method="get">
+					<fed:solr template="typo3conf/ext/subtabs/Resources/Private/Templates/Solr/Index.html"
+							  layoutRootPath="typo3conf/ext/subtabs/Resources/Private/Templates/Solr/Layouts"
+							  stylesheet="typo3conf/ext/subtabs/Resources/Public/Css/SolrTabs.css"
+							  script="typo3conf/ext/subtabs/Resources/Public/JavaScript/SolrApp.js" />
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

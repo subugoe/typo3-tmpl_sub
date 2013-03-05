@@ -1,0 +1,184 @@
+#######################################
+### TCE Forms - ehemals nkwtcabasic ###
+#######################################
+
+TCEFORM {
+	be_groups {
+		lockToDomain.disabled = 1
+		hide_in_lists.disabled = 1
+		workspace_perms.removeItems = 2
+		lockToDomain.disabled = 1
+		disableIPlock.disabled = 1
+		starttime.disabled = 1
+		endtime.disabled = 1
+		userMods.disabled = 1
+	}
+	be_users {
+		workspace_perms.removeItems = 2
+		lockToDomain.disabled = 1
+		disableIPlock.disabled = 1
+		starttime.disabled = 1
+		endtime.disabled = 1
+	}
+	tt_content {
+		imagecaption_position.disabled = 1
+		image_compression.disabled = 1
+		image_effects.disabled = 1
+		header_link.disabled = 1
+		spaceBefore.disabled = 1
+		spaceAfter.disabled = 1
+		header_layout.removeItems = 1
+		# Spalten entfernen
+		colPos.removeItems = 1,3
+		layout.disabled = 0
+		imageorient.removeItems = 0,1,2,8,9,10,25,26
+		image_noRows.disabled = 1
+		imageborder.disabled = 1
+		imagecols.disabled = 1
+		imageheight.disabled = 1
+		header_position.disabled = 1
+		date.disabled = 1
+		linkToTop.value = 0
+		section_frame.disabled = 1
+		longdescURL.disabled = 1
+		# following options only if DAM is used
+		imagecaption.disabled = 1
+		altText.disabled = 1
+		titleText.disabled = 1
+	}
+	pages {
+#		nav_title.disabled = 1
+		abstract.disabled = 1
+		subtitle.disabled = 1
+		alias.disabled = 1
+		target.disabled = 1
+		newUntil.disabled = 1
+		author.disabled = 1
+		author_email.disabled = 1
+		tx_realurl_pathsegment.disabled = 0
+		tx_realurl_exclude.disabled = 0
+		storage_pid.disabled = 1
+		extendToSubpages.disabled = 1
+#		layout.disabled = 0
+		fe_group.disabled = 1
+		fe_login_mode.disabled = 1
+		nav_hide.disabled = 0
+		module.disabled = 1
+		keywords.disabled = 0
+		layout.altLabels.0 = Mit Infobox
+		layout.altLabels.1 = Ohne Infobox
+		tx_nkwsubmenu_showsidebar.disabled = 0
+		tx_nkwsubmenu_showsidebar = 1
+	}
+	pages_language_overlay {
+		subtitle.disabled = 1
+		nav_title.disabled = 1
+		abstract.disabled = 1
+		author.disabled = 1
+		author_email.disabled = 1
+		tx_realurl_pathsegment.disabled = 1
+		tx_nkwbitly_bitly.disabled = 1
+		media.disabled = 1
+		hidden.disabled = 1
+#		keywords.disabled = 1
+	}
+	tt_address {
+		birthday.disabled = 1
+		building.disabled = 1
+		www.disabled = 1
+		region.disabled = 1
+		description.disabled = 1
+		middle_name.disabled = 1
+		zip.disabled = 1
+		city.disabled = 1
+		address.disabled = 1
+		company.disabled = 1
+		title.disabled = 1
+	}
+	tx_dam {
+		starttime.disabled = 1
+		endtime.disabled = 1
+		fe_group.disabled = 1
+		loc_city.disabled = 1
+		loc_country.disabled = 1
+		loc_desc.disabled = 1
+		date_cr.disabled = 1
+		date_mod.disabled = 1
+		publisher.disabled = 1
+		instructions.disabled = 1
+		hidden.disabled = 1
+		description.disabled = 1
+		file_orig_loc_desc.disabled = 1
+		keywords.disabled = 1
+	}
+}
+
+TCAdefaults {
+	tt_content {
+		linkToTop = 0
+	}
+}
+
+############################################
+### Mittlere Spalte - ehem nkwtcamidcol  ###
+### Standardsprache - ehem nkwtcadefault ###
+############################################
+
+mod.SHARED {
+	colPos_list = 0,2
+	defaultLanguageLabel = Deutsch
+	defaultLanguageFlag = de.gif
+	web_list {
+		hideTables = fe_groups
+	}
+}
+
+# Alternatives Seitenlayot
+[page|layout = 1]
+mod.SHARED.colPos_list = 0
+[global]
+
+
+TCEMAIN {
+	# No annoying copy messages on elements. Our editors hate them, and it seems to be
+	# sufficient to just set new records to hidden.
+	table.pages {
+		disablePrependAtCopy = 1
+		disableHideAtCopy = 0
+	}
+	# disable copy and so on
+	table.tt_address {
+		disablePrependAtCopy = 1
+		disableHideAtCopy = 0
+	}
+}
+
+# Configure the page module
+mod.web_layout {
+
+	# Remove buttons that clutter the page module UI as well as the searchbox that often doesn't work correctly.
+	disableSearchBox = 1
+	disableBigButtons = 1
+	disableIconToolbar = 0
+
+	# Disable useless page module views
+	function {
+		// Disable QuickEdit view. Does anyone actually use this confusing interface?
+		0 = 0
+		// Enable columns view
+	  	1 = 1
+		// Enable languages view (it will be hidden on sites without multiple languages)
+		2 = 1
+		// Disable page information view, which is next-to-useless and ought to be incorporated into the info module (or vice versa)
+		3 = 0
+		// Enable the grid view
+		4 = 1
+	}
+
+}
+
+# Configure the list module
+mod.web_list {
+	# Hide records that are handled via relations or IRRE
+	hideTables = tx_shorts_domain_model_url
+}

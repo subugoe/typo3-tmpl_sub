@@ -1,0 +1,84 @@
+plugin.tx_linkhandler {
+	#adressen
+	tt_address {
+		title = TEXT
+		title.data = field:name
+		forceLink = 1
+		parameter = {$singleview.adressen}
+		additionalParams = &tx_substaff_persondetails[person]={field:uid}
+		additionalParams.insertData = 1
+		useCacheHash = 1
+	}
+	#fakultaeten
+	tx_standorte_domain_model_fakultaet {
+		title = TEXT
+		title.data = field:titel
+		forceLink = 1
+		parameter = {$singleview.fakultaeten}
+		additionalParams = &tx_standorte_pi1[fakultaet]={field:uid}&tx_standorte_pi1[action]=single&tx_standorte_pi1[controller]=Fakultaet
+		additionalParams.insertData = 1
+		useCacheHash = 1
+	}
+	#bibliotheken
+	tx_standorte_domain_model_bibliothek {
+		title = TEXT
+		title.data = field:titel
+		forceLink = 1
+		parameter = {$singleview.bibliotheken}
+		additionalParams = &tx_standorte_pi1[bibliothek]={field:uid}&tx_standorte_pi1[action]=single&tx_standorte_pi1[controller]=Bibliothek
+		additionalParams.insertData = 1
+		useCacheHash = 1
+	}
+	#projekte
+	tx_nkwsubfeprojects_project {
+		title = TEXT
+		title.data = field:title
+		forceLink = 1
+		parameter = {$singleview.projekte}
+		additionalParams = &tx_nkwsubfeprojects_pi2[project]={field:uid}
+		additionalParams.insertData = 1
+		useCacheHash = 1
+	}
+	#adressgruppen
+	tt_address_group {
+		title = TEXT
+		title.data = field:title
+		forceLink = 1
+		parameter = {$singleview.abteilungen}
+		additionalParams = &tx_substaff_groupdetails[group]={field:uid}
+		additionalParams.insertData = 1
+		useCacheHash = 1
+	}
+	#Buchpatenschaften
+	tx_patenschaften_buecher {
+		title = TEXT
+		title.data = field:titel
+		forceLink = 1
+		parameter = {$singleview.patenschaften.buecher}
+		additionalParams = &tx_patenschaften_pi1[showBook]={field:uid}
+		additionalParams.insertData = 1
+		useCacheHash = 1
+	}
+	#Buchpatenschaftenkategorien
+	tx_patenschaften_kategorien {
+		title = TEXT
+		title.data = field:catname
+		forceLink = 1
+		parameter = {$singleview.patenschaften.kategorien}
+		additionalParams = &tx_patenschaften_pi1[showKat]={field:uid}
+		additionalParams.insertData = 1
+		useCacheHash = 1
+	}
+
+	#Schulungen
+	tx_schulungen_domain_model_schulung {
+		title = TEXT
+		title.data = field:titel
+		forceLink = 1
+		parameter = {$singleview.schulungen}
+		additionalParams = &tx_schulungen_schulungen[schulung]={field:uid}&tx_schulungen_schulungen[action]=show&tx_schulungen_schulungen[controller]=Schulung
+		additionalParams.insertData = 1
+		useCacheHash = 1
+	}
+
+}

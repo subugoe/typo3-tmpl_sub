@@ -1,0 +1,66 @@
+
+/* Pazpar2 */
+.pz2-pager .pz2-pageNumbers{
+	margin-right: 0 !important;
+}
+
+#pazpar2 {
+	color: $darkgrey;
+	#pz2-results{
+		/* margin-right: 220px;*/
+		ol.pz2-resultList {
+			.pz2-details {
+				li {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+	.pz2-fieldsets fieldset {
+		position: relative;
+		border: 1px solid #CCC;
+		margin: 8px 0 0 0;
+	/*  float: left;
+		margin: 0px 16px 8px 0;
+		min-width: 364px; */
+	}
+	.pz2-fieldsets legend {
+		margin-left: 6px;
+		padding: 0 0 0 4px;
+	}
+	.pz2-fieldsets ul {
+		padding: 0 !important;
+	}
+	.pz2-fieldset-replacement {
+		margin-left: -12px;
+		font-weight: bold;
+	}
+	.pz2-recordLink{
+		border-bottom: 0!important;
+	}
+	.pz2-progressIndicator {
+		display:none;
+	}
+	ul li{
+		list-style-type: none !important;
+		list-style-image: none !important;
+	}
+	.pz2-resultList {
+		li {
+			line-height: 130%;
+			list-style-image: none !important;
+		}
+	}
+	a {
+		border-bottom: 0!important;
+	}
+}
+
+.pz2-neuerwerbungen {
+	#pz2-results{
+		margin-right: 0!important;
+	}
+	#pz2-termLists {
+		display:none;
+	}
+}
