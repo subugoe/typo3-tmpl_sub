@@ -1,3 +1,12 @@
+@mixin submenuHighlight($percent) {
+	width: $percent;
+	color: $white !important;
+	background-image: url($arrowLink);
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 2%;
+}
+
 .submenu {
 	max-width: 100%;
 	ul {
@@ -70,12 +79,20 @@
 		a {
 			padding: 0 6px 0 1.5em;
 			@include adjust-font-size-to($base-font-size);
+			&.submenu-highlight {
+				padding: 0 6px 0 1.5em;
+				@include submenuHighlight(94%);
+			}
 		}
 	}
 	.submenu-l4 {
 		a {
 			padding: 0 6px 0 2.5em;
 			@include adjust-font-size-to($base-font-size);
+			&.submenu-highlight {
+				padding: 0 6px 0 2.5em;
+				@include submenuHighlight(87%);
+			}
 		}
 	}
 	.submenu-trigger {

@@ -903,10 +903,28 @@ footer #fright div, #footer #fright div {
   font-size: 1em;
   line-height: 1.5em;
 }
+.submenu .submenu-l3 a.submenu-highlight {
+  padding: 0 6px 0 1.5em;
+  width: 94%;
+  color: white !important;
+  background-image: url("/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right_2.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-right: 2%;
+}
 .submenu .submenu-l4 a {
   padding: 0 6px 0 2.5em;
   font-size: 1em;
   line-height: 1.5em;
+}
+.submenu .submenu-l4 a.submenu-highlight {
+  padding: 0 6px 0 2.5em;
+  width: 87%;
+  color: white !important;
+  background-image: url("/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right_2.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-right: 2%;
 }
 .submenu .submenu-trigger a {
   font-weight: bold;
@@ -1390,16 +1408,6 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 }
 #pazpar2 a {
   border-bottom: 0!important;
-}
-#pazpar2 .id-neaac2000 {
-    float: right;
-    width: 350px;
-}
-#pazpar2 .id-neaac3000 {
-    display: none;
-}
-#pazpar2 .id-neaac4000, #pazpar2 .id-neaac5000 {
-    width: 350px;
 }
 
 .pz2-neuerwerbungen #pz2-results {
