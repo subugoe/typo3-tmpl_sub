@@ -4,6 +4,13 @@
 		padding: 0 !important;
 		margin: 0 !important;
 		@include no-bullets;
+		&.submenu-l1 {
+			ul {
+				&.js {
+					display: none;
+				}
+			}
+		}
 	}
 	a {
 		display: block;

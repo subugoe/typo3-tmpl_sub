@@ -1,0 +1,55 @@
+#centercontent {
+	padding: 0 2% 1% 2%;
+	width: 56%;
+	float: left;
+	//@include adjust-font-size-to($base-font-size * 1.2);
+	font-size: 1.2em;
+	line-height: 1.8em;
+	&.fullwidth {
+		width: 76%;
+	}
+	a {
+		text-decoration: underline;
+	}
+	ul {
+		padding-left: 2em;
+		li {
+			list-style-image: url($bulletImage);
+		}
+	}
+	.tx-ttaddress-pi1 {
+		width: 85%;
+		.singleAddress {
+			margin-bottom: 10px;
+			h3 {
+				padding: 0;
+			}
+			span {
+				@include adjust-font-size-to($base-font-size);
+			}
+		}
+		 img {
+			padding: 0 0 5px 0;
+			.photo {
+				float: right;
+			}
+		}
+		ul {
+			list-style-image: none;
+			list-style-type: none;
+			padding: 5px 5px 0 0;
+			margin: 0;
+			font-weight: normal;
+			li {
+				list-style-image: none;
+				list-style-type: none;
+			}
+		}
+	}
+	#infocontent {
+		@include adjust-font-size-to($base-font-size * 0.8);
+	}
+	#q {
+		width: 37.9em;
+	 }
+}

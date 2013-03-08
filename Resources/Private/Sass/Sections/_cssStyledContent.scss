@@ -1,0 +1,33 @@
+.csc-textpic-caption {
+	@include adjust-font-size-to($base-font-size * 0.6);
+	max-width: 120px;
+}
+
+.csc-textpic-intext-left {
+	img {
+		padding-bottom: 0;
+		margin: 5px 0 0 0;
+		max-width: 100%;
+	}
+	ol {
+		padding-left: 20px !important;
+	}
+	ul {
+		padding-left: 20px !important;
+	}
+	.csc-textpic-caption {
+		padding: 2px 0;
+		text-align: left;
+	}
+}
+
+.csc-textpic-intext-right {
+    img {
+		padding-bottom: 0;
+		margin: 5px 0 0 0;
+	}
+	.csc-textpic-caption {
+		padding: 2px 0 2px 0;
+		text-align: left;
+	}
+}

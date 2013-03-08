@@ -1,0 +1,72 @@
+#middle {
+	a {
+		text-decoration: none;
+	}
+	p {
+		@include adjust-font-size-to($base-font-size );
+	}
+	p > p {
+		@include adjust-font-size-to($base-font-size );
+		@include trailer(0.5);
+	}
+	h1 {
+		color: $darkblue;
+		font-size: 1.5em;
+		line-height: 1.5em;
+		margin-bottom: 0.5em;
+	}
+	h2 {
+		color: $darkblue;
+		font-size: 1.3em;
+		line-height: 1.3em;
+		margin-bottom: 0.5em;
+	}
+	h3 {
+		color: $darkblue;
+		@include adjust-font-size-to($base-font-size * 1.167);
+	}
+	h4 {
+		color: $darkblue;
+		@include adjust-font-size-to($base-font-size);
+		font-weight: bold;
+	}
+	h5 {
+		color: $darkblue;
+		@include adjust-font-size-to($base-font-size);
+		font-weight: normal;
+	}
+	ol {
+		margin-left: 2em;
+		@include trailer(0.5);
+		list-style-type: decimal;
+	}
+	table {
+		caption {
+			padding: 0 0 10px 0;
+		}
+	}
+	.csc-caption {
+		padding: 0;
+	}
+	.karte {
+		display: none;
+	}
+	.formButton {
+		width: auto;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
+		@include border-radius(3px);
+		background: url($buttonBackground) repeat-x scroll 0 100% #f3f6fb;
+		margin-left: 0;
+		font-weight: bold;
+		text-align: center;
+		text-decoration: none;
+		text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+		text-transform: uppercase;
+		line-height: 100%;
+		padding: 3px 12px!important;
+		height: 28px;
+		color: $darkgrey;
+	}
+}
