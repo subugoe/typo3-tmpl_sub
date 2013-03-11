@@ -1,4 +1,4 @@
-#centercontent {
+.centercontent {
 	padding: 0 2% 1% 2%;
 	width: 56%;
 	float: left;
@@ -46,7 +46,7 @@
 			}
 		}
 	}
-	#infocontent {
+	.infocontent {
 		@include adjust-font-size-to($base-font-size * 0.8);
 	}
 	#q {

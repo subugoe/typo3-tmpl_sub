@@ -162,7 +162,7 @@ a.skip:focus, a.skip:active {
   width: auto;
   color: #000;
   background-color: #eee;
-  outline: 1px solid #999999;
+  outline: 1px solid #999;
 }
 
 address {
@@ -180,11 +180,11 @@ fieldset .powermail_check_inner label, fieldset .powermail_radio_inner label, fi
   float: none;
   display: inline;
   font-weight: normal;
-  margin-left: 0!important;
+  margin-left: 0 !important;
   width: 435px;
 }
 fieldset.tx-powermail-pi1_fieldset {
-  background-color: white!important;
+  background-color: white !important;
   padding: 0 !important;
 }
 
@@ -371,7 +371,7 @@ table .tr-0 {
   cursor: help;
 }
 
-#menubox {
+.menubox {
   max-width: 200px;
   float: left;
   max-width: 200px;
@@ -379,17 +379,17 @@ table .tr-0 {
   width: 20%;
 }
 
-#unilogo {
+.unilogo {
   max-width: 100%;
   text-align: center;
 }
-#unilogo img {
+.unilogo img {
   margin: 10px 0;
   width: auto;
   height: auto;
 }
 
-#werbung {
+.werbung {
   padding: 20px 0;
 }
 
@@ -439,62 +439,62 @@ header#header #logo {
   color: white;
 }
 
-#middle a {
+.middle a {
   text-decoration: none;
 }
-#middle p {
+.middle p {
   font-size: 1em;
   line-height: 1.5em;
 }
-#middle p > p {
+.middle p > p {
   font-size: 1em;
   line-height: 1.5em;
   margin-bottom: 0.75em;
 }
-#middle h1 {
+.middle h1 {
   color: #1a3771;
   font-size: 1.5em;
   line-height: 1.5em;
   margin-bottom: 0.5em;
 }
-#middle h2 {
+.middle h2 {
   color: #1a3771;
   font-size: 1.3em;
   line-height: 1.3em;
   margin-bottom: 0.5em;
 }
-#middle h3 {
+.middle h3 {
   color: #1a3771;
   font-size: 1.167em;
   line-height: 2.57069em;
 }
-#middle h4 {
+.middle h4 {
   color: #1a3771;
   font-size: 1em;
   line-height: 1.5em;
   font-weight: bold;
 }
-#middle h5 {
+.middle h5 {
   color: #1a3771;
   font-size: 1em;
   line-height: 1.5em;
   font-weight: normal;
 }
-#middle ol {
+.middle ol {
   margin-left: 2em;
   margin-bottom: 0.75em;
   list-style-type: decimal;
 }
-#middle table caption {
+.middle table caption {
   padding: 0 0 10px 0;
 }
-#middle .csc-caption {
+.middle .csc-caption {
   padding: 0;
 }
-#middle .karte {
+.middle .karte {
   display: none;
 }
-#middle .formButton {
+.middle .formButton {
   width: auto;
   border-width: 1px;
   border-style: solid;
@@ -555,7 +555,7 @@ header#header #logo {
 }
 #contentbox .gokContainer ul {
   margin-left: 0;
-  padding-left: 0!important;
+  padding-left: 0 !important;
   margin-top: 0;
   padding-bottom: 0;
 }
@@ -575,7 +575,7 @@ header#header #logo {
   text-decoration: none;
 }
 
-#infocontent {
+.infocontent {
   font-size: 1em;
   line-height: 1.5em;
   float: right;
@@ -583,7 +583,7 @@ header#header #logo {
   color: #434343;
   background-color: #dee1e7;
 }
-#infocontent h1, #infocontent h2, #infocontent h6 {
+.infocontent h1, .infocontent h2, .infocontent h6 {
   background-color: #6e7fa0;
   color: white;
   font-size: 1em;
@@ -592,31 +592,31 @@ header#header #logo {
   font-weight: bold;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
-#infocontent ul {
+.infocontent ul {
   margin-top: 8px;
   padding: 5px 5px 0 20px;
 }
-#infocontent ul li {
+.infocontent ul li {
   list-style-image: url("/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right.png");
 }
-#infocontent ul li img {
+.infocontent ul li img {
   margin-top: 8px;
 }
-#infocontent .csc-default p {
+.infocontent .csc-default p {
   background-color: #dee1e7;
   padding: 5px 0;
 }
-#infocontent .csc-default p.bodytext {
+.infocontent .csc-default p.bodytext {
   padding: 5px 5px 5px 10px;
 }
-#infocontent .tx-ttaddress-pi1, #infocontent .tx-substaff {
+.infocontent .tx-ttaddress-pi1, .infocontent .tx-substaff {
   background-color: #dee1e7;
   padding: 5px 10px;
   -moz-border-radius-bottomleft: 7px;
   -webkit-border-bottom-left-radius: 7px;
   border-bottom-left-radius: 7px;
 }
-#infocontent .tx-ttaddress-pi1 h1, #infocontent .tx-ttaddress-pi1 h2, #infocontent .tx-substaff h1, #infocontent .tx-substaff h2 {
+.infocontent .tx-ttaddress-pi1 h1, .infocontent .tx-ttaddress-pi1 h2, .infocontent .tx-substaff h1, .infocontent .tx-substaff h2 {
   margin: 0;
   padding: 5px;
   background-color: #6e7fa0;
@@ -627,34 +627,34 @@ header#header #logo {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
   font-weight: bold;
 }
-#infocontent .tx-ttaddress-pi1 h3, #infocontent .tx-substaff h3 {
+.infocontent .tx-ttaddress-pi1 h3, .infocontent .tx-substaff h3 {
   padding: 0 !important;
   font-weight: bold;
   font-size: 1em;
   line-height: 1.5em;
 }
-#infocontent .tx-ttaddress-pi1 img.photo, #infocontent .tx-substaff img.photo {
+.infocontent .tx-ttaddress-pi1 img.photo, .infocontent .tx-substaff img.photo {
   width: 100.01%;
   height: auto;
   padding-top: 5px;
 }
-#infocontent .tx-ttaddress-pi1 ul, #infocontent .tx-substaff ul {
+.infocontent .tx-ttaddress-pi1 ul, .infocontent .tx-substaff ul {
   list-style-image: none;
   list-style: none;
   padding: 5px 5px 0 0;
   margin: 0 0 10px 0;
   font-weight: normal;
 }
-#infocontent .tx-ttaddress-pi1 ul li, #infocontent .tx-substaff ul li {
+.infocontent .tx-ttaddress-pi1 ul li, .infocontent .tx-substaff ul li {
   list-style-image: none;
   list-style-type: none;
   margin-left: 0;
 }
-#infocontent .tx-ttaddress-pi1 ul li, #infocontent .tx-substaff ul li {
+.infocontent .tx-ttaddress-pi1 ul li, .infocontent .tx-substaff ul li {
   list-style-image: none;
   list-style-type: none;
 }
-#infocontent .tx-ttaddress-pi1 .singleAddress, #infocontent .tx-substaff .singleAddress {
+.infocontent .tx-ttaddress-pi1 .singleAddress, .infocontent .tx-substaff .singleAddress {
   margin-bottom: 10px;
 }
 
@@ -679,60 +679,60 @@ header#header #logo {
   content: "";
 }
 
-#centercontent {
+.centercontent {
   padding: 0 2% 1% 2%;
   width: 56%;
   float: left;
   font-size: 1.2em;
   line-height: 1.8em;
 }
-#centercontent.fullwidth {
+.centercontent.fullwidth {
   width: 76%;
 }
-#centercontent a {
+.centercontent a {
   text-decoration: underline;
 }
-#centercontent ul {
+.centercontent ul {
   padding-left: 2em;
 }
-#centercontent ul li {
+.centercontent ul li {
   list-style-image: url("/typo3conf/ext/tmpl_sub/Resources/Public/Img/bullet.png");
 }
-#centercontent .tx-ttaddress-pi1 {
+.centercontent .tx-ttaddress-pi1 {
   width: 85%;
 }
-#centercontent .tx-ttaddress-pi1 .singleAddress {
+.centercontent .tx-ttaddress-pi1 .singleAddress {
   margin-bottom: 10px;
 }
-#centercontent .tx-ttaddress-pi1 .singleAddress h3 {
+.centercontent .tx-ttaddress-pi1 .singleAddress h3 {
   padding: 0;
 }
-#centercontent .tx-ttaddress-pi1 .singleAddress span {
+.centercontent .tx-ttaddress-pi1 .singleAddress span {
   font-size: 1em;
   line-height: 1.5em;
 }
-#centercontent .tx-ttaddress-pi1 img {
+.centercontent .tx-ttaddress-pi1 img {
   padding: 0 0 5px 0;
 }
-#centercontent .tx-ttaddress-pi1 img .photo {
+.centercontent .tx-ttaddress-pi1 img .photo {
   float: right;
 }
-#centercontent .tx-ttaddress-pi1 ul {
+.centercontent .tx-ttaddress-pi1 ul {
   list-style-image: none;
   list-style-type: none;
   padding: 5px 5px 0 0;
   margin: 0;
   font-weight: normal;
 }
-#centercontent .tx-ttaddress-pi1 ul li {
+.centercontent .tx-ttaddress-pi1 ul li {
   list-style-image: none;
   list-style-type: none;
 }
-#centercontent #infocontent {
+.centercontent .infocontent {
   font-size: 0.8em;
   line-height: 1.875em;
 }
-#centercontent #q {
+.centercontent #q {
   width: 37.9em;
 }
 
@@ -754,39 +754,39 @@ footer a, #footer a {
 footer a:hover, #footer a:hover {
   text-decoration: underline;
 }
-footer #fleft, #footer #fleft {
+footer .footerleft, #footer .footerleft {
   float: left;
 }
-footer #fright, #footer #fright {
+footer .footerright, #footer .footerright {
   float: right;
 }
-footer #fright div, #footer #fright div {
+footer .footerright div, #footer .footerright div {
   display: inline;
 }
 
-#bottom li {
+.bottom li {
   list-style-type: none;
 }
-#bottom a {
+.bottom a {
   text-decoration: none;
   color: #1a3771;
 }
-#bottom a:hover {
+.bottom a:hover {
   text-decoration: underline;
 }
-#bottom .bottommenu {
+.bottom .bottommenu {
   float: left;
   margin-top: 5px;
   padding: 5px 0.5% 5px 0.5%;
   width: 24%;
 }
-#bottom .bottommenu .highlight {
+.bottom .bottommenu .highlight {
   font-size: 1.1em;
   line-height: 1.36364em;
   color: #434343;
   font-weight: bold;
 }
-#bottom .bottommenu ul {
+.bottom .bottommenu ul {
   margin-top: 5px;
 }
 
@@ -978,7 +978,7 @@ footer #fright div, #footer #fright div {
   background-color: #dee1e7;
 }
 .tx-nkwsubmenu-pi2 #tx-nkwsubmenu-pi2-imagelist img {
-  border: 1px solid black;
+  border: 1px solid #000;
   margin-bottom: 2px;
 }
 .tx-nkwsubmenu-pi2 #tx-nkwsubmenu-pi2-contentlist {
@@ -1025,13 +1025,13 @@ footer #fright div, #footer #fright div {
   left: 0 !important;
   margin-left: 0;
   background-color: white;
-  z-index: 9999!important;
+  z-index: 9999 !important;
   padding-left: 18px;
   border-bottom: 1px solid #6e7fa0;
   border-right: 1px solid #6e7fa0;
   border-left: 1px solid #6e7fa0;
-  width: 380px!important;
-  margin-top: 3px!important;
+  width: 380px !important;
+  margin-top: 3px !important;
   padding-top: 7px;
   -webkit-border-radius: 0 0 7px 7px;
   -moz-border-radius: 0 0 7px 7px;
@@ -1045,7 +1045,7 @@ footer #fright div, #footer #fright div {
   font-weight: bold;
 }
 #tx-solr-search-form-pi-results ul a.ui-corner-all {
-  border: 0!important;
+  border: 0 !important;
 }
 #tx-solr-search-form-pi-results .tx-solr-q {
   width: 400px;
@@ -1058,8 +1058,8 @@ footer #fright div, #footer #fright div {
 }
 
 .results-topic a {
-  border-bottom: none!important;
-  text-decoration: none!important;
+  border-bottom: none !important;
+  text-decoration: none !important;
   font-weight: bold;
 }
 
@@ -1144,7 +1144,7 @@ footer #fright div, #footer #fright div {
 .tx-solr-relevance-bar {
   width: 100px;
   height: 5px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   font-size: 1px;
   padding: 1px;
   top: -7px;
@@ -1348,7 +1348,7 @@ span.powermail_mandatory {
 }
 
 fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fieldset input:focus:not([type="submit"]) {
-  background: none repeat scroll 0 0 white;
+  background: none repeat scroll 0 0 #FFFFFF;
   border: 1px solid #434343;
   box-shadow: none;
   color: #434343;
@@ -1375,7 +1375,7 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 }
 #pazpar2 .pz2-fieldsets fieldset {
   position: relative;
-  border: 1px solid #cccccc;
+  border: 1px solid #CCC;
   margin: 8px 0 0 0;
   /*  float: left;
   	margin: 0px 16px 8px 0;
@@ -1393,7 +1393,7 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
   font-weight: bold;
 }
 #pazpar2 .pz2-recordLink {
-  border-bottom: 0!important;
+  border-bottom: 0 !important;
 }
 #pazpar2 .pz2-progressIndicator {
   display: none;
@@ -1407,11 +1407,11 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
   list-style-image: none !important;
 }
 #pazpar2 a {
-  border-bottom: 0!important;
+  border-bottom: 0 !important;
 }
 
 .pz2-neuerwerbungen #pz2-results {
-  margin-right: 0!important;
+  margin-right: 0 !important;
 }
 .pz2-neuerwerbungen #pz2-termLists {
   display: none;
@@ -1445,7 +1445,7 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 }
 
 .gokContainer.tree a .GOKID, .gokContainer.tree ul .rootNode .GOKID {
-  left: -2.5em!important;
+  left: -2.5em !important;
 }
 
 .tx-pagebrowse-pages ol li {
@@ -1464,7 +1464,7 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 .tx-nkwgmaps-border {
   width: 100%;
   height: 500px;
-  border: 1px solid #999999;
+  border: 1px solid #999;
 }
 
 .tx-nkwgmaps-directionspanel {
@@ -1519,13 +1519,13 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
   color: #dedede;
 }
 .tx_nkwkeywords .sub-az .letterNavi a {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 .substaff-contact {
   font-size: 1em;
   line-height: 1.5em;
-  margin-left: 0!important;
+  margin-left: 0 !important;
   color: #434343;
   margin-bottom: 21px;
 }
@@ -1534,11 +1534,11 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 }
 .substaff-contact li {
   list-style-type: none;
-  list-style-image: none!important;
+  list-style-image: none !important;
 }
 
 .news .news-latest-container {
-  padding: 0!important;
+  padding: 0 !important;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.16em;
   line-height: 1.2931em;
