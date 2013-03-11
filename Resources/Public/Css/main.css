@@ -867,8 +867,9 @@ footer .footerright div, #footer .footerright div {
   background-color: transparent;
 }
 .submenu .submenu-l2 a {
-  padding: 1px 6px;
+  padding: 0.3em 6px;
   color: #1a3771;
+  line-height: 1.3em;
   font-weight: normal;
 }
 .submenu .submenu-l2 a:visited {
@@ -884,7 +885,8 @@ footer .footerright div, #footer .footerright div {
   color: white;
 }
 .submenu .submenu-l2 a.submenu-highlight {
-  padding: 1px 5px;
+  line-height: 1.3em;
+  padding: 0.3em 5px;
 }
 .submenu .submenu-l2 li {
   background-color: #dee1e7;
@@ -1406,6 +1408,16 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 }
 #pazpar2 a {
   border-bottom: 0 !important;
+}
+#pazpar2 .id-neaac2000 {
+  float: right;
+  width: 350px;
+}
+#pazpar2 .id-neaac3000 {
+  display: none;
+}
+#pazpar2 .id-neaac4000, #pazpar2 .id-neaac5000 {
+  width: 350px;
 }
 
 .pz2-neuerwerbungen #pz2-results {
