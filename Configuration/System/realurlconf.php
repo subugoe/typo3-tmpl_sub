@@ -220,24 +220,9 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 							'spaceCharacter' => '-',
 						),
 					),
-
 				),
 			),
 			'bibliothek' => array(
-				array(
-					'GETvar' => 'tx_standorte_pi1[bibliothek]',
-					'lookUpTable' => array(
-						'table' => 'tx_standorte_domain_model_bibliothek',
-						'id_field' => 'uid',
-						'alias_field' => 'titel',
-						'addWhereClause' => ' AND NOT deleted',
-						'useUniqueCache' => 1,
-						'useUniqueCache_conf' => array(
-							'strtolower' => 1,
-							'spaceCharacter' => '-',
-						),
-					),
-				),
 				array(
 					'GETvar' => 'tx_standorte_showlibrary[bibliothek]',
 					'lookUpTable' => array(
@@ -257,7 +242,20 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 						'languageExceptionUids' => '',
 						'languageField' => 'sys_language_uid',
 						'transOrigPointerField' => 'l10n_parent',
-
+					),
+				),
+				array(
+					'GETvar' => 'tx_standorte_pi1[bibliothek]',
+					'lookUpTable' => array(
+						'table' => 'tx_standorte_domain_model_bibliothek',
+						'id_field' => 'uid',
+						'alias_field' => 'titel',
+						'addWhereClause' => ' AND NOT deleted',
+						'useUniqueCache' => 1,
+						'useUniqueCache_conf' => array(
+							'strtolower' => 1,
+							'spaceCharacter' => '-',
+						),
 					),
 				),
 			),
