@@ -77,20 +77,20 @@
 	}
 	.submenu-l3 {
 		a {
-			padding: 0 6px 0 1.5em;
-			@include adjust-font-size-to($base-font-size);
+			padding: 0.2em 6px 0.2em 1.5em;
+			line-height: 1.2em;
 			&.submenu-highlight {
-				padding: 0 6px 0 1.5em;
+				padding: 0.2em 6px 0.2em 1.5em;
 				@include submenuHighlight(94%);
 			}
 		}
 	}
 	.submenu-l4 {
 		a {
-			padding: 0 6px 0 2.5em;
-			@include adjust-font-size-to($base-font-size);
+			padding: 0.2em 6px 0.2em 2.5em;
+			line-height: 1.2em;
 			&.submenu-highlight {
-				padding: 0 6px 0 2.5em;
+				padding: 0.2em 6px 0.2em 2.5em;
 				@include submenuHighlight(87%);
 			}
 		}

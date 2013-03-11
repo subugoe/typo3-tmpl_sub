@@ -899,12 +899,11 @@ footer .footerright div, #footer .footerright div {
   background-color: transparent;
 }
 .submenu .submenu-l3 a {
-  padding: 0 6px 0 1.5em;
-  font-size: 1em;
-  line-height: 1.5em;
+  padding: 0.2em 6px 0.2em 1.5em;
+  line-height: 1.2em;
 }
 .submenu .submenu-l3 a.submenu-highlight {
-  padding: 0 6px 0 1.5em;
+  padding: 0.2em 6px 0.2em 1.5em;
   width: 94%;
   color: white !important;
   background-image: url("/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right_2.svg");
@@ -913,12 +912,11 @@ footer .footerright div, #footer .footerright div {
   padding-right: 2%;
 }
 .submenu .submenu-l4 a {
-  padding: 0 6px 0 2.5em;
-  font-size: 1em;
-  line-height: 1.5em;
+  padding: 0.2em 6px 0.2em 2.5em;
+  line-height: 1.2em;
 }
 .submenu .submenu-l4 a.submenu-highlight {
-  padding: 0 6px 0 2.5em;
+  padding: 0.2em 6px 0.2em 2.5em;
   width: 87%;
   color: white !important;
   background-image: url("/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right_2.svg");
