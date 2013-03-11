@@ -1,7 +1,4 @@
 .middle {
-	a {
-		text-decoration: none;
-	}
 	p {
 		@include adjust-font-size-to($base-font-size );
 	}

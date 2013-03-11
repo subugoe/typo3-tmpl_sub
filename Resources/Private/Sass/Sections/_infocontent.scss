@@ -2,9 +2,15 @@
 .infocontent{
 	@include adjust-font-size-to($base-font-size);
 	float: right;
-	width: 20%;
+	width: 26%;
 	color: $darkgrey;
 	background-color: $lightgrey;
+	a {
+		text-decoration: none;
+	}
+	p {
+		padding: 0.5em 0.75em;
+	}
 	h1, h2, h6 {
 		background-color: $bluegrey;
 		color: $white;
