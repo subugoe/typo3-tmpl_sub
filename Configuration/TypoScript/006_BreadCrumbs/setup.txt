@@ -26,7 +26,7 @@ lib.rootline.10 {
 
 # Project
 [globalVar = GP:tx_nkwsubfeprojects_pi2|project > 0]
-	lib.rootline.10.special.range = 0|-1
+	lib.rootline.10.special.range = 0|-2
 	lib.rootline.20 = RECORDS
 	lib.rootline.20 {
 		dontCheckPid = 1
