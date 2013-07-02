@@ -487,6 +487,9 @@ header#header #logo {
 }
 .middle table caption {
   padding: 0 0 10px 0;
+  font-weight: bold;
+  color: #434343;
+  font-size: 100%;
 }
 .middle .csc-caption {
   padding: 0;
