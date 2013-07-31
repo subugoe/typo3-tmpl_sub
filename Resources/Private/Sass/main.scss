@@ -36,14 +36,9 @@
 @import "Sections/substaff";
 @import "Sections/news";
 
-//@import "Sections/_responsive";
-
-// Abstaende Startseite ohne Newsmodul WWW-1057
-#page-1 {
-	#centercontent {
-		.csc-default {
-			margin-bottom: 24px;
-		}
+#centercontent {
+	.csc-default {
+		margin-bottom: 24px;
 	}
 }
 
