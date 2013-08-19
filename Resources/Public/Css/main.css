@@ -1415,8 +1415,9 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 #pazpar2 .id-neaac2000 {
   float: right;
   width: 350px;
+  margin: 0 0 0 10px !important;
 }
-#pazpar2 .id-neaac4000, #pazpar2 .id-neaac5000 {
+#pazpar2 .id-neaac4000, #pazpar2 .id-neaac5000, #pazpar2 .id-neaac3000 {
   width: 350px;
 }
 
