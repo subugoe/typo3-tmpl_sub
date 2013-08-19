@@ -5,9 +5,6 @@
 	ol {
 		margin-left: 1.3em;
 		li {
-			a {
-				text-decoration: none;
-			}
 			display: inline;
 			&:after {
 				content: " » ";

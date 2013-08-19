@@ -59,7 +59,6 @@ module.exports = function (grunt) {
 
 	// Default task, der ausgeführt wird, wenn man Grunt ohne weitere Parameter aufruft.
 	grunt.registerTask('default', 'coffee compass lint concat min');
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-coffee');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-compass');
+	grunt.loadNpmTasks('grunt-coffee');
 };

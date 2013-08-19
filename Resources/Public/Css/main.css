@@ -439,6 +439,9 @@ header#header #logo {
   color: white;
 }
 
+.middle a {
+  text-decoration: none;
+}
 .middle p {
   font-size: 1em;
   line-height: 1.5em;
@@ -538,6 +541,10 @@ header#header #logo {
   color: #434343;
   margin-bottom: 0.75em;
 }
+#contentbox ul li {
+  font-size: 1em;
+  line-height: 1.5em;
+}
 #contentbox p {
   margin-bottom: 0.75em;
   color: #434343;
@@ -575,15 +582,9 @@ header#header #logo {
   font-size: 1em;
   line-height: 1.5em;
   float: right;
-  width: 26%;
+  width: 20%;
   color: #434343;
   background-color: #dee1e7;
-}
-.infocontent a {
-  text-decoration: none;
-}
-.infocontent p {
-  padding: 0.5em 0.75em;
 }
 .infocontent h1, .infocontent h2, .infocontent h6 {
   background-color: #6e7fa0;
@@ -599,8 +600,6 @@ header#header #logo {
   padding: 5px 5px 0 20px;
 }
 .infocontent ul li {
-  font-size: 1em;
-  line-height: 1.5em;
   list-style-image: url("/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right.png");
 }
 .infocontent ul li img {
@@ -673,9 +672,6 @@ header#header #logo {
 #pathline ol li {
   display: inline;
 }
-#pathline ol li a {
-  text-decoration: none;
-}
 #pathline ol li:after {
   content: " » ";
 }
@@ -687,8 +683,8 @@ header#header #logo {
 }
 
 .centercontent {
-  padding: 0 0 1% 2%;
-  width: 78%;
+  padding: 0 2% 1% 2%;
+  width: 56%;
   float: left;
   font-size: 1.2em;
   line-height: 1.8em;
@@ -696,11 +692,7 @@ header#header #logo {
 .centercontent.fullwidth {
   width: 76%;
 }
-.centercontent .smallWidth {
-  width: 72%;
-  float: left;
-}
-.centercontent .content a {
+.centercontent a {
   text-decoration: underline;
 }
 .centercontent ul {
@@ -839,7 +831,6 @@ footer .footerright div, #footer .footerright div {
   display: block;
   padding: 3px 6px;
   color: white;
-  text-decoration: none;
 }
 .submenu a:visited {
   color: white;
@@ -1424,6 +1415,9 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 #pazpar2 .id-neaac2000 {
   float: right;
   width: 350px;
+}
+#pazpar2 .id-neaac3000 {
+  display: none;
 }
 #pazpar2 .id-neaac4000, #pazpar2 .id-neaac5000 {
   width: 350px;
