@@ -1416,9 +1416,6 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
   float: right;
   width: 350px;
 }
-#pazpar2 .id-neaac3000 {
-  display: none;
-}
 #pazpar2 .id-neaac4000, #pazpar2 .id-neaac5000 {
   width: 350px;
 }
