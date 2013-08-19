@@ -1421,6 +1421,13 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 #pazpar2 a {
   border-bottom: 0 !important;
 }
+#pazpar2 .neaac2000 {
+  float: right;
+  width: 350px;
+}
+#pazpar2 .neaac4000, #pazpar2 .neaac5000 {
+  width: 350px;
+}
 
 .pz2-neuerwerbungen #pz2-results {
   margin-right: 0 !important;
