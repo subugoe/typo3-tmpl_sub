@@ -2,9 +2,15 @@
 .infocontent{
 	@include adjust-font-size-to($base-font-size);
 	float: right;
-	width: 20%;
+	width: 26%;
 	color: $darkgrey;
 	background-color: $lightgrey;
+	a {
+		text-decoration: none;
+	}
+	p {
+		padding: 0.5em 0.75em;
+	}
 	h1, h2, h6 {
 		background-color: $bluegrey;
 		color: $white;
@@ -17,6 +23,7 @@
 		margin-top: 8px;
 		padding: 5px 5px 0 20px;;
 		li {
+			@include adjust-font-size-to($base-font-size);
 			list-style-image: url($arrowSmall);
 			img {
 				margin-top: 8px;
