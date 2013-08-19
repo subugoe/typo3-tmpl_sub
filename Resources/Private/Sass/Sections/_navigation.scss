@@ -56,11 +56,13 @@
 	}
 	.submenu-l2 {
 		a {
-			padding: 1px 6px;
+			padding: 0.3em 6px;
 			@include link-colors($darkblue, $white, $white, $darkblue, $white);
+			line-height: 1.3em;
 			font-weight: normal;
 			&.submenu-highlight {
-				padding: 1px 5px;
+				line-height: 1.3em;
+				padding: 0.3em 5px;
 			}
 		}
 		li {

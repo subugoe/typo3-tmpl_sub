@@ -24,6 +24,7 @@ lib.rootline.10 {
 	}
 }
 
+# Project
 [globalVar = GP:tx_nkwsubfeprojects_pi2|project > 0]
 	lib.rootline.10.special.range = 0|-2
 	lib.rootline.20 = RECORDS
@@ -44,7 +45,7 @@ lib.rootline.10 {
 	}
 [end]
 
-
+# Project institution
 [globalVar = GP:tx_nkwsubfeprojects_pi6|institution > 0]
 	lib.rootline.10.special.range = 0|-1
 	lib.rootline.20 = RECORDS
@@ -65,6 +66,7 @@ lib.rootline.10 {
 	}
 [end]
 
+# Project keyword
 [globalVar = GP:tx_nkwsubfeprojects_pi4|keyword > 0]
 	lib.rootline.10.special.range = 0|-1
 	lib.rootline.20 = RECORDS
@@ -127,7 +129,7 @@ lib.rootline.10 {
 	}
 [end]
 
-#Staff person
+# Staff person
 [globalVar = GP:tx_substaff_persondetails|person > 0]
 	lib.rootline.10.special.range = 0|-2
 	lib.rootline.20 = RECORDS
@@ -149,7 +151,7 @@ lib.rootline.10 {
 [end]
 
 
-#schulungen
+# Schulungen
 [globalVar = GP:tx_schulungen_schulungen|schulung > 0]
 	lib.rootline.10.special.range = 0|-1
 	lib.rootline.20 = RECORDS
@@ -169,7 +171,7 @@ lib.rootline.10 {
 	}
 [end]
 
-#Keywords
+# Keywords
 [globalVar = GP:tx_nkwkeywords|id > 0]
 	lib.rootline.10.special.range = 0|-2
 	lib.rootline.20 = RECORDS
@@ -182,6 +184,27 @@ lib.rootline.10 {
 			tx_nkwkeywords_keywords = TEXT
 			tx_nkwkeywords_keywords.field = title_de
 			tx_nkwkeywords_keywords.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+		wrap = <li>|</li>
+	}
+[end]
+
+# News
+[globalVar = GP:tx_news_pi1|news > 0]
+	lib.rootline.10.special.range = 0|-1
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		dontCheckPid = 1
+		tables = tx_news_domain_model_news
+		source.data = GP:tx_news_pi1|news
+		conf {
+			tx_news_domain_model_news >
+			tx_news_domain_model_news = TEXT
+			tx_news_domain_model_news.field = title
+			tx_news_domain_model_news.typolink {
 				parameter.data = TSFE:id
 				addQueryString = 1
 			}
