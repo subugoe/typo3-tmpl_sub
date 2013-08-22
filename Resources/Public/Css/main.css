@@ -689,6 +689,9 @@ header#header #logo {
   font-size: 1.2em;
   line-height: 1.8em;
 }
+.centercontent .csc-default {
+  margin-bottom: 24px;
+}
 .centercontent.fullwidth {
   width: 76%;
 }
@@ -1562,10 +1565,6 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 .news .news-latest-container .clearer {
   visibility: hidden;
   margin: 4px 0;
-}
-
-#page-1 #centercontent .csc-default {
-  margin-bottom: 24px;
 }
 
 #dataTable .odd {
