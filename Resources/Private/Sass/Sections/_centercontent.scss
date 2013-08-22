@@ -5,6 +5,9 @@
 	//@include adjust-font-size-to($base-font-size * 1.2);
 	font-size: 1.2em;
 	line-height: 1.8em;
+	.csc-default {
+		margin-bottom: 24px;
+	}
 	&.fullwidth {
 		width: 76%;
 	}
