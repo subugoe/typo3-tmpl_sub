@@ -205,18 +205,19 @@ temp.body.wrap = <body id=page-|>
 page = PAGE
 page {
 	typeNum = 0
+	shortcutIcon = EXT:tmpl_sub/Resources/Public/Img/favicon.ico
 	bodyTagCObject  < temp.body
 	includeJS {
 		navigation = EXT:tmpl_{$page_template}/Resources/Public/Js/Site.min.js
 		navigation.forceOnTop = 1
-	#	backbone = EXT:tmpl_{$page_template}/Resources/Public/Js/backbone-min.js
-	#	backbone.forceOnTop = 1
-	#	underscore = EXT:tmpl_{$page_template}/Resources/Public/Js/underscore-min.js
-	#	underscore.forceOnTop = 1
-	#	modernizr = EXT:tmpl_{$page_template}/Resources/Public/Js/modernizr.js
-	#	modernizr.forceOnTop = 1
+		tabs = EXT:subtabs/Resources/Public/JavaScript/SubTabs.js
 	}
-
+	includeCSS {
+		main = EXT:tmpl_sub/Resources/Public/Css/main.css
+		print = EXT:tmpl_sub/Resources/Public/Css/print.css
+		print.media = print
+		tabs = EXT:subtabs/Resources/Public/Css/Tabs.css
+	}
 	meta {
 		description = {$meta.description}
 		description {
@@ -224,28 +225,6 @@ page {
 				field = description
 			}
 		}
-		#keywords.stdWrap.cObject = COA
-		#keywords.stdWrap.cObject {
-		#	10 = CONTENT
-		#	10 {
-		#		table =  tx_nkwkeywords_domain_model_keywords
-		#		select {
-		#				# the pid where the records are stored
-		#			pidInList = 294
-		#			selectFields = *
-		#			join = tx_nkwkeywords_pages_keywords_mm
-		#			where = tx_nkwkeywords_domain_model_keywords.uid = tx_nkwkeywords_pages_keywords_mm.uid_foreign
-		#			andWhere = tx_nkwkeywords_pages_keywords_mm.uid_local = {field:uid}
-		#			andWhere.insertData = 1
-		#		}
-		#		renderObj = TEXT
-		#		renderObj {
-		#			field = title
-		#			wrap = ,|
-		#		}
-		#		stdWrap.substring = 1
-		#	}
-		#}
 		ICBM = 51.539763,9.935385
 	}
 	### TEMPLATE ###
