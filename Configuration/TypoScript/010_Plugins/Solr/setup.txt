@@ -28,10 +28,6 @@ plugin.tx_solr {
 					signature_stringS {
 						field = signature
 					}
-					category_stringS = SOLR_RELATION
-					category_stringS {
-						field = category
-					}
 					uid = uid
 					title = titel
 					url = TEXT
