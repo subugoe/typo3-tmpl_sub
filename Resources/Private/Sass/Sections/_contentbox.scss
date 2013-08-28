@@ -1,4 +1,4 @@
-#contentbox {
+.contentbox {
 	@include adjust-font-size-to($base-font-size);
 	background-color: $white;
 	max-width: 100%;
