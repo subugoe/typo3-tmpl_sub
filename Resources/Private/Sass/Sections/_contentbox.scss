@@ -1,8 +1,7 @@
-#contentbox {
+.contentbox {
 	@include adjust-font-size-to($base-font-size);
 	background-color: $white;
 	max-width: 100%;
-	//float: right;
 	min-height: 690px;
 	fieldset {
 		padding-bottom: 10px;
@@ -17,7 +16,7 @@
 		color: $darkgrey;
 		@include trailer(0.5);
 		li {
-			@include adjust-font-size-to($base-font-size);
+			//@include adjust-font-size-to($base-font-size);
 		}
 	}
 	p {

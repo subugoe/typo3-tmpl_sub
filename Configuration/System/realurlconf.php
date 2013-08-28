@@ -220,10 +220,30 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 							'spaceCharacter' => '-',
 						),
 					),
-
 				),
 			),
 			'bibliothek' => array(
+				array(
+					'GETvar' => 'tx_standorte_showlibrary[bibliothek]',
+					'lookUpTable' => array(
+						'table' => 'tx_standorte_domain_model_bibliothek',
+						'id_field' => 'uid',
+						'alias_field' => 'titel',
+						'addWhereClause' => ' AND NOT deleted',
+						'useUniqueCache' => 1,
+						'useUniqueCache_conf' => array(
+							'strtolower' => 1,
+							'spaceCharacter' => '-',
+						),
+						'autoUpdate' => 1,
+						'expireDays' => 180,
+						// language support (translated urls)
+						'languageGetVar' => 'L',
+						'languageExceptionUids' => '',
+						'languageField' => 'sys_language_uid',
+						'transOrigPointerField' => 'l10n_parent',
+					),
+				),
 				array(
 					'GETvar' => 'tx_standorte_pi1[bibliothek]',
 					'lookUpTable' => array(
@@ -262,61 +282,6 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 				array(
 					'GETvar' => 'tx_standorte_pi1[controller]',
 				)
-			),
-				// news archive parameters
-			'archive' => array(
-				array(
-					'GETvar' => 'tx_ttnews[year]',
-				),
-				array(
-					'GETvar' => 'tx_ttnews[month]',
-					'valueMap' => array(
-						'january' => '01',
-						'february' => '02',
-						'march' => '03',
-						'april' => '04',
-						'may' => '05',
-						'june' => '06',
-						'july' => '07',
-						'august' => '08',
-						'september' => '09',
-						'october' => '10',
-						'november' => '11',
-						'december' => '12',
-					)
-				),
-			),
-				// news pagebrowser
-			'browse' => array(
-				array(
-					'GETvar' => 'tx_ttnews[pointer]',
-				),
-			),
-				// news categories
-			'select_category' => array(
-				array(
-					'GETvar' => 'tx_ttnews[cat]',
-				),
-			),
-				// news articles and searchwords
-			'article' => array(
-				array(
-					'GETvar' => 'tx_ttnews[tt_news]',
-					'lookUpTable' => array(
-						'table' => 'tt_news',
-						'id_field' => 'uid',
-						'alias_field' => 'title',
-						'addWhereClause' => ' AND NOT deleted',
-						'useUniqueCache' => 1,
-						'useUniqueCache_conf' => array(
-							'strtolower' => 1,
-							'spaceCharacter' => '-',
-						),
-					),
-				),
-				array(
-					'GETvar' => 'tx_ttnews[swords]',
-				),
 			),
 		),
 	),

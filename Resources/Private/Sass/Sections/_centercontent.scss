@@ -1,6 +1,6 @@
 .centercontent {
-	padding: 0 2% 1% 2%;
-	width: 56%;
+	padding: 0 0 1% 2%;
+	width: 78%;
 	float: left;
 	//@include adjust-font-size-to($base-font-size * 1.2);
 	font-size: 1.2em;
@@ -11,8 +11,14 @@
 	&.fullwidth {
 		width: 76%;
 	}
-	a {
-		text-decoration: underline;
+	.smallWidth {
+		width: 72%;
+		float: left;
+	}
+	.content {
+		a {
+			text-decoration: underline;
+		}
 	}
 	ul {
 		padding-left: 2em;
