@@ -40,8 +40,8 @@
 			padding-bottom: 0;
 			li {
 				@include no-bullets;
-				padding-left: 2em;
-				text-indent: -2em;
+				padding-left: 2em!important;
+				text-indent: -2em!important;
 				list-style-image: none;
 				a {
 					border-bottom: none;
