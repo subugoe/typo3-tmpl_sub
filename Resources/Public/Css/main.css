@@ -557,8 +557,8 @@ header#header #logo {
 }
 .contentbox .gokContainer ul li {
   list-style: none;
-  padding-left: 2em;
-  text-indent: -2em;
+  padding-left: 2em !important;
+  text-indent: -2em !important;
   list-style-image: none;
 }
 .contentbox .gokContainer ul li li {
