@@ -3346,6 +3346,9 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 .gokContainer ul {
   padding: 0 !important;
 }
+.gokContainer .tree ul {
+  margin-left: 0 !important;
+}
 
 .tree a {
   border-bottom: 0;
