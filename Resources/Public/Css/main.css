@@ -1382,9 +1382,6 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 #pazpar2 {
   color: #434343;
 }
-#pazpar2 #pz2-results {
-  /* margin-right: 220px;*/
-}
 #pazpar2 #pz2-results ol.pz2-resultList .pz2-details li {
   margin-right: 5px;
 }
@@ -1392,13 +1389,19 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
   position: relative;
   border: 1px solid #CCC;
   margin: 8px 0 0 0;
-  /*  float: left;
-  	margin: 0px 16px 8px 0;
-  	min-width: 364px; */
 }
 #pazpar2 .pz2-fieldsets legend {
   margin-left: 6px;
   padding: 0 0 0 4px;
+}
+#pazpar2 .pz2-prev:after, #pazpar2 .pz2-next:after {
+  top: 0.1em;
+}
+#pazpar2 .pz2-detail-catalogueLink:after {
+  top: 0.2em;
+}
+#pazpar2 .pz2-termList-medium .pz2-mediaIcon {
+  top: 0px;
 }
 #pazpar2 .pz2-fieldsets ul {
   padding: 0 !important;
