@@ -2,6 +2,7 @@
 @import "compass/reset";
 @import "Sections/base";
 @import "Sections/classes";
+@import "Sections/_fontAwesome/font-awesome";
 
 /* Template */
 @import "Sections/wrap";
@@ -20,6 +21,7 @@
 @import "Sections/bottom";
 @import "Sections/last";
 @import "Sections/navigation";
+@import "Sections/Social";
 
 /* Extensions */
 @import "Sections/nkwsubmenu";
