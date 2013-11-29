@@ -61,6 +61,7 @@ lib.bottom2 {
 				parameter = http://www.facebook.com/SUB.INFO
 				title = SUB bei Facebook
 				ATagParams = class="external-link-new-window"
+				extTarget = _blank
 			}
 			value = SUB bei Facebook
 			wrap = <li>|</li>
