@@ -3481,7 +3481,7 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 
 .infobox__social li {
 	list-style-type: none;
-	list-style-image: none;
+	list-style-image: none !important;
 	padding-bottom: 5px;
 }
 .infobox__social ul {
