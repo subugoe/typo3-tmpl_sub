@@ -12,17 +12,18 @@
 	}
 }
 
-.infobox__social li {
-	list-style-type: none;
-	padding-bottom: 5px;
-}
-
-.infobox__social ul {
-	padding-left: 1em;
-}
-
-.infobox__social i {
-	font-size: 200%;
-	vertical-align: middle;
-	margin-right: 7px;
+.infobox__social {
+	ul {
+		padding-left: 1em;
+		li {
+			list-style-type: none;
+			list-style-image: none !important;
+			padding-bottom: 5px;
+			i {
+				font-size: 200%;
+				vertical-align: middle;
+				margin-right: 7px;
+			}
+		}
+	}
 }
