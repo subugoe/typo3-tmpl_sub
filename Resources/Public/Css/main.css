@@ -2853,16 +2853,15 @@ footer .footerright div, #footer .footerright div {
   margin-right: 4px;
 }
 
-.infobox__social li {
-  list-style-type: none;
-  padding-bottom: 5px;
-}
-
 .infobox__social ul {
   padding-left: 1em;
 }
-
-.infobox__social i {
+.infobox__social ul li {
+  list-style-type: none;
+  list-style-image: none !important;
+  padding-bottom: 5px;
+}
+.infobox__social ul li i {
   font-size: 200%;
   vertical-align: middle;
   margin-right: 7px;
@@ -3477,18 +3476,4 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 
 #dataTable .odd {
   background-color: #dee1e7;
-}
-
-.infobox__social li {
-	list-style-type: none;
-	list-style-image: none !important;
-	padding-bottom: 5px;
-}
-.infobox__social ul {
-	padding-left: 1em;
-}
-.infobox__social i { 
-        font-size: 200%;
-        vertical-align: middle;
-        margin-right: 7px;
 }
