@@ -59,11 +59,14 @@ lib.bottom2 {
 		20 {
 			typolink {
 				parameter = http://www.facebook.com/SUB.INFO
-				title = SUB bei Facebook
+				title = TEXT
+				title {
+					data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.facebook
+				}
 				ATagParams = class="external-link-new-window"
 				extTarget = _blank
 			}
-			value = SUB bei Facebook
+			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.facebook
 			wrap = <li>|</li>
 			ATagBeforeWrap = 1
 			stdWrap.wrap = <i class="icon-facebook-sign"></i>|
@@ -73,9 +76,12 @@ lib.bottom2 {
 		30 {
 			typolink {
 				parameter = https://twitter.com/subugoe
-				title = SUB bei Twitter
+				title = TEXT
+				title {
+					data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.twitter
+				}
 			}
-			value = SUB bei Twitter
+			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.twitter
 			stdWrap.wrap = <i class="icon-twitter-sign"></i>|
 		}
 		# Ihre Meinung
@@ -83,9 +89,12 @@ lib.bottom2 {
 		40 {
 			typolink {
 				parameter = 207
-				title = Ihre Meinung
+				title = TEXT
+				title {
+					data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.opinion
+				}
 			}
-			value = Ihre Meinung
+			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.opinion
 			stdWrap.wrap = <i class="icon-pencil"></i>|
 		}
 		# Frag die SUB
@@ -93,9 +102,12 @@ lib.bottom2 {
 		50 {
 			typolink {
 				parameter = 1472
-				title = Frag die SUB
+				title = TEXT
+				title {
+					data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.ask
+				}
 			}
-			value = Frag die SUB
+			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.ask
 			stdWrap.wrap = <i class="icon-comments-alt"></i>|
 		}
 	}

@@ -50,6 +50,10 @@
 			<label index="pagebrowse.text_prev">‹ Previous</label>
 			<label index="pagebrowse.text_first">« First</label>
 			<label index="label.toTop">↑</label>
+			<label index="social.facebook">SUB on Facebook</label>
+			<label index="social.twitter">SUB on Twitter</label>
+			<label index="social.opinion">Your opinion</label>
+			<label index="social.ask">Ask a librarian</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="solr.pages">Seiten</label>
@@ -96,6 +100,10 @@
 			<label index="pagebrowse.text_prev">‹ Vorherige</label>
 			<label index="pagebrowse.text_first">« Erste</label>
 			<label index="label.toTop">↑</label>
+			<label index="social.facebook">SUB bei Facebook</label>
+			<label index="social.twitter">SUB bei Twitter</label>
+			<label index="social.opinion">Ihre Meinung</label>
+			<label index="social.ask">Frag die SUB</label>
 		</languageKey>
 	</data>
 </T3locallang>
