@@ -51,69 +51,66 @@ a img {
   border: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-* html {
-  font-size: 75%;
-}
-
 html {
-  font-size: 12px;
+  font-size: 75%;
   line-height: 1.5em;
 }
 
 .Img-sprite, .Img-arrow_right, .Img-arrow_right_2, .Img-bullet, .Img-button_shade_large, .Img-cc_commons, .Img-header, .Img-logo_print, .Img-nur_cc, .Img-nur_info, .Img-printlogo, .Img-sublogo, .Img-unilogo {
-  background: url('../Icons/Img-scecbba8ada.png') no-repeat;
+  background-image: url('../Icons/Img-se7b60f2189.png');
+  background-repeat: no-repeat;
 }
 
 .Img-arrow_right {
-  background-position: 0 -467px;
-}
-
-.Img-arrow_right_2 {
-  background-position: 0 -488px;
-}
-
-.Img-bullet {
-  background-position: 0 -475px;
-}
-
-.Img-button_shade_large {
-  background-position: 0 -508px;
-}
-
-.Img-cc_commons {
-  background-position: 0 -234px;
-}
-
-.Img-header {
-  background-position: 0 -91px;
-}
-
-.Img-logo_print {
-  background-position: 0 -270px;
-}
-
-.Img-nur_cc {
-  background-position: 0 -360px;
-}
-
-.Img-nur_info {
-  background-position: 0 -331px;
-}
-
-.Img-printlogo {
   background-position: 0 0;
 }
 
+.Img-arrow_right_2 {
+  background-position: 0 -8px;
+}
+
+.Img-bullet {
+  background-position: 0 -28px;
+}
+
+.Img-button_shade_large {
+  background-position: 0 -41px;
+}
+
+.Img-cc_commons {
+  background-position: 0 -72px;
+}
+
+.Img-header {
+  background-position: 0 -108px;
+}
+
+.Img-logo_print {
+  background-position: 0 -218px;
+}
+
+.Img-nur_cc {
+  background-position: 0 -279px;
+}
+
+.Img-nur_info {
+  background-position: 0 -308px;
+}
+
+.Img-printlogo {
+  background-position: 0 -337px;
+}
+
 .Img-sublogo {
-  background-position: 0 -389px;
+  background-position: 0 -428px;
 }
 
 .Img-unilogo {
-  background-position: 0 -201px;
+  background-position: 0 -506px;
 }
 
 ::selection, ::-moz-selection {
@@ -359,7 +356,6 @@ table .tr-0 {
   font-weight: normal;
   font-style: normal;
 }
-
 /* FONT AWESOME CORE
  * -------------------------- */
 [class^="icon-"],
@@ -646,7 +642,6 @@ a .icon-spin {
     -moz-transform: rotate(359deg);
   }
 }
-
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -656,7 +651,6 @@ a .icon-spin {
     -webkit-transform: rotate(359deg);
   }
 }
-
 @-o-keyframes spin {
   0% {
     -o-transform: rotate(0deg);
@@ -666,7 +660,6 @@ a .icon-spin {
     -o-transform: rotate(359deg);
   }
 }
-
 @-ms-keyframes spin {
   0% {
     -ms-transform: rotate(0deg);
@@ -676,7 +669,6 @@ a .icon-spin {
     -ms-transform: rotate(359deg);
   }
 }
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -686,7 +678,6 @@ a .icon-spin {
     transform: rotate(359deg);
   }
 }
-
 /* Icon rotations and mirroring */
 .icon-rotate-90:before {
   -webkit-transform: rotate(90deg);
@@ -2285,6 +2276,7 @@ header#header a.linkHome {
   z-index: 4242;
   text-indent: -9999px;
   overflow: hidden;
+  background-image: url("/typo3conf/ext/tmpl_sub/Resources/Public/Img/clear.gif");
 }
 header#header img {
   width: 100%;
@@ -2963,8 +2955,8 @@ footer .footerright div, #footer .footerright div {
   height: 28px;
   padding: 0 3px !important;
   -webkit-appearance: textfield;
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
