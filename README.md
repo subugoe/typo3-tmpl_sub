@@ -19,7 +19,7 @@
 * don't forget to run 'compass compile' otherwise the css files won't get updated
 
 [2] cherry pick stuff
-* checkout master branch - changes to dev branch have to be pushed to guthub already!
+* checkout master branch - changes to dev branch have to be pushed to github already!
 * make sure you're up to date with 'git pull'
 * cherry pick with 'git cherry-pick a92c64ef449535386a6945e715e963b5fed5737a' - the funny string is the commit ID - search for them e. g. here https://github.com/subugoe/typo3-tmpl_sub/commits/dev
-* after cherry picking one ore more specific commits from the dev branch close your work with a 'git push'
+* after cherry picking one or more specific commits from the dev branch close your work with a 'git push'
