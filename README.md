@@ -1,3 +1,7 @@
+# Readme
+
+insert useful content here - stuff like what this code is all about, dependencies and use cases
+
 # quick and dirty development tips
 
 (Nils Windisch 2014-01-09)
