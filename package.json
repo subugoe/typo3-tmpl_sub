@@ -1,0 +1,23 @@
+{
+  "name": "tmpl_sub",
+  "version": "2.0.0",
+  "description": "SUB Template",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-coffee": "~0.7",
+    "grunt-contrib-compass": "~0.7",
+    "grunt-contrib-watch": "~0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/subugoe/typo3-tmpl_sub.git"
+  },
+  "author": "Ingo Pfennigstorf",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "4ed59320a4d61b0218393df2c56c0073b765dfb7"
+}
