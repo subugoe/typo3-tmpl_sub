@@ -5,9 +5,6 @@
     var searchTerm, td;
     $('a img').parent('a').css('border-bottom', 0);
     initMenus();
-    if ($("#page-1616") && window.location.search.indexOf("tx_solr") === -1) {
-      $("aside.infocontent").hide();
-    }
     $('.tree li').click = function(data) {
       var trackingData;
       if (typeof piwikTracker !== "undefined") {
@@ -43,5 +40,9 @@
       }
     });
   };
+
+  if ($("#page-1616") && window.location.search.indexOf("tx_solr") === -1) {
+    $("aside.infocontent").hide();
+  }
 
 }).call(this);
