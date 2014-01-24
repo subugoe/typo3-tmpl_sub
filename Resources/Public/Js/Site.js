@@ -51,11 +51,11 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
 
   $(function() {
     var searchTerm, td;
-    $('a img').parent('a').css('border-bottom', 0);
-    initMenus();
-    if ($("#page-1616") && window.location.search.indexOf("tx_solr") === -1) {
+    if (document.getElementById('page-1616') && window.location.search.indexOf("tx_solr") === -1) {
       $("aside.infocontent").hide();
     }
+    $('a img').parent('a').css('border-bottom', 0);
+    initMenus();
     $('.tree li').click = function(data) {
       var trackingData;
       if (typeof piwikTracker !== "undefined") {
