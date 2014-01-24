@@ -1,5 +1,5 @@
 $ ->
-	$("aside.infocontent").hide()  if $("#page-1616") and window.location.search.indexOf("tx_solr") is -1
+	$("aside.infocontent").hide()  if document.getElementById('page-1616') and window.location.search.indexOf("tx_solr") is -1
 
 	# Bilder mit Links nicht mit Border versehen
 	$('a img').parent('a').css('border-bottom', 0)
