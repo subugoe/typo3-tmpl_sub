@@ -1,4 +1,6 @@
 $ ->
+	$("aside.infocontent").hide()  if $("#page-1616") and window.location.search.indexOf("tx_solr") is -1
+
 	# Bilder mit Links nicht mit Border versehen
 	$('a img').parent('a').css('border-bottom', 0)
 	initMenus()
@@ -38,5 +40,3 @@ initMenus = ->
 			$('#' + parent + ' ul.js:visible').slideUp('normal');
 			checkElement.slideDown('normal');
 			return false
-
-$("aside.infocontent").hide()  if $("#page-1616") and window.location.search.indexOf("tx_solr") is -1

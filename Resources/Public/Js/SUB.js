@@ -3,6 +3,9 @@
 
   $(function() {
     var searchTerm, td;
+    if ($("#page-1616") && window.location.search.indexOf("tx_solr") === -1) {
+      $("aside.infocontent").hide();
+    }
     $('a img').parent('a').css('border-bottom', 0);
     initMenus();
     $('.tree li').click = function(data) {
@@ -40,9 +43,5 @@
       }
     });
   };
-
-  if ($("#page-1616") && window.location.search.indexOf("tx_solr") === -1) {
-    $("aside.infocontent").hide();
-  }
 
 }).call(this);
