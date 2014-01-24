@@ -37,7 +37,6 @@
 			<antcall target="phpcs"/>
 			<antcall target="phpdox"/>
 			<antcall target="phploc"/>
-			<antcall target="jslint"/>
 		</parallel>
 	</target>
 	<target name="pdepend"
@@ -85,14 +84,6 @@
 	<target name="phpdox" description="Generate API documentation using phpDox">
 		<exec executable="phpdox"/>
 	</target>
-	<target name="sass">
-		<apply executable="/usr/bin/sass" dest="${basedir}/Resources/Public/Css/">
-			<srcfile/>
-			<targetfile/>
-			<fileset dir="${basedir}/Resources/Private/Sass/" includes="*.scss"/>
-			<mapper type="glob" from="*.scss" to="*.css"/>
-		</apply>
-	</target>
 	<target name="phpcb"
 	        description="Aggregate tool output with PHP_CodeBrowser">
 		<exec executable="phpcb">
@@ -102,16 +93,6 @@
 			<arg path="${basedir}/"/>
 			<arg value="--output"/>
 			<arg path="${basedir}/build/code-browser"/>
-		</exec>
-	</target>
-	<target name="jslint" description="Run the JSLint tool on JS files">
-		<fileset dir="${basedir}/Resources/Public/Js" id="jsfiles.raw">
-			<include name="**/*.js"/>
-			<exclude name="**/*.min.js"/>
-		</fileset>
-		<pathconvert pathsep=" " property="jsfiles.clean" refid="jsfiles.raw"/>
-		<exec executable="java" output="build/logs/jslint.xml">
-			<arg line="-jar /home/ingop/libs/jslint4java.jar --report xml ${jsfiles.clean} --vars --sloppy"/>
 		</exec>
 	</target>
 </project>
