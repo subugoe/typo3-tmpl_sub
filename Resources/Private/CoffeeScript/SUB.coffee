@@ -3,6 +3,8 @@ $ ->
 	$('a img').parent('a').css('border-bottom', 0)
 	initMenus()
 
+	$("aside.infocontent").hide()  if $("#page-1616") and window.location.search.indexOf("tx_solr") is -1
+
 	# stats for GOK Browsing
 	$('.tree li').click = (data) ->
 		if typeof piwikTracker isnt "undefined"

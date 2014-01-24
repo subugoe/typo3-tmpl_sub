@@ -46,47 +46,53 @@ for(var b in a){var c=a[b];f.isFunction(c)||(c=this[a[b]]);if(!c)throw Error('Me
 e.data=JSON.stringify(b.toJSON());g.emulateJSON&&(e.contentType="application/x-www-form-urlencoded",e.data=e.data?{model:e.data}:{});if(g.emulateHTTP&&("PUT"===d||"DELETE"===d))g.emulateJSON&&(e.data._method=d),e.type="POST",e.beforeSend=function(a){a.setRequestHeader("X-HTTP-Method-Override",d)};"GET"!==e.type&&!g.emulateJSON&&(e.processData=!1);return i.ajax(f.extend(e,c))};g.wrapError=function(a,b,c){return function(d,e){e=d===b?e:d;a?a(b,e,c):b.trigger("error",b,e,c)}};var x=function(){},G=function(a,
 b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply(this,arguments)};f.extend(d,a);x.prototype=a.prototype;d.prototype=new x;b&&f.extend(d.prototype,b);c&&f.extend(d,c);d.prototype.constructor=d;d.__super__=a.prototype;return d},n=function(a,b){return!a||!a[b]?null:f.isFunction(a[b])?a[b]():a[b]},t=function(){throw Error('A "url" property or function must be specified');}}).call(this);
 
-var initMenus;
+(function() {
+  var initMenus;
 
-$(function() {
-  var searchTerm, td;
-  $('a img').parent('a').css('border-bottom', 0);
-  initMenus();
-  $('.tree li').click = function(data) {
-    var trackingData;
-    if (typeof piwikTracker !== "undefined") {
-      trackingData = "GOK" + document.location.pathname + $(".GOKID", this).text();
-      return piwikTracker.trackPageView(trackingData);
+  $(function() {
+    var searchTerm, td;
+    $('a img').parent('a').css('border-bottom', 0);
+    initMenus();
+    if ($("#page-1616") && window.location.search.indexOf("tx_solr") === -1) {
+      $("aside.infocontent").hide();
     }
+    $('.tree li').click = function(data) {
+      var trackingData;
+      if (typeof piwikTracker !== "undefined") {
+        trackingData = "GOK" + document.location.pathname + $(".GOKID", this).text();
+        return piwikTracker.trackPageView(trackingData);
+      }
+    };
+    if (location.search.substring(1, 8) === "tx_solr" && typeof piwikTracker !== "undefined") {
+      searchTerm = location.search.split("&")[0].split("=")[1];
+      td = "Searchterm/" + searchTerm;
+      piwikTracker.trackPageView(td);
+      return piwikTracker.setCustomVariable(1, "Suchbegriff", searchTerm, "page");
+    }
+  });
+
+  initMenus = function() {
+    $('ul.submenu-l1 ul.js').hide();
+    $('ul.submenu-l1 .submenu-highlight-parent').next('ul').css('display', 'block');
+    $('ul.submenu-l1 li.submenu-selected').children('ul').show();
+    $('.submenu-l2-1029, .submenu-l2-1043, .submenu-l2-1051, .submenu-l2-1059, .submenu-l2-1067, .submenu-l2-1033').children('ul').hide();
+    $('ul.submenu-l1').each(function() {
+      return $('#' + this.id + ' ul.go').show();
+    });
+    return $('ul.submenu-l1 li a.submenu-trigger').click(function() {
+      var checkElement, parent;
+      checkElement = $(this).next();
+      parent = this.parentNode.parentNode.id;
+      if (checkElement.is('ul') && (!checkElement.is(':visible'))) {
+        $(this).removeAttr('href');
+        $('#' + parent + ' ul.js:visible').slideUp('normal');
+        checkElement.slideDown('normal');
+        return false;
+      }
+    });
   };
-  if (location.search.substring(1, 8) === "tx_solr" && typeof piwikTracker !== "undefined") {
-    searchTerm = location.search.split("&")[0].split("=")[1];
-    td = "Searchterm/" + searchTerm;
-    piwikTracker.trackPageView(td);
-    return piwikTracker.setCustomVariable(1, "Suchbegriff", searchTerm, "page");
-  }
-});
 
-initMenus = function() {
-  $('ul.submenu-l1 ul.js').hide();
-  $('ul.submenu-l1 .submenu-highlight-parent').next('ul').css('display', 'block');
-  $('ul.submenu-l1 li.submenu-selected').children('ul').show();
-  $('.submenu-l2-1029, .submenu-l2-1043, .submenu-l2-1051, .submenu-l2-1059, .submenu-l2-1067, .submenu-l2-1033').children('ul').hide();
-  $('ul.submenu-l1').each(function() {
-    return $('#' + this.id + ' ul.go').show();
-  });
-  return $('ul.submenu-l1 li a.submenu-trigger').click(function() {
-    var checkElement, parent;
-    checkElement = $(this).next();
-    parent = this.parentNode.parentNode.id;
-    if (checkElement.is('ul') && (!checkElement.is(':visible'))) {
-      $(this).removeAttr('href');
-      $('#' + parent + ' ul.js:visible').slideUp('normal');
-      checkElement.slideDown('normal');
-      return false;
-    }
-  });
-};
+}).call(this);
 
 /*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
 if(typeof document!=="undefined"&&!("classList" in document.createElement("a"))){(function(j){if(!("HTMLElement" in j)&&!("Element" in j)){return}var a="classList",f="prototype",m=(j.HTMLElement||j.Element)[f],b=Object,k=String[f].trim||function(){return this.replace(/^\s+|\s+$/g,"")},c=Array[f].indexOf||function(q){var p=0,o=this.length;for(;p<o;p++){if(p in this&&this[p]===q){return p}}return -1},n=function(o,p){this.name=o;this.code=DOMException[o];this.message=p},g=function(p,o){if(o===""){throw new n("SYNTAX_ERR","An invalid or illegal string was specified")}if(/\s/.test(o)){throw new n("INVALID_CHARACTER_ERR","String contains an invalid character")}return c.call(p,o)},d=function(s){var r=k.call(s.className),q=r?r.split(/\s+/):[],p=0,o=q.length;for(;p<o;p++){this.push(q[p])}this._updateClassName=function(){s.className=this.toString()}},e=d[f]=[],i=function(){return new d(this)};n[f]=Error[f];e.item=function(o){return this[o]||null};e.contains=function(o){o+="";return g(this,o)!==-1};e.add=function(){var s=arguments,r=0,p=s.length,q,o=false;do{q=s[r]+"";if(g(this,q)===-1){this.push(q);o=true}}while(++r<p);if(o){this._updateClassName()}};e.remove=function(){var t=arguments,s=0,p=t.length,r,o=false;do{r=t[s]+"";var q=g(this,r);if(q!==-1){this.splice(q,1);o=true}}while(++s<p);if(o){this._updateClassName()}};e.toggle=function(p,q){p+="";var o=this.contains(p),r=o?q!==true&&"remove":q!==false&&"add";if(r){this[r](p)}return o};e.toString=function(){return this.join(" ")};if(b.defineProperty){var l={get:i,enumerable:true,configurable:true};try{b.defineProperty(m,a,l)}catch(h){if(h.number===-2146823252){l.enumerable=false;b.defineProperty(m,a,l)}}}else{if(b[f].__defineGetter__){m.__defineGetter__(a,i)}}}(self))};
