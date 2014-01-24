@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
-						 // Liste der Dateien, die zusammengefasst werden sollen (Quell- und Zieldateien)
+						 // concatenation of files
 						 concat: {
 							 js: {
 								 src: ['Resources/Public/Js/modernizr.js', 'Resources/Public/Js/underscore-min.js', 'Resources/Public/Js/backbone-min.js', 'Resources/Public/Js/SUB.js', 'Resources/Public/Js/ClassNames.js'],
@@ -11,17 +11,17 @@ module.exports = function(grunt) {
 							 }
 						 },
 
-						 // Liste der Dateien, die minifiziert werden sollen (Quell- und Zieldateien)
 						 uglify: {
-							 dist: {
-								 src: ['<config:concat.js.dest>'],
-								 dest: 'Resources/Public/Js/Site.min.js'
-							 }},
-
-						 // Tasks, die mit 'grunt watch' ausgeführt werden sollen
+							 my_target: {
+								 files: {
+									 'Resources/Public/Js/Site.min.js': ['Resources/Public/Js/Site.js']
+								 }
+							 }
+						 },
+						 // watcher task
 						 watch: {
 							 files: ['<config:lint.files>', '<config:coffee.app.src>', '<config.compass.prod.src>', 'Resources/Private/Sass/Sections/*'],
-							 tasks: 'compass coffee concat'},
+							 tasks: 'compass coffee concat uglify'},
 
 						 compass: {
 							 prod: {
@@ -35,7 +35,6 @@ module.exports = function(grunt) {
 							 }
 						 },
 						 coffee: {
-
 							 glob_to_multiple: {
 								 expand: true,
 								 flatten: true,
