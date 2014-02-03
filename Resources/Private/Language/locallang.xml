@@ -42,8 +42,6 @@
 			<label index="page.pathline.linktitle">Homepage SUB Göttingen</label>
 			<label index="page.infobox.contentOfThisSite">Contents</label>
 			<label index="page.pageTitle">Niedersächsische Staats- und Universitätsbibliothek Göttingen</label>
-			<label index="page.skipToNavigation">Skip to navigation</label>
-			<label index="page.skipToContent">Skip to the content</label>
 			<label index="page.keywords">Keywords</label>
 			<label index="pagebrowse.text_next">Next ›</label>
 			<label index="pagebrowse.text_last">Last »</label>
@@ -97,8 +95,6 @@
 			<label index="page.pathline.linktitle">Startseite der SUB Göttingen</label>
 			<label index="page.infobox.contentOfThisSite">Inhaltsverzeichnis</label>
 			<label index="page.pageTitle">Niedersächsische Staats- und Universitätsbibliothek Göttingen</label>
-			<label index="page.skipToNavigation">Springe zur Navigation</label>
-			<label index="page.skipToContent">Springe zum Inhalt</label>
 			<label index="page.keywords">Schlagwörter</label>
 			<label index="pagebrowse.text_next">Nächste ›</label>
 			<label index="pagebrowse.text_last">Letzte »</label>
