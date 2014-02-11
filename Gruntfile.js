@@ -47,6 +47,7 @@ module.exports = function(grunt) {
 					 });
 	// register tasks
 	grunt.registerTask('default', ['coffee', 'compass', 'concat', 'uglify']);
+	grunt.registerTask('compassProduction', ['compass:prod']);
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-watch');
