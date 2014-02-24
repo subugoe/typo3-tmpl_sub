@@ -194,7 +194,7 @@ lib.rootline.10 {
 
 # News
 [globalVar = GP:tx_news_pi1|news > 0]
-	lib.rootline.10.special.range = 0|-1
+	lib.rootline.10.special.range = 0|-2
 	lib.rootline.20 = RECORDS
 	lib.rootline.20 {
 		dontCheckPid = 1
