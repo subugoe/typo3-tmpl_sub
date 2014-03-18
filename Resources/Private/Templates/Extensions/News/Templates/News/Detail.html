@@ -35,9 +35,13 @@
 						<f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
 					</span>
 
+					<!-- category -->
+					<f:comment>
+					<!-- don't show category while category isn't clickable -->
 					<f:if condition="{newsItem.categories}">
 						<f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" />
 					</f:if>
+					</f:comment>
 
 					<f:if condition="{newsItem.author}">
 						<!-- author -->
@@ -51,7 +55,7 @@
 			<f:if condition="{newsItem.teaser}">
 				<!-- teaser -->
 				<div class="teaser-text">
-					{newsItem.teaser}
+					<f:format.html>{newsItem.teaser}</f:format.html>
 				</div>
 			</f:if>
 
