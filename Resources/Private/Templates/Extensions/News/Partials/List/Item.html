@@ -10,86 +10,44 @@
 		<h3>{newsItem.title}</h3>
 	</div>
 
-	<f:if condition="{newsItem.media}">
-		<!-- media preview element -->
+<!--Shows Category image in the list. Condition needed to show the category image even if there is a media element in the text-->
+	<f:if condition="{newsItem.firstCategory.image}">
 		<f:then>
-			<div class="news-img-wrap">
-				<n:link newsItem="{newsItem}" settings="{settings}">
-					<f:if condition="{newsItem.mediaPreviews}">
-						<f:then>
-							<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
-								<f:if condition="{mediaElement.type} == 0">
-									<f:image
-										src="uploads/tx_news/{mediaElement.image}"
-										title="{mediaElement.title}"
-										alt="{mediaElement.alt}"
-										maxWidth="{settings.list.media.image.maxWidth}"
-										maxHeight="{settings.list.media.image.maxHeight}"
-										/>
-								</f:if>
-								<f:if condition="{mediaElement.type} == 1">
-									<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}" />
-								</f:if>
-								<f:if condition="{mediaElement.type} == 2">
-									<f:render partial="Detail/MediaHtml" arguments="{mediaElement: mediaElement}" />
-								</f:if>
-								<f:if condition="{mediaElement.type} == 3">
-									<n:format.dam as="dam" uid="{mediaElement.uid}">
-										<f:image src="{dam.file_path}{dam.file_name}" title="{dam.title}" alt="{dam.alt_text}" maxWidth="{settings.detail.media.image.maxWidth}" />
-									</n:format.dam>
-								</f:if>
-							</f:alias>
-						</f:then>
-						<f:else>
-							<f:if condition="{settings.displayDummyIfNoMedia}">
-								<f:image
-									src="typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png"
-									title=""
-									alt=""
-									maxWidth="{settings.list.media.image.maxWidth}"
-									maxHeight="{settings.list.media.image.maxHeight}"
-									/>
-							</f:if>
-						</f:else>
-					</f:if>
-				</n:link>
-			</div>
-		</f:then>
-		<f:else>
-			<f:if condition="{settings.displayDummyIfNoMedia}">
+			<f:if condition="{newsItem.media}">
 				<f:then>
 					<div class="news-img-wrap">
 						<n:link newsItem="{newsItem}" settings="{settings}">
 							<span class="no-media-element">
 								<f:image
-									src="typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png"
+									src="uploads/tx_news/{newsItem.firstCategory.image}"
 									title=""
 									alt=""
 									maxWidth="{settings.list.media.image.maxWidth}"
 									maxHeight="{settings.list.media.image.maxHeight}"
-									/>
+								/>
 							</span>
 						</n:link>
 					</div>
 				</f:then>
-			</f:if>
-			<f:if condition="{newsItem.firstCategory.image}">
-				<div class="news-img-wrap">
-					<n:link newsItem="{newsItem}" settings="{settings}">
-						<span class="no-media-element">
-							<f:image
-								src="uploads/tx_news/{newsItem.firstCategory.image}"
-								title=""
-								alt=""
-								maxWidth="{settings.list.media.image.maxWidth}"
-								maxHeight="{settings.list.media.image.maxHeight}"
+				<f:else>
+					<div class="news-img-wrap">
+						<n:link newsItem="{newsItem}" settings="{settings}">
+							<span class="no-media-element">
+								<f:image
+									src="uploads/tx_news/{newsItem.firstCategory.image}"
+									title=""
+									alt=""
+									maxWidth="{settings.list.media.image.maxWidth}"
+									maxHeight="{settings.list.media.image.maxHeight}"
 								/>
-						</span>
-					</n:link>
-				</div>
+							</span>
+						</n:link>
+					</div>
+				</f:else>
 			</f:if>
-		</f:else>
+		</f:then>
 	</f:if>
+
 	<!-- teas=ser text -->
 	<div class="teaser-text">
 		<f:if condition="{newsItem.teaser}">
@@ -110,15 +68,15 @@
 
 			<!-- first category -->
 			<f:if condition="{newsItem.firstCategory}">
-				<f:link.page pageUid="{settings.listPid}" additionalParams="{tx_news_pi1:{overwriteDemand:{categories: newsItem.firstCategory.uid}}}">{newsItem.firstCategory.title}</f:link.page>
+				<f:link.page pageUid="{categories.shortcut}" additionalParams="{tx_news_pi1:{overwriteDemand:{categories: newsItem.firstCategory.uid}}}">{newsItem.firstCategory.title}</f:link.page>
 			</f:if>
 
 			<!-- author -->
-			<f:if condition="{newsItem.author}">
+			<!--<f:if condition="{newsItem.author}">
 				<span class="news-list-author">
 					<f:translate key="author" arguments="{0:newsItem.author}" />
 				</span>
-			</f:if>
+			</f:if>-->
 		</p>
 	</div>
 </div>
