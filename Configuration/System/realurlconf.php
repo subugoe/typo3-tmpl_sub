@@ -1,5 +1,6 @@
 <?php
 
+$TYPO3_CONF_VARS['FE']['addRootLineFields'].= ',tx_realurl_pathsegment';
 $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 	'init' => array(
 		'enableCHashCache' => 1,
@@ -36,8 +37,96 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 			'noMatch' => 'bypass',
 		),
 	),
+		'fixedPostVars' => array(
+			'newsDetailConfiguration' => array(
+				array(
+					'GETvar' => 'tx_news_pi1[news]',
+					'lookUpTable' => array(
+						'table' => 'tx_news_domain_model_news',
+						'id_field' => 'uid',
+						'alias_field' => 'title',
+						'addWhereClause' => ' AND NOT deleted',
+						'useUniqueCache' => 1,
+						'useUniqueCache_conf' => array(
+							'strtolower' => 1,
+							'spaceCharacter' => '-'
+						),
+					'languageGetVar' => 'L',
+					'languageExceptionUids' => '',
+					'languageField' => 'sys_language_uid',
+					'transOrigPointerField' => 'l10n_parent',
+					'autoUpdate' => 1,
+					'expireDays' => 180,
+					)
+				)
+			),
+			'newsCategoryConfiguration' => array(
+				array(
+					'GETvar' => 'tx_news_pi1[overwriteDemand][categories]',
+					'lookUpTable' => array(
+						'table' => 'tx_news_domain_model_category',
+						'id_field' => 'uid',
+						'alias_field' => 'title',
+						'addWhereClause' => ' AND NOT deleted',
+						'useUniqueCache' => 1,
+						'useUniqueCache_conf' => array(
+							'strtolower' => 1,
+							'spaceCharacter' => '-'
+						)
+					)
+				)
+			),
+			'newsTagConfiguration' => array(
+				array(
+					'GETvar' => 'tx_news_pi1[overwriteDemand][tags]',
+					'lookUpTable' => array(
+						'table' => 'tx_news_domain_model_tag',
+						'id_field' => 'uid',
+						'alias_field' => 'title',
+						'addWhereClause' => ' AND NOT deleted',
+						'useUniqueCache' => 1,
+						'useUniqueCache_conf' => array(
+							'strtolower' => 1,
+							'spaceCharacter' => '-'
+						)
+					)
+				)
+			),
+
+			'194' => 'newsDetailConfiguration', // For additional detail pages, add their uid as well
+			'1949' => 'newsDetailConfiguration',
+			'1951' => 'newsDetailConfiguration',
+			'1374' => 'newsDetailConfiguration',
+			'1' => 'newsCategoryConfiguration',
+			//'71' => 'newsTagConfiguration',
+
+
+		),
 	'postVarSets' => array(
 		'_DEFAULT' => array(
+			'controller' => array(
+				array(
+					'GETvar' => 'tx_news_pi1[action]',
+					'noMatch' => 'bypass'
+				),
+				array(
+					'GETvar' => 'tx_news_pi1[controller]',
+					'noMatch' => 'bypass'
+				)
+			),
+			'dateFilter' => array(
+				array(
+					'GETvar' => 'tx_news_pi1[overwriteDemand][year]',
+				),
+				array(
+					'GETvar' => 'tx_news_pi1[overwriteDemand][month]',
+				),
+			),
+			'page' => array(
+				array(
+					'GETvar' => 'tx_news_pi1[@widget_0][currentPage]',
+				),
+			),
 			'tags' => array(
 				array(
 					'GETvar' => 'tx_nkwkeywords_keyword[keyword]',
