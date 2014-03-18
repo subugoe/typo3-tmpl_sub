@@ -117,6 +117,8 @@ TCAdefaults {
 	tt_content {
 		linkToTop = 0
 	}
+	# Hide News per default
+	tx_news_domain_model_news.hidden = 1
 }
 
 ############################################
@@ -151,6 +153,8 @@ TCEMAIN {
 		disablePrependAtCopy = 1
 		disableHideAtCopy = 0
 	}
+	# delete cache for the news pages automatically. (list view, detail view)
+	clearCacheCmd = 1,194,1949,1951,1374
 }
 
 # Configure the page module
