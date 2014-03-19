@@ -41,8 +41,15 @@ plugin {
 				showSocialShareButtons = 0
 			}
 			displayDummyIfNoMedia = 0
-		}
+			list {
+				# Paginate configuration.
+				paginate {
+					insertAbove = 0
+					insertBelow = 1
+				}
+			}
 		_LOCAL_LANG.de.more-link = mehr …
+		}
 	}
 }
 
