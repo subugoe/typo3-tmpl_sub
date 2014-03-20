@@ -44,12 +44,14 @@ plugin {
 			list {
 				# Paginate configuration.
 				paginate {
+					#Do not set the "max records displayed" in the flexform of the plugin, it's not about pagination. News per page can only be set here
+					itemsPerPage = 6
 					insertAbove = 0
 					insertBelow = 1
 				}
 			}
-		_LOCAL_LANG.de.more-link = mehr …
 		}
+		_LOCAL_LANG.de.more-link = mehr …
 	}
 }
 
