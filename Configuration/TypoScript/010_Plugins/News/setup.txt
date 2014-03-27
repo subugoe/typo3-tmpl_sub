@@ -50,11 +50,15 @@ plugin {
 					insertBelow = 1
 				}
 			}
+			link {
+				skipControllerAndAction = 1
+			}
 		}
 		_LOCAL_LANG.de.more-link = mehr …
 	}
 }
 
+# different settings for the job openings page than for the news on the homepage
 [PIDinRootline = {$plugin.tx_news.settings.stellenangebote}]
 	plugin.tx_news {
 		_LOCAL_LANG {
@@ -62,5 +66,12 @@ plugin {
 				list_nonewsfound = Zurzeit können wir Ihnen leider keine Stelle anbieten.
 			}
 		}
+		settings {
+			list {
+				paginate {
+					itemsPerPage = 10
+				}
+			}
 		}
+	}
 [global]
