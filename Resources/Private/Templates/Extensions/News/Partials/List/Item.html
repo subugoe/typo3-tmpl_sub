@@ -55,28 +55,6 @@
 			<f:else><f:format.html><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="true">{newsItem.bodytext}</f:format.crop></f:format.html></f:else>
 		</f:if>
 		<n:link newsItem="{newsItem}" settings="{settings}"><f:translate key="more-link" /></n:link>
-
 	</div>
 
-	<!-- footer information -->
-	<div class="footer" role="contentinfo">
-		<p>
-			<!-- date -->
-			<span class="news-list-date">
-				<f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
-			</span>
-
-			<!-- first category -->
-			<f:if condition="{newsItem.firstCategory}">
-				<f:link.page pageUid="{categories.shortcut}" additionalParams="{tx_news_pi1:{overwriteDemand:{categories: newsItem.firstCategory.uid}}}">{newsItem.firstCategory.title}</f:link.page>
-			</f:if>
-
-			<!-- author -->
-			<!--<f:if condition="{newsItem.author}">
-				<span class="news-list-author">
-					<f:translate key="author" arguments="{0:newsItem.author}" />
-				</span>
-			</f:if>-->
-		</p>
-	</div>
 </div>
