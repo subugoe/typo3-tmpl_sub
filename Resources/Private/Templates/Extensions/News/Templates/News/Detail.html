@@ -36,18 +36,8 @@
 					</span>
 
 					<!-- category -->
-					<f:comment>
-					<!-- don't show category while category isn't clickable -->
-					<f:if condition="{newsItem.categories}">
-						<f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" />
-					</f:if>
-					</f:comment>
-
-					<f:if condition="{newsItem.author}">
-						<!-- author -->
-						<span class="news-list-author">
-							<f:translate key="author" arguments="{0:newsItem.author}"></f:translate>
-						</span>
+					<f:if condition="{newsItem.firstCategory}">
+						<f:link.page pageUid="{newsItem.firstCategory.shortcut}" additionalParams="{tx_news_pi1:{overwriteDemand:{categories: newsItem.firstCategory.uid}}}">{newsItem.firstCategory.title}</f:link.page>
 					</f:if>
 				</p>
 			</div>
