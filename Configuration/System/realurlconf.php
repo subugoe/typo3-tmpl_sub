@@ -93,12 +93,12 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 				)
 			),
 
-			'194' => 'newsDetailConfiguration', // For additional detail pages, add their uid as well
+			// uid of the target page. For additional detail/category/tag pages, add their uid as well
 			'1949' => 'newsDetailConfiguration',
 			'1951' => 'newsDetailConfiguration',
 			'1374' => 'newsDetailConfiguration',
-			'1' => 'newsCategoryConfiguration',
-			//'71' => 'newsTagConfiguration',
+			'194' => 'newsCategoryConfiguration',
+			//'71' => 'newsTagConfiguration', // Bsp.
 
 
 		),
