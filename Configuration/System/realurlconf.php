@@ -97,6 +97,7 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 			'1949' => 'newsDetailConfiguration',
 			'1951' => 'newsDetailConfiguration',
 			'1374' => 'newsDetailConfiguration',
+			'1950' => 'newsCategoryConfiguration',
 			'194' => 'newsCategoryConfiguration',
 			//'71' => 'newsTagConfiguration', // Bsp.
 
