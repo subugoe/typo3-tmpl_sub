@@ -65,6 +65,9 @@ plugin {
 			de {
 				list_nonewsfound = Zurzeit können wir Ihnen leider keine Stelle anbieten.
 			}
+			en {
+				list_nonewsfound = There are no job openings at this time.
+			}
 		}
 		settings {
 			list {
