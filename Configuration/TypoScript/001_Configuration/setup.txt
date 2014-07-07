@@ -294,6 +294,26 @@ page.headerData.100.22.value = :&nbsp;
 page.headerData.100.23 < lib.nkwkeywords.keywordTitle
 [global]
 
+## Ext tx_news: dynamic page title for the news category list page
+[globalVar = GP:tx_news_pi1|overwriteDemand|categories > 0]
+config.noPageTitle = 2
+lib.categoryTitle = RECORDS
+lib.categoryTitle {
+  dontCheckPid = 1
+        tables = tx_news_domain_model_category
+        source.data = GP:tx_news_pi1|overwriteDemand|categories
+        source.intval = 1
+        conf.tx_news_domain_model_category = TEXT
+        conf.tx_news_domain_model_category {
+            field = title
+            htmlSpecialChars = 1
+        }
+        wrap = <title>SUB Göttingen - News&nbsp; |</title>
+}
+page.headerData.100 >
+page.headerData.100 < lib.categoryTitle
+[global]
+
 temp.calculation = TEXT
 temp.calculation.dataWrap = {date:U} - {page:SYS_LASTCHANGED}
 
