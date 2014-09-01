@@ -62,7 +62,7 @@ plugin {
 		additionalHeaders = Content-Type:text/xml;charset=utf-8
 		disablePrefixComment = 1
 		baseURL = http://www.sub.uni-goettingen.de/
-		absRefPrefix = http://www.sub.uni-goettingen.de/
+		absRefPrefix = http://www03.sub.uni-goettingen.de/
 	}
 
 [global]
