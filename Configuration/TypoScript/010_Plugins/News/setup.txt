@@ -35,6 +35,10 @@ plugin {
 	plugin.tx_news.settings.format = xml
 
 	lib.stdheader >
+	# remove the anchor link <a id=c...> before the xml header tag in the localized view
+	tt_content.stdWrap.dataWrap >
+	tt_content.stdWrap.prepend.dataWrap >
+
 	tt_content.stdWrap.innerWrap >
 	tt_content.stdWrap.wrap >
 	# get away <div class="feEditAdvanced-firstWrapper" ...> if your logged into the backend
