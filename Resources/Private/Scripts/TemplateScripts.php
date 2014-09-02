@@ -24,10 +24,6 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
-require_once (PATH_t3lib. 'class.t3lib_stdgraphic.php');
-require_once (PATH_tslib. 'class.tslib_content.php');
-require_once (PATH_tslib. 'class.tslib_gifbuilder.php');
-
 /**
  * Description 
  *
@@ -113,7 +109,7 @@ class user_template {
 
 		$counter = 0;
 
-		while ($row = mysql_fetch_assoc($query)) {
+		while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($query)) {
 
 			$results[$counter] = $row;
 			$counter++;
