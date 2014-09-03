@@ -44,7 +44,6 @@ plugin {
 	# get away <div class="feEditAdvanced-firstWrapper" ...> if your logged into the backend
 	styles.content.get.stdWrap >
 
-
 	pageNewsRSS = PAGE
 	pageNewsRSS.typeNum = 1345790301
 	pageNewsRSS.10 < styles.content.get
