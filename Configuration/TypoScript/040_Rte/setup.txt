@@ -1,5 +1,4 @@
 RTE.default {
-	# disable=1
 	hidePStyleItems = h1,h6,address,div,pre,blockquote
 	contentCSS = EXT:tmpl_sub/Resources/Public/Css/Rte/rte.css
 	ignoreMainStyleOverride = 1
@@ -35,7 +34,6 @@ RTE.default {
 			noAttrib = b, i, u, strike, sub, sup, strong, em, quote, blockquote, cite, tt, br, center
 			rmTagIfNoAttrib = span
 			htmlSpecialChars = -1
-			#keepNonMatchedTags = protect
 			tags.span.allowedAttribs = class
 			tags.b.remap = strong
 			tags.i.remap = em
@@ -132,7 +130,7 @@ mod.tx_linkhandler {
 		label = Patenschaftskategorien
 		listTables = tx_patenschaften_kategorien
 	}
-       	tx_schulungen_domain_model_schulung{
+	tx_schulungen_domain_model_schulung{
 		label = Schulungen
 		listTables = tx_schulungen_domain_model_schulung
 	}

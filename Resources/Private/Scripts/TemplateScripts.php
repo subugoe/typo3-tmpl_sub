@@ -25,7 +25,7 @@
  * ************************************************************* */
 
 /**
- * Description 
+ * Generates header graphics and licence information
  *
  * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
  */
@@ -35,6 +35,16 @@ class user_template {
 	const CCIMG = 'nur_cc.png';
 	const NURINFOIMG = 'nur_info.png';
 	const CCLIZENZ = '';
+
+	/**
+	 * @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer
+	 */
+	protected $local_cObj;
+
+	/**
+	 * @var int
+	 */
+	protected $page_id;
 
 	/**
 	 * Get Big Picture and Copyright Information
@@ -55,12 +65,12 @@ class user_template {
 		$foundCount = count($results);
 
 		if ($foundCount > 0) {
-				// use the first result
+			// use the first result
 			$content = $this->formatBigPicture($results[0]);
 			$content .= $this->getImageInformation($results[0]);
 			$content = '<div id="bigpicture">' . $content . '</div>';
 		} elseif ($this->checkRootlineForPics()) {
-				// Check rootline to see if we have inherited pics
+			// Check rootline to see if we have inherited pics
 			$results = $this->getBigPictureFromPage($this->checkRootlineForPics());
 			$content = $this->formatBigPicture($results[0]);
 			$content .= $this->getImageInformation($results[0]);
@@ -96,26 +106,17 @@ class user_template {
 	 */
 	protected function getBigPictureFromPage($pageId) {
 
-		$query = $GLOBALS['TYPO3_DB']->exec_SELECT_mm_query(
-			'tx_dam.copyright, tx_dam.copyright_url, tx_dam.wiki_commons, tx_dam.cc, tx_dam.file_path, tx_dam.file_name, tx_dam.title, tx_dam.creator, tx_dam.caption',
-			'tx_dam',
-			'tx_dam_mm_ref',
-			'pages',
-			' AND pages.uid = ' . $pageId . ' AND pages.uid > 0 AND tx_nkwsubmenu_picture',
-			'',
-			'',
-			''
-		);
+		/** @var \TYPO3\CMS\Core\Resource\FileRepository $fileRepository */
+		$fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\FileRepository');
+		$fileObjects = $fileRepository->findByRelation('pages', 'tx_nkwsubmenu_picture', $pageId);
+		$files = array();
 
-		$counter = 0;
-
-		while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($query)) {
-
-			$results[$counter] = $row;
-			$counter++;
+		foreach ($fileObjects as $key => $value) {
+			$files[$key]['reference'] = $value->getReferenceProperties();
+			$files[$key]['original'] = $value->getOriginalFile()->getProperties();
 		}
 
-		return $results;
+		return $files;
 	}
 
 	/**
@@ -124,17 +125,16 @@ class user_template {
 	 * @param array $image
 	 * @return mixed
 	 */
-	protected function formatBigPicture($image){
-
-		$pfad = $image['file_path'] . $image['file_name'];
-		$bild = array();
-		$bild['file'] = $pfad;
-		$bild['file.']['width'] = 1000;
-		$bild['file.']['height'] = 228;
-		$bild['altText'] = $image['caption'];
-		$content = $this->local_cObj->IMAGE($bild);
-
-		return $content;
+	protected function formatBigPicture($image) {
+		$lconf['image.']['params'] = '';
+		$lconf['image.']['file.']['treatIdAsReference'] = 1;
+		$lconf['image.']['file'] = $image['reference']['uid'];
+		$lconf['image.']['altText'] = $image['original']['caption'];
+		$lconf['image.']['file.']['height'] = 228;
+		$lconf['image.']['file.']['width'] = 1000;
+		$theImgCode = $this->local_cObj->IMAGE($lconf["image."]);
+		$image = $this->local_cObj->stdWrap($theImgCode, $this->conf['image.']);
+		return $image;
 	}
 
 	/**
@@ -144,35 +144,39 @@ class user_template {
 	 * @return string
 	 */
 	protected function getImageInformation($image) {
-
-		$imageInformation = '';
 		$imageUrl = '';
 
-		$imageTitleText = $image['caption']. "\nUrheber: " . $image['creator'] ."\nCopyright: " . $image['copyright'];
+		$imageTitleText = array();
+
+		$imageTitleText[] = $image['caption'];
+		$imageTitleText[] = 'Urheber: ' . $image['original']['creator'];
+		$imageTitleText[] = 'Copyright: ' . $image['original']['copyright'];
+
+		$imageTitleText = implode(PHP_EOL, $imageTitleText);
 
 		$licenseImagePath = 'typo3conf/ext/tmpl_sub/Resources/Public/Img';
-		if ($image['wiki_commons'] != '') {
+		if ($image['original']['wiki_commons'] != '') {
 			$imagePath = self::WIKICOMMONSIMG;
 			$cssClass = 'wc';
-			$imageUrl = $image['copyright_url'];
-			$imageTitleText .= "\n" . $image['wiki_commons'];
-		} elseif ($image['cc'] == 1 && $image['wiki_commons'] == '') {
+			$imageUrl = $image['original']['copyright_url'];
+			$imageTitleText .= "\n" . $image['original']['wiki_commons'];
+		} elseif ($image['original']['creative_commons'] == 1 && $image['original']['wiki_commons'] == '') {
 			$imagePath = self::CCIMG;
 			$cssClass = 'cc';
 			$imageUrl = 'http://creativecommons.org/licenses/by-nc-nd/3.0/';
 		} else {
 			$imagePath = self::NURINFOIMG;
 			$cssClass = 'info';
-			if ($image['copyright_url']){
-				$imageUrl = $image['copyright_url'];
+			if ($image['original']['copyright_url']) {
+				$imageUrl = $image['original']['copyright_url'];
 			}
 		}
 
-		$pfad = $licenseImagePath . '/' . $imagePath;
+		$completeImagePath = $licenseImagePath . '/' . $imagePath;
 		$bild = array();
-		$bild['file'] = $pfad;
+		$bild['file'] = $completeImagePath;
 
-			// Configuration for the image link
+		// Configuration for the image link
 		if ($imageUrl != '') {
 			$bild['imageLinkWrap'] = 1;
 			$bild['imageLinkWrap.']['enable'] = 1;
@@ -181,17 +185,16 @@ class user_template {
 			$bild['imageLinkWrap.']['JSWindow.'] = 0;
 
 		}
-			// add title to the image
+		// add title to the image
 		$bild['titleText'] = $imageTitleText;
 
 		$bild['altText'] = $image['title'];
 
 		$imageInformation = $this->local_cObj->IMAGE($bild);
 
-			// return with a special css class for that particular image
+		// return with a special css class for that particular image
 		return '<div class=" bigpicture-license bigpicture-license-' . $cssClass . '">' . $imageInformation . '</div>';
 
 	}
 
 }
-?>
