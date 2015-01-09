@@ -10,7 +10,7 @@ $bluegrey: #6e7fa0;
 $red: #FF0000;
 $white: #FFFFFF;
 
-	// Dimensions
+// Dimensions
 $radius: 7px;
 $siteWidth: 1000px;
 $contentBoxWidth: 80%;
@@ -18,17 +18,17 @@ $sidebarWidth: $siteWidth * 0.2;
 $headerHeight: 110px;
 $infoImageWidth: 29px;
 
-	// shadow
+// shadow
 $default-text-shadow-color: rgba(black, 0.5);
 $default-text-shadow-blur: 0px;
 $default-text-shadow-v-offset: 1px;
 
-	// typography
+// typography
 $base-font-size: 12px;
 $base-line-height: 18px;
 @include establish-baseline;
 
-	// Images
+// Images
 $arrowLink: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right_2.svg';
 $arrowSmall: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right.png';
 $headerImage: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/header.png';
@@ -39,7 +39,7 @@ $clearGif: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/clear.gif';
 
 $font: Helvetica, Arial, sans-serif;
 
-	// spriting
+// spriting
 @import "Img/*.png";
 @include all-Img-sprites;
 
@@ -83,7 +83,7 @@ a {
 		cursor: pointer;
 	}
 	@include link-colors($darkblue, $darkblue, $darkblue, $darkblue, $darkblue);
-		// skiplinks
+	// skiplinks
 	&.skip {
 		position: absolute;
 		left: -1000em;
