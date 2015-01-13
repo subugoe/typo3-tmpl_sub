@@ -1,4 +1,6 @@
 <?php
+namespace Subugoe\TmplSub\ViewHelpers\Widget\Controller;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -22,30 +24,27 @@
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Extbase\Utility\ArrayUtility;
 
 /**
  * A - Z Index generator and lister
- *
- * @author Ingo Pfennigstorf <i.pfennigstorf@gmail.com>
- * @package TmplSub
- * @subpackage ViewHelpers/Widget
  */
-class Tx_TmplSub_ViewHelpers_Widget_Controller_AzController extends Tx_Fluid_Core_Widget_AbstractWidgetController {
+class AzController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController {
 
 	/**
 	 * @var array
 	 */
 	protected $configuration = array(
-		'titleField' => 'title',
-		'linkObject' => '',
-		'linkAction' => '',
-		'linkController' => '',
-		'linkPluginName' => '',
-		'linkExtensionName' => ''
+			'titleField' => 'title',
+			'linkObject' => '',
+			'linkAction' => '',
+			'linkController' => '',
+			'linkPluginName' => '',
+			'linkExtensionName' => ''
 	);
 
 	/**
-	 * @var Tx_Extbase_Persistence_QueryResultInterface
+	 * @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	protected $objects;
 
@@ -54,7 +53,7 @@ class Tx_TmplSub_ViewHelpers_Widget_Controller_AzController extends Tx_Fluid_Cor
 	 */
 	public function initializeAction() {
 		$this->objects = $this->widgetConfiguration['objects'];
-		$this->configuration = t3lib_div::array_merge_recursive_overrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
+		$this->configuration = ArrayUtility::arrayMergeRecursiveOverrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
 	}
 
 	/**
@@ -67,14 +66,14 @@ class Tx_TmplSub_ViewHelpers_Widget_Controller_AzController extends Tx_Fluid_Cor
 		$groupings = $this->getAzGrouping($this->objects);
 
 		$this->view->assignMultiple(
-			array (
-				'titles' => $groupings,
-				'linkObject' => $this->configuration['linkObject'],
-				'linkAction' => $this->configuration['linkAction'],
-				'linkController' => $this->configuration['linkController'],
-				'linkPluginName' => $this->configuration['linkPluginName'],
-				'linkExtensionName' => $this->configuration['linkExtensionName']
-			)
+				array(
+						'titles' => $groupings,
+						'linkObject' => $this->configuration['linkObject'],
+						'linkAction' => $this->configuration['linkAction'],
+						'linkController' => $this->configuration['linkController'],
+						'linkPluginName' => $this->configuration['linkPluginName'],
+						'linkExtensionName' => $this->configuration['linkExtensionName']
+				)
 		);
 	}
 
@@ -89,10 +88,10 @@ class Tx_TmplSub_ViewHelpers_Widget_Controller_AzController extends Tx_Fluid_Cor
 		$groupings = array();
 
 		$lastChar = '';
-		foreach($titles as $title) {
+		foreach ($titles as $title) {
 
-				// find titleField and get contents
-			$objectTitle = Tx_Extbase_Reflection_ObjectAccess::getProperty($title, $this->configuration['titleField']);
+			// find titleField and get contents
+			$objectTitle = \TYPO3\CMS\Extbase\Reflection\ObjectAccess::getProperty($title, $this->configuration['titleField']);
 
 			$title->linkObject = array($this->configuration['linkObject'] => $title->getUid());
 
@@ -120,5 +119,3 @@ class Tx_TmplSub_ViewHelpers_Widget_Controller_AzController extends Tx_Fluid_Cor
 		return mb_substr(mb_strtoupper(iconv('utf-8', 'ascii//TRANSLIT', $title)), $index, $index + 1, 'utf-8');
 	}
 }
-
-?>
