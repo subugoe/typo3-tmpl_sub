@@ -2,18 +2,18 @@
 <project name="SUB Template" default="build">
 	<target name="build" depends="prepare,lint,parallelTasks,phpcb"/>
 	<target name="clean" description="Cleanup build artifacts">
-		<delete dir="${basedir}/build/api"/>
-		<delete dir="${basedir}/build/code-browser"/>
-		<delete dir="${basedir}/build/coverage"/>
-		<delete dir="${basedir}/build/logs"/>
-		<delete dir="${basedir}/build/pdepend"/>
+		<delete dir="${basedir}/Build/api"/>
+		<delete dir="${basedir}/Build/code-browser"/>
+		<delete dir="${basedir}/Build/coverage"/>
+		<delete dir="${basedir}/Build/logs"/>
+		<delete dir="${basedir}/Build/pdepend"/>
 	</target>
 	<target name="prepare" depends="clean" description="Prepare for build">
-		<mkdir dir="${basedir}/build/api"/>
-		<mkdir dir="${basedir}/build/code-browser"/>
-		<mkdir dir="${basedir}/build/coverage"/>
-		<mkdir dir="${basedir}/build/logs"/>
-		<mkdir dir="${basedir}/build/pdepend"/>
+		<mkdir dir="${basedir}/Build/api"/>
+		<mkdir dir="${basedir}/Build/code-browser"/>
+		<mkdir dir="${basedir}/Build/coverage"/>
+		<mkdir dir="${basedir}/Build/logs"/>
+		<mkdir dir="${basedir}/Build/pdepend"/>
 	</target>
 
 	<target name="lint">
@@ -38,9 +38,9 @@
 	</target>
 	<target name="pdepend" description="Calculate software metrics using PHP_Depend">
 		<exec executable="pdepend">
-			<arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml"/>
-			<arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg"/>
-			<arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg"/>
+			<arg value="--jdepend-xml=${basedir}/Build/logs/jdepend.xml"/>
+			<arg value="--jdepend-chart=${basedir}/Build/pdepend/dependencies.svg"/>
+			<arg value="--overview-pyramid=${basedir}/Build/pdepend/overview-pyramid.svg"/>
 			<arg path="${basedir}/"/>
 		</exec>
 	</target>
@@ -48,30 +48,30 @@
 		<exec executable="phpmd">
 			<arg path="${basedir}"/>
 			<arg value="xml"/>
-			<arg value="${basedir}/build/phpmd.xml"/>
+			<arg value="${basedir}/Build/phpmd.xml"/>
 			<arg value="--reportfile"/>
-			<arg value="${basedir}/build/logs/pmd.xml"/>
+			<arg value="${basedir}/Build/logs/pmd.xml"/>
 		</exec>
 	</target>
 	<target name="phpcpd" description="Find duplicate code using PHPCPD">
 		<exec executable="phpcpd">
 			<arg value="--log-pmd"/>
-			<arg value="${basedir}/build/logs/pmd-cpd.xml"/>
+			<arg value="${basedir}/Build/logs/pmd-cpd.xml"/>
 			<arg path="${basedir}"/>
 		</exec>
 	</target>
 	<target name="phploc" description="Measure project size using PHPLOC">
 		<exec executable="phploc">
 			<arg value="--log-csv"/>
-			<arg value="${basedir}/build/logs/phploc.csv"/>
+			<arg value="${basedir}/Build/logs/phploc.csv"/>
 			<arg path="${basedir}/"/>
 		</exec>
 	</target>
 	<target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer">
 		<exec executable="phpcs" output="/dev/null">
 			<arg value="--report=checkstyle"/>
-			<arg value="--report-file=${basedir}/build/logs/checkstyle.xml"/>
-			<arg value="--standard=${basedir}/build/phpcs.xml"/>
+			<arg value="--report-file=${basedir}/Build/logs/checkstyle.xml"/>
+			<arg value="--standard=${basedir}/Build/phpcs.xml"/>
 			<arg path="${basedir}/"/>
 		</exec>
 	</target>
@@ -81,11 +81,11 @@
 	<target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
 		<exec executable="phpcb">
 			<arg value="--log"/>
-			<arg path="${basedir}/build/logs"/>
+			<arg path="${basedir}/Build/logs"/>
 			<arg value="--source"/>
 			<arg path="${basedir}/"/>
 			<arg value="--output"/>
-			<arg path="${basedir}/build/code-browser"/>
+			<arg path="${basedir}/Build/code-browser"/>
 		</exec>
 	</target>
 </project>

@@ -1,0 +1,32 @@
+/* Header */
+#header {
+	max-width: $siteWidth;
+	height: auto;
+	max-height: $headerHeight;
+	background-color: $darkblue;
+	width: 100%;
+
+	a {
+		text-decoration: none;
+
+		&.linkHome {
+			position: absolute;
+			width: $siteWidth * .2;
+			height: $headerHeight;
+			z-index: 4242;
+			text-indent: -9999px;
+			overflow: hidden;
+			background-image: url($clearGif);
+		}
+	}
+
+	img {
+		width: 100%;
+		max-width: $siteWidth;
+		height: auto;
+	}
+
+	#logo {
+		max-height: 110px;
+	}
+}

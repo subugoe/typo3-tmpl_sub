@@ -1,0 +1,44 @@
+#bigpicture {
+	position: relative;
+	max-height: 228px;
+
+	img {
+		max-width: 100%;
+		height: auto;
+		vertical-align: bottom;
+	}
+
+	.bigpicture-license {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+
+		img {
+
+			&:hover {
+				cursor: help;
+				max-width: auto;
+			}
+
+		}
+
+	}
+
+	.bigpicture-license-cc {
+		@include big-picture;
+		left: $siteWidth - $infoImageWidth;
+		max-width: $infoImageWidth;
+	}
+
+	.bigpicture-license-wc {
+	//	@include bigPictureCommons;
+		left: $siteWidth - 64px;
+		width: 64px;
+	}
+
+	.bigpicture-license-info {
+		@include big-picture;
+		max-width: $infoImageWidth;
+	}
+
+}

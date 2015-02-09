@@ -1,0 +1,96 @@
+// Rechte Box
+.infocontent {
+	font-size: $base-font-size;
+	float: right;
+	width: 26%;
+	color: $darkgrey;
+	background-color: $lightgrey;
+
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		padding: .5em .75em;
+	}
+
+	h1,
+	h2,
+	h6 {
+		background-color: $bluegrey;
+		color: $white;
+		font-size: $base-font-size;
+		padding: 5px 5px 5px 10px;
+		font-weight: bold;
+	}
+
+	ul {
+		margin-top: 8px;
+		padding: 5px 5px 0 20px;
+
+		li {
+			font-size: $base-font-size;
+			list-style-image: url($arrow-small);
+
+			img {
+				margin-top: 8px;
+			}
+		}
+	}
+
+	.csc-default {
+		p {
+			background-color: $lightgrey;
+			padding: 5px 0;
+
+			&.bodytext {
+				padding: 5px 5px 5px 10px;
+			}
+		}
+	}
+
+	.tx-ttaddress-pi1,
+	.tx-substaff {
+		background-color: $lightgrey;
+		padding: 5px 10px;
+		border-bottom-left-radius: $radius;
+
+		h1,
+		h2 {
+			margin: 0;
+			padding: 5px;
+			background-color: $bluegrey;
+			color: $white !important;
+			font-size: $base-font-size !important;
+			font-weight: bold;
+		}
+
+		h3 {
+			padding: 0 !important;
+			font-weight: bold;
+			font-size: $base-font-size;
+		}
+		.photo {
+			width: 100.01%;
+			height: auto;
+			padding-top: 5px;
+		}
+
+		ul {
+			list-style-image: none;
+			list-style-type: none;
+			padding: 5px 5px 0 0;
+			margin: 0 0 10px;
+			font-weight: normal;
+
+			li {
+				list-style-image: none;
+				list-style-type: none;
+			}
+		}
+
+		.singleAddress {
+			margin-bottom: 10px;
+		}
+	}
+}

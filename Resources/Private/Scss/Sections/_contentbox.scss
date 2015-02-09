@@ -1,0 +1,57 @@
+.contentbox {
+	font-size: $base-font-size;
+	background-color: $white;
+	max-width: 100%;
+	min-height: 690px;
+
+	fieldset {
+		padding-bottom: 10px;
+	}
+
+	ol {
+		color: $darkgrey;
+
+		li {
+			font-size: $base-font-size;
+		}
+
+	}
+
+	ul {
+		color: $darkgrey;
+	}
+
+	p {
+		color: $darkgrey;
+	}
+
+	.resetUlMargin {
+		margin: 0;
+	}
+
+	.gokContainer {
+		a {
+			border-bottom: 0;
+			text-decoration: none;
+		}
+
+		ul {
+			margin-left: 0;
+			padding-left: 0 !important;
+			margin-top: 0;
+			padding-bottom: 0;
+
+			li {
+				padding-left: 2em !important;
+				text-indent: -2em !important;
+				list-style-image: none;
+
+				a {
+					border-bottom: 0;
+					text-decoration: none;
+				}
+
+			}
+		}
+	}
+}

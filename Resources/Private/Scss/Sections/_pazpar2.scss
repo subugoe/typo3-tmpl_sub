@@ -1,0 +1,102 @@
+/* Pazpar2 */
+.pz2-pager .pz2-pageNumbers {
+	margin-right: 0 !important;
+}
+
+#pazpar2 {
+	color: $darkgrey;
+
+	#pz2-results {
+		.pz2-resultList {
+			.pz2-details {
+				li {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+
+	.pz2-fieldsets fieldset {
+		position: relative;
+		border: 1px solid #ccc;
+		margin: 8px 0 0;
+	}
+
+	.pz2-fieldsets legend {
+		margin-left: 6px;
+		padding: 0 0 0 4px;
+	}
+
+	.pz2-prev:after,
+	.pz2-next:after {
+		top: .1em;
+	}
+
+	.pz2-detail-catalogueLink:after {
+		top: .2em;
+	}
+
+	.pz2-termList-medium .pz2-mediaIcon {
+		top: 0;
+	}
+
+	.pz2-fieldsets ul {
+		padding: 0 !important;
+	}
+
+	.pz2-fieldset-replacement {
+		margin-left: -12px;
+		font-weight: bold;
+	}
+
+	.pz2-recordLink {
+		border-bottom: 0 !important;
+	}
+
+	.pz2-progressIndicator {
+		display: none;
+	}
+
+	ul li {
+		list-style-type: none !important;
+		list-style-image: none !important;
+	}
+
+	.pz2-resultList {
+		li {
+			line-height: 130%;
+			list-style-image: none !important;
+		}
+	}
+
+	a {
+		border-bottom: 0 !important;
+	}
+
+	.id-neaac2000 {
+		float: right;
+		width: 350px;
+		margin: 0 0 0 10px !important;
+	}
+
+	.id-neaac4000,
+	.id-neaac5000,
+	.id-neaac3000 {
+		width: 350px;
+	}
+}
+
+.pz2-neuerwerbungen {
+	#pz2-results {
+		margin-right: 0 !important;
+	}
+
+	#pz2-termLists {
+		display: none;
+	}
+
+}
+
+.pz2-accessNote {
+	display: none;
+}

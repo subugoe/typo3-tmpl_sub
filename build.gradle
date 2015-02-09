@@ -1,0 +1,80 @@
+// Pull the plugin from Maven Central
+buildscript {
+	repositories {
+		mavenCentral()
+		maven { url 'http://dl.bintray.com/robfletcher/gradle-plugins' }
+		jcenter()
+	}
+	dependencies {
+		classpath 'be.filipblondeel.gradle:gradle-gulp-plugin:0.1'
+	}
+}
+
+loadConfiguration()
+
+def loadConfiguration() {
+	defaultTasks = ['cleanUp', 'node', 'npmInstall', 'installGulp', 'gulp_compile', 'prepare']
+}
+
+// Invoke the plugin
+apply plugin: 'gulp'
+
+project.ext.set("jsSrcDir", "Resources/Private/Js")
+project.ext.set("jsDestDir", "Resources/Public/Js")
+project.ext.set("cssSrcDir", "Resources/Public/Css")
+project.ext.set("cssSrcDir", "Resources/Public/Css")
+
+node {
+	// Version of node to use.
+	version = '0.10.35'
+
+	// Enabled the automatic download. False is the default (for now).
+	download = true
+}
+
+FileCollection buildDirectories = files([
+	'Build/logs',
+	'Build/lib',
+	'Build/pdepend',
+	'Build/tmp/FontAwesome'
+])
+
+FileCollection generatedFiles = files([
+	cssSrcDir + '/main.css',
+	jsDestDir + '/Sub.js',
+	jsDestDir + '/Site.min.js',
+	jsDestDir + '/Site.sourcemap.json'
+])
+
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.2'
+}
+
+
+repositories {
+	mavenCentral()
+}
+
+task cleanUp << {
+	description 'Cleanup build artifacts'
+	buildDirectories.each { File file ->
+		delete file
+	}
+
+	generatedFiles.each { File file ->
+		delete file
+	}
+}
+
+task prepare << {
+	description 'Prepare for build'
+
+
+	buildDirectories.each { File file ->
+		file.mkdirs()
+	}
+}
+
+gulp_build.dependsOn 'installGulp'
+gulp_build.dependsOn 'npmInstall'

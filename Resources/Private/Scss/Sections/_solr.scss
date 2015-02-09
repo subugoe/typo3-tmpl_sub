@@ -1,0 +1,210 @@
+.tx-solr {
+	#tx-solr-search {
+		.results-list {
+			margin: 0;
+
+			> li {
+				list-style-type: none;
+				list-style-image: none;
+				margin: 0;
+				padding-top: 8px;
+				min-height: 30px;
+
+				&:hover {
+					background-color: $lightgrey;
+
+					.results-highlight {
+						background-color: $bluegrey;
+						color: white;
+					}
+
+				}
+
+				img {
+
+					&.photo {
+						float: right;
+						height: 70px;
+					}
+
+				}
+
+			}
+		}
+
+		.results-entry {
+			border-bottom: 1px solid $lightgrey;
+		}
+
+	}
+}
+
+// Autocomplete for results page
+#tx-solr-search-form-pi-results {
+	position: relative;
+
+	ul {
+		border-radius: 0 0 7px 7px;
+		left: 0 !important;
+		margin-left: 0;
+		background-color: white;
+		z-index: 9999 !important;
+		padding-left: 18px;
+		border-bottom: 1px solid $bluegrey;
+		border-right: 1px solid $bluegrey;
+		border-left: 1px solid $bluegrey;
+		width: 380px !important;
+		margin-top: 3px !important;
+		padding-top: 7px;
+		position: absolute;
+
+		.ui-state-hover {
+			margin-bottom: 2px;
+			font-weight: bold;
+		}
+
+		.ui-corner-all {
+			border: 0 !important;
+		}
+	}
+
+	.tx-solr-q {
+		width: 400px;
+		height: 28px;
+		padding: 0 3px !important;
+		-webkit-appearance: textfield;
+		box-sizing: content-box;
+	}
+
+}
+
+// Don't display borders or underlines
+.results-topic a {
+	border-bottom: none !important;
+	text-decoration: none !important;
+	font-weight: bold;
+}
+
+#tx-solr-sorting {
+	background-color: $lightgrey;
+
+	h6 {
+		font-weight: bold;
+		color: $white;
+		padding: 5px;
+		background-color: $bluegrey;
+		font-size: $base-font-size;
+	}
+
+	ul {
+		padding: 5px 0 10px 20px;
+	}
+}
+
+#tx-solr-faceting {
+	background-color: $lightgrey;
+
+	h3 {
+		font-weight: bold;
+		color: white;
+		padding: 5px;
+		background-color: $bluegrey;
+	}
+
+	div .facet-label {
+		padding: 5px;
+		font-weight: bold;
+	}
+}
+
+#tx-solr-facets-available {
+	li {
+		list-style-type: none;
+	}
+
+	ul {
+		margin: 0 10px 10px 0;
+	}
+
+	h3 {
+		font-size: $base-font-size;
+	}
+
+}
+
+#tx-solr-facets-in-use {
+	h5 {
+		padding: 5px;
+	}
+
+	ul {
+		padding-left: 20px !important;
+		margin: 0;
+	}
+}
+
+.tx-solr {
+	.results-highlight {
+		background-color: $lightgrey;
+		padding: 1px 2px;
+		border-radius: 3px;
+	}
+
+}
+
+.tx-solr-q {
+	width: 80%;
+	padding: 3px;
+}
+
+#tx-solr-search-form-pi-results {
+	margin-bottom: 10px;
+}
+
+.facet {
+	li {
+		list-style-type: circle !important;
+		margin-left: 10px;
+	}
+
+	ul {
+		padding: 0 0 10px;
+	}
+
+}
+
+.results-info {
+	font-size: $base-font-size * .83;
+}
+
+.tx-solr-relevance-bar {
+	width: 100px;
+	height: 5px;
+	border: 1px solid #ccc;
+	font-size: 1px;
+	padding: 1px;
+	top: -7px;
+	position: relative;
+}
+
+.tx-solr-relevance,
+.tx-solr-relevance-fill {
+	margin-right: 0 !important;
+	height: 5px;
+	padding: 0;
+}
+
+.tx-solr-relevance {
+	background-color: $lightblue;
+}
+
+.tx-solr-relevance-fill {
+	display: none;
+}
+
+.results-teaser {
+	p {
+		font-size: $base-font-size * .83;
+		line-height: 141%;
+	}
+}

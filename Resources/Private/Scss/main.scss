@@ -1,0 +1,43 @@
+@import 'Sections/base';
+@import 'Sections/classes';
+@import 'Sections/_fontAwesome/font-awesome';
+
+/* Template */
+@import 'Sections/wrap';
+@import 'Sections/bigpicture';
+@import 'Sections/menubox';
+@import 'Sections/unilogo';
+@import 'Sections/werbung';
+@import 'Sections/header';
+@import 'Sections/headerline';
+@import 'Sections/middle';
+@import 'Sections/contentbox';
+@import 'Sections/infocontent';
+@import 'Sections/pathline';
+@import 'Sections/centercontent';
+@import 'Sections/footer';
+@import 'Sections/bottom';
+@import 'Sections/last';
+@import 'Sections/navigation';
+@import 'Sections/Social';
+
+/* Extensions */
+@import 'Sections/nkwsubmenu';
+@import 'Sections/solr';
+@import 'Sections/powermail';
+@import 'Sections/pazpar2';
+@import 'Sections/nkwsitemap';
+@import 'Sections/nkwgok';
+@import 'Sections/pagebrowse';
+@import 'Sections/nkwgmaps';
+@import 'Sections/cssStyledContent';
+@import 'Sections/substaff';
+@import 'Sections/news';
+
+#dataTable {
+
+	.odd {
+		background-color: $lightgrey;
+	}
+
+}
