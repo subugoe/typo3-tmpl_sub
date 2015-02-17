@@ -1,6 +1,6 @@
 lib.navInterface = HMENU
 lib.navInterface {
-	wrap = <div class="submenu" role="navigation">|</div>
+	wrap = <nav class="submenu" role="navigation">|</nav>
 	1 = TMENU
 	1 {
 		wrap = <ul id="menu1" class="submenu-l1 expand">|</ul>

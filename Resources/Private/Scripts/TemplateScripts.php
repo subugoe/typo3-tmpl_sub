@@ -47,6 +47,15 @@ class user_template {
 	protected $page_id;
 
 	/**
+	 * @var \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController
+	 */
+	protected $frontendController;
+
+	public function __construct() {
+		$this->frontendController = $GLOBALS['TSFE'];
+	}
+
+	/**
 	 * Get Big Picture and Copyright Information
 	 *
 	 * @param string $content
@@ -55,11 +64,9 @@ class user_template {
 	 */
 	public function bigPicture($content = '', $conf = array()) {
 
-		global $TSFE;
+		$this->local_cObj = $this->frontendController->cObj; // cObject
 
-		$this->local_cObj = $TSFE->cObj; // cObject
-
-		$this->page_id = $GLOBALS['TSFE']->id;
+		$this->page_id = $this->frontendController->id;
 
 		$results = $this->getBigPictureFromPage($this->page_id);
 
@@ -69,13 +76,13 @@ class user_template {
 			// use the first result
 			$content = $this->formatBigPicture($results[0]);
 			$content .= $this->getImageInformation($results[0]);
-			$content = '<div id="bigpicture">' . $content . '</div>';
+			$content = '<div class="big-picture">' . $content . '</div>';
 		} elseif ($this->checkRootlineForPics()) {
 			// Check rootline to see if we have inherited pics
 			$results = $this->getBigPictureFromPage($this->checkRootlineForPics());
 			$content = $this->formatBigPicture($results[0]);
 			$content .= $this->getImageInformation($results[0]);
-			$content = '<div id="bigpicture">' . $content . '</div>';
+			$content = '<div class="big-picture">' . $content . '</div>';
 		}
 
 		return $content;
@@ -87,7 +94,7 @@ class user_template {
 	 * @return bool
 	 */
 	protected function checkRootlineForPics() {
-		$rootline = $GLOBALS['TSFE']->rootLine;
+		$rootline = $this->frontendController->rootLine;
 		$return = false;
 
 		foreach ($rootline as $parentPage) {
@@ -154,6 +161,10 @@ class user_template {
 		$lconf['image.']['file.']['height'] = 228;
 		$lconf['image.']['file.']['width'] = 1000;
 		$theImgCode = $this->local_cObj->cObjGetSingle('IMAGE', $lconf["image."]);
+		$lconf['image.']['altText'] = $image['original']['caption'];
+		// $lconf['image.']['file.']['height'] = 228;
+		// $lconf['image.']['file.']['width'] = 1170;
+		$theImgCode = $this->local_cObj->IMAGE($lconf["image."]);
 		$image = $this->local_cObj->stdWrap($theImgCode, $this->conf['image.']);
 		return $image;
 	}
@@ -214,7 +225,7 @@ class user_template {
 		$imageInformation = $this->local_cObj->cObjGetSingle('IMAGE', $bild);
 
 		// return with a special css class for that particular image
-		return '<div class=" bigpicture-license bigpicture-license-' . $cssClass . '">' . $imageInformation . '</div>';
+		return '<div class=" big-picture-license big-picture-license-' . $cssClass . '">' . $imageInformation . '</div>';
 
 	}
 

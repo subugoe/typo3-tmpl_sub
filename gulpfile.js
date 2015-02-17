@@ -12,15 +12,24 @@ var gulp = require('gulp'),
 
 var config = {
 	paths: {
-		sass: ['./Resources/Private/Scss/**/*.scss', './Resources/Private/Scss/*.scss', '!./Resources/Private/Scss/vendors/**/*.scss'],
+		sass: [
+			'./Resources/Private/Scss/**/*.scss',
+			'./Resources/Private/Scss/*.scss',
+			'!./Resources/Private/Scss/vendors/**/*.scss'
+		],
 		fonts: ['./Build/bower/fontawesome/fonts/*'],
-		coffee: ['.Resources/Private/CoffeeScript/*.coffee']
+		coffee: ['./Resources/Private/CoffeeScript/*.coffee'],
+		javascript: [
+			'./Build/bower/modernizr/modernizr.js',
+			'./Build/bower/bootstrap-sass-twbs/assets/javascripts/bootstrap.js',
+			'./Build/bower/jasny-bootstrap/js/offcanvas.js',
+			'./Resources/Private/Js/*.js'
+		]
 	},
 	autoprefixer: {
 		browsers: [
 			'last 2 versions',
-			'safari 5',
-			'ie 8',
+			'safari 6',
 			'ie 9',
 			'opera 12.1',
 			'ios 6',
@@ -58,8 +67,8 @@ gulp.task('lint', function () {
 
 gulp.task('coffee', function () {
 	gulp.src(config.paths.coffee)
-			.pipe(coffee({bare: true}))
-			.pipe(gulp.dest('./Resources/Public/Js/'))
+		.pipe(coffee({bare: true}))
+		.pipe(gulp.dest('./Resources/Private/Js/'))
 });
 
 gulp.task('compile', function () {
@@ -76,7 +85,7 @@ gulp.task('bower', function () {
 });
 
 gulp.task('uglify', function () {
-	gulp.src('Resources/Private/Js/*.js')
+	gulp.src(config.paths.javascript)
 			.pipe(concat('production.js'))
 			.pipe(uglify())
 			.pipe(rename('Site.min.js'))
@@ -85,7 +94,12 @@ gulp.task('uglify', function () {
 
 gulp.task('copy-fonts', function () {
 	return gulp.src(config.paths.fonts)
-			.pipe(gulp.dest('Resources/Public/Fonts/'));
+			.pipe(gulp.dest('Resources/Public/Fonts/fontawesome/'));
+});
+
+gulp.task('copy-bootstrap-js', function () {
+	return gulp.src('./Build/bower/bootstrap-sass-twbs/assets/javascripts/bootstrap.min.js')
+		.pipe(gulp.dest('Resources/Private/Js/'));
 });
 
 gulp.task('default', function () {

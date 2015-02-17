@@ -3,7 +3,7 @@
 <f:section name="Body">
 	<f:cObject typoscriptObjectPath="lib.BIGPICTURE" />
 	<div id="middle" class="middle" data-role="content">
-		<div id="menubox" class="menubox">
+		<div id="menubox" class="menubox offcanvas offcanvas-xs navmenu navmenu-default navmenu-fixed-left ">
 			<f:cObject typoscriptObjectPath="lib.navNeu" />
 			<div id="unilogo" class="unilogo" role="banner">
 				<f:link.external uri="{f:translate(key:'page.uniLogo.link')}" title="{f:translate(key:'page.uniLogo')}">
@@ -16,7 +16,9 @@
 				</div>
 			</f:if>
 		</div>
-
+		<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#menubox" data-canvas="body">
+    <span class="fa fa-bars"></span>
+		</button>
 		<div id="contentbox" class="contentbox">
 			<div id="pathline" role="navigation">
 				<f:cObject typoscriptObjectPath="lib.rootline" />
@@ -37,9 +39,9 @@
 	<div id="bottom" class="bottom">
 		<f:for each="{0:1, 1:2, 2:3, 3:4}" as="bott">
 			<div id="bottom{bott}" class="bottommenu">
-				<span class="highlight">
+				<h6 class="highlight">
 					<f:translate key="page.bottom{bott}" />
-				</span>
+				</h6>
 				<f:cObject typoscriptObjectPath="lib.bottom{bott}" />
 			</div>
 		</f:for>

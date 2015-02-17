@@ -1,0 +1,34 @@
+$background-color: #93a8cf;
+$text-color: #434343;
+$link-color: #1a3771;
+$headings-color: $link-color;
+
+$tab-background: #dee1e7;
+$nav-tabs-active-link-hover-bg: $tab-background;
+
+$breadcrumb-separator: '»';
+$list-group-border: transparent;
+
+$nav-pills-active-link-hover-bg: $link-color;
+$nav-pills-border-radius: 0;
+$navbar-border-radius: 0;
+$nav-link-hover-bg: $link-color;
+$nav-background-color: #6e7fa0;
+
+// typography
+$FontAwesomePath: "../Fonts/fontawesome" !default;
+$OpenSansPath: "../Fonts/open-sans" !default;
+
+$icon-font-path: '../Fonts/';
+$font-family-sans-serif: 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
+$headings-font-weight: 300;
+
+$font-size-base: 16px;
+$line-height-base: 1.62;
+
+$font-size-h1: 42px;
+$font-size-h2: 26px;
+$font-size-h3: 26px;
+$font-size-h4: $font-size-base;
+
+$max-width: 1170px;

@@ -60,7 +60,7 @@ lib.BIGPICTURE {
 lib.bigPicture = IMAGE
 lib.bigPicture {
 	stdWrap {
-		wrap = <div id="bigpicture">|</div>
+		wrap = <div class="big-picture">|</div>
 		required = 1
 	}
 

@@ -3,3 +3,5 @@ node_modules
 
 .gradle
 Build/bower
+Resources/Private/Js/bootstrap.min.js
+Resources/Private/Js/SUB.js

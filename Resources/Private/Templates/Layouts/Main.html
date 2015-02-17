@@ -1,13 +1,12 @@
-{namespace fed=Tx_Fed_ViewHelpers}
-
 <span id="top"></span>
 
 <div id="wrap" data-role="page">
-	<header id="header" data-role="header">
-		<f:link.page pageUid="1" class="linkHome"><h1>Niedersächsische Staats-und Universitätsbibliothek Göttingen</h1></f:link.page>
+
+	<header id="header" class="page-header" data-role="header">
+		<f:link.page pageUid="1" class="link-home"><h1>Niedersächsische Staats-und Universitätsbibliothek Göttingen</h1></f:link.page>
 		<f:render partial="Header" />
 	</header>
-	<div id="headerline">
+	<div id="headerline" class="header-line">
 		<f:link.page additionalParams="{L:\"{f:translate(key:'page.language.switchId')}\"}" addQueryString="TRUE"><f:translate key="page.language" /></f:link.page>
 	</div>
 
