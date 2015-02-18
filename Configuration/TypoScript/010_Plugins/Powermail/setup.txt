@@ -1,3 +1,11 @@
+plugin.tx_powermail {
+	view{
+		templateRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Templates/
+		layoutRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Layouts/
+		partialRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Partials/
+	}
+}
+
 ## setup for Abholtheke dropdown list ##
 
 # visible recipient dropdown list for the user
