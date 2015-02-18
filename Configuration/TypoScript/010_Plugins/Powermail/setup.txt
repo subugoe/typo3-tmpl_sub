@@ -1,0 +1,77 @@
+## setup for Abholtheke dropdown list ##
+
+# visible recipient dropdown list for the user
+lib.recipient = COA
+lib.recipient {
+	10 = TEXT
+	10.value = Bitte wählen|[\n]
+
+	20 = CONTENT
+	20 {
+		table = fe_users
+		select.pidInList = {$fe_userPid}
+		renderObj = COA
+		renderObj {
+			10 = TEXT
+			10.field = name
+			10.wrap = |[\n]
+		}
+	}
+}
+
+# Name of the library as the sender of the answer email
+lib.abholtheke = CONTENT
+lib.abholtheke {
+	table = fe_users
+	select {
+		pidInList = {$fe_userPid}
+		andWhere {
+			field = 0
+			wrap = name="|"
+			htmlSpecialChars = 1
+		}
+	}
+	renderObj = TEXT
+	renderObj {
+		field = name
+	}
+}
+
+# Email of the library the confirmation mail to the user will be sent from
+lib.emailAbholtheke = CONTENT
+lib.emailAbholtheke {
+	table = fe_users
+	select {
+		pidInList = {$fe_userPid}
+		andWhere {
+			field = 0
+			wrap = name="|"
+			htmlSpecialChars = 1
+		}
+	}
+	renderObj = TEXT
+	renderObj {
+		field = email
+	}
+}
+
+# Sender name and email of the library for the header in the email to user
+# $abholthekeformular in the constants
+[PIDinRootline = {$abholthekeformular}]
+plugin.tx_powermail {
+	settings {
+		setup {
+			sender {
+				overwrite {
+					senderName = TEXT
+					senderName.value = {f:cObject(typoscriptObjectPath:'lib.abholtheke',data:abholung)}
+
+					senderEmail = TEXT
+					senderEmail.value = {f:cObject(typoscriptObjectPath:'lib.emailAbholtheke',data:abholung)}
+				}
+			}
+		}
+	}
+}
+[global]
+## setup for Abholtheke dropdown list - end ##
