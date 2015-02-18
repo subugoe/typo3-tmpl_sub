@@ -17,7 +17,7 @@
 			<f:then>
 				<f:for each="{answer.value}" as="subValue" iteration="index">
 					<f:if condition="{subValue}">
-						{subValue}<f:if condition="{index.isLast}"><f:else>, </f:else></f:if>
+						<vh:string.RawAndRemoveXss>{subValue}</vh:string.RawAndRemoveXss><f:if condition="{index.isLast}"><f:else>, </f:else></f:if>
 					</f:if>
 				</f:for>
 			</f:then>
