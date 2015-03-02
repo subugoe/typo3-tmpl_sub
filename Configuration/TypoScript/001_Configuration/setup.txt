@@ -392,3 +392,6 @@ plugin.tx_tmplsub._CSS_DEFAULT_STYLE (
 	span.boldFont { font-weight: bold; }
 	span.italicFont { font-style: italic; }
 )
+
+#Patch for radio buttons in powermail conditions
+page.includeJSFooter.powermail_cond = EXT:tmpl_sub/Resources/Public/Js/PowermailCond.js
