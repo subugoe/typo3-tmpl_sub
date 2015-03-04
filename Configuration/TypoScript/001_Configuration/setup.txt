@@ -395,3 +395,19 @@ plugin.tx_tmplsub._CSS_DEFAULT_STYLE (
 
 #Patch for radio buttons in powermail conditions
 page.includeJSFooter.powermail_cond = EXT:tmpl_sub/Resources/Public/Js/PowermailCond.js
+
+# Date format
+plugin.tx_powermail {
+  _LOCAL_LANG {
+    default {
+      datepicker_format_date = d.m.Y
+      datepicker_format_time = H:i
+      datepicker_format_datetime = d.m.Y H:i
+    }
+    de {
+      datepicker_format_date = d.m.Y
+      datepicker_format_time = H:i
+      datepicker_format_datetime = d.m.Y H:i
+    }
+  }
+}
