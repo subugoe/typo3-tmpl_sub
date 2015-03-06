@@ -82,4 +82,32 @@ plugin.tx_powermail {
 	}
 }
 [global]
+
 ## setup for Abholtheke dropdown list - end ##
+
+
+## setup for bookshelf donation ##
+
+[globalVar = GP:tx_powermail_pi1|uid{$spendeID} = 1]
+lib.select >
+lib.select = COA_INT
+lib.select {
+ 10 = TEXT
+ 10.value = <label class="powermail_label" for="powermail_field_uid{$spendeID}">Ihre Spende</label>
+
+ 20 = TEXT
+ 20.value = <select id="powermail_field_uid{$spendeID}" class="powermail_field powermail_select" name="tx_powermail_pi1[field][uid{$spendeID}]"><option value="Regalboden (300 Euro)" selected="selected">Regalboden (300 Euro)</option><option value="Ausstellungsvitrine (5.000 Euro)">Ausstellungsvitrine (5.000 Euro)</option></select>
+}
+[else]
+lib.select >
+lib.select = COA_INT
+lib.select {
+ 10 = TEXT
+ 10.value = <label class="powermail_label" for="powermail_field_uid{$spendeID}">Ihre Spende</label>
+
+ 20 = TEXT
+ 20.value = <select id="powermail_field_uid{$spendeID}" class="powermail_field powermail_select" name="tx_powermail_pi1[field][uid{$spendeID}]"><option value="Regalboden (300 Euro)">Regalboden (300 Euro)</option><option value="Ausstellungsvitrine (5.000 Euro)" selected="selected">Ausstellungsvitrine (5.000 Euro)</option></select>
+}
+[global]
+
+## setup for bookshelf donation - end ##
