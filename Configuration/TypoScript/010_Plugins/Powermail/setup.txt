@@ -111,3 +111,85 @@ lib.select {
 [global]
 
 ## setup for bookshelf donation - end ##
+
+
+## setup for book restoration donation ##
+
+# UID des Powermailfeldes ist {$patenschaft.selectID}
+# Hole GET-Variable tx_powermail_pi1[uid{$patenschaft.selectID}]:
+lib.uebergabe = TEXT
+lib.uebergabe.data = GP:tx_powermail_pi1|uid{$patenschaft.selectID}
+lib.uebergabe.intval = 1
+lib.uebergabe.required = 1
+lib.uebergabe.wrap = uid = |
+
+# Alle Buecher aus DB auslesen
+lib.buecher = COA_INT
+lib.buecher {
+  10 = TEXT
+  10.value = <label for="uid{$patenschaft.selectID}">Ihre Patenschaft:</label>
+
+  15 = COA
+  15.wrap = <select id="powermail_field_uid{$patenschaft.selectID}" class="powermail_ihrebuchpatenschaft powermail_field powermail_select" tabindex="9" name="tx_powermail_pi1[field][uid{$patenschaft.selectID}]" size="1">|</select>
+
+  15{
+    5 = TEXT
+    5.data < lib.uebergabe
+    10 = CONTENT
+    10{
+      table= tx_patenschaften_buecher
+      select{
+        pidInList = {$patenschaft.pidInList}
+        where = sponsorship = ""
+        andWhere  < lib.uebergabe
+        max = 1
+
+      }
+      renderObj = COA
+      renderObj {
+        10 = COA
+        10 {
+          10 = TEXT
+          10 {
+            field = titel
+            wrap = <option selected="selected" value="|">
+            stdWrap.htmlSpecialChars = 1
+          }
+          20 = TEXT
+          20 {
+            field = titel
+            wrap = |</option>
+          }
+        }
+      }
+    }
+    20 = CONTENT
+    20 {
+      table = tx_patenschaften_buecher
+      select {
+        pidInList = {$patenschaft.pidInList}
+        orderBy = titel
+        where = sponsorship = ""
+       }
+      renderObj = COA
+      renderObj {
+        10 = COA
+        10 {
+          10 = TEXT
+          10 {
+            field = titel
+            wrap = <option value="|">
+            stdWrap.htmlSpecialChars = 1
+          }
+          20 = TEXT
+          20 {
+            field = titel
+            wrap = |</option>
+          }
+        }
+      }
+    }
+  }
+}
+
+## setup for book restoration donation - end ##
