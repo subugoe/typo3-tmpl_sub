@@ -89,3 +89,20 @@ $TCA['sys_file_metadata']['columns']['exturl']['config']['eval'] = 'required';
  * Prepare TCA for Custom Fluid Content Element
  */
 $TCA['tt_content']['types']['tmplsub_socialinfobox']['showitem'] = $TCA['tt_content']['types']['bullets']['showitem'];
+
+// mandatory fields for the backend
+$TCA['be_users']['columns']['email']['config']['eval'] = 'trim,required';
+$TCA['be_users']['columns']['realName']['config']['eval'] = 'trim,required';
+$TCA['be_groups']['columns']['description']['config']['eval'] = 'required';
+$TCA['be_groups']['columns']['lockToDomain']['config']['disabled'] = TRUE;
+$TCA['tt_content']['columns']['header']['config']['eval'] = 'trim,required';
+$TCA['tt_content']['columns']['altText']['config']['eval'] = 'trim,required';
+$TCA['tt_content']['columns']['titleText']['config']['eval'] = 'trim,required';
+$TCA['tt_content']['columns']['imagecaption']['config']['type'] = "input";
+$TCA['tt_content']['columns']['imagecaption']['config']['eval'] = "trim,required";
+$TCA['tt_content']['columns']['imagecaption']['config']['max'] = 256;
+$TCA['pages']['columns']['description']['config']['eval'] = 'required';
+$TCA['pages_language_overlay']['columns']['description']['config']['eval'] = 'required';
+$TCA['pages_language_overlay']['columns']['description']['config']['type'] = 'text';
+$TCA['pages_language_overlay']['columns']['description']['config']['cols'] = 40;
+$TCA['pages_language_overlay']['columns']['description']['config']['rows'] = 3;
