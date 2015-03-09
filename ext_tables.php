@@ -75,4 +75,17 @@ $TCA['sys_file_metadata']['columns']['caption']['config']['eval'] = 'required';
 $TCA['sys_file_metadata']['columns']['alt_text']['config']['eval'] = 'required';
 $TCA['sys_file_metadata']['columns']['exturl']['config']['eval'] = 'required';
 
-?>
+/**
+ * Register Custom Fluid Content Element
+ */
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+		array(
+				'Social Infobox',
+				'tmplsub_socialinfobox'
+		),
+		'CType'
+);
+/**
+ * Prepare TCA for Custom Fluid Content Element
+ */
+$TCA['tt_content']['types']['tmplsub_socialinfobox']['showitem'] = $TCA['tt_content']['types']['bullets']['showitem'];
