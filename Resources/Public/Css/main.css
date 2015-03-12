@@ -3072,38 +3072,46 @@ footer .footerright div, #footer .footerright div {
 }
 
 /* powermail */
-.tx-powermail-pi1 {
+.tx-powermail-pi1,
+.tx-powermail {
   color: #434343;
 }
-.tx-powermail-pi1 .powermail_all_td {
+.tx-powermail-pi1 .powermail_all_td,
+.tx-powermail .powermail_all_td {
   padding: 4px;
 }
-.tx-powermail-pi1 .tx-powermail-pi1_fieldset {
+.tx-powermail-pi1 .tx-powermail-pi1_fieldset,
+.tx-powermail .tx-powermail-pi1_fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
-.tx-powermail-pi1 .tx-powermail-pi1_fieldset legend {
+.tx-powermail-pi1 .tx-powermail-pi1_fieldset legend,
+.tx-powermail .tx-powermail-pi1_fieldset legend {
   white-space: normal;
   color: #434343;
   font-weight: bold;
 }
-.tx-powermail-pi1 label {
+.tx-powermail-pi1 label,
+.tx-powermail label {
   width: 200px;
   clear: both;
   float: left;
 }
-.tx-powermail-pi1 .tx_powermail_pi1_fieldwrap_html {
+.tx-powermail-pi1 .tx_powermail_pi1_fieldwrap_html,
+.tx-powermail .tx_powermail_pi1_fieldwrap_html {
   margin: 10px 0;
 }
-.tx-powermail-pi1 input {
+.tx-powermail-pi1 input,
+.tx-powermail input {
   margin-left: 0;
   border: 1px solid #cccccc;
   padding: 3px;
   width: 300px;
   color: #434343;
 }
-.tx-powermail-pi1 input.powermail_submit .tx-powermail-pi1_confirmation {
+.tx-powermail-pi1 input.powermail_submit .tx-powermail-pi1_confirmation,
+.tx-powermail input.powermail_submit .tx-powermail-pi1_confirmation {
   width: auto;
   border-width: 1px;
   border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
@@ -3123,7 +3131,9 @@ footer .footerright div, #footer .footerright div {
   height: 28px;
   color: #434343;
 }
-.tx-powermail-pi1 input.tx-powermail-pi1_confirmation, .tx-powermail-pi1 input.tx-powermail-pi1_mandatory_submit {
+.tx-powermail-pi1 input.tx-powermail-pi1_confirmation, .tx-powermail-pi1 input.tx-powermail-pi1_mandatory_submit,
+.tx-powermail input.tx-powermail-pi1_confirmation,
+.tx-powermail input.tx-powermail-pi1_mandatory_submit {
   width: auto;
   border: 1px solid #434343;
   border-width: 1px;
@@ -3143,43 +3153,53 @@ footer .footerright div, #footer .footerright div {
   height: 28px;
   color: #434343;
 }
-.tx-powermail-pi1 textarea {
+.tx-powermail-pi1 textarea,
+.tx-powermail textarea {
   margin-left: 0;
   border: 1px solid #cccccc;
   padding: 3px;
   width: 300px;
   color: #434343;
 }
-.tx-powermail-pi1 select {
+.tx-powermail-pi1 select,
+.tx-powermail select {
   margin-left: 0;
   border: 1px solid #cccccc;
   padding: 3px;
   width: 300px;
   color: #434343;
 }
-.tx-powermail-pi1 .powermail_all_td {
+.tx-powermail-pi1 .powermail_all_td,
+.tx-powermail .powermail_all_td {
   padding: 4px;
 }
-.tx-powermail-pi1 .tx-powermail-pi1_fieldset_ihrebuchpatenschaft select {
+.tx-powermail-pi1 .tx-powermail-pi1_fieldset_ihrebuchpatenschaft select,
+.tx-powermail .tx-powermail-pi1_fieldset_ihrebuchpatenschaft select {
   width: 308px;
 }
-.tx-powermail-pi1 .tx-powermail-pi1_fieldset_ihrebuchpatenschaft legend {
+.tx-powermail-pi1 .tx-powermail-pi1_fieldset_ihrebuchpatenschaft legend,
+.tx-powermail .tx-powermail-pi1_fieldset_ihrebuchpatenschaft legend {
   display: none;
 }
-.tx-powermail-pi1 .tx-powermail-pi1_fieldset_15 legend {
+.tx-powermail-pi1 .tx-powermail-pi1_fieldset_15 legend,
+.tx-powermail .tx-powermail-pi1_fieldset_15 legend {
   display: none;
 }
-.tx-powermail-pi1 .powermail_all .powermail_all_table {
+.tx-powermail-pi1 .powermail_all .powermail_all_table,
+.tx-powermail .powermail_all .powermail_all_table {
   width: 555px;
 }
-.tx-powermail-pi1 .tx-powermail-pi1_fieldset {
+.tx-powermail-pi1 .tx-powermail-pi1_fieldset,
+.tx-powermail .tx-powermail-pi1_fieldset {
   margin: 4px;
   padding: 8px !important;
 }
-.tx-powermail-pi1 .tx-powermail-pi1_fieldset legend {
+.tx-powermail-pi1 .tx-powermail-pi1_fieldset legend,
+.tx-powermail .tx-powermail-pi1_fieldset legend {
   padding-top: 8px;
 }
-.tx-powermail-pi1 label {
+.tx-powermail-pi1 label,
+.tx-powermail label {
   font-weight: normal !important;
 }
 
