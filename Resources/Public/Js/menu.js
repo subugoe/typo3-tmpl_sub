@@ -30,9 +30,9 @@ jQuery(document).ready(function () {
 	}
 
 		// stats for GOK Browsing
-	$('.tree li').click(function(data){
+	jQuery('.tree li').click(function(data){
 		if (typeof(piwikTracker) != 'undefined') {
-				var td = 'GOK' + document.location.pathname + $('.GOKID', this).text();
+				var td = 'GOK' + document.location.pathname + jQuery('.GOKID', this).text();
 				piwikTracker.trackPageView(td);
 			}
 	});
