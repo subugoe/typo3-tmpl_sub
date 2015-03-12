@@ -1,12 +1,12 @@
-(($) ->
-	jQuery("aside.infocontent").hide()  if document.getElementById('page-1616') and window.location.search.indexOf("tx_solr") is -1
+$ ->
+	$("aside.infocontent").hide()  if document.getElementById('page-1616') and window.location.search.indexOf("tx_solr") is -1
 
 	# Bilder mit Links nicht mit Border versehen
-	jQuery('a img').parent('a').css('border-bottom', 0)
+	$('a img').parent('a').css('border-bottom', 0)
 	initMenus()
 
 	# stats for GOK Browsing
-	jQuery('.tree li').click = (data) ->
+	$('.tree li').click = (data) ->
 		if typeof piwikTracker isnt "undefined"
 			trackingData = "GOK" + document.location.pathname + jQuery(".GOKID", this).text()
 			piwikTracker.trackPageView(trackingData)
@@ -19,25 +19,24 @@
 
 initMenus = ->
 	# hides all ULs with class "js"
-	jQuery('ul.submenu-l1 ul.js').hide()
+	$('ul.submenu-l1 ul.js').hide()
 
 	# Show all submenu items where the parent Element has the class submenu-highlight-parent
-	jQuery('ul.submenu-l1 .submenu-highlight-parent').next('ul').css('display', 'block')
-	jQuery('ul.submenu-l1 li.submenu-selected').children('ul').show()
-	jQuery('.submenu-l2-1029, .submenu-l2-1043, .submenu-l2-1051, .submenu-l2-1059, .submenu-l2-1067, .submenu-l2-1033').children('ul').hide()
+	$('ul.submenu-l1 .submenu-highlight-parent').next('ul').css('display', 'block')
+	$('ul.submenu-l1 li.submenu-selected').children('ul').show()
+	$('.submenu-l2-1029, .submenu-l2-1043, .submenu-l2-1051, .submenu-l2-1059, .submenu-l2-1067, .submenu-l2-1033').children('ul').hide()
 
 
-	jQuery('ul.submenu-l1').each ->
-		jQuery('#' + this.id + ' ul.go').show()
+	$('ul.submenu-l1').each ->
+		$('#' + this.id + ' ul.go').show()
 
 	# triggering
-	jQuery('ul.submenu-l1 li a.submenu-trigger').click ->
-		checkElement = jQuery(this).next()
+	$('ul.submenu-l1 li a.submenu-trigger').click ->
+		checkElement = $(this).next()
 		parent = this.parentNode.parentNode.id;
 
 		if checkElement.is('ul') and  (!checkElement.is(':visible'))
-			jQuery(this).removeAttr('href');
-			jQuery('#' + parent + ' ul.js:visible').slideUp('normal');
+			$(this).removeAttr('href');
+			$('#' + parent + ' ul.js:visible').slideUp('normal');
 			checkElement.slideDown('normal');
 			return false
-) jQuery
