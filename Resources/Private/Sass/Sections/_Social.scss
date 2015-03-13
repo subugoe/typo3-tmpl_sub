@@ -13,17 +13,14 @@
 }
 
 .infobox__social {
-	ul {
-		padding-left: 1em;
-		li {
-			list-style-type: none;
-			list-style-image: none !important;
-			padding-bottom: 5px;
-			i {
-				font-size: 200%;
-				vertical-align: middle;
-				margin-right: 7px;
-			}
+	padding-left: 1em;
+	li {
+		list-style-type: none;
+		list-style-image: none !important;
+		padding-bottom: 5px;
+		i {
+			vertical-align: middle;
+			margin-right: 7px;
 		}
 	}
 }

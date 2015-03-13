@@ -27,6 +27,7 @@ $default-text-shadow-v-offset: 1px;
 $base-font-size: 12px;
 $base-line-height: 18px;
 @include establish-baseline;
+$fa-font-path: '../Fonts' !default;
 
 // Images
 $arrowLink: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right_2.svg';
@@ -64,7 +65,7 @@ $font: Helvetica, Arial, sans-serif;
 }
 
 // Pseudo selectors
-::selection, ::-moz-selection{
+::selection, ::-moz-selection {
 	background-color: $lightgrey;
 }
 
@@ -116,15 +117,15 @@ dfn {
 
 /* Forms */
 fieldset {
-	.powermail_check_inner label,.powermail_radio_inner label, .fieldwrap_radio label{
+	.powermail_check_inner label, .powermail_radio_inner label, .fieldwrap_radio label {
 		float: none;
 		display: inline;
 		font-weight: normal;
-		margin-left: 0!important;
+		margin-left: 0 !important;
 		width: 435px;
 	}
 	&.tx-powermail-pi1_fieldset {
-		background-color: white!important;
+		background-color: white !important;
 		padding: 0 !important;
 	}
 }
@@ -185,8 +186,7 @@ table {
 		vertical-align: top;
 		color: darken($darkgrey, 20%);
 		border-right: 1px solid $anotherLightGrey;
-		border-top: 1px solid $anotherLightGrey;
-		;
+		border-top: 1px solid $anotherLightGrey;;
 	}
 	.tr-even {
 		background-color: $lightgrey;
