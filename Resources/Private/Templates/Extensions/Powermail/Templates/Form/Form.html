@@ -19,7 +19,6 @@ Render Powermail Form
 						additionalAttributes="{vh:Validation.EnableParsleyAndAjax(form:form)}"
 						class="powermail_form powermail_form_{form.uid} {form.css} {vh:Misc.MorestepClass(activate:settings.main.moresteps, class:'powermail_morestep')}">
 
-					<h3>{form.title}</h3>
 					<f:render partial="Misc/FormError" arguments="{_all}" />
 
 					<f:for each="{form.pages}" as="page">
