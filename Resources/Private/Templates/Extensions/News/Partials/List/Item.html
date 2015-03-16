@@ -1,16 +1,16 @@
 {namespace n=Tx_News_ViewHelpers}
-<!--
+<f:comment><!--
 	=====================
 		Partials/List/Item.html
--->
+--></f:comment>
 <div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}">
 	<n:excludeDisplayedNews newsItem="{newsItem}" />
-	<!-- header -->
+	<f:comment><!-- header --></f:comment>
 	<div class="header">
 		<h3>{newsItem.title}</h3>
 	</div>
 
-<!--Shows Category image in the list. Condition needed to show the category image even if there is a media element in the text-->
+<f:comment>Shows Category image in the list. Condition needed to show the category image even if there is a media element in the text</f:comment>
 	<f:if condition="{newsItem.firstCategory.image}">
 		<f:then>
 			<f:if condition="{newsItem.media}">
@@ -48,7 +48,7 @@
 		</f:then>
 	</f:if>
 
-	<!-- teas=ser text -->
+	<f:comment><!-- teaser text --></f:comment>
 	<div class="teaser-text">
 		<f:if condition="{newsItem.teaser}">
 			<f:then><f:format.html>{newsItem.teaser}</f:format.html></f:then>
