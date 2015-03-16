@@ -411,3 +411,8 @@ plugin.tx_powermail {
     }
   }
 }
+
+### news setup ###
+plugin.tx_news.view.templateRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/News/Templates
+plugin.tx_news.view.partialRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/News/Partials
+plugin.tx_news.view.layoutRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/News/Layouts
