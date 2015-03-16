@@ -1,41 +1,41 @@
 <?php
 $TYPO3_CONF_VARS['FE']['addRootLineFields'] .= ',tx_realurl_pathsegment';
 $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
-		'init' => array(
-				'enableCHashCache' => 1,
-				'appendMissingSlash' => 'ifNotFile,redirect',
-				'enableUrlDecodeCache' => 0,
-				'enableUrlEncodeCache' => 0,
-				'adminJumpToBackend' => 1,
-				'emptyUrlReturnValue' => '/',
-				'postVarSet_failureMode' => 'redirect_goodUpperDir',
+	'init' => array(
+		'enableCHashCache' => 1,
+		'appendMissingSlash' => 'ifNotFile,redirect',
+		'enableUrlDecodeCache' => 0,
+		'enableUrlEncodeCache' => 0,
+		'adminJumpToBackend' => 1,
+		'emptyUrlReturnValue' => '/',
+		'postVarSet_failureMode' => 'redirect_goodUpperDir',
+	),
+	'pagePath' => array(
+		'type' => 'user',
+		'userFunc' => 'EXT:realurl/class.tx_realurl_advanced.php:&tx_realurl_advanced->main',
+		'spaceCharacter' => '-',
+		'languageGetVar' => 'L',
+		'expireDays' => 7,
+		'rootpage_id' => 3,
+		'dontResolveShortcuts' => 1
+	),
+	'preVars' => array(
+		array(
+			'GETvar' => 'L',
+			'valueMap' => array(
+					'en' => '1',
+			),
+			'valueDefault' => 'de',
+			'noMatch' => 'bypass',
 		),
-		'pagePath' => array(
-				'type' => 'user',
-				'userFunc' => 'EXT:realurl/class.tx_realurl_advanced.php:&tx_realurl_advanced->main',
-				'spaceCharacter' => '-',
-				'languageGetVar' => 'L',
-				'expireDays' => 7,
-				'rootpage_id' => 3,
-				'dontResolveShortcuts' => 1
+		array(
+			'GETvar' => 'no_cache',
+			'valueMap' => array(
+					'nc' => 1,
+			),
+			'noMatch' => 'bypass',
 		),
-		'preVars' => array(
-				array(
-						'GETvar' => 'L',
-						'valueMap' => array(
-								'en' => '1',
-						),
-						'valueDefault' => 'de',
-						'noMatch' => 'bypass',
-				),
-				array(
-						'GETvar' => 'no_cache',
-						'valueMap' => array(
-								'nc' => 1,
-						),
-						'noMatch' => 'bypass',
-				),
-		),
+	),
 		'fixedPostVars' => array(
 				'newsDetailConfiguration' => array(
 						array(
@@ -47,8 +47,8 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 										'addWhereClause' => ' AND NOT deleted',
 										'useUniqueCache' => 1,
 										'useUniqueCache_conf' => array(
-												'strtolower' => 1,
-												'spaceCharacter' => '-'
+											'strtolower' => 1,
+											'spaceCharacter' => '-'
 										),
 										'languageGetVar' => 'L',
 										'languageExceptionUids' => '',
@@ -69,8 +69,8 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 										'addWhereClause' => ' AND NOT deleted',
 										'useUniqueCache' => 1,
 										'useUniqueCache_conf' => array(
-												'strtolower' => 1,
-												'spaceCharacter' => '-'
+											'strtolower' => 1,
+											'spaceCharacter' => '-'
 										)
 								)
 						)
@@ -85,20 +85,20 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 										'addWhereClause' => ' AND NOT deleted',
 										'useUniqueCache' => 1,
 										'useUniqueCache_conf' => array(
-												'strtolower' => 1,
-												'spaceCharacter' => '-'
+											'strtolower' => 1,
+											'spaceCharacter' => '-'
 										)
 								)
 						)
 				),
 
 			// uid of the target page. For additional detail/category/tag pages, add their uid as well
-				'1949' => 'newsDetailConfiguration',
-				'1951' => 'newsDetailConfiguration',
+				'2342' => 'newsDetailConfiguration',
+				'2353' => 'newsDetailConfiguration',
 				'1374' => 'newsDetailConfiguration',
-				'2031' => 'newsDetailConfiguration',
-				'1950' => 'newsCategoryConfiguration',
+				'2352' => 'newsCategoryConfiguration',
 				'194' => 'newsCategoryConfiguration',
+				'1' => 'newsDetailConfiguration',
 			//'71' => 'newsTagConfiguration', // Bsp.
 
 
