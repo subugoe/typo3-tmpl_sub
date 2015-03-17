@@ -30,7 +30,6 @@ config {
 	}
 }
 includeLibs.user_template = typo3conf/ext/tmpl_{$page_template}/Resources/Private/Scripts/TemplateScripts.php
-includeLibs.displayKeywords = EXT:nkwkeywords/lib/lib.php
 
 ### Language = en ###
 [globalVar = GP:L = 1]
