@@ -1,5 +1,10 @@
 plugin {
 	tx_news {
+		view {
+			templateRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/News/Templates
+			partialRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/News/Partials
+			layoutRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/News/Layouts
+		}
 		settings {
 			detail {
 				showSocialShareButtons = 0
