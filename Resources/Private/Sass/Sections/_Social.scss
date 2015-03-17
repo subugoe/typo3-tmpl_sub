@@ -1,8 +1,10 @@
-.icon-facebook-sign {
+.icon-facebook-sign,
+.fa-facebook {
 	color: #3b5998;
 }
 
-.icon-twitter-sign {
+.icon-twitter-sign,
+.fa-twitter {
 	color: #00aced;
 }
 
@@ -13,7 +15,7 @@
 }
 
 .infobox__social {
-	padding-left: 1em;
+	padding-left: 1em !important;
 	li {
 		list-style-type: none;
 		list-style-image: none !important;
@@ -22,5 +24,8 @@
 			vertical-align: middle;
 			margin-right: 7px;
 		}
+	}
+	.fa {
+		font-size: 2em;
 	}
 }

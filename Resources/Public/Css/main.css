@@ -3315,11 +3315,13 @@ footer .footerright div, #footer .footerright div {
   background-color: #1f4186 !important;
 }
 
-.icon-facebook-sign {
+.icon-facebook-sign,
+.fa-facebook {
   color: #3b5998;
 }
 
-.icon-twitter-sign {
+.icon-twitter-sign,
+.fa-twitter {
   color: #00aced;
 }
 
@@ -3328,7 +3330,7 @@ footer .footerright div, #footer .footerright div {
 }
 
 .infobox__social {
-  padding-left: 1em;
+  padding-left: 1em !important;
 }
 .infobox__social li {
   list-style-type: none;
@@ -3338,6 +3340,9 @@ footer .footerright div, #footer .footerright div {
 .infobox__social li i {
   vertical-align: middle;
   margin-right: 7px;
+}
+.infobox__social .fa {
+  font-size: 2em;
 }
 
 /* Extensions */
