@@ -3659,9 +3659,18 @@ footer .footerright div, #footer .footerright div {
   width: 300px;
   color: #434343;
 }
-.tx-powermail-pi1 .powermail_all_td,
-.tx-powermail .powermail_all_td {
-  padding: 4px;
+.tx-powermail-pi1 .powermail_all > dt,
+.tx-powermail .powermail_all > dt {
+  width: 200px;
+  float: left;
+  clear: left;
+  font-weight: bold;
+}
+.tx-powermail-pi1 .powermail_all > dd,
+.tx-powermail .powermail_all > dd {
+  width: 300px;
+  float: left;
+  margin: 0;
 }
 .tx-powermail-pi1 .tx-powermail-pi1_fieldset_ihrebuchpatenschaft select,
 .tx-powermail .tx-powermail-pi1_fieldset_ihrebuchpatenschaft select {

@@ -1,10 +1,12 @@
+$widthField: 300px;
+$widthLabel: 200px;
 
 /* powermail */
 .tx-powermail-pi1,
 .tx-powermail {
 	color: $darkgrey;
 	.powermail_all_td {
-	   padding: 4px;
+		padding: 4px;
 	}
 	.tx-powermail-pi1_fieldset {
 		border: 0;
@@ -30,7 +32,7 @@
 		padding: 3px;
 		width: 300px;
 		color: $darkgrey;
-		&.powermail_submit .tx-powermail-pi1_confirmation{
+		&.powermail_submit .tx-powermail-pi1_confirmation {
 			width: auto;
 			border-width: 1px;
 			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
@@ -43,29 +45,30 @@
 			text-shadow: 0 1px rgba(255, 255, 255, 0.75);
 			text-transform: uppercase;
 			line-height: 100%;
-			padding: 3px 12px!important;
+			padding: 3px 12px !important;
 			float: left;
 			height: 28px;
 			color: $darkgrey;
 		}
-		&.tx-powermail-pi1_confirmation, &.tx-powermail-pi1_mandatory_submit {
-		    width: auto;
-		    border: 1px solid #434343;
-		    border-width: 1px;
-		    border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
-		    @include border-radius(3px);
-		    background: url($buttonBackground) repeat-x scroll 0 100% #f3f6fb;
-		    border-style: solid;
+		&.tx-powermail-pi1_confirmation,
+		&.tx-powermail-pi1_mandatory_submit {
+			width: auto;
+			border: 1px solid #434343;
+			border-width: 1px;
+			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
+			@include border-radius(3px);
+			background: url($buttonBackground) repeat-x scroll 0 100% #f3f6fb;
+			border-style: solid;
 			font-weight: bold;
-		    text-align: center;
-		    text-decoration: none;
-		    text-shadow: 0 1px rgba(255, 255, 255, 0.75);
-		    text-transform: uppercase;
-		    line-height: 100%;
-		    padding: 3px 12px!important;
-		    height: 28px;
-		    color: $darkgrey;
-    	}
+			text-align: center;
+			text-decoration: none;
+			text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+			text-transform: uppercase;
+			line-height: 100%;
+			padding: 3px 12px !important;
+			height: 28px;
+			color: $darkgrey;
+		}
 	}
 	textarea {
 		margin-left: 0;
@@ -81,8 +84,18 @@
 		width: 300px;
 		color: $darkgrey;
 	}
-	.powermail_all_td {
-		padding: 4px;
+	.powermail_all {
+		> dt {
+			width: $widthLabel;
+			float: left;
+			clear: left;
+			font-weight: bold;
+		}
+		> dd {
+			width: $widthField;
+			float: left;
+			margin: 0;
+		}
 	}
 	.tx-powermail-pi1_fieldset_ihrebuchpatenschaft select {
 		width: 308px;
@@ -179,8 +192,4 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 .powermail_uid177, .powermail_uid178 {
 	width: 20px !important;
 	text-align: center;
-}
-
-.tx_powermail_pi1_fieldwrap_html_177, .tx_powermail_pi1_fieldwrap_html_178 {
-	// text-align: right
 }
