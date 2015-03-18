@@ -1,5 +1,5 @@
 plugin.tx_powermail {
-	view{
+	view {
 		templateRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Templates/
 		layoutRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Layouts/
 		partialRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Partials/
@@ -39,6 +39,7 @@ lib.abholtheke {
 			htmlSpecialChars = 1
 		}
 	}
+
 	renderObj = TEXT
 	renderObj {
 		field = name
@@ -57,6 +58,7 @@ lib.emailAbholtheke {
 			htmlSpecialChars = 1
 		}
 	}
+
 	renderObj = TEXT
 	renderObj {
 		field = email
@@ -66,21 +68,21 @@ lib.emailAbholtheke {
 # Sender name and email of the library for the header in the email to user
 # $abholthekeformular in the constants
 [PIDinRootline = {$abholthekeformular}]
-plugin.tx_powermail {
-	settings {
-		setup {
-			sender {
-				overwrite {
-					senderName = TEXT
-					senderName.value = {f:cObject(typoscriptObjectPath:'lib.abholtheke',data:abholung)}
+	plugin.tx_powermail {
+		settings {
+			setup {
+				sender {
+					overwrite {
+						senderName = TEXT
+						senderName.value = {f:cObject(typoscriptObjectPath:'lib.abholtheke',data:abholung)}
 
-					senderEmail = TEXT
-					senderEmail.value = {f:cObject(typoscriptObjectPath:'lib.emailAbholtheke',data:abholung)}
+						senderEmail = TEXT
+						senderEmail.value = {f:cObject(typoscriptObjectPath:'lib.emailAbholtheke',data:abholung)}
+					}
 				}
 			}
 		}
 	}
-}
 [global]
 
 ## setup for Abholtheke dropdown list - end ##
@@ -89,25 +91,25 @@ plugin.tx_powermail {
 ## setup for bookshelf donation ##
 
 [globalVar = GP:tx_powermail_pi1|uid{$spendeID} = 1]
-lib.select >
-lib.select = COA_INT
-lib.select {
- 10 = TEXT
- 10.value = <label class="powermail_label" for="powermail_field_uid{$spendeID}">Ihre Spende</label>
+	lib.select >
+	lib.select = COA_INT
+	lib.select {
+		10 = TEXT
+		10.value = <label class="powermail_label" for="powermail_field_uid{$spendeID}">Ihre Spende</label>
 
- 20 = TEXT
- 20.value = <select id="powermail_field_uid{$spendeID}" class="powermail_field powermail_select" name="tx_powermail_pi1[field][uid{$spendeID}]"><option value="Regalboden (300 Euro)" selected="selected">Regalboden (300 Euro)</option><option value="Ausstellungsvitrine (5.000 Euro)">Ausstellungsvitrine (5.000 Euro)</option></select>
-}
+		20 = TEXT
+		20.value = <select id="powermail_field_uid{$spendeID}" class="powermail_field powermail_select" name="tx_powermail_pi1[field][uid{$spendeID}]"><option value="Regalboden (300 Euro)" selected="selected">Regalboden (300 Euro)</option><option value="Ausstellungsvitrine (5.000 Euro)">Ausstellungsvitrine (5.000 Euro)</option></select>
+	}
 [else]
-lib.select >
-lib.select = COA_INT
-lib.select {
- 10 = TEXT
- 10.value = <label class="powermail_label" for="powermail_field_uid{$spendeID}">Ihre Spende</label>
+	lib.select >
+	lib.select = COA_INT
+	lib.select {
+		10 = TEXT
+		10.value = <label class="powermail_label" for="powermail_field_uid{$spendeID}">Ihre Spende</label>
 
- 20 = TEXT
- 20.value = <select id="powermail_field_uid{$spendeID}" class="powermail_field powermail_select" name="tx_powermail_pi1[field][uid{$spendeID}]"><option value="Regalboden (300 Euro)">Regalboden (300 Euro)</option><option value="Ausstellungsvitrine (5.000 Euro)" selected="selected">Ausstellungsvitrine (5.000 Euro)</option></select>
-}
+		20 = TEXT
+		20.value = <select id="powermail_field_uid{$spendeID}" class="powermail_field powermail_select" name="tx_powermail_pi1[field][uid{$spendeID}]"><option value="Regalboden (300 Euro)">Regalboden (300 Euro)</option><option value="Ausstellungsvitrine (5.000 Euro)" selected="selected">Ausstellungsvitrine (5.000 Euro)</option></select>
+	}
 [global]
 
 ## setup for bookshelf donation - end ##
@@ -126,70 +128,74 @@ lib.uebergabe.wrap = uid = |
 # Alle Buecher aus DB auslesen
 lib.buecher = COA_INT
 lib.buecher {
-  10 = TEXT
-  10.value = <label for="uid{$patenschaft.selectID}">Ihre Patenschaft:</label>
+	10 = TEXT
+	10.value = <label for="uid{$patenschaft.selectID}">Ihre Patenschaft:</label>
 
-  15 = COA
-  15.wrap = <select id="powermail_field_uid{$patenschaft.selectID}" class="powermail_ihrebuchpatenschaft powermail_field powermail_select" tabindex="9" name="tx_powermail_pi1[field][uid{$patenschaft.selectID}]" size="1">|</select>
+	15 = COA
+	15.wrap = <select id="powermail_field_uid{$patenschaft.selectID}" class="powermail_ihrebuchpatenschaft powermail_field powermail_select" tabindex="9" name="tx_powermail_pi1[field][uid{$patenschaft.selectID}]" size="1">|</select>
 
-  15{
-    5 = TEXT
-    5.data < lib.uebergabe
-    10 = CONTENT
-    10{
-      table= tx_patenschaften_buecher
-      select{
-        pidInList = {$patenschaft.pidInList}
-        where = sponsorship = ""
-        andWhere  < lib.uebergabe
-        max = 1
+	15 {
+		5 = TEXT
+		5.data < lib.uebergabe
+		10 = CONTENT
+		10 {
+			table = tx_patenschaften_buecher
+			select {
+				pidInList = {$patenschaft.pidInList}
+				where = sponsorship = ""
+				andWhere < lib.uebergabe
+				max = 1
+			}
 
-      }
-      renderObj = COA
-      renderObj {
-        10 = COA
-        10 {
-          10 = TEXT
-          10 {
-            field = titel
-            wrap = <option selected="selected" value="|">
-            stdWrap.htmlSpecialChars = 1
-          }
-          20 = TEXT
-          20 {
-            field = titel
-            wrap = |</option>
-          }
-        }
-      }
-    }
-    20 = CONTENT
-    20 {
-      table = tx_patenschaften_buecher
-      select {
-        pidInList = {$patenschaft.pidInList}
-        orderBy = titel
-        where = sponsorship = ""
-       }
-      renderObj = COA
-      renderObj {
-        10 = COA
-        10 {
-          10 = TEXT
-          10 {
-            field = titel
-            wrap = <option value="|">
-            stdWrap.htmlSpecialChars = 1
-          }
-          20 = TEXT
-          20 {
-            field = titel
-            wrap = |</option>
-          }
-        }
-      }
-    }
-  }
+			renderObj = COA
+			renderObj {
+				10 = COA
+				10 {
+					10 = TEXT
+					10 {
+						field = titel
+						wrap = <option selected="selected" value="|">
+						stdWrap.htmlSpecialChars = 1
+					}
+
+					20 = TEXT
+					20 {
+						field = titel
+						wrap = |</option>
+					}
+				}
+			}
+		}
+
+		20 = CONTENT
+		20 {
+			table = tx_patenschaften_buecher
+			select {
+				pidInList = {$patenschaft.pidInList}
+				orderBy = titel
+				where = sponsorship = ""
+			}
+
+			renderObj = COA
+			renderObj {
+				10 = COA
+				10 {
+					10 = TEXT
+					10 {
+						field = titel
+						wrap = <option value="|">
+						stdWrap.htmlSpecialChars = 1
+					}
+
+					20 = TEXT
+					20 {
+						field = titel
+						wrap = |</option>
+					}
+				}
+			}
+		}
+	}
 }
 
 ## setup for book restoration donation - end ##
