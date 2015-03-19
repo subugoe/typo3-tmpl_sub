@@ -71,9 +71,9 @@ $tempColumns = array(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'wiki_commons', '', 'after:copyright_url');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'creative_commons', '', 'after:wiki_commons');
 
-$TCA['sys_file_metadata']['columns']['caption']['config']['eval'] = 'required';
 $TCA['sys_file_metadata']['columns']['alt_text']['config']['eval'] = 'required';
 $TCA['sys_file_metadata']['columns']['exturl']['config']['eval'] = 'required';
+$TCA['sys_file_metadata']['columns']['copyright']['config']['eval'] = 'required';
 
 /**
  * Register Custom Fluid Content Element

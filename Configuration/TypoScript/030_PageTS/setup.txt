@@ -75,7 +75,6 @@ TCEFORM {
 		author.disabled = 1
 		author_email.disabled = 1
 		tx_realurl_pathsegment.disabled = 1
-		tx_nkwbitly_bitly.disabled = 1
 		media.disabled = 1
 		hidden.disabled = 1
 	}
