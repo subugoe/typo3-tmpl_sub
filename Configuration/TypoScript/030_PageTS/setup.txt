@@ -45,6 +45,7 @@ TCEFORM {
 		imagecaption.disabled = 1
 		altText.disabled = 1
 		titleText.disabled = 1
+		categories.disabled = 1
 	}
 	pages {
 		abstract.disabled = 1
