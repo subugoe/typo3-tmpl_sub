@@ -1,41 +1,41 @@
 <?php
 $TYPO3_CONF_VARS['FE']['addRootLineFields'] .= ',tx_realurl_pathsegment';
 $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
-	'init' => array(
-		'enableCHashCache' => 1,
-		'appendMissingSlash' => 'ifNotFile,redirect',
-		'enableUrlDecodeCache' => 0,
-		'enableUrlEncodeCache' => 0,
-		'adminJumpToBackend' => 1,
-		'emptyUrlReturnValue' => '/',
-		'postVarSet_failureMode' => 'redirect_goodUpperDir',
-	),
-	'pagePath' => array(
-		'type' => 'user',
-		'userFunc' => 'EXT:realurl/class.tx_realurl_advanced.php:&tx_realurl_advanced->main',
-		'spaceCharacter' => '-',
-		'languageGetVar' => 'L',
-		'expireDays' => 7,
-		'rootpage_id' => 3,
-		'dontResolveShortcuts' => 1
-	),
-	'preVars' => array(
-		array(
-			'GETvar' => 'L',
-			'valueMap' => array(
-					'en' => '1',
-			),
-			'valueDefault' => 'de',
-			'noMatch' => 'bypass',
+		'init' => array(
+				'enableCHashCache' => 1,
+				'appendMissingSlash' => 'ifNotFile,redirect',
+				'enableUrlDecodeCache' => 0,
+				'enableUrlEncodeCache' => 0,
+				'adminJumpToBackend' => 1,
+				'emptyUrlReturnValue' => '/',
+				'postVarSet_failureMode' => 'redirect_goodUpperDir',
 		),
-		array(
-			'GETvar' => 'no_cache',
-			'valueMap' => array(
-					'nc' => 1,
-			),
-			'noMatch' => 'bypass',
+		'pagePath' => array(
+				'type' => 'user',
+				'userFunc' => 'EXT:realurl/class.tx_realurl_advanced.php:&tx_realurl_advanced->main',
+				'spaceCharacter' => '-',
+				'languageGetVar' => 'L',
+				'expireDays' => 7,
+				'rootpage_id' => 3,
+				'dontResolveShortcuts' => 1
 		),
-	),
+		'preVars' => array(
+				array(
+						'GETvar' => 'L',
+						'valueMap' => array(
+								'en' => '1',
+						),
+						'valueDefault' => 'de',
+						'noMatch' => 'bypass',
+				),
+				array(
+						'GETvar' => 'no_cache',
+						'valueMap' => array(
+								'nc' => 1,
+						),
+						'noMatch' => 'bypass',
+				),
+		),
 		'fixedPostVars' => array(
 				'newsDetailConfiguration' => array(
 						array(
@@ -60,20 +60,20 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 						)
 				),
 				'newsCategoryConfiguration' => array(
-					array(
-						'GETvar' => 'tx_news_pi1[overwriteDemand][categories]',
-						'lookUpTable' => array(
-							'table' => 'sys_category',
-							'id_field' => 'uid',
-							'alias_field' => 'title',
-							'addWhereClause' => ' AND NOT deleted',
-							'useUniqueCache' => 1,
-							'useUniqueCache_conf' => array(
-								'strtolower' => 1,
-								'spaceCharacter' => '-'
-							)
+						array(
+								'GETvar' => 'tx_news_pi1[overwriteDemand][categories]',
+								'lookUpTable' => array(
+										'table' => 'sys_category',
+										'id_field' => 'uid',
+										'alias_field' => 'title',
+										'addWhereClause' => ' AND NOT deleted',
+										'useUniqueCache' => 1,
+										'useUniqueCache_conf' => array(
+												'strtolower' => 1,
+												'spaceCharacter' => '-'
+										)
+								)
 						)
-					)
 				),
 				'newsTagConfiguration' => array(
 						array(
@@ -91,7 +91,6 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 								)
 						)
 				),
-
 			// uid of the target page. For additional detail/category/tag pages, add their uid as well
 				'2342' => 'newsDetailConfiguration',
 				'2353' => 'newsDetailConfiguration',
@@ -99,8 +98,6 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 				'2352' => 'newsCategoryConfiguration',
 				'194' => 'newsCategoryConfiguration',
 				'1' => 'newsDetailConfiguration',
-
-
 		),
 		'postVarSets' => array(
 				'_DEFAULT' => array(
@@ -311,27 +308,6 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 								),
 						),
 						'bibliothek' => array(
-								array(
-										'GETvar' => 'tx_standorte_pi1[bibliothek]',
-										'lookUpTable' => array(
-												'table' => 'tx_standorte_domain_model_bibliothek',
-												'id_field' => 'uid',
-												'alias_field' => 'titel',
-												'addWhereClause' => ' AND NOT deleted',
-												'useUniqueCache' => 1,
-												'useUniqueCache_conf' => array(
-														'strtolower' => 1,
-														'spaceCharacter' => '-',
-												),
-												'autoUpdate' => 1,
-												'expireDays' => 180,
-											// language support (translated urls)
-												'languageGetVar' => 'L',
-												'languageExceptionUids' => '',
-												'languageField' => 'sys_language_uid',
-												'transOrigPointerField' => 'l10n_parent',
-										),
-								),
 								array(
 										'GETvar' => 'tx_standorte_pi1[bibliothek]',
 										'lookUpTable' => array(
