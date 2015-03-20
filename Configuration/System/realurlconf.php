@@ -313,7 +313,7 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 						),
 						'bibliothek' => array(
 								array(
-										'GETvar' => 'tx_standorte_showlibrary[bibliothek]',
+										'GETvar' => 'tx_standorte_pi1[bibliothek]',
 										'lookUpTable' => array(
 												'table' => 'tx_standorte_domain_model_bibliothek',
 												'id_field' => 'uid',
