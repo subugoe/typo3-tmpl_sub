@@ -47,8 +47,8 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 										'addWhereClause' => ' AND NOT deleted',
 										'useUniqueCache' => 1,
 										'useUniqueCache_conf' => array(
-											'strtolower' => 1,
-											'spaceCharacter' => '-'
+												'strtolower' => 1,
+												'spaceCharacter' => '-'
 										),
 										'languageGetVar' => 'L',
 										'languageExceptionUids' => '',
@@ -60,20 +60,20 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 						)
 				),
 				'newsCategoryConfiguration' => array(
-						array(
-								'GETvar' => 'tx_news_pi1[overwriteDemand][categories]',
-								'lookUpTable' => array(
-										'table' => 'tx_news_domain_model_category',
-										'id_field' => 'uid',
-										'alias_field' => 'title',
-										'addWhereClause' => ' AND NOT deleted',
-										'useUniqueCache' => 1,
-										'useUniqueCache_conf' => array(
-											'strtolower' => 1,
-											'spaceCharacter' => '-'
-										)
-								)
+					array(
+						'GETvar' => 'tx_news_pi1[overwriteDemand][categories]',
+						'lookUpTable' => array(
+							'table' => 'sys_category',
+							'id_field' => 'uid',
+							'alias_field' => 'title',
+							'addWhereClause' => ' AND NOT deleted',
+							'useUniqueCache' => 1,
+							'useUniqueCache_conf' => array(
+								'strtolower' => 1,
+								'spaceCharacter' => '-'
+							)
 						)
+					)
 				),
 				'newsTagConfiguration' => array(
 						array(
@@ -85,8 +85,8 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 										'addWhereClause' => ' AND NOT deleted',
 										'useUniqueCache' => 1,
 										'useUniqueCache_conf' => array(
-											'strtolower' => 1,
-											'spaceCharacter' => '-'
+												'strtolower' => 1,
+												'spaceCharacter' => '-'
 										)
 								)
 						)
@@ -99,7 +99,6 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 				'2352' => 'newsCategoryConfiguration',
 				'194' => 'newsCategoryConfiguration',
 				'1' => 'newsDetailConfiguration',
-			//'71' => 'newsTagConfiguration', // Bsp.
 
 
 		),
