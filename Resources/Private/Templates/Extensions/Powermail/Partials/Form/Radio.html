@@ -4,6 +4,7 @@
 	<fieldset>
 		<legend class="powermail_label powermail_radio_legend" title="{field.description}">
 			<vh:string.RawAndRemoveXss>{field.title}</vh:string.RawAndRemoveXss><f:if condition="{field.mandatory}"><span class="mandatory">*</span></f:if>
+			<f:render partial="Form/Information" arguments="{description: field.description}" />
 		</legend>
 
 		<div class="powermail_radio_outer {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')}">
