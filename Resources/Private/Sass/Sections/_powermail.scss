@@ -27,7 +27,8 @@ $widthLabel: 200px;
 		font-weight: normal;
 	}
 
-	.tx_powermail_pi1_fieldwrap_html {
+	.tx_powermail_pi1_fieldwrap_html,
+	.powermail_fieldwrap {
 		margin: 10px 0;
 	}
 
@@ -141,7 +142,8 @@ $widthLabel: 200px;
 	width: 100px;
 }
 
-.tx-powermail-pi1_confirmation input, .tx-powermail-pi1_mandatory_submit input {
+.tx-powermail-pi1_confirmation input,
+.tx-powermail-pi1_mandatory_submit input {
 	width: 150px;
 	border: 1px solid $lightblue;
 	background-color: $lightgrey;
@@ -155,7 +157,8 @@ $widthLabel: 200px;
 	float: left;
 }
 
-.powermail_radio_inner, .powermail_check_inner {
+.powermail_radio_inner,
+.powermail_check_inner {
 	margin: 8px 0;
 	input {
 		clear: none !important;

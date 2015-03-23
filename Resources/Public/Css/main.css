@@ -268,13 +268,13 @@ table .tr-0 {
   font-style: italic;
 }
 
-.msg {
-  background-color: #dee1e7;
-  padding-bottom: 0 !important;
-  margin: 0 12px 10px 10px;
-  padding: 20px;
+.msg,
+.flashmessage {
   font-size: 1.3em;
   line-height: 2.30769em;
+  background-color: #dee1e7;
+  padding: 0;
+  margin: 0;
   font-weight: bold;
 }
 
@@ -3593,7 +3593,9 @@ footer .footerright div, #footer .footerright div {
   font-weight: normal;
 }
 .tx-powermail-pi1 .tx_powermail_pi1_fieldwrap_html,
-.tx-powermail .tx_powermail_pi1_fieldwrap_html {
+.tx-powermail-pi1 .powermail_fieldwrap,
+.tx-powermail .tx_powermail_pi1_fieldwrap_html,
+.tx-powermail .powermail_fieldwrap {
   margin: 10px 0;
 }
 .tx-powermail-pi1 .powermail_submit,
@@ -3721,7 +3723,8 @@ footer .footerright div, #footer .footerright div {
   width: 100px;
 }
 
-.tx-powermail-pi1_confirmation input, .tx-powermail-pi1_mandatory_submit input {
+.tx-powermail-pi1_confirmation input,
+.tx-powermail-pi1_mandatory_submit input {
   width: 150px;
   border: 1px solid #93A8CF;
   background-color: #dee1e7;
@@ -3735,10 +3738,12 @@ footer .footerright div, #footer .footerright div {
   float: left;
 }
 
-.powermail_radio_inner, .powermail_check_inner {
+.powermail_radio_inner,
+.powermail_check_inner {
   margin: 8px 0;
 }
-.powermail_radio_inner input, .powermail_check_inner input {
+.powermail_radio_inner input,
+.powermail_check_inner input {
   clear: none !important;
   width: 30px;
 }
@@ -3816,7 +3821,7 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
   top: 0.2em;
 }
 #pazpar2 .pz2-termList-medium .pz2-mediaIcon {
-  top: 0px;
+  top: 0;
 }
 #pazpar2 .pz2-fieldsets ul {
   padding: 0 !important;
@@ -3963,10 +3968,10 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 }
 
 .news .news-latest-container {
-  padding: 0 !important;
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.16em;
   line-height: 1.2931em;
+  padding: 0 !important;
+  font-family: Helvetica, Arial, sans-serif;
   color: #434343;
 }
 .news .news-latest-container img {
