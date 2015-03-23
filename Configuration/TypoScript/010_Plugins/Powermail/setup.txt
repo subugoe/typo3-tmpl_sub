@@ -199,3 +199,5 @@ lib.buecher {
 }
 
 ## setup for book restoration donation - end ##
+
+page.includeJSFooterlibs.powermailJQuery >
