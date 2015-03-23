@@ -3599,6 +3599,9 @@ footer .footerright div, #footer .footerright div {
 .tx-powermail .powermail_confirmation_form,
 .tx-powermail .powermail_confirmation_submit {
   width: 200px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 .tx-powermail-pi1 input,
 .tx-powermail input {
