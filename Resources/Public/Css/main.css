@@ -3593,7 +3593,11 @@ footer .footerright div, #footer .footerright div {
   margin: 10px 0;
 }
 .tx-powermail-pi1 .powermail_submit,
-.tx-powermail .powermail_submit {
+.tx-powermail-pi1 .powermail_confirmation_form,
+.tx-powermail-pi1 .powermail_confirmation_submit,
+.tx-powermail .powermail_submit,
+.tx-powermail .powermail_confirmation_form,
+.tx-powermail .powermail_confirmation_submit {
   width: 200px;
 }
 .tx-powermail-pi1 input,

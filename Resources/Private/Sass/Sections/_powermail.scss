@@ -19,7 +19,7 @@ $widthLabel: 200px;
 		}
 	}
 	label {
-		width: 200px;
+		width: $widthLabel;
 		clear: both;
 		float: left;
 	}
@@ -27,7 +27,9 @@ $widthLabel: 200px;
 		margin: 10px 0;
 	}
 
-	.powermail_submit {
+	.powermail_submit,
+	.powermail_confirmation_form,
+	.powermail_confirmation_submit {
 		width: $widthLabel;
 	}
 
