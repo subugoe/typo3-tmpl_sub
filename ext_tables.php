@@ -102,6 +102,7 @@ $TCA['tt_content']['columns']['imagecaption']['config']['type'] = "input";
 $TCA['tt_content']['columns']['imagecaption']['config']['eval'] = "trim,required";
 $TCA['tt_content']['columns']['imagecaption']['config']['max'] = 256;
 $TCA['pages']['columns']['categories']['config']['minitems'] = 1;
+$TCA['pages']['columns']['categories']['config']['foreign_table_where'] = ' AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.title ASC';
 $TCA['pages']['columns']['description']['config']['eval'] = 'required';
 $TCA['pages_language_overlay']['columns']['description']['config']['eval'] = 'required';
 $TCA['pages_language_overlay']['columns']['description']['config']['type'] = 'text';
