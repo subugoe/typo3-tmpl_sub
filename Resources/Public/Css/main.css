@@ -3588,6 +3588,10 @@ footer .footerright div, #footer .footerright div {
   clear: both;
   float: left;
 }
+.tx-powermail-pi1 .powermail_label,
+.tx-powermail .powermail_label {
+  font-weight: normal;
+}
 .tx-powermail-pi1 .tx_powermail_pi1_fieldwrap_html,
 .tx-powermail .tx_powermail_pi1_fieldwrap_html {
   margin: 10px 0;
