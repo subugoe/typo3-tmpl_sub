@@ -26,6 +26,11 @@ $widthLabel: 200px;
 	.tx_powermail_pi1_fieldwrap_html {
 		margin: 10px 0;
 	}
+
+	.powermail_submit {
+		width: $widthLabel;
+	}
+
 	input {
 		margin-left: 0;
 		border: 1px solid $anotherLightGrey;
@@ -33,10 +38,10 @@ $widthLabel: 200px;
 		width: 300px;
 		color: $darkgrey;
 		&.powermail_submit .tx-powermail-pi1_confirmation {
+			@include border-radius(3px);
 			width: auto;
 			border-width: 1px;
 			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
-			@include border-radius(3px);
 			background: url($buttonBackground) repeat-x scroll 0 100% #f3f6fb;
 			border-style: solid;
 			margin-left: 0;
@@ -135,7 +140,8 @@ $widthLabel: 200px;
 	color: $darkgrey;
 }
 
-.tx_powermail_pi1_fieldwrap_html_submit {
+.tx_powermail_pi1_fieldwrap_html_submit,
+.powermail_submit {
 	clear: both;
 	float: left;
 }
