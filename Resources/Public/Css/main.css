@@ -3604,6 +3604,10 @@ footer .footerright div, #footer .footerright div {
 .tx-powermail .powermail_label {
   font-weight: normal;
 }
+.tx-powermail-pi1 .powermail_label i,
+.tx-powermail .powermail_label i {
+  cursor: help;
+}
 .tx-powermail-pi1 .tx_powermail_pi1_fieldwrap_html,
 .tx-powermail-pi1 .powermail_fieldwrap,
 .tx-powermail .tx_powermail_pi1_fieldwrap_html,

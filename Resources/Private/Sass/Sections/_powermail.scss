@@ -30,6 +30,9 @@ $widthLabel: 200px;
 	}
 	.powermail_label {
 		font-weight: normal;
+		i {
+			cursor: help;
+		}
 	}
 
 	.tx_powermail_pi1_fieldwrap_html,
