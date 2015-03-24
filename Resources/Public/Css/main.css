@@ -119,6 +119,7 @@ html {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
+  min-width: 1000px;
 }
 
 ul li {
