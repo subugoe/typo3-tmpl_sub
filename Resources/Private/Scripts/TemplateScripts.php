@@ -107,8 +107,15 @@ class user_template {
 	protected function getBigPictureFromPage($pageId) {
 
 		/** @var \TYPO3\CMS\Core\Resource\FileRepository $fileRepository */
-		$fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\FileRepository');
+		$fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\FileRepository::class);
+
+		// @TODO legacy - remove when files are migrated
 		$fileObjects = $fileRepository->findByRelation('pages', 'tx_nkwsubmenu_picture', $pageId);
+
+		if (count($fileObjects) === 0) {
+			$fileObjects = $fileRepository->findByRelation('pages', 'media', $pageId);
+		}
+
 		$files = array();
 
 		foreach ($fileObjects as $key => $value) {
