@@ -109,11 +109,11 @@ class user_template {
 		/** @var \TYPO3\CMS\Core\Resource\FileRepository $fileRepository */
 		$fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\FileRepository::class);
 
-		// @TODO legacy - remove when files are migrated
-		$fileObjects = $fileRepository->findByRelation('pages', 'tx_nkwsubmenu_picture', $pageId);
+		$fileObjects = $fileRepository->findByRelation('pages', 'media', $pageId);
 
+		// @TODO legacy - remove when files are migrated
 		if (count($fileObjects) === 0) {
-			$fileObjects = $fileRepository->findByRelation('pages', 'media', $pageId);
+			$fileObjects = $fileRepository->findByRelation('pages', 'tx_nkwsubmenu_picture', $pageId);
 		}
 
 		$files = array();
