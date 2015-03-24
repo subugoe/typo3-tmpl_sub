@@ -11,9 +11,8 @@
 
 <div id="tx-solr-search">
 	<!-- ###SOLR_SEARCH_FORM### begin -->
-	###FORM.SUGGEST_URL###
 	<form id="tx-solr-search-form-pi-results" action="###FORM.ACTION###" method="get" accept-charset="###FORM.ACCEPT-CHARSET###">
-		<!--###LLL:searchWord###--><input type="search" class="tx-solr-q" name="###TX_SOLR.QUERY_PARAMETER###" value="###FORM.Q###" />
+		<!--###LLL:searchWord###--><input type="search" class="tx-solr-q" name="q" value="###FORM.Q###" />
 		<!--<input type="submit" value="###LLL:submit###" />-->
 		<!--<input type="submit" value="###LLL:fileadmin/locallang.xml:submit###" />-->
 		<input type="hidden" name="id" value="###FORM.ACTION_ID###" />
@@ -21,7 +20,6 @@
 		<input type="submit" class="formButton" value="###LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:solr.submit###" />
 	</form>
 
-	###FORM.SUGGESTION###
 	<!-- ###SOLR_SEARCH_FORM### end -->
 
 
