@@ -3608,6 +3608,16 @@ footer .footerright div, #footer .footerright div {
 .tx-powermail .powermail_label i {
   cursor: help;
 }
+.tx-powermail-pi1 .parsley-errors-list,
+.tx-powermail .parsley-errors-list {
+  line-height: 2em;
+  background-color: #dee1e7;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  display: inline-block;
+  padding-right: 1em;
+}
 .tx-powermail-pi1 .tx_powermail_pi1_fieldwrap_html,
 .tx-powermail-pi1 .powermail_fieldwrap,
 .tx-powermail .tx_powermail_pi1_fieldwrap_html,
@@ -4124,7 +4134,7 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 
 .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled:hover,
 .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_disabled:hover {
-  color: inherit	!important;
+  color: inherit !important;
   background: inherit !important;
   box-shadow: inherit !important;
 }
