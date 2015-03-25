@@ -113,7 +113,7 @@ class user_template {
 
 		// @TODO legacy - remove when files are migrated
 		if (count($fileObjects) === 0) {
-			$fileObjects = $fileRepository->findByRelation('pages', 'tx_nkwsubmenu_picture', $pageId);
+			$fileObjects = $this->getFilesFromNkwMenu($fileRepository, $pageId);
 		}
 
 		$files = array();
@@ -125,6 +125,19 @@ class user_template {
 
 		return $files;
 	}
+
+	/**
+	 * @param \TYPO3\CMS\Core\Resource\FileRepository $fileRepository
+	 * @param int $pageId
+	 * @return array
+	 * @deprecated will be removed if no occurences from nkwsubmenu are found
+	 */
+	protected function getFilesFromNkwMenu($fileRepository, $pageId) {
+		\TYPO3\CMS\Core\Utility\GeneralUtility::logDeprecatedFunction();
+
+		return $fileRepository->findByRelation('pages', 'tx_nkwsubmenu_picture', $pageId);
+	}
+
 
 	/**
 	 * Renders the image and puts Information to the picture
