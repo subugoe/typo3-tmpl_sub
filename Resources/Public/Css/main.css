@@ -3195,13 +3195,13 @@ footer .footerright div, #footer .footerright div {
   color: #FFFFFF;
 }
 .submenu a:focus {
-  color: #FFFFFF;
+  color: #1a3771;
 }
 .submenu a:hover {
   color: #FFFFFF;
 }
 .submenu a:active {
-  color: #FFFFFF;
+  color: #1a3771;
 }
 .submenu a:hover {
   background-color: #1a3771;
@@ -3238,13 +3238,13 @@ footer .footerright div, #footer .footerright div {
   color: #1a3771;
 }
 .submenu .submenu-l2 a:focus {
-  color: #FFFFFF;
+  color: #1a3771;
 }
 .submenu .submenu-l2 a:hover {
   color: #FFFFFF;
 }
 .submenu .submenu-l2 a:active {
-  color: #FFFFFF;
+  color: #1a3771;
 }
 .submenu .submenu-l2 a.submenu-highlight {
   line-height: 1.3em;
