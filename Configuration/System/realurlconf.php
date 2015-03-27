@@ -92,12 +92,12 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 						)
 				),
 			// uid of the target page. For additional detail/category/tag pages, add their uid as well
-				'2342' => 'newsDetailConfiguration',
-				'2353' => 'newsDetailConfiguration',
-				'1374' => 'newsDetailConfiguration',
-				'2352' => 'newsCategoryConfiguration',
-				'194' => 'newsCategoryConfiguration',
-				'1' => 'newsDetailConfiguration',
+				'2342' => 'newsDetailConfiguration', // Einzelansicht Aktuelles
+				'2353' => 'newsDetailConfiguration', // Einzelansicht Archiv
+				'1374' => 'newsDetailConfiguration', // Archiv
+				'2355' => 'newsDetailConfiguration', // Einzelansicht Stellenangebot
+				'2352' => 'newsCategoryConfiguration', // Liste nach Kategorie
+				'194' => 'newsCategoryConfiguration', // Liste Stellenangebote
 		),
 		'postVarSets' => array(
 				'_DEFAULT' => array(
