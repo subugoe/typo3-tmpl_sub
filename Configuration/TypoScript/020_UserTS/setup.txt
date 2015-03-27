@@ -7,3 +7,7 @@ options {
 	RTESmallHeight = 800
 	uploadFieldsInTopOfEB = 0
 }
+
+setup.default.rteWidth = 700
+setup.default.rteHeight = 800
+setup.default.rteResize = 1

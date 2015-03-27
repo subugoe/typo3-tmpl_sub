@@ -169,25 +169,17 @@ table {
 		color: $darkblue;
 		@include adjust-font-size-to($base-font-size * 1.3);
 	}
-	td {
-		padding: 2px 3px;
-		border: 1px solid $anotherLightGrey;
+	td,
+	th {
+		padding: 1em .5em;
+		border-bottom: 1px solid $anotherLightGrey;
 		margin: 0;
 		line-height: 1.5em;
 		vertical-align: top;
 	}
-	thead {
-		background-color: $lightgrey;
-	}
+
 	th {
-		padding: 2px 3px;
-		border: none;
-		background-color: $lightgrey;
-		line-height: 1.5em;
-		vertical-align: top;
-		color: darken($darkgrey, 20%);
-		border-right: 1px solid $anotherLightGrey;
-		border-top: 1px solid $anotherLightGrey;;
+		font-weight: bold;
 	}
 	.tr-even {
 		background-color: $lightgrey;

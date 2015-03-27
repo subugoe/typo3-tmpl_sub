@@ -228,25 +228,16 @@ table caption {
   font-size: 1.3em;
   line-height: 2.30769em;
 }
-table td {
-  padding: 2px 3px;
-  border: 1px solid #cccccc;
+table td,
+table th {
+  padding: 1em .5em;
+  border-bottom: 1px solid #cccccc;
   margin: 0;
   line-height: 1.5em;
   vertical-align: top;
 }
-table thead {
-  background-color: #dee1e7;
-}
 table th {
-  padding: 2px 3px;
-  border: none;
-  background-color: #dee1e7;
-  line-height: 1.5em;
-  vertical-align: top;
-  color: #101010;
-  border-right: 1px solid #cccccc;
-  border-top: 1px solid #cccccc;
+  font-weight: bold;
 }
 table .tr-even {
   background-color: #dee1e7;
@@ -3195,13 +3186,13 @@ footer .footerright div, #footer .footerright div {
   color: #FFFFFF;
 }
 .submenu a:focus {
-  color: #1a3771;
+  color: #FFFFFF;
 }
 .submenu a:hover {
   color: #FFFFFF;
 }
 .submenu a:active {
-  color: #1a3771;
+  color: #FFFFFF;
 }
 .submenu a:hover {
   background-color: #1a3771;
