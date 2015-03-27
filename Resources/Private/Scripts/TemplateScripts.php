@@ -90,7 +90,7 @@ class user_template {
 		$return = false;
 
 		foreach ($rootline as $parentPage) {
-			if ($parentPage['tx_nkwsubmenu_picture_follow'] === 1 && $parentPage['tx_nkwsubmenu_picture']) {
+			if ($parentPage['tx_nkwsubmenu_picture_follow'] == 1 && $parentPage['media']) {
 				return $parentPage['uid'];
 				break;
 			}
