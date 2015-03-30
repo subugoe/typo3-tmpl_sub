@@ -126,7 +126,6 @@ lib.uebergabe.required = 1
 lib.uebergabe.wrap = uid = |
 
 # Alle Buecher aus DB auslesen
-# Name of the library as the sender of the answer email
 lib.buecher = CONTENT
 lib.buecher {
 	table = tx_patenschaften_buecher
