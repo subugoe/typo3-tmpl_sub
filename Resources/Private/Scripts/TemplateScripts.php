@@ -49,8 +49,9 @@ class user_template {
 	/**
 	 * Get Big Picture and Copyright Information
 	 *
-	 * @param $content
-	 * @param $conf
+	 * @param string $content
+	 * @param array $conf
+	 * @return string
 	 */
 	public function bigPicture($content = '', $conf = array()) {
 
@@ -152,7 +153,7 @@ class user_template {
 		$lconf['image.']['altText'] = $image['original']['caption'];
 		$lconf['image.']['file.']['height'] = 228;
 		$lconf['image.']['file.']['width'] = 1000;
-		$theImgCode = $this->local_cObj->IMAGE($lconf["image."]);
+		$theImgCode = $this->local_cObj->cObjGetSingle('IMAGE', $lconf["image."]);
 		$image = $this->local_cObj->stdWrap($theImgCode, $this->conf['image.']);
 		return $image;
 	}
@@ -210,7 +211,7 @@ class user_template {
 
 		$bild['altText'] = $image['title'];
 
-		$imageInformation = $this->local_cObj->IMAGE($bild);
+		$imageInformation = $this->local_cObj->cObjGetSingle('IMAGE', $bild);
 
 		// return with a special css class for that particular image
 		return '<div class=" bigpicture-license bigpicture-license-' . $cssClass . '">' . $imageInformation . '</div>';
