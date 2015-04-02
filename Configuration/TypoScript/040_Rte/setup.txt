@@ -11,7 +11,9 @@ RTE.default {
 	showStatusBar = 1
 	showButtons = table, blockstylelabel, image, blockstyle, textstylelabel, textstyle, fontstyle, fontsize, formatblock, bold, italic, underline, strikethrough, subscript, superscript, lefttoright, righttoleft, left, center, right, justifyfull, orderedlist, unorderedlist, outdent, indent, textcolor, bgcolor, textindicator, emoticon, insertcharacter, line, link, image, table, user, acronym, findreplace, spellcheck, chMode, inserttag, removeformat, copy, cut, paste, pastetoggle, pastebehaviour, undo, redo, showhelp, about, toggleborders, tableproperties, rowproperties, rowinsertabove, rowinsertunder, rowdelete, rowsplit, columninsertbefore, columninsertafter, columndelete, columnsplit, cellproperties, cellinsertbefore, cellinsertafter, celldelete, cellsplit, cellmerge
 	showButtons := addToList(user)
-	toolbarOrder = formatblock, linebreak, bold, italic, paste, pastetoggle, pastebehaviour, textstylelabel, textstyle, linebreak, link, image, linebreak, table, toggleborders, tableproperties, rowproperties, rowinsertabove, rowinsertunder, rowdelete, rowsplit, columninsertbefore, columninsertafter, columndelete, columnsplit, cellproperties, cellinsertbefore, cellinsertafter, celldelete, cellsplit, cellmerge, linebreak, orderedlist, unorderedlist, bar, outdent, indent, bar, linebreak, copy, cut, insertcharacter, chMode, removeformat,
+	toolbarOrder = formatblock, linebreak, bold, italic, paste, pastetoggle, pastebehaviour, textstylelabel, textstyle, link, image, linebreak, table, toggleborders, tableproperties, rowproperties, rowinsertabove, rowinsertunder, rowdelete, rowsplit, columninsertbefore, columninsertafter, columndelete, columnsplit, cellproperties, cellinsertbefore, cellinsertafter, celldelete, cellsplit, cellmerge, linebreak, orderedlist, unorderedlist, bar, outdent, indent, bar, space, copy, cut, insertcharacter, chMode, removeformat,
+	keepButtonGroupTogether = 1
+	keepToggleBordersInToolbar = 1
 	classesParagraph = indent
 	classesCharacter = boldFont, italicFont
 	classesCharacter := addToList(boldFont, italicFont)
