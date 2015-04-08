@@ -121,7 +121,7 @@ lib.fright {
 ### BIX Zaehlpixel ###
 [globalVar = TSFE:id = 1]
 	lib.fright.44 = TEXT
-	lib.fright.44.value = <img src="http://dbspixel.hbz-nrw.de/count?id=AF007&amp;page=1" alt="" />
+	lib.fright.44.value = <img src="//dbspixel.hbz-nrw.de/count?id=AF007&amp;page=1" alt="" />
 [global]
 
 lib.mainContent < styles.content.get
@@ -402,7 +402,7 @@ plugin.tx_powermail {
       datepicker_format_date = d.m.Y
       datepicker_format_time = H:i
       datepicker_format_datetime = d.m.Y H:i
-    }
+    }p
     de {
       datepicker_format_date = d.m.Y
       datepicker_format_time = H:i
