@@ -307,7 +307,7 @@ page.headerData.100.23 < lib.nkwkeywords.keywordTitle
 			field = title
 			htmlSpecialChars = 1
 		}
-		wrap = <title>SUB Göttingen - News&nbsp; |</title>
+		wrap = <title>|&nbsp;- SUB Göttingen</title>
 	}
 	page.headerData.100 >
 	page.headerData.100 < lib.categoryTitle
