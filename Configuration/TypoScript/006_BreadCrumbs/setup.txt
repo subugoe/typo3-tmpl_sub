@@ -13,11 +13,13 @@ lib.rootline.10 {
 		excludeUidList = {$ids.excludeFromBeardcrumb}
 		NO = 1
 		NO {
-			allWrap =  <li>|</li>   |*| <li>|</li>   |*| <li>|</li>
+			allWrap = <li>|</li>   |*| <li>|</li>   |*| <li>|</li>
 		}
+
 		CUR {
 			wrap = <li>|</li>
 		}
+
 		ACT {
 			wrap = <li>|</li>
 		}
@@ -41,6 +43,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -62,6 +65,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -83,6 +87,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -104,6 +109,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -125,6 +131,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -146,10 +153,10 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
-
 
 # Schulungen
 [globalVar = GP:tx_schulungen_schulungen|schulung > 0]
@@ -167,6 +174,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -188,6 +196,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -208,11 +217,13 @@ lib.rootline.10 {
 				field = title
 				htmlSpecialChars = 1
 			}
+
 			tx_news_domain_model_news.typolink {
 				parameter.data = TSFE:id
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -233,11 +244,13 @@ lib.rootline.10 {
 				field = title
 				htmlSpecialChars = 1
 			}
+
 			sys_category.typolink {
 				parameter.data = TSFE:id
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]

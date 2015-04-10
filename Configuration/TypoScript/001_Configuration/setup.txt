@@ -36,24 +36,21 @@ config {
 	}
 }
 
-
-
 includeLibs.user_template = typo3conf/ext/tmpl_{$page_template}/Resources/Private/Scripts/TemplateScripts.php
 
 ### Language = en ###
 [globalVar = GP:L = 1]
-config {
-	sys_language_uid = 1
-	locale_all = en_GB.utf8
-	language = en
-	htmlTag_langKey = en-Gb
-}
-
+	config {
+		sys_language_uid = 1
+		locale_all = en_GB.utf8
+		language = en
+		htmlTag_langKey = en-Gb
+	}
 [global]
 
 ### BIGPICTURE ###
 
-lib.BIGPICTURE  = USER
+lib.BIGPICTURE = USER
 lib.BIGPICTURE {
 	userFunc = user_template->bigPicture
 }
@@ -66,31 +63,34 @@ lib.bigPicture {
 		wrap = <div id="bigpicture">|</div>
 		required = 1
 	}
- 	file {
+
+	file {
 		import = uploads/media/
 		import {
 			data = levelmedia:-1, slide
 			listNum = 0
 		}
-	width = 1000c
-	height = 228c
+
+		width = 1000c
+		height = 228c
+	}
 }
-}
+
 ### CRIGHT ###
 
 lib.cright = COA
 
 [globalVar = TSFE:page|tx_nkwsubmenu_showsidebar=1]
-lib.cright {
-	10 = RECORDS
-	10 {
-		tables = tt_content
-		source = {$ids.infobox}
-		donCheckPid = 1
+	lib.cright {
+		10 = RECORDS
+		10 {
+			tables = tt_content
+			source = {$ids.infobox}
+			donCheckPid = 1
+		}
 	}
-}
-
 [global]
+
 lib.cright.20 = CONTENT
 lib.cright.20 {
 	table = tt_content
@@ -125,7 +125,6 @@ lib.fright {
 		}
 	}
 [global]
-
 
 ### BIX Zaehlpixel ###
 [globalVar = TSFE:id = 1]
@@ -169,6 +168,7 @@ lib.ohneInfobox {
 	file = EXT:tmpl_{$page_template}/Resources/Private/Templates/Page/Einspalter.html
 	variables < lib.subTemplateVars
 }
+
 lib.mitInfobox = FLUIDTEMPLATE
 lib.mitInfobox {
 	file = EXT:tmpl_{$page_template}/Resources/Private/Templates/Page/Infobox.html
@@ -182,7 +182,6 @@ lib.layoutTemplate {
 	partialRootPath = EXT:tmpl_{$page_template}/Resources/Private/Templates/Partials/
 	layoutRootPath = EXT:tmpl_{$page_template}/Resources/Private/Templates/Layouts/
 	variables {
-
 		currentPid = TEXT
 		currentPid.data = page:uid
 
@@ -205,7 +204,6 @@ lib.layoutTemplate {
 	}
 }
 
-
 temp.body = TEXT
 temp.body.field = uid
 temp.body.wrap = <body id=page-|>
@@ -214,18 +212,20 @@ page = PAGE
 page {
 	typeNum = 0
 	shortcutIcon = EXT:tmpl_sub/Resources/Public/Img/favicon.ico
-	bodyTagCObject  < temp.body
+	bodyTagCObject < temp.body
 	includeJS {
 		navigation = EXT:tmpl_{$page_template}/Resources/Public/Js/Site.min.js
 		navigation.forceOnTop = 1
 		tabs = EXT:subtabs/Resources/Public/JavaScript/SubTabs.js
 	}
+
 	includeCSS {
 		main = EXT:tmpl_sub/Resources/Public/Css/main.css
 		print = EXT:tmpl_sub/Resources/Public/Css/print.css
 		print.media = print
 		tabs = EXT:subtabs/Resources/Public/Css/Tabs.css
 	}
+
 	meta {
 		description = {$meta.description}
 		description {
@@ -233,8 +233,10 @@ page {
 				field = description
 			}
 		}
+
 		ICBM = 51.539763,9.935385
 	}
+
 	### TEMPLATE ###
 	10 = FLUIDTEMPLATE
 	10 < lib.layoutTemplate
@@ -245,9 +247,10 @@ page {
 		2 {
 			userFunc = user_displayKeywords
 		}
+
 		10 = HTML
 		10 {
-			value(
+			value (
 				<meta name="geo.placename" content="Göttingen" />
 				<meta name="geo.region" content="DE-NI" />
 				<meta name="geo.position" content="51.539763;9.935385" />
@@ -271,6 +274,7 @@ lib.pageHeader {
 			file = EXT:tmpl_sub/Resources/Public/Img/logo_print.png
 			offset = 21, 17
 		}
+
 		20 = IMAGE
 		20 {
 			file.import = fileadmin/media/bilder/Seitenkopf/
@@ -281,25 +285,25 @@ lib.pageHeader {
 }
 
 [globalVar = GP:L = 1]
-lib.pageHeader.file.20.file.import = fileadmin/media/bilder/Seitenkopf/en/
+	lib.pageHeader.file.20.file.import = fileadmin/media/bilder/Seitenkopf/en/
 [global]
 
 [globalVar = GP:tx_nkwsubstaff|department_id > 0]
-page.headerData.100.22 = TEXT
-page.headerData.100.22.value = :&nbsp;
-page.headerData.100.23 < lib.nkwsubstaff.departmentTitle
+	page.headerData.100.22 = TEXT
+	page.headerData.100.22.value = :&nbsp;
+	page.headerData.100.23 < lib.nkwsubstaff.departmentTitle
 [global]
 
 [globalVar = GP:tx_nkwsubstaff|staff_id > 0]
-page.headerData.100.22 = TEXT
-page.headerData.100.22.value = :&nbsp;
-page.headerData.100.23 < lib.nkwsubstaff.staffTitle
+	page.headerData.100.22 = TEXT
+	page.headerData.100.22.value = :&nbsp;
+	page.headerData.100.23 < lib.nkwsubstaff.staffTitle
 [global]
 
 [globalVar = GP:tx_nkwkeywords|id > 0]
-page.headerData.100.22 = TEXT
-page.headerData.100.22.value = :&nbsp;
-page.headerData.100.23 < lib.nkwkeywords.keywordTitle
+	page.headerData.100.22 = TEXT
+	page.headerData.100.22.value = :&nbsp;
+	page.headerData.100.23 < lib.nkwkeywords.keywordTitle
 [global]
 
 ## Ext tx_news: dynamic page title for the news category list page
@@ -316,8 +320,10 @@ page.headerData.100.23 < lib.nkwkeywords.keywordTitle
 			field = title
 			htmlSpecialChars = 1
 		}
+
 		wrap = <title>|&nbsp;- SUB Göttingen</title>
 	}
+
 	page.headerData.100 >
 	page.headerData.100 < lib.categoryTitle
 [global]
@@ -339,7 +345,7 @@ temp.updated {
 
 temp.lastUpdated = COA_INT
 temp.lastUpdated.10 < styles.content.lastUpdate
-	temp.lastUpdated.10.if {
+temp.lastUpdated.10.if {
 	value.cObject < temp.ageInSeconds
 	isGreaterThan.cObject < temp.updated
 }
@@ -374,7 +380,6 @@ plugin.tt_news.displayLatest.content_stdWrap.stripHtml = 0
 # Ausgabe durch den RTE-Parser schicken
 plugin.tt_news.displayLatest.content_stdWrap.parseFunc < lib.parseFunc_RTE
 
-
 #feld in Powermail vorbelegen
 plugin.tx_powermail_pi1.email.recipient_mail.sender.name.value = SUB Göttingen
 
@@ -385,11 +390,13 @@ plugin.tx_subforms {
 			buecherwunsch {
 				toMail = {$plugin.tx_subforms.mail.buecherwunsch.toMail}
 			}
+
 			feedback {
 				toMail = {$plugin.tx_subforms.mail.feedback.toMail}
 			}
 		}
 	}
+
 	persistence.storagePid = 1540
 }
 
@@ -406,16 +413,17 @@ page.includeJSFooter.powermail_cond = EXT:tmpl_sub/Resources/Public/Js/Powermail
 
 # Date format
 plugin.tx_powermail {
-  _LOCAL_LANG {
-    default {
-      datepicker_format_date = d.m.Y
-      datepicker_format_time = H:i
-      datepicker_format_datetime = d.m.Y H:i
-    }p
-    de {
-      datepicker_format_date = d.m.Y
-      datepicker_format_time = H:i
-      datepicker_format_datetime = d.m.Y H:i
-    }
-  }
+	_LOCAL_LANG {
+		default {
+			datepicker_format_date = d.m.Y
+			datepicker_format_time = H:i
+			datepicker_format_datetime = d.m.Y H:i
+		}
+
+		de {
+			datepicker_format_date = d.m.Y
+			datepicker_format_time = H:i
+			datepicker_format_datetime = d.m.Y H:i
+		}
+	}
 }
