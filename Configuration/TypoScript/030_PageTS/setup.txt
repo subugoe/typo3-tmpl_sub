@@ -135,7 +135,7 @@ TCEMAIN {
 		disableHideAtCopy = 0
 	}
 	# delete cache for the news pages automatically. (list view, detail view)
-	clearCacheCmd = 1,194,1949,1951,1374
+	clearCacheCmd = {$news_clearCache}
 }
 
 # Configure the page module

@@ -92,12 +92,20 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 						)
 				),
 			// uid of the target page. For additional detail/category/tag pages, add their uid as well
-				'2342' => 'newsDetailConfiguration',
-				'2353' => 'newsDetailConfiguration',
-				'1374' => 'newsDetailConfiguration',
-				'2352' => 'newsCategoryConfiguration',
-				'194' => 'newsCategoryConfiguration',
-				'1' => 'newsDetailConfiguration',
+							## www05.dev
+							#'2342' => 'newsDetailConfiguration', // Einzelansicht Aktuelles
+							#'2345' => 'newsDetailConfiguration', // Einzelansicht Archiv
+							#'2344' => 'newsDetailConfiguration', // Archiv
+							#'2346' => 'newsDetailConfiguration', // Einzelansicht Stellenangebot
+							#'2343' => 'newsCategoryConfiguration', // Liste nach Kategorie
+							#'194' => 'newsCategoryConfiguration', // Liste Stellenangebote
+							## 05 live
+							'2439' => 'newsDetailConfiguration', // Einzelansicht Aktuelles
+							'2443' => 'newsDetailConfiguration', // Archiv
+							'2444' => 'newsDetailConfiguration', // Einzelansicht Archiv
+							'2441' => 'newsDetailConfiguration', // Einzelansicht Stellenangebot
+							'2440' => 'newsCategoryConfiguration', // Liste nach Kategorie
+							'194' => 'newsCategoryConfiguration', // Liste Stellenangebote
 		),
 		'postVarSets' => array(
 				'_DEFAULT' => array(
@@ -352,7 +360,7 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 		'fileName' => array(
 				'defaultToHTMLsuffixOnPrev' => FALSE,
 				'index' => array(
-						'rss.xml' => array(
+						'sub.rss' => array(
 								'keyValues' => array(
 										'type' => 1345790301,
 								),

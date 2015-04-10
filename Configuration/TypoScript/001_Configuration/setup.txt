@@ -298,16 +298,16 @@ page.headerData.100.23 < lib.nkwkeywords.keywordTitle
 config.noPageTitle = 2
 lib.categoryTitle = RECORDS
 lib.categoryTitle {
-  dontCheckPid = 1
-        tables = tx_news_domain_model_category
-        source.data = GP:tx_news_pi1|overwriteDemand|categories
-        source.intval = 1
-        conf.tx_news_domain_model_category = TEXT
-        conf.tx_news_domain_model_category {
-            field = title
-            htmlSpecialChars = 1
-        }
-        wrap = <title>SUB Göttingen - News&nbsp; |</title>
+	dontCheckPid = 1
+	tables = sys_category
+		source.data = GP:tx_news_pi1|overwriteDemand|categories
+		source.intval = 1
+		conf.sys_category = TEXT
+		conf.sys_category {
+	field = title
+	htmlSpecialChars = 1
+	}
+	wrap = <title>|&nbsp;- SUB Göttingen</title>
 }
 page.headerData.100 >
 page.headerData.100 < lib.categoryTitle

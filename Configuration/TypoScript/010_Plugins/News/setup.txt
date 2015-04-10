@@ -13,18 +13,16 @@ plugin {
 			list {
 				# Paginate configuration.
 				paginate {
-					#Do not set the "max records displayed" in the flexform of the plugin, it's not about pagination. News per page can only be set here
-					itemsPerPage = 6
 					insertAbove = 0
 					insertBelow = 1
 				}
 				rss.channel {
-					title = SUB aktuell
-					description = RSS Feed SUB Göttingen
-					link = http://www.sub.uni-goettingen.de/
-					language = de_DE
-					copyright = SUB Göttingen
-					generator = TYPO3 EXT:news
+					title = {$plugin.tx_news.rss.channel.title}
+					description = {$plugin.tx_news.rss.channel.description}
+					language = {$plugin.tx_news.rss.channel.language}
+					copyright = {$plugin.tx_news.rss.channel.copyright}
+					generator = {$plugin.tx_news.rss.channel.generator}
+					link = {$plugin.tx_news.rss.channel.link}
 				}
 			}
 			link {
@@ -42,7 +40,7 @@ plugin {
 	lib.stdheader >
 	tt_content.stdWrap.innerWrap >
 	tt_content.stdWrap.wrap >
-	# get away <div class="feEditAdvanced-firstWrapper" ...> if your logged into the backend
+	# get away <div class="feEditAdvanced-firstWrapper" ...> if you are logged into the backend
 	styles.content.get.stdWrap >
 
 	pageNewsRSS = PAGE
@@ -67,7 +65,7 @@ plugin {
 		additionalHeaders = Content-Type:text/xml;charset=utf-8
 		disablePrefixComment = 1
 		baseURL = http://www.sub.uni-goettingen.de/
-		absRefPrefix = http://www03.sub.uni-goettingen.de/
+		absRefPrefix = {$plugin.tx_news.config.absRefPrefix}
 	}
 
 [global]
