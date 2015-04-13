@@ -24,11 +24,20 @@ config {
 	linkVars = L
 	uniqueLinkVars = 1
 	meaningfulTempFilePrefix = 50
+
+	concatenateJs = 1
+	compressJs = 1
+	concatenateCss = 1
+	compressCss = 1
+
 	tx_piwik {
 		piwik_host = {$plugin.piwik.host}
 		piwik_idsite = {$plugin.piwik.id}
 	}
 }
+
+
+
 includeLibs.user_template = typo3conf/ext/tmpl_{$page_template}/Resources/Private/Scripts/TemplateScripts.php
 
 ### Language = en ###
