@@ -92,11 +92,11 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 						)
 				),
 			// uid of the target page. For additional detail/category/tag pages, add their uid as well
-				'2342' => 'newsDetailConfiguration', // Einzelansicht Aktuelles
-				'2353' => 'newsDetailConfiguration', // Einzelansicht Archiv
-				'1374' => 'newsDetailConfiguration', // Archiv
-				'2355' => 'newsDetailConfiguration', // Einzelansicht Stellenangebot
-				'2352' => 'newsCategoryConfiguration', // Liste nach Kategorie
+				'2439' => 'newsDetailConfiguration', // Einzelansicht Aktuelles
+				'2443' => 'newsDetailConfiguration', // Archiv
+				'2444' => 'newsDetailConfiguration', // Einzelansicht Archiv
+				'2441' => 'newsDetailConfiguration', // Einzelansicht Stellenangebot
+				'2440' => 'newsCategoryConfiguration', // Liste nach Kategorie
 				'194' => 'newsCategoryConfiguration', // Liste Stellenangebote
 		),
 		'postVarSets' => array(
@@ -352,7 +352,7 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = array(
 		'fileName' => array(
 				'defaultToHTMLsuffixOnPrev' => FALSE,
 				'index' => array(
-						'rss.xml' => array(
+						'sub.rss' => array(
 								'keyValues' => array(
 										'type' => 1345790301,
 								),
