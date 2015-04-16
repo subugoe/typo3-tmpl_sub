@@ -10,7 +10,7 @@ $bluegrey: #6e7fa0;
 $red: #FF0000;
 $white: #FFFFFF;
 
-	// Dimensions
+// Dimensions
 $radius: 7px;
 $siteWidth: 1000px;
 $contentBoxWidth: 80%;
@@ -18,17 +18,18 @@ $sidebarWidth: $siteWidth * 0.2;
 $headerHeight: 110px;
 $infoImageWidth: 29px;
 
-	// shadow
+// shadow
 $default-text-shadow-color: rgba(black, 0.5);
 $default-text-shadow-blur: 0px;
 $default-text-shadow-v-offset: 1px;
 
-	// typography
+// typography
 $base-font-size: 12px;
 $base-line-height: 18px;
 @include establish-baseline;
+$fa-font-path: '../Fonts' !default;
 
-	// Images
+// Images
 $arrowLink: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right_2.svg';
 $arrowSmall: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right.png';
 $headerImage: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/header.png';
@@ -39,7 +40,7 @@ $clearGif: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/clear.gif';
 
 $font: Helvetica, Arial, sans-serif;
 
-	// spriting
+// spriting
 @import "Img/*.png";
 @include all-Img-sprites;
 
@@ -64,12 +65,13 @@ $font: Helvetica, Arial, sans-serif;
 }
 
 // Pseudo selectors
-::selection, ::-moz-selection{
+::selection, ::-moz-selection {
 	background-color: $lightgrey;
 }
 
 body {
 	font-family: $font;
+	min-width: $siteWidth;
 }
 
 ul {
@@ -83,7 +85,7 @@ a {
 		cursor: pointer;
 	}
 	@include link-colors($darkblue, $darkblue, $darkblue, $darkblue, $darkblue);
-		// skiplinks
+	// skiplinks
 	&.skip {
 		position: absolute;
 		left: -1000em;
@@ -116,15 +118,15 @@ dfn {
 
 /* Forms */
 fieldset {
-	.powermail_check_inner label,.powermail_radio_inner label, .fieldwrap_radio label{
+	.powermail_check_inner label, .powermail_radio_inner label, .fieldwrap_radio label {
 		float: none;
 		display: inline;
 		font-weight: normal;
-		margin-left: 0!important;
+		margin-left: 0 !important;
 		width: 435px;
 	}
 	&.tx-powermail-pi1_fieldset {
-		background-color: white!important;
+		background-color: white !important;
 		padding: 0 !important;
 	}
 }
@@ -167,26 +169,17 @@ table {
 		color: $darkblue;
 		@include adjust-font-size-to($base-font-size * 1.3);
 	}
-	td {
-		padding: 2px 3px;
-		border: 1px solid $anotherLightGrey;
+	td,
+	th {
+		padding: 1em .5em;
+		border-bottom: 1px solid $anotherLightGrey;
 		margin: 0;
 		line-height: 1.5em;
 		vertical-align: top;
 	}
-	thead {
-		background-color: $lightgrey;
-	}
+
 	th {
-		padding: 2px 3px;
-		border: none;
-		background-color: $lightgrey;
-		line-height: 1.5em;
-		vertical-align: top;
-		color: darken($darkgrey, 20%);
-		border-right: 1px solid $anotherLightGrey;
-		border-top: 1px solid $anotherLightGrey;
-		;
+		font-weight: bold;
 	}
 	.tr-even {
 		background-color: $lightgrey;

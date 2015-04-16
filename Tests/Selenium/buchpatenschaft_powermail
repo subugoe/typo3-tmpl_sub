@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www01.sub.uni-goettingen.de/spenden-foerdern/aktion-buchpatenschaft/ihre-buchpatenschaft/" />
+<title>buchpatenschaft_powermail</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">buchpatenschaft_powermail</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/spenden-foerdern/aktion-buchpatenschaft/ihre-buchpatenschaft/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=powermail_field_uid63</td>
+	<td>Shey</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=powermail_field_uid82</td>
+	<td>Sa</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=powermail_field_uid83</td>
+	<td>Tan</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=powermail_field_uid84</td>
+	<td>tan@sat.hell</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=powermail_field_werk</td>
+	<td>label=Aus der Bibliothek eines Augsburger Apothekers</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=powermail_field_uid89</td>
+	<td>Freue mich!</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=powermail_field_uid85</td>
+	<td>Keine</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=powermail_field_uid86</td>
+	<td>telefon?</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.powermail_field.powermail_submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.powermail_confirmation_submit</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,61 @@
+plugin.tx_wecmap_pi1 {
+	output = COA
+	output {
+		20 >
+		30 = TEXT
+		30.field = map
+		30.wrap = <div>|</div>
+		40 >
+		50 >
+		60 = TEXT
+		60.field = directions
+		60.wrap = |
+		70 = TEXT
+		70.field = addressForm
+		70.wrap = |
+	}
+
+	marker {
+		title = COA
+		title {
+			10 = TEXT
+			10.field = title
+			10.wrap = <div class="infotitle">|</div>
+		}
+
+		description = COA
+		description {
+			10 = TEXT
+			10.field = description
+			10.wrap = <div>|</div>
+			10.if.isTrue.field = description
+
+			20 = TEXT
+			20.field = street
+			20.wrap = |<br/>
+			20.if.isTrue.field = street
+
+			25 = TEXT
+			25.field = zip
+			25.wrap = |&nbsp;
+			25.if.isTrue.field = zip
+
+			30 = TEXT
+			30.field = city
+			30.wrap = |
+			30.if.isTrue.field = city
+
+			40 = TEXT
+			40.field = state
+			40.wrap = | &nbsp;
+			40.if.isTrue.field = state
+
+			50 >
+
+			60 = TEXT
+			60.field = country
+		}
+	}
+	sidebar >
+	_CSS_DEFAULT_STYLE >
+}

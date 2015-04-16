@@ -29,7 +29,7 @@ TCEFORM {
 		spaceAfter.disabled = 1
 		header_layout.removeItems = 1
 		# Spalten entfernen
-		colPos.removeItems = 1,3
+		#colPos.removeItems = 1,3
 		layout.disabled = 0
 		imageorient.removeItems = 0,1,2,8,9,10,25,26
 		image_noRows.disabled = 1
@@ -45,9 +45,9 @@ TCEFORM {
 		imagecaption.disabled = 1
 		altText.disabled = 1
 		titleText.disabled = 1
+		categories.disabled = 1
 	}
 	pages {
-#		nav_title.disabled = 1
 		abstract.disabled = 1
 		subtitle.disabled = 1
 		alias.disabled = 1
@@ -59,7 +59,6 @@ TCEFORM {
 		tx_realurl_exclude.disabled = 0
 		storage_pid.disabled = 1
 		extendToSubpages.disabled = 1
-#		layout.disabled = 0
 		fe_group.disabled = 1
 		fe_login_mode.disabled = 1
 		nav_hide.disabled = 0
@@ -77,10 +76,8 @@ TCEFORM {
 		author.disabled = 1
 		author_email.disabled = 1
 		tx_realurl_pathsegment.disabled = 1
-		tx_nkwbitly_bitly.disabled = 1
 		media.disabled = 1
 		hidden.disabled = 1
-#		keywords.disabled = 1
 	}
 	tt_address {
 		birthday.disabled = 1
@@ -95,28 +92,14 @@ TCEFORM {
 		company.disabled = 1
 		title.disabled = 1
 	}
-	tx_dam {
-		starttime.disabled = 1
-		endtime.disabled = 1
-		fe_group.disabled = 1
-		loc_city.disabled = 1
-		loc_country.disabled = 1
-		loc_desc.disabled = 1
-		date_cr.disabled = 1
-		date_mod.disabled = 1
-		publisher.disabled = 1
-		instructions.disabled = 1
-		hidden.disabled = 1
-		description.disabled = 1
-		file_orig_loc_desc.disabled = 1
-		keywords.disabled = 1
-	}
 }
 
 TCAdefaults {
 	tt_content {
 		linkToTop = 0
 	}
+	# Hide News per default
+	tx_news_domain_model_news.hidden = 1
 }
 
 ############################################
@@ -135,7 +118,7 @@ mod.SHARED {
 
 # Alternatives Seitenlayot
 [page|layout = 1]
-mod.SHARED.colPos_list = 0
+mod.SHARED.colPos_list = 0,2
 [global]
 
 
@@ -151,6 +134,8 @@ TCEMAIN {
 		disablePrependAtCopy = 1
 		disableHideAtCopy = 0
 	}
+	# delete cache for the news pages automatically. (list view, detail view)
+	clearCacheCmd = {$news_clearCache}
 }
 
 # Configure the page module

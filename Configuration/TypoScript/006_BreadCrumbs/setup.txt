@@ -13,11 +13,13 @@ lib.rootline.10 {
 		excludeUidList = {$ids.excludeFromBeardcrumb}
 		NO = 1
 		NO {
-			allWrap =  <li>|</li>   |*| <li>|</li>   |*| <li>|</li>
+			allWrap = <li>|</li>   |*| <li>|</li>   |*| <li>|</li>
 		}
+
 		CUR {
 			wrap = <li>|</li>
 		}
+
 		ACT {
 			wrap = <li>|</li>
 		}
@@ -41,6 +43,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -62,6 +65,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -83,6 +87,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -104,6 +109,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -125,6 +131,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -146,10 +153,10 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
-
 
 # Schulungen
 [globalVar = GP:tx_schulungen_schulungen|schulung > 0]
@@ -167,6 +174,7 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
@@ -188,27 +196,61 @@ lib.rootline.10 {
 				addQueryString = 1
 			}
 		}
+
 		wrap = <li>|</li>
 	}
 [end]
 
-# News
+# News detail view
 [globalVar = GP:tx_news_pi1|news > 0]
-	lib.rootline.10.special.range = 0|-1
+	lib.rootline.10.special.range = 0|-2
 	lib.rootline.20 = RECORDS
 	lib.rootline.20 {
 		dontCheckPid = 1
 		tables = tx_news_domain_model_news
 		source.data = GP:tx_news_pi1|news
+		source.intval = 1
 		conf {
 			tx_news_domain_model_news >
 			tx_news_domain_model_news = TEXT
-			tx_news_domain_model_news.field = title
+			tx_news_domain_model_news {
+				field = title
+				htmlSpecialChars = 1
+			}
+
 			tx_news_domain_model_news.typolink {
 				parameter.data = TSFE:id
 				addQueryString = 1
 			}
 		}
+
+		wrap = <li>|</li>
+	}
+[end]
+
+# News category list view
+[globalVar = GP:tx_news_pi1|overwriteDemand|categories > 0]
+	lib.rootline.10.special.range = 0|-2
+	lib.rootline.20 = RECORDS
+	lib.rootline.20 {
+		dontCheckPid = 1
+		tables = sys_category
+		source.data = GP:tx_news_pi1|overwriteDemand|categories
+		source.intval = 1
+		conf {
+			sys_category >
+			sys_category = TEXT
+			sys_category {
+				field = title
+				htmlSpecialChars = 1
+			}
+
+			sys_category.typolink {
+				parameter.data = TSFE:id
+				addQueryString = 1
+			}
+		}
+
 		wrap = <li>|</li>
 	}
 [end]

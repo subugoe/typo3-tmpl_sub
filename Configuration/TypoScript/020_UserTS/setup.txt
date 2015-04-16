@@ -3,7 +3,6 @@ options.saveDocNew = 1
 options.file_list.enableDisplayThumbnails = 1
 options.workspaces.previewLinkTTLHours = 128
 options {
-	RTESmallWidth = 650
-	RTESmallHeight = 800
 	uploadFieldsInTopOfEB = 0
+	RTELargeHeightIncrement = 400
 }

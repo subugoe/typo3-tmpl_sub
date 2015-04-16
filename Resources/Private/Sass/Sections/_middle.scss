@@ -20,7 +20,10 @@
 	}
 	h3 {
 		color: $darkblue;
-		@include adjust-font-size-to($base-font-size * 1.167);
+		font-size: 1.167em;
+		line-height: 1.3em;
+		padding: 15px 0 5px 0;
+		
 	}
 	h4 {
 		color: $darkblue;

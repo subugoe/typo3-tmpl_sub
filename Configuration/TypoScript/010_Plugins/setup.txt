@@ -30,11 +30,6 @@ plugin {
 		persistence.storagePid = {$plugin.tx_standorte.persistence.storagePid}
 	}
 
-	# Powermail
-	tx_powermail_pi1 {
-		format.date = %d.%m.%Y
-	}
-
 	# Schulungen
 	tx_schulungen {
 		persistence.storagePid = {$plugin.tx_schulungen.persistence.storagePid}

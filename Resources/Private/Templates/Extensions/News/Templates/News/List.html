@@ -16,9 +16,9 @@
 						</f:for>
 					</f:then>
 					<f:else>
-						<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}">
-							<f:for each="{paginatedNews}" as="newsItem">
-								<f:render partial="List/Item" arguments="{newsItem: newsItem, settings:settings}" />
+						<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit}">
+							<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+								<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
 							</f:for>
 						</n:widget.paginate>
 					</f:else>

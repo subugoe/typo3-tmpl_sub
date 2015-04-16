@@ -1,8 +1,10 @@
-.icon-facebook-sign {
+.icon-facebook-sign,
+.fa-facebook {
 	color: #3b5998;
 }
 
-.icon-twitter-sign {
+.icon-twitter-sign,
+.fa-twitter {
 	color: #00aced;
 }
 
@@ -13,17 +15,18 @@
 }
 
 .infobox__social {
-	ul {
-		padding-left: 1em;
-		li {
-			list-style-type: none;
-			list-style-image: none !important;
-			padding-bottom: 5px;
-			i {
-				font-size: 200%;
-				vertical-align: middle;
-				margin-right: 7px;
-			}
+	padding-left: 1em !important;
+	li {
+		list-style-type: none;
+		list-style-image: none !important;
+		padding-bottom: 5px;
+		i {
+			vertical-align: middle;
+			margin-right: 7px;
+			min-width: 24px;
 		}
+	}
+	.fa {
+		font-size: 2em;
 	}
 }

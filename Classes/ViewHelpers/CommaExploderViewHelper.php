@@ -1,4 +1,5 @@
 <?php
+namespace Subugoe\TmplSub\ViewHelpers;
 
 /* * *************************************************************
  *  Copyright notice
@@ -25,10 +26,8 @@
 
 /**
  * Explodes a commaseparated List and returns an array
- * $Id$
- * @author Ingo Pfennigstorf
  */
-class Tx_TmplSub_ViewHelpers_CommaExploderViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class CommaExploderViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * Returns an array out of a commaseparated list of integers
@@ -65,5 +64,3 @@ class Tx_TmplSub_ViewHelpers_CommaExploderViewHelper extends Tx_Fluid_Core_ViewH
 	}
 
 }
-
-?>
