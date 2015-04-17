@@ -206,7 +206,7 @@ lib.layoutTemplate {
 
 temp.body = TEXT
 temp.body.field = uid
-temp.body.wrap = <body id=page-|>
+temp.body.wrap = <body id="page-|">
 
 page = PAGE
 page {

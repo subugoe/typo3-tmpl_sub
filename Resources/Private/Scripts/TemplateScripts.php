@@ -4,7 +4,7 @@
  *  Copyright notice
  *
  *  (c) 2011 Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
- *  	
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -150,7 +150,7 @@ class user_template {
 		$lconf['image.']['params'] = '';
 		$lconf['image.']['file.']['treatIdAsReference'] = 1;
 		$lconf['image.']['file'] = $image['reference']['uid'];
-		$lconf['image.']['altText'] = $image['original']['caption'];
+		$lconf['image.']['altText'] = "";
 		$lconf['image.']['file.']['height'] = 228;
 		$lconf['image.']['file.']['width'] = 1000;
 		$theImgCode = $this->local_cObj->cObjGetSingle('IMAGE', $lconf["image."]);
@@ -180,7 +180,7 @@ class user_template {
 			$imagePath = self::WIKICOMMONSIMG;
 			$cssClass = 'wc';
 			$imageUrl = $image['original']['copyright_url'];
-			$imageTitleText .= "\n" . $image['original']['wiki_commons'];
+			$imageTitleText .= PHP_EOL . $image['original']['wiki_commons'];
 		} elseif ($image['original']['creative_commons'] == 1 && $image['original']['wiki_commons'] == '') {
 			$imagePath = self::CCIMG;
 			$cssClass = 'cc';
@@ -209,7 +209,7 @@ class user_template {
 		// add title to the image
 		$bild['titleText'] = $imageTitleText;
 
-		$bild['altText'] = $image['title'];
+		$bild['altText'] = "";
 
 		$imageInformation = $this->local_cObj->cObjGetSingle('IMAGE', $bild);
 
