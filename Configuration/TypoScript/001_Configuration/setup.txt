@@ -264,6 +264,8 @@ page {
 
 lib.pageHeader = IMAGE
 lib.pageHeader {
+	altText = TEXT
+	altText.data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:page.pageTitle
 	file = GIFBUILDER
 	file {
 		backColor = #1a3771
