@@ -4268,6 +4268,10 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
   display: none;
 }
 
+.pz2-accessNote {
+  display: none;
+}
+
 .tx-nkwsitemap-pi1 ul {
   padding: 0 0 0 20px !important;
 }
