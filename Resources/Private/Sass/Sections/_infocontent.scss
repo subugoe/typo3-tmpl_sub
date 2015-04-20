@@ -8,10 +8,14 @@
 	a {
 		text-decoration: none;
 	}
+
 	p {
 		padding: 0.5em 0.75em;
 	}
-	h1, h2, h6 {
+
+	h1,
+	h2,
+	h6 {
 		background-color: $bluegrey;
 		color: $white;
 		@include adjust-font-size-to($base-font-size);
@@ -19,12 +23,14 @@
 		font-weight: bold;
 		@include single-text-shadow;
 	}
+
 	ul {
 		margin-top: 8px;
 		padding: 5px 5px 0 20px;;
 		li {
 			@include adjust-font-size-to($base-font-size);
 			list-style-image: url($arrowSmall);
+
 			img {
 				margin-top: 8px;
 			}
@@ -34,16 +40,18 @@
 		p {
 			background-color: $lightgrey;
 			padding: 5px 0;
+
 			&.bodytext {
 				padding: 5px 5px 5px 10px;
 			}
 		}
 	}
 	.tx-ttaddress-pi1, .tx-substaff {
+		@include border-bottom-left-radius($radius);
 		background-color: $lightgrey;
 		padding: 5px 10px;
-		@include border-bottom-left-radius($radius);
-		h1, h2 {
+		h1,
+		h2 {
 			margin: 0;
 			padding: 5px;
 			background-color: $bluegrey;
@@ -53,16 +61,19 @@
 			@include single-text-shadow;
 			font-weight: bold;
 		}
+
 		h3 {
 			padding: 0 !important;
 			font-weight: bold;
 			@include adjust-font-size-to($base-font-size);
 		}
+
 		img.photo {
 			width: 100.01%;
 			height: auto;
 			padding-top: 5px;
 		}
+
 		ul {
 			list-style-image: none;
 			@include no-bullets;
@@ -74,6 +85,7 @@
 				list-style-type: none;
 			}
 		}
+
 		.singleAddress {
 			margin-bottom: 10px;
 		}

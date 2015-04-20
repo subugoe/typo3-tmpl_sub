@@ -1,4 +1,6 @@
 <?php
+namespace Subugoe\TmplSub\ViewHelpers\Widget;
+
 /***************************************************************
 *  Copyright notice
 *
@@ -25,29 +27,25 @@
 
 /**
  * @author Ingo Pfennigstorf <i,pfennigstorf@gmail.com>
- * @package TmplSub
- * @subpackage ViewHelpers
  */
-class Tx_TmplSub_ViewHelpers_Widget_AzViewHelper extends Tx_Fluid_Core_Widget_AbstractWidgetViewHelper {
+class AzViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper {
 
 	/**
-	 * @var Tx_TmplSub_ViewHelpers_Widget_Controller_AzController
+	 * @var \Subugoe\TmplSub\ViewHelpers\Widget\Controller\AzController
 	 * @inject
 	 */
 	protected $controller;
 
 	/**
 	 *
-	 * @param Tx_Extbase_Persistence_QueryResultInterface $objects
+	 * @param \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects
 	 * @param string $as
 	 * @param array $configuration
 	 * @return string
 	 */
-	public function render(Tx_Extbase_Persistence_QueryResultInterface $objects, array $configuration = array('titleField' => 'title')) {
+	public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects, array $configuration = array('titleField' => 'title')) {
 
 		return $this->initiateSubRequest();
 	}
 
 }
-
-?>

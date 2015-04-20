@@ -1,8 +1,8 @@
 .news {
 	.news-latest-container {
+		@include adjust-font-size-to($base-font-size * 1.16);
 		padding: 0!important;
 		font-family: $font;
-		@include adjust-font-size-to($base-font-size * 1.16);
 		color: $darkgrey;
 		img {
 			float: left;

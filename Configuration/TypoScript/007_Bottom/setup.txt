@@ -58,7 +58,7 @@ lib.bottom2 {
 		20 = TEXT
 		20 {
 			typolink {
-				parameter = http://www.facebook.com/SUB.INFO
+				parameter = https://www.facebook.com/SUB.INFO
 				title = TEXT
 				title {
 					data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.facebook
@@ -69,7 +69,7 @@ lib.bottom2 {
 			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.facebook
 			wrap = <li>|</li>
 			ATagBeforeWrap = 1
-			stdWrap.wrap = <i class="icon-facebook-sign"></i>|
+			stdWrap.wrap = <i class="fa fa-facebook-square"></i>|
 		}
 		# Twitter
 		30 < .20
@@ -82,7 +82,7 @@ lib.bottom2 {
 				}
 			}
 			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.twitter
-			stdWrap.wrap = <i class="icon-twitter-sign"></i>|
+			stdWrap.wrap = <i class="fa fa-twitter"></i>|
 		}
 		# Ihre Meinung
 		40 < .20
@@ -95,7 +95,7 @@ lib.bottom2 {
 				}
 			}
 			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.opinion
-			stdWrap.wrap = <i class="icon-pencil"></i>|
+			stdWrap.wrap = <i class="fa fa-pencil"></i>|
 		}
 		# Frag die SUB
 		50 < .20
@@ -108,7 +108,7 @@ lib.bottom2 {
 				}
 			}
 			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.ask
-			stdWrap.wrap = <i class="icon-comments-alt"></i>|
+			stdWrap.wrap = <i class="fa fa-comments"></i>|
 		}
 	}
 }

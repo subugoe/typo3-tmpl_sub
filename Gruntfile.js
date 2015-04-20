@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 						 // concatenation of files
 						 concat: {
 							 js: {
-								 src: ['Resources/Public/Js/modernizr.js', 'Resources/Public/Js/underscore-min.js', 'Resources/Public/Js/backbone-min.js', 'Resources/Public/Js/SUB.js', 'Resources/Public/Js/ClassNames.js'],
+								 src: ['Resources/Public/Js/modernizr.js', 'Resources/Public/Js/SUB.js', 'Resources/Public/Js/ClassNames.js'],
 								 dest: 'Resources/Public/Js/Site.js'
 							 }
 						 },
@@ -21,7 +21,8 @@ module.exports = function(grunt) {
 						 // watcher task
 						 watch: {
 							 files: ['<config:lint.files>', '<config:coffee.app.src>', '<config.compass.prod.src>', 'Resources/Private/Sass/Sections/*'],
-							 tasks: 'compass coffee concat uglify'},
+							 tasks: ['compass', 'coffee', 'concat', 'uglify']
+						 },
 
 						 compass: {
 							 prod: {

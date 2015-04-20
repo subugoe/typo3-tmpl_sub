@@ -1,9 +1,6 @@
 {namespace fed=Tx_Fed_ViewHelpers}
 
-<span id="top">
-	<f:link.page class="skip" addQueryString="TRUE" section="menubox" title="{f:translate(key:'page.skipToNavigation')}">{f:translate(key:'page.skipToNavigation')}</f:link.page>
-	<f:link.page class="skip" addQueryString="TRUE" section="centercontent" title="{f:translate(key:'page.skipToContent')}">{f:translate(key:'page.skipToContent')}</f:link.page>
-</span>
+<span id="top"></span>
 
 <div id="wrap" data-role="page">
 	<header id="header" data-role="header">
@@ -20,7 +17,7 @@
 
 	<f:render section="Bottom" />
 
-	<div id="last">
+	<div id="last" role="contentinfo">
 		<f:format.html><f:translate key="page.lastChanged" /> <f:cObject typoscriptObjectPath="lib.lastChanged" /></f:format.html>
 	</div>
 </div>

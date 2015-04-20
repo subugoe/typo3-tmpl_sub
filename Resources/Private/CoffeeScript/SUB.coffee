@@ -8,7 +8,7 @@ $ ->
 	# stats for GOK Browsing
 	$('.tree li').click = (data) ->
 		if typeof piwikTracker isnt "undefined"
-			trackingData = "GOK" + document.location.pathname + $(".GOKID", this).text()
+			trackingData = "GOK" + document.location.pathname + jQuery(".GOKID", this).text()
 			piwikTracker.trackPageView(trackingData)
 
 	if location.search.substring(1, 8) is "tx_solr" and typeof(piwikTracker) isnt "undefined"

@@ -29,15 +29,11 @@
 	#tx-nkwsubmenu-pi2-contentlist {
 		background-color: $lightgrey;
 		border-top-left-radius: 7px;
-		h6 {
-			// @include border-top-left-radius($radius)
-		}
 		ul {
 			padding-right: 5px;
 		}
 	}
 	#tx-nkwsubmenu-pi2-keywordlist {
 			background-color: $lightgrey;
-			// @include border-bottom-left-radius($radius);
 	}
 }

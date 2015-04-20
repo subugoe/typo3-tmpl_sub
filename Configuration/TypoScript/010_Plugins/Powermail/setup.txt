@@ -1,0 +1,229 @@
+plugin.tx_powermail {
+	view {
+		templateRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Templates/
+		layoutRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Layouts/
+		partialRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Partials/
+	}
+}
+
+## setup for Abholtheke dropdown list ##
+
+# visible recipient dropdown list for the user
+lib.recipient = COA
+lib.recipient {
+	10 = TEXT
+	10.value = Bitte wählen|[\n]
+
+	20 = CONTENT
+	20 {
+		table = fe_users
+		select.pidInList = {$fe_userPid}
+		renderObj = COA
+		renderObj {
+			10 = TEXT
+			10.field = name
+			10.wrap = |[\n]
+		}
+	}
+}
+
+# Name of the library as the sender of the answer email
+lib.abholtheke = CONTENT
+lib.abholtheke {
+	table = fe_users
+	select {
+		pidInList = {$fe_userPid}
+		andWhere {
+			field = 0
+			wrap = name="|"
+			htmlSpecialChars = 1
+		}
+	}
+
+	renderObj = TEXT
+	renderObj {
+		field = name
+	}
+}
+
+# Email of the library the confirmation mail to the user will be sent from
+lib.emailAbholtheke = CONTENT
+lib.emailAbholtheke {
+	table = fe_users
+	select {
+		pidInList = {$fe_userPid}
+		andWhere {
+			field = 0
+			wrap = name="|"
+			htmlSpecialChars = 1
+		}
+	}
+
+	renderObj = TEXT
+	renderObj {
+		field = email
+	}
+}
+
+# Sender name and email of the library for the header in the email to user
+# $abholthekeformular in the constants
+[PIDinRootline = {$abholthekeformular}]
+	plugin.tx_powermail {
+		settings {
+			setup {
+				sender {
+					overwrite {
+						senderName = TEXT
+						senderName.value = {f:cObject(typoscriptObjectPath:'lib.abholtheke',data:abholung)}
+
+						senderEmail = TEXT
+						senderEmail.value = {f:cObject(typoscriptObjectPath:'lib.emailAbholtheke',data:abholung)}
+					}
+				}
+			}
+		}
+	}
+[global]
+
+## setup for Abholtheke dropdown list - end ##
+
+
+## setup for bookshelf donation ##
+
+[globalVar = GP:tx_powermail_pi1|uid{$spendeID} = 1]
+	lib.select >
+	lib.select = COA_INT
+	lib.select {
+		10 = TEXT
+		10.value = <label class="powermail_label" for="powermail_field_uid{$spendeID}">Ihre Spende</label>
+
+		20 = TEXT
+		20.value = <select id="powermail_field_uid{$spendeID}" class="powermail_field powermail_select" name="tx_powermail_pi1[field][uid{$spendeID}]"><option value="Regalboden (300 Euro)" selected="selected">Regalboden (300 Euro)</option><option value="Ausstellungsvitrine (5.000 Euro)">Ausstellungsvitrine (5.000 Euro)</option></select>
+	}
+[else]
+	lib.select >
+	lib.select = COA_INT
+	lib.select {
+		10 = TEXT
+		10.value = <label class="powermail_label" for="powermail_field_uid{$spendeID}">Ihre Spende</label>
+
+		20 = TEXT
+		20.value = <select id="powermail_field_uid{$spendeID}" class="powermail_field powermail_select" name="tx_powermail_pi1[field][uid{$spendeID}]"><option value="Regalboden (300 Euro)">Regalboden (300 Euro)</option><option value="Ausstellungsvitrine (5.000 Euro)" selected="selected">Ausstellungsvitrine (5.000 Euro)</option></select>
+	}
+[global]
+
+## setup for bookshelf donation - end ##
+
+
+## setup for book restoration donation ##
+
+# UID des Powermailfeldes ist {$patenschaft.selectID}
+# Hole GET-Variable tx_powermail_pi1[uid{$patenschaft.selectID}]:
+lib.uebergabe = TEXT
+lib.uebergabe.data = GP:tx_powermail_pi1|uid{$patenschaft.selectID}
+lib.uebergabe.intval = 1
+lib.uebergabe.required = 1
+lib.uebergabe.wrap = uid = |
+
+# Alle Buecher aus DB auslesen
+lib.buecher = CONTENT
+lib.buecher {
+	table = tx_patenschaften_buecher
+	select {
+		pidInList = {$patenschaft.pidInList}
+		where = sponsorship = ""
+		andWhere < lib.uebergabe
+	}
+
+	renderObj = COA
+	renderObj {
+		10 = TEXT
+		10.field = titel
+		10.wrap = |[\n]
+	}
+}
+
+## setup for book restoration donation - end ##
+
+page.includeJSFooterlibs.powermailJQuery >
+## Validation translation
+
+plugin.tx_powermail {
+	_LOCAL_LANG {
+		en {
+			datepicker_format_date = d.m.Y
+			datepicker_format_time = H:i
+			datepicker_format_datetime = d.m.Y H:i
+			# form validation
+			validationerror_mandatory = This field is mandatory
+			validationerror_mandatory_multi = One of these fields must be filled!
+			validationerror_captcha = Wrong captcha code entered - please try again!
+			validationerror_password = Both Password-Fields are not equal!
+			validationerror_validation = Your input is not allowed!
+			validationerror_validation.1 = This is not a valid email address!
+			validationerror_validation.2 = This is not a valid URL!
+			validationerror_validation.3 = This is not a valid Phone Number!
+			validationerror_validation.4 = Please insert numbers only!
+			validationerror_validation.5 = Please insert letters only!
+			validationerror_validation.6 = Please increase number!
+			validationerror_validation.7 = Please decrease number!
+			validationerror_validation.8 = Number to high or to low!
+			validationerror_validation.9 = Too many signs given!
+			validationerror_validation.10 = Error in validation!
+			validationerror_upload_extension = It's not allowed to upload a file with this extension!
+			validationerror_upload_size = The file, that you want to upload is too large!
+			validationerror_upload_error = Upload failed, please check permissons on the server!
+			validationerror_spam = Spam recognized:
+			validationerror_spam_details = Spam chance in this message!
+			JsValidationCheckCheckboxes = Please check min. 1
+			JsValidationCheckInteger = Not a valid number
+			JsValidationCheckRequired = This field is required
+			JsValidationCheckRequiredOption = Please select an option
+			JsValidationCheckEmail = Invalid Email
+			JsValidationCheckUrl = Invalid URL
+			JsValidationCheckPhone = Invalid Phone No
+			JsValidationCheckLetters = Only Letters allowed
+			confirmation_message = Are these values correct?
+			confirmation_next = next
+			confirmation_prev = back
+		}
+		de {
+			datepicker_format_date = d.m.Y
+			datepicker_format_time = H:i
+			datepicker_format_datetime = d.m.Y H:i
+			#form validation
+			validationerror_mandatory = Dies ist ein Pflichtfeld
+			validationerror_mandatory_multi = Eines dieser Felder muss ausgefüllt werden!
+			validationerror_captcha = Falscher Captcha Code eingetragen, bitte erneut versuchen!
+			validationerror_password = Die beiden Passwort-Felder enthalten nicht den gleichen Wert!
+			validationerror_validation = Ihre Eingabe ist nicht erlaubt!
+			validationerror_validation.1 = Keine gültige E-Mail-Adresse!
+			validationerror_validation.2 = Keine gültige URL!
+			validationerror_validation.3 = Keine gültige Telefonnummer!
+			validationerror_validation.4 = Bitte nur Nummern eintragen!
+			validationerror_validation.5 = Bitte nur Buchstaben eintragen!
+			validationerror_validation.6 = Bitte höhrere Zahl eintragen!
+			validationerror_validation.7 = Bitte niedrigere Zahl eintragen!
+			validationerror_validation.8 = Zahl zu groß oder zu klein!
+			validationerror_validation.9 = Zu viele Zeichen!
+			validationerror_validation.10 = Fehler in Validierung!
+			validationerror_upload_extension = Der Dateityp ist nicht erlaubt, bitte versuchen Sie einen anderen Typ!
+			validationerror_upload_size = Die hochgeladene Datei ist zu groß!
+			validationerror_upload_error = Upload fehlgeschlagen, bitte Berechtigungen auf Server überprüfen!
+			validationerror_spam = Spam in Nachricht vermutet:
+			validationerror_spam_details = Spam-Wahrscheinlichkeit in dieser Nachricht!
+			JsValidationCheckCheckboxes = Bitte eine Checkbox anhaken
+			JsValidationCheckInteger = Ungültige Zahl
+			JsValidationCheckRequired = Dieses Feld wird benötigt
+			JsValidationCheckRequiredOption = Bitte eine Option wählen
+			JsValidationCheckEmail = Ungültige E-Mail
+			JsValidationCheckUrl = Ungültige URL
+			JsValidationCheckPhone = Ungültige Telefonnummer
+			JsValidationCheckLetters = Nur Buchstaben erlaubt
+			confirmation_message = Sind diese Eingaben korrekt?
+			confirmation_next = Angaben abschicken
+			confirmation_prev = Zurück
+
+		}
+	}
+}

@@ -11,7 +11,8 @@
 		<div id="Katalog">
 			<div class="tabsContent">
 				<form method="get" id="catalogueSearchForm"
-					  action="sub-aktuell/?tx_subtabs_tabs%5Baction%5D=%2F&amp;tx_subtabs_tabs%5Bcontroller%5D=Tab&amp;cHash=30d0972e7b8b1b853c2fff782aff5bea">
+					  action="sub-aktuell/?tx_subtabs_tabs%5Baction%5D=%2F&amp;tx_subtabs_tabs%5Bcontroller%5D=Tab&amp;cHash=30d0972e7b8b1b853c2fff782aff5bea" 
+					  role="form">
 					<div style="display: none">
 						<input type="hidden" name="tx_subtabs_tabs[__referrer][extensionName]" value="Subtabs"/> <input
 							type="hidden" name="tx_subtabs_tabs[__referrer][controllerName]" value="Tab"/> <input
@@ -19,25 +20,40 @@
 							type="hidden" name="tx_subtabs_tabs[__hmac]"
 							value="a:3:{s:8:&quot;kataloge&quot;;i:1;s:6:&quot;action&quot;;i:1;s:10:&quot;controller&quot;;i:1;}b9c4c6a5f198dc75815bc31bca15b348faf88806"/>
 					</div>
-					<input type="text" id="mytextbox" size="40" class="field" name="search"
-						   placeholder="Suche in den Onlinekatalogen der SUB Göttingen"/> <input type="submit" value="Suchen" class="formButton"/>
+					<input type="text" id="mytextbox" size="40" class="field" name="search" role="search"
+						   placeholder="Suche in den Onlinekatalogen der SUB Göttingen"/> <input type="submit" value="Suchen" class="formButton" role="button" />
 
-					<div class="tabsContentPlus">
+					<div class="tabsContentPlus" role="radiogroup">
 						<br/>
-						<input id="katalog-2" type="radio" name="tx_subtabs_tabs[kataloge]"
+						<input id="katalog-2" 
+                               role="menuitemradio" 
+                               type="radio" 
+                               name="tx_subtabs_tabs[kataloge]"
 							   value="http://opac.sub.uni-goettingen.de/DB=1/LNG=DU/CMD?ACT=SRCHA&amp;IKT=1016&amp;SRT=YOP"
 							   checked="checked"/><label for="katalog-2">GUK - Göttinger
 						Universitätskatalog</label><br/>
-						<input id="katalog-3" type="radio" name="tx_subtabs_tabs[kataloge]"
+						<input id="katalog-3" 
+                               role="menuitemradio" 
+                               type="radio" 
+                               name="tx_subtabs_tabs[kataloge]"
 							   value="http://gso.gbv.de/xslt/DB=2.1/LNG=DU/CMD?ACT=SRCHA&amp;IKT=1016&amp;SRT=YOP"/><label
 							for="katalog-3">GVK - Fernleihe: Gemeinsamer Verbundkatalog</label><br/>
-						<input id="katalog-4" type="radio" name="tx_subtabs_tabs[kataloge]"
+						<input id="katalog-4" 
+                               role="menuitemradio" 
+                               type="radio" 
+                               name="tx_subtabs_tabs[kataloge]"
 							   value="http://rzblx10.uni-regensburg.de/dbinfo/dbliste.php?bib_id=subgo"/><label
 							for="katalog-4">DBIS - Suche nach Datenbanken</label><br/>
-						<input id="katalog-5" type="radio" name="tx_subtabs_tabs[kataloge]"
+						<input id="katalog-5" 
+                               role="menuitemradio" 
+                               type="radio" 
+                               name="tx_subtabs_tabs[kataloge]"
 							   value="http://rzblx1.uni-regensburg.de/ezeit/searchres.phtml?bibid=SUBGO&amp;colors=7&amp;lang=de&amp;jq_type1=KT"/><label
 							for="katalog-5">EZB - Suche nach Elektronischen Zeitschriften</label><br/>
-						<input id="katalog-6" type="radio" name="tx_subtabs_tabs[kataloge]"
+						<input id="katalog-6" 
+                               role="menuitemradio" 
+                               type="radio" 
+                               name="tx_subtabs_tabs[kataloge]"
 							   value="suche/pazpar2/?tx_pazpar2_pazpar2%5BqueryString%5D="/><label for="katalog-6">Aufsätze
 						und elektronische Volltexte</label>
 					</div>

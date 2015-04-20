@@ -2,18 +2,7 @@
 
 insert useful content here - stuff like what this code is all about, dependencies and use cases
 
-# quick and dirty development tips
-
-(Nils Windisch 2014-01-09)
-
-* checkout repo from Github
-* switch to dev branch
-* do stuff [1]
-* commit (to dev) and wait 5 minutes
-* check results at [WWW03](http://www03.sub.uni-goettingen.de)
-* merge branches dev to master / or cherry pick [2]
-* commit (to master) and wait 5 minutes
-* check results at [WWW](http://www03.sub.uni-goettingen.de)
+# Development tips
 
 [1] CSS stuff
 * images are to be placed in /Resources/Public/Img/

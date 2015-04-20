@@ -15,9 +15,6 @@
 	ul {
 		color: $darkgrey;
 		@include trailer(0.5);
-		li {
-			//@include adjust-font-size-to($base-font-size);
-		}
 	}
 	p {
 		@include trailer(0.5);

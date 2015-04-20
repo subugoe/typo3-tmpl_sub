@@ -1,27 +1,27 @@
-jQuery(document).ready(function () {
+$(document).ready(function () {
 	// Bilder mit Links nicht mit Border versehen
-	jQuery('a img').parent('a').css('border-bottom', 0);
+	$('a img').parent('a').css('border-bottom', 0);
 	initMenus();
 
 	function initMenus() {
 
 		// hides all ULs with class "js"
-		jQuery('ul.submenu-l1 ul.js').hide();
+		$('ul.submenu-l1 ul.js').hide();
 
 		// Show all submenu items where the parent Element has the class submenu-highlight-parent
-		jQuery('ul.submenu-l1 .submenu-highlight-parent').next('ul').css('display', 'block');
+		$('ul.submenu-l1 .submenu-highlight-parent').next('ul').css('display', 'block');
 
-		jQuery.each(jQuery('ul.submenu-l1'), function () {
-			jQuery('#' + this.id + ' ul.go').show();
+		$.each($('ul.submenu-l1'), function () {
+			$('#' + this.id + ' ul.go').show();
 		});
-		jQuery('ul.submenu-l1 li a.submenu-trigger').click(
+		$('ul.submenu-l1 li a.submenu-trigger').click(
 				function () {
 					var checkElement = jQuery(this).next();
 					var parent = this.parentNode.parentNode.id;
 
 					if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-						jQuery(this).removeAttr('href');
-						jQuery('#' + parent + ' ul.js:visible').slideUp('normal');
+						$(this).removeAttr('href');
+						$('#' + parent + ' ul.js:visible').slideUp('normal');
 						checkElement.slideDown('normal');
 						return false;
 					}
@@ -30,9 +30,9 @@ jQuery(document).ready(function () {
 	}
 
 		// stats for GOK Browsing
-	$('.tree li').click(function(data){
+	jQuery('.tree li').click(function(data){
 		if (typeof(piwikTracker) != 'undefined') {
-				var td = 'GOK' + document.location.pathname + $('.GOKID', this).text();
+				var td = 'GOK' + document.location.pathname + jQuery('.GOKID', this).text();
 				piwikTracker.trackPageView(td);
 			}
 	});
