@@ -17,6 +17,8 @@
 
 .infobox__social {
 	padding-left: 1em !important;
+	padding-top: 1em;
+	list-style-type: none;
 	li {
 		list-style-type: none;
 		list-style-image: none !important;
@@ -28,6 +30,6 @@
 		}
 	}
 	.fa {
-		font-size: 2em;
+		font-size: 1.6em;
 	}
 }

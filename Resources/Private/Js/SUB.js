@@ -10,7 +10,7 @@ $(function() {
   $('.tree li').click = function(data) {
     var trackingData;
     if (typeof piwikTracker !== "undefined") {
-      trackingData = "GOK" + document.location.pathname + $(".GOKID", this).text();
+      trackingData = "GOK" + document.location.pathname + jQuery(".GOKID", this).text();
       return piwikTracker.trackPageView(trackingData);
     }
   };

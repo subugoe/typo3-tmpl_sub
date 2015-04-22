@@ -3,6 +3,9 @@
 @import '../../../Build/bower/open-sans-fontface/sass/open-sans';
 @import '../../../Build/bower/bootstrap-sass-twbs/assets/stylesheets/bootstrap';
 @import '../../../Build/bower/jasny-bootstrap/scss/jasny-bootstrap';
+@import 'Sections/Social';
+@import 'Sections/powermail';
+
 
 /*
 @import 'Sections/base';
@@ -24,11 +27,9 @@
 @import 'Sections/bottom';
 @import 'Sections/last';
 @import 'Sections/navigation';
-@import 'Sections/Social';
 
 @import 'Sections/nkwsubmenu';
 @import 'Sections/solr';
-@import 'Sections/powermail';
 @import 'Sections/pazpar2';
 @import 'Sections/nkwsitemap';
 @import 'Sections/nkwgok';
@@ -39,15 +40,14 @@
 @import 'Sections/news';*/
 
 .navbar-toggle {
-  float: left;
-  margin-left: 15px;
+	float: left;
+	margin-left: 15px;
 }
 
-
 @media (min-width: 0) {
-  .navbar-toggle {
-    display: block; /* force showing the toggle */
-  }
+	.navbar-toggle {
+		display: block; /* force showing the toggle */
+	}
 }
 
 #top {
@@ -137,10 +137,6 @@
 			margin-right: 0;
 			padding-right: 0;
 
-			.csc-bulletlist {
-				list-style-type: none;
-			}
-
 			.csc-default {
 				@extend .panel;
 				@extend .panel-default;
@@ -148,9 +144,15 @@
 				.csc-header {
 					@extend .panel-heading;
 					@extend .panel-title;
+
+					h2 {
+						margin-top: 0;
+						margin-bottom: 0;
+					}
 				}
 				.csc-bulletlist {
 					@extend .panel-body;
+					padding-left: 2em;
 				}
 			}
 			.infobox__social {
