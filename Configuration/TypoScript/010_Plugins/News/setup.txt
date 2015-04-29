@@ -19,6 +19,13 @@ plugin {
 					insertBelow = 1
 				}
 
+				media {
+					image {
+						maxWidth = 60
+						maxHeight = 60
+					}
+				}
+
 				rss.channel {
 					title = {$plugin.tx_news.rss.channel.title}
 					description = {$plugin.tx_news.rss.channel.description}
