@@ -11,7 +11,12 @@
 
 	<f:if condition="{newsItem.firstCategory.images.0}">
 		<div class="news-img-wrap">
-			<f:image image="{newsItem.firstCategory.images.0}" alt="{newsItem.firstCategory.images.title}" />
+			<f:image
+				image="{newsItem.firstCategory.images.0}"
+				alt="{newsItem.firstCategory.images.title}"
+				maxWidth="{settings.list.media.image.maxWidth}"
+				maxHeight="{settings.list.media.image.maxHeight}"
+			/>
 		</div>
 	</f:if>
 
@@ -99,7 +104,7 @@
 	</f:if>
 
 
-	<f:comment><!-- teasser text --></f:comment>
+	<f:comment><!-- teaser text --></f:comment>
 	<div class="teaser-text">
 		<f:if condition="{newsItem.teaser}">
 			<f:then>
