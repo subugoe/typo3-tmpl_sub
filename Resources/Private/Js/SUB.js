@@ -18,26 +18,40 @@ $(function() {
     searchTerm = location.search.split("&")[0].split("=")[1];
     td = "Searchterm/" + searchTerm;
     piwikTracker.trackPageView(td);
-    return piwikTracker.setCustomVariable(1, "Suchbegriff", searchTerm, "page");
+    piwikTracker.setCustomVariable(1, "Suchbegriff", searchTerm, "page");
   }
+  $('.search_input').focus(function() {
+    $('.search').addClass('-show-all');
+    return $('.search_navigation a:first').addClass('-active');
+  });
+  $('.search').click(function() {
+    return false;
+  });
+  $('.main_left, .header_show-nav').click(function(e) {
+    return e.stopPropagation();
+  });
+  $('.header_show-nav').click(function() {
+    $('body').toggleClass('-show-off-canvas');
+    return false;
+  });
+  return $('body').click(function() {
+    $('.search').removeClass('-show-all');
+    return $('body').removeClass('-show-off-canvas');
+  });
 });
 
 initMenus = function() {
-  $('ul.submenu-l1 ul.js').hide();
-  $('ul.submenu-l1 .submenu-highlight-parent').next('ul').css('display', 'block');
-  $('ul.submenu-l1 li.submenu-selected').children('ul').show();
-  $('.submenu-l2-1029, .submenu-l2-1043, .submenu-l2-1051, .submenu-l2-1059, .submenu-l2-1067, .submenu-l2-1033').children('ul').hide();
-  $('ul.submenu-l1').each(function() {
-    return $('#' + this.id + ' ul.go').show();
+  $('.nav_list.-secondary').hide();
+  $('.nav_list').has('.-current').show();
+  $('.nav_list').each(function() {
+    return $('#' + this.id).show();
   });
-  return $('ul.submenu-l1 li a.submenu-trigger').click(function() {
-    var checkElement, parent;
-    checkElement = $(this).next();
-    parent = this.parentNode.parentNode.id;
-    if (checkElement.is('ul') && (!checkElement.is(':visible'))) {
-      $(this).removeAttr('href');
-      $('#' + parent + ' ul.js:visible').slideUp('normal');
-      checkElement.slideDown('normal');
+  return $('.nav_link').click(function() {
+    var $nav_list;
+    $nav_list = $(this).next('.nav_list');
+    if ($nav_list.length) {
+      $('.nav_list .-secondary').not($nav_list).slideUp();
+      $nav_list.slideToggle();
       return false;
     }
   });

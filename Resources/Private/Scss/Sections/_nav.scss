@@ -1,0 +1,59 @@
+.nav {
+
+    a {
+        border-bottom: 1px solid $border-color;
+        display: block;
+        overflow: hidden;
+        padding: ($grid / 2) ($grid / 2) ($grid / 2 - 1px);
+        text-overflow: ellipsis;
+
+        &:active,
+        &:focus,
+        &:hover {
+            background: $highlight-color;
+            color: $link-color;
+        }
+    }
+}
+
+.nav_list {
+    list-style: none;
+    padding: 0;
+
+    & & {
+        border-bottom: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+        margin-left: ($grid - 1px);
+
+        li:last-child a {
+            border-bottom: 0;
+        }
+    }
+}
+
+.nav_item {
+}
+
+.nav_link {
+    &.-current {
+        background: $link-color;
+        color: $white;
+        position: relative;
+
+        &:after {
+            border: ($grid / 2) solid transparent;
+            border-right-color: $white;
+            content: '';
+            height: 0;
+            margin-top: (-$grid / 2);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 0;
+
+            @include respond-to(medium) {
+                display: none;
+            }
+        }
+    }
+}

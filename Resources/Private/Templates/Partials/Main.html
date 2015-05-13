@@ -1,0 +1,25 @@
+<div class="main" data-role="content">
+
+	<div class="main_left">
+		<f:cObject typoscriptObjectPath="lib.navNeu" />
+		<div class="main_logo" role="banner">
+			<f:link.external uri="{f:translate(key:'page.uniLogo.link')}" title="{f:translate(key:'page.uniLogo')}">
+				<f:image src="{f:uri.resource(path:'Img/unilogo.png')}" alt="{f:translate(key:'page.uniLogo')}" />
+			</f:link.external>
+		</div>
+		<f:if condition="{currentPid} == 1">
+			<div class="main_ads" role="banner">
+				{ads -> f:format.raw()}
+			</div>
+		</f:if>
+	</div>
+
+	<div class="main_right">
+		<div class="breadcrumbs" role="navigation">
+			<f:cObject typoscriptObjectPath="lib.rootline" />
+		</div>
+		{layoutTyp}
+		{subTemplate -> f:format.raw()}
+	</div>
+
+</div>

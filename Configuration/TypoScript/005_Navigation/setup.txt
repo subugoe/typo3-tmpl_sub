@@ -1,90 +1,90 @@
 lib.navInterface = HMENU
 lib.navInterface {
-	wrap = <nav class="submenu" role="navigation">|</nav>
+	wrap = <nav class="nav" role="navigation">|</nav>
 	1 = TMENU
 	1 {
-		wrap = <ul id="menu1" class="submenu-l1 expand">|</ul>
+		wrap = <ul id="menu1" class="nav_list -primary">|</ul>
 		expAll = 1
 		noBlur = 1
 		NO = 1
 		NO {
-			wrapItemAndSub = <li class="submenu-l1">|</li>
-			ATagParams = class="submenu-trigger"
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -primary"
 		}
 		ACT = 1
 		ACT {
-			wrapItemAndSub = <li class="submenu-selected">|</li>
-			ATagParams = class="submenu-highlight submenu-trigger"
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -primary -current"
 		}
 		ACTIFSUB = 1
 		ACTIFSUB{
-			wrapItemAndSub = <li class="submenu-selected">|</li>
-			ATagParams = class="submenu-highlight-parent submenu-trigger"
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -primary"
 		}
 		CUR = 1
 		CUR {
-			wrapItemAndSub = <li class="submenu-selected">|</li>
-			ATagParams = class="submenu-highlight submenu-trigger cur"
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -primary -current"
 		}
 	}
 	2 = TMENU
 	2 {
 		noBlur = 1
 		expAll = 0
-		wrap = <ul class="submenu-l2 js">|</ul>
+		wrap = <ul class="nav_list -secondary">|</ul>
 		NO = 1
 		NO {
-			wrapItemAndSub = <li class="submenu-l2 submenu-l2-{field:uid}">|</li>
+			wrapItemAndSub = <li class="nav_item -id-{field:uid}">|</li>
 			wrapItemAndSub.insertData = 1
 		}
 		CUR = 1
 		CUR {
-			wrapItemAndSub = <li class="submenu-selected">|</li>
-			ATagParams = class="submenu-highlight"
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -current"
 		}
 		ACT = 1
 		ACT {
-			wrapItemAndSub = <li class="submenu-selected">|</li>
-			ATagParams = class="submenu-highlight"
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -current"
 		}
 		ACTIFSUB = 1
 		ACTIFSUB {
 			wrapItemAndSub = <li>|</li>
-			ATagParams = class="submenu-l2-actifsub"
+			ATagParams = class="nav_link"
 		}
 	}
 	3 = TMENU
 	3 {
 		noBlur = 1
 		expAll = 0
-		wrap = <ul class="submenu-l3">|</ul>
+		wrap = <ul class="nav_list -tertiary">|</ul>
 		NO = 1
 		NO {
 			wrapItemAndSub = <li>|</li>
 		}
 		CUR = 1
 		CUR {
-			wrapItemAndSub = <li class="submenu-selected">|</li>
-			ATagParams = class="submenu-highlight"
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -current"
 		}
 		ACT = 1
 		ACT {
-			wrapItemAndSub = <li class="submenu-selected">|</li>
-			ATagParams = class="submenu-highlight"
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -current"
 		}
 		ACTIFSUB = 1
 		ACTIFSUB {
 			wrapItemAndSub = <li>|</li>
-			ATagParams = class="submenu-l3-actifsub"
+			ATagParams = class="nav_link"
 		}
 	}
 	4 < .3
 	4 {
-		wrap = <ul class="submenu-l4">|</ul>
+		wrap = <ul class="nav_list">|</ul>
 	}
 	5 < .4
 	5 {
-		wrap = <ul class="submenu-l5">|</ul>
+		wrap = <ul class="nav_list">|</ul>
 	}
 
 }
@@ -102,25 +102,25 @@ lib.navNeu {
 [PIDinRootline = {$fachknoten}]
 lib.navNeu = COA
 lib.navNeu {
-	wrap = <div class="submenu">|</div>
+	wrap = <div class="nav">|</div>
 	10 = TEXT
 	10 {
 		typolink {
 			parameter = {$startseitenId}
-			ATagParams = class="submenu-trigger"
+			ATagParams = class="nav_link"
 		}
 		wrapItemAndSub = <li>|</li>
-		wrap = <ul id="menu1" class="submenu-l1 expand"><li>|
+		wrap = <ul id="menu1" class="nav_item"><li>|
 	}
 	15 = TEXT
 	15 {
-		wrap = <li class="submenu-l1 selected">|</li>
+		wrap = <li class="nav_item">|</li>
 		data = leveltitle:2
-		value = {page:title}
+		value = {page:nav_title}
 		insertData = 1
 		typolink {
 			parameter.data = leveluid:2
-			ATagParams = class="submenu-highlight-parent submenu-trigger"
+			ATagParams = class="nav_link"
 		}
 	}
 	20 = HMENU
@@ -141,25 +141,25 @@ lib.navNeu {
 [PIDinRootline = {$fachknotenLevelOne}]
 lib.navNeu = COA
 lib.navNeu {
-	wrap = <div class="submenu">|</div>
+	wrap = <div class="nav">|</div>
 	10 = TEXT
 	10 {
 		typolink {
 			parameter = {$startseitenId}
-			ATagParams = class="submenu-trigger"
+			ATagParams = class="nav_link"
 		}
 		wrapItemAndSub = <li>|</li>
-		wrap = <ul id="menu1" class="submenu-l1 expand"><li>|
+		wrap = <ul id="menu1" class=""><li>|
 	}
 	15 = TEXT
 	15 {
-		wrap = <li class="submenu-l1 selected">|</li>
+		wrap = <li class="nav_item">|</li>
 		data = leveltitle:2
-		value = {page:title}
+		value = {page:nav_title}
 		insertData = 1
 		typolink {
 			parameter.data = leveluid:2
-			ATagParams = class="submenu-highlight-parent submenu-trigger"
+			ATagParams = class="nav_link"
 		}
 	}
 	20 = HMENU
@@ -178,25 +178,25 @@ lib.navNeu {
 [PIDinRootline = {$fachknotenOnTopLevel}]
 lib.navNeu = COA
 lib.navNeu {
-	wrap = <div class="submenu">|</div>
+	wrap = <div class="nav">|</div>
 	10 = TEXT
 	10 {
 		typolink {
 			parameter = {$startseitenId}
-			ATagParams = class="submenu-trigger"
+			ATagParams = class="nav_link"
 		}
 		wrapItemAndSub = <li>|</li>
-		wrap = <ul id="menu1" class="submenu-l1 expand"><li>|
+		wrap = <ul id="menu1" class=""><li>|
 	}
 	15 = TEXT
 	15 {
-		wrap = <li class="submenu-l1 selected">|</li>
+		wrap = <li class="nav_item">|</li>
 		data = leveltitle:1
-		value = {page:title}
+		value = {page:nav_title}
 		insertData = 1
 		typolink {
 			parameter.data = leveluid:1
-			ATagParams = class="submenu-highlight-parent submenu-trigger"
+			ATagParams = class="nav_link"
 		}
 	}
 	20 = HMENU

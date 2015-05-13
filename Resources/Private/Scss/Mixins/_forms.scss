@@ -1,0 +1,35 @@
+@mixin button {
+	@include transition(background-color);
+	background: $button-bg-color;
+	border: 0 !important;
+	border-radius: $br;
+	cursor: pointer;
+	display: inline-block;
+	font-size: $font-size;
+	line-height: $line-height;
+	padding: (.5 * $grid) $grid;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	@include auto-color-for($link-color);
+	@include hover {
+		background: $button-hover-bg-color;
+		@include auto-color-for($button-hover-bg-color);
+	}
+}
+
+@mixin text-input {
+	@include transition(background);
+	background: $input-bg-color;
+	border: $border-width solid $border-color;
+	border-radius: $br;
+	height: (2 * $grid);
+	line-height: $grid;
+	padding: (.5 * $grid) .5em;
+	min-width: 8em;
+
+	&:focus {
+		border-color: $link-color;
+	}
+}

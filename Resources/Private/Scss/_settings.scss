@@ -6,7 +6,7 @@ $headings-color: $link-color;
 $tab-background: #dee1e7;
 $nav-tabs-active-link-hover-bg: $tab-background;
 
-$breadcrumb-separator: '»';
+$breadcrumb-separator: '»'; // This does not work
 $list-group-border: transparent;
 
 $nav-pills-active-link-hover-bg: $link-color;
@@ -16,7 +16,7 @@ $nav-link-hover-bg: $link-color;
 $nav-background-color: #6e7fa0;
 
 // typography
-$FontAwesomePath: "../Fonts/fontawesome" !default;
+$fa-font-path: "../Fonts/fontawesome" !default;
 $OpenSansPath: "../Fonts/open-sans" !default;
 
 $icon-font-path: '../Fonts/';
@@ -24,7 +24,7 @@ $font-family-sans-serif: 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
 $headings-font-weight: 300;
 
 $font-size-base: 16px;
-$line-height-base: 1.62;
+$line-height-base: 1.625;
 
 $font-size-h1: 42px;
 $font-size-h2: 26px;
@@ -36,7 +36,78 @@ $max-width: 1170px;
 $darkgrey: #434343;
 $darkblue: #1a3771;
 $anotherLightGrey: #ccc;
-$button-background: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/button_shade_large.png';
 $lightblue: #93a8cf;
 $lightgrey: #dee1e7;
 
+//==============================================================================
+
+// Colors
+$lightblue: #93a8cf;
+$darkblue: #1a3771;
+$anotherDarkBlue: #163675;
+$lightgrey: #dee1e7;
+$anotherLightGrey: #ccc;
+$darkgrey: #434343;
+$darkergrey: #626262;
+$bluegrey: #6e7fa0;
+$red: #f00;
+$white: #fff;
+
+// Dimensions
+$radius: 7px;
+$siteWidth: 1170px;
+$contentBoxWidth: 80%;
+$sidebarWidth: $siteWidth * .2;
+$headerHeight: 110px;
+$infoImageWidth: 29px;
+
+// shadow
+$default-text-shadow-color: rgba(#000, .5);
+$default-text-shadow-blur: 0;
+$default-text-shadow-v-offset: 1px;
+
+// typography
+$base-font-size: 12px;
+$base-line-height: 18px;
+
+// Images
+$arrowLink: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right_2.svg';
+$arrowSmall: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right.png';
+$headerImage: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/header.png';
+$bulletImage: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/bullet.png';
+$buttonBackground: linear-gradient(to bottom, lighten($lightblue, 10), $lightblue);
+$logoImage: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/logo_print.png';
+$clearGif: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/clear.gif';
+
+$font: Helvetica, Arial, sans-serif;
+
+//=== NEW SETTINGS ===
+$grid: 26px;
+$site-width: 48 * $grid;
+$search-width: 24 * $grid;
+
+$breakpoints: (	large: 1260px, medium: 1004px, small: 700px );
+$widths: ( max: (48 * $grid), large: (36 * $grid), medium: 100%, small: 100% );
+
+$ratio: 1.41421356;
+$line-height: $grid;
+
+$font-size: 16px;
+$font-size-small: 14px;
+
+$border-width: 1px;
+$br: 2px; // border-radius
+
+$alpha-color: #1a3771; // dark blue
+$beta-color: #93a8cf; //  light blue
+
+$text-color: #444;
+$text-color-light: #888;
+$border-color: #d6d6d6;
+$highlight-color: lighten($beta-color, 25);
+$link-color: $alpha-color;
+$link-hover-color: lighten($link-color, 15);
+$heading-color: $alpha-color;
+$input-bg-color: #fff;
+$button-bg-color: $link-color;
+$button-hover-bg-color: $link-hover-color;

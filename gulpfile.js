@@ -57,12 +57,14 @@ gulp.task('sass', function () {
 });
 
 gulp.task('lint', function () {
+	/*
 	gulp.src(config.paths.sass)
 			.pipe(cached('scsslint'))
 			.pipe(scsslint({
 				'config': 'Build/.scss-lint.yml',
 				'maxBuffer': 9999999
 			}))
+	*/
 });
 
 gulp.task('coffee', function () {

@@ -1,4 +1,18 @@
-<div id="logo" role="banner">
-	<f:cObject typoscriptObjectPath="lib.pageHeader" />
-</div>
-<f:cObject typoscriptObjectPath="tt_content.list.20.subtabs_tabs" />
+<header class="header" data-role="header">
+	<button class="header_show-nav" title="Navigation"><span class="sr-only">Navigation</span></button>
+	<div class="header_logo" role="banner">
+		<f:link.page pageUid="1">
+			<h1 class="sr-only">Niedersächsische Staats-und Universitätsbibliothek Göttingen</h1>
+			<!--<f:cObject typoscriptObjectPath="lib.pageHeader" />-->
+			<img class="header_logo_img -big" src="typo3conf/ext/tmpl_sub/Resources/Public/Img/sub-logo.svg" />
+			<img class="header_logo_img -small" src="typo3conf/ext/tmpl_sub/Resources/Public/Img/sub-logo-centered.svg" />
+		</f:link.page>
+	</div>
+	<div class="header_search">
+		<f:cObject typoscriptObjectPath="tt_content.list.20.subtabs_tabs" />
+	</div>
+	<div class="header_bar">
+		<f:link.page additionalParams="{L:\"{f:translate(key:'page.language.switchId')}\"}" addQueryString="TRUE"><f:translate key="page.language" /></f:link.page>
+	</div>
+	<f:cObject typoscriptObjectPath="lib.BIGPICTURE" />
+</header>

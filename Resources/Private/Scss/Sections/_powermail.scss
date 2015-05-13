@@ -71,12 +71,13 @@ $widthLabel: 200px;
 		padding: 3px;
 		width: 300px;
 		color: $darkgrey;
+
 		&.powermail_submit .tx-powermail-pi1_confirmation {
 			border-radius: 3px;
 			width: auto;
 			border-width: 1px;
 			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
-			background: url($button-background) repeat-x scroll 0 100% #f3f6fb;
+			background: $buttonBackground;
 			border-style: solid;
 			margin-left: 0;
 			text-align: center;
@@ -89,6 +90,7 @@ $widthLabel: 200px;
 			height: 28px;
 			color: $darkgrey;
 		}
+
 		&.tx-powermail-pi1_confirmation,
 		&.tx-powermail-pi1_mandatory_submit {
 			border-radius: 3px;
@@ -96,7 +98,7 @@ $widthLabel: 200px;
 			border: 1px solid #434343;
 			border-width: 1px;
 			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
-			background: url($button-background) repeat-x scroll 0 100% #f3f6fb;
+			background: $buttonBackground;
 			font-weight: bold;
 			text-align: center;
 			text-decoration: none;

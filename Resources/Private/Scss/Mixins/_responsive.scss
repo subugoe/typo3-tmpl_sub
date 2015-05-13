@@ -1,0 +1,40 @@
+@mixin respond-to($name) {
+	@if map-has-key($breakpoints, $name) {
+		@media (max-width: map-get($breakpoints, $name)) {
+			@content;
+		}
+	}
+	@else {
+		@warn "Undefined breakpoint: `#{$name}`";
+	}
+}
+
+@mixin off-canvas {
+	//background: $offcanvas-bg-color;
+	min-height: 100%;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 61.8%;
+	z-index: -1;
+
+	> ul {
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	> ul > li {
+		padding-left: 0;
+	}
+
+	> ul > li,
+	> ul > li > a {
+		float: none;
+		margin-left: 0;
+		text-align: left;
+	}
+}

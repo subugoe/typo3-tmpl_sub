@@ -1,10 +1,9 @@
-<div class="sub-az">
-	<ul class="letterNavi">
+<div class="alphabet-nav">
+	<ul class="alphabet-nav_list">
 		<f:for each="{titles}" as="title" key="letter" iteration="titleIteration">
 				<li><f:link.page section="{letter}" noCacheHash="TRUE">{letter}</f:link.page> <span class="pipe">|</span></li>
 		</f:for>
 	</ul>
-
 	<dl>
 		<f:for each="{titles}" as="title" key="letter" iteration="titleIteration">
 			<dt id="{letter}">{letter}</dt>

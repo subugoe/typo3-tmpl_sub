@@ -76,13 +76,13 @@ class user_template {
 			// use the first result
 			$content = $this->formatBigPicture($results[0]);
 			$content .= $this->getImageInformation($results[0]);
-			$content = '<div class="big-picture">' . $content . '</div>';
+			$content = '<div class="header_image">' . $content . '</div>';
 		} elseif ($this->checkRootlineForPics()) {
 			// Check rootline to see if we have inherited pics
 			$results = $this->getBigPictureFromPage($this->checkRootlineForPics());
 			$content = $this->formatBigPicture($results[0]);
 			$content .= $this->getImageInformation($results[0]);
-			$content = '<div class="big-picture">' . $content . '</div>';
+			$content = '<div class="header_image">' . $content . '</div>';
 		}
 
 		return $content;
@@ -119,11 +119,6 @@ class user_template {
 
 		$fileObjects = $fileRepository->findByRelation('pages', 'media', $pageId);
 
-		// @TODO legacy - remove when files are migrated
-		if (count($fileObjects) === 0) {
-			$fileObjects = $this->getFilesFromNkwMenu($fileRepository, $pageId);
-		}
-
 		$files = array();
 
 		foreach ($fileObjects as $key => $value) {
@@ -133,19 +128,6 @@ class user_template {
 
 		return $files;
 	}
-
-	/**
-	 * @param \TYPO3\CMS\Core\Resource\FileRepository $fileRepository
-	 * @param int $pageId
-	 * @return array
-	 * @deprecated will be removed if no occurences from nkwsubmenu are found
-	 */
-	protected function getFilesFromNkwMenu($fileRepository, $pageId) {
-		\TYPO3\CMS\Core\Utility\GeneralUtility::logDeprecatedFunction();
-
-		return $fileRepository->findByRelation('pages', 'tx_nkwsubmenu_picture', $pageId);
-	}
-
 
 	/**
 	 * Renders the image and puts Information to the picture
@@ -225,7 +207,7 @@ class user_template {
 		$imageInformation = $this->local_cObj->cObjGetSingle('IMAGE', $bild);
 
 		// return with a special css class for that particular image
-		return '<div class=" big-picture-license big-picture-license-' . $cssClass . '">' . $imageInformation . '</div>';
+		return '<div class="header_image-license -' . $cssClass . '">' . $imageInformation . '</div>';
 
 	}
 

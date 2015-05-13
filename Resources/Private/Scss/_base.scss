@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include transition(left);
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+
+    &.-show-off-canvas {
+        @include respond-to(medium) {
+            left: 61.8%;
+
+            &:before {
+                background: rgba(#000, .5);
+                content: '';
+                display: block;
+                height: 100%;
+                position: absolute;
+                width: 100%;
+                z-index: 9;
+            }
+        }
+    }
+}
+
+body,
+input,
+select,
+textarea {
+    font: #{$font-size} / #{$grid} 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+}
+
+button,
+[type=submit],
+[type=reset] {
+    cursor: pointer;
+}

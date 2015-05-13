@@ -1,0 +1,162 @@
+.content {
+    display: table-cell;
+
+    &.-with-sidebar {
+        padding-right: (2 * $grid);
+
+        @include respond-to(medium) {
+            padding-right: 0;
+        }
+    }
+
+    address,
+    blockquote,
+    fieldset,
+    figure,
+    form,
+    dl,
+    h1,
+    h2,
+    h3,
+    iframe,
+    ol,
+    p,
+    pre,
+    table,
+    ul {
+        margin-bottom: $grid;
+    }
+
+    a {
+        @include transition(border-color);
+        border-bottom: 1px solid $border-color;
+
+        @include hover {
+            border-color: $link-hover-color;
+        }
+    }
+
+    caption {
+        font-weight: bold;
+        text-align: left;
+    }
+
+    // TODO: Modular scale via mixin/function
+    h1 {
+        @include typo-scale(3);
+        color: $heading-color;
+        font-weight: 300;
+    }
+
+    h2 {
+        @include typo-scale(2);
+        color: $heading-color;
+        font-weight: 300;
+    }
+
+    h3 {
+        @include typo-scale(1);
+        color: $heading-color;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    ul {
+        list-style: disc outside;
+        margin-left: $grid;
+    }
+
+    ol {
+        list-style: decimal outside;
+        margin-left: $grid;
+    }
+
+    abbr,
+    acronym,
+    dfn {
+        border-bottom: 1px dotted $border-color
+    }
+
+    b,
+    strong {
+        font-weight: bold;
+    }
+
+    big {
+        font-size: 1.25em;
+    }
+
+    cite,
+    em,
+    i,
+    q {
+        font-style: italic;
+    }
+
+    code,
+    kbd,
+    tt,
+    var {
+        font-family: monospace;
+    }
+
+    small {
+        font-size: ($font-size-small / $font-size + 0em)
+    }
+
+    sub,
+    sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+
+    sup {
+        top: -0.5em;
+    }
+
+    sub {
+        bottom: -0.25em;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td,
+    th {
+        padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - 1px);
+        text-align: left;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    tr {
+        border-bottom: 1px solid $border-color;
+    }
+
+    [type=text],
+    [type=password],
+    [type=email],
+    [type=search],
+    select,
+    textarea {
+        @include text-input;
+    }
+    // TODO: form styless
+
+    button,
+    [type=submit],
+    [type=reset] {
+        @include button;
+    }
+
+}

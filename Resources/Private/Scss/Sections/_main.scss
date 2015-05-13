@@ -1,0 +1,35 @@
+.main {
+    @extend %clearfix;
+    background: $white;
+    margin: 0 auto;
+    max-width: $site-width;
+    padding: (.5 * $grid);
+
+    @include respond-to(large) {
+        padding-left: ($grid);
+        padding-right: ($grid);
+    }
+
+    @include respond-to(small) {
+        padding-left: (.5 * $grid);
+        padding-right: (.5 * $grid);
+    }
+}
+
+.main_left {
+    float: left;
+    padding-right: (2 * $grid);
+    width: (12 * $grid);
+
+    @include respond-to(large) {
+        @include off-canvas;
+    }
+}
+
+.main_right {
+}
+
+.main_logo,
+.main_ads {
+    margin-top: $grid;
+}

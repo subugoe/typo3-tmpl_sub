@@ -60,7 +60,7 @@ lib.BIGPICTURE {
 lib.bigPicture = IMAGE
 lib.bigPicture {
 	stdWrap {
-		wrap = <div class="big-picture">|</div>
+		wrap = <div class="header_image">|</div>
 		required = 1
 	}
 
@@ -268,7 +268,7 @@ lib.pageHeader {
 	altText.data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:page.pageTitle
 	file = GIFBUILDER
 	file {
-		backColor = #1a3771
+		backColor = transparent
 		XY = 1000,110
 		format = png
 		30 = IMAGE

@@ -1,0 +1,26 @@
+.icon-facebook-sign,
+.fa-facebook {
+	color: #3b5998;
+}
+
+.icon-twitter-sign,
+.fa-twitter {
+	color: #00aced;
+}
+
+.sub-social {
+	i {
+		margin-right: 4px;
+	}
+
+}
+
+.infobox__social {
+
+	.fa {
+		font-size: ($ratio * $font-size);
+		margin: 0 .25em;
+		min-width: 1em;
+		vertical-align: middle;
+	}
+}

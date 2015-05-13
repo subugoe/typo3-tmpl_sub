@@ -1,0 +1,37 @@
+.sidebar {
+    display: table-cell;
+    vertical-align: top;
+    width: (10 * $grid);
+
+    @include respond-to(medium) {
+        border-top: $border-width solid $border-color;
+        display: block;
+        padding-top: ($grid - $border-width);
+        width: 100%;
+    }
+
+    > div {
+        border-left: $border-width solid $border-color;
+        margin-top: (.25 * $grid);
+        padding-left: ($grid - $border-width);
+
+        @include respond-to(medium) {
+            border: 0;
+            padding-left: 0;
+        }
+    }
+
+    > div + div {
+        margin-top: (1.25 * $grid);
+    }
+
+    h2 {
+        @include typo-scale(1);
+        color: $heading-color;
+        margin-bottom: (.75 * $grid);
+    }
+
+    li {
+        margin-bottom: (.5 * $grid);
+    }
+}

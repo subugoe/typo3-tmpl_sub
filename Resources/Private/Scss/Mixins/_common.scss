@@ -1,0 +1,75 @@
+@mixin align-bottom {
+	bottom: 0;
+	position: absolute;
+}
+
+// From Chopstick v0.3.3
+// Calculate text-color based on background-color, see https://vimeo.com/60224584
+@mixin auto-color-for($bg-color) {
+	@if (0.2126 * red($bg-color) + 0.7152 * green($bg-color) + 0.0722 * blue($bg-color)) / 255 <= 0.5 {
+		color: mix(white, $bg-color, 95%);
+	}
+	@else {
+		color: mix(black, $bg-color, 70%);
+	}
+}
+
+// Show a baseline grid for easier typography debugging
+@mixin debug-grid($vertical-offset: 0) {
+	background-image: linear-gradient(transparent 50%, #eef 50%);
+	background-position: 0 $vertical-offset;
+	background-size: (2 * $grid) (2 * $grid);
+}
+
+// Use of different file formats for font-face declaration:
+// .eot: IE9 compat
+// .eot?#iefix: IE8 and below
+// .woff: standards
+// .truetype: Safari, Android, iOS
+// .svg: legacy iOS
+@mixin font-face($family, $src, $style: normal, $weight: normal) {
+	@font-face {
+		font-family: $family;
+		src: url("#{$src}.eot");
+		src: url("#{$src}.eot?#iefix") format("embedded-opentype"), url("#{$src}.woff") format("woff"), url("#{$src}.ttf") format("truetype"), url("#{$src}.svg##{$family}") format("svg");
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
+
+@mixin hover {
+	&:hover,
+	&:active,
+	&:focus {
+		@content;
+	}
+}
+
+// Font Awesome icon
+@mixin fa-icon($name, $with-text: true) {
+	@extend .fa;
+	@extend .fa-#{$name};
+
+	@if $with-text {
+		&:before {
+			margin-right: .5em;
+		}
+	}
+}
+
+$transition-duration: .4s !default;
+$transition-timing-function: ease-in-out !default;
+
+@mixin transition($properties...) {
+	$transitions: ();
+	@each $property in $properties {
+		$trans: unquote("#{$property} #{$transition-duration} #{$transition-timing-function}");
+		$transitions: append($transitions, $trans, comma);
+	}
+	transition: $transitions;
+}
+
+@mixin typo-scale($increment) {
+	font-size: round(ms($increment));
+	line-height: floor(ms($increment) / $line-height + 1) * $line-height;
+}
