@@ -18,9 +18,12 @@
 .infobox__social {
 
 	.fa {
+		float: left; // Preventing link hover styles from affecting icon
 		font-size: ($ratio * $font-size);
-		margin: 0 .25em;
+		line-height: $line-height;
+		margin-right: .5em;
 		min-width: 1em;
-		vertical-align: middle;
+		position: relative;
+		text-align: center;
 	}
 }

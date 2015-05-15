@@ -49,7 +49,7 @@ lib.navInterface {
 		}
 		ACTIFSUB = 1
 		ACTIFSUB {
-			wrapItemAndSub = <li>|</li>
+			wrapItemAndSub = <li class="nav_item">|</li>
 			ATagParams = class="nav_link"
 		}
 	}
@@ -60,7 +60,7 @@ lib.navInterface {
 		wrap = <ul class="nav_list -tertiary">|</ul>
 		NO = 1
 		NO {
-			wrapItemAndSub = <li>|</li>
+			wrapItemAndSub = <li class="nav_item">|</li>
 		}
 		CUR = 1
 		CUR {
@@ -74,13 +74,34 @@ lib.navInterface {
 		}
 		ACTIFSUB = 1
 		ACTIFSUB {
-			wrapItemAndSub = <li>|</li>
+			wrapItemAndSub = <li class="nav_item">|</li>
 			ATagParams = class="nav_link"
 		}
 	}
-	4 < .3
+	4 = TMENU
 	4 {
-		wrap = <ul class="nav_list">|</ul>
+		noBlur = 1
+		expAll = 0
+		wrap = <ul class="nav_list -quarternary">|</ul>
+		NO = 1
+		NO {
+			wrapItemAndSub = <li class="nav_item">|</li>
+		}
+		CUR = 1
+		CUR {
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -current"
+		}
+		ACT = 1
+		ACT {
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -current"
+		}
+		ACTIFSUB = 1
+		ACTIFSUB {
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link"
+		}
 	}
 	5 < .4
 	5 {

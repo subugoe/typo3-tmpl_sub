@@ -86,8 +86,11 @@ $grid: 26px;
 $site-width: 48 * $grid;
 $search-width: 24 * $grid;
 
-$breakpoints: (	large: 1260px, medium: 1004px, small: 700px );
-$widths: ( max: (48 * $grid), large: (36 * $grid), medium: 100%, small: 100% );
+$breakpoints: (
+    large: 1260px,
+    medium: 1004px,
+    small: 640px
+);
 
 $ratio: 1.41421356;
 $line-height: $grid;
@@ -103,8 +106,9 @@ $beta-color: #93a8cf; //  light blue
 
 $text-color: #444;
 $text-color-light: #888;
+$pale-color: #ececec;
 $border-color: #d6d6d6;
-$highlight-color: lighten($beta-color, 25);
+$highlight-color: rgba(black, .05);
 $link-color: $alpha-color;
 $link-hover-color: lighten($link-color, 15);
 $heading-color: $alpha-color;

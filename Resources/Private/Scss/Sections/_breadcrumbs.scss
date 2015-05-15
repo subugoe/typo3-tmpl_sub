@@ -1,14 +1,18 @@
 .breadcrumbs {
-    font-size: $font-size-small;
-    margin-bottom: (.5 * $grid);
+	font-size: $font-size-small;
+	margin-bottom: (.5 * $grid);
 
-    li {
-        display: inline;
+	a {
+		@extend %show-border-on-hover;
+	}
 
-        + li:before {
-            color: $text-color-light;
-            content: '»';
-            padding: 0 .5em;
-        }
-    }
+	li {
+		display: inline;
+
+		+ li:before {
+			color: $text-color-light;
+			content: '»';
+			padding: 0 .5em;
+		}
+	}
 }

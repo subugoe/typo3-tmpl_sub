@@ -1,162 +1,247 @@
 .content {
-    display: table-cell;
+	display: table-cell;
 
-    &.-with-sidebar {
-        padding-right: (2 * $grid);
+	&.-with-sidebar {
+		padding-right: (2 * $grid);
 
-        @include respond-to(medium) {
-            padding-right: 0;
-        }
-    }
+		@include respond-to(small) {
+			padding-right: 0;
+		}
+	}
 
-    address,
-    blockquote,
-    fieldset,
-    figure,
-    form,
-    dl,
-    h1,
-    h2,
-    h3,
-    iframe,
-    ol,
-    p,
-    pre,
-    table,
-    ul {
-        margin-bottom: $grid;
-    }
+	// TODO: Move pagination/aplhabet list styles
+	.pagination {
+		@extend %clearfix;
+		list-style: none;
+		margin-left: 0;
 
-    a {
-        @include transition(border-color);
-        border-bottom: 1px solid $border-color;
+		&.-fixed {
+			background: $pale-color;
+			border: $border-width solid $border-color;
+			border-radius: 0 0 $br $br;
+			position: fixed;
+			top: (-$border-width);
+			padding: .25em .25em 0 .25em;
+		}
 
-        @include hover {
-            border-color: $link-hover-color;
-        }
-    }
+		a {
+			background: $pale-color;
+			border: 0;
+			border-radius: $br;
+			display: block;
+			text-align: center;
+			width: $grid;
 
-    caption {
-        font-weight: bold;
-        text-align: left;
-    }
+			@include hover {
+				background: $highlight-color;
+			}
+		}
 
-    // TODO: Modular scale via mixin/function
-    h1 {
-        @include typo-scale(3);
-        color: $heading-color;
-        font-weight: 300;
-    }
+		li {
+			display: inline-block;
+			margin: 0 0 .25em 0;
 
-    h2 {
-        @include typo-scale(2);
-        color: $heading-color;
-        font-weight: 300;
-    }
+			&:before {
+				content: none;
+			}
+		}
+	}
 
-    h3 {
-        @include typo-scale(1);
-        color: $heading-color;
-    }
+	.alphabet-list,
+	.alphabet-list_sub-list {
+		list-style: none;
+		margin-left: 0;
+	}
 
-    h4,
-    h5,
-    h6 {
-        font-weight: bold;
-        margin-bottom: 0;
-    }
+	.alphabet-list_letter {
+		// h2 without margin
+		@include typo-scale(2);
+		color: $heading-color;
+		font-weight: 300;
+		margin: 0;
+	}
 
-    ul {
-        list-style: disc outside;
-        margin-left: $grid;
-    }
+	.alphabet-list_sub-list.-persons {
+		li {
+			border-bottom: $border-width solid $border-color;
+			padding: (.5 * $grid) 0 (.5 * $grid - $border-width);
+		}
 
-    ol {
-        list-style: decimal outside;
-        margin-left: $grid;
-    }
+		a {
+			@extend %show-border-on-hover;
+		}
 
-    abbr,
-    acronym,
-    dfn {
-        border-bottom: 1px dotted $border-color
-    }
+		img {
+			float: right;
+		}
+	}
 
-    b,
-    strong {
-        font-weight: bold;
-    }
+	address,
+	blockquote,
+	fieldset,
+	figure,
+	form,
+	dl,
+	h1,
+	h2,
+	h3,
+	iframe,
+	ol,
+	p,
+	pre,
+	table,
+	ul,
+	.vcard {
+		margin-bottom: $grid;
+	}
 
-    big {
-        font-size: 1.25em;
-    }
+	a {
+		@include transition(border-color);
+		border-bottom: 1px solid $border-color;
 
-    cite,
-    em,
-    i,
-    q {
-        font-style: italic;
-    }
+		@include hover {
+			border-color: $link-hover-color;
+		}
+	}
 
-    code,
-    kbd,
-    tt,
-    var {
-        font-family: monospace;
-    }
+	caption {
+		font-weight: bold;
+		text-align: left;
+	}
 
-    small {
-        font-size: ($font-size-small / $font-size + 0em)
-    }
+	// TODO: Modular scale via mixin/function
+	h1 {
+		@include typo-scale(3);
+		color: $heading-color;
+		font-weight: 300;
+	}
 
-    sub,
-    sup {
-        font-size: 75%;
-        line-height: 0;
-        position: relative;
-        vertical-align: baseline;
-    }
+	h2 {
+		@include typo-scale(2);
+		color: $heading-color;
+		font-weight: 300;
+	}
 
-    sup {
-        top: -0.5em;
-    }
+	h3 {
+		@include typo-scale(1);
+		color: $heading-color;
+	}
 
-    sub {
-        bottom: -0.25em;
-    }
+	h4,
+	h5,
+	h6 {
+		font-weight: bold;
+		margin-bottom: 0;
+	}
 
-    table {
-        width: 100%;
-    }
 
-    td,
-    th {
-        padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - 1px);
-        text-align: left;
-    }
+	ol, ul {
+		margin-left: $grid;
 
-    th {
-        font-weight: bold;
-    }
+		&.no-style {
+			list-style: none;
+			margin-left: 0;
+		}
+	}
 
-    tr {
-        border-bottom: 1px solid $border-color;
-    }
+	ul > li {
+		&:before {
+			border-radius: $br;
+			content: '';
+			background: $beta-color;
+			display: inline-block;
+			height: (round(.25 * $grid));
+			margin: -1px round(.5 * $grid) 1px round(-.5 * $grid);
+			vertical-align: middle;
+			width: round(.25 * $grid);
+		}
+	}
 
-    [type=text],
-    [type=password],
-    [type=email],
-    [type=search],
-    select,
-    textarea {
-        @include text-input;
-    }
-    // TODO: form styless
+	ol {
+		list-style: decimal outside;
+	}
 
-    button,
-    [type=submit],
-    [type=reset] {
-        @include button;
-    }
+	abbr,
+	acronym,
+	dfn {
+		border-bottom: 1px dotted $border-color
+	}
+
+	b,
+	strong {
+		font-weight: bold;
+	}
+
+	big {
+		font-size: 1.25em;
+	}
+
+	cite,
+	em,
+	i,
+	q {
+		font-style: italic;
+	}
+
+	code,
+	kbd,
+	tt,
+	var {
+		font-family: monospace;
+	}
+
+	small {
+		font-size: ($font-size-small / $font-size + 0em)
+	}
+
+	sub,
+	sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sup {
+		top: -0.5em;
+	}
+
+	sub {
+		bottom: -0.25em;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	td,
+	th {
+		padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - 1px);
+		text-align: left;
+	}
+
+	th {
+		font-weight: bold;
+	}
+
+	tr {
+		border-bottom: 1px solid $border-color;
+	}
+
+	[type=text],
+	[type=password],
+	[type=email],
+	[type=search],
+	select,
+	textarea {
+		@include text-input;
+	}
+	// TODO: form styless
+
+	button,
+	[type=submit],
+	[type=reset] {
+		@include button;
+	}
 
 }

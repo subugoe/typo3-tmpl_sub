@@ -2,8 +2,6 @@
 @import '../../../Build/bower/fontawesome/scss/font-awesome';
 @import '../../../Build/bower/open-sans-fontface/sass/open-sans';
 
-@import 'functions';
-
 @import 'Mixins/common';
 @import 'Mixins/forms';
 @import 'Mixins/grid';
@@ -21,7 +19,7 @@
 @import 'Sections/header';
 @import 'Sections/main';
 @import 'Sections/nav';
+@import 'Sections/powermail';
 @import 'Sections/search';
 @import 'Sections/sidebar';
 @import 'Sections/social';
-@import 'Sections/powermail';

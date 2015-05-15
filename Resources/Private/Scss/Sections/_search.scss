@@ -3,162 +3,176 @@
 // BEM style: block_element -modifier
 
 .search {
-    position: relative;
-    z-index: 1;
+	margin: 0 auto;
+	max-width: 40em;
+	position: relative;
+	z-index: 1;
 
-    @media(max-width: ($search-width + $grid)) {
-        right: 0;
-        width: 100%;
-    }
+	@media(max-width: ($search-width + $grid)) {
+		right: 0;
+		width: 100%;
+	}
 }
 
 .search_description {
-    font-weight: bold;
+	font-weight: bold;
+}
+
+.search_popup {
+	@include transition(opacity, visibility);
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	visibility: hidden;
+
+	.-show-popup & {
+		opacity: 1;
+		visibility: visible;
+	}
 }
 
 .search_navigation {
-    box-shadow: 0 0 $grid rgba(#000, .5);
-    clip: rect(-9999em (8 * $grid) 9999em -9999em); // Prevent tabs shadow from overlapping search form
-    list-style: none;
-    opacity: 0;
-    padding: 0;
-    position: absolute;
-    left: (-8 * $grid);
-    transition: opacity .5s, visibility .5s;
-    visibility: hidden;
-    width: (8 * $grid);
-    z-index: 1;
+	box-shadow: 0 0 $grid rgba(#000, .5);
+	clip: rect(-9999em (8 * $grid) 9999em -9999em); // Prevent tabs shadow from overlapping search form
+	list-style: none;
+	padding: 0;
+	position: absolute;
+	left: (-8 * $grid);
+	top: 0;
+	width: (8 * $grid);
+	z-index: 1;
 
-    @include respond-to(medium) {
-        clip: rect(-9999em 9999em (2 * $grid) -9999em);
-        display: table;
-        left: 0;
-        table-layout: fixed;
-        top: (-2 * $grid);
-        width: 100%;
-    }
+	@include respond-to(medium) {
+		clip: rect(-9999em 9999em (2 * $grid) -9999em);
+		display: table;
+		left: 0;
+		table-layout: fixed;
+		top: (-2 * $grid);
+		width: 100%;
+	}
 
-    .-show-all & {
-        visibility: visible;
-        opacity: 1;
-    }
+	@include respond-to(small) {
+		clip: rect(-9999em 9999em (3 * $grid) -9999em);
+		top: (-3 * $grid);
+	}
 
-    li {
-        display: block;
-        border-bottom: 1px solid $darkblue;
-        overflow: hidden; // Prevent links from overflowing border-radius
+	li {
+		background: $pale-color;
+		display: block;
+		border-bottom: $border-width solid $border-color;
+		overflow: hidden; // Prevent links from overflowing border-radius
 
-        @include respond-to(medium) {
-            border-right: 1px solid $darkblue;
-            display: table-cell;
-        }
+		@include respond-to(medium) {
+			border-bottom: 0;
+			border-right: 1px solid $border-color;
+			display: table-cell;
+		}
 
-        &:first-child {
-            border-top-left-radius: 2px;
+		&:first-child {
+			border-radius: $br 0 0;
+		}
 
-            @media(max-width: ($search-width + $grid)) {
-                border-top-left-radius: 0
-            }
-        }
+		&:last-child {
+			border-bottom: 0;
+			border-radius: 0 0 0 $br;
 
-        &:last-child {
-            border-bottom: 0;
-            border-bottom-left-radius: 2px;
+			@include respond-to(medium) {
+				border-right: 0;
+				border-radius: 0 $br 0 0;
+			}
+		}
 
-            @include respond-to(medium) {
-                border-right: 0;
-                border-top-right-radius: 2px;
-            }
-        }
-    }
+		&.-active {
+			background: $white;
+			color: $link-color;
+		}
+	}
 
-    a {
-        background: $nav-background-color;
-        color: $white;
-        display: block;
-        padding: (.5 * $grid);
-        overflow: hidden;
-        position: relative;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+	a {
+		display: block;
+		padding: (.5 * $grid);
+		overflow: hidden;
+		position: relative;
+		text-overflow: ellipsis;
 
-        &.-active {
-            background: $white;
-            color: $link-color;
-        }
-    }
+		@include hover {
+			background: $highlight-color;
+		}
+
+		@include respond-to(small) {
+			height: (3 * $grid);
+		}
+	}
 }
 
 .search_form {
-    padding: ($grid / 2);
-    position: relative;
-    z-index: 1;
+	padding: ($grid / 2);
+	position: relative;
+	z-index: 9;
 }
 
 .search_input {
-    background: $white;
-    border: 1px inset $lightblue;
-    border-radius: 2px;
-    box-shadow: .1em .1em .5em rgba(#000, .2) inset;
-    float: right;
-    line-height: $grid;
-    padding: ($grid / 2 - 1px);
-    transition: width .5s;
-    width: (10 * $grid);
+	background: $white;
+	border: 1px inset $lightblue;
+	border-radius: 2px;
+	box-shadow: .1em .1em .5em rgba(#000, .2) inset;
+	float: right;
+	line-height: $grid;
+	padding: ($grid / 2 - 1px);
+	transition: width .5s;
+	width: (10 * $grid);
 
-    @include respond-to(medium) {
-        width: 100%;
-    }
+	@include respond-to(medium) {
+		width: 100%;
+	}
 
-    &:focus {
-        border: 1px solid $darkblue;
-        box-shadow: none;
-        outline: 0;
-    }
+	&:focus {
+		border: 1px solid $darkblue;
+		box-shadow: none;
+		outline: 0;
+	}
 
-    .-show-all & {
-        width: 100%;
-    }
+	.-show-popup & {
+		width: 100%;
+	}
 }
 
 .search_submit {
-    @include fa-icon('search', false);
-    background: none;
-    border: 0;
-    color: $nav-background-color;
-    font-size: 1.5em;
-    height: (2 * $grid);
-    min-width: ($grid * 2);
-    position: absolute;
-    right: ($grid / 2);
-    top: ($grid / 2);
-    width: (2 * $grid);
+	@include fa-icon('search', false);
+	background: none;
+	border: 0;
+	color: $nav-background-color;
+	font-size: 1.5em;
+	height: (2 * $grid);
+	min-width: ($grid * 2);
+	position: absolute;
+	right: ($grid / 2);
+	top: ($grid / 2);
+	width: (2 * $grid);
 
-    &:focus,
-    &:hover,
-    &:active {
-        color: $link-color;
-    }
+	&:focus,
+	&:hover,
+	&:active {
+		color: $link-color;
+	}
 }
 
 .search_content {
-    background: $white;
-    border-radius: 0 2px 2px 2px;
-    box-shadow: 0 0 $grid rgba(#000, .5);
-    opacity: 0;
-    padding: ($grid * 3) $grid $grid;
-    position: absolute;
-    top: 0;
-    transition: opacity .5s, visibility .5s;
-    visibility: hidden;
-    width: 100%;
+	background: $white;
+	border-radius: 0 2px 2px 2px;
+	box-shadow: 0 0 $grid rgba(#000, .5);
+	display: none;
+	padding: ($grid * 3) $grid $grid;
+	position: absolute;
+	top: 0;
+	width: 100%;
 
-    .-show-all &:first-of-type {
-        visibility: visible;
-        opacity: 1;
-    }
+	@include respond-to(medium) {
+		border-radius: 0;
+	}
 
-    @include respond-to(medium) {
-        border-radius: 0;
-    }
+	&.-visible {
+		display: block;
+	}
 }

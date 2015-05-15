@@ -1,10 +1,30 @@
 %clearfix {
-    &:before,
-    &:after {
-        content: " "; // 1
-        display: table; // 2
-    }
-    &:after {
-        clear: both;
-    }
+	&:before,
+	&:after {
+		content: ' '; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+%link-on-background {
+	@include transition(background, color, text-shadow);
+	color: $white;
+	text-shadow: 0 -1px 0 rgba(black, .2);
+
+	@include hover {
+		color: $link-color;
+		text-shadow: 0 1px 0 rgba(white, .2);
+	}
+}
+
+%show-border-on-hover {
+	@include transition(border-color);
+	border-bottom: 1px solid transparent;
+
+	@include hover {
+		border-color: $link-hover-color;
+	}
 }
