@@ -1,15 +1,12 @@
 .main {
-	@extend %clearfix;
 	background: $white;
-	margin: 0 auto;
-	max-width: $site-width;
 	padding: (.5 * $grid);
 }
 
 .main_left {
-	display: table-cell;
-	padding-right: (2 * $grid);
-	width: (12 * $grid);
+	@include column(medium);
+	padding-left: 0;
+	width: (11 * $grid);
 
 	@include respond-to(medium) {
 		@include off-canvas;
@@ -17,8 +14,16 @@
 }
 
 .main_right {
-	display: table-cell;
-	vertical-align: top;
+	@include column(medium);
+	padding-right: 0;
+
+	@include respond-to(medium) {
+		padding: 0 (.5 * $grid);
+	}
+
+	@include respond-to(small) {
+		padding: 0;
+	}
 }
 
 .main_logo,

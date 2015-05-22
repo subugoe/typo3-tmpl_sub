@@ -1,0 +1,28 @@
+.alphabet-list,
+.alphabet-list_sub-list {
+	list-style: none !important;
+	margin-left: 0 !important;
+}
+
+.alphabet-list_letter {
+	// h2 without margin
+	@include typo-scale(2);
+	color: $heading-color;
+	font-weight: 300;
+	margin: 0;
+}
+
+.alphabet-list_sub-list.-persons {
+	li {
+		border-bottom: $border-width solid $border-color;
+		padding: (.5 * $grid) 0 (.5 * $grid - $border-width);
+	}
+
+	a {
+		@extend %show-border-on-hover;
+	}
+
+	img {
+		float: right;
+	}
+}

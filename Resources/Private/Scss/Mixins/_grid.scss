@@ -1,22 +1,11 @@
-@mixin row {
-	@extend %clearfix;
-	margin-left: -$grid;
-	margin-right: -$grid;
-}
-
-@mixin column($width: 0, $unfloat-breakpoint: false) {
-	float: left;
-	padding-left: $grid;
-	padding-right: $grid;
-
-	@if $width != 0 {
-		width: $width;
-	}
+@mixin column($unfloat-breakpoint: false) {
+	display: table-cell;
+	padding: 0 $grid;
+	vertical-align: top;
 
 	@if $unfloat-breakpoint {
 		@include respond-to($unfloat-breakpoint) {
 			display: block;
-			float: none;
 			width: 100%;
 		}
 	}

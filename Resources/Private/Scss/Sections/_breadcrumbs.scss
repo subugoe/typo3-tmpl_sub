@@ -10,8 +10,8 @@
 		display: inline;
 
 		+ li:before {
+			@include fa-icon('angle-right');
 			color: $text-color-light;
-			content: '»';
 			padding: 0 .5em;
 		}
 	}

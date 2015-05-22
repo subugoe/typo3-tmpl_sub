@@ -1,7 +1,3 @@
-// TODO: Remove tx-subtabs ext stylesheet
-// TODO: This is just for testing, rework
-// BEM style: block_element -modifier
-
 .search {
 	margin: 0 auto;
 	max-width: 40em;
@@ -90,6 +86,7 @@
 	}
 
 	a {
+		@include transition(background);
 		display: block;
 		padding: (.5 * $grid);
 		overflow: hidden;
@@ -113,23 +110,20 @@
 }
 
 .search_input {
-	background: $white;
+	@include text-input;
+	@include transition(width);
 	border: 1px inset $lightblue;
-	border-radius: 2px;
 	box-shadow: .1em .1em .5em rgba(#000, .2) inset;
 	float: right;
-	line-height: $grid;
-	padding: ($grid / 2 - 1px);
-	transition: width .5s;
 	width: (10 * $grid);
+	float: right;
 
 	@include respond-to(medium) {
 		width: 100%;
 	}
 
 	&:focus {
-		border: 1px solid $darkblue;
-		box-shadow: none;
+		border: 1px solid $link-hover-color;
 		outline: 0;
 	}
 
@@ -160,7 +154,7 @@
 
 .search_content {
 	background: $white;
-	border-radius: 0 2px 2px 2px;
+	border-radius: 0 $br $br $br;
 	box-shadow: 0 0 $grid rgba(#000, .5);
 	display: none;
 	padding: ($grid * 3) $grid $grid;
@@ -169,10 +163,22 @@
 	width: 100%;
 
 	@include respond-to(medium) {
-		border-radius: 0;
+		border-radius: 0 0 $br $br;
 	}
 
 	&.-visible {
 		display: block;
 	}
+
+	a {
+		@extend %show-border-on-hover;
+	}
+}
+
+.search_label {
+	display: block;
+}
+
+.search_label-link {
+	float: right;
 }

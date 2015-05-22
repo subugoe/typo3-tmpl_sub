@@ -65,7 +65,7 @@
 	padding: 0 $grid;
 	text-align: right;
 
-	@include respond-to(medium) {
+	@include respond-to(small) {
 		padding: 0 (.5 * $grid);
 	}
 
@@ -87,10 +87,11 @@
 	font-size: $grid;
 	height: (2 * $grid);
 	left: 0;
+	outline: 0;
 	position: absolute;
 	top: 0;
 	width: (2 * $grid);
-	z-index: 9;
+	z-index: 99;
 
 	@include hover {
 		color: $link-color;
@@ -100,7 +101,7 @@
 		display: block;
 	}
 
-	.-show-off-canvas & {
+	.-show-off-canvas &:before {
 		@include fa-icon('close', false);
 	}
 }

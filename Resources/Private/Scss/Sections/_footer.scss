@@ -7,7 +7,11 @@
 .footer_bar {
 	@extend %clearfix;
 	background: $alpha-color;
-	padding: 0 (.5 * $grid);
+	padding: 0 ($grid);
+
+	@include respond-to(small) {
+		padding: 0 (.5 * $grid);
+	}
 
 	a {
 		@extend %show-border-on-hover;
@@ -46,6 +50,11 @@
 
 .footer_links {
 	@extend %clearfix;
+	padding: 0 (.5 * $grid);
+
+	@include respond-to(small) {
+		padding: 0;
+	}
 
 	a {
 		@extend %show-border-on-hover;

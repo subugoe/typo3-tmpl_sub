@@ -17,32 +17,11 @@ $ ->
 		piwikTracker.trackPageView(td)
 		piwikTracker.setCustomVariable( 1, "Suchbegriff", searchTerm, "page")
 
-	# TODO: Search test
-	$('.search_input').focus ->
-		$('.search').addClass('-show-popup')
-		$('.search_navigation a:first').trigger('click', true)
-		$('.search_content').css('min-height', $('.search_navigation').height() + 'px')
-
-	$('.search, .main_left, .header_show-nav').click (e) ->
-		e.stopPropagation()
-
-	$('.search_navigation a').click ->
-		id = $(this).attr('href').split('#')[1]
-		$parent = $(this).parent('li');
-		$('.search_navigation li').not($parent).removeClass('-active')
-		$parent.addClass('-active')
-		$('.search_content').not('#' + id).removeClass('-visible')
-		$('#' + id).addClass('-visible')
-		#if byProgram is true then return false
-		#$('.search_input').focus()
-		false
-
 	$('.header_show-nav').click ->
 		$('body').toggleClass('-show-off-canvas')
 		false
 
 	$('body').click ->
-		$('.search').removeClass('-show-popup')
 		$('body').removeClass('-show-off-canvas')
 
 	# To-top link

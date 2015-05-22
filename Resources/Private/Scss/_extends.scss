@@ -23,6 +23,7 @@
 %show-border-on-hover {
 	@include transition(border-color);
 	border-bottom: 1px solid transparent;
+	margin-bottom: -1px;
 
 	@include hover {
 		border-color: $link-hover-color;

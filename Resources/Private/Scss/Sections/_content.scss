@@ -1,80 +1,6 @@
-.content {
-	display: table-cell;
-
-	&.-with-sidebar {
-		padding-right: (2 * $grid);
-
-		@include respond-to(small) {
-			padding-right: 0;
-		}
-	}
-
-	// TODO: Move pagination/aplhabet list styles
-	.pagination {
-		@extend %clearfix;
-		list-style: none;
-		margin-left: 0;
-
-		&.-fixed {
-			background: $pale-color;
-			border: $border-width solid $border-color;
-			border-radius: 0 0 $br $br;
-			position: fixed;
-			top: (-$border-width);
-			padding: .25em .25em 0 .25em;
-		}
-
-		a {
-			background: $pale-color;
-			border: 0;
-			border-radius: $br;
-			display: block;
-			text-align: center;
-			width: $grid;
-
-			@include hover {
-				background: $highlight-color;
-			}
-		}
-
-		li {
-			display: inline-block;
-			margin: 0 0 .25em 0;
-
-			&:before {
-				content: none;
-			}
-		}
-	}
-
-	.alphabet-list,
-	.alphabet-list_sub-list {
-		list-style: none;
-		margin-left: 0;
-	}
-
-	.alphabet-list_letter {
-		// h2 without margin
-		@include typo-scale(2);
-		color: $heading-color;
-		font-weight: 300;
-		margin: 0;
-	}
-
-	.alphabet-list_sub-list.-persons {
-		li {
-			border-bottom: $border-width solid $border-color;
-			padding: (.5 * $grid) 0 (.5 * $grid - $border-width);
-		}
-
-		a {
-			@extend %show-border-on-hover;
-		}
-
-		img {
-			float: right;
-		}
-	}
+.content_main {
+	@include column(small);
+	padding: 0;
 
 	address,
 	blockquote,
@@ -151,8 +77,8 @@
 			background: $beta-color;
 			display: inline-block;
 			height: (round(.25 * $grid));
-			margin: -1px round(.5 * $grid) 1px round(-.5 * $grid);
-			vertical-align: middle;
+			margin: round(.4 * $line-height) 0 0 -1em;
+			position: absolute;
 			width: round(.25 * $grid);
 		}
 	}
@@ -244,4 +170,44 @@
 		@include button;
 	}
 
+}
+
+.content_sidebar {
+	@include column(small);
+	padding-right: 0;
+	width: (10 * $grid);
+
+	@include respond-to(small) {
+		border-top: 3px solid lighten($border-color, 5);
+		padding: ($grid - 3px) 0 0;
+	}
+
+	> div {
+		border-left: 3px solid lighten($border-color, 5);
+		margin-top: (.25 * $grid);
+		padding-left: ($grid - 3px);
+
+		@include respond-to(small) {
+			border: 0;
+			padding-left: 0;
+		}
+	}
+
+	> div + div {
+		margin-top: (1.25 * $grid);
+	}
+
+	a {
+		@extend %show-border-on-hover;
+	}
+
+	h2 {
+		@include typo-scale(1);
+		color: $heading-color;
+		margin-bottom: (.75 * $grid);
+	}
+
+	li {
+		margin-bottom: (.5 * $grid);
+	}
 }

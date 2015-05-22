@@ -1,3 +1,5 @@
+// BEM style: block_element -modifier
+
 @import 'settings';
 @import '../../../Build/bower/fontawesome/scss/font-awesome';
 @import '../../../Build/bower/open-sans-fontface/sass/open-sans';
@@ -13,13 +15,14 @@
 @import 'extends';
 @import 'base';
 
+@import 'Sections/alphabet-list';
 @import 'Sections/breadcrumbs';
 @import 'Sections/content';
 @import 'Sections/footer';
 @import 'Sections/header';
 @import 'Sections/main';
 @import 'Sections/nav';
+@import 'Sections/pagination';
 @import 'Sections/powermail';
 @import 'Sections/search';
-@import 'Sections/sidebar';
 @import 'Sections/social';

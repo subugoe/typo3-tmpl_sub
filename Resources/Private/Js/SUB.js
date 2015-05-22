@@ -20,30 +20,11 @@ $(function() {
     piwikTracker.trackPageView(td);
     piwikTracker.setCustomVariable(1, "Suchbegriff", searchTerm, "page");
   }
-  $('.search_input').focus(function() {
-    $('.search').addClass('-show-popup');
-    $('.search_navigation a:first').trigger('click', true);
-    return $('.search_content').css('min-height', $('.search_navigation').height() + 'px');
-  });
-  $('.search, .main_left, .header_show-nav').click(function(e) {
-    return e.stopPropagation();
-  });
-  $('.search_navigation a').click(function() {
-    var $parent, id;
-    id = $(this).attr('href').split('#')[1];
-    $parent = $(this).parent('li');
-    $('.search_navigation li').not($parent).removeClass('-active');
-    $parent.addClass('-active');
-    $('.search_content').not('#' + id).removeClass('-visible');
-    $('#' + id).addClass('-visible');
-    return false;
-  });
   $('.header_show-nav').click(function() {
     $('body').toggleClass('-show-off-canvas');
     return false;
   });
   $('body').click(function() {
-    $('.search').removeClass('-show-popup');
     return $('body').removeClass('-show-off-canvas');
   });
   headerHeight = $('.header').height();

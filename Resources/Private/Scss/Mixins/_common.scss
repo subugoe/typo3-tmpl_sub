@@ -39,8 +39,7 @@
 
 @mixin hover {
 	&:hover,
-	&:active,
-	&:focus {
+	&:active {
 		@content;
 	}
 }

@@ -1,4 +1,5 @@
 @mixin button {
+	@include auto-color-for($link-color);
 	@include transition(background-color);
 	background: $button-bg-color;
 	border: 0 !important;
@@ -12,7 +13,7 @@
 	text-decoration: none;
 	vertical-align: top;
 	white-space: nowrap;
-	@include auto-color-for($link-color);
+
 	@include hover {
 		background: $button-hover-bg-color;
 		@include auto-color-for($button-hover-bg-color);
@@ -31,5 +32,6 @@
 
 	&:focus {
 		border-color: $link-color;
+		box-shadow: 0 0 5px rgba($link-hover-color, .5);
 	}
 }
