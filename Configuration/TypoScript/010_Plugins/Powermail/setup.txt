@@ -4,6 +4,12 @@ plugin.tx_powermail {
 		layoutRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Layouts/
 		partialRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Partials/
 	}
+	settings.setup {
+		spamshield.indicator {
+			honeypod = {$honeypotWert}
+			blacklistString = {$blacklistStringWert}
+		}
+	}
 }
 
 ## setup for Abholtheke dropdown list ##

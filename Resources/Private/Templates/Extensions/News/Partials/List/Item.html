@@ -1,17 +1,22 @@
-{namespace n=Tx_News_ViewHelpers}<!--
+{namespace n=Tx_News_ViewHelpers}<f:comment><!--
 	=====================
 		Partials/List/Item.html
--->
+--></f:comment>
 <div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}">
 	<n:excludeDisplayedNews newsItem="{newsItem}"/>
 	<f:comment><!-- header --></f:comment>
 	<div class="header">
-		<h3>{newsItem.title}</h3>
+		<h2>{newsItem.title}</h2>
 	</div>
 
 	<f:if condition="{newsItem.firstCategory.images.0}">
 		<div class="news-img-wrap">
-			<f:image image="{newsItem.firstCategory.images.0}" alt="{newsItem.firstCategory.images.title}" />
+			<f:image
+				image="{newsItem.firstCategory.images.0}"
+				alt="{newsItem.firstCategory.images.title}"
+				maxWidth="{settings.list.media.image.maxWidth}"
+				maxHeight="{settings.list.media.image.maxHeight}"
+			/>
 		</div>
 	</f:if>
 
@@ -99,7 +104,7 @@
 	</f:if>
 
 
-	<f:comment><!-- teasser text --></f:comment>
+	<f:comment><!-- teaser text --></f:comment>
 	<div class="teaser-text">
 		<f:if condition="{newsItem.teaser}">
 			<f:then>
