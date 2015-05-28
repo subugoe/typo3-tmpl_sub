@@ -41,30 +41,28 @@ var config = {
 
 gulp.task('sass', function () {
 	gulp.src(config.paths.sass)
-			.pipe(sass({
-				style: 'compressed',
-				errLogToConsole: true,
-				sourcemaps: true
-			}))
-			.on('error', notify.onError({
-				title: 'Sass Error',
-				message: '<%= error.message %>'
-			}))
-			.pipe(autoprefixer(
-					config.autoprefixer
-			))
-			.pipe(gulp.dest('./Resources/Public/Css/'))
+		.pipe(sass({
+			style: 'compressed',
+			errLogToConsole: true,
+			sourcemaps: true
+		}))
+		.on('error', notify.onError({
+			title: 'Sass Error',
+			message: '<%= error.message %>'
+		}))
+		.pipe(autoprefixer(
+				config.autoprefixer
+		))
+		.pipe(gulp.dest('./Resources/Public/Css/'))
 });
 
 gulp.task('lint', function () {
-	/*
 	gulp.src(config.paths.sass)
-			.pipe(cached('scsslint'))
-			.pipe(scsslint({
-				'config': 'Build/.scss-lint.yml',
-				'maxBuffer': 9999999
-			}))
-	*/
+		.pipe(cached('scsslint'))
+		.pipe(scsslint({
+			'config': 'Build/.scss-lint.yml',
+			'maxBuffer': 9999999
+		}))
 });
 
 gulp.task('coffee', function () {
@@ -78,7 +76,7 @@ gulp.task('compile', function () {
 });
 
 gulp.task('watch', function () {
-	gulp.watch(config.paths.sass, ['lint', 'compile'])
+	gulp.watch(config.paths.sass, ['compile'])
 });
 
 gulp.task('bower', function () {

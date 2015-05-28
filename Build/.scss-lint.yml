@@ -71,7 +71,7 @@ linters:
 
   NameFormat:
     enabled: true
-    convention: hyphenated_lowercase
+    convention: ^[\.a-z_-]+$
 
   NestingDepth:
     enabled: false
