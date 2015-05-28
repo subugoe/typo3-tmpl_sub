@@ -2102,8 +2102,6 @@ button, [type=submit], [type=reset] {
       padding: 0 13px; } }
   .footer_bar a {
     color: #fff; }
-    .footer_bar a:hover, .footer_bar a:active {
-      border-color: #fff; }
   .footer_bar li {
     display: inline; }
     .footer_bar li + li {

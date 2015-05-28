@@ -16,10 +16,6 @@
 	a {
 		@extend %show-border-on-hover;
 		color: $white;
-
-		@include hover {
-			border-color: $white;
-		}
 	}
 
 	li {
