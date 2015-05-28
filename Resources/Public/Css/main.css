@@ -1922,12 +1922,15 @@ button, [type=submit], [type=reset] {
   list-style: none !important;
   margin-left: 0 !important; }
 
+.alphabet-list_item {
+  margin-bottom: 26px; }
+
 .alphabet-list_letter {
   font-size: 32px;
   line-height: 52px;
   color: #1a3771;
   font-weight: 300;
-  margin: 0; }
+  margin: 0 !important; }
 
 .alphabet-list_sub-list.-persons li {
   border-bottom: 1px solid #d6d6d6;
@@ -2020,9 +2023,9 @@ button, [type=submit], [type=reset] {
     position: relative;
     vertical-align: baseline; }
   .content sup {
-    top: -0.5em; }
+    top: -.5em; }
   .content sub {
-    bottom: -0.25em; }
+    bottom: -.25em; }
   .content table {
     width: 100%; }
   .content td, .content th {
@@ -2184,15 +2187,15 @@ button, [type=submit], [type=reset] {
   height: 52px;
   max-width: 100%;
   width: auto; }
-  .header_logo_img.-small {
-    display: none;
-    height: 130px;
-    margin: 0 auto; }
   @media (max-width: 1004px) {
     .header_logo_img.-big {
       display: none; }
     .header_logo_img.-small {
       display: block; } }
+  .header_logo_img.-small {
+    display: none;
+    height: 130px;
+    margin: 0 auto; }
 
 .header_search {
   float: right;
@@ -2216,7 +2219,7 @@ button, [type=submit], [type=reset] {
           transition: color 0.4s ease-in-out;
   background: #93a8cf;
   border: 0;
-  border-radius: 0 0 2px 0;
+  border-radius: 0 0 2px;
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), -1px -1px 0 rgba(255, 255, 255, 0.2) inset;
   color: #fff;
   display: none;
@@ -2344,9 +2347,10 @@ button, [type=submit], [type=reset] {
     background: #ececec;
     border: 1px solid #d6d6d6;
     border-radius: 0 0 2px 2px;
+    padding: .25em .25em 0;
     position: fixed;
     top: -1px;
-    padding: .25em .25em 0 .25em; }
+    z-index: 1; }
   .pagination a {
     background: #ececec;
     border: 0;
@@ -2358,7 +2362,7 @@ button, [type=submit], [type=reset] {
       background: rgba(0, 0, 0, 0.05); }
   .pagination li {
     display: inline-block;
-    margin: 0 0 .25em 0; }
+    margin: 0 0 .25em; }
     .pagination li:before {
       display: none !important; }
 
@@ -2970,7 +2974,7 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 
 .search_content {
   background: #fff;
-  border-radius: 0 2px 2px 2px;
+  border-radius: 0 2px 2px;
   box-shadow: 0 0 26px rgba(0, 0, 0, 0.5);
   display: none;
   padding: 78px 26px 26px;

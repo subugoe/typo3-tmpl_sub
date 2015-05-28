@@ -6,9 +6,10 @@
 		background: $pale-color;
 		border: $border-width solid $border-color;
 		border-radius: 0 0 $br $br;
+		padding: .25em .25em 0;
 		position: fixed;
 		top: (-$border-width);
-		padding: .25em .25em 0;
+		z-index: 1;
 	}
 
 	a {

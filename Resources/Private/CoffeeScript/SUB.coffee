@@ -24,21 +24,27 @@ $ ->
 	$('body').click ->
 		$('body').removeClass('-show-off-canvas')
 
-	# To-top link
 	headerHeight = $('.header').height()
-	if $('.pagination').length
-		paginationOffset = $('.pagination').offset().top
+	paginationOffsets = []
+	listBottoms = []
+	$('.pagination').each ->
+		paginationOffsets.push $(this).offset().top
+		$list = $(this).siblings('ol, ul')
+		listBottoms.push if $list.length then ($list.offset().top + $list.outerHeight()) - 99 else 0
+
+	# To-top link
 	$(window).scroll ->
 		if $(this).scrollTop() > headerHeight
 			$('.footer_top-link:not(.-visible)').addClass('-visible')
 		else
 			$('.footer_top-link.-visible').removeClass('-visible')
 
-		if paginationOffset
-			if $(this).scrollTop() > paginationOffset
-				$('.pagination:not(.-fixed)').addClass('-fixed')
+		$('.pagination').each (index, e)->
+			scrollTop = $(window).scrollTop()
+			if scrollTop > paginationOffsets[index] and scrollTop < listBottoms[index]
+				$(this).addClass('-fixed')
 			else
-				$('.pagination.-fixed').removeClass('-fixed')
+				$(this).removeClass('-fixed')
 
 	$('.footer_top-link').click ->
 		$('html, body').animate
@@ -47,10 +53,13 @@ $ ->
 
 	# Alphabet pagination
 	$('.pagination.-alphabet a').click ->
+		$pagination = $(this).closest('.pagination')
 		id = $(this).attr('href').split('#')[1]
-		console.log id
+		# Pagination is not fixed yet, but it will be after scroll,
+		# so take its height into account
+		offset = $pagination.outerHeight() * ( if $pagination.is('.-fixed') then 1 else 3 )
 		$('html, body').animate
-			scrollTop: $('#' + id).offset().top - $('.pagination').height()
+			scrollTop: $('#' + id).offset().top - offset
 		false
 
 
