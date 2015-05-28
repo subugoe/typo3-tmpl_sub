@@ -35,6 +35,13 @@
 		text-align: left;
 	}
 
+	h1,
+	h2,
+	h3 {
+		text-rendering: optimizeLegibility;
+		word-wrap: break-word;
+	}
+
 	// TODO: Modular scale via mixin/function
 	h1 {
 		@include typo-scale(3);

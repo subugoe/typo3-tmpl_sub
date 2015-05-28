@@ -24,25 +24,26 @@
 }
 
 .header_logo_img {
-	display: block;
-	height: (2 * $grid);
 	max-width: 100%;
 	width: auto;
-
-	@include respond-to(medium) {
-		&.-big {
-			display: none;
-		}
-
-		&.-small {
-			display: block;
-		}
-	}
 
 	&.-small {
 		display: none;
 		height: (5 * $grid);
 		margin: 0 auto;
+
+		@include respond-to(medium) {
+			display: block;
+		}
+	}
+
+	&.-big {
+		display: block;
+		height: (2 * $grid);
+
+		@include respond-to(medium) {
+			display: none;
+		}
 	}
 }
 
