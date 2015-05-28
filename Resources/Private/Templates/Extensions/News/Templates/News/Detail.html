@@ -1,4 +1,4 @@
-{namespace n=Tx_News_ViewHelpers}
+{namespace n=GeorgRinger\News\ViewHelpers}
 
 <f:layout name="Detail.html" />
 
@@ -88,7 +88,7 @@
 			<f:if condition="{settings.detail.disqusShortname}">
 				<n:social.disqus newsItem="{newsItem}"
 								 shortName="{settings.detail.disqusShortname}"
-								 link="{n:link(newsItem:newsItem,settings:settings,uriOnly:1,configuration:'{forceAbsoluteUrl:1}')}" />
+								 link="{n:link(newsItem:newsItem, settings:settings, uriOnly:1, configuration:'{forceAbsoluteUrl:1}')}" />
 			</f:if>
 
 			<!-- related things -->
@@ -104,7 +104,7 @@
 							<f:for each="{newsItem.allRelatedSorted}" as="related">
 								<li>
 									<span class="news-related-news-date"><f:format.date format="d.m.Y">{related.datetime}</f:format.date></span>
-									<n:link newsItem="{related}" settings="{settings}">
+									<n:link newsItem="{related}" settings="{settings}" title="{related.title}">
 										{related.title}
 									</n:link>
 								</li>
@@ -156,11 +156,12 @@
 									<span class="news-related-files-link">
 										<n:format.fileDownload file="{relatedFile.originalResource.publicUrl}" configuration="{settings.relatedFiles.download}">
 											<f:if condition="{relatedFile.originalResource.title}">
+												<f:comment><!-- Todo: Remove format.raw() if using title/name outside cObject context--></f:comment>
 												<f:then>
-													{relatedFile.originalResource.title}
+													{relatedFile.originalResource.title -> f:format.raw()}
 												</f:then>
 												<f:else>
-													{relatedFile.originalResource.name}
+													{relatedFile.originalResource.name -> f:format.raw()}
 												</f:else>
 											</f:if>
 										</n:format.fileDownload>
