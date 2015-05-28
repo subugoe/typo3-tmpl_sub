@@ -1,4 +1,4 @@
-.content_main {
+.content {
 	@include column(small);
 	padding: 0;
 
@@ -61,12 +61,18 @@
 	}
 
 
-	ol, ul {
+	ol,
+	ul {
 		margin-left: $grid;
 
 		&.no-style {
 			list-style: none;
 			margin-left: 0;
+		}
+
+		ol,
+		ul {
+			margin-bottom: 0;
 		}
 	}
 
@@ -90,7 +96,7 @@
 	abbr,
 	acronym,
 	dfn {
-		border-bottom: 1px dotted $border-color
+		border-bottom: 1px dotted $border-color;
 	}
 
 	b,
@@ -117,7 +123,7 @@
 	}
 
 	small {
-		font-size: ($font-size-small / $font-size + 0em)
+		font-size: ($font-size-small / $font-size + 0em);
 	}
 
 	sub,
@@ -129,11 +135,11 @@
 	}
 
 	sup {
-		top: -0.5em;
+		top: -.5em;
 	}
 
 	sub {
-		bottom: -0.25em;
+		bottom: -.25em;
 	}
 
 	table {
@@ -147,6 +153,7 @@
 	}
 
 	th {
+		color: $text-color-light;
 		font-weight: bold;
 	}
 
@@ -170,44 +177,29 @@
 		@include button;
 	}
 
-}
-
-.content_sidebar {
-	@include column(small);
-	padding-right: 0;
-	width: (10 * $grid);
-
-	@include respond-to(small) {
-		border-top: 3px solid lighten($border-color, 5);
-		padding: ($grid - 3px) 0 0;
+	dl {
+		clear: both;
+		float: left;
 	}
 
-	> div {
-		border-left: 3px solid lighten($border-color, 5);
-		margin-top: (.25 * $grid);
-		padding-left: ($grid - 3px);
+	dt {
+		color: $text-color-light;
+		float: left;
+		font-weight: bold;
+		width: 12em;
 
 		@include respond-to(small) {
-			border: 0;
+			float: none;
+			width: auto;
+		}
+	}
+
+	dd {
+		padding-left: 12em;
+
+		@include respond-to(small) {
 			padding-left: 0;
 		}
 	}
 
-	> div + div {
-		margin-top: (1.25 * $grid);
-	}
-
-	a {
-		@extend %show-border-on-hover;
-	}
-
-	h2 {
-		@include typo-scale(1);
-		color: $heading-color;
-		margin-bottom: (.75 * $grid);
-	}
-
-	li {
-		margin-bottom: (.5 * $grid);
-	}
 }

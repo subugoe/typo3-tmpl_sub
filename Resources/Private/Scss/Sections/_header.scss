@@ -24,25 +24,25 @@
 }
 
 .header_logo_img {
-
 	display: block;
 	height: (2 * $grid);
 	max-width: 100%;
 	width: auto;
 
-	&.-small {
-		display: none;
-		height: (5 * $grid);
-		margin: 0 auto;
-	}
-
 	@include respond-to(medium) {
 		&.-big {
 			display: none;
 		}
+
 		&.-small {
 			display: block;
 		}
+	}
+
+	&.-small {
+		display: none;
+		height: (5 * $grid);
+		margin: 0 auto;
 	}
 }
 
@@ -80,7 +80,7 @@
 	@include transition(color);
 	background: $beta-color;
 	border: 0;
-	border-radius: 0 0 $br 0;
+	border-radius: 0 0 $br;
 	box-shadow: 1px 1px 0 rgba(#000, .2), -1px -1px 0 rgba(#fff, .2) inset;
 	color: $white;
 	display: none;

@@ -15,8 +15,8 @@
 	white-space: nowrap;
 
 	@include hover {
-		background: $button-hover-bg-color;
 		@include auto-color-for($button-hover-bg-color);
+		background: $button-hover-bg-color;
 	}
 }
 

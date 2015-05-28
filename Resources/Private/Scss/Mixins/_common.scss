@@ -6,11 +6,10 @@
 // From Chopstick v0.3.3
 // Calculate text-color based on background-color, see https://vimeo.com/60224584
 @mixin auto-color-for($bg-color) {
-	@if (0.2126 * red($bg-color) + 0.7152 * green($bg-color) + 0.0722 * blue($bg-color)) / 255 <= 0.5 {
-		color: mix(white, $bg-color, 95%);
-	}
-	@else {
-		color: mix(black, $bg-color, 70%);
+	@if (.2126 * red($bg-color) + .7152 * green($bg-color) + .0722 * blue($bg-color)) / 255 <= .5 {
+		color: mix($white, $bg-color, 95%);
+	} @else {
+		color: mix($black, $bg-color, 70%);
 	}
 }
 
@@ -30,8 +29,8 @@
 @mixin font-face($family, $src, $style: normal, $weight: normal) {
 	@font-face {
 		font-family: $family;
-		src: url("#{$src}.eot");
-		src: url("#{$src}.eot?#iefix") format("embedded-opentype"), url("#{$src}.woff") format("woff"), url("#{$src}.ttf") format("truetype"), url("#{$src}.svg##{$family}") format("svg");
+		src: url('#{$src}.eot');
+		src: url('#{$src}.eot?#iefix') format('embedded-opentype'), url('#{$src}.woff') format('woff'), url('#{$src}.ttf') format('truetype'), url('#{$src}.svg##{$family}') format('svg');
 		font-style: $style;
 		font-weight: $weight;
 	}
@@ -62,7 +61,7 @@ $transition-timing-function: ease-in-out !default;
 @mixin transition($properties...) {
 	$transitions: ();
 	@each $property in $properties {
-		$trans: unquote("#{$property} #{$transition-duration} #{$transition-timing-function}");
+		$trans: unquote('#{$property} #{$transition-duration} #{$transition-timing-function}');
 		$transitions: append($transitions, $trans, comma);
 	}
 	transition: $transitions;

@@ -1,19 +1,22 @@
 @mixin horizontal-list {
-	// TODO: Include responsive styles here
 	list-style: none;
 	padding: 0;
+
 	> li {
 		display: block;
 		float: left;
-		padding-left: 0.25em;
+		padding-left: .25em;
+
 		> a {
 			border-radius: $br;
-			margin-left: 0.25em;
+			margin-left: .25em;
 			text-align: center;
 		}
 	}
+
 	a {
 		min-width: $grid * 2;
+
 		@include hover {
 			background: $pale-color-light;
 		}
@@ -22,30 +25,37 @@
 
 @mixin navigation {
 	@include horizontal-list;
+
 	a {
 		display: block;
 		padding: $grid / 2;
 	}
+
 	li {
 		position: relative;
 	}
+
 	> li > a {
 		float: left;
 	}
+
 	> li + li:before {
-		background: linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.18), rgba(black, 0));
-		content: "";
-		left: 0.25em;
+		background: linear-gradient(to bottom, rgba(black, 0), rgba(black, .18), rgba(black, 0));
+		content: '';
+		left: .25em;
 		height: 100%;
 		position: absolute;
 		width: $border-width;
 	}
+
 	.-current > a {
 		background: $pale-color;
 		color: $text-color;
 	}
+
 	.-disabled > a {
 		color: $pale-color;
+
 		@include hover {
 			background: inherit;
 			color: $pale-color;
@@ -58,12 +68,14 @@
 	color: $text-color-light;
 	list-style: none;
 	padding: 0;
+
 	li {
 		display: inline;
 	}
+
 	li + li {
-		margin-left: 0.5em;
-		@include icon("angle-right");
+		@include icon('angle-right');
+		margin-left: .5em;
 	}
 }
 
@@ -81,22 +93,26 @@
 	top: 100%;
 	white-space: nowrap;
 	z-index: 1000;
+
 	// Top wedge
 	&:before {
 		border: $grid / 2 solid transparent;
 		border-bottom-color: $popup-bg-color;
-		content: "";
+		content: '';
 		display: block;
-		height: 0px;
+		height: 0;
 		left: $grid;
 		pointer-events: none;
 		position: absolute;
 		top: -$grid;
-		width: 0px;
+		width: 0;
 		z-index: 999;
 	}
+
 	li {
+
 		float: none;
+
 		+ li {
 			border-top: $border-width solid $border-color;
 			margin-top: -$border-width;

@@ -1,11 +1,14 @@
+$facebook-color: #3b5998;
+$twitter-color: #00aced;
+
 .icon-facebook-sign,
 .fa-facebook {
-	color: #3b5998;
+	color: $facebook-color;
 }
 
 .icon-twitter-sign,
 .fa-twitter {
-	color: #00aced;
+	color: $twitter-color;
 }
 
 .sub-social {

@@ -1,4 +1,4 @@
-// BEM style: block_element -modifier
+// BEM style: block-name_element-name -modifier-name
 
 @import 'settings';
 @import '../../../Build/bower/fontawesome/scss/font-awesome';
@@ -25,4 +25,5 @@
 @import 'Sections/pagination';
 @import 'Sections/powermail';
 @import 'Sections/search';
+@import 'Sections/sidebar';
 @import 'Sections/social';

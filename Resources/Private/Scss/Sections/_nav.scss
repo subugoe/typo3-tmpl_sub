@@ -20,18 +20,13 @@
 	padding: 0;
 
 	& & {
-		border-bottom: 1px solid $border-color;
 		border-left: 1px solid $border-color;
 		margin-left: ($grid - 1px);
-
-		li:last-child > a {
-			border-bottom: 0;
-		}
 	}
 }
 
-.nav_item {
-}
+// .nav_item {
+// }
 
 .nav_link {
 	&.-current {

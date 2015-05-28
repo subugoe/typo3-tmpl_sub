@@ -3,14 +3,12 @@
 		@media (max-width: map-get($breakpoints, $name)) {
 			@content;
 		}
-	}
-	@else {
+	} @else {
 		@warn "Undefined breakpoint: `#{$name}`";
 	}
 }
 
 @mixin off-canvas {
-	//background: $offcanvas-bg-color;
 	min-height: 100%;
 	margin: 0;
 	overflow: hidden;

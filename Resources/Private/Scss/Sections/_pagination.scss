@@ -8,7 +8,7 @@
 		border-radius: 0 0 $br $br;
 		position: fixed;
 		top: (-$border-width);
-		padding: .25em .25em 0 .25em;
+		padding: .25em .25em 0;
 	}
 
 	a {
@@ -26,7 +26,7 @@
 
 	li {
 		display: inline-block;
-		margin: 0 0 .25em 0;
+		margin: 0 0 .25em;
 
 		&:before {
 			display: none !important;

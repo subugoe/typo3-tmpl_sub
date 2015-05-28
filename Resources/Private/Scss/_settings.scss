@@ -1,109 +1,45 @@
-$background-color: #93a8cf;
-$text-color: #434343;
-$link-color: #1a3771;
-$headings-color: $link-color;
+// Responsive grid and dimensions
+$grid: 26px;
+$site-width: 48 * $grid;
+$search-width: 24 * $grid;
 
-$tab-background: #dee1e7;
-$nav-tabs-active-link-hover-bg: $tab-background;
+$breakpoints: (
+	large: 1260px,
+	medium: 1004px,
+	small: 640px
+);
 
-$breadcrumb-separator: '»'; // This does not work
-$list-group-border: transparent;
+$border-width: 1px;
+$br: 2px; // border-radius
 
-$nav-pills-active-link-hover-bg: $link-color;
-$nav-pills-border-radius: 0;
-$navbar-border-radius: 0;
-$nav-link-hover-bg: $link-color;
-$nav-background-color: #6e7fa0;
-
-// typography
-$fa-font-path: "../Fonts/fontawesome" !default;
-$OpenSansPath: "../Fonts/open-sans" !default;
+// Typography
+$fa-font-path: '../Fonts/fontawesome' !default;
+$OpenSansPath: '../Fonts/open-sans' !default;
 
 $icon-font-path: '../Fonts/';
 $font-family-sans-serif: 'Open Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
-$headings-font-weight: 300;
 
-$font-size-base: 16px;
-$line-height-base: 1.625;
-
-$font-size-h1: 42px;
-$font-size-h2: 26px;
-$font-size-h3: 26px;
-$font-size-h4: $font-size-base;
-
-$max-width: 1170px;
-
-$darkgrey: #434343;
-$darkblue: #1a3771;
-$anotherLightGrey: #ccc;
-$lightblue: #93a8cf;
-$lightgrey: #dee1e7;
-
-//==============================================================================
+$ratio: 1.41421356; // Factor used for font size increments
+$line-height: $grid;
+$font-size: 16px;
+$font-size-small: 14px;
 
 // Colors
+$black: #000;
 $lightblue: #93a8cf;
 $darkblue: #1a3771;
-$anotherDarkBlue: #163675;
 $lightgrey: #dee1e7;
-$anotherLightGrey: #ccc;
 $darkgrey: #434343;
 $darkergrey: #626262;
 $bluegrey: #6e7fa0;
 $red: #f00;
 $white: #fff;
 
-// Dimensions
-$radius: 7px;
-$siteWidth: 1170px;
-$contentBoxWidth: 80%;
-$sidebarWidth: $siteWidth * .2;
-$headerHeight: 110px;
-$infoImageWidth: 29px;
+// Brand colors
+$alpha-color: $darkblue;
+$beta-color: $lightblue;
 
-// shadow
-$default-text-shadow-color: rgba(#000, .5);
-$default-text-shadow-blur: 0;
-$default-text-shadow-v-offset: 1px;
-
-// typography
-$base-font-size: 12px;
-$base-line-height: 18px;
-
-// Images
-$arrowLink: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right_2.svg';
-$arrowSmall: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/arrow_right.png';
-$headerImage: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/header.png';
-$bulletImage: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/bullet.png';
-$buttonBackground: linear-gradient(to bottom, lighten($lightblue, 10), $lightblue);
-$logoImage: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/logo_print.png';
-$clearGif: '/typo3conf/ext/tmpl_sub/Resources/Public/Img/clear.gif';
-
-$font: Helvetica, Arial, sans-serif;
-
-//=== NEW SETTINGS ===
-$grid: 26px;
-$site-width: 48 * $grid;
-$search-width: 24 * $grid;
-
-$breakpoints: (
-    large: 1260px,
-    medium: 1004px,
-    small: 640px
-);
-
-$ratio: 1.41421356;
-$line-height: $grid;
-
-$font-size: 16px;
-$font-size-small: 14px;
-
-$border-width: 1px;
-$br: 2px; // border-radius
-
-$alpha-color: #1a3771; // dark blue
-$beta-color: #93a8cf; //  light blue
-
+// Semantic colors and backgrounds
 $text-color: #444;
 $text-color-light: #888;
 $pale-color: #ececec;
@@ -115,3 +51,10 @@ $heading-color: $alpha-color;
 $input-bg-color: #fff;
 $button-bg-color: $link-color;
 $button-hover-bg-color: $link-hover-color;
+$nav-background-color: $bluegrey;
+$button-bg: linear-gradient(to bottom, lighten($lightblue, 10), $lightblue);
+
+// Shadows
+$default-text-shadow-color: rgba(#000, .5);
+$default-text-shadow-blur: 0;
+$default-text-shadow-v-offset: 1px;

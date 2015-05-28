@@ -1,0 +1,39 @@
+.sidebar {
+	@include column(small);
+	padding-right: 0;
+	width: (10 * $grid);
+
+	@include respond-to(small) {
+		border-top: 3px solid lighten($border-color, 5);
+		padding: ($grid - 3px) 0 0;
+	}
+
+	> div {
+		border-left: ($border-width * 2) solid lighten($border-color, 5);
+		margin-top: (.25 * $grid);
+		padding-left: ($grid - 3px);
+
+		@include respond-to(small) {
+			border: 0;
+			padding-left: 0;
+		}
+	}
+
+	> div + div {
+		margin-top: (1.25 * $grid);
+	}
+
+	a {
+		@extend %show-border-on-hover;
+	}
+
+	h2 {
+		@include typo-scale(1);
+		color: $heading-color;
+		margin-bottom: (.75 * $grid);
+	}
+
+	li {
+		margin-bottom: (.5 * $grid);
+	}
+}

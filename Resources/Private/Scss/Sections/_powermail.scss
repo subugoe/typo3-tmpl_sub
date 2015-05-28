@@ -1,3 +1,5 @@
+// TODO
+
 $widthField: 300px;
 $widthLabel: 200px;
 
@@ -67,7 +69,7 @@ $widthLabel: 200px;
 
 	input {
 		margin-left: 0;
-		border: 1px solid $anotherLightGrey;
+		border: 1px solid $border-color;
 		padding: 3px;
 		width: 300px;
 		color: $darkgrey;
@@ -77,7 +79,7 @@ $widthLabel: 200px;
 			width: auto;
 			border-width: 1px;
 			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
-			background: $buttonBackground;
+			background: $button-bg;
 			border-style: solid;
 			margin-left: 0;
 			text-align: center;
@@ -98,7 +100,7 @@ $widthLabel: 200px;
 			border: 1px solid #434343;
 			border-width: 1px;
 			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
-			background: $buttonBackground;
+			background: $button-bg;
 			font-weight: bold;
 			text-align: center;
 			text-decoration: none;
@@ -113,7 +115,7 @@ $widthLabel: 200px;
 
 	textarea {
 		margin-left: 0;
-		border: 1px solid $anotherLightGrey;
+		border: 1px solid $border-color;
 		padding: 3px;
 		width: 300px;
 		color: $darkgrey;
@@ -121,11 +123,12 @@ $widthLabel: 200px;
 
 	select {
 		margin-left: 0;
-		border: 1px solid $anotherLightGrey;
+		border: 1px solid $border-color;
 		padding: 3px;
 		width: 300px;
 		color: $darkgrey;
 	}
+
 	.powermail_all {
 		> dt {
 			width: $widthLabel;
@@ -133,6 +136,7 @@ $widthLabel: 200px;
 			clear: left;
 			font-weight: bold;
 		}
+
 		> dd {
 			width: $widthField;
 			float: left;

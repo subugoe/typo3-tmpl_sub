@@ -1865,12 +1865,12 @@ table {
     color: #1a3771;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2); }
 
-.alphabet-list_sub-list.-persons a, .breadcrumbs a, .content_sidebar a, .footer_bar a, .footer_links a, .search_content a {
+.alphabet-list_sub-list.-persons a, .breadcrumbs a, .footer_bar a, .footer_links a, .search_content a, .sidebar a {
   -webkit-transition: border-color 0.4s ease-in-out;
           transition: border-color 0.4s ease-in-out;
   border-bottom: 1px solid transparent;
   margin-bottom: -1px; }
-  .alphabet-list_sub-list.-persons a:hover, .breadcrumbs a:hover, .content_sidebar a:hover, .footer_bar a:hover, .footer_links a:hover, .search_content a:hover, .alphabet-list_sub-list.-persons a:active, .breadcrumbs a:active, .content_sidebar a:active, .footer_bar a:active, .footer_links a:active, .search_content a:active {
+  .alphabet-list_sub-list.-persons a:hover, .breadcrumbs a:hover, .footer_bar a:hover, .footer_links a:hover, .search_content a:hover, .sidebar a:hover, .alphabet-list_sub-list.-persons a:active, .breadcrumbs a:active, .footer_bar a:active, .footer_links a:active, .search_content a:active, .sidebar a:active {
     border-color: #2855af; }
 
 * {
@@ -1933,7 +1933,8 @@ button, [type=submit], [type=reset] {
   border-bottom: 1px solid #d6d6d6;
   padding: 13px 0 12px; }
 .alphabet-list_sub-list.-persons img {
-  float: right; }
+  float: right;
+  margin-left: 26px; }
 
 .breadcrumbs {
   font-size: 14px;
@@ -1946,49 +1947,51 @@ button, [type=submit], [type=reset] {
       .breadcrumbs li + li:before:before {
         margin-right: .5em; }
 
-.content_main {
+.content {
   display: table-cell;
   padding: 0 26px;
   vertical-align: top;
   padding: 0; }
   @media (max-width: 640px) {
-    .content_main {
+    .content {
       display: block;
       width: 100%; } }
-  .content_main address, .content_main blockquote, .content_main fieldset, .content_main figure, .content_main form, .content_main dl, .content_main h1, .content_main h2, .content_main h3, .content_main iframe, .content_main ol, .content_main p, .content_main pre, .content_main table, .content_main ul, .content_main .vcard {
+  .content address, .content blockquote, .content fieldset, .content figure, .content form, .content dl, .content h1, .content h2, .content h3, .content iframe, .content ol, .content p, .content pre, .content table, .content ul, .content .vcard {
     margin-bottom: 26px; }
-  .content_main a {
+  .content a {
     -webkit-transition: border-color 0.4s ease-in-out;
             transition: border-color 0.4s ease-in-out;
     border-bottom: 1px solid #d6d6d6; }
-    .content_main a:hover, .content_main a:active {
+    .content a:hover, .content a:active {
       border-color: #2855af; }
-  .content_main caption {
+  .content caption {
     font-weight: bold;
     text-align: left; }
-  .content_main h1 {
+  .content h1 {
     font-size: 45px;
     line-height: 52px;
     color: #1a3771;
     font-weight: 300; }
-  .content_main h2 {
+  .content h2 {
     font-size: 32px;
     line-height: 52px;
     color: #1a3771;
     font-weight: 300; }
-  .content_main h3 {
+  .content h3 {
     font-size: 23px;
     line-height: 26px;
     color: #1a3771; }
-  .content_main h4, .content_main h5, .content_main h6 {
+  .content h4, .content h5, .content h6 {
     font-weight: bold;
     margin-bottom: 0; }
-  .content_main ol, .content_main ul {
+  .content ol, .content ul {
     margin-left: 26px; }
-    .content_main ol.no-style, .content_main ul.no-style {
+    .content ol.no-style, .content ul.no-style {
       list-style: none;
       margin-left: 0; }
-  .content_main ul > li:before {
+    .content ol ol, .content ol ul, .content ul ol, .content ul ul {
+      margin-bottom: 0; }
+  .content ul > li:before {
     border-radius: 2px;
     content: '';
     background: #93a8cf;
@@ -1997,39 +2000,40 @@ button, [type=submit], [type=reset] {
     margin: 10px 0 0 -1em;
     position: absolute;
     width: 7px; }
-  .content_main ol {
+  .content ol {
     list-style: decimal outside; }
-  .content_main abbr, .content_main acronym, .content_main dfn {
+  .content abbr, .content acronym, .content dfn {
     border-bottom: 1px dotted #d6d6d6; }
-  .content_main b, .content_main strong {
+  .content b, .content strong {
     font-weight: bold; }
-  .content_main big {
+  .content big {
     font-size: 1.25em; }
-  .content_main cite, .content_main em, .content_main i, .content_main q {
+  .content cite, .content em, .content i, .content q {
     font-style: italic; }
-  .content_main code, .content_main kbd, .content_main tt, .content_main var {
+  .content code, .content kbd, .content tt, .content var {
     font-family: monospace; }
-  .content_main small {
+  .content small {
     font-size: 0.875em; }
-  .content_main sub, .content_main sup {
+  .content sub, .content sup {
     font-size: 75%;
     line-height: 0;
     position: relative;
     vertical-align: baseline; }
-  .content_main sup {
+  .content sup {
     top: -0.5em; }
-  .content_main sub {
+  .content sub {
     bottom: -0.25em; }
-  .content_main table {
+  .content table {
     width: 100%; }
-  .content_main td, .content_main th {
+  .content td, .content th {
     padding: 6.5px 6.5px 5.5px;
     text-align: left; }
-  .content_main th {
+  .content th {
+    color: #888;
     font-weight: bold; }
-  .content_main tr {
+  .content tr {
     border-bottom: 1px solid #d6d6d6; }
-  .content_main [type=text], .content_main [type=password], .content_main [type=email], .content_main [type=search], .content_main select, .content_main textarea {
+  .content [type=text], .content [type=password], .content [type=email], .content [type=search], .content select, .content textarea {
     -webkit-transition: background 0.4s ease-in-out;
             transition: background 0.4s ease-in-out;
     background: #fff;
@@ -2039,10 +2043,10 @@ button, [type=submit], [type=reset] {
     line-height: 26px;
     padding: 13px .5em;
     min-width: 8em; }
-    .content_main [type=text]:focus, .content_main [type=password]:focus, .content_main [type=email]:focus, .content_main [type=search]:focus, .content_main select:focus, .content_main textarea:focus {
+    .content [type=text]:focus, .content [type=password]:focus, .content [type=email]:focus, .content [type=search]:focus, .content select:focus, .content textarea:focus {
       border-color: #1a3771;
       box-shadow: 0 0 5px rgba(40, 85, 175, 0.5); }
-  .content_main button, .content_main [type=submit], .content_main [type=reset] {
+  .content button, .content [type=submit], .content [type=reset] {
     color: #f3f5f7;
     -webkit-transition: background-color 0.4s ease-in-out;
             transition: background-color 0.4s ease-in-out;
@@ -2058,41 +2062,26 @@ button, [type=submit], [type=reset] {
     text-decoration: none;
     vertical-align: top;
     white-space: nowrap; }
-    .content_main button:hover, .content_main button:active, .content_main [type=submit]:hover, .content_main [type=submit]:active, .content_main [type=reset]:hover, .content_main [type=reset]:active {
-      background: #2855af;
-      color: #f4f6fb; }
-
-.content_sidebar {
-  display: table-cell;
-  padding: 0 26px;
-  vertical-align: top;
-  padding-right: 0;
-  width: 260px; }
-  @media (max-width: 640px) {
-    .content_sidebar {
-      display: block;
-      width: 100%; } }
-  @media (max-width: 640px) {
-    .content_sidebar {
-      border-top: 3px solid #e3e3e3;
-      padding: 23px 0 0; } }
-  .content_sidebar > div {
-    border-left: 3px solid #e3e3e3;
-    margin-top: 6.5px;
-    padding-left: 23px; }
+    .content button:hover, .content button:active, .content [type=submit]:hover, .content [type=submit]:active, .content [type=reset]:hover, .content [type=reset]:active {
+      color: #f4f6fb;
+      background: #2855af; }
+  .content dl {
+    clear: both;
+    float: left; }
+  .content dt {
+    color: #888;
+    float: left;
+    font-weight: bold;
+    width: 12em; }
     @media (max-width: 640px) {
-      .content_sidebar > div {
-        border: 0;
+      .content dt {
+        float: none;
+        width: auto; } }
+  .content dd {
+    padding-left: 12em; }
+    @media (max-width: 640px) {
+      .content dd {
         padding-left: 0; } }
-  .content_sidebar > div + div {
-    margin-top: 32.5px; }
-  .content_sidebar h2 {
-    font-size: 23px;
-    line-height: 26px;
-    color: #1a3771;
-    margin-bottom: 19.5px; }
-  .content_sidebar li {
-    margin-bottom: 13px; }
 
 .footer {
   background: #fff;
@@ -2328,11 +2317,8 @@ button, [type=submit], [type=reset] {
   list-style: none;
   padding: 0; }
   .nav_list .nav_list {
-    border-bottom: 1px solid #d6d6d6;
     border-left: 1px solid #d6d6d6;
     margin-left: 25px; }
-    .nav_list .nav_list li:last-child > a {
-      border-bottom: 0; }
 
 .nav_link.-current {
   background: #1a3771;
@@ -2419,7 +2405,7 @@ button, [type=submit], [type=reset] {
     color: #fff; }
   .tx-powermail-pi1 input, .tx-powermail input {
     margin-left: 0;
-    border: 1px solid #ccc;
+    border: 1px solid #d6d6d6;
     padding: 3px;
     width: 300px;
     color: #434343; }
@@ -2460,13 +2446,13 @@ button, [type=submit], [type=reset] {
       color: #434343; }
   .tx-powermail-pi1 textarea, .tx-powermail textarea {
     margin-left: 0;
-    border: 1px solid #ccc;
+    border: 1px solid #d6d6d6;
     padding: 3px;
     width: 300px;
     color: #434343; }
   .tx-powermail-pi1 select, .tx-powermail select {
     margin-left: 0;
-    border: 1px solid #ccc;
+    border: 1px solid #d6d6d6;
     padding: 3px;
     width: 300px;
     color: #434343; }
@@ -3002,6 +2988,38 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 
 .search_label-link {
   float: right; }
+
+.sidebar {
+  display: table-cell;
+  padding: 0 26px;
+  vertical-align: top;
+  padding-right: 0;
+  width: 260px; }
+  @media (max-width: 640px) {
+    .sidebar {
+      display: block;
+      width: 100%; } }
+  @media (max-width: 640px) {
+    .sidebar {
+      border-top: 3px solid #e3e3e3;
+      padding: 23px 0 0; } }
+  .sidebar > div {
+    border-left: 2px solid #e3e3e3;
+    margin-top: 6.5px;
+    padding-left: 23px; }
+    @media (max-width: 640px) {
+      .sidebar > div {
+        border: 0;
+        padding-left: 0; } }
+  .sidebar > div + div {
+    margin-top: 32.5px; }
+  .sidebar h2 {
+    font-size: 23px;
+    line-height: 26px;
+    color: #1a3771;
+    margin-bottom: 19.5px; }
+  .sidebar li {
+    margin-bottom: 13px; }
 
 .icon-facebook-sign, .fa-facebook {
   color: #3b5998; }
