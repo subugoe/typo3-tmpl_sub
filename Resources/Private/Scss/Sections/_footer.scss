@@ -14,8 +14,12 @@
 	}
 
 	a {
-		@extend %show-border-on-hover;
+		@include transition(color);
 		color: $white;
+
+		@include hover {
+			color: $beta-color;
+		}
 	}
 
 	li {
@@ -72,6 +76,11 @@
 
 	h6 {
 		font-weight: bold;
+	}
+
+	li {
+		margin-left: $grid;
+		text-indent: (-$grid);
 	}
 }
 

@@ -1865,12 +1865,12 @@ table {
     color: #1a3771;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2); }
 
-.alphabet-list_sub-list.-persons a, .breadcrumbs a, .footer_bar a, .footer_links a, .search_content a, .sidebar a {
+.alphabet-list_sub-list.-persons a, .breadcrumbs a, .footer_links a, .search_content a, .sidebar a {
   -webkit-transition: border-color 0.4s ease-in-out;
           transition: border-color 0.4s ease-in-out;
   border-bottom: 1px solid transparent;
   margin-bottom: -1px; }
-  .alphabet-list_sub-list.-persons a:hover, .breadcrumbs a:hover, .footer_bar a:hover, .footer_links a:hover, .search_content a:hover, .sidebar a:hover, .alphabet-list_sub-list.-persons a:active, .breadcrumbs a:active, .footer_bar a:active, .footer_links a:active, .search_content a:active, .sidebar a:active {
+  .alphabet-list_sub-list.-persons a:hover, .breadcrumbs a:hover, .footer_links a:hover, .search_content a:hover, .sidebar a:hover, .alphabet-list_sub-list.-persons a:active, .breadcrumbs a:active, .footer_links a:active, .search_content a:active, .sidebar a:active {
     border-color: #2855af; }
 
 * {
@@ -2101,7 +2101,11 @@ button, [type=submit], [type=reset] {
     .footer_bar {
       padding: 0 13px; } }
   .footer_bar a {
+    -webkit-transition: color 0.4s ease-in-out;
+            transition: color 0.4s ease-in-out;
     color: #fff; }
+    .footer_bar a:hover, .footer_bar a:active {
+      color: #93a8cf; }
   .footer_bar li {
     display: inline; }
     .footer_bar li + li {
@@ -2137,6 +2141,9 @@ button, [type=submit], [type=reset] {
       width: 100%; } }
   .footer_column h6 {
     font-weight: bold; }
+  .footer_column li {
+    margin-left: 26px;
+    text-indent: -26px; }
 
 .footer_colophon {
   font-size: 14px;
