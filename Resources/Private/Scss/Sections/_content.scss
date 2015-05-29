@@ -90,7 +90,7 @@
 			background: $beta-color;
 			display: inline-block;
 			height: (round(.25 * $grid));
-			margin: round(.4 * $line-height) 0 0 -1em;
+			margin: ceil(.4 * $line-height) 0 0 -1em;
 			position: absolute;
 			width: round(.25 * $grid);
 		}
