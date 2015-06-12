@@ -4394,6 +4394,10 @@ fieldset.tx-powermail-pi1_fieldset textarea:focus, fieldset.tx-powermail-pi1_fie
 .news .news-list-view .teaser-text p {
   margin-bottom: 0;
 }
+.news .article {
+  padding-bottom: 0;
+  margin-bottom: 1em;
+}
 
 #dataTable .odd {
   background-color: #dee1e7;
