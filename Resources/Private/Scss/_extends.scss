@@ -11,7 +11,6 @@
 }
 
 %link-on-background {
-	@include transition(background, color, text-shadow);
 	color: $white;
 	text-shadow: 0 -1px 0 rgba(black, .2);
 
@@ -21,12 +20,22 @@
 	}
 }
 
-%show-border-on-hover {
+%link-with-border-on-hover {
 	@include transition(border-color);
-	border-bottom: 1px solid transparent;
-	margin-bottom: -1px;
+	border-bottom: $border-width solid transparent;
+	margin-bottom: (-$border-width);
 
 	@include hover {
 		border-color: $link-hover-color;
+		color: $link-hover-color;
+	}
+}
+
+%link-with-border-always {
+	border-bottom: $border-width solid;
+	margin-bottom: (-$border-width);
+
+	@include hover {
+		color: $link-hover-color;
 	}
 }

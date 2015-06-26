@@ -42,16 +42,14 @@ var config = {
 gulp.task('sass', function () {
 	gulp.src(config.paths.sass)
 		.pipe(sass({
-			style: 'compressed',
-			errLogToConsole: true,
-			sourcemaps: true
+			outputStyle: 'compressed'
 		}))
 		.on('error', notify.onError({
 			title: 'Sass Error',
 			message: '<%= error.message %>'
 		}))
 		.pipe(autoprefixer(
-				config.autoprefixer
+			config.autoprefixer
 		))
 		.pipe(gulp.dest('./Resources/Public/Css/'))
 });

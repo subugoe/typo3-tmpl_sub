@@ -65,18 +65,16 @@ $ ->
 
 initMenus = ->
 	$('.nav_list.-secondary').hide()
-
-	# Show all submenu items where the parent Element has the class submenu-highlight-parent
 	$('.nav_list').has('.-current').show()
-	#$('.submenu-l2-1029, .submenu-l2-1043, .submenu-l2-1051, .submenu-l2-1059, .submenu-l2-1067, .submenu-l2-1033').children('ul').hide() # TODO: WAT? Please explain.
+	$('.nav_link.-current').siblings().show()
 
 	$('.nav_list').each ->
 		$('#' + this.id).show()
 
-	# triggering
-	$('.nav_link').click ->
+	$('.nav_link.-toggle').click ->
+		$(this).toggleClass('-open')
 		$nav_list = $(this).next('.nav_list')
 		if $nav_list.length
-			$('.nav_list .-secondary').not($nav_list).slideUp()
+			$('.nav_list.-secondary').not($nav_list).slideUp()
 			$nav_list.slideToggle();
 			return false

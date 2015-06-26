@@ -62,17 +62,17 @@
 
 .header_bar {
 	background: $beta-color;
-	//box-shadow: 0 -1px 0 rgba(#000, .2), 0 1px 0 rgba(#fff, .2) inset, 0 -1px 0 rgba(#000, .2) inset, 0 1px 0 rgba(#fff, .2);
 	padding: 0 $grid;
 	text-align: right;
 
 	@include respond-to(small) {
 		padding: 0 (.5 * $grid);
 	}
+}
 
-	a {
-		@extend %link-on-background;
-	}
+.header_language {
+	@extend %link-on-background;
+	@include fa-icon('globe');
 }
 
 .header_show-nav {
@@ -102,7 +102,7 @@
 		display: block;
 	}
 
-	.-show-off-canvas &:before {
+	.-show-off-canvas & {
 		@include fa-icon('close', false);
 	}
 }

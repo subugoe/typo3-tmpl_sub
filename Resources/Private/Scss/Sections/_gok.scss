@@ -1,0 +1,11 @@
+.gok {
+	ul {
+		margin-left: 0;
+	}
+	
+	li {
+		&:before {
+			display: none !important;
+		}
+	}
+}

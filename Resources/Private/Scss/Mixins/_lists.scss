@@ -28,7 +28,7 @@
 
 	a {
 		display: block;
-		padding: $grid / 2;
+		padding: (.5 * $grid);
 	}
 
 	li {
@@ -76,46 +76,5 @@
 	li + li {
 		@include icon('angle-right');
 		margin-left: .5em;
-	}
-}
-
-@mixin dropdown {
-	background: $popup-bg-color;
-	border-radius: $br;
-	box-shadow: $drop-shadow;
-	display: none;
-	float: left;
-	list-style: none;
-	margin-top: $grid / 4;
-	min-width: 100%;
-	padding: 0;
-	position: absolute;
-	top: 100%;
-	white-space: nowrap;
-	z-index: 1000;
-
-	// Top wedge
-	&:before {
-		border: $grid / 2 solid transparent;
-		border-bottom-color: $popup-bg-color;
-		content: '';
-		display: block;
-		height: 0;
-		left: $grid;
-		pointer-events: none;
-		position: absolute;
-		top: -$grid;
-		width: 0;
-		z-index: 999;
-	}
-
-	li {
-
-		float: none;
-
-		+ li {
-			border-top: $border-width solid $border-color;
-			margin-top: -$border-width;
-		}
 	}
 }

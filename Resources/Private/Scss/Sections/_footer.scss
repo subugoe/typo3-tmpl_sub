@@ -14,7 +14,6 @@
 	}
 
 	a {
-		@include transition(color);
 		color: $white;
 
 		@include hover {
@@ -57,7 +56,7 @@
 	}
 
 	a {
-		@extend %show-border-on-hover;
+		@extend %link-with-border-on-hover;
 	}
 }
 
@@ -93,7 +92,6 @@
 	@include transition(opacity, right);
 
 	background: $pale-color;
-	border: $border-width solid $border-color;
 	border-radius: $br 0 0 $br;
 	bottom: (3 * $grid);
 	opacity: 0;

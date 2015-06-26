@@ -73,14 +73,16 @@ $(function() {
 initMenus = function() {
   $('.nav_list.-secondary').hide();
   $('.nav_list').has('.-current').show();
+  $('.nav_link.-current').siblings().show();
   $('.nav_list').each(function() {
     return $('#' + this.id).show();
   });
-  return $('.nav_link').click(function() {
+  return $('.nav_link.-toggle').click(function() {
     var $nav_list;
+    $(this).toggleClass('-open');
     $nav_list = $(this).next('.nav_list');
     if ($nav_list.length) {
-      $('.nav_list .-secondary').not($nav_list).slideUp();
+      $('.nav_list.-secondary').not($nav_list).slideUp();
       $nav_list.slideToggle();
       return false;
     }

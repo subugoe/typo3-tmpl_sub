@@ -44,13 +44,22 @@
 }
 
 // Font Awesome icon
-@mixin fa-icon($name, $with-text: true) {
-	@extend .fa;
-	@extend .fa-#{$name};
+@mixin fa-icon($name, $with-text: true, $right: false) {
+	&:before {
+		@extend .fa;
+		@extend .fa-#{$name};
 
-	@if $with-text {
-		&:before {
-			margin-right: .5em;
+		@if $right {
+			float: right;
+			margin-top: .25em;
+
+			@if $with-text {
+				margin-left: .25em;
+			}
+		} @else {
+			@if $with-text {
+				padding-right: .5em;
+			}
 		}
 	}
 }

@@ -22,12 +22,7 @@
 	}
 
 	a {
-		@include transition(border-color);
-		border-bottom: 1px solid $border-color;
-
-		@include hover {
-			border-color: $link-hover-color;
-		}
+		@extend %link-with-border-always;
 	}
 
 	caption {
@@ -85,7 +80,7 @@
 
 	ul > li {
 		&:before {
-			border-radius: $br;
+			border-radius: .1em;
 			content: '';
 			background: $beta-color;
 			display: inline-block;
@@ -103,7 +98,7 @@
 	abbr,
 	acronym,
 	dfn {
-		border-bottom: 1px dotted $border-color;
+		border-bottom: $border-width dotted $border-color;
 	}
 
 	b,
@@ -150,22 +145,24 @@
 	}
 
 	table {
+		border-bottom: (2 * $border-width solid) $border-color;
+		margin-bottom: ($grid - $border-width);
 		width: 100%;
 	}
 
-	td,
 	th {
-		padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - 1px);
+		border-bottom: (2 * $border-width solid) $border-color;
+		padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - 2 * $border-width);
 		text-align: left;
 	}
 
-	th {
-		color: $text-color-light;
-		font-weight: bold;
+	td {
+		padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - $border-width);
+		text-align: left;
 	}
 
 	tr {
-		border-bottom: 1px solid $border-color;
+		border-bottom: $border-width solid $border-color;
 	}
 
 	[type=text],
@@ -207,5 +204,4 @@
 			padding-left: 0;
 		}
 	}
-
 }

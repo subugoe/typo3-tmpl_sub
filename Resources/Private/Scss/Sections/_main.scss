@@ -5,6 +5,7 @@
 
 .main_left {
 	@include column(medium);
+	max-width: (11 * $grid); // Prevent width adjustment when text does not fit
 	padding-left: 0;
 	width: (11 * $grid);
 
@@ -24,6 +25,12 @@
 	@include respond-to(small) {
 		padding: 0;
 	}
+}
+
+.main_container {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
 }
 
 .main_logo,

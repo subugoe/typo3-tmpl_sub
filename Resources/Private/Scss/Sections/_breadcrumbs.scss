@@ -3,7 +3,7 @@
 	margin-bottom: (.5 * $grid);
 
 	a {
-		@extend %show-border-on-hover;
+		@extend %link-with-border-on-hover;
 	}
 
 	li {

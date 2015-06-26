@@ -10,7 +10,7 @@ $breakpoints: (
 );
 
 $border-width: 1px;
-$br: 2px; // border-radius
+$br: 0; // border-radius
 
 // Typography
 $fa-font-path: '../Fonts/fontawesome' !default;
@@ -43,10 +43,11 @@ $beta-color: $lightblue;
 $text-color: #444;
 $text-color-light: #888;
 $pale-color: #ececec;
+$shade-color: #f7f7f7;
 $border-color: #d6d6d6;
 $highlight-color: rgba(black, .05);
 $link-color: $alpha-color;
-$link-hover-color: lighten($link-color, 15);
+$link-hover-color: lighten($link-color, 20);
 $heading-color: $alpha-color;
 $input-bg-color: #fff;
 $button-bg-color: $link-color;

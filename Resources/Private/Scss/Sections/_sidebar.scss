@@ -24,10 +24,20 @@
 	}
 
 	a {
-		@extend %show-border-on-hover;
+		@extend %link-with-border-on-hover;
 	}
 
-	h2 {
+	h1 {
+		color: $heading-color;
+		font-weight: bold;
+		margin-bottom: (.25 * $grid);
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		@include typo-scale(1);
 		color: $heading-color;
 		margin-bottom: (.75 * $grid);
