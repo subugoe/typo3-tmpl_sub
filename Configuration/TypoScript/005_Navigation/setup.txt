@@ -9,24 +9,40 @@ lib.navInterface {
 		NO = 1
 		NO {
 			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link -primary"
+			ATagParams = class="nav_link"
 		}
+
+		IFSUB = 1
+		IFSUB {
+			wrapItemAndSub = <li class="nav_item -has-children">|</li>
+			ATagParams = class="nav_link -toggle"
+		}
+
 		ACT = 1
 		ACT {
 			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link -primary -current"
+			ATagParams = class="nav_link -current"
 		}
+
 		ACTIFSUB = 1
-		ACTIFSUB{
-			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link -primary"
+		ACTIFSUB {
+			wrapItemAndSub = <li class="nav_item -has-children -active">|</li>
+			ATagParams = class="nav_link -toggle"
 		}
+
 		CUR = 1
 		CUR {
 			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link -primary -current"
+			ATagParams = class="nav_link -current"
+		}
+
+		CURIFSUB = 1
+		CURIFSUB {
+			wrapItemAndSub = <li class="nav_item -has-children">|</li>
+			ATagParams = class="nav_link -current -toggle"
 		}
 	}
+
 	2 = TMENU
 	2 {
 		noBlur = 1
@@ -37,77 +53,57 @@ lib.navInterface {
 			wrapItemAndSub = <li class="nav_item -id-{field:uid}">|</li>
 			wrapItemAndSub.insertData = 1
 		}
-		CUR = 1
-		CUR {
-			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link -current"
+
+		IFSUB = 1
+		IFSUB {
+			wrapItemAndSub = <li class="nav_item -has-children">|</li>
+			ATagParams = class="nav_link"
 		}
+
 		ACT = 1
 		ACT {
 			wrapItemAndSub = <li class="nav_item">|</li>
 			ATagParams = class="nav_link -current"
 		}
+
 		ACTIFSUB = 1
 		ACTIFSUB {
-			wrapItemAndSub = <li class="nav_item">|</li>
+			wrapItemAndSub = <li class="nav_item -has-children -active">|</li>
 			ATagParams = class="nav_link"
 		}
+
+		CUR = 1
+		CUR {
+			wrapItemAndSub = <li class="nav_item">|</li>
+			ATagParams = class="nav_link -current"
+		}
+
+		CURIFSUB = 1
+		CURIFSUB {
+			wrapItemAndSub = <li class="nav_item -has-children">|</li>
+			ATagParams = class="nav_link -current"
+		}
 	}
-	3 = TMENU
+
+	3 < .2
 	3 {
-		noBlur = 1
-		expAll = 0
-		wrap = <ul class="nav_list -tertiary">|</ul>
-		NO = 1
-		NO {
-			wrapItemAndSub = <li class="nav_item">|</li>
-		}
-		CUR = 1
-		CUR {
-			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link -current"
-		}
-		ACT = 1
-		ACT {
-			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link -current"
-		}
-		ACTIFSUB = 1
-		ACTIFSUB {
-			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link"
-		}
+		wrap = <ul class="nav_list">|</ul>
 	}
-	4 = TMENU
+
+	4 < .2
 	4 {
-		noBlur = 1
-		expAll = 0
-		wrap = <ul class="nav_list -quarternary">|</ul>
-		NO = 1
-		NO {
-			wrapItemAndSub = <li class="nav_item">|</li>
-		}
-		CUR = 1
-		CUR {
-			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link -current"
-		}
-		ACT = 1
-		ACT {
-			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link -current"
-		}
-		ACTIFSUB = 1
-		ACTIFSUB {
-			wrapItemAndSub = <li class="nav_item">|</li>
-			ATagParams = class="nav_link"
-		}
+		wrap = <ul class="nav_list">|</ul>
 	}
-	5 < .4
+
+	5 < .2
 	5 {
 		wrap = <ul class="nav_list">|</ul>
 	}
 
+	6 < .2
+	6 {
+		wrap = <ul class="nav_list">|</ul>
+	}
 }
 
 ### Hauptnavigation ###
@@ -121,114 +117,126 @@ lib.navNeu {
 [global]
 
 [PIDinRootline = {$fachknoten}]
-lib.navNeu = COA
-lib.navNeu {
-	wrap = <div class="nav">|</div>
-	10 = TEXT
-	10 {
-		typolink {
-			parameter = {$startseitenId}
-			ATagParams = class="nav_link"
+	lib.navNeu = COA
+	lib.navNeu {
+		wrap = <div class="nav">|</div>
+		10 = TEXT
+		10 {
+			typolink {
+				parameter = {$startseitenId}
+				ATagParams = class="nav_link"
+			}
+
+			wrapItemAndSub = <li>|</li>
+			wrap = <ul id="menu1" class="nav_item"><li>|
 		}
-		wrapItemAndSub = <li>|</li>
-		wrap = <ul id="menu1" class="nav_item"><li>|
-	}
-	15 = TEXT
-	15 {
-		wrap = <li class="nav_item">|</li>
-		data = leveltitle:2
-		value = {page:nav_title}
-		insertData = 1
-		typolink {
-			parameter.data = leveluid:2
-			ATagParams = class="nav_link"
+
+		15 = TEXT
+		15 {
+			wrap = <li class="nav_item">|</li>
+			data = leveltitle:2
+			value = {page:nav_title}
+			insertData = 1
+			typolink {
+				parameter.data = leveluid:2
+				ATagParams = class="nav_link"
+			}
+		}
+
+		20 = HMENU
+		20 {
+			entryLevel = 2
+			#1 < lib.navInterface
+			excludeUidList >
+		}
+
+		30 = TEXT
+		30 {
+			wrap = </li></ul>
 		}
 	}
-	20 = HMENU
-	20 {
-		entryLevel = 2
-		#1 < lib.navInterface
-		excludeUidList >
-	}
-	30 = TEXT
-	30 {
-		wrap = </li></ul>
-	}
-}
 [global]
 
 ### Medizin usw ###
 
 [PIDinRootline = {$fachknotenLevelOne}]
-lib.navNeu = COA
-lib.navNeu {
-	wrap = <div class="nav">|</div>
-	10 = TEXT
-	10 {
-		typolink {
-			parameter = {$startseitenId}
-			ATagParams = class="nav_link"
+	lib.navNeu = COA
+	lib.navNeu {
+		wrap = <div class="nav">|</div>
+		10 = TEXT
+		10 {
+			typolink {
+				parameter = {$startseitenId}
+				ATagParams = class="nav_link"
+			}
+
+			wrapItemAndSub = <li>|</li>
+			wrap = <ul id="menu1" class=""><li>|
 		}
-		wrapItemAndSub = <li>|</li>
-		wrap = <ul id="menu1" class=""><li>|
-	}
-	15 = TEXT
-	15 {
-		wrap = <li class="nav_item">|</li>
-		data = leveltitle:2
-		value = {page:nav_title}
-		insertData = 1
-		typolink {
-			parameter.data = leveluid:2
-			ATagParams = class="nav_link"
+
+		15 = TEXT
+		15 {
+			wrap = <li class="nav_item">|</li>
+			data = leveltitle:2
+			value = {page:nav_title}
+			insertData = 1
+			typolink {
+				parameter.data = leveluid:2
+				ATagParams = class="nav_link"
+			}
+		}
+
+		20 = HMENU
+		20 {
+			entryLevel = 2
+			1 < lib.navInterface.1
+			2 < lib.navInterface.2
+		}
+
+		30 = TEXT
+		30 {
+			wrap = </li></ul>
 		}
 	}
-	20 = HMENU
-	20 {
-		entryLevel = 2
-		1 < lib.navInterface.1
-		2 < lib.navInterface.2
-	}
-	30 = TEXT
-	30 {
-		wrap = </li></ul>
-	}
-}
 [global]
 
 [PIDinRootline = {$fachknotenOnTopLevel}]
-lib.navNeu = COA
-lib.navNeu {
-	wrap = <div class="nav">|</div>
-	10 = TEXT
-	10 {
-		typolink {
-			parameter = {$startseitenId}
-			ATagParams = class="nav_link"
+	lib.navNeu = COA
+	lib.navNeu {
+		wrap = <div class="nav">|</div>
+		10 = TEXT
+		10 {
+			typolink {
+				parameter = {$startseitenId}
+				ATagParams = class="nav_link"
+			}
+
+			wrapItemAndSub = <li>|</li>
+			wrap = <ul id="menu1" class=""><li>|
 		}
-		wrapItemAndSub = <li>|</li>
-		wrap = <ul id="menu1" class=""><li>|
-	}
-	15 = TEXT
-	15 {
-		wrap = <li class="nav_item">|</li>
-		data = leveltitle:1
-		value = {page:nav_title}
-		insertData = 1
-		typolink {
-			parameter.data = leveluid:1
-			ATagParams = class="nav_link"
+
+		15 = TEXT
+		15 {
+			wrap = <li class="nav_item">|</li>
+			data = leveltitle:1
+			value = {page:nav_title}
+			insertData = 1
+			typolink {
+				parameter.data = leveluid:1
+				ATagParams = class="nav_link"
+			}
+		}
+
+		20 = HMENU
+		20 {
+			entryLevel = 1
+			1 < lib.navInterface.1
+			2 < lib.navInterface.2
+		}
+
+		30 = TEXT
+		30 {
+			wrap = </li></ul>
 		}
 	}
-	20 = HMENU
-	20 {
-		entryLevel = 1
-		1 < lib.navInterface.1
-		2 < lib.navInterface.2
-	}
-	30 = TEXT
-	30 {
-		wrap = </li></ul>
-	}
-}
 [global]
