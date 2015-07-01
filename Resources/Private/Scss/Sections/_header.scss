@@ -82,7 +82,7 @@
 	background: $beta-color;
 	border: 0;
 	border-radius: 0 0 $br;
-	box-shadow: 1px 1px 0 rgba(#000, .2), -1px -1px 0 rgba(#fff, .2) inset;
+	box-shadow: 1px 1px 0 rgba($black, .2), -1px -1px 0 rgba($white, .2) inset;
 	color: $white;
 	display: none;
 	font-size: $grid;

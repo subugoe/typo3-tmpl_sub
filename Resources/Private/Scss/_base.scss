@@ -15,14 +15,14 @@ body {
 	overflow-y: scroll;
 
 	@include respond-to(medium) {
-		box-shadow: 0 0 $grid rgba(#000, .5);
+		box-shadow: 0 0 $grid rgba($black, .5);
 		margin: 0;
 		min-width: 100%;
 
 		// Content overlay when off-canvas nav is visible
 		&:before {
 			@include transition(opacity, z-index);
-			background: rgba(#000, .5);
+			background: rgba($black, .5);
 			content: '';
 			height: 100%;
 			opacity: 0;

@@ -29,7 +29,7 @@
 }
 
 .search_navigation {
-	box-shadow: 0 0 $grid rgba(#000, .5);
+	box-shadow: 0 0 $grid rgba($black, .5);
 	clip: rect(-9999em (8 * $grid) 9999em -9999em); // Prevent tabs shadow from overlapping search form
 	list-style: none;
 	padding: 0;
@@ -113,7 +113,7 @@
 	@include text-input;
 	@include transition(width);
 	border: $border-width inset $lightblue;
-	box-shadow: .1em .1em .5em rgba(#000, .2) inset;
+	box-shadow: .1em .1em .5em rgba($black, .2) inset;
 	float: right;
 	width: (10 * $grid);
 	float: right;
@@ -155,7 +155,7 @@
 .search_content {
 	background: $white;
 	border-radius: 0 $br $br;
-	box-shadow: 0 0 $grid rgba(#000, .5);
+	box-shadow: 0 0 $grid rgba($black, .5);
 	display: none;
 	padding: ($grid * 3) $grid $grid;
 	position: absolute;
