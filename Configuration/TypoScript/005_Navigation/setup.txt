@@ -26,8 +26,8 @@ lib.navInterface {
 
 		ACTIFSUB = 1
 		ACTIFSUB {
-			wrapItemAndSub = <li class="nav_item -has-children -active">|</li>
-			ATagParams = class="nav_link -toggle"
+			wrapItemAndSub = <li class="nav_item -has-children">|</li>
+			ATagParams = class="nav_link -toggle -open"
 		}
 
 		CUR = 1
@@ -68,8 +68,8 @@ lib.navInterface {
 
 		ACTIFSUB = 1
 		ACTIFSUB {
-			wrapItemAndSub = <li class="nav_item -has-children -active">|</li>
-			ATagParams = class="nav_link"
+			wrapItemAndSub = <li class="nav_item -has-children">|</li>
+			ATagParams = class="nav_link -open"
 		}
 
 		CUR = 1

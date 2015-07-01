@@ -51,7 +51,7 @@
 
 		@if $right {
 			float: right;
-			margin-top: .25em;
+			line-height: $grid;
 
 			@if $with-text {
 				margin-left: .25em;

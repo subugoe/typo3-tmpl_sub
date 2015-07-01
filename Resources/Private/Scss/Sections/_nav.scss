@@ -58,6 +58,7 @@
 		&:before {
 			@include transition(transform);
 			color: $border-color;
+			font-size: $font-size-small
 		}
 
 		&.-open:before {
