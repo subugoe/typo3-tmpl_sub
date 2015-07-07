@@ -20,7 +20,7 @@ $(function() {
     piwikTracker.trackPageView(td);
     piwikTracker.setCustomVariable(1, "Suchbegriff", searchTerm, "page");
   }
-  $('.header_show-nav').click(function() {
+  $('.header_toggle-nav').click(function() {
     $('body').toggleClass('-show-off-canvas');
     return false;
   });

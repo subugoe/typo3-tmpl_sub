@@ -62,40 +62,37 @@
 
 .header_bar {
 	background: $beta-color;
-	padding: 0 $grid;
 	text-align: right;
-
-	@include respond-to(small) {
-		padding: 0 (.5 * $grid);
-	}
 }
 
 .header_language {
-	@extend %link-on-background;
 	@include fa-icon('globe');
+	background: lighten($beta-color, 10);
+	display: inline-block;
+	padding: 0 13px;
+
+	@include hover {
+		color: $link-hover-color;
+	}
 }
 
-.header_show-nav {
-	@extend %link-on-background;
-	@include fa-icon('bars', false);
-	@include transition(color);
-	background: $beta-color;
+.header_toggle-nav {
+	@include fa-icon('bars');
+	background: lighten($beta-color, 10);
 	border: 0;
 	border-radius: 0 0 $br;
 	box-shadow: 1px 1px 0 rgba($black, .2), -1px -1px 0 rgba($white, .2) inset;
-	color: $white;
+	color: $link-color;
 	display: none;
-	font-size: $grid;
 	height: (2 * $grid);
 	left: 0;
 	outline: 0;
 	position: absolute;
 	top: 0;
-	width: (2 * $grid);
 	z-index: 99;
 
 	@include hover {
-		color: $link-color;
+		color: $link-hover-color;
 	}
 
 	@include respond-to(medium) {

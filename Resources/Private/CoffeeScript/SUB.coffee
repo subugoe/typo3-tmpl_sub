@@ -17,7 +17,7 @@ $ ->
 		piwikTracker.trackPageView(td)
 		piwikTracker.setCustomVariable( 1, "Suchbegriff", searchTerm, "page")
 
-	$('.header_show-nav').click ->
+	$('.header_toggle-nav').click ->
 		$('body').toggleClass('-show-off-canvas')
 		false
 
