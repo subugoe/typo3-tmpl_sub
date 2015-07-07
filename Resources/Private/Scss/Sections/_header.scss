@@ -72,6 +72,7 @@
 	padding: 0 13px;
 
 	@include hover {
+		background: lighten($beta-color, 15);
 		color: $link-hover-color;
 	}
 }
@@ -92,6 +93,7 @@
 	z-index: 99;
 
 	@include hover {
+		background: lighten($beta-color, 15);
 		color: $link-hover-color;
 	}
 
