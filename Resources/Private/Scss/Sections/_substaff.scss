@@ -1,0 +1,27 @@
+.substaff_list {
+	list-style: none !important;
+	margin-left: 0 !important;
+}
+
+.substaff_item {
+	border-bottom: $border-width solid $border-color;
+	margin: ($grid / 2) 0;
+	padding: 0 0 ($grid / 2 - $border-width);
+}
+
+.substaff_detail {
+	display: block;
+
+	&.-indent {
+		margin-left: $grid;
+	}
+
+	&.-name {
+		font-weight: bold;
+	}
+}
+
+.substaff_image {
+	float: right;
+	margin: 0 0 0 $grid;
+}
