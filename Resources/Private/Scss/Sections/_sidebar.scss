@@ -10,8 +10,8 @@
 
 	> div {
 		border-left: ($border-width * 2) solid lighten($border-color, 5);
-		margin-top: (.25 * $grid);
-		padding-left: ($grid - 3px);
+		//margin-top: (.25 * $grid);
+		padding-left: ($grid - ($border-width * 2));
 
 		@include respond-to(small) {
 			border: 0;

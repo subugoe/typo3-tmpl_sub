@@ -7,9 +7,7 @@
 		padding: (.5 * $grid) (.5 * $grid) (.5 * $grid - $border-width);
 		text-overflow: ellipsis;
 
-		&:active,
-		&:focus,
-		&:hover {
+		@include hover {
 			background: $highlight-color;
 			color: $link-color;
 		}
@@ -31,10 +29,12 @@
 
 .nav_link {
 	&.-current {
-		background: $link-color;
-		color: $white;
+		background: $highlight-color;
+		color: $link-color;
+		font-weight: bold;
 		position: relative;
 
+		/*
 		&:after {
 			border: (.5 * $grid) solid transparent;
 			border-right-color: $white;
@@ -50,6 +50,7 @@
 				display: none;
 			}
 		}
+		*/
 	}
 
 	&.-toggle {

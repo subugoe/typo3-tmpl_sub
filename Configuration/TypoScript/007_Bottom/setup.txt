@@ -53,8 +53,8 @@ lib.bottom2 {
 	10.special.value = {$ids.linkliste_2}
 	20 = COA
 	20 {
-		wrap = <div class="sub-social">|</div>
-		# facebook
+		# wrap = <div class="sub-social">|</div>
+		# Facebook
 		20 = TEXT
 		20 {
 			typolink {
@@ -67,7 +67,7 @@ lib.bottom2 {
 				extTarget = _blank
 			}
 			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.facebook
-			wrap = <li>|</li>
+			wrap = <li class="colophon_item -indent">|</li>
 			ATagBeforeWrap = 1
 			stdWrap.wrap = <i class="fa fa-facebook-square"></i>|
 		}

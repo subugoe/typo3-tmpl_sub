@@ -1,6 +1,9 @@
 .content {
 	@include column(small);
 	padding: 0;
+	position: relative;
+	//top: (-$grid);
+	//@include debug-grid();
 
 	address,
 	blockquote,
@@ -33,11 +36,15 @@
 	h1,
 	h2,
 	h3 {
+		//margin-top: $grid;
 		text-rendering: optimizeLegibility;
 		word-wrap: break-word;
+
+		a {
+			@extend %link-with-border-on-hover;
+		}
 	}
 
-	// TODO: Modular scale via mixin/function
 	h1 {
 		@include typo-scale(3);
 		color: $heading-color;
@@ -80,14 +87,14 @@
 
 	ul > li {
 		&:before {
-			border-radius: .1em;
+			border-radius: .125em;
 			content: '';
-			background: $beta-color;
+			background: $border-color;
 			display: inline-block;
-			height: (round(.25 * $grid));
-			margin: ceil(.4 * $line-height) 0 0 -1em;
+			height: 0.25em;
+			margin: .7em 0 0 -1em;
 			position: absolute;
-			width: round(.25 * $grid);
+			width: .5em;
 		}
 	}
 

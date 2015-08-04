@@ -1,38 +1,38 @@
 <div class="footer">
+	<div class="footer_left">
+		<f:cObject typoscriptObjectPath="lib.fleft" />
+	</div>
+	<div class="footer_right">
+		<ul>
+			<!--<li>{pageUid}</li>-->
+			<li>
+				<!-- Feedback -->
+				<f:link.page pageUid="290" noCacheHash="true" rel="nofollow" additionalParams="{tx_nkwuserfeedback:{page:'{currentPid}'}}">
+					<f:translate key="page.feedBack" />
+				</f:link.page>
+			</li>
+			<!-- Permalink -->
+			<li><f:cObject typoscriptObjectPath="lib.fright" /></li>
+		</ul>
+	</div>
+</div>
 
-	<div class="footer_bar">
-		<div class="footer_left">
-			<f:cObject typoscriptObjectPath="lib.fleft" />
-		</div>
-		<div class="footer_right">
-			<ul>
-				<!--<li>{pageUid}</li>-->
-				<li>
-					<!-- Feedback -->
-					<f:link.page pageUid="290" noCacheHash="true" rel="nofollow" additionalParams="{tx_nkwuserfeedback:{page:'{currentPid}'}}">
-						<f:translate key="page.feedBack" />
-					</f:link.page>
-				</li>
-				<!-- Permalink -->
-				<li><f:cObject typoscriptObjectPath="lib.fright" /></li>
-			</ul>
-		</div>
+<div class="colophon">
+
+	<div class="colophon_links">
+		<f:for each="{0:1, 1:2, 2:3, 3:4}" as="index">
+			<div class="colophon_column">
+				<h6><f:translate key="page.bottom{index}" /></h6>
+				<f:cObject typoscriptObjectPath="lib.bottom{index}" />
+			</div>
+		</f:for>
 	</div>
 
-	<div class="footer_links">
-	    <f:for each="{0:1, 1:2, 2:3, 3:4}" as="index">
-	        <div class="footer_column">
-	            <h6><f:translate key="page.bottom{index}" /></h6>
-	            <f:cObject typoscriptObjectPath="lib.bottom{index}" />
-	        </div>
-	    </f:for>
-	</div>
-
-	<div class="footer_colophon" role="contentinfo">
+	<div class="colophon_last-change" role="contentinfo">
 		<f:format.html><f:translate key="page.lastChanged" /> <f:cObject typoscriptObjectPath="lib.lastChanged" /></f:format.html>
 	</div>
 
-	<div class="footer_top-link">
+	<div class="col_top-link">
 		<f:link.page section="top" title="{f:translate(key: 'page.toTop')}" noCacheHash="true"><span class="sr-only"><f:translate key="page.toTop" /></span></f:link.page>
 	</div>
 

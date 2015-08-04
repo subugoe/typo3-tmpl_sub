@@ -1,32 +1,21 @@
 .footer {
-	background: $white;
-	margin: 0 auto;
-	max-width: $site-width;
-}
-
-.footer_bar {
 	@extend %clearfix;
-	background: $alpha-color;
-	padding: 0 ($grid);
+	background: $white;
+	padding: 0 (.5 * $grid) (.5 * $grid);
+	max-width: $site-width;
 
 	@include respond-to(small) {
 		padding: 0 (.5 * $grid);
 	}
 
 	a {
-		color: $white;
-
-		@include hover {
-			color: $beta-color;
-		}
+		@extend %link-with-border-on-hover;
+		white-space: nowrap;
 	}
 
 	li {
-		display: inline;
-
-		+ li {
-			margin-left: 1em;
-		}
+		display: inline-block;
+		margin: 0 (.5 * $grid);
 	}
 }
 
@@ -44,75 +33,5 @@
 		float: none;
 		padding: (.25 * $grid) 0;
 		text-align: center;
-	}
-}
-
-.footer_links {
-	@extend %clearfix;
-	padding: 0 (.5 * $grid);
-
-	@include respond-to(small) {
-		padding: 0;
-	}
-
-	a {
-		@extend %link-with-border-on-hover;
-	}
-}
-
-.footer_column {
-	float: left;
-	padding: (.5 * $grid);
-	width: 25%;
-
-	@include respond-to(medium) {
-		width: 50%;
-	}
-
-	@include respond-to(small) {
-		width: 100%;
-	}
-
-	h6 {
-		font-weight: bold;
-	}
-
-	li {
-		margin-left: $grid;
-		text-indent: (-$grid);
-	}
-}
-
-.footer_colophon {
-	font-size: $font-size-small;
-	padding: (.5 * $grid);
-}
-
-.footer_top-link {
-	@include transition(opacity, right);
-
-	background: $pale-color;
-	border-radius: $br 0 0 $br;
-	bottom: (3 * $grid);
-	opacity: 0;
-	position: fixed;
-	right: (-2 * $grid);
-	width: (2 * $grid);
-
-	&.-visible {
-		opacity: 1;
-		right: (-$border-width);
-	}
-
-	a {
-		@include fa-icon('chevron-up', false);
-		display: block;
-		height: (2 * $grid);
-		line-height: (2 * $grid);
-		text-align: center;
-
-		@include hover {
-			background: $highlight-color;
-		}
 	}
 }

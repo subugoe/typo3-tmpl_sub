@@ -43,10 +43,28 @@ body {
 }
 
 body,
+button,
 input,
 select,
 textarea {
-	font: #{$font-size} / #{$grid} 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font: #{$font-size} / #{$grid} $font-family-sans-serif;
+}
+
+@font-face {
+	font-family: 'Optima';
+	src: url('../Fonts/optima/optima-regular-webfont.eot');
+	src: url('../Fonts/optima/optima-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../Fonts/optima/optima-regular-webfont.woff') format('woff'),
+	     url('../Fonts/optima/optima-regular-webfont.ttf') format('truetype'),
+	     url('../Fonts/optima/optima-regular-webfont.svg#OptimaRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1,
+h2,
+h3 {
+	font-family: $font-family-display;
 }
 
 a {

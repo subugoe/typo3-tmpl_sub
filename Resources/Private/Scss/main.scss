@@ -1,6 +1,7 @@
 // BEM style: block-name_element-name -modifier-name
 
 @import 'settings';
+
 @import '../../../Build/bower/fontawesome/scss/font-awesome';
 @import '../../../Build/bower/open-sans-fontface/sass/open-sans';
 
@@ -17,12 +18,14 @@
 
 @import 'Sections/alphabet-list';
 @import 'Sections/breadcrumbs';
+@import 'Sections/colophon';
 @import 'Sections/content';
 @import 'Sections/footer';
 @import 'Sections/gok';
 @import 'Sections/header';
 @import 'Sections/main';
 @import 'Sections/nav';
+@import 'Sections/news';
 @import 'Sections/pagination';
 @import 'Sections/powermail';
 @import 'Sections/search';
