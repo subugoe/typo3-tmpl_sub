@@ -52,7 +52,7 @@
 	}
 }
 
-$transition-duration: .4s !default;
+$transition-duration: .25s !default;
 $transition-timing-function: ease-in-out !default;
 
 @mixin transition($properties...) {
