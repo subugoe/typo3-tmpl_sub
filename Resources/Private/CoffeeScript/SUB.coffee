@@ -1,3 +1,5 @@
+$.fx.speeds._default = 250
+
 $ ->
 	isMobile = mobilecheck()
 	if isMobile
