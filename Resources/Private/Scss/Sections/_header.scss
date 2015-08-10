@@ -66,11 +66,6 @@
 .header_language {
 	float: right;
 
-	a {
-		@extend %link-with-border-on-hover;
-		@include fa-icon('globe');
-	}
-
 	@include respond-to(medium) {
 		position: absolute;
 		right: (.5 * $grid);
@@ -84,6 +79,11 @@
 				color: $white;
 			}
 		}
+	}
+
+	a {
+		@extend %link-with-border-on-hover;
+		@include fa-icon('globe');
 	}
 }
 

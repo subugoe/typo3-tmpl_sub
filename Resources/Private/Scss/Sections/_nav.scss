@@ -59,11 +59,11 @@
 		&:before {
 			@include transition(transform);
 			color: $border-color;
-			font-size: $font-size-small
+			font-size: $font-size-small;
 		}
 
 		&.-open:before {
-			transform: rotate(-180deg)
+			transform: rotate(-180deg);
 		}
 	}
 }

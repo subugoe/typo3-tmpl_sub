@@ -1,9 +1,8 @@
 .content {
 	@include column(small);
+	@include debug-grid(6px);
 	padding: 0;
 	position: relative;
-	//top: (-$grid);
-	//@include debug-grid();
 
 	address,
 	blockquote,
@@ -36,7 +35,6 @@
 	h1,
 	h2,
 	h3 {
-		//margin-top: $grid;
 		text-rendering: optimizeLegibility;
 		word-wrap: break-word;
 
@@ -91,7 +89,7 @@
 			content: '';
 			background: $border-color;
 			display: inline-block;
-			height: 0.25em;
+			height: .25em;
 			margin: .7em 0 0 -1em;
 			position: absolute;
 			width: .5em;
