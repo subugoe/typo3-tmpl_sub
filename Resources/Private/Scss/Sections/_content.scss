@@ -1,6 +1,5 @@
 .content {
 	@include column(small);
-	@include debug-grid(6px);
 	padding: 0;
 	position: relative;
 
@@ -35,6 +34,7 @@
 	h1,
 	h2,
 	h3 {
+		position: relative;
 		text-rendering: optimizeLegibility;
 		word-wrap: break-word;
 
@@ -47,17 +47,20 @@
 		@include typo-scale(3);
 		color: $heading-color;
 		font-weight: 300;
+		top: 7px;
 	}
 
 	h2 {
 		@include typo-scale(2);
 		color: $heading-color;
 		font-weight: 300;
+		top: 10px;
 	}
 
 	h3 {
 		@include typo-scale(1);
 		color: $heading-color;
+		top: 13px;
 	}
 
 	h4,
@@ -90,7 +93,7 @@
 			background: $border-color;
 			display: inline-block;
 			height: .25em;
-			margin: .7em 0 0 -1em;
+			margin: .7em 0 0 -1.1em;
 			position: absolute;
 			width: .5em;
 		}
@@ -151,18 +154,18 @@
 
 	table {
 		border-bottom: (2 * $border-width solid) $border-color;
-		margin-bottom: ($grid - $border-width);
+		margin: (-.25 * $grid) 0 (.75 * $grid);
 		width: 100%;
 	}
 
 	th {
 		border-bottom: (2 * $border-width solid) $border-color;
-		padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - 2 * $border-width);
+		padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - $border-width);
 		text-align: left;
 	}
 
 	td {
-		padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - $border-width);
+		padding: (.25 * $grid);
 		text-align: left;
 	}
 

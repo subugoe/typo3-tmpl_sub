@@ -64,8 +64,10 @@ $transition-timing-function: ease-in-out !default;
 	transition: $transitions;
 }
 
+$typo-scale-offset: 0 !default;
+
 @mixin typo-scale($increment) {
-	font-size: round(ms($increment));
+	font-size: round(ms($increment)) + $typo-scale-offset;
 	// Use this to allow half-lines:
 	// line-height: floor(ms($increment) / (.5 * $line-height) + 1) * .5 * $line-height;
 	line-height: floor(ms($increment) / ($line-height) + 1) * $line-height;

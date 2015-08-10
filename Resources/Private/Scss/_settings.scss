@@ -24,6 +24,7 @@ $ratio: 1.3333333; // Factor used for font size increments
 $line-height: $grid;
 $font-size: 16px;
 $font-size-small: 14px;
+$typo-scale-offset: 2px; // Adjust heading font size for different font heights
 
 // Colors
 $black: #000;

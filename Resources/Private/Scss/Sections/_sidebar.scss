@@ -8,6 +8,11 @@
 		padding: ($grid - 3px) 0 0;
 	}
 
+	// TODO: Change class names
+	.personDetail + .personDetail {
+		margin-top: $grid;
+	}
+
 	> div {
 		border-left: ($border-width * 2) solid lighten($border-color, 5);
 		//margin-top: (.25 * $grid);
@@ -36,7 +41,13 @@
 		@include typo-scale(1);
 		color: $heading-color;
 		font-family: $font-family-display;
-		margin-bottom: (.5 * $grid);
+		margin-bottom: $grid;
+		position: relative;
+		top: 13px;
+	}
+
+	ul {
+		@extend %clearfix;
 	}
 
 	li {

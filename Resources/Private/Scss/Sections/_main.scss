@@ -1,4 +1,5 @@
 .main {
+	@include debug-grid(6px);
 	background: $white;
 	margin: 0 auto;
 	max-width: $site-width;
