@@ -1,17 +1,4 @@
-$facebook-color: #3b5998;
-$twitter-color: #00aced;
-
-.icon-facebook-sign,
-.fa-facebook {
-	color: $facebook-color;
-}
-
-.icon-twitter-sign,
-.fa-twitter {
-	color: $twitter-color;
-}
-
-.infobox__social {
+.infobox_social {
 
 	.fa {
 		float: left; // Preventing link hover styles from affecting icon
@@ -22,4 +9,5 @@ $twitter-color: #00aced;
 		position: relative;
 		text-align: center;
 	}
+
 }
