@@ -235,6 +235,7 @@ page {
 		}
 
 		ICBM = 51.539763,9.935385
+		viewport = width=device-width, initial-scale=1
 	}
 
 	### TEMPLATE ###
