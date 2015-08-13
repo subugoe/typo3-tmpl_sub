@@ -4,41 +4,20 @@
 
 html {
 	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 body {
-	@include transition(margin-left);
 	margin: 0 auto;
 	max-width: $site-width;
 	min-height: 100%;
-	overflow-x: hidden;
-	overflow-y: scroll;
 
 	@include respond-to(medium) {
 		box-shadow: 0 0 $grid rgba($black, .5);
 		margin: 0;
 		min-width: 100%;
-
-		// Content overlay when off-canvas nav is visible
-		&:before {
-			@include transition(opacity, z-index);
-			background: rgba($black, .5);
-			content: '';
-			height: 100%;
-			opacity: 0;
-			position: fixed;
-			width: 100%;
-			z-index: -1;
-		}
-
-		&.-show-off-canvas {
-			margin-left: 61.8%;
-
-			&:before {
-				opacity: 1;
-				z-index: 99;
-			}
-		}
+		overflow-x: hidden;
 	}
 }
 

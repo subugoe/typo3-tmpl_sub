@@ -1,8 +1,9 @@
 .footer {
 	@extend %clearfix;
 	background: $white;
-	padding: 0 (.5 * $grid) (.5 * $grid);
 	max-width: $site-width;
+	padding: 0 (.5 * $grid) (.5 * $grid);
+	position: relative;
 
 	@include respond-to(small) {
 		padding: 0 (.5 * $grid);

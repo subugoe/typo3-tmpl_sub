@@ -47,20 +47,20 @@
 		@include typo-scale(3);
 		color: $heading-color;
 		font-weight: 300;
-		top: 7px;
+		top: 13px;
 	}
 
 	h2 {
 		@include typo-scale(2);
 		color: $heading-color;
 		font-weight: 300;
-		top: 10px;
+		top: 16px;
 	}
 
 	h3 {
 		@include typo-scale(1);
 		color: $heading-color;
-		top: 13px;
+		top: 12px;
 	}
 
 	h4,
@@ -173,13 +173,20 @@
 		border-bottom: $border-width solid $border-color;
 	}
 
-	[type=text],
-	[type=password],
+	[type=date],
 	[type=email],
+	[type=password],
 	[type=search],
-	select,
+	[type=tel],
+	[type=text],
+	select {
+		@include text-input;
+		height: (2 * $grid);
+	}
+
 	textarea {
 		@include text-input;
+		height: (8 * $grid);
 	}
 
 	button,

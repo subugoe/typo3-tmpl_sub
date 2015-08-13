@@ -1,5 +1,4 @@
 .main {
-	@include debug-grid(6px);
 	background: $white;
 	margin: 0 auto;
 	max-width: $site-width;
@@ -21,7 +20,10 @@
 
 .main_right {
 	@include column(medium);
+	@include debug-grid(6px); // TODO: Remove this
+	background: $white;
 	padding-right: 0;
+	position: relative;
 
 	@include respond-to(medium) {
 		padding: 0;

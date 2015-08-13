@@ -11,6 +11,7 @@ $ ->
 
 	# Remove border from images with link
 	$('a img').parent('a').css('border-bottom', 0)
+
 	initMenus()
 
 	# Stats for GOK Browsing
@@ -26,11 +27,11 @@ $ ->
 		piwikTracker.setCustomVariable( 1, "Suchbegriff", searchTerm, "page")
 
 	$('.header_toggle-nav').click ->
-		$('body').toggleClass('-show-off-canvas')
+		$('.wrap').toggleClass('-show-off-canvas')
 		false
 
 	$('body').click ->
-		$('body').removeClass('-show-off-canvas')
+		$('.wrap').removeClass('-show-off-canvas')
 
 	headerHeight = $('.header').height()
 	paginationOffsets = []

@@ -2,6 +2,7 @@
 	@extend %full-width-background;
 	@include auto-color-for($alpha-color);
 	background: $alpha-color;
+	position: relative;
 }
 
 .colophon_links {
