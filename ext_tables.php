@@ -14,6 +14,7 @@ if (!defined('TYPO3_MODE'))
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/News', 'SUB News Configuration');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/WecMap', 'SUB Map Configuration');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/Powermail', 'SUB Powermail Configuration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/seminars', 'SUB seminars Configuration');
 
 $tempColumns = array(
 		'copyright' => array(
