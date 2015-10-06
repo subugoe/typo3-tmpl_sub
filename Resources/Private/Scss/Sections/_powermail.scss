@@ -1,4 +1,16 @@
-// TODO: BEM and Lint, remove literals
+.powermail_fieldwrap {
+	margin: (.5 * $grid) 0;
+}
+
+.powermail_label {
+	padding: (.5 * $grid) 0;
+
+	i {
+		cursor: help;
+	}
+}
+
+// TODO: BEM and lint everything below, remove literals and check
 
 $widthField: 300px;
 $widthLabel: 200px;
@@ -14,11 +26,6 @@ $widthLabel: 200px;
 
 	.tx-powermail-pi1_fieldset,
 	.powermail_fieldset {
-		border: 0;
-		margin: 0;
-		padding: 0;
-		background: #fff;
-
 		legend,
 		.powermail_legend {
 			white-space: normal;
@@ -36,14 +43,6 @@ $widthLabel: 200px;
 		float: left;
 	}
 
-	.powermail_label {
-		font-weight: normal;
-
-		i {
-			cursor: help;
-		}
-	}
-
 	.parsley-errors-list {
 		line-height: 2em;
 		background-color: #dee1e7;
@@ -52,11 +51,6 @@ $widthLabel: 200px;
 		font-weight: bold;
 		display: inline-block;
 		padding-right: 1em;
-	}
-
-	.tx_powermail_pi1_fieldwrap_html,
-	.powermail_fieldwrap {
-		margin: 10px 0;
 	}
 
 	.powermail_submit,
@@ -69,68 +63,6 @@ $widthLabel: 200px;
 		margin-top: 10px;
 		background-color: $darkblue;
 		color: #fff;
-	}
-
-	input {
-		margin-left: 0;
-		border: $border-width solid $border-color;
-		padding: 3px;
-		width: 300px;
-		color: $darkgrey;
-
-		&.powermail_submit .tx-powermail-pi1_confirmation {
-			border-radius: 3px;
-			width: auto;
-			border-width: $border-width;
-			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
-			background: $button-bg;
-			border-style: solid;
-			margin-left: 0;
-			text-align: center;
-			text-decoration: none;
-			text-shadow: 0 1px rgba(255, 255, 255, .75);
-			text-transform: uppercase;
-			line-height: 100%;
-			padding: 3px 12px !important;
-			float: left;
-			height: 28px;
-			color: $darkgrey;
-		}
-
-		&.tx-powermail-pi1_confirmation,
-		&.tx-powermail-pi1_mandatory_submit {
-			border-radius: 3px;
-			width: auto;
-			border: 1px solid #434343;
-			border-width: 1px;
-			border-color: #d4d4d4 #b4b4b4 #b4b4b4 #d4d4d4;
-			background: $button-bg;
-			font-weight: bold;
-			text-align: center;
-			text-decoration: none;
-			text-shadow: 0 1px rgba(255, 255, 255, .75);
-			text-transform: uppercase;
-			line-height: 100%;
-			padding: 3px 12px !important;
-			height: 28px;
-			color: $darkgrey;
-		}
-	}
-
-	textarea {
-		margin-left: 0;
-		border: 1px solid $border-color;
-		padding: 3px;
-		width: 300px;
-		color: $darkgrey;
-	}
-
-	select {
-		margin-left: 0;
-		border: 1px solid $border-color;
-		padding: 3px;
-		width: 300px;
-		color: $darkgrey;
 	}
 
 	.powermail_all {

@@ -13,7 +13,8 @@
 	@include typo-scale(2);
 	color: $heading-color;
 	font-weight: 300;
-	margin: 0 !important;
+	// Restore margin while using Optima
+	// margin: 0 !important;
 }
 
 .alphabet-list_sub-list.-persons {

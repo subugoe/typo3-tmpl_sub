@@ -52,15 +52,10 @@
 	@extend %clearfix;
 	background: $white;
 	font-size: $font-size-small;
-	margin-bottom: (.5 * $grid);
-	padding: (.25 * $grid) (.5 * $grid);
+	padding: (.25 * $grid) (.5 * $grid) (.75 * $grid);
 
 	@include respond-to(medium) {
 		font-size: $font-size;
-	}
-
-	@include respond-to(small) {
-		padding: (.25 * $grid) (.5 * $grid);
 	}
 }
 

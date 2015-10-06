@@ -26,7 +26,9 @@
 	position: relative;
 
 	@include respond-to(medium) {
-		padding: 0;
+		// Padding required to prevent off-canvas from shining through
+		padding: 0 (.5 * $grid);
+		margin: 0 (-.5 * $grid);
 	}
 }
 

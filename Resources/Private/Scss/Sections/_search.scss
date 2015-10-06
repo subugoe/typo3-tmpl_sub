@@ -28,6 +28,10 @@
 	color: $white;
 	float: right;
 	font-size: $font-size-small;
+
+	.-show-popup & {
+		@extend .sr-only;
+	}
 }
 
 .search_popup {
@@ -120,9 +124,14 @@
 }
 
 .search_form {
+	display: none;
 	padding: (.5 * $grid) (.5 * $grid) 0;
 	position: relative;
 	z-index: 9;
+
+	&.-visible {
+		display: block;
+	}
 }
 
 .search_input {

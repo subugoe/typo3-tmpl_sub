@@ -1,9 +1,3 @@
-.news_header {
-	h2 {
-		margin: 0;
-	}
-}
-
 .news_more {
 	@include fa-icon('angle-right', true, true);
 	position: relative;
