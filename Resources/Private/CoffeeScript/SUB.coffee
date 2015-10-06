@@ -40,3 +40,5 @@ initMenus = ->
 			$('#' + parent + ' ul.js:visible').slideUp('normal');
 			checkElement.slideDown('normal');
 			return false
+
+	$('.datatable').dataTable();

@@ -31,7 +31,7 @@
     $('ul.submenu-l1').each(function() {
       return $('#' + this.id + ' ul.go').show();
     });
-    return $('ul.submenu-l1 li a.submenu-trigger').click(function() {
+    $('ul.submenu-l1 li a.submenu-trigger').click(function() {
       var checkElement, parent;
       checkElement = $(this).next();
       parent = this.parentNode.parentNode.id;
@@ -42,6 +42,7 @@
         return false;
       }
     });
+    return $('.datatable').dataTable();
   };
 
 }).call(this);
