@@ -137,13 +137,13 @@ $width-label: 200px;
 
 .powermail_radio_inner,
 .powermail_check_inner {
-	margin: 8px 0;
 	display: flex;
 	width: 100%;
 
 	input {
 		clear: none !important;
 		width: 30px;
+		margin-top: 8px;
 	}
 
 	label {
