@@ -70,7 +70,7 @@ gulp.task('coffee', function () {
 });
 
 gulp.task('compile', function () {
-	gulp.start('bower', 'copy-fonts', 'sass', 'coffee', 'uglify')
+	gulp.start('bower', 'copy-fonts', 'lint', 'sass', 'coffee', 'uglify')
 });
 
 gulp.task('watch', function () {
