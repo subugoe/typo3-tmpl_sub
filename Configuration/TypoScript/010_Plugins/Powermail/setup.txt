@@ -1,9 +1,4 @@
 plugin.tx_powermail {
-	view {
-		templateRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Templates/
-		layoutRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Layouts/
-		partialRootPath = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Powermail/Partials/
-	}
 	settings.setup {
 		spamshield.indicator {
 			honeypod = {$honeypotWert}
