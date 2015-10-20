@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 						 // concatenation of files
 						 concat: {
 							 js: {
-								 src: ['Resources/Public/Js/modernizr.js', 'Resources/Public/Js/SUB.js', 'Resources/Public/Js/ClassNames.js'],
+								 src: ['Resources/Public/Js/modernizr.js', 'Resources/Public/Js/SUB.js', 'Resources/Public/Js/ClassNames.js', 'Resources/Public/Js/jquery.dataTables.min.js'],
 								 dest: 'Resources/Public/Js/Site.js'
 							 }
 						 },

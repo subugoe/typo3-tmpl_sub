@@ -1,0 +1,12 @@
+{namespace ce = Subugoe\TmplSub\ViewHelpers}
+
+<ce:explode data="{data.bodytext}" as="items">
+	<ul class="infobox__social">
+		<f:for each="{items}" as="item">
+			<ce:explode data="{item}" delimiter="|" as="link">
+				<li>
+					<ce:typolink parameter="{link.1}"><i class="fa fa-{link.0}"></i> {link.2}</ce:typolink></li>
+			</ce:explode>
+		</f:for>
+	</ul>
+</ce:explode>
