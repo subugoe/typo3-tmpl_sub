@@ -167,3 +167,18 @@ mod.web_list {
 	# Hide records that are handled via relations or IRRE
 	hideTables = tx_shorts_domain_model_url
 }
+
+
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+	    tmplsub_lectures {
+            iconIdentifier = content-image
+            title = Vorlesungs
+            description = Historische Vorlesungsverzeichnisse
+            tt_content_defValues {
+                CType = tmplsub_lectures
+            }
+        }
+    }
+    show := addToList(tmplsub_lectures)
+}

@@ -117,6 +117,19 @@ $TCA['tt_content']['types']['tmplsub_socialinfobox']['showitem'] = $TCA['tt_cont
  * Prepare TCA for Custom Fluid Content Element
  */
 $TCA['tt_content']['types']['tmplsub_lectures'] = $TCA['tt_content']['types']['table'];
+$TCA['tt_content']['columns']['pi_flexform']['config']['ds']['*,tmplsub_lectures'] = 'FILE:EXT:css_styled_content/flexform_ds.xml';
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'Lectures',
+        'tmplsub_lectures',
+        'content-image'
+    ],
+    'textmedia',
+    'after'
+);
 
 // mandatory fields for the backend
 $TCA['be_users']['columns']['email']['config']['eval'] = 'trim,required';

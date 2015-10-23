@@ -1,12 +1,54 @@
 {namespace ce = Subugoe\TmplSub\ViewHelpers}
+<table class="datatable">
+	<ce:explode data="{data.bodytext}" as="items">
+		<f:for each="{items}" as="item" iteration="lectureIterator">
+			<f:if condition="{lectureIterator.isFirst}">
+				<f:then>
+					<thead>
+					<ce:explode data="{item}" as="lecture" delimiter=";">
+						<th>{lecture.0}</th>
+						<th>{lecture.1}</th>
+						<th>{lecture.2}</th>
+					</ce:explode>
+					</thead>
+					<tbody>
+				</f:then>
+				<f:else>
+					<tr>
 
-<ce:explode data="{data.bodytext}" as="items">
-	<ul class="infobox__social">
-		<f:for each="{items}" as="item">
-			<ce:explode data="{item}" delimiter="|" as="link">
-				<li>
-					<ce:typolink parameter="{link.1}"><i class="fa fa-{link.0}"></i> {link.2}</ce:typolink></li>
-			</ce:explode>
+						<ce:explode data="{item}" as="lecture" delimiter=";">
+							<td>{lecture.0}</td>
+							<td>
+								<f:if condition="<ce:contains needle='gdz.sub' haystack='{lecture.1}' />">
+									<f:link.external uri="{lecture.1}">
+										<f:translate key="tmplsub_lectures.gdz" extensionName="tmpl_sub"/>
+									</f:link.external>
+								</f:if>
+								<f:if condition="<ce:contains needle='reader.digitale-sammlungen.de' haystack='{lecture.1}' />">
+									<f:link.external uri="{lecture.1}">
+										<f:translate key="tmplsub_lectures.bsb" extensionName="tmpl_sub"/>
+									</f:link.external>
+								</f:if>
+							</td>
+							<td>
+								<f:if condition="<ce:contains needle='gdz.sub' haystack='{lecture.2}' />">
+									<f:link.external uri="{lecture.2}">
+										<f:translate key="tmplsub_lectures.gdz" extensionName="tmpl_sub"/>
+									</f:link.external>
+								</f:if>
+								<f:if condition="<ce:contains needle='reader.digitale-sammlungen.de' haystack='{lecture.2}' />">
+									<f:link.external uri="{lecture.2}">
+										<f:translate key="tmplsub_lectures.bsb" extensionName="tmpl_sub"/>
+									</f:link.external>
+								</f:if>
+							</td>
+						</ce:explode>
+					</tr>
+
+				</f:else>
+				</tbody>
+			</f:if>
+
 		</f:for>
-	</ul>
-</ce:explode>
+	</ce:explode>
+</table>
