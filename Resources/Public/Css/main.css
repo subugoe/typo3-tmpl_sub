@@ -60,8 +60,8 @@ html {
   line-height: 1.5em;
 }
 
-.Img-sprite, .Img-arrow_right, .Img-arrow_right_2, .Img-bullet, .Img-button_shade_large, .Img-cc_commons, .Img-header, .Img-logo_print, .Img-nur_cc, .Img-nur_info, .Img-printlogo, .Img-sublogo, .Img-unilogo {
-  background-image: url('../Img-se7b60f2189.png');
+.Img-sprite, .Img-arrow_right, .Img-arrow_right_2, .Img-bullet, .Img-button_shade_large, .Img-cc_commons, .Img-header, .Img-logo_print, .Img-nur_cc, .Img-nur_info, .Img-printlogo, .Img-sort_asc, .Img-sort_asc_disabled, .Img-sort_both, .Img-sort_desc, .Img-sort_desc_disabled, .Img-sublogo, .Img-unilogo {
+  background-image: url('../Img-s32ccf1f1f9.png');
   background-repeat: no-repeat;
 }
 
@@ -105,12 +105,32 @@ html {
   background-position: 0 -337px;
 }
 
-.Img-sublogo {
+.Img-sort_asc {
   background-position: 0 -428px;
 }
 
+.Img-sort_asc_disabled {
+  background-position: 0 -447px;
+}
+
+.Img-sort_both {
+  background-position: 0 -466px;
+}
+
+.Img-sort_desc {
+  background-position: 0 -485px;
+}
+
+.Img-sort_desc_disabled {
+  background-position: 0 -504px;
+}
+
+.Img-sublogo {
+  background-position: 0 -523px;
+}
+
 .Img-unilogo {
-  background-position: 0 -506px;
+  background-position: 0 -601px;
 }
 
 ::selection, ::-moz-selection {
@@ -3395,24 +3415,25 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
   background-position: center right;
 }
 
-table.dataTable thead .sorting {
-  background-image: url("../images/sort_both.png");
+table.dataTable thead th.sorting:after {
+  content: "\f0dc";
+  color: #ddd;
+  font-size: 0.8em;
+  padding-top: 0.12em;
+  padding-left: .25em;
+  font-family: FontAwesome;
 }
 
-table.dataTable thead .sorting_asc {
-  background-image: url("../images/sort_asc.png");
+table.dataTable thead th.sorting_asc:after {
+  content: "\f0de";
+  padding-left: .25em;
+  font-family: FontAwesome;
 }
 
-table.dataTable thead .sorting_desc {
-  background-image: url("../images/sort_desc.png");
-}
-
-table.dataTable thead .sorting_asc_disabled {
-  background-image: url("../images/sort_asc_disabled.png");
-}
-
-table.dataTable thead .sorting_desc_disabled {
-  background-image: url("../images/sort_desc_disabled.png");
+table.dataTable thead th.sorting_desc:after {
+  content: "\f0dd";
+  padding-left: .25em;
+  font-family: FontAwesome;
 }
 
 table.dataTable tbody tr {
