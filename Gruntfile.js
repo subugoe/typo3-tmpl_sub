@@ -20,8 +20,8 @@ module.exports = function(grunt) {
 						 },
 						 // watcher task
 						 watch: {
-							 files: ['<config:lint.files>', '<config:coffee.app.src>', '<config.compass.prod.src>', 'Resources/Private/Sass/Sections/*'],
-							 tasks: ['compass', 'coffee', 'concat', 'uglify']
+							 files: ['<config:lint.files>', '<config:coffee.app.src>', 'Resources/Private/CoffeeScript/*', 'Resources/Private/Sass/Sections/*'],
+							 tasks: ['compass', 'postcss', 'coffee', 'concat', 'uglify']
 						 },
 
 						 compass: {
@@ -44,14 +44,26 @@ module.exports = function(grunt) {
 								 dest: 'Resources/Public/Js/',
 								 ext: '.js'
 							 }
+						 },
+						 postcss: {
+							 options: {
+								 map: true,
+								 processors: [
+									 require('autoprefixer')({browsers: 'last 2 versions'})
+								 ]
+							 },
+							 dist: {
+								 src: 'Resources/Public/Css/*.css'
+							 }
 						 }
 					 });
 	// register tasks
-	grunt.registerTask('default', ['coffee', 'compass', 'concat', 'uglify']);
+	grunt.registerTask('default', ['coffee', 'postcss', 'compass', 'concat', 'uglify']);
 	grunt.registerTask('compassProduction', ['compass:prod']);
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-postcss');
 };

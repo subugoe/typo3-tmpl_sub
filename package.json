@@ -23,7 +23,9 @@
   "readmeFilename": "README.md",
   "gitHead": "4ed59320a4d61b0218393df2c56c0073b765dfb7",
   "devDependencies": {
+    "autoprefixer": "^6.0.3",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.3.2"
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-postcss": "^0.7.0"
   }
 }
