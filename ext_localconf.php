@@ -23,7 +23,7 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 if (!defined('TYPO3_MODE')) {
-	die('Access denied.');
+    die('Access denied.');
 }
 // add PageTS
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_sub/Configuration/TypoScript/030_PageTS/setup.txt">');
@@ -38,7 +38,7 @@ if (!defined('TYPO3_MODE')) {
 // add Rootlinefield for Pictureinheritance
 $rootLineFields = &$GLOBALS["TYPO3_CONF_VARS"]['FE']['addRootLineFields'];
 if ($rootLineFields != '') {
-	$rootLineFields .= ' , ';
+    $rootLineFields .= ' , ';
 }
 
 $rootLineFields .= 'tx_nkwsubmenu_picture_follow,tx_nkwsubmenu_knotheader';
@@ -56,9 +56,9 @@ plugin.tx_tmplsub {
 }
 ');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
-		$_EXTKEY,
-		'constants',
-		$customFluidContentElementTypoScriptConstants
+    $_EXTKEY,
+    'constants',
+    $customFluidContentElementTypoScriptConstants
 );
 
 /**
@@ -76,9 +76,30 @@ tt_content.tmplsub_socialinfobox {
     }
 }
 ');
+
+$lectureFluidContentElementTypoScriptSetup = trim('
+tt_content.tmplsub_lectures = COA
+tt_content.tmplsub_lectures {
+    10 = < lib.stdheader
+    20 = FLUIDTEMPLATE
+    20 {
+        file = {$plugin.tx_tmplsub.view.templateRootPath}ContentElements/Lectures.html
+        partialRootPath = {$plugin.tx_tmplsub.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_tmplsub.view.layoutRootPath}
+    }
+}
+');
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
-		$_EXTKEY,
-		'setup',
-		$customFluidContentElementTypoScriptSetup,
-		43
+    $_EXTKEY,
+    'setup',
+    $customFluidContentElementTypoScriptSetup,
+    43
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+    $_EXTKEY,
+    'setup',
+    $lectureFluidContentElementTypoScriptSetup,
+    43
 );

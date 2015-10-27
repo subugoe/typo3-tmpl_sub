@@ -25,9 +25,6 @@ namespace Subugoe\TmplSub\ViewHelpers\Widget;
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-/**
- * @author Ingo Pfennigstorf <i,pfennigstorf@gmail.com>
- */
 class AzViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper {
 
 	/**

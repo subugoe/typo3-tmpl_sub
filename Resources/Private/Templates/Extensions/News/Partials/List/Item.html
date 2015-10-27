@@ -6,7 +6,11 @@
 	<n:excludeDisplayedNews newsItem="{newsItem}"/>
 	<f:comment><!-- header --></f:comment>
 	<div class="header">
-		<h2>{newsItem.title}</h2>
+		<h2>
+			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+				<span itemprop="headline">{newsItem.title}</span>
+			</n:link>
+		</h2>
 	</div>
 
 	<f:if condition="{newsItem.firstCategory.images.0}">
@@ -111,7 +115,7 @@
 	<div class="teaser-text">
 		<f:if condition="{newsItem.teaser}">
 			<f:then>
-				{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+				{newsItem.teaser -> f:format.crop(maxCharacters: '1000', respectWordBoundaries:'1') -> f:format.html()}
 			</f:then>
 			<f:else>
 				{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}

@@ -57,6 +57,8 @@
 			<label index="sys_file_metadata.wiki_commons">WikiCommons</label>
 			<label index="sys_file_metadata.creative_commons">Creative Commons</label>
 			<label index="sys_file_metadata.copyright">Copyright</label>
+			<label index="tmplsub_lectures.gdz">Link zum Digitalisat im Göttinger Digitalisierungszentrum</label>
+			<label index="tmplsub_lectures.bsb">Link zum Digitalisat im Münchner Digitalisierungszentrum</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="solr.pages">Seiten</label>
@@ -110,6 +112,8 @@
 			<label index="sys_file_metadata.wiki_commons">WikiCommons</label>
 			<label index="sys_file_metadata.creative_commons">Creative Commons</label>
 			<label index="sys_file_metadata.copyright">Copyright</label>
+			<label index="tmplsub_lectures.gdz">Link zum Digitalisat im Göttinger Digitalisierungszentrum</label>
+			<label index="tmplsub_lectures.bsb">Link zum Digitalisat im Münchner Digitalisierungszentrum</label>
 		</languageKey>
 	</data>
 </T3locallang>
