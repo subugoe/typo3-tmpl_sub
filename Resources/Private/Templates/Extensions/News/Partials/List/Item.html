@@ -2,7 +2,7 @@
 	=====================
 		Partials/List/Item.html
 -->
-<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}">
+<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
 	<n:excludeDisplayedNews newsItem="{newsItem}"/>
 	<f:comment><!-- header --></f:comment>
 	<div class="header">
@@ -115,10 +115,10 @@
 	<div class="teaser-text">
 		<f:if condition="{newsItem.teaser}">
 			<f:then>
-				{newsItem.teaser -> f:format.crop(maxCharacters: '1000', respectWordBoundaries:'1') -> f:format.html()}
+				<span itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '1000', respectWordBoundaries:'1') -> f:format.html()}</span>
 			</f:then>
 			<f:else>
-				{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+				<span itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</span>
 			</f:else>
 		</f:if>
 
