@@ -92,7 +92,7 @@ lib.navInterface {
 ### Hauptnavigation ###
 lib.navNeu =< lib.navInterface
 lib.navNeu {
-	excludeUidList = {$notInMainMenu}, {$fachknoten}
+	excludeUidList = {$notInMainMenu}
 }
 
 [PIDinRootline = {$fachknotenMountPoints}]

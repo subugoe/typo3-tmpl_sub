@@ -56,3 +56,10 @@ plugin {
 		}
 	}
 }
+
+tmplsub_lectures = FLUIDTEMPLATE
+tmplsub_lectures {
+    file = EXT:tmpl_sub/Resources/Private/Templates/ContentElements/Lectures.html
+    partialRootPath = EXT:tmpl_sub/Resources/Private/Partials/
+    layoutRootPath = EXT:tmpl_sub/Resources/Private/Layouts
+}

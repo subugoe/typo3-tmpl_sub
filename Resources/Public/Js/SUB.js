@@ -31,7 +31,7 @@
     $('ul.submenu-l1').each(function() {
       return $('#' + this.id + ' ul.go').show();
     });
-    return $('ul.submenu-l1 li a.submenu-trigger').click(function() {
+    $('ul.submenu-l1 li a.submenu-trigger').click(function() {
       var checkElement, parent;
       checkElement = $(this).next();
       parent = this.parentNode.parentNode.id;
@@ -40,6 +40,21 @@
         $('#' + parent + ' ul.js:visible').slideUp('normal');
         checkElement.slideDown('normal');
         return false;
+      }
+    });
+    return $('.datatable').DataTable({
+      language: {
+        search: "Suche:",
+        lengthMenu: "Zeige _MENU_ Einträge",
+        info: "_START_ bis _END_ von _TOTAL_ Einträgen",
+        infoFiltered: "(gefiltert aus insgesamt _MAX_ Elementen)",
+        infoPostFix: "",
+        paginate: {
+          first: "Erste",
+          previous: "Vorherige",
+          next: "Nächste",
+          last: "Letzte"
+        }
       }
     });
   };
