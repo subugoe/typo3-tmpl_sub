@@ -24,53 +24,53 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY,
     'Configuration/TypoScript/010_Plugins/Powermail', 'SUB Powermail Configuration');
 
-$tempColumns = array(
-    'copyright' => array(
+$tempColumns = [
+    'copyright' => [
         'exclude' => '1',
         'l10n_mode' => '',
         'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright',
-        'config' => array(
+        'config' => [
             'type' => 'input',
             'size' => '30',
-        )
-    ),
-    'copyright_url' => array(
+        ]
+    ],
+    'copyright_url' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright_url',
-        'config' => array(
+        'config' => [
             'type' => 'input',
             'size' => '30',
-            'wizards' => array(
+            'wizards' => [
                 '_PADDING' => 2,
-                'link' => array(
+                'link' => [
                     'type' => 'popup',
                     'title' => 'Link',
                     'icon' => 'link_popup.gif',
                     'script' => 'browse_links.php?mode=wizard',
                     'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
-                )
-            )
-        )
-    ),
-    'wiki_commons' => array(
+                ]
+            ]
+        ]
+    ],
+    'wiki_commons' => [
         'exclude' => '1',
         'l10n_mode' => '',
         'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.wiki_commons',
-        'config' => array(
+        'config' => [
             'type' => 'text',
             'rows' => '6',
             'cols' => '30',
-        )
-    ),
-    'creative_commons' => array(
+        ]
+    ],
+    'creative_commons' => [
         'exclude' => '1',
         'l10n_mode' => '',
         'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.creative_commons',
-        'config' => array(
+        'config' => [
             'type' => 'check',
-        )
-    )
-);
+        ]
+    ]
+];
 
 // Add fields to sys_file_metadata
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_metadata', $tempColumns);
