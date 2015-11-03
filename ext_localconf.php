@@ -103,3 +103,5 @@ tt_content.tmplsub_lectures {
     $lectureFluidContentElementTypoScriptSetup,
     43
 );
+
+$TYPO3_CONF_VARS['FE']['eID_include'][$_EXTKEY] = 'EXT:tmpl_sub/Resources/Private/Scripts/WordCounter.php';

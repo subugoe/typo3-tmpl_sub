@@ -1,5 +1,7 @@
 <?php
 
+namespace Subugoe\TmplSub\Tests\Unit\ViewHelpers;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -23,117 +25,125 @@
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use Subugoe\TmplSub\ViewHelpers\CommaExploderViewHelper;
 
 /**
  * Test case for class Tx_TmplSub_ViewHelpers_CommaExploderViewHelper
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub.uni-goettingen.de>
- * @package subtabs
  */
-class Tx_TmplSub_Tests_Unit_ViewHelpers_CommaExploderViewHelperTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
-	/**
-	 * @var Tx_Subtabs_ViewHelpers_CommaExploderViewHelper
-	 */
-	protected $fixture;
+class CommaExploderViewHelperTest extends \TYPO3\CMS\Core\Tests\Unit\Resource\BaseTestCase
+{
+    /**
+     * @var CommaExploderViewHelper
+     */
+    protected $fixture;
 
-	/**
-	 * @return void
-	 */
-	public function setUp() {
-		$this->fixture = $this->getMock('Tx_TmplSub_ViewHelpers_CommaExploderViewHelper', array('renderChildren'));
-	}
+    /**
+     * @return void
+     */
+    public function setUp()
+    {
+        $this->fixture = $this->getMock(CommaExploderViewHelper::class, ['renderChildren']);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfArrayIsReturnedTest(){
-		$commaList = '4,124,123,1,2';
-		$result = $this->fixture->render($commaList);
-		$this->assertInternalType('array', $result);
-	}
+    /**
+     * @test
+     */
+    public function checkIfArrayIsReturnedTest()
+    {
+        $commaList = '4,124,123,1,2';
+        $result = $this->fixture->render($commaList);
+        $this->assertInternalType('array', $result);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfArrayIsReturnedIfOnlyOneValueInListTest() {
-		$commaList = '6';
-		$result = $this->fixture->render($commaList);
-		$this->assertInternalType('array', $result);
-	}
+    /**
+     * @test
+     */
+    public function checkIfArrayIsReturnedIfOnlyOneValueInListTest()
+    {
+        $commaList = '6';
+        $result = $this->fixture->render($commaList);
+        $this->assertInternalType('array', $result);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfNullIsReturnedWithNoValueInListTest() {
-		$commaList = '';
-		$result = $this->fixture->render($commaList);
-		$this->assertNull($result);
-	}
+    /**
+     * @test
+     */
+    public function checkIfNullIsReturnedWithNoValueInListTest()
+    {
+        $commaList = '';
+        $result = $this->fixture->render($commaList);
+        $this->assertNull($result);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfValuesBelowZeroAreStrippedTest() {
-		$commaList = '4,-124,123,-1,2';
-		$result = $this->fixture->render($commaList);
-		$this->assertCount(3, $result);
-	}
+    /**
+     * @test
+     */
+    public function checkIfValuesBelowZeroAreStrippedTest()
+    {
+        $commaList = '4,-124,123,-1,2';
+        $result = $this->fixture->render($commaList);
+        $this->assertCount(3, $result);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfTheArrayLengthEqualsTheElementsInTheCommalistTest() {
-		$commaList = '4,124,123,1,2';
-		$result = $this->fixture->render($commaList);
-		$this->assertCount(5, $result);
-	}
+    /**
+     * @test
+     */
+    public function checkIfTheArrayLengthEqualsTheElementsInTheCommalistTest()
+    {
+        $commaList = '4,124,123,1,2';
+        $result = $this->fixture->render($commaList);
+        $this->assertCount(5, $result);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfNullIsReturnedIfOnlyNegativeValuesAreInTheCommalistTest() {
-		$commaList = '-1,-13636,-654';
-		$result = $this->fixture->render($commaList);
-		$this->assertNull($result);
-	}
+    /**
+     * @test
+     */
+    public function checkIfNullIsReturnedIfOnlyNegativeValuesAreInTheCommalistTest()
+    {
+        $commaList = '-1,-13636,-654';
+        $result = $this->fixture->render($commaList);
+        $this->assertNull($result);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfNullIsReturnedWhenOnlyCommasAreInTheCommalistTest() {
-		$commaList = ',,';
-		$result = $this->fixture->render($commaList);
-		$this->assertNull($result);
-	}
+    /**
+     * @test
+     */
+    public function checkIfNullIsReturnedWhenOnlyCommasAreInTheCommalistTest()
+    {
+        $commaList = ',,';
+        $result = $this->fixture->render($commaList);
+        $this->assertNull($result);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfStringsAreStrippedOutTest() {
-		$commaList = '4,TYPO3,123,1,2';
-		$result = $this->fixture->render($commaList);
-		$this->assertCount(4, $result);
-	}
+    /**
+     * @test
+     */
+    public function checkIfStringsAreStrippedOutTest()
+    {
+        $commaList = '4,TYPO3,123,1,2';
+        $result = $this->fixture->render($commaList);
+        $this->assertCount(4, $result);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfResultIsNullWhenOnlyAStringIsInTheCommalistTest() {
-		$commaList = 'TYPO3';
-		$result = $this->fixture->render($commaList);
-		$this->assertNull($result);
-	}
+    /**
+     * @test
+     */
+    public function checkIfResultIsNullWhenOnlyAStringIsInTheCommalistTest()
+    {
+        $commaList = 'TYPO3';
+        $result = $this->fixture->render($commaList);
+        $this->assertNull($result);
+    }
 
-	/**
-	 * @test
-	 */
-	public function checkIfSpacesInListAreIgnoredTest() {
-		$commaList = '4 ,124, 123, 1, 2 ';
-		$result = $this->fixture->render($commaList);
-		$expectedResult = array('4', '124', '123', '1', '2');
-		$this->assertEquals($expectedResult, $result);
+    /**
+     * @test
+     */
+    public function checkIfSpacesInListAreIgnoredTest()
+    {
+        $commaList = '4 ,124, 123, 1, 2 ';
+        $result = $this->fixture->render($commaList);
+        $expectedResult = ['4', '124', '123', '1', '2'];
+        $this->assertEquals($expectedResult, $result);
 
-	}
+    }
 }
-
-?>

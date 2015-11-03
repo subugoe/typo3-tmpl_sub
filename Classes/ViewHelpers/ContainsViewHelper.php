@@ -38,7 +38,8 @@ class ContainsViewHelper extends AbstractViewHelper
      * @param string $haystack
      * @return bool
      */
-    public function render($needle, $haystack) {
+    public function render($needle, $haystack)
+    {
         if (strpos($haystack, $needle)) {
             return true;
         }

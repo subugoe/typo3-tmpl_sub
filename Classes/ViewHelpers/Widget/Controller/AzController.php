@@ -29,93 +29,100 @@ use TYPO3\CMS\Extbase\Utility\ArrayUtility;
 /**
  * A - Z Index generator and lister
  */
-class AzController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController {
+class AzController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController
+{
 
-	/**
-	 * @var array
-	 */
-	protected $configuration = array(
-			'titleField' => 'title',
-			'linkObject' => '',
-			'linkAction' => '',
-			'linkController' => '',
-			'linkPluginName' => '',
-			'linkExtensionName' => ''
-	);
+    /**
+     * @var array
+     */
+    protected $configuration = [
+        'titleField' => 'title',
+        'linkObject' => '',
+        'linkAction' => '',
+        'linkController' => '',
+        'linkPluginName' => '',
+        'linkExtensionName' => ''
+    ];
 
-	/**
-	 * @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-	 */
-	protected $objects;
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    protected $objects;
 
-	/**
-	 * @return void
-	 */
-	public function initializeAction() {
-		$this->objects = $this->widgetConfiguration['objects'];
-		$this->configuration = ArrayUtility::arrayMergeRecursiveOverrule($this->configuration, $this->widgetConfiguration['configuration'], TRUE);
-	}
+    /**
+     * @return void
+     */
+    public function initializeAction()
+    {
+        $this->objects = $this->widgetConfiguration['objects'];
+        $this->configuration = ArrayUtility::arrayMergeRecursiveOverrule($this->configuration,
+            $this->widgetConfiguration['configuration'], TRUE);
+    }
 
-	/**
-	 * Generate titles, indexes and assign this to the view
-	 *
-	 * @return void
-	 */
-	public function indexAction() {
+    /**
+     * Generate titles, indexes and assign this to the view
+     *
+     * @return void
+     */
+    public function indexAction()
+    {
 
-		$groupings = $this->getAzGrouping($this->objects);
+        $groupings = $this->getAzGrouping($this->objects);
 
-		$this->view->assignMultiple(
-				array(
-						'titles' => $groupings,
-						'linkObject' => $this->configuration['linkObject'],
-						'linkAction' => $this->configuration['linkAction'],
-						'linkController' => $this->configuration['linkController'],
-						'linkPluginName' => $this->configuration['linkPluginName'],
-						'linkExtensionName' => $this->configuration['linkExtensionName']
-				)
-		);
-	}
+        $this->view->assignMultiple(
+            [
+                'titles' => $groupings,
+                'linkObject' => $this->configuration['linkObject'],
+                'linkAction' => $this->configuration['linkAction'],
+                'linkController' => $this->configuration['linkController'],
+                'linkPluginName' => $this->configuration['linkPluginName'],
+                'linkExtensionName' => $this->configuration['linkExtensionName']
+            ]
+        );
+    }
 
-	/**
-	 * Groups the titles to their indexes
-	 *
-	 * @param $titles
-	 * @return array
-	 */
-	protected function getAzGrouping($titles) {
+    /**
+     * Groups the titles to their indexes
+     *
+     * @param $titles
+     * @return array
+     */
+    protected function getAzGrouping($titles)
+    {
 
-		$groupings = array();
+        $groupings = [];
 
-		$lastChar = '';
-		foreach ($titles as $title) {
+        $lastChar = '';
+        foreach ($titles as $title) {
 
-			// find titleField and get contents
-			$objectTitle = \TYPO3\CMS\Extbase\Reflection\ObjectAccess::getProperty($title, $this->configuration['titleField']);
+            // find titleField and get contents
+            $objectTitle = \TYPO3\CMS\Extbase\Reflection\ObjectAccess::getProperty($title,
+                $this->configuration['titleField']);
 
-			$title->linkObject = array($this->configuration['linkObject'] => $title->getUid());
+            $title->linkObject = [$this->configuration['linkObject'] => $title->getUid()];
 
-			$firstLetter = $this->getSpecifiedLetter($objectTitle, 0);
+            $firstLetter = $this->getSpecifiedLetter($objectTitle, 0);
 
-			if ($firstLetter != $lastChar) {
-				$groupings[$firstLetter] = array();
-			}
-			array_push($groupings[$firstLetter], $title);
+            if ($firstLetter != $lastChar) {
+                $groupings[$firstLetter] = [];
+            }
+            array_push($groupings[$firstLetter], $title);
 
-			$lastChar = $this->getSpecifiedLetter($objectTitle, 0);
-		}
-		ksort($groupings);
-		return $groupings;
-	}
+            $lastChar = $this->getSpecifiedLetter($objectTitle, 0);
+        }
+        ksort($groupings);
+        return $groupings;
+    }
 
-	/**
-	 * Returns the letter from a given index of a string
-	 *
-	 * @param $title
-	 * @param $index
-	 * @return string
-	 */
-	protected function getSpecifiedLetter($title, $index) {
-		return mb_substr(mb_strtoupper(iconv('utf-8', 'ascii//TRANSLIT', $title)), $index, $index + 1, 'utf-8');
-	}
+    /**
+     * Returns the letter from a given index of a string
+     *
+     * @param $title
+     * @param $index
+     * @return string
+     */
+    protected function getSpecifiedLetter($title, $index)
+    {
+        return mb_substr(mb_strtoupper(iconv('utf-8', 'ascii//TRANSLIT', $title)), $index, $index + 1, 'utf-8');
+    }
 }
