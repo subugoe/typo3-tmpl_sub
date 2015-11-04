@@ -20,24 +20,24 @@
 							<td>{lecture.0}</td>
 							<td>
 								<f:if condition="<ce:contains needle='gdz.sub' haystack='{lecture.1}' />">
-									<f:link.external uri="{lecture.1}">
+									<f:link.external uri="{lecture.1}" target="_blank">
 										<f:translate key="tmplsub_lectures.gdz" extensionName="tmpl_sub"/>
 									</f:link.external>
 								</f:if>
 								<f:if condition="<ce:contains needle='reader.digitale-sammlungen.de' haystack='{lecture.1}' />">
-									<f:link.external uri="{lecture.1}">
+									<f:link.external uri="{lecture.1}" target="_blank">
 										<f:translate key="tmplsub_lectures.bsb" extensionName="tmpl_sub"/>
 									</f:link.external>
 								</f:if>
 							</td>
 							<td>
 								<f:if condition="<ce:contains needle='gdz.sub' haystack='{lecture.2}' />">
-									<f:link.external uri="{lecture.2}">
+									<f:link.external uri="{lecture.2}" target="_blank">
 										<f:translate key="tmplsub_lectures.gdz" extensionName="tmpl_sub"/>
 									</f:link.external>
 								</f:if>
 								<f:if condition="<ce:contains needle='reader.digitale-sammlungen.de' haystack='{lecture.2}' />">
-									<f:link.external uri="{lecture.2}">
+									<f:link.external uri="{lecture.2}" target="_blank">
 										<f:translate key="tmplsub_lectures.bsb" extensionName="tmpl_sub"/>
 									</f:link.external>
 								</f:if>
