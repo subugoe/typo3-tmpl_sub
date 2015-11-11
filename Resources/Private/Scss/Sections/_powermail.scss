@@ -37,14 +37,8 @@ $width-label: 200px;
 
 	}
 
-	label {
-		width: $width-label;
-		clear: both;
-		float: left;
-
-		i {
-			font-style: normal;
-		}
+	i {
+		font-style: normal;
 	}
 
 	.parsley-errors-list {
