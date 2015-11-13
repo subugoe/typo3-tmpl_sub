@@ -6,7 +6,7 @@
 	@if $unfloat-breakpoint {
 		@include respond-to($unfloat-breakpoint) {
 			display: block;
-			width: 100%;
+			min-width: 100%;
 		}
 	}
 }

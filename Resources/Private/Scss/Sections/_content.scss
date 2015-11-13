@@ -190,6 +190,12 @@
 		height: (8 * $grid);
 	}
 
+	[type=radio],
+	[type=checkbox] {
+		margin: (.25 * $grid);
+		width: $grid;
+	}
+
 	button,
 	[type=submit],
 	[type=reset] {

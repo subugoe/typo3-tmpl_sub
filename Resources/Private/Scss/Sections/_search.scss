@@ -10,7 +10,7 @@
 	@include respond-to(medium) {
 		float: none;
 		margin-top: 0;
-		padding: 0 0 (.5 * $grid);
+		padding: (.5 * $grid) 0;
 	}
 
 	@media(max-width: ($search-width + $grid)) {

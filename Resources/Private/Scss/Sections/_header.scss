@@ -9,42 +9,24 @@
 	overflow: visible;
 	position: relative;
 	z-index: 1;
+
+	@include respond-to(medium) {
+		padding-top: $grid;
+	}
 }
 
 .header_logo {
 	@extend %header_element;
 	@extend %full-width-background;
-	background: $alpha-color;
-	padding: ($grid - 2px) $grid ($grid + 2px); // Align horizontal bar in logo with center of header
+	// Manually align horizontal bar in logo with center of header
+	background: $alpha-color url($img-path + '/sub-logo.svg') (.5 * $grid) ($grid - 2px) no-repeat;
+	height: (4 * $grid);
 
 	@include respond-to(medium) {
-		background: none;
-		max-width: (18 * $grid); // Limit width of logo to prevent home link
-		padding: $grid (.5 * $grid) (.5 * $grid);
-	}
-}
-
-.header_logo_img {
-	max-width: 100%;
-	width: auto;
-
-	&.-small {
-		display: none;
+		background: url($img-path + '/sub-logo-centered.svg') center 0 no-repeat;
+		background-size: contain;
 		height: (5 * $grid);
-		margin: 0 auto;
-
-		@include respond-to(medium) {
-			display: block;
-		}
-	}
-
-	&.-big {
-		display: block;
-		height: (2 * $grid);
-
-		@include respond-to(medium) {
-			display: none;
-		}
+		max-width: 95%;
 	}
 }
 
