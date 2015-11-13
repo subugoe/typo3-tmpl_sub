@@ -26,6 +26,7 @@
 		background: url($img-path + '/sub-logo-centered.svg') center 0 no-repeat;
 		background-size: contain;
 		height: (5 * $grid);
+		margin-bottom: (.5 * $grid);
 		max-width: 95%;
 	}
 }
