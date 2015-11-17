@@ -221,8 +221,6 @@ page {
 
 	includeCSS {
 		main = EXT:tmpl_sub/Resources/Public/Css/main.css
-		print = EXT:tmpl_sub/Resources/Public/Css/print.css
-		print.media = print
 		tabs = EXT:subtabs/Resources/Public/Css/Tabs.css
 	}
 
