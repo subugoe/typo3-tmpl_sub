@@ -61,7 +61,16 @@
 	}
 
 	a {
+		@extend %link-with-border-on-hover;
 		@include fa-icon('globe');
+
+		@include respond-to(medium) {
+			text-shadow: none;
+
+			@include hover {
+				background: none;
+			}
+		}
 	}
 }
 
