@@ -102,6 +102,10 @@
 		height: auto;
 		width: 100%;
 	}
+
+	@include respond-to(small) {
+		display: none;
+	}
 }
 
 .header_image-license {
