@@ -1,16 +1,3 @@
-@mixin column($unfloat-breakpoint: false) {
-	display: table-cell;
-	padding: 0 $grid;
-	vertical-align: top;
-
-	@if $unfloat-breakpoint {
-		@include respond-to($unfloat-breakpoint) {
-			display: block;
-			min-width: 100%;
-		}
-	}
-}
-
 // Show a baseline grid for easier typography debugging
 @mixin debug-grid($vertical-offset: 0) {
 	background-image: linear-gradient(transparent 50%, #fee 50%);

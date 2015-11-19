@@ -16,7 +16,8 @@ var config = {
 		sass: [
 			'./Resources/Private/Scss/**/*.scss',
 			'./Resources/Private/Scss/*.scss',
-			'!./Resources/Private/Scss/Vendor/**/*.scss'
+			'!./Resources/Private/Scss/Vendor/**/*.scss',
+			'!./Resources/Private/Scss/Extern/**/*.scss'
 		],
 		fonts: ['./Build/bower/fontawesome/fonts/*'],
 		coffee: ['./Resources/Private/CoffeeScript/*.coffee'],

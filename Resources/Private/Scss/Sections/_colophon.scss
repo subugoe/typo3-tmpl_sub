@@ -1,6 +1,6 @@
 .colophon {
 	@extend %full-width-background;
-	@include auto-color-for($alpha-color);
+	@include auto-color($alpha-color);
 	background: $alpha-color;
 	position: relative;
 }

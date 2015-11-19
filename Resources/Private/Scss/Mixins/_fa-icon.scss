@@ -1,0 +1,20 @@
+// Font Awesome icon
+@mixin fa-icon($name, $with-text: true, $right: false) {
+	&:before {
+		@extend .fa;
+		@extend .fa-#{$name};
+
+		@if $right {
+			float: right;
+			line-height: $grid;
+
+			@if $with-text {
+				margin-left: .25em;
+			}
+		} @else {
+			@if $with-text {
+				padding-right: .5em;
+			}
+		}
+	}
+}

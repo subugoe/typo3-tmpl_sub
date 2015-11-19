@@ -1,8 +1,12 @@
 %link-with-border-always {
-	border-bottom: $border-width solid;
-	margin-bottom: (-$border-width);
+	@include transition(background);
+	box-shadow: 0 -.3em 0 $link-hover-bg-color inset;
+	text-shadow: 1px  0 0 $white,
+	             1px -1px 1px $white,
+	            -1px  0 0 $white,
+	            -1px -1px 1px $white;
 
 	@include hover {
-		color: $link-hover-color;
+		background: $link-hover-bg-color;
 	}
 }

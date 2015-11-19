@@ -1,0 +1,15 @@
+@mixin text-input {
+	@include transition(background, border-color, color);
+	background: $input-bg-color;
+	border: $border-width solid $border-color;
+	border-radius: $br;
+	display: block;
+	line-height: $grid;
+	padding: (.5 * $grid) .5em;
+	width: 100%;
+
+	&:focus {
+		border-color: $link-color;
+		box-shadow: 0 0 5px rgba($input-focus-border-color, .5);
+	}
+}

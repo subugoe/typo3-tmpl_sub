@@ -1,28 +1,3 @@
-@mixin horizontal-list {
-	list-style: none;
-	padding: 0;
-
-	> li {
-		display: block;
-		float: left;
-		padding-left: .25em;
-
-		> a {
-			border-radius: $br;
-			margin-left: .25em;
-			text-align: center;
-		}
-	}
-
-	a {
-		min-width: $grid * 2;
-
-		@include hover {
-			background: $pale-color-light;
-		}
-	}
-}
-
 @mixin navigation {
 	@include horizontal-list;
 
@@ -61,20 +36,5 @@
 			color: $pale-color;
 			cursor: default;
 		}
-	}
-}
-
-@mixin breadcrumbs {
-	color: $text-color-light;
-	list-style: none;
-	padding: 0;
-
-	li {
-		display: inline;
-	}
-
-	li + li {
-		@include icon('angle-right');
-		margin-left: .5em;
 	}
 }
