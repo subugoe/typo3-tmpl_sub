@@ -23,7 +23,7 @@
 	height: (4 * $grid);
 
 	@include respond-to(medium) {
-		background: url($img-path + '/sub-logo-centered.svg') center 0 no-repeat;
+		background: url($img-path + '/sub-logo-centered.svg') center bottom no-repeat;
 		background-size: contain;
 		height: (5 * $grid);
 		margin-bottom: (.5 * $grid);
