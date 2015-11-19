@@ -1,0 +1,10 @@
+%link-with-border-on-hover {
+	@include transition(border-color);
+	border-bottom: $border-width solid transparent;
+	margin-bottom: (-$border-width);
+
+	@include hover {
+		border-color: $link-hover-color;
+		color: $link-hover-color;
+	}
+}

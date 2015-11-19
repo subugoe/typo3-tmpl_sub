@@ -5,35 +5,16 @@
 @import '../../../Build/bower/fontawesome/scss/font-awesome';
 @import '../../../Build/bower/open-sans-fontface/sass/open-sans';
 
-@import 'Mixins/common';
-@import 'Mixins/forms';
-@import 'Mixins/grid';
-@import 'Mixins/lists';
-@import 'Mixins/responsive';
+// Requires Sass glob plugin
+@import "Mixins/*";
 
 @import 'reset';
 @import 'mod';
-@import 'extends';
+
+@import "Extends/*";
+
 @import 'base';
 
-@import 'Sections/alphabet-list';
-@import 'Sections/breadcrumbs';
-@import 'Sections/colophon';
-@import 'Sections/content';
-@import 'Sections/cssstyledcontent';
-@import 'Sections/footer';
-@import 'Sections/gok';
-@import 'Sections/header';
-@import 'Sections/main';
-@import 'Sections/nav';
-@import 'Sections/news';
-@import 'Sections/pagination';
-@import 'Sections/powermail';
-@import 'Sections/search';
-@import 'Sections/sidebar';
-@import 'Sections/social';
-@import 'Sections/sponsorship';
-@import 'Sections/substaff';
-@import 'Sections/wrap';
+@import "Sections/*";
 
 @import 'Vendor/powermail';

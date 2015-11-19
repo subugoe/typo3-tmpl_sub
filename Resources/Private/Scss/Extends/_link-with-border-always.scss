@@ -1,0 +1,8 @@
+%link-with-border-always {
+	border-bottom: $border-width solid;
+	margin-bottom: (-$border-width);
+
+	@include hover {
+		color: $link-hover-color;
+	}
+}

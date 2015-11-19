@@ -1,14 +1,15 @@
 var gulp = require('gulp'),
-		sass = require('gulp-sass'),
-		notify = require('gulp-notify'),
-		scsslint = require('gulp-scss-lint'),
-		concat = require('gulp-concat'),
-		uglify = require('gulp-uglify'),
-		rename = require('gulp-rename'),
-		autoprefixer = require('gulp-autoprefixer'),
-		cached = require('gulp-cached'),
-		coffee = require('gulp-coffee'),
-		bower = require('gulp-bower');
+	autoprefixer = require('gulp-autoprefixer'),
+	bower = require('gulp-bower');
+	cached = require('gulp-cached'),
+	coffee = require('gulp-coffee'),
+	concat = require('gulp-concat'),
+	notify = require('gulp-notify'),
+	rename = require('gulp-rename'),
+	sass = require('gulp-sass'),
+	sassGlob = require('gulp-sass-glob'),
+	scsslint = require('gulp-scss-lint'),
+	uglify = require('gulp-uglify');
 
 var config = {
 	paths: {
@@ -41,6 +42,7 @@ var config = {
 
 gulp.task('sass', function () {
 	gulp.src(config.paths.sass)
+		.pipe(sassGlob())
 		.pipe(sass({
 			outputStyle: 'compressed'
 		}))
