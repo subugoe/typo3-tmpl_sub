@@ -38,6 +38,8 @@ $darkergrey: #626262;
 $bluegrey: #6e7fa0;
 $red: #f00;
 $white: #fff;
+$lightshadow: rgba(black, .07);
+$darkshadow: rgba(black, .2);
 
 // Brand colors
 $alpha-color: $darkblue;
@@ -47,11 +49,11 @@ $beta-color: $lightblue;
 $text-color: #444;
 $text-color-light: #888;
 $pale-color: #ececec;
-$shade-color: #f7f7f7;
 $border-color: #d6d6d6;
-$highlight-color: rgba(black, .05);
+$highlight-color: $lightshadow;
 $link-color: $alpha-color;
-$link-hover-bg-color: $pale-color;
+$link-hover-bg-color: $lightshadow;
+$link-hover-bg-color-dark: $darkshadow;
 $heading-color: $alpha-color;
 $input-bg-color: #fff;
 $input-focus-border-color: lighten($link-color, 20);

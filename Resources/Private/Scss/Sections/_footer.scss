@@ -10,7 +10,7 @@
 	}
 
 	a {
-		@extend %link-with-border-on-hover;
+		@include link(false);
 		white-space: nowrap;
 	}
 

@@ -16,16 +16,13 @@
 	}
 
 	a {
+		@include link(false);
 		background: $pale-color;
 		border: 0;
 		border-radius: $br;
 		display: block;
 		text-align: center;
 		width: $grid;
-
-		@include hover {
-			background: $highlight-color;
-		}
 	}
 
 	li {

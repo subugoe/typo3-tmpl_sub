@@ -14,13 +14,7 @@
 	}
 
 	a {
-		@extend %link-with-border-on-hover;
-		color: $white;
-
-		@include hover {
-			border-color: $white;
-			color: $white;
-		}
+		@include link(false, true);
 	}
 }
 

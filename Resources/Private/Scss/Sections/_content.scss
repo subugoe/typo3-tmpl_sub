@@ -23,7 +23,7 @@
 	}
 
 	a {
-		@extend %link-with-border-always;
+		@include link;
 	}
 
 	caption {
@@ -39,7 +39,7 @@
 		word-wrap: break-word;
 
 		a {
-			@extend %link-with-border-on-hover;
+			@include link(false);
 		}
 	}
 

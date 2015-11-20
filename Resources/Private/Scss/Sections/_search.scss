@@ -197,7 +197,7 @@
 	}
 
 	a {
-		@extend %link-with-border-on-hover;
+		@include link(false);
 	}
 }
 

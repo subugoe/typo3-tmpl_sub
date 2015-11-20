@@ -45,41 +45,28 @@
 .header_language {
 	float: right;
 
+	a {
+		@include link(false);
+		@include fa-icon('globe');
+	}
+
 	@include respond-to(medium) {
 		position: absolute;
 		right: (.5 * $grid);
 		top: (.5 * $grid);
 
 		a {
-			color: $white;
-
-			@include hover {
-				border-color: $white;
-				color: $white;
-			}
-		}
-	}
-
-	a {
-		@extend %link-with-border-on-hover;
-		@include fa-icon('globe');
-
-		@include respond-to(medium) {
-			text-shadow: none;
-
-			@include hover {
-				background: none;
-			}
+			@include link(false, true)
 		}
 	}
 }
 
 .header_toggle-nav {
 	@include fa-icon('bars');
+	@include link(false, true);
 	background: none;
 	border: 0;
 	border-bottom: $border-width solid transparent;
-	color: $white;
 	display: none;
 	left: (.5 * $grid);
 	outline: 0;
