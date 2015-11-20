@@ -153,17 +153,12 @@
 	}
 
 	table {
-		border-bottom: (2 * $border-width solid) $border-color;
+		border-bottom: $border-width solid $border-color;
 		margin: (-.25 * $grid) 0 (.75 * $grid);
 		width: 100%;
 	}
 
-	th {
-		border-bottom: (2 * $border-width solid) $border-color;
-		padding: (.25 * $grid) (.25 * $grid) (.25 * $grid - $border-width);
-		text-align: left;
-	}
-
+	th,
 	td {
 		padding: (.25 * $grid);
 		text-align: left;
