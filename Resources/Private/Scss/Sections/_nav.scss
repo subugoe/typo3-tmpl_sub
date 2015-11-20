@@ -1,4 +1,5 @@
 .nav {
+	// TODO: Apply class nav_link to all links, then use this for styling
 	a {
 		@include transition(color, background);
 		border-bottom: $border-width solid $border-color;
@@ -6,10 +7,37 @@
 		overflow: hidden;
 		padding: (.5 * $grid) (.5 * $grid) (.5 * $grid - $border-width);
 		text-overflow: ellipsis;
+		text-shadow: 1px  0 0 $white, 1px -1px 1px $white, -1px  0 0 $white, -1px -1px 1px $white;
+
+		&.-current {
+			background: $highlight-color;
+			color: $link-color;
+			font-weight: bold;
+			position: relative;
+		}
+
+		&.-toggle {
+			@include fa-icon('chevron-down', true, true);
+
+			&:before {
+				@include transition(color, transform);
+				color: $border-color;
+				font-size: $font-size-small;
+			}
+
+			&.-open:before {
+				// Turn chevron to point upwards
+				transform: rotate(-180deg);
+			}
+		}
 
 		@include hover {
 			background: $highlight-color;
 			color: $link-color;
+
+			&.-toggle:before {
+				color: $link-color;
+			}
 		}
 	}
 }
@@ -21,49 +49,5 @@
 	& & {
 		border-left: $border-width solid $border-color;
 		margin-left: ($grid - $border-width);
-	}
-}
-
-// .nav_item {
-// }
-
-.nav_link {
-	&.-current {
-		background: $highlight-color;
-		color: $link-color;
-		font-weight: bold;
-		position: relative;
-
-		/*
-		&:after {
-			border: (.5 * $grid) solid transparent;
-			border-right-color: $white;
-			content: '';
-			height: 0;
-			margin-top: (-.5 * $grid);
-			position: absolute;
-			right: 0;
-			top: 50%;
-			width: 0;
-
-			@include respond-to(medium) {
-				display: none;
-			}
-		}
-		*/
-	}
-
-	&.-toggle {
-		@include fa-icon('chevron-down', true, true);
-
-		&:before {
-			@include transition(transform);
-			color: $border-color;
-			font-size: $font-size-small;
-		}
-
-		&.-open:before {
-			transform: rotate(-180deg);
-		}
 	}
 }
