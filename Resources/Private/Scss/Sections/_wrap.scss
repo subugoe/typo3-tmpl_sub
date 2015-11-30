@@ -15,11 +15,13 @@
 	}
 
 	&.-show-off-canvas {
-		margin-left: 61.8%;
+		@include respond-to(medium) {
+			margin-left: 61.8%;
 
-		&:before {
-			opacity: 1;
-			z-index: 999;
+			&:before {
+				opacity: 1;
+				z-index: 999;
+			}
 		}
 	}
 }
