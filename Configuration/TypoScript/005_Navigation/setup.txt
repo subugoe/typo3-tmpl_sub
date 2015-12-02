@@ -15,7 +15,7 @@ lib.navInterface {
 		IFSUB = 1
 		IFSUB {
 			wrapItemAndSub = <li class="nav_item -has-children">|</li>
-			ATagParams = class="nav_link -toggle"
+			ATagParams = class="nav_link -toggle" aria-haspopup="true" aria-expanded="false"
 		}
 
 		ACT = 1
@@ -27,7 +27,7 @@ lib.navInterface {
 		ACTIFSUB = 1
 		ACTIFSUB {
 			wrapItemAndSub = <li class="nav_item -has-children">|</li>
-			ATagParams = class="nav_link -toggle -open"
+			ATagParams = class="nav_link -toggle -open" aria-haspopup="true" aria-expanded="true"
 		}
 
 		CUR = 1
@@ -39,7 +39,7 @@ lib.navInterface {
 		CURIFSUB = 1
 		CURIFSUB {
 			wrapItemAndSub = <li class="nav_item -has-children">|</li>
-			ATagParams = class="nav_link -current -toggle"
+			ATagParams = class="nav_link -current -toggle" aria-haspopup="true" aria-expanded="true"
 		}
 	}
 
@@ -57,7 +57,7 @@ lib.navInterface {
 		IFSUB = 1
 		IFSUB {
 			wrapItemAndSub = <li class="nav_item -has-children">|</li>
-			ATagParams = class="nav_link"
+			ATagParams = class="nav_link" aria-haspopup="true" aria-expanded="false"
 		}
 
 		ACT = 1
@@ -69,7 +69,7 @@ lib.navInterface {
 		ACTIFSUB = 1
 		ACTIFSUB {
 			wrapItemAndSub = <li class="nav_item -has-children">|</li>
-			ATagParams = class="nav_link -open"
+			ATagParams = class="nav_link -open" aria-haspopup="true" aria-expanded="true"
 		}
 
 		CUR = 1
@@ -81,7 +81,7 @@ lib.navInterface {
 		CURIFSUB = 1
 		CURIFSUB {
 			wrapItemAndSub = <li class="nav_item -has-children">|</li>
-			ATagParams = class="nav_link -current"
+			ATagParams = class="nav_link -current" aria-haspopup="true" aria-expanded="true"
 		}
 	}
 

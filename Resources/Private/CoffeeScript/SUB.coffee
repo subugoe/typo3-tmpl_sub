@@ -81,7 +81,9 @@ initMenus = ->
 		$('#' + this.id).show()
 
 	$('.nav_link.-toggle').click ->
-		$(this).toggleClass('-open')
+		$(this)
+			.toggleClass('-open')
+			.attr('aria-expanded', $(this).attr('aria-expanded') isnt 'true')
 		$nav_list = $(this).next('.nav_list')
 		if $nav_list.length
 			$('.nav_list.-secondary').not($nav_list).slideUp()
