@@ -46,7 +46,7 @@
 	@extend %clearfix;
 	background: $white;
 	font-size: $font-size-small;
-	padding: (.25 * $grid) (.5 * $grid) (.75 * $grid);
+	padding: (.25 * $grid) (.5 * $grid) $grid;
 
 	@include respond-to(medium) {
 		font-size: $font-size;
@@ -101,7 +101,7 @@
 .header_image {
 	border: solid $white;
 	border-width: 0 (.5 * $grid) $grid;
-	margin-top: (-.5 * $grid);
+	margin-top: (-.75 * $grid);
 	max-height: (10 * $grid);
 	overflow: hidden;
 	position: relative;
