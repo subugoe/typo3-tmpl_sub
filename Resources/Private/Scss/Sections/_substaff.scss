@@ -12,9 +12,11 @@
 
 .substaff_detail {
 	display: block;
+	margin-left: $grid;
+	text-indent: (-$grid);
 
 	&.-indent {
-		margin-left: $grid;
+		margin-left: (2 * $grid);
 	}
 
 	&.-name {
