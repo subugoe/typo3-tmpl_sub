@@ -59,8 +59,7 @@
 
 .colophon_top-link {
 	@include transition(opacity, right);
-
-	background: $highlight-color;
+	background: $pale-color;
 	border-radius: $br 0 0 $br;
 	bottom: (3 * $grid);
 	opacity: 0;
@@ -75,14 +74,17 @@
 
 	a {
 		@include fa-icon('chevron-up', false);
+		@include transition(background, color);
 		display: block;
 		height: (2 * $grid);
 		line-height: (2 * $grid);
 		text-align: center;
 
 		@include hover {
-			background: $beta-color;
+			@include transition(background, color);
+			background: $link-color;
 			color: $white;
+			text-shadow: 0 -1px 0 $shadow-dark;
 		}
 	}
 }

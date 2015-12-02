@@ -3,7 +3,7 @@
 	margin-left: 0 !important;
 
 	&.-fixed {
-		background: $shadow-light;
+		background: $border-color;
 		border-radius: 0 0 $br $br;
 		padding: .25em .25em 0;
 		position: fixed;
@@ -17,12 +17,19 @@
 
 	a {
 		@include link(false);
-		background: $shadow-light;
+		@include transition(background, color, text-shadow);
+		background: $pale-color;
 		border: 0;
 		border-radius: $br;
 		display: block;
 		text-align: center;
 		width: $grid;
+
+		@include hover {
+			background: $link-color;
+			color: $white;
+			text-shadow: 0 -1px 0 $shadow-dark;
+		}
 	}
 
 	li {
