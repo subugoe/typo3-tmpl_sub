@@ -60,7 +60,7 @@
 .colophon_top-link {
 	@include transition(opacity, right);
 
-	background: $pale-color;
+	background: $highlight-color;
 	border-radius: $br 0 0 $br;
 	bottom: (3 * $grid);
 	opacity: 0;
@@ -81,7 +81,8 @@
 		text-align: center;
 
 		@include hover {
-			background: $highlight-color;
+			background: $beta-color;
+			color: $white;
 		}
 	}
 }

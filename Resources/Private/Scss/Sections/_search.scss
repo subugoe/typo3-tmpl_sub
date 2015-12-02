@@ -107,16 +107,12 @@
 	}
 
 	a {
+		@include link(false);
 		@include transition(background);
 		display: block;
 		padding: (.5 * $grid);
-		overflow: hidden;
 		position: relative;
 		text-overflow: ellipsis;
-
-		@include hover {
-			background: $highlight-color;
-		}
 
 		@include respond-to(small) {
 			height: (3 * $grid);
@@ -138,7 +134,7 @@
 .search_input {
 	@include text-input;
 	@include transition(width);
-	border: $border-width inset $lightblue;
+	border: $border-width inset $highlight-color;
 	box-shadow: .1em .1em .5em rgba($black, .2) inset;
 	float: right;
 	padding-right: (2 * $grid);
@@ -149,7 +145,7 @@
 	}
 
 	&:focus {
-		border: $border-width solid $input-focus-border-color;
+		border: $border-width solid $input-border-color-focus;
 		outline: 0;
 	}
 
@@ -160,9 +156,10 @@
 
 .search_submit {
 	@include fa-icon('search', false);
+	@include transition(color);
 	background: none;
 	border: 0;
-	color: $nav-background-color;
+	color: $beta-color;
 	font-size: 1.5em;
 	height: (2 * $grid);
 	min-width: (2 * $grid);
@@ -220,11 +217,11 @@
 .search_tag {
 	&:before {
 		@include fa-icon('caret-right');
-		color: $lightblue;
+		color: $highlight-color;
 		margin-right: .5em;
 	}
 }
 
 .search_highlight {
-	background: $pale-color;
+	background: $shadow-light;
 }

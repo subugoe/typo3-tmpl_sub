@@ -44,11 +44,11 @@ $ ->
 	# To-top link
 	$(window).scroll ->
 		if $(this).scrollTop() > headerHeight
-			$('.footer_top-link:not(.-visible)').addClass('-visible')
+			$('.colophon_top-link:not(.-visible)').addClass('-visible')
 		else
-			$('.footer_top-link.-visible').removeClass('-visible')
+			$('.colophon_top-link.-visible').removeClass('-visible')
 
-		$('.pagination').each (index, e)->
+		$('.pagination').each (index, e) ->
 			scrollTop = $(window).scrollTop()
 			if scrollTop > paginationOffsets[index] and scrollTop < listBottoms[index]
 				$(this).addClass('-fixed')

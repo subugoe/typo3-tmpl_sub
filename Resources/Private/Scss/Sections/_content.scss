@@ -34,6 +34,7 @@
 	h1,
 	h2,
 	h3 {
+		color: $heading-color;
 		position: relative;
 		text-rendering: optimizeLegibility;
 		word-wrap: break-word;
@@ -45,22 +46,18 @@
 
 	h1 {
 		@include typo-scale(3);
-		color: $heading-color;
 		font-weight: 300;
-		top: 13px;
 	}
 
 	h2 {
 		@include typo-scale(2);
-		color: $heading-color;
 		font-weight: 300;
-		top: 16px;
+		margin-bottom: ($grid / 2);
 	}
 
 	h3 {
 		@include typo-scale(1);
-		color: $heading-color;
-		top: 12px;
+		margin-bottom: ($grid / 2);
 	}
 
 	h4,
@@ -90,10 +87,10 @@
 		&:before {
 			border-radius: .125em;
 			content: '';
-			background: $border-color;
+			background: $beta-color;
 			display: inline-block;
-			height: .25em;
-			margin: .7em 0 0 -1.1em;
+			height: $border-width;
+			margin: ($line-height / 2) 0 0 -1.1em;
 			position: absolute;
 			width: .5em;
 		}

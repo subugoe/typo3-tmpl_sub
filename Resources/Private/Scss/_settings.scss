@@ -28,36 +28,39 @@ $font-size: 16px;
 $font-size-small: 14px;
 $typo-scale-offset: 2px; // Adjust heading font size for different font heights
 
-// Colors
-$black: #000;
-$lightblue: #93a8cf;
-$darkblue: #1a3771;
-$lightgrey: #dee1e7;
-$darkgrey: #434343;
-$darkergrey: #626262;
-$bluegrey: #6e7fa0;
-$red: #f00;
+// Base colors
+$blue: #1a3771;
+$blue-light: #93a8cf;
+$blue-lighter: #dee1e7;
+$grey: #666;
+$grey-dark: #444;
+$grey-light: #888;
+$grey-lighter: #d6d6d6;
+$shadow-light: rgba(black, .07);
+$shadow-dark: rgba(black, .2);
 $white: #fff;
-$lightshadow: rgba(black, .07);
-$darkshadow: rgba(black, .2);
+$black: #000;
+$pale-color: lighten($blue-lighter, 6);
 
 // Brand colors
-$alpha-color: $darkblue;
-$beta-color: $lightblue;
+$alpha-color: $blue;
+$beta-color: $blue-light;
 
-// Semantic colors and backgrounds
-$text-color: #444;
-$text-color-light: #888;
-$pale-color: #ececec;
-$border-color: #d5d5d5;
-$highlight-color: $lightgrey;
-$link-color: $alpha-color;
-$link-hover-bg-color: $lightgrey;
-$link-hover-bg-color-dark: $darkshadow;
+// Semantic colors
 $heading-color: $alpha-color;
-$input-bg-color: #fff;
-$input-focus-border-color: lighten($link-color, 20);
-$button-bg-color: $link-color;
-$button-hover-bg-color: $input-focus-border-color;
-$nav-background-color: $bluegrey;
-$button-bg: linear-gradient(to bottom, lighten($lightblue, 10), $lightblue);
+$text-color: $grey-dark;
+$text-color-light: $grey-light;
+
+$border-color: $grey-lighter;
+$highlight-color: $beta-color;
+
+$link-color: $alpha-color;
+$link-hover-bg-color: $blue-lighter;
+$link-hover-bg-color-dark: $shadow-dark;
+
+$input-bg-color: $white;
+$input-border-color: $beta-color;
+$input-border-color-focus: $alpha-color;
+
+$button-bg: linear-gradient(to bottom, lighten($link-color, 10), $link-color);
+$button-bg-hover: linear-gradient(to bottom, $link-color, darken($link-color, 10));
