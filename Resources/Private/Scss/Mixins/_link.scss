@@ -1,7 +1,7 @@
 @mixin link($with-border: true, $on-dark-background: false) {
 	$bg-color: if($on-dark-background, $link-hover-bg-color-dark, $link-hover-bg-color);
 
-	@include transition(box-shadow);
+	@include transition(background);
 
 	@if $with-border {
 		box-shadow: 0 -.3em 0 $bg-color inset;
@@ -18,7 +18,7 @@
 	}
 
 	@include hover {
-		box-shadow: 0 -2em 0 $bg-color inset;
+		background: $bg-color;
 
 		@if $on-dark-background {
 			color: $white;

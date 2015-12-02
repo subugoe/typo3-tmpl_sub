@@ -3,6 +3,7 @@
 	a {
 		@include transition(color, background);
 		border-bottom: $border-width solid $border-color;
+		box-shadow: 0 1px 0 $white inset, 0 -1px 0 $white inset;
 		display: block;
 		overflow: hidden;
 		padding: (.5 * $grid) (.5 * $grid) (.5 * $grid - $border-width);
