@@ -99,6 +99,8 @@
 }
 
 .header_image {
+	// Thinking of replacing border with background/padding for consistency?
+	// Don't. Header image would touch content otherwise.
 	border: solid $white;
 	border-width: 0 (.5 * $grid) $grid;
 	margin-top: (-.75 * $grid);
