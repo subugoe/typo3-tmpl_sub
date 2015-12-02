@@ -1,7 +1,10 @@
 %header_element {
-	margin: 0 auto;
 	max-width: $site-width;
 	position: relative;
+
+	@include respond-to(medium) {
+		margin: 0 auto;
+	}
 }
 
 .header {
@@ -21,6 +24,7 @@
 	// Manually align horizontal bar in logo with center of header
 	background: $alpha-color url($img-path + '/sub-logo.svg') (.5 * $grid) ($grid - 2px) no-repeat;
 	height: (4 * $grid);
+	width: 640px; // Width of logo
 
 	@include respond-to(medium) {
 		background: url($img-path + '/sub-logo-centered.svg') center bottom no-repeat;
@@ -28,6 +32,13 @@
 		height: (5 * $grid);
 		margin-bottom: (.5 * $grid);
 		max-width: 95%;
+		width: 480px; // Width of vertical logo
+	}
+
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
 	}
 }
 
@@ -45,18 +56,20 @@
 .header_language {
 	float: right;
 
+	@include respond-to(medium) {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
 	a {
 		@include link(false);
 		@include fa-icon('globe');
-	}
+		display: inline-block;
 
-	@include respond-to(medium) {
-		position: absolute;
-		right: (.5 * $grid);
-		top: (.5 * $grid);
-
-		a {
-			@include link(false, true)
+		@include respond-to(medium) {
+			@include link(false, true);
+			padding: (.5 * $grid);
 		}
 	}
 }
@@ -68,15 +81,16 @@
 	border: 0;
 	border-bottom: $border-width solid transparent;
 	display: none;
-	left: (.5 * $grid);
+	left: 0;
 	outline: 0;
 	padding: 0;
 	position: absolute;
-	top: (.5 * $grid);
+	top: 0;
 	z-index: 99;
 
 	@include respond-to(medium) {
-		display: block;
+		display: inline-block;
+		padding: (.5 * $grid);
 	}
 
 	.-show-off-canvas & {
@@ -93,14 +107,14 @@
 	position: relative;
 	width: 100%;
 
+	@include respond-to(small) {
+		display: none;
+	}
+
 	img {
 		display: block;
 		height: auto;
 		width: 100%;
-	}
-
-	@include respond-to(small) {
-		display: none;
 	}
 }
 

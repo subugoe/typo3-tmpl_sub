@@ -10,6 +10,15 @@
 		text-overflow: ellipsis;
 		text-shadow: 1px  0 0 $white, 1px -1px 1px $white, -1px  0 0 $white, -1px -1px 1px $white;
 
+		@include hover {
+			background: $link-hover-bg-color;
+			color: $link-color;
+
+			&.-toggle:before {
+				color: $link-color;
+			}
+		}
+
 		&.-current {
 			background: $pale-color;
 			color: $link-color;
@@ -24,20 +33,15 @@
 				@include transition(color, transform);
 				color: $border-color;
 				font-size: $font-size-small;
+
+				@include hover {
+					color: $link-color;
+				}
 			}
 
 			&.-open:before {
 				// Turn chevron to point upwards
 				transform: rotate(-180deg);
-			}
-		}
-
-		@include hover {
-			background: $link-hover-bg-color;
-			color: $link-color;
-
-			&.-toggle:before {
-				color: $link-color;
 			}
 		}
 	}

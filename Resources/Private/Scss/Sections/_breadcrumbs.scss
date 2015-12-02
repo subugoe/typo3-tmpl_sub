@@ -3,6 +3,7 @@
 
 	a {
 		@include link(false);
+		display: inline-block;
 	}
 
 	li {
