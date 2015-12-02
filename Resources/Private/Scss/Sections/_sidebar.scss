@@ -40,9 +40,8 @@
 		@include typo-scale(1);
 		color: $heading-color;
 		font-family: $font-family-display;
-		margin-bottom: $grid;
+		margin-bottom: ($grid / 2);
 		position: relative;
-		top: 13px;
 	}
 
 	ul {
@@ -51,5 +50,9 @@
 
 	li {
 		margin-bottom: (.5 * $grid);
+
+		&:last-child {
+			margin: 0;
+		}
 	}
 }
