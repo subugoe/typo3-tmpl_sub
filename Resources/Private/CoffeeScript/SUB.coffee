@@ -55,7 +55,7 @@ $ ->
 			else
 				$(this).removeClass('-fixed')
 
-	$('.footer_top-link').click ->
+	$('.colophon_top-link').click ->
 		$('html, body').animate
 			scrollTop:0
 		false
