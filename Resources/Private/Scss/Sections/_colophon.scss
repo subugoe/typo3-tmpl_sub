@@ -54,7 +54,12 @@
 
 .colophon_last-change {
 	font-size: $font-size-small;
-	padding: (.5 * $grid);
+	padding: (.5 * $grid) $grid;
+	text-align: right;
+
+	@include respond-to(small) {
+		padding: (.5 * $grid);
+	}
 }
 
 .colophon_top-link {
