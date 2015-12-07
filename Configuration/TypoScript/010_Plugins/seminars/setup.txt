@@ -1,0 +1,124 @@
+plugin.tx_seminars {
+	# PID of the sysfolder where event registrations (attendances) will be stored
+	attendancesPID = 2473
+
+	# location of the template file
+	templateFile = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Seminars/Mail/e-mail.html
+
+	#showSeminarFieldsInNotificationMail
+
+	# If there are at least this many vancancies, "enough" is displayed instead of the exact number.
+	#showVacanciesThreshold = 10
+
+	# list of comma-separated names of event fields that should be displayed on the registration page (the order doesn't matter)
+	#eventFieldsOnRegistrationPage = title,price_regular,price_special,vacancies
+
+	# list of tx_seminars_attendances DB fields to show for the online registration (must not be empty)
+	#showRegistrationFields = step_counter,price,method_of_payment,lodgings,foods,checkboxes,interests,expectations,background_knowledge,known_from,notes,total_price,feuser_data,billing_address,registration_data,terms_2
+
+	# fe_users DB fields to show for in the registration form
+	#showFeUserFieldsInRegistrationForm = name,company,address,zip,city,country,telephone,email
+
+	# fe_users DB fields on the registration form that should be displayed with a label
+	#showFeUserFieldsInRegistrationFormWithLabel = telephone,email
+}
+
+plugin.tx_seminars_pi1 {
+	# location of the HTML template file
+	templateFile = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Seminars/FrontEnd/FrontEnd.html
+
+	# location of the front-end event editor template file
+#	eventEditorTemplateFile = EXT:seminars/Resources/Private/Templates/FrontEnd/EventEditor.html
+
+	# location of the template file for the registration form
+#	registrationEditorTemplateFile = EXT:seminars/Resources/Private/Templates/FrontEnd/RegistrationEditor.html
+
+	# PID of the sysfolder that contains all the event records (e.g., the starting point)
+	pages = 2474
+
+	# number of levels to recurse when accessing the starting point
+#	recursive =
+
+	# PID of the FE page that contains the event list
+	listPID = 2475
+	# PID of the FE page that contains the single view
+	detailPID = 2476
+	# PID of the FE page that contains the "my events" list
+	myEventsPID = 2481
+	# PID of the FE page that contains the seminar registration plug-in
+	registerPID = 2477
+	# PID of the thank-you page that will be displayed after a FE user has registered for an event
+	thankYouAfterRegistrationPID = 2478
+	# PID of the page that will be displayed after a FE user has unregistered from an event
+	pageToShowAfterUnregistrationPID = 2480
+	# PID of the FE page that contains the login form or onetimeaccount
+	loginPID = 2497
+
+
+# Originalwert = 1 logOutOneTimeAccountsAfterRegistration = 1
+
+	# whether to send GET parameters to the thank-you-after-registration-page-URL
+	sendParametersToThankYouAfterRegistrationPageUrl = 1
+	# Whether to send GET parameters to the thank-you-after-registration-page-URL.
+	sendParametersToPageToShowAfterUnregistrationUrl = 1
+	# whether to create FE user records for additional attendees (in addition
+	# to storing them in a text field)
+	createAdditionalAttendeesAsFrontEndUsers = 0
+
+	# UID of the sys folder in which FE users created as additional attendees in
+	# the registration form get stored
+	sysFolderForAdditionalAttendeeUsersPID =
+
+	# comma-separated list of front-end user group UIDs to which the FE users
+	# created in the registration form will be assigned
+	userGroupUidsForAdditionalAttendeesFrontEndUsers =
+
+
+
+	# PID of the page that contains the registrations list for participants
+	registrationsListPID =
+
+	# PID of the page that contains the registrations list for event managers
+	registrationsVipListPID =
+
+
+# my_events, my_vip_events,list_vip_registrations, edit_event, my_entered_events, countdown
+	what_to_display = seminar_list, single_view, topic_list, seminar_registration, list_registrations, category_list, event_headline
+
+	# comma-separated list of column names that shouldn't be displayed in the list view. title, date, time, place, vacancies, registration
+	hideColumns = subtitle, uid, event_type, language, accreditation_number, credit_points, teaser, speakers, expiry, city, country, seats, price_regular, price_special, total_price, organizers, target_groups, attached_files, status_registration, list_registrations, status, edit
+
+	# comma-separated list of field names that shouldn't be displayed in the detail view. Here:
+	#hideFields = event_type, title, subtitle, language, description, accreditation_number, credit_points, category, date, uid, time, place, room, expiry, speakers, partners, tutors, leaders, price_regular,price_board_regular,price_special,price_board_speci al,additional_information, paymentmethods, target_groups, attached_files, organizers, vacancies, deadline_registration, otherdates, eventsnextday, registration, back, image, requirements, dependencies
+
+	# whether one-time FE users will be automatically logged out after registering for an event
+	logOutOneTimeAccountsAfterRegistration = 0
+
+	# whether to send GET parameters to the thank-you-after-registration-page-URL
+		sendParametersToThankYouAfterRegistrationPageUrl = 0
+
+	# Whether to send GET parameters to the thank-you-after-registration-page-URL.
+		sendParametersToPageToShowAfterUnregistrationUrl = 1
+
+
+
+}
+
+plugin.tx_onetimeaccount_pi1.groupForNewFeUsers = 2
+plugin.tx_onetimeaccount_pi1.systemFolderForNewFeUserRecords = 2473
+
+# Übersetzungen FE-spezifischen Texte kommen hierhin (das Beispiel ist für Deutsch)
+plugin.tx_seminars_pi1._LOCAL_LANG.de {
+}
+
+# hier können Sie Dinge wie die Anzahl der Veranstaltungen pro Seite etc. ändern
+plugin.tx_seminars_pi1.listView {
+}
+
+# Übersetzungen der Texte in Mails und einige FE-Teilen kommen hierhin (das Beispiel ist für Deutsch)
+plugin.tx_seminars._LOCAL_LANG.de {
+}
+
+#Bitte setzen Sie in Ihrem TS-Setup außerdem config.language und config.locale_all, damit die Extension im Frontend die korrekte Sprache benutzt.
+
+

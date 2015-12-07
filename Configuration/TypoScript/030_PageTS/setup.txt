@@ -92,6 +92,67 @@ TCEFORM {
 		company.disabled = 1
 		title.disabled = 1
 	}
+	tx_seminars_seminars {
+		object_type.disabled = 0
+		title.disabled = 0
+		topic.disabled = 0
+		subtitle.disabled = 0
+		categories.disabled = 0
+		requirements.disabled = 1
+		dependencies.disabled = 1
+		teaser.disabled = 0
+		description.disabled = 0
+		event_type.disabled = 1
+		accreditation_number.disabled = 1
+		credit_points.disabled = 1
+		begin_date.disabled = 0
+		end_date.disabled = 0
+		begin_date_registration.disabled = 0
+		deadline_registration.disabled = 0
+		deadline_early_bird.disabled = 1
+		deadline_unregistration.disabled = 0
+		expiry.disabled = 1
+		details_page.disabled = 1
+		place.disabled = 0
+		room.disabled = 0
+		lodgings.disabled = 1
+		foods.disabled = 1
+		speakers.disabled = 1
+		partners.disabled = 1
+		tutors.disabled = 1
+		leaders.disabled = 1
+		language.disabled = 0
+		price_regular.disabled = 1
+		price_regular_early.disabled = 1
+		price_regular_board.disabled = 1
+		price_special.disabled = 1
+		price_special_early.disabled = 1
+		price_special_board.disabled = 1
+		additional_information.disabled = 1
+		checkboxes.disabled = 1
+		uses_terms_2.disabled = 1
+		payment_methods.disabled = 1
+		organizers.disabled = 0
+		organizing_partners.disabled = 1
+		event_takes_place_reminder_sent.disabled = 0
+		cancelation_deadline_reminder_sent.disabled = 1
+		needs_registration.disabled = 1
+		allows_multiple_registrations.disabled = 1
+		attendees_min.disabled = 0
+		attendees_max.disabled = 0
+		queue_size.disabled = 1
+		target_groups.disabled = 1
+		skip_collision_check.disabled = 1
+		cancelled.disabled = 0
+		notes.disabled = 1
+		attached_files.disabled = 1
+		hidden.disabled = 0
+		starttime.disabled = 0
+		endtime.disabled = 0
+		owner_feuser.disabled = 1
+		vips.disabled = 1
+		image.disabled = 1
+	}
 }
 
 TCAdefaults {
