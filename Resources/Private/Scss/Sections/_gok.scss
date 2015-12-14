@@ -1,4 +1,10 @@
-.gok {
+.gok,
+.gokContainer {
+
+	.rootNode > a {
+		@include link(false);
+	}
+
 	ul {
 		margin-left: 0;
 	}
@@ -6,6 +12,10 @@
 	li {
 		&:before {
 			display: none !important;
+		}
+
+		a {
+			@include link(false);
 		}
 	}
 }
