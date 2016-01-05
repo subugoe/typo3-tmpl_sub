@@ -32,6 +32,11 @@
 .substaff_image {
 	float: right;
 	margin: 0 0 0 $grid;
+
+	@include respond-to(medium) {
+		float: none;
+		margin: 0 0 $grid;
+	}
 }
 
 .substaff_map-link {
