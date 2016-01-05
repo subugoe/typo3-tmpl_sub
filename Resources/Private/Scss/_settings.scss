@@ -28,39 +28,38 @@ $font-size: 16px;
 $font-size-small: 14px;
 $typo-scale-offset: 2px; // Adjust heading font size for different font heights
 
-// Base colors
-$blue: #1a3771;
-$blue-light: #93a8cf;
-$blue-lighter: #dee1e7;
+$transition-duration: .2s;
+
+// Brand colors
+$brand-color: #1a3771;
+$brand-color-light: #93a8cf;
+$brand-color-lighter: lighten($brand-color, 66);
+
+// Other base colors
 $grey: #666;
 $grey-dark: #444;
 $grey-light: #888;
-$grey-lighter: #d6d6d6;
-$shadow-light: rgba(black, .07);
-$shadow-dark: rgba(black, .2);
+$grey-lighter: #ddd;
+$shadow-light: rgba(black, .08);
+$shadow-dark: rgba(black, .24);
 $white: #fff;
 $black: #000;
-$pale-color: lighten($blue-lighter, 6);
-
-// Brand colors
-$alpha-color: $blue;
-$beta-color: $blue-light;
 
 // Semantic colors
-$heading-color: $alpha-color;
+$heading-color: $brand-color;
 $text-color: $grey-dark;
 $text-color-light: $grey-light;
 
 $border-color: $grey-lighter;
-$highlight-color: $beta-color;
+$highlight-color: $brand-color-light;
 
-$link-color: $alpha-color;
-$link-hover-bg-color: $blue-lighter;
+$link-color: $brand-color;
+$link-hover-bg-color: $brand-color-lighter;
 $link-hover-bg-color-dark: $shadow-dark;
 
 $input-bg-color: $white;
-$input-border-color: $beta-color;
-$input-border-color-focus: $alpha-color;
+$input-border-color: $brand-color-light;
+$input-border-color-focus: $brand-color;
 
 $button-bg: linear-gradient(to bottom, lighten($link-color, 10), $link-color);
 $button-bg-hover: linear-gradient(to bottom, $link-color, darken($link-color, 10));

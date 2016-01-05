@@ -18,7 +18,7 @@
 		min-width: $grid * 2;
 
 		@include hover {
-			background: $pale-color-light;
+			background: $brand-color-lighter;
 		}
 	}
 }

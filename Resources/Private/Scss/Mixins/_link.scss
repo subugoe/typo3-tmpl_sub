@@ -2,9 +2,11 @@
 	$bg-color: if($on-dark-background, $link-hover-bg-color-dark, $link-hover-bg-color);
 
 	@include transition(background);
+	margin: -.05em 0;
+	padding: .05em 0;
 
 	@if $with-border {
-		box-shadow: 0 -.3em 0 $bg-color inset;
+		box-shadow: 0 -.35em 0 $bg-color inset;
 	} @else {
 		box-shadow: none;
 	}
@@ -12,13 +14,11 @@
 	@if $on-dark-background {
 		box-shadow: none;
 		color: $white;
-		text-shadow: none;
-	} @else {
-		text-shadow: 1px  0 0 $white, 1px -1px 1px $white, -1px  0 0 $white, -1px -1px 1px $white;
 	}
 
 	@include hover {
 		background: $bg-color;
+		transition-duration: $transition-duration / 2;
 
 		@if $on-dark-background {
 			color: $white;

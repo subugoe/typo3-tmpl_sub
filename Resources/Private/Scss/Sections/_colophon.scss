@@ -1,7 +1,7 @@
 .colophon {
 	@extend %full-width-background;
-	@include auto-color($alpha-color);
-	background: $alpha-color;
+	@include auto-color($brand-color);
+	background: $brand-color;
 	position: relative;
 }
 
@@ -64,7 +64,7 @@
 
 .colophon_top-link {
 	@include transition(opacity, right);
-	background: $pale-color;
+	background: $brand-color-lighter;
 	border-radius: $br 0 0 $br;
 	bottom: (3 * $grid);
 	opacity: 0;

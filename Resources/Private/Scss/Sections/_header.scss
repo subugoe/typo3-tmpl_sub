@@ -8,7 +8,7 @@
 }
 
 .header {
-	background: $alpha-color; // Prevent off-canvas nav from underlapping
+	background: $brand-color; // Prevent off-canvas nav from underlapping
 	overflow: visible;
 	position: relative;
 	z-index: 1;
@@ -22,7 +22,7 @@
 	@extend %header_element;
 	@extend %full-width-background;
 	// Manually align horizontal bar in logo with center of header
-	background: $alpha-color url($img-path + '/sub-logo.svg') (.5 * $grid) ($grid - 2px) no-repeat;
+	background: $brand-color url($img-path + '/sub-logo.svg') (.5 * $grid) ($grid - 2px) no-repeat;
 	height: (4 * $grid);
 	width: 640px; // Width of logo
 

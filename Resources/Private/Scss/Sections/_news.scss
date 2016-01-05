@@ -3,6 +3,7 @@
 	position: relative;
 
 	&:before {
+		float: none;
 		position: absolute;
 		right: -.75em;
 		top: -.1em;

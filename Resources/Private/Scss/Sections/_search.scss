@@ -50,7 +50,8 @@
 }
 
 .search_navigation {
-	box-shadow: 0 0 $grid rgba($black, .5);
+	@include drop-shadow;
+	background: $white;
 	clip: rect(-999em (8 * $grid) 999em -999em); // Prevent tabs shadow from overlapping search form
 	list-style: none;
 	padding: 0;
@@ -75,7 +76,7 @@
 	}
 
 	li {
-		background: $pale-color;
+		background: $shadow-light;
 		display: block;
 		border-bottom: $border-width solid $border-color;
 		overflow: hidden; // Prevent links from overflowing border-radius
@@ -103,6 +104,7 @@
 		&.-active {
 			background: $white;
 			color: $link-color;
+			font-weight: bold;
 		}
 	}
 
@@ -113,6 +115,11 @@
 		padding: (.5 * $grid);
 		position: relative;
 		text-overflow: ellipsis;
+
+		@include hover {
+			@include auto-color($brand-color);
+			background: $brand-color;
+		}
 
 		@include respond-to(small) {
 			height: (3 * $grid);
@@ -159,7 +166,7 @@
 	@include transition(color);
 	background: none;
 	border: 0;
-	color: $beta-color;
+	color: $brand-color-light;
 	font-size: 1.5em;
 	height: (2 * $grid);
 	min-width: (2 * $grid);

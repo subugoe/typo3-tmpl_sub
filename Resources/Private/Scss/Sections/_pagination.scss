@@ -3,7 +3,8 @@
 	margin-left: 0 !important;
 
 	&.-fixed {
-		background: $border-color;
+		@include drop-shadow;
+		background: $white;
 		border-radius: 0 0 $br $br;
 		padding: .25em .25em 0;
 		position: fixed;
@@ -17,8 +18,8 @@
 
 	a {
 		@include link(false);
-		@include transition(background, color, text-shadow);
-		background: $pale-color;
+		@include transition(background, color);
+		background: $brand-color-lighter;
 		border: 0;
 		border-radius: $br;
 		display: block;
