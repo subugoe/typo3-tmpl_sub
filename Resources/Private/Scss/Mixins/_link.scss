@@ -2,10 +2,10 @@
 	$bg-color: if($on-dark-background, $link-hover-bg-color-dark, $link-hover-bg-color);
 
 	@include transition(background);
-	padding: .05em 0;
+	padding: 1px 0;
 
 	@if $with-border {
-		box-shadow: 0 -.35em 0 $bg-color inset;
+		box-shadow: 0 -6px 0 $bg-color inset; // depends on font metrics
 	} @else {
 		box-shadow: none;
 	}
