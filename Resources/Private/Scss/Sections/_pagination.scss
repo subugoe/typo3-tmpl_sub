@@ -1,6 +1,13 @@
 .pagination {
 	@extend %clearfix;
 	margin-left: 0 !important;
+	font-size: 0;
+
+	&.-alphabet {
+		li + li {
+			margin-left: .25em;
+		}
+	}
 
 	&.-fixed {
 		@include drop-shadow;
@@ -14,27 +21,6 @@
 		@include respond-to(medium) {
 			left: 0;
 		}
-	}
-
-	.-current {
-		text-align: center;
-		width: $grid;
-	}
-
-	.-last {
-		@include fa-icon('fast-forward', false);
-	}
-
-	.-first {
-		@include fa-icon('fast-backward', false);
-	}
-
-	.-next {
-		@include fa-icon('step-forward', false);
-	}
-
-	.-previous {
-		@include fa-icon('step-backward', false);
 	}
 
 	a {
@@ -55,11 +41,49 @@
 	}
 
 	li {
+		font-size: $font-size;
+
 		display: inline-block;
-		margin: 0 0 .25em;
 
 		&:before {
 			display: none !important;
 		}
+	}
+}
+
+.pagination_numbers {
+	margin: 0 $grid 0 0 !important;
+}
+
+.pagination_item {
+	font-size: $font-size;
+	margin: 0 .25em .25em 0;
+	text-align: center;
+	display: inline-block;
+
+	&.-current {
+		display: inline-block;
+		font-weight: bold;
+		width: $grid;
+	}
+}
+
+.pagination_link {
+
+	&.-last {
+		@include fa-icon('fast-forward', false);
+	}
+
+	&.-first {
+		@include fa-icon('fast-backward', false);
+	}
+
+	&.-next {
+		@include fa-icon('step-forward', false);
+	}
+
+	&.-previous {
+		@include fa-icon('step-backward', false);
+		margin-right: $grid;
 	}
 }

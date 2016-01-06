@@ -10,51 +10,50 @@
 <!-- ###PAGE_BROWSER### begin -->
 <div class="tx-solr-pagination-page-browser tx-pagebrowse-pi1">
 <!--TYPO3SEARCH_end-->
-<ul class="pagination">
+<ol class="pagination">
 	<!-- ###ACTIVE_FIRST### begin -->
-	<li><a href="###FIRST_LINK###" class="-first"> </a></li>
+	<li class="pagination_item"><a href="###FIRST_LINK###" class="pagination_link -first"> </a></li>
 	<!-- ###ACTIVE_FIRST### end -->
 
 	<!-- ###INACTIVE_FIRST### begin --><!-- ###INACTIVE_FIRST### end -->
 
 	<!-- ###ACTIVE_PREV### begin -->
-	<li><a class="-previous" href="###PREV_LINK###"> </a></li>
+	<li class="pagination_item"><a class="pagination_link -previous" href="###PREV_LINK###"> </a></li>
 	<!-- ###ACTIVE_PREV### end -->
 
 	<!-- ###INACTIVE_PREV### begin --><!-- ###INACTIVE_PREV### end -->
-
 	<!-- ###PAGES### begin -->
-	<li class="tx-pagebrowse-pages pages">
-		<ol>
-			<!--  ###LESS_PAGES### begin -->
-			<li>…</li>
-			<!--  ###LESS_PAGES### end -->
-			<!-- ###PAGE### begin -->
-			<li class="tx-pagebrowse-page"><a href="###LINK###">###NUMBER_DISPLAY###</a></li>
-			<!-- ###PAGE### end -->
-			<!-- ###CURRENT### begin -->
-			<li class="-current">###NUMBER_DISPLAY###</li>
-			<!-- ###CURRENT### end -->
-			<!--  ###MORE_PAGES### begin -->
-			<li>...</li>
-			<!--  ###MORE_PAGES### end -->
+	<li>
+
+		<ol class="pagination_numbers">
+				<!--  ###LESS_PAGES### begin -->
+			<li class="pagination_item">…</li>
+				<!--  ###LESS_PAGES### end -->
+
+				<!-- ###PAGE### begin -->
+			<li class="pagination_item"><a href="###LINK###">###NUMBER_DISPLAY###</a></li>
+				<!-- ###PAGE### end -->
+
+				<!-- ###CURRENT### begin -->
+			<li class="pagination_item -current">###NUMBER_DISPLAY###</li>
+				<!-- ###CURRENT### end -->
+
+				<!--  ###MORE_PAGES### begin -->
+			<li class="pagination_item">…</li>
+				<!--  ###MORE_PAGES### end -->
 		</ol>
 	</li>
 	<!-- ###PAGES### end -->
 
-	<!-- ###ACTIVE_NEXT### begin -->
-	<li class="tx-pagebrowse-next"><a href="###NEXT_LINK###" class="-next"> </a></li>
-	<!-- ###ACTIVE_NEXT### end -->
+	<!-- ###ACTIVE_NEXT### begin --><li class="pagination_item"><a href="###NEXT_LINK###" class="pagination_link -next"> </a></li><!-- ###ACTIVE_NEXT### end -->
 
 	<!-- ###INACTIVE_NEXT### begin --><!-- ###INACTIVE_NEXT### end -->
 
-	<!-- ###ACTIVE_LAST### begin -->
-	<li><a href="###LAST_LINK###" class="-last"> </a></li>
-	<!-- ###ACTIVE_LAST### end -->
+	<!-- ###ACTIVE_LAST### begin --><li class="pagination_item"><a href="###LAST_LINK###" class="pagination_link -last"> </a></li><!-- ###ACTIVE_LAST### end -->
 
 	<!-- ###INACTIVE_LAST### begin --><!-- ###INACTIVE_LAST### end -->
 
-</ul>
+</ol>
 <!--TYPO3SEARCH_begin-->
 </div>
 <!-- ###PAGE_BROWSER### end -->
