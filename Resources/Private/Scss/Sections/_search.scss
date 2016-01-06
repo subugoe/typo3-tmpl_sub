@@ -251,3 +251,9 @@
 .search_highlight {
 	background: $shadow-light;
 }
+
+#tx-solr-search-form-pi-results .tx-solr-q {
+	display: inline-block;
+	width: $search-width;
+
+}
