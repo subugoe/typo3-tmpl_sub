@@ -16,6 +16,27 @@
 		}
 	}
 
+	.-current {
+		text-align: center;
+		width: $grid;
+	}
+
+	.-last {
+		@include fa-icon('fast-forward', false);
+	}
+
+	.-first {
+		@include fa-icon('fast-backward', false);
+	}
+
+	.-next {
+		@include fa-icon('step-forward', false);
+	}
+
+	.-previous {
+		@include fa-icon('step-backward', false);
+	}
+
 	a {
 		@include link(false);
 		@include transition(background, color);
