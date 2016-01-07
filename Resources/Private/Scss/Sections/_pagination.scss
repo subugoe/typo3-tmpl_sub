@@ -7,10 +7,13 @@
 		li + li {
 			margin-left: .25em;
 		}
+
+		li {
+			box-shadow: .1em .1em 0 .1em $brand-color;
+		}
 	}
 
 	&.-fixed {
-		@include drop-shadow;
 		background: $white;
 		border-radius: 0 0 $br $br;
 		padding: .25em .25em 0;
