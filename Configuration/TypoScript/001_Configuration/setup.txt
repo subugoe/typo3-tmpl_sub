@@ -428,3 +428,29 @@ plugin.tx_powermail {
 		}
 	}
 }
+
+tt_content {
+	bullets {
+		20 {
+			split {
+				1 {
+					parseFunc = < lib.parseFunc
+					htmlSpecialChars >
+				}
+				2 {
+					parseFunc = < lib.parseFunc
+					htmlSpecialChars >
+				}
+			}
+		}
+	}
+
+	table {
+		20 {
+			innerStdWrap {
+				parseFunc = < lib.parseFunc
+				htmlSpecialChars >
+			}
+		}
+	}
+}
