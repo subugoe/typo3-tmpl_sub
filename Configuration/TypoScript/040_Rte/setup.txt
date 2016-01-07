@@ -1,4 +1,5 @@
 RTE.default {
+	HTMLparser_db.tags.span.allowedAttribs := addToList(itemscope,itemtype,itemprop)
 	buttons {
 		formatblock {
 			removeItems = h1,h6,address,div,pre,blockquote
@@ -52,6 +53,7 @@ RTE.default {
 			tags.i.remap = em
 			htmlSpecialChars = 0
 		}
+		HTMLparser_db.tags.span.allowedAttribs := addToList(itemscope,itemtype,itemprop)
 	}
 }
 RTE.config.tt_content.bodytext.proc.allowedClasses = indent, boldFont, italicFont
