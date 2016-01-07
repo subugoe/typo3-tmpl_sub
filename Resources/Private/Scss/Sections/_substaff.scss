@@ -43,6 +43,17 @@
 	@include fa-icon('map-marker', false);
 }
 
+.sidebar {
+	.substaff_map-link {
+		position: absolute;
+		right: ($grid / -2);
+
+		@include respond-to(small) {
+			position: relative;
+		}
+	}
+}
+
 .substaff_more-link {
 	text-align: center;
 	border-top: $border-width solid $border-color;
