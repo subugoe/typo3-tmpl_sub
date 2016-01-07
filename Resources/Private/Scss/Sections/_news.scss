@@ -1,4 +1,5 @@
-.news_more {
+.news_more,
+.news .more {
 	@include fa-icon('angle-right', true, true);
 	position: relative;
 
@@ -10,10 +11,17 @@
 	}
 }
 
-.news_teaser-text {
+.news_teaser-text,
+.news .teaser-text {
 	margin-bottom: $grid;
 
 	p {
 		display: inline;
+	}
+}
+
+.news {
+	.header {
+		background: none;
 	}
 }
