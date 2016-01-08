@@ -19,8 +19,62 @@
 	}
 }
 
+.search_close {
+	@include button;
+	@include fa-icon('close', false);
+	background: none;
+	bottom: ($grid / 2);
+	color: $text-color-light;
+	padding: 0;
+	position: absolute;
+	right: ($grid / 2);
+
+	@include hover {
+		background: none;
+		color: $link-color;
+	}
+}
+
+.search_content {
+	background: $white;
+	border-radius: 0 $br $br;
+	box-shadow: 0 0 $grid rgba($black, .5);
+	display: none;
+	padding: ($grid * 3) $grid $grid;
+	position: absolute;
+	top: 0;
+	width: 100%;
+
+	@include respond-to(medium) {
+		border-radius: 0 0 $br $br;
+	}
+
+	&.-visible {
+		display: block;
+	}
+
+	a {
+		@include link(false);
+	}
+}
+
 .search_description {
 	font-weight: bold;
+}
+
+.search_form {
+	display: none;
+	padding: (.5 * $grid) (.5 * $grid) 0;
+	position: relative;
+	z-index: 9;
+
+	&.-visible {
+		display: block;
+	}
+}
+
+.search_highlight {
+	background: $shadow-light;
 }
 
 .search_hint {
@@ -32,6 +86,29 @@
 
 	.-show-popup & {
 		@extend .sr-only;
+	}
+}
+
+.search_input {
+	@include text-input;
+	@include transition(width);
+	border: $border-width inset $highlight-color;
+	box-shadow: .1em .1em .5em rgba($black, .2) inset;
+	float: right;
+	padding-right: (2 * $grid);
+	width: (9 * $grid);
+
+	@include respond-to(medium) {
+		width: 100%;
+	}
+
+	&:focus {
+		border: $border-width solid $input-border-color-focus;
+		outline: 0;
+	}
+
+	.-show-popup & {
+		width: 100%;
 	}
 }
 
@@ -59,18 +136,8 @@
 	display: block;
 }
 
-.search_popup {
-	@include transition(opacity, visibility);
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	visibility: hidden;
-
-	.-show-popup & {
-		opacity: 1;
-		visibility: visible;
-	}
+.search_label-link {
+	float: right;
 }
 
 .search_navigation {
@@ -151,37 +218,17 @@
 	}
 }
 
-.search_form {
-	display: none;
-	padding: (.5 * $grid) (.5 * $grid) 0;
-	position: relative;
-	z-index: 9;
-
-	&.-visible {
-		display: block;
-	}
-}
-
-.search_input {
-	@include text-input;
-	@include transition(width);
-	border: $border-width inset $highlight-color;
-	box-shadow: .1em .1em .5em rgba($black, .2) inset;
-	float: right;
-	padding-right: (2 * $grid);
-	width: (9 * $grid);
-
-	@include respond-to(medium) {
-		width: 100%;
-	}
-
-	&:focus {
-		border: $border-width solid $input-border-color-focus;
-		outline: 0;
-	}
+.search_popup {
+	@include transition(opacity, visibility);
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	visibility: hidden;
 
 	.-show-popup & {
-		width: 100%;
+		opacity: 1;
+		visibility: visible;
 	}
 }
 
@@ -206,33 +253,6 @@
 	}
 }
 
-.search_content {
-	background: $white;
-	border-radius: 0 $br $br;
-	box-shadow: 0 0 $grid rgba($black, .5);
-	display: none;
-	padding: ($grid * 3) $grid $grid;
-	position: absolute;
-	top: 0;
-	width: 100%;
-
-	@include respond-to(medium) {
-		border-radius: 0 0 $br $br;
-	}
-
-	&.-visible {
-		display: block;
-	}
-
-	a {
-		@include link(false);
-	}
-}
-
-.search_label-link {
-	float: right;
-}
-
 .search_subjects,
 .search_tags {
 	margin-left: $grid;
@@ -245,41 +265,5 @@
 		@include fa-icon('caret-right');
 		color: $highlight-color;
 		margin-right: .5em;
-	}
-}
-
-.search_highlight {
-	background: $shadow-light;
-}
-
-#tx-solr-search-form-pi-results .tx-solr-q {
-	display: inline-block;
-	width: $search-width;
-
-}
-
-#pazpar2 {
-
-	.pz2-fieldContainer {
-		float: none;
-	}
-
-	.pz2-searchField {
-		@include text-input();
-
-		display: inline-block;
-		font-size: $font-size;
-		height: inherit;
-		width: $search-width;
-	}
-
-	.pz2-submitButton {
-		@include button();
-
-		height: inherit;
-	}
-
-	.pz2-textFieldLabel {
-		margin: ($grid * .5) 0;
 	}
 }

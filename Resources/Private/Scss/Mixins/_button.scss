@@ -17,5 +17,6 @@
 
 	@include hover {
 		background: $button-bg-hover;
+		transition-duration: $transition-duration / 2;
 	}
 }
