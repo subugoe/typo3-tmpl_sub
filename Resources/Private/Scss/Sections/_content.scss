@@ -195,27 +195,36 @@
 	}
 
 	dl {
-		clear: both;
 		float: left;
-	}
-
-	dt {
-		color: $text-color-light;
-		float: left;
-		font-weight: bold;
-		width: 12em;
+		width: 100%;
 
 		@include respond-to(small) {
 			float: none;
+		}
+	}
+
+	dt {
+		clear: left;
+		color: $text-color-light;
+		float: left;
+		font-weight: bold;
+		padding-right: .5em;
+		width: 38.2%;
+
+		@include respond-to(small) {
+			float: none;
+			padding-right: 0;
 			width: auto;
 		}
 	}
 
 	dd {
-		padding-left: 12em;
+		float: left;
+		width: 61.8%;
 
 		@include respond-to(small) {
-			padding-left: 0;
+			float: none;
+			width: auto;
 		}
 	}
 }
