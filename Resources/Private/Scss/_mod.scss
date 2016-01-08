@@ -1,3 +1,13 @@
+// This is toggled via JavaScript on mobile devices
+.mobile-only {
+	display: none;
+}
+
+// Used for digit grouping
+.space {
+	margin-left: .2em;
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -7,8 +17,4 @@
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 	border: 0;
-}
-
-.mobile-only {
-	display: none;
 }
