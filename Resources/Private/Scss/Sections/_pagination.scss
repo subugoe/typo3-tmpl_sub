@@ -1,25 +1,20 @@
 .pagination {
 	@extend %clearfix;
+	background: $white;
+	clear: both;
 	margin-left: 0 !important;
-	font-size: 0;
-
-	&.-alphabet {
-		li + li {
-			margin-left: .25em;
-		}
-	}
 
 	&.-fixed {
 		@include drop-shadow;
-		background: $white;
 		border-radius: 0 0 $br $br;
-		padding: .25em .25em 0;
+		margin-left: -.25em !important;
+		padding: .25em 0 0 .25em;
 		position: fixed;
-		top: (-$border-width);
+		top: 0;
 		z-index: 1;
 
 		@include respond-to(medium) {
-			left: 0;
+			left: .25em;
 		}
 	}
 
@@ -41,26 +36,26 @@
 	}
 
 	li {
-		font-size: $font-size;
-
+		float: left;
 		display: inline-block;
+		margin: 0 .25em .25em 0;
+		text-align: center;
 
 		&:before {
-			display: none !important;
+			display: none !important; // Clear list bullet
 		}
 	}
 }
 
 .pagination_numbers {
-	margin: 0 $grid 0 0 !important;
+	margin: 0 1.25em 0 0 !important;
+
+	li {
+		margin-bottom: 0;
+	}
 }
 
 .pagination_item {
-	font-size: $font-size;
-	margin: 0 .25em .25em 0;
-	text-align: center;
-	display: inline-block;
-
 	&.-current {
 		display: inline-block;
 		font-weight: bold;
