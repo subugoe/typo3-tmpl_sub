@@ -41,7 +41,6 @@ $ ->
 		$list = $(this).siblings('ol, ul')
 		listBottoms.push if $list.length then ($list.offset().top + $list.outerHeight()) - 99 else 0
 
-	# To-top link
 	$(window).scroll ->
 		if $(this).scrollTop() > headerHeight
 			$('.colophon_top-link:not(.-visible)').addClass('-visible')
@@ -57,7 +56,7 @@ $ ->
 
 	$('.colophon_top-link').click ->
 		$('html, body').animate
-			scrollTop:0
+			scrollTop: 0
 		false
 
 	# Alphabet pagination
@@ -84,11 +83,14 @@ initMenus = ->
 		$(this)
 			.toggleClass('-open')
 			.attr('aria-expanded', $(this).attr('aria-expanded') isnt 'true')
+
 		$nav_list = $(this).next('.nav_list')
-		if $nav_list.length
-			$('.nav_list.-secondary').not($nav_list).slideUp()
-			$nav_list.slideToggle();
-			return false
+		$('.nav_link').not(this).removeClass('-open')
+		$('.nav_list.-secondary')
+			.not($nav_list)
+			.slideUp()
+		$nav_list.slideToggle();
+		return false
 
 mobilecheck = ->
 	check = false

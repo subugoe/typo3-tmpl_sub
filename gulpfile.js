@@ -52,16 +52,16 @@ gulp.task('sass', function () {
 		.pipe(autoprefixer(
 			config.autoprefixer
 		))
-		.pipe(gulp.dest('./Resources/Public/Css/'))
+		.pipe(gulp.dest('./Resources/Public/Css/'));
 });
 
-gulp.task('lint', function () {
+gulp.task('sass-lint', function () {
 	gulp.src(config.paths.sass)
 		.pipe(cached('scsslint'))
 		.pipe(scsslint({
 			'config': 'Build/.scss-lint.yml',
 			'maxBuffer': 9999999
-		}))
+		}));
 });
 
 gulp.task('coffee', function () {
@@ -70,36 +70,37 @@ gulp.task('coffee', function () {
 		.pipe(gulp.dest('./Resources/Private/Js/'))
 });
 
+gulp.task('uglify', function () {
+	gulp.src(config.paths.javascript)
+		.pipe(concat('production.js'))
+		.pipe(uglify())
+		.pipe(rename('Site.min.js'))
+		.pipe(gulp.dest('Resources/Public/Js/'));
+});
+
 gulp.task('compile', ['bower'], function () {
-	gulp.start('copy-fonts', 'lint', 'sass', 'coffee', 'uglify')
+	gulp.start('copy-fonts', 'sass-lint', 'sass', 'coffee', 'uglify');
 });
 
 gulp.task('prod', ['bower'], function () {
-	gulp.start('copy-fonts', 'sass', 'coffee', 'uglify')
+	gulp.start('copy-fonts', 'sass', 'coffee', 'uglify');
 });
 
 gulp.task('watch', function () {
-	gulp.watch(config.paths.sass, ['compile'])
+	gulp.watch(config.paths.sass, ['sass-lint', 'sass']);
+	gulp.watch(config.paths.coffee, ['coffee', 'uglify']);
 });
 
 gulp.task('bower', function () {
 	return bower()
-			.pipe(gulp.dest('Build/bower/'))
-});
-
-gulp.task('uglify', function () {
-	gulp.src(config.paths.javascript)
-			.pipe(concat('production.js'))
-			.pipe(uglify())
-			.pipe(rename('Site.min.js'))
-			.pipe(gulp.dest('Resources/Public/Js/'))
+		.pipe(gulp.dest('Build/bower/'));
 });
 
 gulp.task('copy-fonts', function () {
 	return gulp.src(config.paths.fonts)
-			.pipe(gulp.dest('Resources/Public/Fonts/fontawesome/'));
+		.pipe(gulp.dest('Resources/Public/Fonts/fontawesome/'));
 });
 
 gulp.task('default', function () {
-	gulp.start('lint', 'compile', 'watch')
+	gulp.start('compile', 'watch')
 });
