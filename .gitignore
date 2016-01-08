@@ -1,6 +1,7 @@
 .sass-cache
 node_modules
-
+Resources/Public/Css/main.css
+Resources/Public/Js/Site.min.js
 .gradle
 Build/bower
 Resources/Private/Js/bootstrap.min.js

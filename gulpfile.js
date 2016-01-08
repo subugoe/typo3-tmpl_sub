@@ -23,8 +23,6 @@ var config = {
 		coffee: ['./Resources/Private/CoffeeScript/*.coffee'],
 		javascript: [
 			'./Build/bower/modernizr/modernizr.js',
-			'./Build/bower/bootstrap-sass-twbs/assets/javascripts/bootstrap.js',
-			'./Build/bower/jasny-bootstrap/js/offcanvas.js',
 			'./Resources/Private/Js/*.js'
 		]
 	},
@@ -72,8 +70,12 @@ gulp.task('coffee', function () {
 		.pipe(gulp.dest('./Resources/Private/Js/'))
 });
 
-gulp.task('compile', function () {
-	gulp.start('bower', 'copy-fonts', 'lint', 'sass', 'coffee', 'uglify')
+gulp.task('compile', ['bower'], function () {
+	gulp.start('copy-fonts', 'lint', 'sass', 'coffee', 'uglify')
+});
+
+gulp.task('prod', ['bower'], function () {
+	gulp.start('copy-fonts', 'sass', 'coffee', 'uglify')
 });
 
 gulp.task('watch', function () {
@@ -96,11 +98,6 @@ gulp.task('uglify', function () {
 gulp.task('copy-fonts', function () {
 	return gulp.src(config.paths.fonts)
 			.pipe(gulp.dest('Resources/Public/Fonts/fontawesome/'));
-});
-
-gulp.task('copy-bootstrap-js', function () {
-	return gulp.src('./Build/bower/bootstrap-sass-twbs/assets/javascripts/bootstrap.min.js')
-		.pipe(gulp.dest('Resources/Private/Js/'));
 });
 
 gulp.task('default', function () {
