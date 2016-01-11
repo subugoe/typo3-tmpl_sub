@@ -78,12 +78,12 @@ gulp.task('uglify', function () {
 		.pipe(gulp.dest('Resources/Public/Js/'));
 });
 
-gulp.task('compile', ['bower'], function () {
-	gulp.start('copy-fonts', 'sass-lint', 'sass', 'coffee', 'uglify');
+gulp.task('compile', ['bower', 'coffee', 'sass'], function () {
+	gulp.start('copy-fonts', 'sass-lint', 'uglify');
 });
 
-gulp.task('prod', ['bower'], function () {
-	gulp.start('copy-fonts', 'sass', 'coffee', 'uglify');
+gulp.task('prod', ['bower', 'coffee', 'sass'], function () {
+	gulp.start('copy-fonts', 'uglify');
 });
 
 gulp.task('watch', function () {

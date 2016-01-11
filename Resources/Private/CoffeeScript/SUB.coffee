@@ -7,7 +7,7 @@ $ ->
 		$('.mobile-only').show()
 
 	# TODO: What is page-1616?
-	$("aside.infocontent").hide()  if document.getElementById('page-1616') and window.location.search.indexOf("tx_solr") is -1
+	$('aside.infocontent').hide()  if document.getElementById('page-1616') and window.location.search.indexOf('tx_solr') is -1
 
 	# Remove border from images with link
 	$('a img').parent('a').css('border-bottom', 0)
@@ -16,15 +16,15 @@ $ ->
 
 	# Stats for GOK Browsing
 	$('.tree li').click = (data) ->
-		if typeof piwikTracker isnt "undefined"
-			trackingData = "GOK" + document.location.pathname + $(".GOKID", this).text()
+		if typeof piwikTracker isnt 'undefined'
+			trackingData = 'GOK' + document.location.pathname + $('.GOKID', this).text()
 			piwikTracker.trackPageView(trackingData)
 
-	if location.search.substring(1, 8) is "tx_solr" and typeof(piwikTracker) isnt "undefined"
-		searchTerm = location.search.split("&")[0].split("=")[1]
-		td = "Searchterm/" + searchTerm
+	if location.search.substring(1, 8) is 'tx_solr' and typeof(piwikTracker) isnt 'undefined'
+		searchTerm = location.search.split('&')[0].split('=')[1]
+		td = 'Searchterm/' + searchTerm
 		piwikTracker.trackPageView(td)
-		piwikTracker.setCustomVariable( 1, "Suchbegriff", searchTerm, "page")
+		piwikTracker.setCustomVariable( 1, 'Suchbegriff', searchTerm, 'page')
 
 	$('.header_toggle-nav').click ->
 		$('.wrap').toggleClass('-show-off-canvas')
