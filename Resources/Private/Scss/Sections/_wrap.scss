@@ -7,6 +7,7 @@
 		@include transition(opacity, z-index);
 		background: rgba($black, .5);
 		content: '';
+		cursor: pointer;
 		height: 100%;
 		opacity: 0;
 		position: fixed;
@@ -16,6 +17,7 @@
 
 	&.-show-off-canvas {
 		@include respond-to(medium) {
+			cursor: pointer;
 			margin-left: 61.8%;
 
 			&:before {
