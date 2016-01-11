@@ -82,8 +82,8 @@ gulp.task('compile', ['bower', 'coffee', 'sass'], function () {
 	gulp.start('copy-fonts', 'sass-lint', 'uglify');
 });
 
-gulp.task('prod', ['bower', 'coffee', 'sass'], function () {
-	gulp.start('copy-fonts', 'uglify');
+gulp.task('prod', ['copy-fonts', 'coffee', 'sass'], function () {
+	gulp.start('uglify');
 });
 
 gulp.task('watch', function () {
@@ -96,7 +96,7 @@ gulp.task('bower', function () {
 		.pipe(gulp.dest('Build/bower/'));
 });
 
-gulp.task('copy-fonts', function () {
+gulp.task('copy-fonts', ['bower'], function () {
 	return gulp.src(config.paths.fonts)
 		.pipe(gulp.dest('Resources/Public/Fonts/fontawesome/'));
 });
