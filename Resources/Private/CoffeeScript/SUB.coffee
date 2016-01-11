@@ -70,6 +70,9 @@ $ ->
 			scrollTop: $('#' + id).offset().top - offset
 		false
 
+	$('a[href$=pdf]').click ->
+		window.open($(this).attr('href'))
+		false
 
 initMenus = ->
 	$('.nav_list.-secondary').hide()
