@@ -46,7 +46,7 @@
 	@extend %clearfix;
 	background: $white;
 	font-size: $font-size-small;
-	padding: (.25 * $grid) (.5 * $grid) $grid;
+	padding: round(.25 * $grid) (.5 * $grid) $grid;
 
 	@include respond-to(medium) {
 		font-size: $font-size;
@@ -65,10 +65,10 @@
 	a {
 		@include link(false);
 		@include fa-icon('globe');
-		display: inline-block;
 
 		@include respond-to(medium) {
 			@include link(false, true);
+			display: inline-block;
 			padding: (.5 * $grid);
 		}
 	}
@@ -103,7 +103,7 @@
 	// Don't. Header image would touch content otherwise.
 	border: solid $white;
 	border-width: 0 (.5 * $grid) $grid;
-	margin-top: (-.75 * $grid);
+	margin-top: round(-.75 * $grid);
 	max-height: (10 * $grid);
 	overflow: hidden;
 	position: relative;
