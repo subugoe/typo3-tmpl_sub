@@ -1,7 +1,8 @@
 <?php
 
-if (!defined('TYPO3_MODE'))
-	die('Access denied.');
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
+}
 
 // Configuration
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/001_Configuration', 'SUB Configuration');
@@ -15,53 +16,53 @@ if (!defined('TYPO3_MODE'))
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/WecMap', 'SUB Map Configuration');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/Powermail', 'SUB Powermail Configuration');
 
-$tempColumns = array(
-		'copyright' => array(
-				'exclude' => '1',
-				'l10n_mode' => '',
-				'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright',
-				'config' => array(
-						'type' => 'input',
-						'size' => '30',
-				)
-		),
-		'copyright_url' => array(
-				'exclude' => 1,
-				'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright_url',
-				'config' => array(
-						'type' => 'input',
-						'size' => '30',
-						'wizards' => array(
-								'_PADDING' => 2,
-								'link' => array(
-										'type' => 'popup',
-										'title' => 'Link',
-										'icon' => 'link_popup.gif',
-										'script' => 'browse_links.php?mode=wizard',
-										'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
-								)
-						)
-				)
-		),
-		'wiki_commons' => array(
-				'exclude' => '1',
-				'l10n_mode' => '',
-				'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.wiki_commons',
-				'config' => array(
-						'type' => 'text',
-						'rows' => '6',
-						'cols' => '30',
-				)
-		),
-		'creative_commons' => array(
-				'exclude' => '1',
-				'l10n_mode' => '',
-				'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.creative_commons',
-				'config' => array(
-						'type' => 'check',
-				)
-		)
-);
+$tempColumns = [
+        'copyright' => [
+                'exclude' => '1',
+                'l10n_mode' => '',
+                'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright',
+                'config' => [
+                        'type' => 'input',
+                        'size' => '30',
+                ]
+        ],
+        'copyright_url' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright_url',
+                'config' => [
+                        'type' => 'input',
+                        'size' => '30',
+                        'wizards' => [
+                                '_PADDING' => 2,
+                                'link' => [
+                                        'type' => 'popup',
+                                        'title' => 'Link',
+                                        'icon' => 'link_popup.gif',
+                                        'script' => 'browse_links.php?mode=wizard',
+                                        'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+                                ]
+                        ]
+                ]
+        ],
+        'wiki_commons' => [
+                'exclude' => '1',
+                'l10n_mode' => '',
+                'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.wiki_commons',
+                'config' => [
+                        'type' => 'text',
+                        'rows' => '6',
+                        'cols' => '30',
+                ]
+        ],
+        'creative_commons' => [
+                'exclude' => '1',
+                'l10n_mode' => '',
+                'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.creative_commons',
+                'config' => [
+                        'type' => 'check',
+                ]
+        ]
+];
 
 // Add fields to sys_file_metadata
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_metadata', $tempColumns);
@@ -79,11 +80,11 @@ $TCA['sys_file_metadata']['columns']['copyright']['config']['eval'] = 'required'
  * Register Custom Fluid Content Element
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
-		array(
-				'Social Infobox',
-				'tmplsub_socialinfobox'
-		),
-		'CType'
+        [
+                'Social Infobox',
+                'tmplsub_socialinfobox'
+        ],
+        'CType'
 );
 /**
  * Prepare TCA for Custom Fluid Content Element
@@ -94,7 +95,7 @@ $TCA['tt_content']['types']['tmplsub_socialinfobox']['showitem'] = $TCA['tt_cont
 $TCA['be_users']['columns']['email']['config']['eval'] = 'trim,required';
 $TCA['be_users']['columns']['realName']['config']['eval'] = 'trim,required';
 $TCA['be_groups']['columns']['description']['config']['eval'] = 'required';
-$TCA['be_groups']['columns']['lockToDomain']['config']['disabled'] = TRUE;
+$TCA['be_groups']['columns']['lockToDomain']['config']['disabled'] = true;
 $TCA['tt_content']['columns']['header']['config']['eval'] = 'trim,required';
 $TCA['tt_content']['columns']['altText']['config']['eval'] = 'trim,required';
 $TCA['tt_content']['columns']['titleText']['config']['eval'] = 'trim,required';

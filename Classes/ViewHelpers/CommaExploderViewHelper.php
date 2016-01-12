@@ -27,40 +27,38 @@ namespace Subugoe\TmplSub\ViewHelpers;
 /**
  * Explodes a commaseparated List and returns an array
  */
-class CommaExploderViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class CommaExploderViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
+{
+    /**
+     * Returns an array out of a commaseparated list of integers
+     *
+     * @param string $commaList Commaseparated list of integeraluel
+     * @return array
+     */
+    public function render($commaList)
+    {
+        $intVals = [];
+        if (strpos($commaList, ',')) {
+            $intVals = explode(',', $commaList);
 
-	/**
-	 * Returns an array out of a commaseparated list of integers
-	 *
-	 * @param string $commaList Commaseparated list of integeraluel
-	 * @return array
-	 */
-	public function render($commaList) {
-
-		$intVals = Array();
-		if (strpos($commaList, ',')) {
-			$intVals = explode(',', $commaList);
-
-				// only values larger than zero will be included
-			$intVals = array_filter($intVals, function ($matches) {
-				if (intval($matches) > 0) {
-					return TRUE;
-				}
-			});
-				// remove spaces
-			array_walk($intVals, function($val, $key) use(&$intVals){
-				$intVals[$key] = trim($val);
-			});
-
-		} elseif ((int) $commaList > 0){
-			array_push($intVals, $commaList);
-		}
-		if (count($intVals) > 0) {
-			$return = $intVals;
-		} else {
-			$return = NULL;
-		}
-		return $return;
-	}
-
+                // only values larger than zero will be included
+            $intVals = array_filter($intVals, function ($matches) {
+                if (intval($matches) > 0) {
+                    return true;
+                }
+            });
+                // remove spaces
+            array_walk($intVals, function ($val, $key) use (&$intVals) {
+                $intVals[$key] = trim($val);
+            });
+        } elseif ((int) $commaList > 0) {
+            array_push($intVals, $commaList);
+        }
+        if (count($intVals) > 0) {
+            $return = $intVals;
+        } else {
+            $return = null;
+        }
+        return $return;
+    }
 }

@@ -28,24 +28,23 @@ namespace Subugoe\TmplSub\ViewHelpers\Widget;
 /**
  * @author Ingo Pfennigstorf <i,pfennigstorf@gmail.com>
  */
-class AzViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper {
+class AzViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper
+{
+    /**
+     * @var \Subugoe\TmplSub\ViewHelpers\Widget\Controller\AzController
+     * @inject
+     */
+    protected $controller;
 
-	/**
-	 * @var \Subugoe\TmplSub\ViewHelpers\Widget\Controller\AzController
-	 * @inject
-	 */
-	protected $controller;
-
-	/**
-	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects
-	 * @param string $as
-	 * @param array $configuration
-	 * @return string
-	 */
-	public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects, array $configuration = array('titleField' => 'title')) {
-
-		return $this->initiateSubRequest();
-	}
-
+    /**
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects
+     * @param string $as
+     * @param array $configuration
+     * @return string
+     */
+    public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects, array $configuration = ['titleField' => 'title'])
+    {
+        return $this->initiateSubRequest();
+    }
 }
