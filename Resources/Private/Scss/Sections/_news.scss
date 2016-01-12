@@ -23,5 +23,6 @@
 .news {
 	.header {
 		background: none;
+		padding-top: 0; // otherwise inherits padding from site header
 	}
 }
