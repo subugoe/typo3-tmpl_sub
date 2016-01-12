@@ -4,8 +4,8 @@
 	width: (10 * $grid);
 
 	@include respond-to(small) {
-		border-top: 3px solid lighten($border-color, 5);
-		padding: ($grid - 3px) 0 0;
+		border-top: $border-width solid $border-color;
+		padding: ($grid - $border-width) 0 0;
 	}
 
 	// TODO: Change class names
@@ -14,7 +14,7 @@
 	}
 
 	> div {
-		border-left: $border-width solid lighten($border-color, 5);
+		border-left: $border-width solid $border-color;
 		padding-left: ($grid - $border-width);
 
 		@include respond-to(small) {

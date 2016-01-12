@@ -6,7 +6,7 @@
 	position: relative;
 
 	@include respond-to(small) {
-		padding: 0 (.5 * $grid);
+		padding: $grid (.5 * $grid) 0;
 	}
 
 	a {
