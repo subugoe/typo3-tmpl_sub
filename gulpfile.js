@@ -9,6 +9,8 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	sassGlob = require('gulp-sass-glob'),
 	scsslint = require('gulp-scss-lint'),
+	coffeelint = require('gulp-coffeelint'),
+	jshint = require('gulp-jshint'),
 	uglify = require('gulp-uglify');
 
 var config = {
@@ -66,6 +68,8 @@ gulp.task('sass-lint', function () {
 
 gulp.task('coffee', function () {
 	gulp.src(config.paths.coffee)
+		.pipe(coffeelint())
+		.pipe(coffeelint.reporter('checkstyle'))
 		.pipe(coffee({bare: true}))
 		.pipe(gulp.dest('./Resources/Private/Js/'))
 });
@@ -78,11 +82,18 @@ gulp.task('uglify', function () {
 		.pipe(gulp.dest('Resources/Public/Js/'));
 });
 
+gulp.task('lint-javascript', function() {
+	gulp.src('./Resources/Private/Js/*.js')
+		.pipe(jshint())
+	    .pipe(jshint.reporter('checkstyle'));
+});
+
 gulp.task('compile', ['bower', 'coffee', 'sass'], function () {
 	gulp.start('copy-fonts', 'sass-lint', 'uglify');
 });
 
 gulp.task('prod', ['copy-fonts', 'coffee', 'sass'], function () {
+	gulp.start('lint-javascript');
 	gulp.start('uglify');
 });
 
