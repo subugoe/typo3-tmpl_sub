@@ -7,7 +7,9 @@ $ ->
     $('.mobile-only').show()
 
   # TODO: What is page-1616?
-  $('aside.infocontent').hide() if document.getElementById('page-1616') and window.location.search.indexOf('tx_solr') is -1
+  if document.getElementById('page-1616') and
+  window.location.search.indexOf('tx_solr') is -1
+    $('aside.infocontent').hide()
 
   # Remove border from images with link
   $('a img').parent('a').css('border-bottom', 0)
@@ -87,12 +89,12 @@ initMenus = ->
       .toggleClass('-open')
       .attr('aria-expanded', $(this).attr('aria-expanded') isnt 'true')
 
-    $nav_list = $(this).next('.nav_list')
+    navList = $(this).next('.nav_list')
     $('.nav_link').not(this).removeClass('-open')
     $('.nav_list.-secondary')
-      .not($nav_list)
+      .not(navList)
       .slideUp()
-    $nav_list.slideToggle()
+    navList.slideToggle()
     return false
 
 mobilecheck = ->
