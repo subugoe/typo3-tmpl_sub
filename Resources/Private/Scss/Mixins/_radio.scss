@@ -1,0 +1,7 @@
+@mixin radio {
+	@include checkbox;
+
+	&:before {
+		border-radius: 50%;
+	}
+}

@@ -65,6 +65,41 @@ img {
 	max-width: 100%;
 }
 
+legend {
+	color: $text-color-light;
+	font-weight: bold;
+}
+
 label {
 	cursor: pointer;
+}
+
+[type=checkbox],
+[type=radio] {
+	display: none;
+
+	+ label,
+	+ span {
+		display: inline-block;
+		margin-left: $grid;
+	}
+
+	&:checked + :before {
+		background: $brand-color;
+		transition-duration: .1em;
+	}
+}
+
+[type=checkbox] {
+	+ label,
+	+ span, {
+		@include checkbox;
+	}
+}
+
+[type=radio] {
+	+ label,
+	+ span, {
+		@include radio;
+	}
 }
