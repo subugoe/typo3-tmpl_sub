@@ -11,7 +11,7 @@
 		@include hover {
 			@include auto-color($brand-color);
 			background: $brand-color;
-			transition-duration: $transition-duration / 2;
+			transition-duration: $transition-duration-out;
 		}
 
 		&.-current {

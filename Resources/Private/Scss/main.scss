@@ -6,6 +6,7 @@
 @import '../../../Build/bower/open-sans-fontface/sass/open-sans';
 
 // Requires Sass glob plugin
+// Won't work with single quotes
 @import "Mixins/*";
 
 @import 'reset';

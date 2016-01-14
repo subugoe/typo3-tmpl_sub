@@ -86,7 +86,7 @@ label {
 
 	&:checked + :before {
 		background: $brand-color;
-		transition-duration: .1em;
+		transition-duration: $transition-duration-out;
 	}
 }
 

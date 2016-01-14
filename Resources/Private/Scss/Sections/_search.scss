@@ -25,6 +25,7 @@
 	background: none;
 	bottom: ($grid / 2);
 	color: $text-color-light;
+	line-height: 1;
 	padding: 0;
 	position: absolute;
 	right: ($grid / 2);
@@ -92,7 +93,7 @@
 .search_input {
 	@include text-input;
 	@include transition(width);
-	border: $border-width inset $highlight-color;
+	border: $border-width solid $input-border-color;
 	box-shadow: .1em .1em .5em rgba($black, .2) inset;
 	float: right;
 	padding-right: (2 * $grid);
@@ -120,7 +121,7 @@
 	opacity: 1;
 	padding: .5em;
 	position: absolute;
-	transition-delay: $transition-duration;
+	transition-delay: $transition-duration-in;
 	z-index: 10;
 	width: 70%;
 
@@ -250,6 +251,7 @@
 	&:hover,
 	&:active {
 		color: $link-color;
+		transition-duration: $transition-duration-out;
 	}
 }
 

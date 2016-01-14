@@ -1,16 +1,10 @@
-#tx-solr-search-form-pi-results .tx-solr-q {
-	display: inline-block;
-	width: $search-width;
-}
-
 #pazpar2 {
 	.pz2-fieldContainer {
 		float: none;
 	}
 
 	.pz2-searchField {
-		@include text-input();
-
+		@include text-input;
 		display: inline-block;
 		font-size: $font-size;
 		height: inherit;
@@ -18,12 +12,11 @@
 	}
 
 	.pz2-submitButton {
-		@include button();
-
+		@include button;
 		height: inherit;
 	}
 
 	.pz2-textFieldLabel {
-		margin: ($grid * .5) 0;
+		margin: ($grid / 2) 0;
 	}
 }

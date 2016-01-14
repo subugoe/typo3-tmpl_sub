@@ -28,7 +28,8 @@ $font-size: 16px;
 $font-size-small: 14px;
 $typo-scale-offset: 2px; // Adjust heading font size for different font heights
 
-$transition-duration: .2s;
+$transition-duration-in: .2s;
+$transition-duration-out: .1s;
 
 // Brand colors
 $brand-color: #1a3771;
@@ -51,7 +52,7 @@ $text-color: $grey-dark;
 $text-color-light: $grey-light;
 
 $border-color: $grey-lighter;
-$highlight-color: $brand-color-light;
+$highlight-color: $brand-color-lighter;
 
 $link-color: $brand-color;
 $link-hover-bg-color: $brand-color-lighter;

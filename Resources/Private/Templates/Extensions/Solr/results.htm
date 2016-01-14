@@ -9,15 +9,18 @@
 
 <!-- ###SOLR_SEARCH### begin -->
 
-<div id="tx-solr-search">
+<div class="solr-search">
 	<!-- ###SOLR_SEARCH_FORM### begin -->
-	<form id="tx-solr-search-form-pi-results" action="###FORM.ACTION###" method="get" accept-charset="###FORM.ACCEPT-CHARSET###">
-		<!--###LLL:searchWord###--><input type="search" class="tx-solr-q" name="q" value="###FORM.Q###" />
+	<form class="solr-search_form" action="###FORM.ACTION###" method="get" accept-charset="###FORM.ACCEPT-CHARSET###">
+		<label class="solr-search_label">
+			<span class="sr-only">###LLL:searchWord###</span>
+			<input type="search" class="solr-search_input" name="q" value="###FORM.Q###" />
+		</label>
 		<!--<input type="submit" value="###LLL:submit###" />-->
 		<!--<input type="submit" value="###LLL:fileadmin/locallang.xml:submit###" />-->
 		<input type="hidden" name="id" value="###FORM.ACTION_ID###" />
 		<input type="hidden" name="###FORM.ACTION_LANGUAGE_PARAMETER###" value="###FORM.ACTION_LANGUAGE###" />
-		<input type="submit" class="formButton" value="###LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:solr.submit###" />
+		<input type="submit" class="solr-search_submit" value="###LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:solr.submit###" />
 	</form>
 
 	<!-- ###SOLR_SEARCH_FORM### end -->
