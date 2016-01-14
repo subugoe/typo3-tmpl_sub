@@ -87,7 +87,7 @@
 
 		@include hover {
 			@include transition(background, color);
-			background: $link-color;
+			background: $brand-color-light;
 			color: $white;
 			text-shadow: 0 -1px 0 $shadow-dark;
 		}
