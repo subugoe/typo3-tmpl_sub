@@ -5,4 +5,5 @@ Resources/Public/Css/main.css
 Resources/Public/Js/Site.min.js
 .gradle
 Build/bower
+/Resources/Public/Css/pz2.css
 Resources/Private/Js/SUB.js
