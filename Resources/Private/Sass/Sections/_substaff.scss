@@ -34,6 +34,11 @@ $marked: darken($hover, 5%);
 
 .substaff {
 
+	.substaff_map-link:after {
+		font-family: FontAwesome;
+		content: "\f041";
+	}
+
 	.mobile-only {
 		display: none;
 	}
