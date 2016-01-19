@@ -1,4 +1,8 @@
 @import 'settings';
+@import 'Mixins/transition';
+@import 'Mixins/text-input';
+@import 'Mixins/hover';
+@import 'Mixins/button';
 
 /* MEDIA TYPE ICON FONT */
 @font-face {
@@ -36,20 +40,16 @@
 }
 
 .pz2-fieldContainer {
-	float: left;
+	float: none;
 	clear: left;
 }
 
 .pz2-searchField {
-	display: block;
-	float: left;
-	margin: 0 6px 2px 0;
-	padding: 2px;
-	color: $grey-dark;
-	background: #f3f5f9;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #b3b3b3 #d2d2d2 #d2d2d2 #b3b3b3;
+	@include text-input;
+	display: inline-block;
+	font-size: $font-size;
+	height: inherit;
+	width: $search-width;
 }
 
 .pz2-basic .pz2-searchField {
@@ -76,6 +76,7 @@
 	float: left;
 	width: 130px;
 	text-align: right;
+	margin: ($grid / 2) 0;
 }
 
 .pz2-checkbox,
@@ -93,24 +94,8 @@
 }
 
 .pz2-submitButton {
-	display: block;
-	float: left;
-	height: 23px;
-	background: url('button_shade_small.png') repeat-x scroll 0 100% #f3f6fb;
-	border-style: solid;
-	border-width: 1px;
-	border-color: $grey-lighter $grey-light $grey-light $grey-lighter;
-	border-radius: 3px;
-	border-right: 1px solid #b4b4b4;
-	color: #555;
-	font-weight: bold;
-	line-height: 100%;
-	padding: 3px 12px;
-	margin-top: -1px;
-	text-align: center;
-	text-decoration: none;
-	text-shadow: 0 1px rgba(255, 255, 255, .75);
-	text-transform: uppercase;
+	@include button;
+	height: inherit;
 }
 
 .pz2-basic .pz2-submitButton,
