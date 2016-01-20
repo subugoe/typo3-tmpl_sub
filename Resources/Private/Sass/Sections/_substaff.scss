@@ -36,6 +36,10 @@ $marked: darken($hover, 5%);
 	height: inherit;
 }
 
+.vcard.singleAddress img {
+	float: none;
+}
+
 .substaff {
 
 	.substaff_map-link:after {
