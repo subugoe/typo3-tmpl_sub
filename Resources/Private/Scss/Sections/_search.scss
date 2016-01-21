@@ -90,6 +90,12 @@
 	}
 }
 
+.search_info {
+	@include fa-icon('question-circle', false);
+	color: $text-color-light;
+	cursor: help;
+}
+
 .search_input {
 	@include text-input;
 	@include transition(width);
@@ -109,7 +115,7 @@
 	}
 
 	&::placeholder {
-		color: $grey-dark;
+		color: $text-color-light;
 	}
 
 	.-show-popup & {
@@ -117,28 +123,10 @@
 	}
 }
 
-.search_input-label {
-	@include transition(opacity);
-	color: $text-color-light;
-	cursor: text;
-	line-height: 1.3;
-	opacity: 1;
-	padding: .5em;
-	position: absolute;
-	transition-delay: $transition-duration-in;
-	z-index: 10;
-	width: 70%;
-
-	.-show-popup & {
-		opacity: 0;
-		transition: none;
-	}
-
-}
-
 .search_label {
-	clear: both;
-	display: block;
+	&.-bold {
+		font-weight: bold;
+	}
 }
 
 .search_label-link {
@@ -164,11 +152,6 @@
 		table-layout: fixed;
 		top: (-2 * $grid);
 		width: 100%;
-	}
-
-	@include respond-to(small) {
-		clip: rect(-999em 999em (3 * $grid) -999em);
-		top: (-3 * $grid);
 	}
 
 	li {
