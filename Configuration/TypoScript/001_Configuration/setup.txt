@@ -260,28 +260,9 @@ page {
 	}
 }
 
-lib.pageHeader = IMAGE
+lib.pageHeader = USER
 lib.pageHeader {
-	altText = TEXT
-	altText.data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:page.pageTitle
-	file = GIFBUILDER
-	file {
-		backColor = transparent
-		XY = 1000,110
-		format = png
-		30 = IMAGE
-		30 {
-			file = EXT:tmpl_sub/Resources/Public/Img/logo_print.png
-			offset = 21, 17
-		}
-
-		20 = IMAGE
-		20 {
-			file.import = fileadmin/media/bilder/Seitenkopf/
-			file.import.override.data = levelfield : -1 , tx_nkwsubmenu_knotheader, slide
-			ifEmpty = header.png
-		}
-	}
+	userFunc = user_template->pageHeader
 }
 
 [globalVar = GP:L = 1]
