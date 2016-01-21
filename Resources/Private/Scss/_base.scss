@@ -58,6 +58,12 @@ button,
 [type=reset] {
 	cursor: pointer;
 	font-size: $font-size;
+
+	// Fix button size in Firefox
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
 }
 
 img {
@@ -76,7 +82,8 @@ label {
 
 [type=checkbox],
 [type=radio] {
-	display: none;
+	opacity: 0;
+	position: absolute;
 
 	+ label,
 	+ span {
@@ -87,6 +94,10 @@ label {
 	&:checked + :before {
 		background: $brand-color;
 		transition-duration: $transition-duration-out;
+	}
+
+	&:focus + :before {
+		outline: 1px dotted $text-color-light;
 	}
 }
 
