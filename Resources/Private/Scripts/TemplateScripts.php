@@ -26,8 +26,6 @@
 
 /**
  * Generates header graphics and licence information
- *
- * @author Ingo Pfennigstorf <pfennigstorf@sub-goettingen.de>, Goettingen State Library
  */
 class user_template
 {
@@ -56,6 +54,19 @@ class user_template
         $this->frontendController = $GLOBALS['TSFE'];
     }
 
+    public function pageHeader()
+    {
+        $rootLine = $this->frontendController->tmpl->rootLine;
+        for ($a = 10; $a >= 0; $a--) {
+            $nodetitle = $rootLine[$a]['nodetitle'];
+            if ($nodetitle) {
+                return $nodetitle;
+            }
+        }
+
+        return '<span class="sr-only">Niedersächsische Staats-und Universitätsbibliothek Göttingen</span>';
+    }
+
     /**
      * Get Big Picture and Copyright Information
      *
@@ -65,7 +76,7 @@ class user_template
      */
     public function bigPicture($content = '', $conf = [])
     {
-        $this->local_cObj = $this->frontendController->cObj; // cObject
+        $this->local_cObj = $this->frontendController->cObj;
 
         $this->page_id = $this->frontendController->id;
 
@@ -143,14 +154,12 @@ class user_template
         $lconf['image.']['params'] = '';
         $lconf['image.']['file.']['treatIdAsReference'] = 1;
         $lconf['image.']['file'] = $image['reference']['uid'];
-        $lconf['image.']['altText'] = "";
+        $lconf['image.']['altText'] = '';
         $lconf['image.']['file.']['height'] = 228;
         $lconf['image.']['file.']['width'] = 1000;
-        $theImgCode = $this->local_cObj->cObjGetSingle('IMAGE', $lconf["image."]);
+        $theImgCode = $this->local_cObj->cObjGetSingle('IMAGE', $lconf['image.']);
         $lconf['image.']['altText'] = $image['original']['caption'];
-        // $lconf['image.']['file.']['height'] = 228;
-        // $lconf['image.']['file.']['width'] = 1170;
-        $theImgCode = $this->local_cObj->IMAGE($lconf["image."]);
+        $theImgCode = $this->local_cObj->cObjGetSingle('IMAGE', $lconf['image.']);
         $image = $this->local_cObj->stdWrap($theImgCode, $this->conf['image.']);
         return $image;
     }
