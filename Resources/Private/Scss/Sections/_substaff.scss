@@ -41,12 +41,14 @@
 
 .substaff_map-link {
 	@include fa-icon('map-marker', false);
+	padding: ($font-size /2) !important;
 }
 
 .sidebar {
 	.substaff_map-link {
 		position: absolute;
 		right: ($grid / -2);
+		padding: 1px 0 !important;
 
 		@include respond-to(small) {
 			position: relative;
