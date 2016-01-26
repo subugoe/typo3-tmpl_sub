@@ -85,32 +85,25 @@ label {
 	opacity: 0;
 	position: absolute;
 
-	+ label,
-	+ span {
+	+ label {
 		display: inline-block;
 		margin-left: $grid;
 	}
 
-	&:checked + :before {
+	&:checked + label:before {
 		background: $brand-color;
 		transition-duration: $transition-duration-out;
 	}
 
-	&:focus + :before {
+	&:focus + label:before {
 		outline: 1px dotted $text-color-light;
 	}
 }
 
-[type=checkbox] {
-	+ label,
-	+ span, {
-		@include checkbox;
-	}
+[type=checkbox] + label:before {
+	@include checkbox;
 }
 
-[type=radio] {
-	+ label,
-	+ span, {
-		@include radio;
-	}
+[type=radio] + label:before {
+	@include radio;
 }
