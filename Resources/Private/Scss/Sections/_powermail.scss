@@ -10,3 +10,10 @@
 		font-style: normal;
 	}
 }
+
+.parsley-required {
+	display: inline-block;
+	margin-top: $font-size;
+	margin-left: $font-size / 2;
+	box-shadow: 0 -6px 0 $alert inset
+}
