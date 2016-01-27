@@ -1,5 +1,4 @@
 var gulp = require('gulp'),
-    autoprefixer = require('gulp-autoprefixer'),
     bower = require('gulp-bower'),
     cached = require('gulp-cached'),
     coffee = require('gulp-coffee'),
@@ -11,6 +10,7 @@ var gulp = require('gulp'),
     scsslint = require('gulp-scss-lint'),
     coffeelint = require('gulp-coffeelint'),
     jshint = require('gulp-jshint'),
+    postcss = require('gulp-postcss'),
     uglify = require('gulp-uglify');
 
 var config = {
@@ -41,7 +41,12 @@ var config = {
     }
 };
 
+var processors = [
+    require('autoprefixer')(config.autoprefixer)
+];
+
 gulp.task('sass', function () {
+
     gulp.src(config.paths.sass)
         .pipe(sassGlob())
         .pipe(sass({
@@ -51,9 +56,7 @@ gulp.task('sass', function () {
             title: 'Sass Error',
             message: '<%= error.message %>'
         }))
-        .pipe(autoprefixer(
-            config.autoprefixer
-        ))
+        .pipe(postcss(processors))
         .pipe(gulp.dest('./Resources/Public/Css/'));
 });
 
