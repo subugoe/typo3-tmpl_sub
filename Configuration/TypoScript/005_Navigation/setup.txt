@@ -1,6 +1,6 @@
 lib.navInterface = HMENU
 lib.navInterface {
-	wrap = <nav class="nav" role="navigation">|</nav>
+	wrap = <nav class="nav">|</nav>
 	1 = TMENU
 	1 {
 		wrap = <ul id="menu1" class="nav_list -primary">|</ul>
