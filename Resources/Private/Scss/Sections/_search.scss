@@ -225,19 +225,16 @@
 	@include transition(color);
 	background: none;
 	border: 0;
-	color: $brand-color-light;
+	color: $link-color;
 	font-size: 1.5em;
 	height: (2 * $grid);
-	min-width: (2 * $grid);
 	position: absolute;
 	right: (.5 * $grid);
 	top: (.5 * $grid);
 	width: (2 * $grid);
 
-	&:focus,
-	&:hover,
-	&:active {
-		color: $link-color;
+	@include hover {
+		color: darken($link-color, 20);
 		transition-duration: $transition-duration-out;
 	}
 }

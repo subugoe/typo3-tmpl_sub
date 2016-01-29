@@ -51,7 +51,7 @@ $alert: #f00;
 // Semantic colors
 $heading-color: $brand-color;
 $text-color: $grey-dark;
-$text-color-light: $grey-light;
+$text-color-light: $grey;
 
 $border-color: $grey-lighter;
 $highlight-color: $brand-color-lighter;
@@ -66,3 +66,5 @@ $input-border-color-focus: $brand-color;
 
 $button-bg: linear-gradient(to bottom, lighten($link-color, 10), $link-color);
 $button-bg-hover: linear-gradient(to bottom, $link-color, darken($link-color, 10));
+
+$outline: 1px dotted $text-color-light;

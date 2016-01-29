@@ -1,5 +1,9 @@
 * {
 	box-sizing: border-box;
+
+	&:focus {
+		outline: $outline;
+	}
 }
 
 html {
@@ -96,7 +100,7 @@ label {
 	}
 
 	&:focus + label:before {
-		outline: 1px dotted $text-color-light;
+		outline: $outline;
 	}
 }
 

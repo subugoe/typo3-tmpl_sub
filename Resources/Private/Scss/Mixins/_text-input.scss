@@ -5,7 +5,7 @@
 	border-radius: $br;
 	display: block;
 	line-height: $grid;
-	padding: (.5 * $grid) .5em;
+	padding: (.5 * $grid - $border-width) .5em;
 	width: 100%;
 
 	&:focus {
