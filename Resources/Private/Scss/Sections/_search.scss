@@ -159,6 +159,7 @@
 		display: block;
 		border-bottom: $border-width solid $border-color;
 		overflow: hidden; // Prevent links from overflowing border-radius
+		vertical-align: top;
 
 		@include respond-to(medium) {
 			border-bottom: 0;
