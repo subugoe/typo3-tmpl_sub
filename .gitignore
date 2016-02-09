@@ -9,3 +9,5 @@ Resources/Public/Js/Site.min.js
 Build/bower
 /Resources/Public/Css/pz2.css
 Resources/Private/Js/SUB.js
+
+/vendor/
