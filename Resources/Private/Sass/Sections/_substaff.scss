@@ -36,6 +36,10 @@ $marked: darken($hover, 5%);
 	height: inherit;
 }
 
+.infocontent .vcard.singleAddress {
+	padding: 0 10px;
+}
+
 .vcard.singleAddress img {
 	float: none;
 }
