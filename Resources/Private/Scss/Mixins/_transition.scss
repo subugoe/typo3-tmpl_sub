@@ -5,8 +5,14 @@ $transition-timing-function: ease-in-out !default;
 @mixin transition($properties...) {
 	$transitions: ();
 	@each $property in $properties {
-		$trans: unquote('#{$property} #{$transition-duration-in} #{$transition-timing-function}');
+		$trans: unquote('#{$property} #{$transition-duration-out} #{$transition-timing-function}');
 		$transitions: append($transitions, $trans, comma);
 	}
 	transition: $transitions;
+
+	@if $transition-duration-in != $transition-duration-out {
+		@include hover {
+			transition-duration: $transition-duration-in;
+		}
+	}
 }

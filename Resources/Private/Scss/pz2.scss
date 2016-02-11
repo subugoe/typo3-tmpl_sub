@@ -1,3 +1,6 @@
+// TODO: Remove next line once this file's code looks half-decent
+// scss-lint:disable all
+
 @import 'settings';
 @import 'Mixins/transition';
 @import 'Mixins/text-input';
@@ -146,7 +149,7 @@
 	display: block;
 }
 
-.pz2-recordLink:after {
+.pz2-recordLink::after {
 	position: relative;
 	bottom: -6px;
 	font-family: subicons;
@@ -155,11 +158,11 @@
 	content: '\e054';
 }
 
-.pz2-recordLink:hover:after {
+.pz2-recordLink:hover::after {
 	color: #00247d;
 }
 
-.pz2-detailsVisible .pz2-recordLink:after {
+.pz2-detailsVisible .pz2-recordLink::after {
 	display: none;
 }
 
@@ -251,8 +254,8 @@
 	top: -1px;
 }
 
-.pz2-termList-medium .pz2-mediaIcon:before,
-.pz2-termList-medium .pz2-mediaIcon:after {
+.pz2-termList-medium .pz2-mediaIcon::before,
+.pz2-termList-medium .pz2-mediaIcon::after {
 	left: -4px;
 }
 
@@ -340,8 +343,8 @@
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-.pz2-prev:after,
-.pz2-next:after {
+.pz2-prev::after,
+.pz2-next::after {
 	position: absolute;
 	top: 0;
 	width: 14px;
@@ -351,12 +354,12 @@
 	line-height: 10px;
 }
 
-.pz2-prev:after {
+.pz2-prev::after {
 	left: 59px;
 	content: '\e051';
 }
 
-.pz2-next:after {
+.pz2-next::after {
 	left: 50px;
 	content: '\e053';
 }
@@ -423,8 +426,8 @@
 	left: -38px;
 }
 
-.pz2-mediaIcon:before,
-.pz2-mediaIcon:after {
+.pz2-mediaIcon::before,
+.pz2-mediaIcon::after {
 	display: block;
 	position: absolute;
 	height: 20px;
@@ -438,151 +441,151 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.pz2-mediaIcon:before {
+.pz2-mediaIcon::before {
 	color: #f1f3f6;
 }
 
-.pz2-mediaIcon:after {
+.pz2-mediaIcon::after {
 	color: #00247d;
 }
 
-.pz2-mediaIcon:before {
+.pz2-mediaIcon::before {
 	content: '\e023';
 }
 
-.pz2-mediaIcon:after {
+.pz2-mediaIcon::after {
 	content: '\e022';
 }
 
-.pz2-mediaIcon.article:after {
+.pz2-mediaIcon.article::after {
 	content: '\e004';
 }
 
-.pz2-mediaIcon.audio-visual:before {
+.pz2-mediaIcon.audio-visual::before {
 	content: '\e011';
 }
 
-.pz2-mediaIcon.audio-visual:after {
+.pz2-mediaIcon.audio-visual::after {
 	content: '\e010';
 }
 
-.pz2-mediaIcon.book:before {
+.pz2-mediaIcon.book::before {
 	content: '\e001';
 }
 
-.pz2-mediaIcon.book:after {
+.pz2-mediaIcon.book::after {
 	content: '\e000';
 }
 
-.pz2-mediaIcon.data:before {
+.pz2-mediaIcon.data::before {
 	content: '\e00d';
 }
 
-.pz2-mediaIcon.data:after {
+.pz2-mediaIcon.data::after {
 	content: '\e00c';
 }
 
-.pz2-mediaIcon.electronic:before {
+.pz2-mediaIcon.electronic::before {
 	content: '\e00b';
 }
 
-.pz2-mediaIcon.electronic:after {
+.pz2-mediaIcon.electronic::after {
 	content: '\e00a';
 }
 
-.pz2-mediaIcon.image:before {
+.pz2-mediaIcon.image::before {
 	content: '\e01d';
 }
 
-.pz2-mediaIcon.image:after {
+.pz2-mediaIcon.image::after {
 	content: '\e01c';
 }
 
-.pz2-mediaIcon.journal:before {
+.pz2-mediaIcon.journal::before {
 	content: '\e007';
 }
 
-.pz2-mediaIcon.journal:after {
+.pz2-mediaIcon.journal::after {
 	content: '\e006';
 }
 
-.pz2-mediaIcon.letter:before {
+.pz2-mediaIcon.letter::before {
 	content: '\e017';
 }
 
-.pz2-mediaIcon.letter:after {
+.pz2-mediaIcon.letter::after {
 	content: '\e016';
 }
 
-.pz2-mediaIcon.map:before {
+.pz2-mediaIcon.map::before {
 	content: '\e00f';
 }
 
-.pz2-mediaIcon.map:after {
+.pz2-mediaIcon.map::after {
 	content: '\e00e';
 }
 
-.pz2-mediaIcon.manuscript:before {
+.pz2-mediaIcon.manuscript::before {
 	content: '\e019';
 }
 
-.pz2-mediaIcon.manuscript:after {
+.pz2-mediaIcon.manuscript::after {
 	content: '\e018';
 }
 
-.pz2-mediaIcon.microform:before {
+.pz2-mediaIcon.microform::before {
 	content: '\e01b';
 }
 
-.pz2-mediaIcon.microform:after {
+.pz2-mediaIcon.microform::after {
 	content: '\e01a';
 }
 
-.pz2-mediaIcon.multiple:before {
+.pz2-mediaIcon.multiple::before {
 	content: '\e021';
 }
 
-.pz2-mediaIcon.multiple:after {
+.pz2-mediaIcon.multiple::after {
 	content: '\e020';
 }
 
-.pz2-mediaIcon.multivolume:before {
+.pz2-mediaIcon.multivolume::before {
 	content: '\e003';
 }
 
-.pz2-mediaIcon.multivolume:after {
+.pz2-mediaIcon.multivolume::after {
 	content: '\e002';
 }
 
-.pz2-mediaIcon.music-score:before {
+.pz2-mediaIcon.music-score::before {
 	content: '\e015';
 }
 
-.pz2-mediaIcon.music-score:after {
+.pz2-mediaIcon.music-score::after {
 	content: '\e014';
 }
 
-.pz2-mediaIcon.newspaper:before {
+.pz2-mediaIcon.newspaper::before {
 	content: '\e009';
 }
 
-.pz2-mediaIcon.newspaper:after {
+.pz2-mediaIcon.newspaper::after {
 	content: '\e008';
 }
 
-.pz2-mediaIcon.recording:before {
+.pz2-mediaIcon.recording::before {
 	content: '\e013';
 }
 
-.pz2-mediaIcon.recording:after {
+.pz2-mediaIcon.recording::after {
 	content: '\e012';
 }
 
-.pz2-mediaIcon.website:before {
+.pz2-mediaIcon.website::before {
 	content: '\e01f';
 }
 
-.pz2-mediaIcon.website:after {
+.pz2-mediaIcon.website::after {
 	content: '\e01e';
 }
 
@@ -635,7 +638,7 @@
 	white-space: nowrap;
 }
 
-.pz2-detail-catalogueLink:after {
+.pz2-detail-catalogueLink::after {
 	position: relative;
 	top: .18em;
 	font-family: subicons;

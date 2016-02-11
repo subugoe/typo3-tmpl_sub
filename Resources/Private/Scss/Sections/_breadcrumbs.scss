@@ -8,8 +8,9 @@
 	li {
 		display: inline;
 
-		+ li:before {
-			@include fa-icon('angle-right');
+		// NOTE: Have to use single colon here for Font Awesome compatibility
+		+ li:before { // scss-lint:disable PseudoElement
+			@include icon('angle-right');
 			color: $text-color-light;
 			padding: 0 .5em;
 		}

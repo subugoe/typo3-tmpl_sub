@@ -17,7 +17,6 @@
 
 	@include hover {
 		background: $bg-color;
-		transition-duration: $transition-duration-out;
 
 		@if $on-dark-background {
 			color: $white;

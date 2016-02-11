@@ -76,6 +76,31 @@ $ ->
     window.open($(this).attr('href'))
     false
 
+  # Add links to sidebar headings above content to ease navigation on small screens
+  $header = $('.content .csc-header:first')
+  sidebarLinks = []
+  $('.sidebar > .csc-default').each( ->
+    $this = $(this)
+    id = $this.attr('id')
+    unless id then return true
+    headingText = $(this).find('h1, h2, h3, h4, h5, h6').first().text()
+    link =
+      title: headingText
+      id: id
+    sidebarLinks.push(link)
+  )
+  if sidebarLinks
+    $list = $('<ol class="sidebar-nav_list"/>')
+    for link in sidebarLinks
+      $item = $('<li class="sidebar-nav_item"/>')
+      $link = $("<a class='sidebar-nav_link' href='##{link.id}'>#{link.title}</a>")
+      $link.click ->
+        $('html, body').animate
+          scrollTop: $( $(this).attr('href') ).offset().top
+        false
+      $item.append($link).appendTo($list)
+    $('<div class="sidebar-nav"/>').append($list).appendTo($header)
+
 initMenus = ->
   $('.nav_list.-secondary').hide()
   $('.nav_list').has('.-current').show()

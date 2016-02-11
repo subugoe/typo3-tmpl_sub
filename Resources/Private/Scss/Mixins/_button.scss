@@ -1,9 +1,9 @@
-@mixin button {
+@mixin button($modifier: null) {
 	@include transition(background, color);
-	background: $button-bg;
+	background: if($modifier == light, $button-light-bg, $button-bg);
 	border: 0 !important;
 	border-radius: $br;
-	color: $white;
+	color: if($modifier == light, $link-color, $white);
 	cursor: pointer;
 	display: inline-block;
 	font-size: $font-size;
@@ -11,12 +11,11 @@
 	padding: (.5 * $grid) $grid;
 	text-align: center;
 	text-decoration: none;
-	text-shadow: 0 -1px 0 $shadow-dark;
+	text-shadow: if($modifier == light, 0 1px 0 $white, 0 -1px 0 $shadow-dark);
 	vertical-align: top;
 	white-space: nowrap;
 
 	@include hover {
-		background: $button-bg-hover;
-		transition-duration: $transition-duration-out;
+		background: if($modifier == light, $button-light-bg-hover, $button-bg-hover) !important;
 	}
 }

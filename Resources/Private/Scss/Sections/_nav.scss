@@ -11,7 +11,6 @@
 		@include hover {
 			@include auto-color($brand-color);
 			background: $brand-color;
-			transition-duration: $transition-duration-out;
 		}
 
 		&.-current {
@@ -22,9 +21,9 @@
 		}
 
 		&.-toggle {
-			@include fa-icon('chevron-down', true, true);
+			@include icon('chevron-down', true, true);
 
-			&:before {
+			&::before {
 				@include transition(color, transform);
 				color: $border-color;
 				font-size: $font-size-small;
@@ -34,7 +33,7 @@
 				}
 			}
 
-			&.-open:before {
+			&.-open::before {
 				// Turn chevron to point upwards
 				transform: rotate(-180deg);
 			}

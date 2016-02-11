@@ -64,7 +64,7 @@
 
 	a {
 		@include link(false);
-		@include fa-icon('globe');
+		@include icon('globe');
 
 		@include respond-to(medium) {
 			@include link(false, true);
@@ -75,7 +75,7 @@
 }
 
 .header_toggle-nav {
-	@include fa-icon('bars');
+	@include icon('bars');
 	@include link(false, true);
 	background: none;
 	border: 0;
@@ -94,7 +94,7 @@
 	}
 
 	.-show-off-canvas & {
-		@include fa-icon('close', false);
+		@include icon('close', false);
 	}
 }
 

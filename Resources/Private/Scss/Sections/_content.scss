@@ -85,7 +85,7 @@
 	}
 
 	ul > li {
-		&:before {
+		&::before {
 			border-radius: .125em;
 			content: '';
 			background: $brand-color-light;

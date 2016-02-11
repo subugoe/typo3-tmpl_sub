@@ -8,8 +8,6 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     sassGlob = require('gulp-sass-glob'),
     scsslint = require('gulp-scss-lint'),
-    coffeelint = require('gulp-coffeelint'),
-    jshint = require('gulp-jshint'),
     postcss = require('gulp-postcss'),
     uglify = require('gulp-uglify');
 
@@ -69,45 +67,24 @@ gulp.task('sass-lint', function () {
         }));
 });
 
-gulp.task('coffee', ['coffeescript-lint'], function () {
+gulp.task('coffee', function () {
     gulp.src(config.paths.coffee)
         .pipe(coffee({bare: true}))
-        .pipe(gulp.dest('./Resources/Private/Js/'))
-});
-
-gulp.task('uglify', ['javascript-lint'], function () {
-    gulp.src(config.paths.javascript)
         .pipe(concat('production.js'))
         .pipe(uglify())
         .pipe(rename('Site.min.js'))
         .pipe(gulp.dest('Resources/Public/Js/'));
 });
 
-gulp.task('javascript-lint', function () {
-    gulp.src('./Resources/Private/Js/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('gulp-checkstyle-jenkins-reporter', {
-            filename: './Build/logs/jshint.xml'
-        }))
-});
-
-gulp.task('coffeescript-lint', function () {
-    gulp.src(config.paths.coffee)
-        .pipe(coffeelint())
-        .pipe(coffeelint.reporter('checkstyle'))
-});
-
 gulp.task('compile', ['bower', 'coffee', 'sass'], function () {
-    gulp.start('copy-fonts', 'sass-lint', 'javascript-lint', 'uglify');
+    gulp.start('copy-fonts', 'sass-lint');
 });
 
-gulp.task('prod', ['copy-fonts', 'coffee', 'sass'], function () {
-    gulp.start('uglify');
-});
+gulp.task('prod', ['copy-fonts', 'coffee', 'sass']);
 
 gulp.task('watch', function () {
     gulp.watch(config.paths.sass, ['sass-lint', 'sass']);
-    gulp.watch(config.paths.coffee, ['coffee', 'uglify']);
+    gulp.watch(config.paths.coffee, ['coffee']);
 });
 
 gulp.task('bower', function () {
@@ -120,6 +97,4 @@ gulp.task('copy-fonts', ['bower'], function () {
         .pipe(gulp.dest('Resources/Public/Fonts/fontawesome/'));
 });
 
-gulp.task('default', function () {
-    gulp.start('compile', 'watch')
-});
+gulp.task('default', ['compile', 'watch']);

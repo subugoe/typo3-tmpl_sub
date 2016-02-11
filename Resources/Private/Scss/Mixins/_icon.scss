@@ -1,5 +1,8 @@
 // Font Awesome icon
-@mixin fa-icon($name, $with-text: true, $right: false) {
+@mixin icon($name, $with-text: true, $right: false) {
+	// NOTE: Since Font Awesome is using single-colon notation for pseudo elements,
+	// we gotta use this too here, or bad things will happen
+	// scss-lint:disable PseudoElement
 	&:before {
 		@extend .fa;
 		@extend .fa-#{$name};

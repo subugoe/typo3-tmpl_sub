@@ -1,7 +1,7 @@
 %full-width-background {
 	position: relative;
 
-	&:before {
+	&::before {
 		background: inherit;
 		content: '';
 		height: 100%;

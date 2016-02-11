@@ -78,7 +78,7 @@
 	}
 
 	a {
-		@include fa-icon('chevron-up', false);
+		@include icon('chevron-up', false);
 		@include transition(background, color);
 		display: block;
 		height: (2 * $grid);

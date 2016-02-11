@@ -41,7 +41,7 @@
 		margin: 0 .25em .25em 0;
 		text-align: center;
 
-		&:before {
+		&::before {
 			display: none !important; // Clear list bullet
 		}
 	}
@@ -65,19 +65,19 @@
 
 .pagination_link {
 	&.-last {
-		@include fa-icon('fast-forward', false);
+		@include icon('fast-forward', false);
 	}
 
 	&.-first {
-		@include fa-icon('fast-backward', false);
+		@include icon('fast-backward', false);
 	}
 
 	&.-next {
-		@include fa-icon('step-forward', false);
+		@include icon('step-forward', false);
 	}
 
 	&.-previous {
-		@include fa-icon('step-backward', false);
+		@include icon('step-backward', false);
 		margin-right: $grid;
 	}
 }

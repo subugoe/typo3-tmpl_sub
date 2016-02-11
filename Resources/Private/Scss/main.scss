@@ -2,20 +2,21 @@
 
 @import 'settings';
 
+// NOTE: Attention: This adds its own fa-icon mixin
 @import '../../../Build/bower/fontawesome/scss/font-awesome';
 @import '../../../Build/bower/open-sans-fontface/sass/open-sans';
 
 // Requires Sass glob plugin
-// Won't work with single quotes
-@import "Mixins/*";
+@import 'Mixins/*';
 
+@import 'fonts';
 @import 'reset';
 @import 'mod';
 
-@import "Extends/*";
+@import 'Extends/*';
 
 @import 'base';
 
-@import "Sections/*";
+@import 'Sections/*';
 
 @import 'Vendor/powermail';

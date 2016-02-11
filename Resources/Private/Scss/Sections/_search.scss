@@ -21,7 +21,7 @@
 
 .search_close {
 	@include button;
-	@include fa-icon('close', false);
+	@include icon('close', false);
 	background: none;
 	bottom: ($grid / 2);
 	color: $text-color-light;
@@ -91,7 +91,7 @@
 }
 
 .search_info {
-	@include fa-icon('question-circle', false);
+	@include icon('question-circle', false);
 	color: $text-color-light;
 	cursor: help;
 }
@@ -222,7 +222,7 @@
 }
 
 .search_submit {
-	@include fa-icon('search', false);
+	@include icon('search', false);
 	@include transition(color);
 	background: none;
 	border: 0;
@@ -236,7 +236,6 @@
 
 	@include hover {
 		color: darken($link-color, 20);
-		transition-duration: $transition-duration-out;
 	}
 }
 
@@ -248,8 +247,8 @@
 .search_area,
 .search_subject,
 .search_tag {
-	&:before {
-		@include fa-icon('caret-right');
+	&:before { // scss-lint:disable PseudoElement
+		@include icon('caret-right');
 		color: $highlight-color;
 		margin-right: .5em;
 	}

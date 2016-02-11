@@ -1,15 +1,16 @@
-* {
-	box-sizing: border-box;
-
-	&:focus {
-		outline: $outline;
-	}
-}
-
 html {
+	box-sizing: border-box;
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: scroll;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -31,19 +32,6 @@ input,
 select,
 textarea {
 	font: #{$font-size} / #{$grid} $font-family-text;
-}
-
-
-@font-face {
-	font-family: 'urw_classicoregular';
-	src: url('../Fonts/classico/urwclassico-regular-webfont.eot');
-	src: url('../Fonts/classico/urwclassico-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../Fonts/classico/urwclassico-regular-webfont.woff2') format('woff2'),
-		 url('../Fonts/classico/urwclassico-regular-webfont.woff') format('woff'),
-		 url('../Fonts/classico/urwclassico-regular-webfont.ttf') format('truetype'),
-		 url('../Fonts/classico/urwclassico-regular-webfont.svg#urw_classicoregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
 }
 
 h1,
@@ -70,6 +58,10 @@ button,
 	}
 }
 
+input:focus {
+	outline: 0;
+}
+
 img {
 	height: auto;
 	max-width: 100%;
@@ -94,20 +86,20 @@ label {
 		margin-left: $grid;
 	}
 
-	&:checked + label:before {
+	&:checked + label::before {
 		background: $brand-color;
-		transition-duration: $transition-duration-out;
+		transition-duration: $transition-duration-in;
 	}
 
-	&:focus + label:before {
+	&:focus + label::before {
 		outline: $outline;
 	}
 }
 
-[type=checkbox] + label:before {
+[type=checkbox] + label::before {
 	@include checkbox;
 }
 
-[type=radio] + label:before {
+[type=radio] + label::before {
 	@include radio;
 }

@@ -40,8 +40,8 @@
 }
 
 .substaff_map-link {
-	@include fa-icon('map-marker', false);
-	padding: ($font-size /2) !important;
+	@include icon('map-marker', false);
+	padding: ($font-size / 2) !important;
 }
 
 .sidebar {
@@ -61,7 +61,7 @@
 	border-top: $border-width solid $border-color;
 
 	a {
-		@include fa-icon('angle-down');
+		@include icon('angle-down');
 		background: $border-color;
 		border: 0;
 		border-radius: 0 0 $br $br;

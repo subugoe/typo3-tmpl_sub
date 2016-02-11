@@ -10,7 +10,7 @@
 	}
 
 	li {
-		&:before {
+		&::before {
 			display: none !important;
 		}
 
