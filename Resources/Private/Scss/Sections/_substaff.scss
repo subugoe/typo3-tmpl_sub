@@ -35,7 +35,12 @@
 
 	@include respond-to(medium) {
 		float: none;
-		margin: 0 0 $grid;
+		margin: 0;
+	}
+
+	&.-small {
+		max-height: (4 * $grid);
+		width: auto;
 	}
 }
 
@@ -44,8 +49,8 @@
 	padding: ($font-size / 2) !important;
 }
 
-.sidebar {
-	.substaff_map-link {
+.substaff_map-link {
+	.sidebar & {
 		position: absolute;
 		right: ($grid / -2);
 		padding: 1px 0 !important;
