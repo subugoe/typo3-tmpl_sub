@@ -62,12 +62,12 @@
 }
 
 .substaff_more-link {
-	text-align: center;
-	border-top: $border-width solid $border-color;
+	margin: (-$grid) 0 $grid;
 
 	a {
 		@include icon('angle-down');
-		background: $border-color;
+		background: $shadow-light;
+		box-shadow: none;
 		border: 0;
 		border-radius: 0 0 $br $br;
 		display: inline-block;
