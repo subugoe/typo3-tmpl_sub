@@ -89,7 +89,7 @@ $ ->
       id: id
     sidebarLinks.push(link)
   )
-  if sidebarLinks
+  if sidebarLinks.length > 0
     $list = $('<ol class="sidebar-nav_list"/>')
     for link in sidebarLinks
       $item = $('<li class="sidebar-nav_item"/>')
