@@ -835,3 +835,20 @@ pz2-client.js removes this once it it loaded.
 	text-align: right;
 	color: #999;
 }
+
+// Quick and dirty overrides for form elements
+.pz2-fieldsets {
+	label {
+		display: block !important;
+	}
+
+	li {
+		&::before {
+			content: none !important;
+		}
+	}
+
+	ul {
+		margin-left: $grid !important;
+	}
+}
