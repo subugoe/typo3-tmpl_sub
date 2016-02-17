@@ -56,15 +56,18 @@ class user_template
 
     public function pageHeader()
     {
+        $title = '<span class="sr-only">Niedersächsische Staats-und Universitätsbibliothek Göttingen</span>';
         $rootLine = $this->frontendController->tmpl->rootLine;
         for ($a = 10; $a >= 0; $a--) {
-            $nodetitle = $rootLine[$a]['nodetitle'];
+            $nodetitle = $rootLine[$a]['title'];
             if ($nodetitle) {
-                return $nodetitle;
+                // TODO: Add link to department
+                $title .= '<h1 class="header_title">' . $nodetitle . '</h1>';
+                break;
             }
         }
 
-        return '<span class="sr-only">Niedersächsische Staats-und Universitätsbibliothek Göttingen</span>';
+        return $title;
     }
 
     /**
@@ -85,7 +88,7 @@ class user_template
         $foundCount = count($results);
 
         if ($foundCount > 0) {
-            // use the first result
+            // Use the first result
             $content = $this->formatBigPicture($results[0]);
             $content .= $this->getImageInformation($results[0]);
             $content = '<div class="header_image">' . $content . '</div>';

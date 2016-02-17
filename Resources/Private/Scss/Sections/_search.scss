@@ -2,33 +2,37 @@
 	@extend %header_element;
 	@extend %clearfix;
 	float: right;
-	height: (3.5 * $grid);
+	height: (3 * $grid);
 	margin: (-3.5 * $grid) auto 0; // TODO: Magic number for correct alignment, try to get rid of it
 	max-width: 40em;
 	position: relative;
+	right: ($grid / 2);
 	z-index: 1;
 
 	@include respond-to(medium) {
 		float: none;
+		right: 0;
 		margin-top: 0;
 	}
 
 	@media(max-width: ($search-width + $grid)) {
-		right: 0;
 		width: 100%;
 	}
 }
 
 .search_close {
-	@include button;
 	@include icon('close', false);
+	@include transition(color);
 	background: none;
-	bottom: ($grid / 2);
-	color: $text-color-light;
+	bottom: ($grid / 4);
+	border: 0;
+	color: $input-border-color;
+	height: $grid;
 	line-height: 1;
 	padding: 0;
 	position: absolute;
-	right: ($grid / 2);
+	right: ($grid / 4);
+	width: $grid;
 
 	@include hover {
 		background: none;
@@ -249,7 +253,7 @@
 .search_tag {
 	&:before { // scss-lint:disable PseudoElement
 		@include icon('caret-right');
-		color: $highlight-color;
+		color: $input-border-color;
 		margin-right: .5em;
 	}
 }

@@ -13,6 +13,7 @@
 		margin-top: $grid;
 	}
 
+	// TODO: BEM this if possible
 	> div {
 		border-left: $border-width solid $border-color;
 		padding-left: ($grid - $border-width);

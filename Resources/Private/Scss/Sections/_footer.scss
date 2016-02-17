@@ -2,11 +2,12 @@
 	@extend %clearfix;
 	background: $white;
 	max-width: $site-width;
-	padding: 0 (.5 * $grid) (.5 * $grid);
+	padding: $grid ($grid / 2) ($grid / 2);
 	position: relative;
 
 	@include respond-to(small) {
-		padding: $grid (.5 * $grid) 0;
+		padding: $grid 0 0;
+		text-align: center;
 	}
 
 	a {
@@ -26,13 +27,28 @@
 
 .footer_right {
 	float: right;
+
+	@include respond-to(medium) {
+		margin-top: ($grid / 2);
+	}
 }
 
 .footer_left,
 .footer_right {
 	@include respond-to(medium) {
 		float: none;
-		padding: (.25 * $grid) 0;
 		text-align: center;
+	}
+
+	@include respond-to(small) {
+		display: inline;
+
+		ul {
+			display: inline;
+		}
+
+		li {
+			margin-bottom: ($grid / 2);
+		}
 	}
 }

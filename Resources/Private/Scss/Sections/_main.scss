@@ -2,7 +2,11 @@
 	background: $white;
 	margin: 0 auto;
 	max-width: $site-width;
-	padding: 0 (.5 * $grid);
+	padding: 0 $grid;
+
+	@include respond-to(small) {
+		padding: 0 ($grid / 2);
+	}
 }
 
 .main_left {
@@ -41,5 +45,5 @@
 
 .main_logo,
 .main_ads {
-	margin: $grid (.5 * $grid);
+	margin-top: $grid;
 }

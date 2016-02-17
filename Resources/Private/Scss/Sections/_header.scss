@@ -18,39 +18,43 @@
 	}
 }
 
-.header_logo {
-	@extend %header_element;
-	@extend %full-width-background;
-	// Manually align horizontal bar in logo with center of header
-	background: $brand-color url($img-path + '/sub-logo.svg') (.5 * $grid) ($grid - 2px) no-repeat;
-	height: (4 * $grid);
-	width: 640px; // Width of logo
-
-	@include respond-to(medium) {
-		background: url($img-path + '/sub-logo-centered.svg') center bottom no-repeat;
-		background-size: contain;
-		height: (5 * $grid);
-		margin-bottom: (.5 * $grid);
-		max-width: 95%;
-		width: 480px; // Width of vertical logo
-	}
-
-	a {
-		display: block;
-		height: 100%;
-		width: 100%;
-	}
-}
-
 .header_bar {
 	@extend %clearfix;
 	background: $white;
 	font-size: $font-size-small;
-	padding: round(.25 * $grid) (.5 * $grid) $grid;
+	padding: round($grid / 4) $grid $grid;
 
-	@include respond-to(medium) {
-		font-size: $font-size;
+	@include respond-to(small) {
+		padding: round($grid / 4) ($grid / 2) $grid;
 	}
+}
+
+.header_image {
+	// Thinking of replacing border with background/padding for consistency?
+	// Don't. Header image would touch content otherwise.
+	border: solid $white;
+	border-width: 0 $grid $grid;
+	margin-top: round(-$grid * 3 / 4);
+	max-height: (10 * $grid);
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	@include respond-to(small) {
+		display: none;
+	}
+
+	img {
+		display: block;
+		height: auto;
+		width: 100%;
+	}
+}
+
+.header_image-license {
+	bottom: 0;
+	position: absolute;
+	right: 0;
 }
 
 .header_language {
@@ -71,6 +75,70 @@
 			display: inline-block;
 			padding: (.5 * $grid);
 		}
+	}
+}
+
+.header_logo {
+	@extend %header_element;
+	@extend %full-width-background;
+	background: $brand-color url($img-path + '/sub-logo.svg') $grid $grid no-repeat;
+	background-size: auto (2 * $grid);
+	height: (4 * $grid);
+	width: 640px; // Width of logo
+
+	@include respond-to(medium) {
+		background: url($img-path + '/sub-logo-centered.svg') center bottom no-repeat;
+		background-size: contain;
+		height: (4 * $grid);
+		margin-bottom: round($grid / 4);
+		max-width: 90%;
+		width: 480px; // Width of vertical logo
+	}
+
+	a {
+		display: block;
+		height: ($grid * 2);
+		left: $grid;
+		position: relative;
+		top: $grid;
+
+		@include respond-to(medium) {
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+
+// 1. Position department name at the same position as brand name.
+// 2. Approximate width of brand name in logo that has to be overlayed is 440px.
+//    Has to be slightly larger to accomodate some very long deparment names,
+//    but may not overlap with search.
+.header_title {
+	background: $brand-color;
+	color: $white;
+	display: table-cell;
+	font-size: $grid;
+	height: 52px;
+	left: 145px; // 1
+	padding: 0 ($grid / 2);
+	position: relative;
+	vertical-align: middle;
+	width: 490px; // 2
+
+	@include respond-to(medium) {
+		left: 0;
+		text-align: center;
+		top: round($grid * 2.25);
+		width: 999em;
+	}
+
+	@include respond-to(tiny) {
+		font-size: $font-size;
+	}
+
+	a {
+		color: $white;
 	}
 }
 
@@ -96,32 +164,4 @@
 	.-show-off-canvas & {
 		@include icon('close', false);
 	}
-}
-
-.header_image {
-	// Thinking of replacing border with background/padding for consistency?
-	// Don't. Header image would touch content otherwise.
-	border: solid $white;
-	border-width: 0 (.5 * $grid) $grid;
-	margin-top: round(-.75 * $grid);
-	max-height: (10 * $grid);
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-
-	@include respond-to(small) {
-		display: none;
-	}
-
-	img {
-		display: block;
-		height: auto;
-		width: 100%;
-	}
-}
-
-.header_image-license {
-	bottom: 0;
-	position: absolute;
-	right: 0;
 }
