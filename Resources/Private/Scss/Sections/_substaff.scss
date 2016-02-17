@@ -74,3 +74,8 @@
 		padding: 0 .5em;
 	}
 }
+
+.substaff_street-address {
+	// Hack allowing "Platz der Göttinger Sieben 1" to fit into a single line
+	word-spacing: -.05em;
+}
