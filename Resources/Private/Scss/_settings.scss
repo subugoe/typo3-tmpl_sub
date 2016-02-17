@@ -6,7 +6,8 @@ $search-width: 24 * $grid;
 $breakpoints: (
 	large: 1260px,
 	medium: 1004px,
-	small: 640px
+	small: 640px,
+	tiny: 480px
 );
 
 $border-width: 1px;
@@ -19,7 +20,9 @@ $sub-iconfont-path: '../Fonts/sub' !default;
 
 $icon-font-path: '../Fonts/';
 $font-family-display: 'urw_classicoregular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-family-display-fallback: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 $font-family-text: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-family-text-fallback: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
 $img-path: '../Img';
 
