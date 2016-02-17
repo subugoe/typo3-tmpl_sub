@@ -32,8 +32,14 @@
 
 	@include respond-to(medium) {
 		// Padding required to prevent off-canvas from shining through
-		padding: 0 (.5 * $grid);
-		margin: 0 (-.5 * $grid);
+		padding: 0 $grid;
+		margin: 0 (-$grid);
+	}
+
+	@include respond-to(small) {
+		// Padding required to prevent off-canvas from shining through
+		padding: 0 ($grid / 2);
+		margin: 0 (-$grid / 2);
 	}
 }
 
@@ -46,4 +52,12 @@
 .main_logo,
 .main_ads {
 	margin-top: $grid;
+
+	@include respond-to(medium) {
+		margin: $grid ($grid / 2) 0;
+	}
+
+	a {
+		display: block;
+	}
 }
