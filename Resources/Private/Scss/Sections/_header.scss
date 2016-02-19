@@ -119,14 +119,16 @@
 	color: $white;
 	display: table-cell;
 	font-size: $grid;
-	height: 52px;
+	height: ($grid * 3);
 	left: 145px; // 1
 	padding: 0 ($grid / 2);
 	position: relative;
+	top: (-$grid / 2);
 	vertical-align: middle;
 	width: 490px; // 2
 
 	@include respond-to(medium) {
+		height: ($grid * 2);
 		left: 0;
 		text-align: center;
 		top: round($grid * 2.25);
