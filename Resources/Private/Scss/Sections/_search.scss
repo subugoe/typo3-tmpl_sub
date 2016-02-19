@@ -54,6 +54,10 @@
 		border-radius: 0 0 $br $br;
 	}
 
+	&.-catalogue a {
+		@include link;
+	}
+
 	&.-visible {
 		display: block;
 	}
@@ -131,10 +135,6 @@
 	&.-bold {
 		font-weight: bold;
 	}
-}
-
-.search_label-link {
-	float: right;
 }
 
 .search_navigation {
