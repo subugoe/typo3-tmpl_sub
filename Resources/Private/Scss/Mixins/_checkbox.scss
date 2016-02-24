@@ -1,5 +1,6 @@
 @mixin checkbox {
 	@include transition(background);
+	background: $white;
 	border: $border-width solid $input-border-color;
 	border-radius: $br;
 	box-shadow: 0 0 0 2px $white inset;
