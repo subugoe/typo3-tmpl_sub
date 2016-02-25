@@ -127,10 +127,11 @@ lib.fright {
 [global]
 
 ### BIX Zaehlpixel ###
-[globalVar = TSFE:id = 1]
-	lib.fright.44 = TEXT
-	lib.fright.44.value = <img src="//dbspixel.hbz-nrw.de/count?id=AF007&amp;page=1" alt="" />
-[global]
+### deaktiviert 2016-02-25 Jochen Kothe
+##[globalVar = TSFE:id = 1]
+##	lib.fright.44 = TEXT
+##	lib.fright.44.value = <img src="//dbspixel.hbz-nrw.de/count?id=AF007&amp;page=1" alt="" />
+##[global]
 
 lib.mainContent < styles.content.get
 
