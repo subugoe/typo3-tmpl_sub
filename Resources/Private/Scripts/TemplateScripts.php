@@ -59,10 +59,10 @@ class user_template
         $title = '<span class="sr-only">Niedersächsische Staats-und Universitätsbibliothek Göttingen</span>';
         $rootLine = $this->frontendController->tmpl->rootLine;
         for ($a = 10; $a >= 0; $a--) {
-            $nodetitle = $rootLine[$a]['title'];
-            if ($nodetitle) {
+            $isNode = $rootLine[$a]['tx_nkwsubmenu_knot'];
+            if ($isNode) {
                 // TODO: Add link to department
-                $title .= '<h1 class="header_title">' . $nodetitle . '</h1>';
+                $title .= '<h1 class="header_title">' . $rootLine[$a]['title'] . '</h1>';
                 break;
             }
         }
