@@ -222,9 +222,6 @@ page {
 				<meta name="geo.placename" content="Göttingen" />
 				<meta name="geo.region" content="DE-NI" />
 				<meta name="geo.position" content="51.539763;9.935385" />
-				<!--[if lt IE 8]>
-				<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
-				<![endif]-->
 			)
 		}
 	}
