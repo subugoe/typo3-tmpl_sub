@@ -54,22 +54,6 @@ class user_template
         $this->frontendController = $GLOBALS['TSFE'];
     }
 
-    public function pageHeader()
-    {
-        $title = '<span class="sr-only">Niedersächsische Staats-und Universitätsbibliothek Göttingen</span>';
-        $rootLine = $this->frontendController->tmpl->rootLine;
-        for ($a = 10; $a >= 0; $a--) {
-            $isNode = $rootLine[$a]['tx_nkwsubmenu_knot'];
-            if ($isNode) {
-                // TODO: Add link to department
-                $title .= '<h1 class="header_title">' . $rootLine[$a]['title'] . '</h1>';
-                break;
-            }
-        }
-
-        return $title;
-    }
-
     /**
      * Get Big Picture and Copyright Information
      *

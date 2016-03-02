@@ -260,11 +260,6 @@ page {
 	}
 }
 
-lib.pageHeader = USER
-lib.pageHeader {
-	userFunc = user_template->pageHeader
-}
-
 [globalVar = GP:L = 1]
 	lib.pageHeader.file.20.file.import = fileadmin/media/bilder/Seitenkopf/en/
 [global]
