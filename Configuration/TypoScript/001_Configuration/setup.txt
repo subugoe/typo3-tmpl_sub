@@ -36,8 +36,6 @@ config {
 	}
 }
 
-includeLibs.user_template = typo3conf/ext/tmpl_{$page_template}/Resources/Private/Scripts/TemplateScripts.php
-
 ### Language = en ###
 [globalVar = GP:L = 1]
 	config {
@@ -47,34 +45,6 @@ includeLibs.user_template = typo3conf/ext/tmpl_{$page_template}/Resources/Privat
 		htmlTag_langKey = en-Gb
 	}
 [global]
-
-### BIGPICTURE ###
-
-lib.BIGPICTURE = USER
-lib.BIGPICTURE {
-	userFunc = user_template->bigPicture
-}
-
-### Headerbild ###
-
-lib.bigPicture = IMAGE
-lib.bigPicture {
-	stdWrap {
-		wrap = <div class="header_image">|</div>
-		required = 1
-	}
-
-	file {
-		import = uploads/media/
-		import {
-			data = levelmedia:-1, slide
-			listNum = 0
-		}
-
-		width = 1000c
-		height = 228c
-	}
-}
 
 ### CRIGHT ###
 

@@ -22,7 +22,6 @@ class PageHeaderViewHelper extends AbstractViewHelper
 
     public function render()
     {
-
         $header = new \stdClass();
 
         $rootLine = $this->frontendController->tmpl->rootLine;
