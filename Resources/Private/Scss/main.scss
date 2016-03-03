@@ -2,10 +2,6 @@
 
 @import 'settings';
 
-// NOTE: Attention: This adds its own fa-icon mixin
-@import '../../../Build/bower/fontawesome/scss/font-awesome';
-@import '../../../Build/bower/open-sans-fontface/sass/open-sans';
-
 // Requires Sass glob plugin
 @import 'Mixins/*';
 

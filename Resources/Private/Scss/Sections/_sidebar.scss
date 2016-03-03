@@ -43,6 +43,10 @@
 		font-family: $font-family-display;
 		margin-bottom: ($grid / 2);
 		position: relative;
+
+		.fonts-failed & {
+			font-family: $font-family-display-fallback;
+		}
 	}
 
 	ul {

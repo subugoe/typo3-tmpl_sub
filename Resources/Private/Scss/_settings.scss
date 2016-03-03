@@ -19,10 +19,10 @@ $OpenSansPath: '../Fonts/open-sans' !default; // scss-lint:disable NameFormat
 $sub-iconfont-path: '../Fonts/sub' !default;
 
 $icon-font-path: '../Fonts/';
-$font-family-display: 'urw_classicoregular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$font-family-display-fallback: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$font-family-text: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$font-family-text-fallback: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-family-display: 'urw_classicoregular', 'Helvetica', 'Arial', sans-serif;
+$font-family-display-fallback: 'Helvetica', 'Arial', sans-serif;
+$font-family-text: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+$font-family-text-fallback: 'Helvetica', 'Arial', sans-serif;
 
 $img-path: '../Img';
 
@@ -31,9 +31,6 @@ $line-height: $grid;
 $font-size: 16px;
 $font-size-small: 14px;
 $typo-scale-offset: 2px; // Adjust heading font size for different font heights
-
-$transition-duration-in: .1s;
-$transition-duration-out: .3s;
 
 // Brand colors
 $brand-color: #1a3771;

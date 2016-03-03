@@ -1,1 +1,6 @@
 @include font-face('urw_classicoregular', '../Fonts/classico/urwclassico-regular-webfont');
+
+// NOTE: This adds its own fa-icon mixin
+@import '../../../Build/bower/fontawesome/scss/font-awesome';
+
+@import '../../../Build/bower/open-sans-fontface/sass/open-sans';
