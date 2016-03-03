@@ -196,12 +196,9 @@
 	}
 
 	dl {
-		float: left;
-		width: 100%;
+		@extend %clearfix;
 
-		@include respond-to(small) {
-			float: none;
-		}
+		width: 100%;
 	}
 
 	dt {
