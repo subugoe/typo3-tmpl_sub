@@ -2,10 +2,9 @@
 // scss-lint:disable all
 
 @import 'settings';
-@import 'Mixins/transition';
-@import 'Mixins/text-input';
-@import 'Mixins/hover';
-@import 'Mixins/button';
+@import 'mod';
+@import 'Mixins/*';
+
 
 /* MEDIA TYPE ICON FONT */
 @font-face {
@@ -20,12 +19,14 @@
 	font-style: normal;
 }
 
-#pazpar2 a {
-	text-decoration: none;
-}
+#pazpar2 {
+	a {
+		text-decoration: none;
+	}
 
-#pazpar2 ol {
-	margin: 0;
+	ol {
+		margin: 0;
+	}
 }
 
 .pz2-clear {
@@ -36,48 +37,31 @@
 
 /* SEARCH FORM */
 
-.pz2-mainForm {
-	line-height: 150%;
-}
-
-.pz2-fieldContainer {
-	float: none;
-	clear: left;
-}
-
 .pz2-searchField {
-	@include text-input;
-	display: inline-block;
+	display: table-cell;
 	font-size: $font-size;
-	height: inherit;
 	width: $search-width;
 }
 
-.pz2-basic .pz2-searchField {
-	width: 400px;
-	height: 22px;
-	padding: 4px;
+.pz2-textFieldLabel {
+	display: table-cell;
+	width: 10em;
+	vertical-align: middle;
 }
 
-.pz2-searchForm.pz2-basic .pz2-field-all .pz2-searchField {
-	font-size: 133%;
+.pz2-basic label {
+	@extend .sr-only;
 }
 
-.pz2-extended .pz2-searchField {
-	width: 400px - 130px - 20px; /* 400px - 130px - 20px to end up at the same total width as basic search */
-	margin-left: 20px;
+.pz2-submitButton {
+	margin-left: .25em;
 }
 
-.pz2-mainForm label {
-	display: none;
-}
+.pz2-extended {
 
-.pz2-extended .pz2-mainForm label.pz2-textFieldLabel {
-	display: block;
-	float: left;
-	width: 130px;
-	text-align: right;
-	margin: ($grid / 2) 0;
+	.pz2-extraFields {
+		display: block;
+	}
 }
 
 .pz2-checkbox,
@@ -85,43 +69,19 @@
 	display: none;
 }
 
-.pz2-extended .pz2-extraFields {
-	display: block;
+.pz2-extended {
+
+	.pz2-checkbox {
+		display: inline;
+
+		label {
+			display: inline;
+		}
+	}
 }
 
-.pz2-extended .pz2-checkbox,
-.pz2-extended .pz2-checkbox label {
-	display: inline;
-}
-
-.pz2-submitButton {
-	@include button;
-	height: inherit;
-}
-
-.pz2-basic .pz2-submitButton,
-.pz2-extended .pz2-submitButton {
-	margin-top: 0;
-}
-
-.pz2-submitButton:active {
-	background-image: url('button_shade_small_click.png');
-	background-color: #e7e9ed;
-}
-
-.pz2-basic .pz2-submitButton {
-	height: 32px;
-	background-image: url('button_shade_large.png');
-}
-
-.pz2-basic .pz2-submitButton:active {
-	background-image: url('button_shade_large_click.png');
-}
-
+// TODO vertical alignment
 .pz2-extendedLink {
-	display: block;
-	float: left;
-	line-height: 33px;
 	margin-left: .5em;
 }
 
@@ -147,19 +107,23 @@
 
 .pz2-recordLink {
 	display: block;
-}
+	box-shadow: none !important;
 
-.pz2-recordLink::after {
-	position: relative;
-	bottom: -6px;
-	font-family: subicons;
-	font-size: 23px;
-	line-height: 4px;
-	content: '\e054';
-}
+	&::after {
+		position: relative;
+		bottom: -6px;
+		font-family: subicons;
+		font-size: 23px;
+		line-height: 4px;
+		content: '\e054';
+	}
 
-.pz2-recordLink:hover::after {
-	color: #00247d;
+	&:hover {
+		&::after {
+			color: #00247d;
+		}
+
+	}
 }
 
 .pz2-detailsVisible .pz2-recordLink::after {
@@ -168,20 +132,19 @@
 
 #pz2-results {
 	margin-right: 220px;
-}
 
-#pz2-results ol.pz2-resultList {
-	padding-left: 35px;
-	float: left; /* required so we don't clear the sidebar/faceting when clearing our <li>s */
-}
-
-#pz2-results ol.pz2-resultList li {
-	margin-bottom: .5em;
-	padding-left: 5px;
-	position: relative;
-	clear: both;
-	list-style-type: none;
-	border-left: 1px solid transparent;
+	ol.pz2-resultList {
+		padding-left: 35px;
+		float: left; /* required so we don't clear the sidebar/faceting when clearing our <li>s */
+		li {
+			margin-bottom: .5em;
+			padding-left: 5px;
+			position: relative;
+			clear: both;
+			list-style-type: none;
+			border-left: 1px solid transparent;
+		}
+	}
 }
 
 #pz2-results ol.pz2-resultList li.pz2-detailsVisible {
@@ -202,6 +165,7 @@
 
 /* FACETS */
 
+// TODO: Make off-canvas on small screens, use h4 as button label
 #pz2-termLists {
 	float: right;
 	width: 200px;
@@ -213,30 +177,36 @@
 
 .pz2-termList {
 	margin-bottom: 1em;
-}
 
-.pz2-termList h5 {
-	text-transform: uppercase;
-	font-size: 100%;
-	font-weight: bold;
-	margin-bottom: .25em;
-}
+	h5 {
+		text-transform: uppercase;
+		font-size: 100%;
+		font-weight: bold;
+		margin-bottom: .25em;
+	}
 
-.pz2-termList ol {
-	margin-bottom: 1em;
-	padding: 0;
-}
+	ol {
+		margin-bottom: 1em;
+		padding: 0;
+	}
 
-.pz2-termList li {
-	list-style-type: none;
-}
+	li {
+		list-style-type: none;
 
-.pz2-termList li a {
-	position: relative;
-	display: block;
-	padding-left: 1em;
-	text-indent: -1em;
-	font-weight: normal;
+		a {
+			position: relative;
+			display: block;
+			padding-left: 1em;
+			text-indent: -1em;
+			font-weight: normal;
+			box-shadow: none;
+		}
+	}
+
+	span {
+		position: relative;
+	}
+
 }
 
 .pz2-termList-author ol {
@@ -282,10 +252,6 @@
 	font-weight: bold;
 }
 
-.pz2-termList span {
-	position: relative;
-}
-
 .pz2-histogramContainer {
 	margin-left: -8px;
 }
@@ -307,88 +273,80 @@
 .pz2-progressIndicator {
 	position: absolute;
 	display: block;
+	height: 5px;
 	top: 0;
-	bottom: 0;
 	left: 0;
-	background: #f6f3ff;
+	background: $shadow-light;
+}
+
+
+.pz2-fieldContainer {
+	display: table;
+	width: 100%;
+
+	& + & {
+		margin-top: $grid / 4;
+	}
+
+	.pz2-formControls,
+	.pz2-searchField {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	.pz2-searchField {
+		width: 100%;
+	}
+}
+
+.pz2-extraFields {
+	margin-top: $grid / 4;
+}
+
+#pz2-termLists {
+
+	li {
+		margin-bottom: 5px;
+	}
+
+	.pz2-progressIndicator {
+		position: absolute;
+		display: block;
+		bottom: 0;
+		height: auto;
+		top: 0;
+		left: 0;
+		background: $shadow-light;
+	}
 }
 
 /* PAGER */
 
+
 .pz2-pager {
-	padding-top: 20px;
-	position: relative;
-}
-
-.pz2-pager.pz2-bottom {
-	clear: both;
-	padding-bottom: 20px;
-}
-
-.pz2-pager .pz2-pageNumbers {
-	position: relative;
-	margin-right: 240px;
-	text-align: center;
+	// TODO center the pagination
 }
 
 .pz2-prev,
 .pz2-next {
+	float: left;
 	display: inline-block;
-	position: relative;
-	top: .35em;
-	width: 14px;
-	height: 14px;
-	overflow: hidden;
-	text-indent: -100px;
-	font-family: Helvetica, Arial, sans-serif;
-}
+	margin: 0 .25em .25em 0;
+	text-align: center;
 
-.pz2-prev::after,
-.pz2-next::after {
-	position: absolute;
-	top: 0;
-	width: 14px;
-	height: 14px;
-	font-family: subicons;
-	font-size: 14px;
-	line-height: 10px;
-}
+	// TODO Fix element height
+	&:before {
+		font-size: $font-size;
+	}
 
-.pz2-prev::after {
-	left: 59px;
-	content: '\e051';
-}
-
-.pz2-next::after {
-	left: 50px;
-	content: '\e053';
-}
-
-.pz2-pageCount-0 {
-	visibility: hidden;
-}
-
-.pz2-pager ol {
-	padding: 0;
-	display: inline;
-}
-
-.pz2-pager li {
-	display: inline;
-	list-style-type: none;
-}
-
-.pz2-pager a,
-.pz2-prev,
-.pz2-next,
-.pz2-pagerGap {
-	padding: 0 .3em;
 }
 
 .pz2-pager .pz2-currentPage {
+	display: inline-block;
 	font-weight: bold;
-	padding: .3em;
+	width: $grid;
 }
+
 
 .pz2-recordCount {
 	position: absolute;
@@ -412,6 +370,11 @@
 	transition: all .25s ease;
 }
 
+.pz2-pageNumbers {
+	@include pagination;
+	position: relative;
+ }
+
 /* RESULT ITEMS */
 .pz2-mediaIcon {
 	display: block;
@@ -420,25 +383,25 @@
 	height: 20px;
 	width: 20px;
 	font-size: 24px;
+
+	&::before,
+	&::after {
+		display: block;
+		position: absolute;
+		height: 20px;
+		width: 20px;
+		text-indent: 0;
+		font-family: subicons;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 }
 
 .pz2-resultList .pz2-mediaIcon {
 	left: -38px;
-}
-
-.pz2-mediaIcon::before,
-.pz2-mediaIcon::after {
-	display: block;
-	position: absolute;
-	height: 20px;
-	width: 20px;
-	text-indent: 0;
-	font-family: subicons;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 .pz2-mediaIcon::before {
@@ -608,23 +571,28 @@
 .pz2-details {
 	font-size: 85%;
 	padding: 10px 0 20px;
-}
 
-.pz2-details dt {
-	text-align: right;
-	font-weight: bold;
-	width: 10em;
-	float: left;
-	clear: right;
-}
+	dt {
+		text-align: right;
+		font-weight: bold;
+		width: 10em;
+		float: left;
+		clear: right;
+	}
 
-.pz2-details dd {
-	margin-left: 10.3em;
-}
+	dd {
+		margin-left: 10.3em;
+	}
 
-.pz2-details dt,
-.pz2-details dd {
-	margin-bottom: .5em;
+	dt,
+	dd {
+		margin-bottom: .5em;
+	}
+
+	ul {
+		padding-left: 1.5em;
+		margin: 0;
+	}
 }
 
 .pz2-detail-availability td a {
@@ -652,9 +620,8 @@ a.pz2-detail-parentCatalogueLink:hover {
 	font-weight: normal;
 }
 
-.pz2-details ul {
-	padding-left: 1.5em;
-	margin: 0;
+#pz2-results {
+
 }
 
 #pz2-results ol.pz2-resultList .pz2-details li {
@@ -834,21 +801,4 @@ pz2-client.js removes this once it it loaded.
 	font-style: italic;
 	text-align: right;
 	color: #999;
-}
-
-// Quick and dirty overrides for form elements
-.pz2-fieldsets {
-	label {
-		display: block !important;
-	}
-
-	li {
-		&::before {
-			content: none !important;
-		}
-	}
-
-	ul {
-		margin-left: $grid !important;
-	}
 }

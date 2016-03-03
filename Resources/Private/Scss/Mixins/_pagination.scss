@@ -1,0 +1,37 @@
+@mixin pagination {
+
+	@extend %clearfix;
+	background: $white;
+	clear: both;
+	margin-left: 0 !important;
+
+
+	a {
+		@include link(false);
+		@include transition(background, color);
+		background: $brand-color-lighter;
+		border: 0;
+		border-radius: $br;
+		display: block;
+		text-align: center;
+		width: $grid;
+
+		@include hover {
+			background: $link-color;
+			color: $white;
+			text-shadow: 0 -1px 0 $shadow-dark;
+		}
+	}
+
+	li {
+		float: left;
+		display: inline-block;
+		margin: 0 .25em .25em 0;
+		text-align: center;
+
+		&::before {
+			display: none !important; // Clear list bullet
+		}
+	}
+
+}
