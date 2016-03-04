@@ -16,6 +16,12 @@ $ ->
 
   initMenus()
 
+  $('.contenttable tr td').each (index) ->
+    columns = $(this).closest('.contenttable').find('th').length
+    th = $(this).closest('.contenttable').find('th').eq(index % columns)
+
+    $(this).attr('data-label', th.text())
+
   # Stats for GOK Browsing
   $('.tree li').click = (data) ->
     if typeof piwikTracker isnt 'undefined'

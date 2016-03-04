@@ -111,3 +111,81 @@ label {
 [type=radio] + label::before {
 	@include radio;
 }
+
+table,
+thead,
+tbody,
+th,
+td,
+tr {
+	display: block;
+	overflow: hidden;
+}
+
+table {
+	caption {
+		display: table-cell;
+	}
+}
+
+thead {
+	tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+}
+
+td {
+	padding: .25em .5em;
+
+	&:before {
+		content: attr(data-label) ': ';
+		display: inline-block;
+		font-weight: bold;
+		width: 10em;
+	}
+}
+
+@media screen and (min-width: map-get($breakpoints, 'small')) {
+
+	table {
+		display: table;
+		width: 100%;
+
+		caption {
+			display: table-caption;
+		}
+	}
+
+	thead {
+		display: table-header-group;
+
+		tr {
+			position: static;
+			top: auto;
+			left: auto;
+		}
+	}
+
+	tbody {
+		display: table-row-group;
+	}
+
+	tr {
+		display: table-row;
+	}
+
+	th,
+	td {
+		display: table-cell;
+		padding: 6px 12px;
+		vertical-align: top;
+		text-align: left;
+	}
+
+	td:before {
+		content: '';
+		width: auto;
+	}
+}
