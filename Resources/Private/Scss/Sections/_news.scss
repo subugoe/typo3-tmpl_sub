@@ -15,7 +15,8 @@
 .news .teaser-text {
 	margin-bottom: $grid;
 
-	p {
+	p,
+	.description {
 		display: inline;
 	}
 }
