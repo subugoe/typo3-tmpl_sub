@@ -139,7 +139,7 @@ thead {
 td {
 	padding: .25em .5em;
 
-	&:before {
+	&::before {
 		content: attr(data-label) ': ';
 		display: inline-block;
 		font-weight: bold;
