@@ -1,6 +1,6 @@
 .pagination {
-
 	@include pagination;
+	margin-left: 0 !important;
 
 	&.-fixed {
 		@include drop-shadow;

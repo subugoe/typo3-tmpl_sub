@@ -1,12 +1,16 @@
 // TODO: Remove next line once this file's code looks half-decent
 // scss-lint:disable all
 
+// NOTE: Pazpar2 stylesheet is including its own icon set
+// We don't wanna load Font Awesome here to avoid too much overhead
+
 @import 'settings';
-@import 'mod';
 @import 'Mixins/*';
+@import 'Extends/*';
+@import 'mod';
 
+/* Media Type Icon Font */
 
-/* MEDIA TYPE ICON FONT */
 @font-face {
 	font-family: 'subicons';
 	src: url($sub-iconfont-path + '/subicons.eot');
@@ -35,7 +39,7 @@
 	clear: both;
 }
 
-/* SEARCH FORM */
+/* Search Form */
 
 .pz2-searchField {
 	display: table-cell;
@@ -58,18 +62,9 @@
 }
 
 .pz2-extended {
-
 	.pz2-extraFields {
 		display: block;
 	}
-}
-
-.pz2-checkbox,
-.pz2-extraFields {
-	display: none;
-}
-
-.pz2-extended {
 
 	.pz2-checkbox {
 		display: inline;
@@ -80,13 +75,16 @@
 	}
 }
 
-// TODO vertical alignment
-.pz2-extendedLink {
-	margin-left: .5em;
+.pz2-checkbox,
+.pz2-extraFields {
+	display: none;
 }
 
-.pz2-searchForm.pz2-extended {
-	line-height: 25px;
+.pz2-extendedLink {
+	margin-left: .5em;
+	position: relative;
+	top: ($grid / 2);
+	white-space: nowrap;
 }
 
 .pz2-form-animating .pz2-extraFields {
@@ -95,14 +93,6 @@
 
 .pz2-ranking {
 	display: none;
-}
-
-#pz2-navi {
-	margin-bottom: 1em;
-}
-
-#pz2-recordView {
-	padding-top: 20px;
 }
 
 .pz2-recordLink {
@@ -117,13 +107,6 @@
 		line-height: 4px;
 		content: '\e054';
 	}
-
-	&:hover {
-		&::after {
-			color: #00247d;
-		}
-
-	}
 }
 
 .pz2-detailsVisible .pz2-recordLink::after {
@@ -131,28 +114,91 @@
 }
 
 #pz2-results {
-	margin-right: 220px;
+	margin-right: $grid * 10;
 
+	@include respond-to(small) {
+		margin-right: 0;
+	}
+
+	.pz2-details {
+		// 1. Cancel the clear done for list items in the main list on lists in .pz2-details.
+		// 2. TODO: For some reason, setting ANY max-width on this element seems to prevent long
+		//    non-breaking text from overflowing
+		li {
+			clear: none; // 1
+			border-left: 0 none;
+			max-width: 99px; // 2
+		}
+
+		ul li {
+			margin: 0;
+		}
+	}
+
+	.pz2-extraLinks {
+		position: absolute;
+		right: 10px;
+		bottom: -3px;
+	}
+
+	.pz2-extraLinksLabel {
+		display: none;
+	}
+
+	.pz2-extraLinks {
+		ul {
+			text-align: right;
+
+			li {
+				display: inline;
+				padding: 0;
+				list-style-type: none;
+
+				input {
+					border: 0 none;
+					background: transparent;
+					cursor: pointer;
+				}
+
+				input,
+				a {
+					color: $text-color-light;
+					text-decoration: none;
+					font-weight: normal;
+					font-size: 1em;
+				}
+			}
+		}
+
+		&:hover ul li input,
+		&:hover ul li a {
+			color: $black;
+		}
+
+		ul li input:hover,
+		ul li a:hover {
+			text-decoration: underline;
+		}
+	}
+
+	// 1. Required so we don't clear the sidebar/faceting when clearing our <li>s
 	ol.pz2-resultList {
 		padding-left: 35px;
-		float: left; /* required so we don't clear the sidebar/faceting when clearing our <li>s */
-		li {
+		float: left; // 1
+
+		> li {
 			margin-bottom: .5em;
 			padding-left: 5px;
 			position: relative;
 			clear: both;
 			list-style-type: none;
-			border-left: 1px solid transparent;
+			border-left: $border-width solid transparent;
 		}
 	}
-}
 
-#pz2-results ol.pz2-resultList li.pz2-detailsVisible {
-	border-left: 1px solid #eee;
-}
-
-#pazpar2 a img {
-	border: 0 transparent none;
+	ol.pz2-resultList li.pz2-detailsVisible {
+		border-left: $border-width solid $border-color;
+	}
 }
 
 .pz2-JSNote {
@@ -163,30 +209,91 @@
 	clear: both;
 }
 
-/* FACETS */
+/* Facets */
 
 // TODO: Make off-canvas on small screens, use h4 as button label
 #pz2-termLists {
 	float: right;
-	width: 200px;
-}
+	width: $grid * 9;
 
-#pz2-termLists h4 {
-	display: none;
+	@include respond-to(small) {
+		float: none;
+		width: auto;
+	}
+
+	// Facets heading
+	h4 {
+		@include icon('chevron-down');
+		display: none;
+		margin-bottom: $grid / 2;
+		opacity: 1;
+
+		&::before {
+			content: '+';
+			font-size: $grid;
+			vertical-align: top;
+		}
+
+		&.-open::before {
+			content: '\00d7';
+		}
+
+		&.-loading {
+			opacity: .7;
+
+			&::after {
+				animation: pazpar2spinner 1s infinite linear;
+				border: 5px solid rgba(#fff, .2);
+				border-left: 5px solid $white;
+				border-radius: 50%;
+				content: '';
+				display: inline-block;
+				height: $grid;
+				position: absolute;
+				right: $grid / 2;
+				vertical-align: top;
+				width: $grid;
+			}
+		}
+
+		@include respond-to(small) {
+			@include button;
+			display: block;
+		}
+	}
+
+	li {
+		margin-bottom: ($grid / 4);
+	}
+
+	.pz2-progressIndicator {
+		bottom: 0;
+		height: auto;
+		top: 0;
+		left: 0;
+		background: $shadow-light;
+	}
 }
 
 .pz2-termList {
-	margin-bottom: 1em;
+	margin-bottom: $grid / 2;
 
-	h5 {
-		text-transform: uppercase;
-		font-size: 100%;
-		font-weight: bold;
-		margin-bottom: .25em;
+	@include respond-to(small) {
+		display: none;
+
+		&:last-child {
+			border-bottom: $border-width solid $border-color;
+			margin-bottom: $grid;
+			padding-bottom: $grid * 1.5 - $border-width;
+		}
+
+		&.-visible {
+			display: block;
+		}
 	}
 
 	ol {
-		margin-bottom: 1em;
+		margin-bottom: $grid / 2;
 		padding: 0;
 	}
 
@@ -196,8 +303,8 @@
 		a {
 			position: relative;
 			display: block;
-			padding-left: 1em;
-			text-indent: -1em;
+			padding-left: $grid;
+			text-indent: (-$grid);
 			font-weight: normal;
 			box-shadow: none;
 		}
@@ -230,7 +337,7 @@
 }
 
 .pz2-facetCount {
-	color: #999;
+	color: $text-color-light;
 	margin-left: .4em;
 }
 
@@ -239,7 +346,7 @@
 }
 
 .pz2-facet-showAll a {
-	color: #999;
+	color: $text-color-light;
 	font-style: italic;
 }
 
@@ -247,9 +354,8 @@
 	font-weight: bold;
 }
 
-.pz2-termList a.pz2-facetCancel {
-	color: #f00;
-	font-weight: bold;
+.pz2-facetCancel {
+	margin-top: $grid / 2;
 }
 
 .pz2-histogramContainer {
@@ -268,17 +374,15 @@
 	font-weight: bold;
 }
 
-/* PROGRESS INDICATOR */
+/* Progress Indicator */
 
 .pz2-progressIndicator {
+	top: (-$grid / 2);
 	position: absolute;
-	display: block;
 	height: 5px;
-	top: 0;
-	left: 0;
 	background: $shadow-light;
+	z-index: 9;
 }
-
 
 .pz2-fieldContainer {
 	display: table;
@@ -293,39 +397,13 @@
 		display: table-cell;
 		vertical-align: top;
 	}
-
-	.pz2-searchField {
-		width: 100%;
-	}
 }
 
 .pz2-extraFields {
-	margin-top: $grid / 4;
+	margin-top: ($grid / 4);
 }
 
-#pz2-termLists {
-
-	li {
-		margin-bottom: 5px;
-	}
-
-	.pz2-progressIndicator {
-		position: absolute;
-		display: block;
-		bottom: 0;
-		height: auto;
-		top: 0;
-		left: 0;
-		background: $shadow-light;
-	}
-}
-
-/* PAGER */
-
-
-.pz2-pager {
-	// TODO center the pagination
-}
+/* Pager */
 
 .pz2-prev,
 .pz2-next {
@@ -333,223 +411,39 @@
 	display: inline-block;
 	margin: 0 .25em .25em 0;
 	text-align: center;
-
-	// TODO Fix element height
-	&:before {
-		font-size: $font-size;
-	}
-
+	width: $grid;
 }
 
-.pz2-pager .pz2-currentPage {
+.pz2-currentPage {
 	display: inline-block;
 	font-weight: bold;
 	width: $grid;
 }
 
-
 .pz2-recordCount {
 	position: absolute;
-	top: 20px;
+	top: 0;
 	right: 0;
-	text-align: left;
 }
 
-.pz2-recordCount:hover {
-	font-weight: normal;
-	cursor: pointer;
+.pz2-top {
+	position: relative;
+	padding-bottom: $grid / 2;
 }
 
-.pz2-noJS .pz2-recordCount:hover {
-	cursor: auto;
+.pz2-bottom {
+	clear: both;
+	padding-top: $grid / 2;
 }
 
 .pz2-noResults {
-	font-size: 166%;
 	white-space: nowrap;
-	transition: all .25s ease;
 }
 
 .pz2-pageNumbers {
+	@extend %clearfix;
 	@include pagination;
 	position: relative;
- }
-
-/* RESULT ITEMS */
-.pz2-mediaIcon {
-	display: block;
-	position: absolute;
-	left: 0;
-	height: 20px;
-	width: 20px;
-	font-size: 24px;
-
-	&::before,
-	&::after {
-		display: block;
-		position: absolute;
-		height: 20px;
-		width: 20px;
-		text-indent: 0;
-		font-family: subicons;
-		font-weight: normal;
-		font-variant: normal;
-		text-transform: none;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
-}
-
-.pz2-resultList .pz2-mediaIcon {
-	left: -38px;
-}
-
-.pz2-mediaIcon::before {
-	color: #f1f3f6;
-}
-
-.pz2-mediaIcon::after {
-	color: #00247d;
-}
-
-.pz2-mediaIcon::before {
-	content: '\e023';
-}
-
-.pz2-mediaIcon::after {
-	content: '\e022';
-}
-
-.pz2-mediaIcon.article::after {
-	content: '\e004';
-}
-
-.pz2-mediaIcon.audio-visual::before {
-	content: '\e011';
-}
-
-.pz2-mediaIcon.audio-visual::after {
-	content: '\e010';
-}
-
-.pz2-mediaIcon.book::before {
-	content: '\e001';
-}
-
-.pz2-mediaIcon.book::after {
-	content: '\e000';
-}
-
-.pz2-mediaIcon.data::before {
-	content: '\e00d';
-}
-
-.pz2-mediaIcon.data::after {
-	content: '\e00c';
-}
-
-.pz2-mediaIcon.electronic::before {
-	content: '\e00b';
-}
-
-.pz2-mediaIcon.electronic::after {
-	content: '\e00a';
-}
-
-.pz2-mediaIcon.image::before {
-	content: '\e01d';
-}
-
-.pz2-mediaIcon.image::after {
-	content: '\e01c';
-}
-
-.pz2-mediaIcon.journal::before {
-	content: '\e007';
-}
-
-.pz2-mediaIcon.journal::after {
-	content: '\e006';
-}
-
-.pz2-mediaIcon.letter::before {
-	content: '\e017';
-}
-
-.pz2-mediaIcon.letter::after {
-	content: '\e016';
-}
-
-.pz2-mediaIcon.map::before {
-	content: '\e00f';
-}
-
-.pz2-mediaIcon.map::after {
-	content: '\e00e';
-}
-
-.pz2-mediaIcon.manuscript::before {
-	content: '\e019';
-}
-
-.pz2-mediaIcon.manuscript::after {
-	content: '\e018';
-}
-
-.pz2-mediaIcon.microform::before {
-	content: '\e01b';
-}
-
-.pz2-mediaIcon.microform::after {
-	content: '\e01a';
-}
-
-.pz2-mediaIcon.multiple::before {
-	content: '\e021';
-}
-
-.pz2-mediaIcon.multiple::after {
-	content: '\e020';
-}
-
-.pz2-mediaIcon.multivolume::before {
-	content: '\e003';
-}
-
-.pz2-mediaIcon.multivolume::after {
-	content: '\e002';
-}
-
-.pz2-mediaIcon.music-score::before {
-	content: '\e015';
-}
-
-.pz2-mediaIcon.music-score::after {
-	content: '\e014';
-}
-
-.pz2-mediaIcon.newspaper::before {
-	content: '\e009';
-}
-
-.pz2-mediaIcon.newspaper::after {
-	content: '\e008';
-}
-
-.pz2-mediaIcon.recording::before {
-	content: '\e013';
-}
-
-.pz2-mediaIcon.recording::after {
-	content: '\e012';
-}
-
-.pz2-mediaIcon.website::before {
-	content: '\e01f';
-}
-
-.pz2-mediaIcon.website::after {
-	content: '\e01e';
 }
 
 .pz2-title-main {
@@ -569,29 +463,16 @@
 }
 
 .pz2-details {
-	font-size: 85%;
-	padding: 10px 0 20px;
-
-	dt {
-		text-align: right;
-		font-weight: bold;
-		width: 10em;
-		float: left;
-		clear: right;
-	}
-
-	dd {
-		margin-left: 10.3em;
-	}
-
-	dt,
-	dd {
-		margin-bottom: .5em;
-	}
-
 	ul {
-		padding-left: 1.5em;
 		margin: 0;
+	}
+
+	li {
+		padding: 0;
+
+		&::before {
+			content: none !important;
+		}
 	}
 }
 
@@ -600,8 +481,6 @@
 }
 
 .pz2-detail-catalogueLink {
-	background: #d9dbe4;
-	padding: 1px 0 1px 4px;
 	font-weight: bold;
 	white-space: nowrap;
 }
@@ -620,79 +499,7 @@ a.pz2-detail-parentCatalogueLink:hover {
 	font-weight: normal;
 }
 
-#pz2-results {
-
-}
-
-#pz2-results ol.pz2-resultList .pz2-details li {
-	clear: none; /* Cancel the clear done for list items in the main list on lists in .pz2-details. */
-	border-left: 0 none;
-}
-
-#pz2-results .pz2-details ul li {
-	margin: 0;
-}
-
-#pz2-results .pz2-extraLinks {
-	position: absolute;
-	right: 10px;
-	bottom: -3px;
-}
-
-* html #pz2-results .pz2-extraLinks {
-	position: static;
-	text-align: right;
-}
-
-* html #pz2-results .pz2-extraLinks * {
-	display: inline;
-	position: relative;
-}
-
-#pz2-results .pz2-extraLinksLabel {
-	display: none;
-}
-
-#pz2-results .pz2-extraLinks ul {
-	text-align: right;
-
-	li {
-		display: inline;
-		padding: 0;
-		list-style-type: none;
-	}
-}
-
-#pz2-results .pz2-extraLinks form,
-#pz2-results .pz2-extraLinks input {
-	display: inline;
-}
-
-#pz2-results .pz2-extraLinks ul li input {
-	border: 0 none;
-	background: transparent;
-	cursor: pointer;
-}
-
-#pz2-results .pz2-extraLinks ul li input,
-#pz2-results .pz2-extraLinks ul li a {
-	color: #666;
-	text-decoration: none;
-	font-weight: normal;
-	font-size: 1em;
-}
-
-#pz2-results .pz2-extraLinks:hover ul li input,
-#pz2-results .pz2-extraLinks:hover ul li a {
-	color: #000;
-}
-
-#pz2-results .pz2-extraLinks ul li input:hover,
-#pz2-results .pz2-extraLinks ul li a:hover {
-	text-decoration: underline;
-}
-
-/* ZDB INFO */
+/* ZDB Info */
 
 .pz2-ZDBLibraryName {
 	display: block;
@@ -704,7 +511,7 @@ a.pz2-ZDBGeneralInfo {
 	display: block;
 }
 
-/* GOOGLE BOOKS */
+/* Google Books */
 
 #googlePreviewContainer {
 	position: fixed;
@@ -714,15 +521,6 @@ a.pz2-ZDBGeneralInfo {
 	height: 570px; /* 550px for preview + 20px for title bar */
 }
 
-.googlePreview-titleBar {
-	margin: auto;
-	height: 20px;
-	width: 450px;
-	background: #eee;
-	text-align: right;
-	padding-right: 2px;
-}
-
 #googlePreview {
 	margin: auto;
 	top: 20px;
@@ -730,8 +528,17 @@ a.pz2-ZDBGeneralInfo {
 	width: 450px;
 }
 
+.googlePreview-titleBar {
+	margin: auto;
+	height: 20px;
+	width: 450px;
+	background: $shadow-light;
+	text-align: right;
+	padding-right: 2px;
+}
+
 .pz2-highlight {
-	background: #dde;
+	background: $highlight-color;
 }
 
 .pz2-mapContainer {
@@ -747,20 +554,25 @@ pz2-client.js removes this once it it loaded.
 .pz2-JSNote         hide       show
 .pz2-switchMenu     show       hide
 */
-#pazpar2 .pz2-JSNote {
-	display: none;
+#pazpar2 {
+	.pz2-JSNote {
+		display: none;
+	}
+
+	&.pz2-noJS {
+		.pz2-JSNote {
+			display: block;
+		}
+
+		#pz2-switchMenu,
+		.pz2-ranking {
+			display: none;
+		}
+	}
 }
 
-#pazpar2.pz2-noJS .pz2-JSNote {
-	display: block;
-}
+/* Status Display */
 
-#pazpar2.pz2-noJS #pz2-switchMenu,
-#pazpar2.pz2-noJS .pz2-ranking {
-	display: none;
-}
-
-/* STATUS DISPLAY */
 #pz2-targetView {
 	position: absolute;
 	top: -20px;
@@ -794,11 +606,189 @@ pz2-client.js removes this once it it loaded.
 }
 
 .pz2-accessNote {
-	position: absolute;
-	right: 0;
-	top: 10px;
-	width: 220px;
+	color: $text-color-light;
+	font-size: $font-size-small;
 	font-style: italic;
+	position: relative;
 	text-align: right;
-	color: #999;
+	top: (-$grid / 2);
+}
+
+.pz2-mediaIcon {
+	display: block;
+	position: absolute;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	font-size: 24px;
+
+	&::before,
+	&::after {
+		display: block;
+		position: absolute;
+		height: 20px;
+		width: 20px;
+		text-indent: 0;
+		font-family: subicons;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	&::before {
+		color: #f1f3f6;
+		content: '\e023';
+	}
+
+	&::after {
+		color: #00247d;
+		content: '\e022';
+	}
+
+	&.article::after {
+		content: '\e004';
+	}
+
+	&.audio-visual::before {
+		content: '\e011';
+	}
+
+	&.audio-visual::after {
+		content: '\e010';
+	}
+
+	&.book::before {
+		content: '\e001';
+	}
+
+	&.book::after {
+		content: '\e000';
+	}
+
+	&.data::before {
+		content: '\e00d';
+	}
+
+	&.data::after {
+		content: '\e00c';
+	}
+
+	&.electronic::before {
+		content: '\e00b';
+	}
+
+	&.electronic::after {
+		content: '\e00a';
+	}
+
+	&.image::before {
+		content: '\e01d';
+	}
+
+	&.image::after {
+		content: '\e01c';
+	}
+
+	&.journal::before {
+		content: '\e007';
+	}
+
+	&.journal::after {
+		content: '\e006';
+	}
+
+	&.letter::before {
+		content: '\e017';
+	}
+
+	&.letter::after {
+		content: '\e016';
+	}
+
+	&.map::before {
+		content: '\e00f';
+	}
+
+	&.map::after {
+		content: '\e00e';
+	}
+
+	&.manuscript::before {
+		content: '\e019';
+	}
+
+	&.manuscript::after {
+		content: '\e018';
+	}
+
+	&.microform::before {
+		content: '\e01b';
+	}
+
+	&.microform::after {
+		content: '\e01a';
+	}
+
+	&.multiple::before {
+		content: '\e021';
+	}
+
+	&.multiple::after {
+		content: '\e020';
+	}
+
+	&.multivolume::before {
+		content: '\e003';
+	}
+
+	&.multivolume::after {
+		content: '\e002';
+	}
+
+	&.music-score::before {
+		content: '\e015';
+	}
+
+	&.music-score::after {
+		content: '\e014';
+	}
+
+	&.newspaper::before {
+		content: '\e009';
+	}
+
+	&.newspaper::after {
+		content: '\e008';
+	}
+
+	&.recording::before {
+		content: '\e013';
+	}
+
+	&.recording::after {
+		content: '\e012';
+	}
+
+	&.website::before {
+		content: '\e01f';
+	}
+
+	&.website::after {
+		content: '\e01e';
+	}
+}
+
+.pz2-resultList .pz2-mediaIcon {
+	left: -38px;
+}
+
+@keyframes pazpar2spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

@@ -1,10 +1,7 @@
 @mixin pagination {
-
 	@extend %clearfix;
 	background: $white;
 	clear: both;
-	margin-left: 0 !important;
-
 
 	a {
 		@include link(false);

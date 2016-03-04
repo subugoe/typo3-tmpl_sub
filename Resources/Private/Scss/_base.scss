@@ -147,8 +147,7 @@ td {
 	}
 }
 
-@media screen and (min-width: map-get($breakpoints, 'small')) {
-
+@media (min-width: map-get($breakpoints, small)) {
 	table {
 		display: table;
 		width: 100%;
@@ -184,7 +183,7 @@ td {
 		text-align: left;
 	}
 
-	td:before {
+	td::before {
 		content: '';
 		width: auto;
 	}

@@ -43,7 +43,7 @@
 .search_content {
 	background: $white;
 	border-radius: 0 $br $br;
-	box-shadow: 0 0 $grid rgba($black, .5);
+	box-shadow: $drop-shadow;
 	display: none;
 	padding: ($grid * 3) $grid $grid;
 	position: absolute;
