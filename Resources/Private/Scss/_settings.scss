@@ -69,4 +69,6 @@ $button-bg-hover: linear-gradient(to bottom, $link-color, darken($link-color, 10
 $button-light-bg: linear-gradient(to bottom, lighten($grey-lighter, 10), $grey-lighter);
 $button-light-bg-hover: linear-gradient(to bottom, lighten($grey-lighter, 15), lighten($grey-lighter, 5));
 
+// Combined values
+$drop-shadow: 0 0 $grid rgba($black, .5);
 $outline: 1px dotted $text-color-light;
