@@ -161,11 +161,8 @@
 	}
 }
 
-.search_catalogue-link {
-	@include respond-to(tiny) {
-		float: right;
-		margin-left: .25em;
-	}
+.search_label-addon {
+	display: inline-block;
 }
 
 .search_navigation {

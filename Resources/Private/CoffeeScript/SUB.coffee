@@ -107,31 +107,12 @@ $ ->
       $item.append($link).appendTo($list)
     $('<div class="sidebar-nav"/>').append($list).appendTo($header)
 
-  # Pazpar2 responsive
-  $('.content').on('click', '#pz2-termLists h4', ->
-    # Read progress bar width to check if all results have been loaded.
-    # Since the whole DOM is re-rendered for every new result, checks have to
-    # run continually until loading has finished.
-    if $('.pz2-progressIndicator')[0].style.width is '100%'
-      $(this)
-        .toggleClass('-open')
-        .parent().find('.pz2-termList').slideToggle( ->
-          # Use class instead of inline styles to not affect display on large
-          # screens where facets cannot be toggled
-          $(this)[0].style.display = ''
-          $(this).toggleClass('-visible')
-        )
-    else
-      loadingCheck = setInterval( ->
-        if $('.pz2-progressIndicator')[0].style.width is '100%'
-          clearInterval(loadingCheck)
-          $('#pz2-termLists h4')
-            .removeClass('-loading')
-            .click()
-        else
-          $('#pz2-termLists h4').addClass('-loading')
-      , 100)
-  )
+  # Toggle-button for Pazpar2 facets on small screens
+  if window.pz2Initialised?
+    $('.content').on('click', '#pz2-termLists h4', ->
+      # Add class to ancestor that does not get re-rendered for every new result
+      $('#pazpar2').toggleClass('pz2-show-facets')
+    )
 
 initMenus = ->
   $('.nav_list.-secondary').hide()

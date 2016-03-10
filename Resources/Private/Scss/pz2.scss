@@ -42,23 +42,11 @@
 /* Search Form */
 
 .pz2-searchField {
-	display: table-cell;
 	font-size: $font-size;
-	width: $search-width;
-}
-
-.pz2-textFieldLabel {
-	display: table-cell;
-	width: 10em;
-	vertical-align: middle;
 }
 
 .pz2-basic label {
 	@extend .sr-only;
-}
-
-.pz2-submitButton {
-	margin-left: .25em;
 }
 
 .pz2-extended {
@@ -221,44 +209,24 @@
 		width: auto;
 	}
 
-	// Facets heading
+	// Facets heading used as toggle button on small screens
 	h4 {
 		@include icon('chevron-down');
 		display: none;
 		margin-bottom: $grid / 2;
-		opacity: 1;
 
 		&::before {
 			content: '+';
 			font-size: $grid;
 			vertical-align: top;
-		}
 
-		&.-open::before {
-			content: '\00d7';
-		}
-
-		&.-loading {
-			opacity: .7;
-
-			&::after {
-				animation: pazpar2spinner 1s infinite linear;
-				border: 5px solid rgba(#fff, .2);
-				border-left: 5px solid $white;
-				border-radius: 50%;
-				content: '';
-				display: inline-block;
-				height: $grid;
-				position: absolute;
-				right: $grid / 2;
-				vertical-align: top;
-				width: $grid;
+			.pz2-show-facets & {
+				content: '\00d7';
 			}
 		}
 
 		@include respond-to(small) {
 			@include button;
-			display: block;
 		}
 	}
 
@@ -287,7 +255,7 @@
 			padding-bottom: $grid * 1.5 - $border-width;
 		}
 
-		&.-visible {
+		.pz2-show-facets & {
 			display: block;
 		}
 	}
@@ -384,7 +352,7 @@
 	z-index: 9;
 }
 
-.pz2-fieldContainer {
+.pz2-field-all {
 	display: table;
 	width: 100%;
 
@@ -392,15 +360,24 @@
 		margin-top: $grid / 4;
 	}
 
+	.pz2-submitButton {
+		margin-left: .25em;
+	}
+
 	.pz2-formControls,
 	.pz2-searchField {
 		display: table-cell;
-		vertical-align: top;
+		vertical-align: bottom;
 	}
 }
 
 .pz2-extraFields {
 	margin-top: ($grid / 4);
+
+	.pz2-formControls {
+		display: block;
+		margin-top: ($grid / 2);
+	}
 }
 
 /* Pager */
@@ -424,6 +401,12 @@
 	position: absolute;
 	top: 0;
 	right: 0;
+
+	@include respond-to(tiny) {
+		display: block;
+		text-align: right;
+		position: static;
+	}
 }
 
 .pz2-top {
@@ -782,13 +765,4 @@ pz2-client.js removes this once it it loaded.
 
 .pz2-resultList .pz2-mediaIcon {
 	left: -38px;
-}
-
-@keyframes pazpar2spinner {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
 }
