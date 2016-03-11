@@ -151,19 +151,62 @@
 	}
 
 	table {
-		border-bottom: $border-width solid $border-color;
+		border: $border-width solid $border-color;
+		border-width: $border-width 0;
 		margin: (-.25 * $grid) 0 (.75 * $grid);
 		width: 100%;
+
+		// TODO: Only used for opening hours tables, rename class
+		&.no-responsive {
+			td {
+				white-space: nowrap;
+
+				@include respond-to(medium) {
+					white-space: normal;
+				}
+			}
+		}
+
+		// Reponsive tables
+		@include respond-to(small) {
+			&:not(.no-responsive) {
+				&,
+				thead,
+				tbody,
+				th,
+				td,
+				tr {
+					display: block;
+					overflow: hidden;
+				}
+
+				thead tr {
+					position: absolute;
+					top: -999em;
+					left: -999em;
+				}
+
+				td::before {
+					color: $text-color-light;
+					content: attr(data-label) ': ';
+					display: inline-block;
+					font-weight: bold;
+					width: 9em;
+				}
+			}
+		}
 	}
 
 	th,
 	td {
 		padding: (.25 * $grid);
 		text-align: left;
+		vertical-align: top;
 	}
 
 	tr {
 		border-bottom: $border-width solid $border-color;
+		border-top: $border-width solid $border-color;
 	}
 
 	[type=date],
@@ -176,11 +219,13 @@
 	select {
 		@include text-input;
 		height: (2 * $grid);
+		margin-top: $grid;
 	}
 
 	textarea {
 		@include text-input;
 		height: (8 * $grid);
+		margin-top: $grid;
 	}
 
 	[type=radio],

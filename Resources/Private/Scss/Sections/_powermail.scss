@@ -3,12 +3,25 @@
 }
 
 .powermail_label {
-	padding: (.5 * $grid) 0;
-
+	// Reset icon style
 	i {
 		cursor: help;
 		font-style: normal;
 	}
+}
+
+label.powermail_label {
+	background: $white;
+	color: $link-color;
+	line-height: 1;
+	margin: -.5em 0 0 .5em;
+	padding: 0 .5em;
+	position: absolute;
+}
+
+legend.powermail_label {
+	color: inherit;
+	font-weight: inherit;
 }
 
 .parsley-required {
