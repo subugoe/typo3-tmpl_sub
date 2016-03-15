@@ -147,6 +147,7 @@
 
 	&::placeholder {
 		color: $text-color-light;
+		opacity: 1; // Firefox fix
 	}
 
 	.-show-popup & {
