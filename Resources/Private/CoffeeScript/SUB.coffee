@@ -106,7 +106,8 @@ $ ->
           scrollTop: $( $(this).attr('href') ).offset().top
         false
       $item.append($link).appendTo($list)
-    $('<div class="sidebar-nav"/>').append($list).appendTo($header)
+    if ( $list.children().length > 0 )
+      $('<div class="sidebar-nav"/>').append($list).appendTo($header)
 
   # Toggle-button for Pazpar2 facets on small screens
   if window.pz2Initialised?
