@@ -22,8 +22,12 @@
 }
 
 .news {
-	.header {
+	// Reset styles inherited from site header and footer
+	.header,
+	.footer {
 		background: none;
-		padding-top: 0; // otherwise inherits padding from site header
+		color: $text-color-light;
+		padding-top: 0;
+		text-align: left;
 	}
 }
