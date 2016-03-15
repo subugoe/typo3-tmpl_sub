@@ -38,8 +38,8 @@ $ ->
     $('.wrap').toggleClass('-show-off-canvas')
     false
 
-  $('body').click ->
-    $('.wrap').removeClass('-show-off-canvas')
+  $('.wrap').click ->
+    $(this).removeClass('-show-off-canvas')
 
   headerHeight = $('.header').height()
   paginationOffsets = []
