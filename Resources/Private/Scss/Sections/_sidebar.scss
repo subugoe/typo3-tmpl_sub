@@ -28,6 +28,10 @@
 		margin-top: ($grid);
 	}
 
+	> div:empty + div {
+		margin-top: 0;
+	}
+
 	a {
 		@include link(false);
 	}

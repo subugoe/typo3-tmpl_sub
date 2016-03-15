@@ -82,7 +82,7 @@ $ ->
     window.open($(this).attr('href'))
     false
 
-  # Add links to sidebar headings above content to ease navigation on small screens
+  # Add sidebar TOC above content to ease navigation on small screens
   $header = $('.content .csc-header:first')
   sidebarLinks = []
   $('.sidebar > .csc-default').each( ->
@@ -98,6 +98,7 @@ $ ->
   if sidebarLinks.length > 0
     $list = $('<ol class="sidebar-nav_list"/>')
     for link in sidebarLinks
+      unless link.title then continue
       $item = $('<li class="sidebar-nav_item"/>')
       $link = $("<a class='sidebar-nav_link' href='##{link.id}'>#{link.title}</a>")
       $link.click ->
