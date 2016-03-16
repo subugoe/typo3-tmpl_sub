@@ -27,6 +27,7 @@
 				@include transition(color, transform);
 				color: $border-color;
 				font-size: $font-size-small;
+				padding: 0;
 
 				@include hover {
 					color: $link-color;
@@ -34,8 +35,8 @@
 			}
 
 			&.-open::before {
-				// Turn chevron to point upwards
-				transform: rotate(-180deg);
+				// Turn chevron upwards
+				transform: rotate(180deg);
 			}
 		}
 	}

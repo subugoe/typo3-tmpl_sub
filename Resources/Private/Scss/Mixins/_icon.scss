@@ -12,7 +12,7 @@
 			line-height: $grid;
 
 			@if $with-text {
-				margin-left: .25em;
+				padding-left: .5em;
 			}
 		} @else {
 			@if $with-text {
