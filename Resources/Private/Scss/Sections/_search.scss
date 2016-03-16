@@ -3,7 +3,7 @@
 	@extend %clearfix;
 	float: right;
 	height: (3 * $grid);
-	margin: (-3.5 * $grid) auto 0; // TODO: Magic number for correct alignment, try to get rid of it
+	margin: (-3.5 * $grid) auto 0;
 	max-width: 40em;
 	position: relative;
 	right: ($grid / 2);
@@ -167,6 +167,11 @@
 
 .search_label-addon {
 	display: inline-block;
+
+	@include respond-to(tiny) {
+		display: block;
+		margin-left: $grid;
+	}
 }
 
 .search_navigation {
