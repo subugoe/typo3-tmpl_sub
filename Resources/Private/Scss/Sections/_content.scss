@@ -219,13 +219,11 @@
 	select {
 		@include text-input;
 		height: (2 * $grid);
-		margin-top: $grid;
 	}
 
 	textarea {
 		@include text-input;
 		height: (8 * $grid);
-		margin-top: $grid;
 	}
 
 	[type=radio],
