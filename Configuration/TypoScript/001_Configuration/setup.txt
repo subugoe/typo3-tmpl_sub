@@ -429,3 +429,10 @@ plugin.tx_powermail {
 		}
 	}
 }
+
+tt_content.bullets.20.split.1.parseFunc = < lib.parseFunc
+tt_content.bullets.20.split.1.htmlSpecialChars >
+tt_content.bullets.20.split.2.parseFunc = < lib.parseFunc
+tt_content.bullets.20.split.2.htmlSpecialChars >
+tt_content.table.20.innerStdWrap.parseFunc = < lib.parseFunc
+tt_content.table.20.innerStdWrap.htmlSpecialChars >
