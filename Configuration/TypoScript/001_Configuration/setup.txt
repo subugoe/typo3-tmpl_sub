@@ -25,10 +25,10 @@ config {
 	uniqueLinkVars = 1
 	meaningfulTempFilePrefix = 50
 
-	concatenateJs = 0
-	compressJs = 0
-	concatenateCss = 0
-	compressCss = 0
+	concatenateJs = {$config.concatenateCompress}
+	compressJs = {$config.concatenateCompress}
+	concatenateCss = {$config.concatenateCompress}
+	compressCss = {$config.concatenateCompress}
 
 	tx_piwik {
 		piwik_host = {$plugin.piwik.host}
