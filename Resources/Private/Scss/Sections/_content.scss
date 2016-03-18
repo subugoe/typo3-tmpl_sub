@@ -50,6 +50,10 @@
 		font-weight: 300;
 	}
 
+	article + article h1 {
+		margin-top: $grid * 1.5;
+	}
+
 	h2 {
 		@include typo-scale(2);
 		font-weight: 300;

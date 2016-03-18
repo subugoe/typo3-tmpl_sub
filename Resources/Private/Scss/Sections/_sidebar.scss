@@ -14,7 +14,7 @@
 	}
 
 	// TODO: BEM this if possible
-	> div {
+	> .csc-default {
 		border-left: $border-width solid $border-color;
 		padding-left: ($grid - $border-width);
 
@@ -24,11 +24,11 @@
 		}
 	}
 
-	> div + div {
+	> .csc-default + .csc-default {
 		margin-top: ($grid);
 	}
 
-	> div:empty + div {
+	> .csc-default:empty + .csc-default {
 		margin-top: 0;
 	}
 
