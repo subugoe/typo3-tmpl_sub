@@ -4,6 +4,7 @@
   "description": "[![Build Status](https://travis-ci.org/ipf/typo3-tmpl_sub.svg?branch=master)](https://travis-ci.org/ipf/typo3-tmpl_sub)",
   "devDependencies": {
     "autoprefixer": "^6.3.1",
+    "browser-sync": "^2.11.1",
     "coffeelint": "^1.14.2",
     "gulp": "^3.9.0",
     "gulp-bower": "^0.0.13",

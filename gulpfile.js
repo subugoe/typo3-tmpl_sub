@@ -11,6 +11,8 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     uglify = require('gulp-uglify');
 
+var browserSync = require('browser-sync').create();
+
 var config = {
     paths: {
         sass: [
@@ -44,7 +46,6 @@ var processors = [
 ];
 
 gulp.task('sass', function () {
-
     gulp.src(config.paths.sass)
         .pipe(sassGlob())
         .pipe(sass({
@@ -55,7 +56,8 @@ gulp.task('sass', function () {
             message: '<%= error.message %>'
         }))
         .pipe(postcss(processors))
-        .pipe(gulp.dest('./Resources/Public/Css/'));
+        .pipe(gulp.dest('./Resources/Public/Css/'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('sass-lint', function () {
@@ -73,7 +75,8 @@ gulp.task('coffee', function () {
         .pipe(concat('production.js'))
         .pipe(uglify())
         .pipe(rename('Site.min.js'))
-        .pipe(gulp.dest('Resources/Public/Js/'));
+        .pipe(gulp.dest('Resources/Public/Js/'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('compile', ['bower', 'coffee', 'sass'], function () {
@@ -83,6 +86,11 @@ gulp.task('compile', ['bower', 'coffee', 'sass'], function () {
 gulp.task('prod', ['copy-fonts', 'coffee', 'sass']);
 
 gulp.task('watch', function () {
+    // Browse to http://localhost:3000/sub-aktuell/
+    browserSync.init({
+        open: false,
+        proxy: 'www.dev'
+    });
     gulp.watch(config.paths.sass, ['sass-lint', 'sass']);
     gulp.watch(config.paths.coffee, ['coffee']);
 });
