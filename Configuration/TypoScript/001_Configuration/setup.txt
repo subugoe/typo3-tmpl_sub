@@ -374,6 +374,9 @@ plugin.tx_powermail {
 	}
 }
 
+tt_content.stdWrap.innerWrap.cObject.default.10.cObject.default.value = <article id="c{field:uid}"
+tt_content.stdWrap.innerWrap.cObject.default.30.cObject.default.value = >|</article>
+
 tt_content {
 	bullets {
 		20 {
