@@ -1,3 +1,5 @@
+// Overrides for GOK default styles
+
 .gok,
 .gokContainer {
 
@@ -15,7 +17,27 @@
 		}
 
 		a {
-			@include link(false);
+			box-shadow: none;
+			color: $text-color-light;
+
+			@include hover {
+				background: none;
+			}
 		}
+
+		a:link {
+			@include link(false);
+			color: $link-color;
+
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
+	}
+
+	.opacLink {
+		color: $link-color !important;
+		font-style: normal !important;
+		font-size: $font-size-small !important;
 	}
 }
