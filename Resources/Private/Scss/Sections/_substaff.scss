@@ -62,15 +62,13 @@
 }
 
 .substaff_more-link {
-	margin: (-$grid) 0 $grid;
+	margin: (-$grid / 2) 0 $grid $grid;
 
 	a {
+		@include button;
 		@include icon('angle-down');
-		background: $shadow-light;
 		box-shadow: none;
-		border: 0;
-		border-radius: 0 0 $br $br;
-		display: inline-block;
+		color: $white;
 		padding: 0 .5em;
 	}
 }
