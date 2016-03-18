@@ -83,7 +83,7 @@ $ ->
     false
 
   # Add sidebar TOC above content to ease navigation on small screens
-  $header = $('.content .csc-header:first')
+  $header = $('.content h1:first')
   sidebarLinks = []
   $('.sidebar > .csc-default').each( ->
     $this = $(this)
@@ -107,7 +107,7 @@ $ ->
         false
       $item.append($link).appendTo($list)
     if ( $list.children().length > 0 )
-      $('<div class="sidebar-nav"/>').append($list).appendTo($header)
+      $('<div class="sidebar-nav"/>').append($list).insertAfter($header)
 
   # Toggle-button for Pazpar2 facets on small screens
   if window.pz2Initialised?
