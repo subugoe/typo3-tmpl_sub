@@ -4,9 +4,10 @@
 	float: right;
 	height: (3 * $grid);
 	margin: (-3.5 * $grid) auto 0;
-	max-width: 40em;
+	max-width: 100%;
 	position: relative;
 	right: ($grid / 2);
+	width: round(19.416 * $grid);
 	z-index: 1;
 
 	@include respond-to(medium) {
@@ -240,10 +241,6 @@
 		@include hover {
 			@include auto-color($brand-color);
 			background: $brand-color;
-		}
-
-		@include respond-to(small) {
-			height: (3 * $grid);
 		}
 	}
 }
