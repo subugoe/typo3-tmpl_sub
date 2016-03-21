@@ -7,12 +7,8 @@ $ ->
     $('.mobile-only').show()
 
   # TODO: What is page-1616?
-  if document.getElementById('page-1616') and
-  window.location.search.indexOf('tx_solr') is -1
+  if document.getElementById('page-1616') and window.location.search.indexOf('tx_solr') is -1
     $('aside.infocontent').hide()
-
-  # Remove border from images with link
-  $('a img').parent('a').css('border-bottom', 0)
 
   initMenus()
 
