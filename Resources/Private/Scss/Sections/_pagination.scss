@@ -35,19 +35,19 @@
 
 .pagination_link {
 	&.-last {
-		@include icon('fast-forward', false);
+		@include icon('fast-forward', $link-color, false);
 	}
 
 	&.-first {
-		@include icon('fast-backward', false);
+		@include icon('fast-backward', $link-color, false);
 	}
 
 	&.-next {
-		@include icon('step-forward', false);
+		@include icon('step-forward', $link-color, false);
 	}
 
 	&.-previous {
-		@include icon('step-backward', false);
+		@include icon('step-backward', $link-color, false);
 		margin-right: $grid;
 	}
 }

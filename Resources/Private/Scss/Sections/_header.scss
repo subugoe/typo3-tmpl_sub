@@ -68,7 +68,7 @@
 
 	a {
 		@include link(false);
-		@include icon('globe');
+		@include icon('globe', $link-color);
 
 		@include respond-to(medium) {
 			@include link(false, true);
@@ -145,7 +145,7 @@
 }
 
 .header_toggle-nav {
-	@include icon('bars');
+	@include icon('bars', $white);
 	@include link(false, true);
 	background: none;
 	border: 0;
@@ -164,6 +164,6 @@
 	}
 
 	.-show-off-canvas & {
-		@include icon('close', false);
+		@include icon('close', $white);
 	}
 }

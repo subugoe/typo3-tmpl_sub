@@ -45,8 +45,8 @@
 }
 
 .substaff_map-link {
-	@include icon('map-marker', false);
-	padding: ($font-size / 2) !important;
+	@include icon('map-marker', $link-color, false);
+	padding: 1px .25em !important;
 }
 
 .substaff_map-link {
@@ -66,7 +66,7 @@
 
 	a {
 		@include button;
-		@include icon('angle-down');
+		@include icon('angle-down', $white);
 		box-shadow: none;
 		color: $white;
 		padding: 0 .5em;

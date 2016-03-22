@@ -160,17 +160,6 @@
 		margin: (-.25 * $grid) 0 (.75 * $grid);
 		width: 100%;
 
-		// TODO: Only used for opening hours tables, rename class
-		&.no-responsive {
-			td {
-				white-space: nowrap;
-
-				@include respond-to(medium) {
-					white-space: normal;
-				}
-			}
-		}
-
 		// Reponsive tables
 		@include respond-to(small) {
 			&:not(.no-responsive) {
@@ -184,7 +173,7 @@
 					overflow: hidden;
 				}
 
-				thead tr {
+				thead tr { // scss-lint:disable SelectorDepth
 					position: absolute;
 					top: -999em;
 					left: -999em;
@@ -196,6 +185,17 @@
 					display: inline-block;
 					font-weight: bold;
 					width: 9em;
+				}
+			}
+		}
+
+		// TODO: Only used for opening hours tables, rename class
+		&.no-responsive {
+			td {
+				white-space: nowrap;
+
+				@include respond-to(medium) {
+					white-space: normal;
 				}
 			}
 		}

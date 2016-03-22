@@ -1,17 +1,18 @@
 // BEM style: block-name_element-name -modifier-name
 
-@import 'settings';
+@import 'Util/settings';
+@import 'Util/font-awesome-svg-paths';
 
 // Requires Sass glob plugin
 @import 'Mixins/*';
 
-@import 'fonts';
-@import 'reset';
-@import 'mod';
+@import 'Util/fonts';
+@import 'Util/reset';
+@import 'Util/mod';
 
 @import 'Extends/*';
 
-@import 'base';
+@import 'Util/base';
 
 @import 'Sections/*';
 

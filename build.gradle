@@ -33,8 +33,7 @@ node {
 FileCollection buildDirectories = files([
         'Build/logs',
         'Build/lib',
-        'Build/pdepend',
-        'Build/tmp/FontAwesome'
+        'Build/pdepend'
 ])
 
 FileCollection generatedFiles = files([

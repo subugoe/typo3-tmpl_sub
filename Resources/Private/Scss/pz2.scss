@@ -4,10 +4,11 @@
 // NOTE: Pazpar2 stylesheet is including its own icon set
 // We don't wanna load Font Awesome here to avoid too much overhead
 
-@import 'settings';
+@import 'Util/settings';
+@import 'Util/font-awesome-svg-paths';
 @import 'Mixins/*';
 @import 'Extends/*';
-@import 'mod';
+@import 'Util/mod';
 
 /* Media Type Icon Font */
 
@@ -211,13 +212,13 @@
 
 	// Facets heading used as toggle button on small screens
 	h4 {
-		@include icon('chevron-down');
 		display: none;
 		margin-bottom: $grid / 2;
 
 		&::before {
 			content: '+';
 			font-size: $grid;
+			margin-right: .25em;
 			vertical-align: top;
 
 			.pz2-show-facets & {

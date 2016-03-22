@@ -11,10 +11,9 @@ $breakpoints: (
 );
 
 $border-width: 1px;
-$br: null; // border-radius
+$br: 0; // border-radius
 
 // Typography
-$fa-font-path: '../Fonts/fontawesome' !default;
 $OpenSansPath: '../Fonts/open-sans' !default; // scss-lint:disable NameFormat
 $sub-iconfont-path: '../Fonts/sub' !default;
 
@@ -39,9 +38,8 @@ $brand-color-lighter: lighten($brand-color, 66);
 
 // Other base colors
 $grey: #666;
-$grey-dark: #444;
-$grey-light: #888;
-$grey-lighter: #ddd;
+$grey-light: #ddd;
+$grey-dark: #333;
 $shadow-light: rgba(black, .08);
 $shadow-dark: rgba(black, .24);
 $white: #fff;
@@ -53,7 +51,7 @@ $heading-color: $brand-color;
 $text-color: $grey-dark;
 $text-color-light: $grey;
 
-$border-color: $grey-lighter;
+$border-color: $grey-light;
 $highlight-color: $brand-color-lighter;
 
 $link-color: $brand-color;
@@ -66,9 +64,20 @@ $input-border-color-focus: $brand-color;
 
 $button-bg: linear-gradient(to bottom, lighten($link-color, 10), $link-color);
 $button-bg-hover: linear-gradient(to bottom, $link-color, darken($link-color, 10));
-$button-light-bg: linear-gradient(to bottom, lighten($grey-lighter, 10), $grey-lighter);
-$button-light-bg-hover: linear-gradient(to bottom, lighten($grey-lighter, 15), lighten($grey-lighter, 5));
+$button-light-bg: linear-gradient(to bottom, lighten($grey-light, 10), $grey-light);
+$button-light-bg-hover: linear-gradient(to bottom, lighten($grey-light, 15), lighten($grey-light, 5));
 
 // Combined values
 $drop-shadow: 0 0 $grid rgba($black, .5);
 $outline: 1px dotted $text-color-light;
+
+// Legacy icons for infobox social links
+$social-icons: (
+	phone,
+	comments,
+	pencil,
+	facebook,
+	facebook-square,
+	twitter,
+	rss,
+);

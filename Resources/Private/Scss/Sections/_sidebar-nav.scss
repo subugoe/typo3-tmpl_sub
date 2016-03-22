@@ -1,25 +1,26 @@
-// NOTE: This block is entirely JS-generated
+// NOTE: This section's DOM is entirely JS-generated
 
 .sidebar-nav {
-	@include icon('info-circle', false);
+	@include icon('info-circle', $text-color-light);
 	background: $shadow-light;
 	display: none;
 	margin-bottom: $grid;
 	table-layout: fixed;
 	width: 100%;
 
-	&:before {
-		background: $shadow-light;
+	@include respond-to(small) {
+		display: table;
+	}
+
+	&::before {
+		background-color: $shadow-light;
+		background-size: $grid;
 		color: $text-color-light;
 		padding: .5em;
 		display: table-cell;
 		text-align: center;
-		vertical-align: middle;
+		top: 0;
 		width: 2em;
-	}
-
-	@include respond-to(small) {
-		display: table;
 	}
 }
 

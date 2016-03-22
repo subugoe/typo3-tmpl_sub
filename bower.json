@@ -17,7 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "fontawesome": "~4.5.0",
     "modernizr": "~2.8.3",
     "open-sans-fontface": "~1.4.0"
   }

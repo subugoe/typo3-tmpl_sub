@@ -1,12 +1,9 @@
 .news_more,
 .news .more {
-	@include icon('angle-right', true, true);
+	@include icon('angle-right', $link-color, false, true);
 	position: relative;
 
-	// NOTE: Since Font Awesome is using single-colon notation for pseudo elements,
-	// we gotta use this too here, or bad things will happen
-	// scss-lint:disable PseudoElement
-	&:before {
+	&::before {
 		float: none;
 		position: absolute;
 		right: -.75em;

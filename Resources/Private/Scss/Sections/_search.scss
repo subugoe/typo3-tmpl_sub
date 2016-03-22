@@ -22,12 +22,11 @@
 }
 
 .search_close {
-	@include icon('close', false);
-	@include transition(color);
+	@include icon('close', $link-color, false);
+	@include transition(background);
 	background: none;
 	bottom: ($grid / 4);
 	border: 0;
-	color: $link-color;
 	height: $grid;
 	line-height: 1;
 	padding: 0;
@@ -117,12 +116,12 @@
 	}
 
 	&.-hide {
-		@include icon('close', false);
+		@include icon('close', $link-color, false);
 		display: none;
 	}
 
 	&.-show {
-		@include icon('info', false);
+		@include icon('info', $link-color, false);
 	}
 }
 
@@ -260,21 +259,24 @@
 }
 
 .search_submit {
-	@include icon('search', false);
-	@include transition(color);
+	@include icon('search', $link-color, false);
+	@include transition(background);
 	background: none;
 	border: 0;
-	color: $link-color;
-	font-size: 1.5em;
-	height: (2 * $grid);
+	height: ceil(1.618 * $grid);
 	position: absolute;
-	right: (.5 * $grid);
-	top: (.5 * $grid);
-	width: (2 * $grid);
+	right: round(.7 * $grid);
+	top: round(.7 * $grid);
+	width: ceil(1.618 * $grid);
 	z-index: 9;
 
 	@include hover {
-		color: darken($link-color, 20);
+		background: $link-hover-bg-color;
+	}
+
+	&::before {
+		height: $grid;
+		width: $grid;
 	}
 }
 
@@ -286,9 +288,5 @@
 .search_area,
 .search_subject,
 .search_tag {
-	&:before { // scss-lint:disable PseudoElement
-		@include icon('caret-right');
-		color: $input-border-color;
-		margin-right: .5em;
-	}
+	@include icon('caret-right', $brand-color-light);
 }

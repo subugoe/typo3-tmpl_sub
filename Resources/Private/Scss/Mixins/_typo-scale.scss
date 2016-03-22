@@ -1,11 +1,13 @@
-$typo-scale-offset: 0 !default;
+$typo-scale-allow-half-lines: true !default;
+$typo-scale-sizing-factor: 1 !default;
 
-@mixin typo-scale($increment, $allow-half-lines: true) {
-	font-size: round(ms($increment)) + $typo-scale-offset;
-	@if $allow-half-lines {
-		line-height: round(ms($increment) / (.5 * $line-height) + .5) * .5 * $line-height;
+@mixin typo-scale($increment) {
+	font-size: round(ms($increment) * $typo-scale-sizing-factor);
+
+	@if $typo-scale-allow-half-lines {
+		line-height: floor(ms($increment) * $typo-scale-sizing-factor / (.5 * $line-height) + 1) * .5 * $line-height;
 	} @else {
-		line-height: floor(ms($increment) / ($line-height) + 1) * $line-height;
+		line-height: floor(ms($increment) * $typo-scale-sizing-factor / $line-height + 1) * $line-height;
 	}
 }
 

@@ -57,6 +57,9 @@ linters:
     leading_underscore: false
     filename_extension: false
 
+  ImportantRule:
+    enabled: false
+
   Indentation:
     enabled: true
     character: tab
