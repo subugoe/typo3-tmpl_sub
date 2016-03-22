@@ -56,8 +56,7 @@ gulp.task('sass', function () {
             message: '<%= error.message %>'
         }))
         .pipe(postcss(processors))
-        .pipe(gulp.dest('./Resources/Public/Css/'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('./Resources/Public/Css/'));
 });
 
 gulp.task('sass-lint', function () {
@@ -75,8 +74,7 @@ gulp.task('coffee', function () {
         .pipe(concat('production.js'))
         .pipe(uglify())
         .pipe(rename('Site.min.js'))
-        .pipe(gulp.dest('Resources/Public/Js/'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('Resources/Public/Js/'));
 });
 
 gulp.task('compile', ['bower', 'coffee', 'sass'], function () {
