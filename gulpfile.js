@@ -81,7 +81,7 @@ gulp.task('coffee', function() {
 
 gulp.task('compile', ['bower', 'coffee', 'sass-lint', 'sass']);
 
-gulp.task('prod', function() {
+gulp.task('prod', ['bower'], function() {
     config.prod = true;
     gulp.start(['coffee', 'sass']);
 });
