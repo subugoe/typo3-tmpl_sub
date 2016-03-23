@@ -68,10 +68,11 @@
 	}
 
 	a {
-		@include link(false);
 		@include icon('globe', $link-color);
+		@include link(false);
 
 		@include respond-to(medium) {
+			@include icon('globe', $white);
 			@include link(false, true);
 			display: inline-block;
 			padding: (.5 * $grid);
