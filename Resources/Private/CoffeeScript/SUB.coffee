@@ -99,7 +99,7 @@ $ ->
       $link = $("<a class='sidebar-nav_link' href='##{link.id}'>#{link.title}</a>")
       $link.click ->
         $('html, body').animate
-          scrollTop: $( $(this).attr('href') ).offset().top
+          scrollTop: $( $(this).attr('href') ).offset().top - 13
         false
       $item.append($link).appendTo($list)
     if ( $list.children().length > 0 )

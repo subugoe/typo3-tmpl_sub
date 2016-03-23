@@ -34,7 +34,7 @@
 	display: block;
 
 	& + & {
-		margin-top: ($grid / 2);
+		margin-top: ($grid / 4);
 	}
 }
 
