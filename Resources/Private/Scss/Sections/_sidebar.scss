@@ -24,12 +24,12 @@
 		}
 	}
 
-	> .csc-default + .csc-default {
-		margin-top: ($grid);
-	}
+	.csc-default {
+		margin-top: $grid;
 
-	> .csc-default:empty + .csc-default {
-		margin-top: 0;
+		&:first-of-type {
+			margin-top: 0;
+		}
 	}
 
 	a {
