@@ -1,7 +1,8 @@
 $svg-icon-color: $text-color !default;
 $svg-icon-default-size: 1792px !default; // SVG canvas height and width
 $svg-icon-margin: .25em !default;
-$svg-icon-paths: $font-awesome-svg-paths !default;
+$svg-icon-size: 1em !default;
+$svg-icon-vertical-offset: -.1em !default;
 
 %icon {
 	background-position: center center;
@@ -9,11 +10,10 @@ $svg-icon-paths: $font-awesome-svg-paths !default;
 	background-size: contain;
 	content: '';
 	display: inline-block;
-	position: relative;
-	height: 1em;
-	top: .125em;
-	width: 1em;
-	vertical-align: baseline;
+	height: $svg-icon-size;
+	margin: (-$svg-icon-size / 2 + $svg-icon-vertical-offset) 0 (-$svg-icon-size / 2 - $svg-icon-vertical-offset);
+	vertical-align: middle;
+	width: $svg-icon-size;
 }
 
 @mixin icon($name, $color: $svg-icon-color, $with-text: true, $on-right: false) {

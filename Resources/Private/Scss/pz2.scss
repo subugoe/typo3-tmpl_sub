@@ -4,8 +4,8 @@
 // NOTE: Pazpar2 stylesheet is including its own icon set
 // We don't wanna load Font Awesome here to avoid too much overhead
 
-@import 'Util/settings';
 @import 'Util/font-awesome-svg-paths';
+@import 'Util/settings';
 @import 'Mixins/*';
 @import 'Extends/*';
 @import 'Util/mod';

@@ -16,8 +16,8 @@ $br: 0; // border-radius
 // Typography
 $OpenSansPath: '../Fonts/open-sans' !default; // scss-lint:disable NameFormat
 $sub-iconfont-path: '../Fonts/sub' !default;
+$svg-icon-paths: $font-awesome-svg-paths;
 
-$icon-font-path: '../Fonts/';
 $font-family-display: 'urw_classicoregular', 'Helvetica', 'Arial', sans-serif;
 $font-family-display-fallback: 'Helvetica', 'Arial', sans-serif;
 $font-family-text: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
@@ -29,7 +29,7 @@ $ratio: 1.3333333; // Factor used for font size increments
 $line-height: $grid;
 $font-size: 16px;
 $font-size-small: 14px;
-$typo-scale-offset: 2px; // Adjust heading font size for different font heights
+$typo-scale-sizing-factor: .93; // Adjust heading font size for different font heights
 
 // Brand colors
 $brand-color: #1a3771;
