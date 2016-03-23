@@ -18,6 +18,7 @@
 		@include respond-to(medium) {
 			cursor: pointer;
 			margin-left: 61.8%;
+			overflow: hidden;
 
 			&::before {
 				cursor: pointer;
