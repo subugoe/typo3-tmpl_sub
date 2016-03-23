@@ -61,6 +61,7 @@
 	float: right;
 
 	@include respond-to(medium) {
+		font-size: $font-size;
 		position: absolute;
 		right: 0;
 		top: 0;
