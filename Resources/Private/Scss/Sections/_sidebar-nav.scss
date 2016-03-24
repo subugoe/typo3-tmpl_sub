@@ -4,11 +4,11 @@
 	@include icon('info-circle', $text-color-light);
 	background: $shadow-light;
 	display: none;
-	margin-bottom: $grid;
+	margin: (-$grid / 2) 0 $grid;
 	table-layout: fixed;
 	width: 100%;
 
-	@include respond-to(small) {
+	@include respond-to(medium) {
 		display: table;
 	}
 

@@ -15,7 +15,7 @@
 	}
 
 	&.-show-off-canvas {
-		@include respond-to(medium) {
+		@include respond-to(large) {
 			cursor: pointer;
 			margin-left: 61.8%;
 			overflow: hidden;

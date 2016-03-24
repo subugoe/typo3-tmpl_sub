@@ -33,7 +33,7 @@
 	float: right;
 	margin: 0 0 0 $grid;
 
-	@include respond-to(medium) {
+	@include respond-to(large) {
 		float: none;
 		margin: 0;
 	}
@@ -55,7 +55,7 @@
 		right: ($grid / -2);
 		padding: 1px 0 !important;
 
-		@include respond-to(small) {
+		@include respond-to(medium) {
 			position: relative;
 		}
 	}

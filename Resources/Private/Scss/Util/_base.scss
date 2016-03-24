@@ -19,7 +19,7 @@ body {
 	max-width: $site-width;
 	min-height: 100%;
 
-	@include respond-to(medium) {
+	@include respond-to(large) {
 		box-shadow: 0 0 $grid rgba($black, .5);
 		margin: 0;
 		min-width: 100%;

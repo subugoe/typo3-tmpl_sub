@@ -4,9 +4,9 @@ $site-width: 48 * $grid;
 $search-width: 24 * $grid;
 
 $breakpoints: (
-	large: 1260px,
-	medium: 1004px,
-	small: 640px,
+	large: 1023px,
+	medium: 719px,
+	small: 639px,
 	tiny: 479px
 );
 
@@ -25,11 +25,11 @@ $font-family-text-fallback: 'Helvetica', 'Arial', sans-serif;
 
 $img-path: '../Img';
 
-$ratio: 1.3333333; // Factor used for font size increments
+$ratio: 1.25; // Factor used for font size increments
 $line-height: $grid;
 $font-size: 16px;
 $font-size-small: 14px;
-$typo-scale-sizing-factor: .93; // Adjust heading font size for different font heights
+$typo-scale-sizing-factor: 1; // Adjust heading font size for different font heights
 
 // Brand colors
 $brand-color: #1a3771;

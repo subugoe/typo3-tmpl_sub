@@ -1,22 +1,38 @@
 .search {
 	@extend %header_element;
 	@extend %clearfix;
+	@include transition(margin, width);
 	float: right;
-	margin: (-2.5 * $grid) auto 0;
+	margin: (-2.5 * $grid) (-$grid / 2) 0 0;
 	max-width: 100%;
 	position: relative;
-	right: (-$grid / 2);
-	width: round(19.416 * $grid);
+	width: 12 * $grid;
 	z-index: 1;
 
-	@include respond-to(medium) {
-		float: none;
-		right: 0;
-		margin: 0 auto;
+	@include respond-to(large) {
+		margin-top: (-2.5 * $grid);
+		width: 17.25em; // Minimum required width to fit placeholder into input
+
+		&.-show-popup {
+			margin: (-2.5 * $grid) 0;
+			width: 100%;
+		}
 	}
 
-	@media(max-width: ($search-width + $grid)) {
-		width: 100%;
+	@include respond-to(medium) {
+		&.-show-popup {
+			margin: (-1.5 * $grid) 0;
+		}
+	}
+
+	@include respond-to(small) {
+		float: none;
+		right: 0;
+		margin: 0 auto !important;
+	}
+
+	&.-show-popup {
+		width: round(19.416 * $grid) !important;
 	}
 }
 
@@ -126,18 +142,12 @@
 
 .search_input {
 	@include text-input;
-	@include transition(width);
 	border: $border-width solid $input-border-color;
 	box-shadow: .1em .1em .5em rgba($black, .2) inset;
 	float: right;
-	padding-right: (2 * $grid);
+	padding-right: round(1.75 * $grid);
 	position: relative;
-	width: (12 * $grid);
 	z-index: 9;
-
-	@include respond-to(medium) {
-		width: 100%;
-	}
 
 	&:focus {
 		border: $border-width solid $input-border-color-focus;
@@ -262,11 +272,11 @@
 	@include transition(background);
 	background: none;
 	border: 0;
-	height: ceil(1.618 * $grid);
+	height: 1.5 * $grid;
 	position: absolute;
-	right: round(.7 * $grid);
-	top: round(.7 * $grid);
-	width: ceil(1.618 * $grid);
+	right: round(.75 * $grid);
+	top: round(.75 * $grid);
+	width: 1.5 * $grid;
 	z-index: 9;
 
 	@include hover {

@@ -15,7 +15,7 @@
 	@extend %clearfix;
 	padding: 0 (.5 * $grid);
 
-	@include respond-to(small) {
+	@include respond-to(medium) {
 		padding: 0;
 	}
 
@@ -29,7 +29,7 @@
 	padding: (.5 * $grid);
 	width: 25%;
 
-	@include respond-to(medium) {
+	@include respond-to(large) {
 		width: 50%;
 	}
 
@@ -46,7 +46,7 @@
 		margin-left: $grid;
 		text-indent: (-$grid);
 
-		@include respond-to(medium) {
+		@include respond-to(small) {
 			margin-bottom: (.25 * $grid);
 		}
 	}
@@ -57,7 +57,7 @@
 	padding: (.5 * $grid) $grid;
 	text-align: right;
 
-	@include respond-to(small) {
+	@include respond-to(medium) {
 		padding: (.5 * $grid);
 	}
 }

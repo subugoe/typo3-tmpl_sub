@@ -105,7 +105,7 @@
 #pz2-results {
 	margin-right: $grid * 10;
 
-	@include respond-to(small) {
+	@include respond-to(medium) {
 		margin-right: 0;
 	}
 
@@ -205,7 +205,7 @@
 	float: right;
 	width: $grid * 9;
 
-	@include respond-to(small) {
+	@include respond-to(medium) {
 		float: none;
 		width: auto;
 	}
@@ -226,7 +226,7 @@
 			}
 		}
 
-		@include respond-to(small) {
+		@include respond-to(medium) {
 			@include button;
 		}
 	}
@@ -247,7 +247,7 @@
 .pz2-termList {
 	margin-bottom: $grid / 2;
 
-	@include respond-to(small) {
+	@include respond-to(medium) {
 		display: none;
 
 		&:last-child {
@@ -403,7 +403,7 @@
 	top: 0;
 	right: 0;
 
-	@include respond-to(tiny) {
+	@include respond-to(small) {
 		display: block;
 		text-align: right;
 		position: static;

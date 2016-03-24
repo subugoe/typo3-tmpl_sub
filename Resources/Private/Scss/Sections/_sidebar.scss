@@ -1,9 +1,9 @@
 .sidebar {
-	@include column(small);
+	@include column(medium);
 	padding-right: 0;
 	width: (10 * $grid);
 
-	@include respond-to(small) {
+	@include respond-to(medium) {
 		border-top: $border-width solid $border-color;
 		padding: ($grid - $border-width) 0 0;
 	}
@@ -18,7 +18,7 @@
 		border-left: $border-width solid $border-color;
 		padding-left: ($grid - $border-width);
 
-		@include respond-to(small) {
+		@include respond-to(medium) {
 			border: 0;
 			padding-left: 0;
 		}
