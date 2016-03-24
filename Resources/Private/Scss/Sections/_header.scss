@@ -12,9 +12,16 @@
 	overflow: visible;
 	position: relative;
 	z-index: 1;
+}
+
+.header_top {
+	@extend %header_element;
+	@extend %full-width-background;
+	background: $brand-color;
+	padding: $grid;
 
 	@include respond-to(medium) {
-		padding-top: $grid;
+		padding: $grid ($grid / 2) ($grid / 2);
 	}
 }
 
@@ -25,7 +32,7 @@
 	padding: round($grid / 4) $grid $grid;
 
 	@include respond-to(small) {
-		padding: round($grid / 4) ($grid / 2) $grid;
+		padding: round($grid / 4) ($grid / 2) ($grid / 2);
 	}
 }
 
@@ -81,20 +88,17 @@
 }
 
 .header_logo {
-	@extend %header_element;
-	@extend %full-width-background;
-	background: $brand-color url($img-path + '/sub-logo.svg') $grid $grid no-repeat;
-	background-size: auto (2 * $grid);
-	height: (4 * $grid);
+	background: url($img-path + '/sub-logo.svg') 0 0 no-repeat;
+	background-size: contain;
+	height: (2 * $grid);
+	max-width: 100%;
 	width: 640px; // Width of logo
 
 	@include respond-to(medium) {
 		background: url($img-path + '/sub-logo-centered.svg') center bottom no-repeat;
 		background-size: contain;
-		height: (4 * $grid);
-		margin-bottom: round($grid / 4);
-		max-width: 90%;
-		width: 480px; // Width of vertical logo
+		height: (3.5 * $grid);
+		margin: 0 auto round($grid / 4);
 	}
 
 	a {
