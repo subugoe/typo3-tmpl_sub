@@ -1,17 +1,15 @@
 .search {
 	@extend %header_element;
 	@extend %clearfix;
-	@include transition(margin, width);
+	@include transition(margin);
 	float: right;
 	margin: (-2.5 * $grid) (-$grid / 2) 0 0;
 	max-width: 100%;
 	position: relative;
-	width: 12 * $grid;
-	z-index: 1;
+	z-index: 99;
 
 	@include respond-to(large) {
 		margin-top: (-2.5 * $grid);
-		width: 17.25em; // Minimum required width to fit placeholder into input
 
 		&.-show-popup {
 			margin: (-2.5 * $grid) 0;
@@ -21,18 +19,23 @@
 
 	@include respond-to(medium) {
 		&.-show-popup {
-			margin: (-1.5 * $grid) 0;
+			margin-top: -1.5 * $grid;
 		}
 	}
 
 	@include respond-to(small) {
 		float: none;
 		right: 0;
-		margin: 0 auto !important;
+		margin: 0 auto;
+		width: 20 * $grid;
+
+		&.-show-popup {
+			margin: 0 auto;
+		}
 	}
 
 	&.-show-popup {
-		width: round(19.416 * $grid) !important;
+		width: 20 * $grid !important;
 	}
 }
 
@@ -142,12 +145,22 @@
 
 .search_input {
 	@include text-input;
+	@include transition(width);
 	border: $border-width solid $input-border-color;
 	box-shadow: .1em .1em .5em rgba($black, .2) inset;
 	float: right;
 	padding-right: round(1.75 * $grid);
 	position: relative;
+	width: 12 * $grid;
 	z-index: 9;
+
+	@include respond-to(large) {
+		width: 17em; // Minimum required width to fit placeholder into input
+	}
+
+	@include respond-to(small) {
+		width: 100%;
+	}
 
 	&:focus {
 		border: $border-width solid $input-border-color-focus;
@@ -183,16 +196,17 @@
 	}
 }
 
+$search-nav-width: 6.75 * $grid;
 .search_navigation {
 	@include drop-shadow;
 	background: $white;
-	clip: rect(-999em (7 * $grid) 999em -999em); // Prevent tabs shadow from overlapping search form
+	clip: rect(-999em $search-nav-width 999em -999em); // Prevent tabs shadow from overlapping search form
 	list-style: none;
 	padding: 0;
 	position: absolute;
-	left: (-7 * $grid);
+	left: (-$search-nav-width);
 	top: 0;
-	width: (7 * $grid);
+	width: $search-nav-width;
 	z-index: 2;
 
 	@include respond-to(medium) {
@@ -242,7 +256,8 @@
 		@include link(false);
 		@include transition(background);
 		display: block;
-		padding: (.5 * $grid);
+		overflow: hidden;
+		padding: ($grid / 2);
 		position: relative;
 		text-overflow: ellipsis;
 

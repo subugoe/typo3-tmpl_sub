@@ -14,17 +14,6 @@
 	z-index: 1;
 }
 
-.header_top {
-	@extend %header_element;
-	@extend %full-width-background;
-	background: $brand-color;
-	padding: $grid;
-
-	@include respond-to(large) {
-		padding: $grid ($grid / 2) ($grid / 2);
-	}
-}
-
 .header_bar {
 	@extend %clearfix;
 	background: $white;
@@ -98,31 +87,33 @@
 	max-width: 100%;
 	width: 640px; // Width of logo
 
+	// Fit logo left of search
 	@include respond-to(large) {
-		margin: $grid 0 0;
-		width: 346px; // Fit logo next to search
+		background-size: 400px auto;
+		margin: (1.5 * $grid) 0 0;
+		width: 400px;
 	}
 
+	@include respond-to(medium) {
+		background-size: 322px auto;
+		margin: (1.5 * $grid) 0 0;
+		width: 322px;
+	}
+
+	// Center logo above search
 	@include respond-to(small) {
-		background: url($img-path + '/sub-logo-centered.svg') center center no-repeat;
-		background-size: contain;
-		height: (3.5 * $grid);
-		margin: 0 auto round($grid / 4);
+		background: url($img-path + '/sub-logo-centered.svg') center 0 no-repeat;
+		background-size: auto (2.5 * $grid);
+		height: auto;
+		margin: 2px auto 0;
+		min-height: 2.5 * $grid;
 		width: 100%;
 	}
 
 	a {
 		display: block;
-		height: ($grid * 2);
-		left: $grid;
-		position: relative;
-		top: $grid;
-
-		@include respond-to(large) {
-			height: 100%;
-			left: 0;
-			top: 0;
-		}
+		height: 100%;
+		min-height: (1.5 * $grid);
 	}
 }
 
@@ -136,27 +127,36 @@
 	color: $white;
 	display: table-cell; // Center text vertically inside element
 	height: ($grid * 3);
-	left: 118px; // 1
+	left: 142px; // 1
 	padding: 0 ($grid / 2);
 	position: relative;
-	top: (-$grid * 1.5);
+	top: (-$grid / 2);
 	vertical-align: middle;
 	width: 490px; // 2
 
 	@include respond-to(large) {
 		font-size: $font-size;
-		line-height: 1;
+		line-height: 18px; // Making two rows same height as logo
 		height: ($grid * 2);
-		left: 82px; // 1
+		left: 99px; // 1
+		padding: 0 9px;
 		top: 0;
-		width: 290px;
+		width: 310px;
+	}
+
+	@include respond-to(medium) {
+		left: 77px;
+		width: 253px;
 	}
 
 	@include respond-to(small) {
+		display: inline-block;
+		height: auto;
 		left: 0;
+		margin-top: 39px; // Just below logo blip
+		padding: 5px; // Ensure logo text is overlapped
 		text-align: center;
-		top: ($grid * 2);
-		width: 999em;
+		width: 100%;
 	}
 
 	a {
@@ -185,5 +185,21 @@
 
 	.-show-off-canvas & {
 		@include icon('close', $white);
+	}
+}
+
+.header_top {
+	@extend %header_element;
+	@extend %full-width-background;
+	background: $brand-color;
+	padding: $grid;
+
+	@include respond-to(large) {
+		padding: ($grid / 2);
+	}
+
+	// Make sure small logo does not overlap menu and language
+	@media (max-width: 319px) {
+		padding-top: (1.75 * $grid);
 	}
 }
