@@ -43,13 +43,13 @@
 	@include icon('close', $link-color, false);
 	@include transition(background);
 	background: none;
-	bottom: ($grid / 4);
+	bottom: round($grid / 4);
 	border: 0;
 	height: $grid;
 	line-height: 1;
 	padding: 0;
 	position: absolute;
-	right: ($grid / 4);
+	right: round($grid / 4);
 	width: $grid;
 
 	@include hover {
@@ -197,6 +197,7 @@
 }
 
 $search-nav-width: 6.75 * $grid;
+
 .search_navigation {
 	@include drop-shadow;
 	background: $white;

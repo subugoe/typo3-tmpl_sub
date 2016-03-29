@@ -4,7 +4,7 @@
 	@include icon('info-circle', $text-color-light);
 	background: $shadow-light;
 	display: none;
-	margin: (-$grid / 2) 0 $grid;
+	margin: 0 0 $grid;
 	table-layout: fixed;
 	width: 100%;
 
@@ -27,14 +27,14 @@
 .sidebar-nav_list {
 	display: table-cell;
 	margin: 0 !important;
-	padding: ($grid / 4) .5em;
+	padding: ceil($grid / 4) .5em floor($grid / 4);
 }
 
 .sidebar-nav_item {
 	display: block;
 
 	& + & {
-		margin-top: ($grid / 4);
+		margin-top: round($grid / 4);
 	}
 }
 

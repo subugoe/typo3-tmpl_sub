@@ -232,7 +232,7 @@
 	}
 
 	li {
-		margin-bottom: ($grid / 4);
+		margin-bottom: round($grid / 4);
 	}
 
 	.pz2-progressIndicator {
@@ -358,7 +358,7 @@
 	width: 100%;
 
 	& + & {
-		margin-top: $grid / 4;
+		margin-top: round($grid / 4);
 	}
 
 	.pz2-submitButton {
@@ -373,7 +373,7 @@
 }
 
 .pz2-extraFields {
-	margin-top: ($grid / 4);
+	margin-top: round($grid / 4);
 
 	.pz2-formControls {
 		display: block;

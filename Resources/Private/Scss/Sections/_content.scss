@@ -265,11 +265,16 @@
 
 	dd {
 		float: left;
+		margin-bottom: ($grid / 2);
 		width: 61.8%;
 
 		@include respond-to(medium) {
 			float: none;
 			width: auto;
+		}
+
+		p {
+			margin: 0;
 		}
 	}
 }

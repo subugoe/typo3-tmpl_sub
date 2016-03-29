@@ -9,6 +9,7 @@
 
 .header {
 	background: $white; // Prevent off-canvas nav from popping through
+	padding-bottom: ($grid / 2);
 	overflow: visible;
 	position: relative;
 	z-index: 1;
@@ -18,22 +19,18 @@
 	@extend %clearfix;
 	background: $white;
 	font-size: $font-size-small;
-	padding: round($grid / 4) $grid;
+	padding: ceil($grid / 4) $grid floor($grid / 4);
 
 	@include respond-to(large) {
-		padding: round($grid / 4) ($grid / 2);
-	}
-
-	@include respond-to(medium) {
-		padding-bottom: ($grid / 2);
+		padding: ceil($grid / 4) ($grid / 2) floor($grid / 4);
 	}
 }
 
 .header_image {
+	border-bottom: ($grid / 2) solid $white;
 	max-height: (10 * $grid);
 	margin: 0 $grid;
 	overflow: hidden;
-	border-bottom: $grid solid $white;
 	position: relative;
 
 	@include respond-to(large) {
