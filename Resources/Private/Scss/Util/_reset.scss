@@ -101,6 +101,12 @@ main {
 	display: block;
 }
 
+// 1. Prevent iOS and IE font scaling in landscape
+html {
+	-ms-text-size-adjust: 100%; // 1
+	-webkit-text-size-adjust: 100%; // 1
+}
+
 body {
 	line-height: 1;
 }
