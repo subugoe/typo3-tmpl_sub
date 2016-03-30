@@ -91,7 +91,7 @@
 
 .search_form {
 	display: none;
-	padding: (.5 * $grid) (.5 * $grid) 0;
+	padding: ($grid / 2) ($grid / 2) 0;
 	position: relative;
 	z-index: 1;
 

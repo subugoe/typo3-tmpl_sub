@@ -58,7 +58,7 @@
 	}
 
 	li {
-		margin-bottom: (.5 * $grid);
+		margin-bottom: ($grid / 2);
 
 		&:last-child {
 			margin: 0;

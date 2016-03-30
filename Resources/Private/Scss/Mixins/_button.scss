@@ -8,7 +8,7 @@
 	display: inline-block;
 	font-size: $font-size;
 	line-height: $line-height;
-	padding: (.5 * $grid) $grid;
+	padding: ($grid / 2) $grid;
 	text-align: center;
 	text-decoration: none;
 	text-shadow: if($modifier == light, 0 1px 0 $white, 0 -1px 0 $shadow-dark);

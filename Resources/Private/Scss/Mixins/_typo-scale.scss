@@ -5,7 +5,7 @@ $typo-scale-sizing-factor: 1 !default;
 	font-size: round(ms($increment) * $typo-scale-sizing-factor);
 
 	@if $typo-scale-allow-half-lines {
-		line-height: floor(ms($increment) * $typo-scale-sizing-factor / (.5 * $line-height) + 1) * .5 * $line-height;
+		line-height: floor(ms($increment) * $typo-scale-sizing-factor / ($line-height / 2) + 1) / 2 * $line-height;
 	} @else {
 		line-height: floor(ms($increment) * $typo-scale-sizing-factor / $line-height + 1) * $line-height;
 	}

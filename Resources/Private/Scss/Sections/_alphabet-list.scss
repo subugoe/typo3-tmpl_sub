@@ -18,7 +18,7 @@
 .alphabet-list_sub-list.-persons {
 	li {
 		border-bottom: $border-width solid $border-color;
-		padding: (.5 * $grid) 0 (.5 * $grid - $border-width);
+		padding: ($grid / 2) 0 ($grid / 2 - $border-width);
 	}
 
 	a {

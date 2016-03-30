@@ -72,7 +72,7 @@
 			@include icon('globe', $white);
 			@include link(false, true);
 			display: inline-block;
-			padding: (.5 * $grid);
+			padding: ($grid / 2);
 		}
 	}
 }
@@ -181,7 +181,7 @@
 
 	@include respond-to(large) {
 		display: inline-block;
-		padding: (.5 * $grid);
+		padding: ($grid / 2);
 	}
 
 	.-show-off-canvas & {
