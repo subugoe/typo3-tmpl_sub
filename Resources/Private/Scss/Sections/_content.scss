@@ -162,7 +162,7 @@
 
 		// Reponsive tables
 		@include respond-to(medium) {
-			&:not(.no-responsive) {
+			&:not(.no-responsive, .dataTable) {
 				&,
 				thead,
 				tbody,
@@ -189,7 +189,6 @@
 			}
 		}
 
-		// TODO: Only used for opening hours tables, rename class
 		&.no-responsive {
 			td {
 				white-space: nowrap;
