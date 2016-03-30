@@ -276,6 +276,7 @@ $search-nav-width: 6.75 * $grid;
 	top: 0;
 	width: 100%;
 	visibility: hidden;
+	z-index: 2; // Prevent shadow overlap during transition
 
 	.-show-popup & {
 		opacity: 1;
