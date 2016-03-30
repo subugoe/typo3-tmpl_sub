@@ -118,6 +118,9 @@
 // 2. Approximate width of brand name in logo that has to be overlayed is 440px.
 //    Has to be slightly larger to accomodate some very long deparment names,
 //    but may not overlap with search.
+// 3. Smallest possible width that can contain the longest title ("Ost- und
+//    Zentralasien / Altaistik / Sibirische & Paläoasiatische Sprachen") in two
+//    lines while preventing the title from overlapping with the search.
 .header_title {
 	@include typo-scale(2);
 	background: $brand-color;
@@ -141,9 +144,10 @@
 		width: 310px;
 	}
 
+
 	@include respond-to(medium) {
 		left: 77px;
-		width: 253px;
+		width: 275px; // 3
 	}
 
 	@include respond-to(small) {
