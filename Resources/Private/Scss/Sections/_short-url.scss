@@ -7,24 +7,6 @@
 }
 
 .short-url_popup {
-	background: $white;
-	box-shadow: $drop-shadow;
+	@include popup(top);
 	display: none;
-	margin-top: -2em;
-	padding: .5em;
-	position: absolute;
-	right: 0;
-	top: -100%;
-}
-
-.short-url_popup::after {
-	background: $white;
-	bottom: -.25em;
-	content: '';
-	display: block;
-	height: .5em;
-	position: absolute;
-	right: 1em;
-	transform: rotate(45deg);
-	width: .5em;
 }
