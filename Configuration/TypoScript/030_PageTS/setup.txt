@@ -92,6 +92,9 @@ TCEFORM {
 		company.disabled = 1
 		title.disabled = 1
 	}
+	tx_news_domain_model_news {
+		author_email.disabled = 1
+	}
 }
 
 TCAdefaults {
