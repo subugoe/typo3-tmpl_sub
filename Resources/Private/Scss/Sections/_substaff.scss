@@ -49,18 +49,6 @@
 	padding: 1px .25em !important;
 }
 
-.substaff_map-link {
-	.sidebar & {
-		position: absolute;
-		right: ($grid / -2);
-		padding: 1px 0 !important;
-
-		@include respond-to(medium) {
-			position: relative;
-		}
-	}
-}
-
 .substaff_more-link {
 	margin: (-$grid / 2) 0 $grid $grid;
 
