@@ -10,8 +10,9 @@
 		border: 0;
 		border-radius: $br;
 		display: block;
+		min-width: $grid;
+		padding: 0 .25em;
 		text-align: center;
-		width: $grid;
 
 		@include hover {
 			background: $link-color;
@@ -24,6 +25,7 @@
 		float: left;
 		display: inline-block;
 		margin: 0 .25em .25em 0;
+		min-width: $grid;
 		text-align: center;
 
 		&::before {

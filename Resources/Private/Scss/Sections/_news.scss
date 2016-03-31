@@ -29,4 +29,10 @@
 		padding: 0;
 		text-align: left;
 	}
+
+	// TODO: Rename or move this
+	.f3-widget-paginator {
+		@include pagination;
+		margin-left: 0
+	}
 }
