@@ -189,12 +189,31 @@
 			}
 		}
 
-		&.no-responsive {
-			td {
-				white-space: nowrap;
+		@include respond-to(small) {
+			// TODO: Rework and rename, as this is responsive, too
+			// Currently only used for opening hours
+			&.no-responsive {
+				border: 0;
 
-				@include respond-to(large) {
-					white-space: normal;
+				tr {
+					display: block;
+					border: 0;
+
+					+ tr > th {
+						margin-top: $grid;
+					}
+				}
+
+				td,
+				th {
+					min-width: 5em;
+					padding: 0;
+				}
+
+				th {
+					color: $text-color-light;
+					display: block;
+					font-weight: bold;
 				}
 			}
 		}
