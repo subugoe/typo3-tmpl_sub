@@ -1,4 +1,25 @@
-<div id="logo" role="banner">
-	<f:cObject typoscriptObjectPath="lib.pageHeader" />
-</div>
-<f:cObject typoscriptObjectPath="tt_content.list.20.subtabs_tabs" />
+{namespace s=Subugoe\TmplSub\ViewHelpers}
+<header class="header" data-role="header">
+	<s:pageHeader />
+	<div class="header_top">
+		<button class="header_toggle-nav" title="Navigation"><f:translate key="page.menu" /></button>
+		<div class="header_logo" role="banner">
+			<f:link.page pageUid="{header.id}">
+				<span class="sr-only">Niedersächsische Staats-und Universitätsbibliothek Göttingen</span>
+				<f:if condition="{header.title}">
+					<h1 class="header_title">{header.title}</h1>
+				</f:if>
+			</f:link.page>
+		</div>
+		<f:cObject typoscriptObjectPath="tt_content.list.20.subtabs_tabs" />
+	</div>
+	<div class="header_bar">
+		<div class="breadcrumbs" role="navigation">
+			<f:cObject typoscriptObjectPath="lib.rootline" />
+		</div>
+		<div class="header_language">
+			<f:link.page additionalParams="{L:\"{f:translate(key:'page.language.switchId')}\"}" addQueryString="TRUE"><f:translate key="page.language" /></f:link.page>
+		</div>
+	</div>
+	<s:bigPicture />
+</header>

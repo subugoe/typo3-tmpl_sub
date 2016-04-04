@@ -50,7 +50,6 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
  */
 class TypolinkViewHelper extends AbstractViewHelper
 {
-
     /**
      * Render
      *
@@ -63,18 +62,10 @@ class TypolinkViewHelper extends AbstractViewHelper
      *
      * @return string
      */
-    public function render(
-        $parameter,
-        $target = '',
-        $class = '',
-        $title = '',
-        $additionalParams = '',
-        $additionalAttributes = []
-    )
+    public function render($parameter, $target = '', $class = '', $title = '', $additionalParams = '', $additionalAttributes = [])
     {
         // Merge the $parameter with other arguments
-        $typolinkParameter = $this->createTypolinkParameterArrayFromArguments($parameter, $target, $class, $title,
-            $additionalParams);
+        $typolinkParameter = $this->createTypolinkParameterArrayFromArguments($parameter, $target, $class, $title, $additionalParams);
 
         // array(param1 -> value1, param2 -> value2) --> "param1=value1 param2=>value2" for typolink.ATagParams
         $extraAttributes = [];
@@ -115,16 +106,10 @@ class TypolinkViewHelper extends AbstractViewHelper
      *
      * @return array Final merged typolink.parameter as array to be imploded with empty string later
      */
-    protected function createTypolinkParameterArrayFromArguments(
-        $parameter,
-        $target = '',
-        $class = '',
-        $title = '',
-        $additionalParams = ''
-    )
+    protected function createTypolinkParameterArrayFromArguments($parameter, $target = '', $class = '', $title = '', $additionalParams = '')
     {
         // Explode $parameter by whitespace and remove any " around resulting array values
-        $parameterArray = GeneralUtility::unQuoteFilenames($parameter, TRUE);
+        $parameterArray = GeneralUtility::unQuoteFilenames($parameter, true);
 
         if (empty($parameterArray)) {
             return [];
@@ -155,13 +140,13 @@ class TypolinkViewHelper extends AbstractViewHelper
         }
 
         // Unset unused parameters again from the end, wrap all given values with "
-        $reverseSortedParameters = array_reverse($typolinkConfiguration, TRUE);
-        $aValueWasSet = FALSE;
+        $reverseSortedParameters = array_reverse($typolinkConfiguration, true);
+        $aValueWasSet = false;
         foreach ($reverseSortedParameters as $position => $value) {
             if ($value === '-' && !$aValueWasSet) {
                 unset($typolinkConfiguration[$position]);
             } else {
-                $aValueWasSet = TRUE;
+                $aValueWasSet = true;
                 if ($value !== '-') {
                     $typolinkConfiguration[$position] = '"' . $value . '"';
                 }
@@ -170,5 +155,4 @@ class TypolinkViewHelper extends AbstractViewHelper
 
         return $typolinkConfiguration;
     }
-
 }

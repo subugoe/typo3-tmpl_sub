@@ -31,17 +31,16 @@ use TYPO3\CMS\Extbase\Utility\ArrayUtility;
  */
 class AzController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController
 {
-
     /**
      * @var array
      */
     protected $configuration = [
-        'titleField' => 'title',
-        'linkObject' => '',
-        'linkAction' => '',
-        'linkController' => '',
-        'linkPluginName' => '',
-        'linkExtensionName' => ''
+            'titleField' => 'title',
+            'linkObject' => '',
+            'linkAction' => '',
+            'linkController' => '',
+            'linkPluginName' => '',
+            'linkExtensionName' => ''
     ];
 
     /**
@@ -50,34 +49,30 @@ class AzController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController
     protected $objects;
 
     /**
-     * @return void
      */
     public function initializeAction()
     {
         $this->objects = $this->widgetConfiguration['objects'];
-        $this->configuration = ArrayUtility::arrayMergeRecursiveOverrule($this->configuration,
-            $this->widgetConfiguration['configuration'], TRUE);
+        $this->configuration = ArrayUtility::arrayMergeRecursiveOverrule($this->configuration, $this->widgetConfiguration['configuration'], true);
     }
 
     /**
      * Generate titles, indexes and assign this to the view
      *
-     * @return void
      */
     public function indexAction()
     {
-
         $groupings = $this->getAzGrouping($this->objects);
 
         $this->view->assignMultiple(
-            [
-                'titles' => $groupings,
-                'linkObject' => $this->configuration['linkObject'],
-                'linkAction' => $this->configuration['linkAction'],
-                'linkController' => $this->configuration['linkController'],
-                'linkPluginName' => $this->configuration['linkPluginName'],
-                'linkExtensionName' => $this->configuration['linkExtensionName']
-            ]
+                [
+                        'titles' => $groupings,
+                        'linkObject' => $this->configuration['linkObject'],
+                        'linkAction' => $this->configuration['linkAction'],
+                        'linkController' => $this->configuration['linkController'],
+                        'linkPluginName' => $this->configuration['linkPluginName'],
+                        'linkExtensionName' => $this->configuration['linkExtensionName']
+                ]
         );
     }
 
@@ -89,15 +84,13 @@ class AzController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController
      */
     protected function getAzGrouping($titles)
     {
-
         $groupings = [];
 
         $lastChar = '';
         foreach ($titles as $title) {
 
             // find titleField and get contents
-            $objectTitle = \TYPO3\CMS\Extbase\Reflection\ObjectAccess::getProperty($title,
-                $this->configuration['titleField']);
+            $objectTitle = \TYPO3\CMS\Extbase\Reflection\ObjectAccess::getProperty($title, $this->configuration['titleField']);
 
             $title->linkObject = [$this->configuration['linkObject'] => $title->getUid()];
 

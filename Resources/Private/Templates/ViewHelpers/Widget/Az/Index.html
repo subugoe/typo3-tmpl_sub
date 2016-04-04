@@ -1,16 +1,18 @@
-<div class="sub-az">
-	<ul class="letterNavi">
-		<f:for each="{titles}" as="title" key="letter" iteration="titleIteration">
-				<li><f:link.page section="{letter}" noCacheHash="TRUE">{letter}</f:link.page> <span class="pipe">|</span></li>
-		</f:for>
-	</ul>
+<ol class="pagination -alphabet">
+	<f:for each="{titles}" as="title" key="letter" iteration="titleIteration">
+		<li><f:link.page section="{letter}" noCacheHash="TRUE">{letter}</f:link.page></li>
+	</f:for>
+</ol>
 
-	<dl>
-		<f:for each="{titles}" as="title" key="letter" iteration="titleIteration">
-			<dt id="{letter}">{letter}</dt>
+<ol class="alphabet-list">
+	<f:for each="{titles}" as="title" key="letter" iteration="titleIteration">
+		<li class="alphabet-list_item" id="{letter}">
+			<span class="alphabet-list_letter">{letter}</span>
+			<ol class="alphabet-list_sub-list">
 				<f:for each="{title}" as="entry">
-					<dd><f:link.action controller="{linkController}" extensionName="{linkExtensionName}" action="{linkAction}" arguments="{entry.linkObject}" pluginName="{linkPluginName}">{entry.title}</f:link.action></dd>
+					<li><f:link.action controller="{linkController}" extensionName="{linkExtensionName}" action="{linkAction}" arguments="{entry.linkObject}" pluginName="{linkPluginName}">{entry.title}</f:link.action></li>
 				</f:for>
-		</f:for>
-	</dl>
-</div>
+			</ol>
+		</li>
+	</f:for>
+</ol>

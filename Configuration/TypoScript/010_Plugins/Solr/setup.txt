@@ -1,6 +1,11 @@
 plugin.tx_solr {
 	enableDebugMode = 0
 	addDefaultCss = 0
+
+	templateFiles {
+		pagebrowser = EXT:tmpl_sub/Resources/Private/Templates/Extensions/Solr/pagebrowser.htm
+	}
+
 	index {
 		enableFileIndexing = 1
 		files {

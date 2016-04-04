@@ -43,6 +43,7 @@
 			<label index="page.infobox.contentOfThisSite">Contents</label>
 			<label index="page.pageTitle">Niedersächsische Staats- und Universitätsbibliothek Göttingen</label>
 			<label index="page.keywords">Keywords</label>
+			<label index="page.menu">Menu</label>
 			<label index="pagebrowse.text_next">Next ›</label>
 			<label index="pagebrowse.text_last">Last »</label>
 			<label index="pagebrowse.text_prev">‹ Previous</label>
@@ -98,6 +99,7 @@
 			<label index="page.infobox.contentOfThisSite">Inhaltsverzeichnis</label>
 			<label index="page.pageTitle">Niedersächsische Staats- und Universitätsbibliothek Göttingen</label>
 			<label index="page.keywords">Schlagwörter</label>
+			<label index="page.menu">Menü</label>
 			<label index="pagebrowse.text_next">Nächste ›</label>
 			<label index="pagebrowse.text_last">Letzte »</label>
 			<label index="pagebrowse.text_prev">‹ Vorherige</label>

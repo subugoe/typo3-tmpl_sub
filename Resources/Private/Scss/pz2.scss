@@ -1,0 +1,769 @@
+// TODO: Remove next line once this file's code looks half-decent
+// scss-lint:disable all
+
+// NOTE: Pazpar2 stylesheet is including its own icon set
+// We don't wanna load Font Awesome here to avoid too much overhead
+
+@import 'Util/font-awesome-svg-paths';
+@import 'Util/settings';
+@import 'Mixins/*';
+@import 'Extends/*';
+@import 'Util/mod';
+
+/* Media Type Icon Font */
+
+@font-face {
+	font-family: 'subicons';
+	src: url($sub-iconfont-path + '/subicons.eot');
+	src: url($sub-iconfont-path + '/subicons.eot?#iefix') format('embedded-opentype'),
+	url($sub-iconfont-path + '/subicons.woff2?') format('woff2'),
+	url($sub-iconfont-path + '/subicons.woff') format('woff'),
+	url($sub-iconfont-path + '/subicons.ttf') format('truetype'),
+	url($sub-iconfont-path + '/subicons.svg#subicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#pazpar2 {
+	a {
+		text-decoration: none;
+	}
+
+	ol {
+		margin: 0;
+	}
+}
+
+.pz2-clear {
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+/* Search Form */
+
+.pz2-searchField {
+	font-size: $font-size;
+}
+
+.pz2-basic label {
+	@extend .sr-only;
+}
+
+.pz2-extended {
+	.pz2-extraFields {
+		display: block;
+	}
+
+	.pz2-checkbox {
+		display: inline;
+
+		label {
+			display: inline;
+		}
+	}
+}
+
+.pz2-checkbox,
+.pz2-extraFields {
+	display: none;
+}
+
+.pz2-extendedLink {
+	margin-left: .5em;
+	position: relative;
+	top: ($grid / 2);
+	white-space: nowrap;
+}
+
+.pz2-form-animating .pz2-extraFields {
+	display: block;
+}
+
+.pz2-ranking {
+	display: none;
+}
+
+.pz2-recordLink {
+	display: block;
+	box-shadow: none !important;
+
+	&::after {
+		position: relative;
+		bottom: -6px;
+		font-family: subicons;
+		font-size: 23px;
+		line-height: 4px;
+		content: '\e054';
+	}
+}
+
+.pz2-detailsVisible .pz2-recordLink::after {
+	display: none;
+}
+
+#pz2-results {
+	margin-right: $grid * 10;
+
+	@include respond-to(medium) {
+		margin-right: 0;
+	}
+
+	.pz2-details {
+		// 1. Cancel the clear done for list items in the main list on lists in .pz2-details.
+		// 2. TODO: For some reason, setting ANY max-width on this element seems to prevent long
+		//    non-breaking text from overflowing
+		li {
+			clear: none; // 1
+			border-left: 0 none;
+			max-width: 99px; // 2
+		}
+
+		ul li {
+			margin: 0;
+		}
+	}
+
+	.pz2-extraLinks {
+		position: absolute;
+		right: 10px;
+		bottom: -3px;
+	}
+
+	.pz2-extraLinksLabel {
+		display: none;
+	}
+
+	.pz2-extraLinks {
+		ul {
+			text-align: right;
+
+			li {
+				display: inline;
+				padding: 0;
+				list-style-type: none;
+
+				input {
+					border: 0 none;
+					background: transparent;
+					cursor: pointer;
+				}
+
+				input,
+				a {
+					color: $text-color-light;
+					text-decoration: none;
+					font-weight: normal;
+					font-size: 1em;
+				}
+			}
+		}
+
+		&:hover ul li input,
+		&:hover ul li a {
+			color: $black;
+		}
+
+		ul li input:hover,
+		ul li a:hover {
+			text-decoration: underline;
+		}
+	}
+
+	// 1. Required so we don't clear the sidebar/faceting when clearing our <li>s
+	ol.pz2-resultList {
+		padding-left: 35px;
+		float: left; // 1
+
+		> li {
+			margin-bottom: .5em;
+			padding-left: 5px;
+			position: relative;
+			clear: both;
+			list-style-type: none;
+			border-left: $border-width solid transparent;
+		}
+	}
+
+	ol.pz2-resultList li.pz2-detailsVisible {
+		border-left: $border-width solid $border-color;
+	}
+}
+
+.pz2-JSNote {
+	margin-bottom: 1em;
+}
+
+#pz2-stat {
+	clear: both;
+}
+
+/* Facets */
+
+// TODO: Make off-canvas on small screens, use h4 as button label
+#pz2-termLists {
+	float: right;
+	width: $grid * 9;
+
+	@include respond-to(medium) {
+		float: none;
+		width: auto;
+	}
+
+	// Facets heading used as toggle button on small screens
+	h4 {
+		display: none;
+		margin-bottom: $grid / 2;
+
+		&::before {
+			content: '+';
+			font-size: $grid;
+			margin-right: .25em;
+			vertical-align: top;
+
+			.pz2-show-facets & {
+				content: '\00d7';
+			}
+		}
+
+		@include respond-to(medium) {
+			@include button;
+		}
+	}
+
+	li {
+		margin-bottom: round($grid / 4);
+	}
+
+	.pz2-progressIndicator {
+		bottom: 0;
+		height: auto;
+		top: 0;
+		left: 0;
+		background: $shadow-light;
+	}
+}
+
+.pz2-termList {
+	margin-bottom: $grid / 2;
+
+	@include respond-to(medium) {
+		display: none;
+
+		&:last-child {
+			border-bottom: $border-width solid $border-color;
+			margin-bottom: $grid;
+			padding-bottom: $grid * 1.5 - $border-width;
+		}
+
+		.pz2-show-facets & {
+			display: block;
+		}
+	}
+
+	ol {
+		margin-bottom: $grid / 2;
+		padding: 0;
+	}
+
+	li {
+		list-style-type: none;
+
+		a {
+			position: relative;
+			display: block;
+			padding-left: $grid;
+			text-indent: (-$grid);
+			font-weight: normal;
+			box-shadow: none;
+		}
+	}
+
+	span {
+		position: relative;
+	}
+
+}
+
+.pz2-termList-author ol {
+	text-transform: capitalize;
+}
+
+.pz2-termList-medium li a span.pz2-facetName {
+	margin-left: 25px;
+	position: relative;
+	line-height: 19px;
+}
+
+.pz2-termList-medium .pz2-mediaIcon {
+	position: absolute;
+	top: -1px;
+}
+
+.pz2-termList-medium .pz2-mediaIcon::before,
+.pz2-termList-medium .pz2-mediaIcon::after {
+	left: -4px;
+}
+
+.pz2-facetCount {
+	color: $text-color-light;
+	margin-left: .4em;
+}
+
+.pz2-facet-hidden {
+	display: none;
+}
+
+.pz2-facet-showAll a {
+	color: $text-color-light;
+	font-style: italic;
+}
+
+.pz2-activeFacet .pz2-facetName {
+	font-weight: bold;
+}
+
+.pz2-facetCancel {
+	margin-top: $grid / 2;
+}
+
+.pz2-histogramContainer {
+	margin-left: -8px;
+}
+
+#pz2-histogram-tooltip {
+	display: none;
+	position: absolute;
+	border: 1px solid #f6f3ff;
+	padding: 2px;
+	opacity: .8;
+	background: $white;
+	background-color: $white;
+	font-size: 71%;
+	font-weight: bold;
+}
+
+/* Progress Indicator */
+
+.pz2-progressIndicator {
+	top: (-$grid / 2);
+	position: absolute;
+	height: 5px;
+	background: $shadow-light;
+	z-index: 9;
+}
+
+.pz2-field-all {
+	display: table;
+	width: 100%;
+
+	& + & {
+		margin-top: round($grid / 4);
+	}
+
+	.pz2-submitButton {
+		margin-left: .25em;
+	}
+
+	.pz2-formControls,
+	.pz2-searchField {
+		display: table-cell;
+		vertical-align: bottom;
+	}
+}
+
+.pz2-extraFields {
+	margin-top: round($grid / 4);
+
+	.pz2-formControls {
+		display: block;
+		margin-top: ($grid / 2);
+	}
+}
+
+/* Pager */
+
+.pz2-prev,
+.pz2-next {
+	float: left;
+	display: inline-block;
+	margin: 0 .25em .25em 0;
+	text-align: center;
+	width: $grid;
+}
+
+.pz2-currentPage {
+	display: inline-block;
+	font-weight: bold;
+	width: $grid;
+}
+
+.pz2-recordCount {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	@include respond-to(small) {
+		display: block;
+		text-align: right;
+		position: static;
+	}
+}
+
+.pz2-top {
+	position: relative;
+	padding-bottom: $grid / 2;
+}
+
+.pz2-bottom {
+	clear: both;
+	padding-top: $grid / 2;
+}
+
+.pz2-noResults {
+	white-space: nowrap;
+}
+
+.pz2-pageNumbers {
+	@extend %clearfix;
+	@include pagination;
+	position: relative;
+}
+
+.pz2-title-main {
+	font-weight: bold;
+}
+
+.pz2-item-multivolume-title {
+	font-style: italic;
+}
+
+.pz2-item-responsibility {
+	font-style: italic;
+}
+
+.pz2-journal-title {
+	font-weight: bold;
+}
+
+.pz2-details {
+	ul {
+		margin: 0;
+	}
+
+	li {
+		padding: 0;
+
+		&::before {
+			content: none !important;
+		}
+	}
+}
+
+.pz2-detail-availability td a {
+	margin-bottom: 2px;
+}
+
+.pz2-detail-catalogueLink {
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.pz2-detail-catalogueLink::after {
+	position: relative;
+	top: .18em;
+	font-family: subicons;
+	font-size: 14px;
+	line-height: 10px;
+	content: '\e052';
+}
+
+a.pz2-detail-parentCatalogueLink,
+a.pz2-detail-parentCatalogueLink:hover {
+	font-weight: normal;
+}
+
+/* ZDB Info */
+
+.pz2-ZDBLibraryName {
+	display: block;
+	font-style: italic;
+	color: #666;
+}
+
+a.pz2-ZDBGeneralInfo {
+	display: block;
+}
+
+/* Google Books */
+
+#googlePreviewContainer {
+	position: fixed;
+	left: 4em;
+	right: 4em;
+	top: 4em;
+	height: 570px; /* 550px for preview + 20px for title bar */
+}
+
+#googlePreview {
+	margin: auto;
+	top: 20px;
+	height: 550px;
+	width: 450px;
+}
+
+.googlePreview-titleBar {
+	margin: auto;
+	height: 20px;
+	width: 450px;
+	background: $shadow-light;
+	text-align: right;
+	padding-right: 2px;
+}
+
+.pz2-highlight {
+	background: $highlight-color;
+}
+
+.pz2-mapContainer {
+	height: 200px;
+}
+
+/*
+Hide/Show elements depending on JavaScript status.
+Markup comes with a .pz2-noJS class on the #pazpar2 element.
+pz2-client.js removes this once it it loaded.
+
+                    with JS    without JS
+.pz2-JSNote         hide       show
+.pz2-switchMenu     show       hide
+*/
+#pazpar2 {
+	.pz2-JSNote {
+		display: none;
+	}
+
+	&.pz2-noJS {
+		.pz2-JSNote {
+			display: block;
+		}
+
+		#pz2-switchMenu,
+		.pz2-ranking {
+			display: none;
+		}
+	}
+}
+
+/* Status Display */
+
+#pz2-targetView {
+	position: absolute;
+	top: -20px;
+	right: 100px;
+	padding: 10px;
+	background: $white;
+	border: 2px solid #eee;
+	box-shadow: 1px 1px 4px #666;
+	z-index: 100;
+	font-size: 85%;
+
+	td {
+		padding: 0 3px;
+		text-align: right;
+	}
+
+	th {
+		padding: 0 3px;
+		text-align: left;
+	}
+
+	thead,
+	caption {
+		background: #eee;
+		font-weight: bold;
+	}
+
+	.pz2-target-status {
+		min-width: 120px;
+	}
+}
+
+.pz2-accessNote {
+	color: $text-color-light;
+	font-size: $font-size-small;
+	font-style: italic;
+	position: relative;
+	text-align: right;
+	top: (-$grid / 2);
+}
+
+.pz2-mediaIcon {
+	display: block;
+	position: absolute;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	font-size: 24px;
+
+	&::before,
+	&::after {
+		display: block;
+		position: absolute;
+		height: 20px;
+		width: 20px;
+		text-indent: 0;
+		font-family: subicons;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	&::before {
+		color: #f1f3f6;
+		content: '\e023';
+	}
+
+	&::after {
+		color: #00247d;
+		content: '\e022';
+	}
+
+	&.article::after {
+		content: '\e004';
+	}
+
+	&.audio-visual::before {
+		content: '\e011';
+	}
+
+	&.audio-visual::after {
+		content: '\e010';
+	}
+
+	&.book::before {
+		content: '\e001';
+	}
+
+	&.book::after {
+		content: '\e000';
+	}
+
+	&.data::before {
+		content: '\e00d';
+	}
+
+	&.data::after {
+		content: '\e00c';
+	}
+
+	&.electronic::before {
+		content: '\e00b';
+	}
+
+	&.electronic::after {
+		content: '\e00a';
+	}
+
+	&.image::before {
+		content: '\e01d';
+	}
+
+	&.image::after {
+		content: '\e01c';
+	}
+
+	&.journal::before {
+		content: '\e007';
+	}
+
+	&.journal::after {
+		content: '\e006';
+	}
+
+	&.letter::before {
+		content: '\e017';
+	}
+
+	&.letter::after {
+		content: '\e016';
+	}
+
+	&.map::before {
+		content: '\e00f';
+	}
+
+	&.map::after {
+		content: '\e00e';
+	}
+
+	&.manuscript::before {
+		content: '\e019';
+	}
+
+	&.manuscript::after {
+		content: '\e018';
+	}
+
+	&.microform::before {
+		content: '\e01b';
+	}
+
+	&.microform::after {
+		content: '\e01a';
+	}
+
+	&.multiple::before {
+		content: '\e021';
+	}
+
+	&.multiple::after {
+		content: '\e020';
+	}
+
+	&.multivolume::before {
+		content: '\e003';
+	}
+
+	&.multivolume::after {
+		content: '\e002';
+	}
+
+	&.music-score::before {
+		content: '\e015';
+	}
+
+	&.music-score::after {
+		content: '\e014';
+	}
+
+	&.newspaper::before {
+		content: '\e009';
+	}
+
+	&.newspaper::after {
+		content: '\e008';
+	}
+
+	&.recording::before {
+		content: '\e013';
+	}
+
+	&.recording::after {
+		content: '\e012';
+	}
+
+	&.website::before {
+		content: '\e01f';
+	}
+
+	&.website::after {
+		content: '\e01e';
+	}
+}
+
+.pz2-resultList .pz2-mediaIcon {
+	left: -38px;
+}

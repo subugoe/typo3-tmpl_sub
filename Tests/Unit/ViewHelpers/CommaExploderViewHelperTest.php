@@ -36,10 +36,7 @@ class CommaExploderViewHelperTest extends \TYPO3\CMS\Core\Tests\Unit\Resource\Ba
      * @var CommaExploderViewHelper
      */
     protected $fixture;
-
-    /**
-     * @return void
-     */
+    
     public function setUp()
     {
         $this->fixture = $this->getMock(CommaExploderViewHelper::class, ['renderChildren']);
@@ -144,6 +141,5 @@ class CommaExploderViewHelperTest extends \TYPO3\CMS\Core\Tests\Unit\Resource\Ba
         $result = $this->fixture->render($commaList);
         $expectedResult = ['4', '124', '123', '1', '2'];
         $this->assertEquals($expectedResult, $result);
-
     }
 }

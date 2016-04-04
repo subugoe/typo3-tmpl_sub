@@ -1,0 +1,23 @@
+{
+  "name": "tmpl_sub",
+  "version": "3.2.0",
+  "homepage": "https://github.com/subugoe/typo3-tmpl_sub",
+  "authors": [
+    "Ingo Pfennigstorf <i.pfennigstorf@gmail.com>"
+  ],
+  "license": "GPL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "Build",
+    "bower_components",
+    "src/main/webapp/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "open-sans-fontface": "~1.4.0"
+  }
+}
