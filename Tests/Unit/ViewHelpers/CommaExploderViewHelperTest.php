@@ -36,7 +36,7 @@ class CommaExploderViewHelperTest extends \TYPO3\CMS\Core\Tests\Unit\Resource\Ba
      * @var CommaExploderViewHelper
      */
     protected $fixture;
-    
+
     public function setUp()
     {
         $this->fixture = $this->getMock(CommaExploderViewHelper::class, ['renderChildren']);
