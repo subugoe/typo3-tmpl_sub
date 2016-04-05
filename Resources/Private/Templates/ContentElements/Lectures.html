@@ -1,0 +1,55 @@
+{namespace ce = Subugoe\TmplSub\ViewHelpers}
+<ce:addJavaScript src="typo3conf/ext/tmpl_sub/Resources/Public/Js/jquery.dataTables.min.js" />
+<table class="datatable" data-page-length="20" data-length-menu="[ 20, 50, 75, 100 ]">
+	<ce:explode data="{data.bodytext}" as="items">
+		<f:for each="{items}" as="item" iteration="lectureIterator">
+			<f:if condition="{lectureIterator.isFirst}">
+				<f:then>
+					<thead>
+					<ce:explode data="{item}" as="lecture" delimiter=";">
+						<th nowrap>{lecture.0}</th>
+						<th nowrap>{lecture.1}</th>
+						<th nowrap>{lecture.2}</th>
+					</ce:explode>
+					</thead>
+					<tbody>
+				</f:then>
+				<f:else>
+					<tr>
+
+						<ce:explode data="{item}" as="lecture" delimiter=";">
+							<td>{lecture.0}</td>
+							<td>
+								<f:if condition="<ce:contains needle='gdz.sub' haystack='{lecture.1}' />">
+									<f:link.external uri="{lecture.1}" target="_blank">
+										<f:translate key="tmplsub_lectures.gdz" extensionName="tmpl_sub"/>
+									</f:link.external>
+								</f:if>
+								<f:if condition="<ce:contains needle='reader.digitale-sammlungen.de' haystack='{lecture.1}' />">
+									<f:link.external uri="{lecture.1}" target="_blank">
+										<f:translate key="tmplsub_lectures.bsb" extensionName="tmpl_sub"/>
+									</f:link.external>
+								</f:if>
+							</td>
+							<td>
+								<f:if condition="<ce:contains needle='gdz.sub' haystack='{lecture.2}' />">
+									<f:link.external uri="{lecture.2}" target="_blank">
+										<f:translate key="tmplsub_lectures.gdz" extensionName="tmpl_sub"/>
+									</f:link.external>
+								</f:if>
+								<f:if condition="<ce:contains needle='reader.digitale-sammlungen.de' haystack='{lecture.2}' />">
+									<f:link.external uri="{lecture.2}" target="_blank">
+										<f:translate key="tmplsub_lectures.bsb" extensionName="tmpl_sub"/>
+									</f:link.external>
+								</f:if>
+							</td>
+						</ce:explode>
+					</tr>
+
+				</f:else>
+				</tbody>
+			</f:if>
+
+		</f:for>
+	</ce:explode>
+</table>
