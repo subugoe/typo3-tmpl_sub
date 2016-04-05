@@ -82,3 +82,10 @@ tt_content.tmplsub_socialinfobox {
         $customFluidContentElementTypoScriptSetup,
         43
 );
+
+
+// hook is called after Caching / pages with COA_/USER_INT objects.
+$TYPO3_CONF_VARS['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][] = 'EXT:ext/tmpl_sub/Classes/Hooks/ContentHook.php:&Subugoe\TmplSub\Hooks\ContentHook->noCache';
+
+// hook is called before Caching / pages on their way in the cache.
+$TYPO3_CONF_VARS['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-all'][] = 'EXT:ext/tmpl_sub/Classes/Hooks/ContentHook.php:&Subugoe\TmplSub\Hooks\ContentHook->cache';
