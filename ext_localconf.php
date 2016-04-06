@@ -41,7 +41,7 @@ if ($rootLineFields != '') {
     $rootLineFields .= ' , ';
 }
 
-$rootLineFields .= 'tx_nkwsubmenu_picture_follow,tx_nkwsubmenu_picture,tx_nkwsubmenu_knotheader';
+$rootLineFields .= 'tx_nkwsubmenu_picture_follow,tx_nkwsubmenu_knotheader,tx_nkwsubmenu_knot';
 
 /**
  * Include TypoScript for tt_content before static
