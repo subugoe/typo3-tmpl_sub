@@ -16,7 +16,7 @@ class AddJavaScriptViewHelper extends AbstractViewHelper
      */
     public function render($src)
     {
-        
+
         /** @var PageRenderer $pageRenderer */
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         $pageRenderer->addJsFooterFile($src);

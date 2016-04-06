@@ -22,15 +22,16 @@ class PageHeaderViewHelper extends AbstractViewHelper
 
     public function render()
     {
-        $header = new \stdClass();
-        $header->id = 1;
+        $header = [];
+        $header['id'] = 1;
 
-        $rootLine = $this->frontendController->tmpl->rootLine;
-        for ($a = 10; $a >= 0; $a--) {
-            $isNode = $rootLine[$a]['tx_nkwsubmenu_knot'];
-            if ($isNode) {
-                $header->title = $rootLine[$a]['title'];
-                $header->id = $rootLine[$a]['id'];
+        $rootLine = array_reverse($this->frontendController->tmpl->rootLine);
+
+        foreach ($rootLine as $rootLineElement) {
+            $isNode = intval($rootLineElement['tx_nkwsubmenu_knot']);
+            if ($isNode === 1) {
+                $header['title'] = $rootLineElement['title'];
+                $header['id'] = $rootLineElement['uid'];
                 break;
             }
         }
