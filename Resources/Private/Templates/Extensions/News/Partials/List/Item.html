@@ -46,11 +46,11 @@
 					</f:then>
 					<f:else>
 						<f:if condition="{settings.displayDummyIfNoMedia}">
-							<span class="no-media-element">
+							<div class="no-media-element">
 								<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 									<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
 								</n:link>
-							</span>
+							</div>
 						</f:if>
 					</f:else>
 				</f:if>
@@ -81,11 +81,11 @@
 							</f:then>
 							<f:else>
 								<f:if condition="{settings.displayDummyIfNoMedia}">
-									<span class="no-media-element">
+									<div class="no-media-element">
 										<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 											<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
 										</n:link>
-									</span>
+									</div>
 								</f:if>
 							</f:else>
 						</f:if>
@@ -97,9 +97,9 @@
 						<f:then>
 							<div class="news-img-wrap">
 								<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-									<span class="no-media-element">
+									<div class="no-media-element">
 										<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
-									</span>
+									</div>
 								</n:link>
 							</div>
 						</f:then>
@@ -115,10 +115,10 @@
 	<div class="teaser-text">
 		<f:if condition="{newsItem.teaser}">
 			<f:then>
-				<span itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '1000', respectWordBoundaries:'1') -> f:format.html()}</span>
+				<div class="description" itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '1000', respectWordBoundaries:'1') -> f:format.html()}</div>
 			</f:then>
 			<f:else>
-				<span itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</span>
+				<div class="description" itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
 			</f:else>
 		</f:if>
 

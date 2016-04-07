@@ -1,0 +1,400 @@
+$background-color: #fff;
+$text-color: #000;
+$font-family: Arial, helvetica, sans-serif;
+
+
+/* CSS-Layout fuer DBIS - (c) UBR, poc 2006 */
+/* body allgemein */
+html,
+body {
+	font-family: $font-family;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+table {
+	empty-cells: show;
+	border-spacing: 0;
+	border: 0;
+	width: 100%;
+	font-size: 1em;
+}
+
+td {
+	vertical-align: top;
+	padding: 0;
+}
+
+/******************************************************************/
+/* Genereller Seitenaufbau */
+/* DBIS */
+.all {
+	margin: auto;
+	width: 100%;
+	background-color: $background-color;
+	color: inherit;
+	min-height: 100%;
+}
+
+/* Navigation oben (Kopf) */
+.head {
+	margin-bottom: 5px;
+	background-color: #163776;
+}
+
+/* Navigation links */
+.left {
+	width: 210px;
+	padding: 5px;
+	color: #f9f9f9;
+	background-color: $background-color;
+	font-weight: bold;
+	font-size: .9em;
+}
+
+/* Inhalt */
+.main {
+	background-color: $background-color;
+}
+
+/******************************************************************/
+/* Formatierung von Forumlaren allgemein */
+form {
+	margin-bottom: 0;
+	margin-top: 0;
+	background-color: inherit;
+}
+
+.text {
+	background-color: #f9f9f9;
+	color: $text-color;
+	border: solid 1px $text-color;
+	margin: 3px 0;
+	font-size: 1em;
+}
+
+.box {
+	background-color: #c0c0c0;
+	color: black;
+	border: solid 1px $text-color;
+	margin: 3px 0;
+	font-size: 1em;
+}
+
+select {
+	background-color: #f9f9f9;
+	color: $text-color;
+	border: solid 1px $text-color;
+	margin: 3px 0;
+}
+
+/******************************************************************/
+/* Verweise allgemein */
+
+/*
+a:link { text-decoration:none; color: #0000ff; }
+a:visited { text-decoration:none; color: #880088; }
+a:active { text-decoration:none; color: #880088; }
+a:hover { text-decoration:underline; color: #880088;}
+*/
+
+a {
+	&:link,
+	&:active {
+		color: #163776;
+		font-weight: bold;
+		text-decoration: none;
+		font-family: $font-family;
+	}
+
+	&:visited {
+		color: #cc0000;
+		font-weight: bold;
+		text-decoration: none;
+		font-family: $font-family;
+  }
+
+	&:hover {
+		color: #cc0000;
+		font-weight: bold;
+		text-decoration: underline;
+		font-family: $font-family;
+	}
+}
+
+/******************************************************************/
+/* Navigation des Tabellenkopfes */
+
+/* Zelle, die	feste Linkliste angibt */
+td.dbis_logo {
+	margin: 0;
+	padding: 5px;
+	width: 130px;
+	background-color: #163776;
+}
+
+/* Absatz, der das Logo rechts beinhaltet */
+p.head_dbinfo {
+	font-weight: bold;
+	font-size: 2em;
+	color: #f9f9f9;
+	background-color: inherit;
+	margin: 0;
+	padding: 5px;
+}
+
+/* Absatz, der den Bibliotheksnamen beinhaltet */
+.head_bib_name {
+	font-weight: bold;
+	padding: 5px;
+	font-size: 1.4em;
+	color: #f9f9f9;
+	margin: 0;
+}
+
+/* DBIS-Logo */
+.head_logo {
+	text-align: right;
+	padding: 5px;
+}
+
+/* Zelle, die das Logo beinhaltet, wenn DBIS und Bibliotheksnamen nicht erscheinen */
+td.head_logo_only {
+	text-align: center;
+	padding: 5px;
+}
+
+/* Formatierung der einzelnen Links (Liste) */
+.link_list {
+	padding: 2px 0 2px 5px;
+	margin: 0;
+	background-color: #e0e0e0;
+}
+
+.link_list li {
+	display: inline;
+	font-size: 1em;
+	padding-right: 20px;
+	font-weight: bold;
+}
+
+/******************************************************************/
+/* Linkes Navigationsmenue */
+
+/* aussen */
+.left_external {
+	padding: 4px;
+	border: solid 2px #f9f9f9;
+	background-color: #163776;
+}
+
+/* Suchfenster */
+div.left_search {
+	padding: 5px 0 5px 15px;
+	margin: 0;
+}
+
+/* einzelne Zeile */
+p.left_line {
+	padding: 0 4px 6px 4px;
+	margin: 0;
+}
+
+p.left_logo {
+	text-align: center;
+	margin: 0;
+}
+
+/* Verweise im linken Navigationsmenue und Link der Bibliothek */
+a.left:link,
+.head_bib_name a:link {
+	color: $background-color;
+}
+
+a.left:visited,
+.head_bib_name a:visited {
+	color: $background-color;
+}
+
+a.left:active,
+.head_bib_name a:active {
+	color: $background-color;
+}
+
+a.left:hover,
+.head_bib_name a:hover {
+	color: $background-color;
+}
+
+/******************************************************************/
+/* Auszeichnungen im Hauptfeld */
+
+/* Formate für HTML-Quelltext, der von Administratoren geschrieben wird */
+div.user {
+	padding: 0 3px 0 0;
+}
+
+div.user table {
+	padding: 0;
+}
+
+div.user div {
+	padding: 0;
+	background-color: #efefef;
+	margin: 0 0 3px 0;
+}
+
+div.user p {
+	padding: 5px;
+	margin: 0;
+}
+
+div.user div p,
+div.user div div {
+	background-color: #efefef;
+	padding: 5px;
+	margin: 0;
+}
+
+div.user div ol,
+.main div ul {
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* Formatierung der �berschrift im Hauptfeld */
+p.headline {
+	padding: 6px 3px 6px 0;
+	margin: 0;
+	color: $text-color;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+/* Formatierung von Tabellen im Hauptfeld (umschlie�endes div - wegen IE) */
+.main div {
+	padding: 0 3px 3px 0;
+	font-size: .9em;
+}
+
+/* Ueberschrift */
+.normal_head {
+	padding: 5px;
+	background-color: #e0e0e0;
+	font-weight: bold;
+	border-bottom: solid 1pt #606060;
+	font-size: .9em;
+}
+
+/* rechtsbuendige Ueberschrift */
+.normal_head_right {
+	padding: 5px;
+	background-color: #e0e0e0;
+	font-weight: bold;
+	text-align: right;
+	border-bottom: solid 1pt #606060;
+	white-space: nowrap;
+	font-size: .9em;
+}
+
+/* Standardformatierung */
+.normal_body {
+	padding: 1px 5px;
+	background-color: #efefef;
+	border-bottom: solid 1pt #606060;
+	vertical-align: top;
+}
+
+/* Standardformatierung */
+.normal_body_last {
+	padding: 1px 5px;
+	background-color: #efefef;
+	vertical-align: top;
+}
+
+/* Standardformatierung rechtsbuendig */
+.normal_body_right {
+	padding: 1px 5px;
+	background-color: #efefef;
+	border-bottom: solid 1pt #606060;
+	text-align: right;
+	white-space: nowrap;
+}
+
+/* Fuss einer Tabelle */
+.normal_bottom {
+	padding: 5px;
+	background-color: #e0e0e0;
+}
+
+/* Standardformatierung fuer kleinere Schriften */
+.small_body {
+	padding: 1px 5px;
+	background-color: #efefef;
+	border-bottom: solid 1pt #606060;
+	font-size: .8em;
+	vertical-align: middle;
+}
+
+/******************************************************************/
+/* Sonstiges */
+
+/* weitere Informationen ... */
+.more_information {
+	font-weight: normal;
+	padding-left: 100px;
+}
+
+.sort_form {
+	background-color: #efefef;
+}
+
+/* Bilder */
+img {
+	border: 0;
+}
+
+/* Gruppierungen, wo ein white-space:nowrap notwendig ist */
+span.nobr {
+	white-space: nowrap;
+}
+
+/* Gefoerder durch ... */
+p#left_support {
+	padding-bottom: 10px;
+	font-weight: normal;
+	padding-top: 1em;
+}
+
+/* Alphabet */
+.alphabet {
+	padding: 0;
+	margin: 0;
+}
+
+.alphabet li {
+	display: inline;
+	padding: 0 16px 0 0;
+}
+
+/* Browsing (Bei DB-Typen und Zugangsart) */
+.browse {
+	text-align: center;
+}
+
+.browse span {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.nobrowse {
+	color: #505050;
+}
+
+

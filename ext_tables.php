@@ -5,84 +5,72 @@ if (!defined('TYPO3_MODE')) {
 }
 
 // Configuration
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY,
-    'Configuration/TypoScript/001_Configuration', 'SUB Configuration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/001_Configuration', 'SUB Configuration');
 
 // Plugins
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins',
-    'SUB Plugin Configuration');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/Solr',
-    'SUB Solr Configuration');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY,
-    'Configuration/TypoScript/010_Plugins/Tt_Address', 'SUB Address Configuration');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY,
-    'Configuration/TypoScript/010_Plugins/Linkhandler', 'SUB Linkhandler Configuration');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/News',
-    'SUB News Configuration');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY,
-    'Configuration/TypoScript/010_Plugins/WecMap', 'SUB Map Configuration');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY,
-    'Configuration/TypoScript/010_Plugins/Powermail', 'SUB Powermail Configuration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins', 'SUB Plugin Configuration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/Solr', 'SUB Solr Configuration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/Tt_Address', 'SUB Address Configuration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/Linkhandler', 'SUB Linkhandler Configuration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/News', 'SUB News Configuration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/WecMap', 'SUB Map Configuration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/010_Plugins/Powermail', 'SUB Powermail Configuration');
 
 $tempColumns = [
-    'copyright' => [
-        'exclude' => '1',
-        'l10n_mode' => '',
-        'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright',
-        'config' => [
-            'type' => 'input',
-            'size' => '30',
-        ]
-    ],
-    'copyright_url' => [
-        'exclude' => 1,
-        'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright_url',
-        'config' => [
-            'type' => 'input',
-            'size' => '30',
-            'wizards' => [
-                '_PADDING' => 2,
-                'link' => [
-                    'type' => 'popup',
-                    'title' => 'Link',
-                    'icon' => 'link_popup.gif',
-                    'script' => 'browse_links.php?mode=wizard',
-                    'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+        'copyright' => [
+                'exclude' => '1',
+                'l10n_mode' => '',
+                'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright',
+                'config' => [
+                        'type' => 'input',
+                        'size' => '30',
                 ]
-            ]
+        ],
+        'copyright_url' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.copyright_url',
+                'config' => [
+                        'type' => 'input',
+                        'size' => '30',
+                        'wizards' => [
+                                '_PADDING' => 2,
+                                'link' => [
+                                        'type' => 'popup',
+                                        'title' => 'Link',
+                                        'icon' => 'link_popup.gif',
+                                        'script' => 'browse_links.php?mode=wizard',
+                                        'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+                                ]
+                        ]
+                ]
+        ],
+        'wiki_commons' => [
+                'exclude' => '1',
+                'l10n_mode' => '',
+                'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.wiki_commons',
+                'config' => [
+                        'type' => 'text',
+                        'rows' => '6',
+                        'cols' => '30',
+                ]
+        ],
+        'creative_commons' => [
+                'exclude' => '1',
+                'l10n_mode' => '',
+                'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.creative_commons',
+                'config' => [
+                        'type' => 'check',
+                ]
         ]
-    ],
-    'wiki_commons' => [
-        'exclude' => '1',
-        'l10n_mode' => '',
-        'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.wiki_commons',
-        'config' => [
-            'type' => 'text',
-            'rows' => '6',
-            'cols' => '30',
-        ]
-    ],
-    'creative_commons' => [
-        'exclude' => '1',
-        'l10n_mode' => '',
-        'label' => 'LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:sys_file_metadata.creative_commons',
-        'config' => [
-            'type' => 'check',
-        ]
-    ]
 ];
 
 // Add fields to sys_file_metadata
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_file_metadata', $tempColumns);
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'copyright', '',
-    'after:download_name');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'copyright_url', '',
-    'after:copyright');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'wiki_commons', '',
-    'after:copyright_url');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'creative_commons', '',
-    'after:wiki_commons');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'copyright', '', 'after:download_name');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'copyright_url', '', 'after:copyright');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'wiki_commons', '', 'after:copyright_url');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_file_metadata', 'creative_commons', '', 'after:wiki_commons');
 
 $TCA['sys_file_metadata']['columns']['alt_text']['config']['eval'] = 'required';
 $TCA['sys_file_metadata']['columns']['exturl']['config']['eval'] = 'required';
@@ -135,7 +123,7 @@ $TCA['tt_content']['columns']['pi_flexform']['config']['ds']['*,tmplsub_lectures
 $TCA['be_users']['columns']['email']['config']['eval'] = 'trim,required';
 $TCA['be_users']['columns']['realName']['config']['eval'] = 'trim,required';
 $TCA['be_groups']['columns']['description']['config']['eval'] = 'required';
-$TCA['be_groups']['columns']['lockToDomain']['config']['disabled'] = TRUE;
+$TCA['be_groups']['columns']['lockToDomain']['config']['disabled'] = true;
 $TCA['tt_content']['columns']['header']['config']['eval'] = 'trim,required';
 $TCA['tt_content']['columns']['altText']['config']['eval'] = 'trim,required';
 $TCA['tt_content']['columns']['titleText']['config']['eval'] = 'trim,required';

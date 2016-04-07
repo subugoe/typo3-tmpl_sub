@@ -45,5 +45,4 @@ class ContainsViewHelper extends AbstractViewHelper
         }
         return false;
     }
-
 }

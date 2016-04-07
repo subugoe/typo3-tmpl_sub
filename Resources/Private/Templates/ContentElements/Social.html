@@ -1,7 +1,7 @@
 {namespace ce = Subugoe\TmplSub\ViewHelpers}
 
 <ce:explode data="{data.bodytext}" as="items">
-	<ul class="infobox__social">
+	<ul class="infobox_social">
 		<f:for each="{items}" as="item">
 			<ce:explode data="{item}" delimiter="|" as="link">
 				<li>

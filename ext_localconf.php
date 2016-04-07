@@ -41,7 +41,7 @@ if ($rootLineFields != '') {
     $rootLineFields .= ' , ';
 }
 
-$rootLineFields .= 'tx_nkwsubmenu_picture_follow,tx_nkwsubmenu_knotheader';
+$rootLineFields .= 'tx_nkwsubmenu_picture_follow,tx_nkwsubmenu_knotheader,tx_nkwsubmenu_knot';
 
 /**
  * Include TypoScript for tt_content before static
@@ -56,9 +56,9 @@ plugin.tx_tmplsub {
 }
 ');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
-    $_EXTKEY,
-    'constants',
-    $customFluidContentElementTypoScriptConstants
+        $_EXTKEY,
+        'constants',
+        $customFluidContentElementTypoScriptConstants
 );
 
 /**
@@ -105,3 +105,10 @@ tt_content.tmplsub_lectures {
 );
 
 $TYPO3_CONF_VARS['FE']['eID_include'][$_EXTKEY] = 'EXT:tmpl_sub/Resources/Private/Scripts/WordCounter.php';
+
+
+// hook is called after Caching / pages with COA_/USER_INT objects.
+$TYPO3_CONF_VARS['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][] = 'EXT:ext/tmpl_sub/Classes/Hooks/ContentHook.php:&Subugoe\TmplSub\Hooks\ContentHook->noCache';
+
+// hook is called before Caching / pages on their way in the cache.
+$TYPO3_CONF_VARS['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-all'][] = 'EXT:ext/tmpl_sub/Classes/Hooks/ContentHook.php:&Subugoe\TmplSub\Hooks\ContentHook->cache';

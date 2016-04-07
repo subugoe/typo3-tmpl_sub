@@ -25,18 +25,16 @@ config {
 	uniqueLinkVars = 1
 	meaningfulTempFilePrefix = 50
 
-	concatenateJs = 1
-	compressJs = 1
-	concatenateCss = 1
-	compressCss = 1
+	concatenateJs = {$config.concatenateCompress}
+	compressJs = {$config.concatenateCompress}
+	concatenateCss = {$config.concatenateCompress}
+	compressCss = {$config.concatenateCompress}
 
 	tx_piwik {
 		piwik_host = {$plugin.piwik.host}
 		piwik_idsite = {$plugin.piwik.id}
 	}
 }
-
-includeLibs.user_template = typo3conf/ext/tmpl_{$page_template}/Resources/Private/Scripts/TemplateScripts.php
 
 ### Language = en ###
 [globalVar = GP:L = 1]
@@ -47,34 +45,6 @@ includeLibs.user_template = typo3conf/ext/tmpl_{$page_template}/Resources/Privat
 		htmlTag_langKey = en-Gb
 	}
 [global]
-
-### BIGPICTURE ###
-
-lib.BIGPICTURE = USER
-lib.BIGPICTURE {
-	userFunc = user_template->bigPicture
-}
-
-### Headerbild ###
-
-lib.bigPicture = IMAGE
-lib.bigPicture {
-	stdWrap {
-		wrap = <div id="bigpicture">|</div>
-		required = 1
-	}
-
-	file {
-		import = uploads/media/
-		import {
-			data = levelmedia:-1, slide
-			listNum = 0
-		}
-
-		width = 1000c
-		height = 228c
-	}
-}
 
 ### CRIGHT ###
 
@@ -125,13 +95,6 @@ lib.fright {
 		}
 	}
 [global]
-
-### BIX Zaehlpixel ###
-## deaktiviert 2016-02-25 Jochen Kothe
-##[globalVar = TSFE:id = 1]
-##	lib.fright.44 = TEXT
-##	lib.fright.44.value = <img src="//dbspixel.hbz-nrw.de/count?id=AF007&amp;page=1" alt="" />
-##[global]
 
 lib.mainContent < styles.content.get
 
@@ -210,10 +173,12 @@ temp.body.field = uid
 temp.body.wrap = <body id="page-|">
 
 page = PAGE
+
 page {
 	typeNum = 0
 	shortcutIcon = EXT:tmpl_sub/Resources/Public/Img/favicon.ico
 	bodyTagCObject < temp.body
+
 	includeJS {
 		navigation = EXT:tmpl_{$page_template}/Resources/Public/Js/Site.min.js
 		navigation.forceOnTop = 1
@@ -222,9 +187,6 @@ page {
 
 	includeCSS {
 		main = EXT:tmpl_sub/Resources/Public/Css/main.css
-		print = EXT:tmpl_sub/Resources/Public/Css/print.css
-		print.media = print
-		tabs = EXT:subtabs/Resources/Public/Css/Tabs.css
 	}
 
 	meta {
@@ -235,56 +197,34 @@ page {
 			}
 		}
 
+		viewport = width=device-width, initial-scale=1
+
 		ICBM = 51.539763,9.935385
+		geo\.placename = Göttingen
+		geo\.region = DE-NI
+		geo\.position = 51.539763;9.935385
+	}
+
+	footerData {
+		10 = TEXT
+		10 {
+			value (
+				<script>
+					fontLoaderConfig = {
+						fonts: [
+							['urw_classicoregular'],
+							['Open Sans']
+						]
+					}
+				</script>
+				<script src="typo3conf/ext/tmpl_sub/Resources/Public/Js/font-loader.min.js"></script>
+			)
+		}
 	}
 
 	### TEMPLATE ###
 	10 = FLUIDTEMPLATE
 	10 < lib.layoutTemplate
-
-	### Header Data ###
-	headerData {
-		2 = USER
-		2 {
-			userFunc = user_displayKeywords
-		}
-
-		10 = HTML
-		10 {
-			value (
-				<meta name="geo.placename" content="Göttingen" />
-				<meta name="geo.region" content="DE-NI" />
-				<meta name="geo.position" content="51.539763;9.935385" />
-				<!--[if lt IE 8]>
-				<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
-				<![endif]-->
-			)
-		}
-	}
-}
-
-lib.pageHeader = IMAGE
-lib.pageHeader {
-	altText = TEXT
-	altText.data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:page.pageTitle
-	file = GIFBUILDER
-	file {
-		backColor = #1a3771
-		XY = 1000,110
-		format = png
-		30 = IMAGE
-		30 {
-			file = EXT:tmpl_sub/Resources/Public/Img/logo_print.png
-			offset = 21, 17
-		}
-
-		20 = IMAGE
-		20 {
-			file.import = fileadmin/media/bilder/Seitenkopf/
-			file.import.override.data = levelfield : -1 , tx_nkwsubmenu_knotheader, slide
-			ifEmpty = header.png
-		}
-	}
 }
 
 [globalVar = GP:L = 1]
@@ -411,9 +351,6 @@ plugin.tx_tmplsub._CSS_DEFAULT_STYLE (
 	span.italicFont { font-style: italic; }
 )
 
-#Patch for radio buttons in powermail conditions
-page.includeJSFooter.powermail_cond = EXT:tmpl_sub/Resources/Public/Js/PowermailCond.js
-
 # Date format
 plugin.tx_powermail {
 	_LOCAL_LANG {
@@ -427,6 +364,35 @@ plugin.tx_powermail {
 			datepicker_format_date = d.m.Y
 			datepicker_format_time = H:i
 			datepicker_format_datetime = d.m.Y H:i
+		}
+	}
+}
+
+tt_content.stdWrap.innerWrap.cObject.default.10.cObject.default.value = <article id="c{field:uid}"
+tt_content.stdWrap.innerWrap.cObject.default.30.cObject.default.value = >|</article>
+
+tt_content {
+	bullets {
+		20 {
+			split {
+				1 {
+					parseFunc = < lib.parseFunc
+					htmlSpecialChars >
+				}
+				2 {
+					parseFunc = < lib.parseFunc
+					htmlSpecialChars >
+				}
+			}
+		}
+	}
+
+	table {
+		20 {
+			innerStdWrap {
+				parseFunc = < lib.parseFunc
+				htmlSpecialChars >
+			}
 		}
 	}
 }

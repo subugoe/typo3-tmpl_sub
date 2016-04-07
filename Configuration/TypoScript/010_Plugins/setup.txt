@@ -55,6 +55,15 @@ plugin {
 			}
 		}
 	}
+	tx_pazpar2 {
+		settings {
+			CSSPath = EXT:tmpl_sub/Resources/Public/Css/pz2.css
+		}
+	}
+
+	tx_pazpar2_pazpar2neuerwerbungen.settings {
+		pz2-neuerwerbungenCSSPath >
+	}
 }
 
 tmplsub_lectures = FLUIDTEMPLATE

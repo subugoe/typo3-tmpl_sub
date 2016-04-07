@@ -1,0 +1,36 @@
+.powermail_fieldwrap {
+	margin: ($grid / 2) 0;
+}
+
+.powermail_label {
+	// Reset icon style
+	i {
+		cursor: help;
+		font-style: normal;
+	}
+}
+
+label.powermail_label { //scss-lint:disable QualifyingElement
+	background: $white;
+	color: $link-color;
+	line-height: 1;
+	margin: -.5em 0 0 .5em;
+	padding: 0 .5em;
+	position: absolute;
+}
+
+legend.powermail_label { //scss-lint:disable QualifyingElement
+	color: inherit;
+	font-weight: inherit;
+}
+
+.parsley-errors-list.filled {
+	@include popup(bottom, $alert-color);
+	display: inline-block;
+	margin-left: 0;
+	position: relative;
+
+	li::before {
+		content: none;
+	}
+}

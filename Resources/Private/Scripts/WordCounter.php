@@ -160,7 +160,7 @@ foreach ($data as $page) {
     );
 
     while ($results = $db->sql_fetch_assoc($query)) {
-        echo $results['pid'] . ', '. $results['header'] . ', ';
+        echo '<h1>' . $results['header'] . '</h1>';
 
         $wordCount = strlen(strip_tags($results['bodytext']));
 

@@ -1,5 +1,12 @@
 RTE.default {
-	hidePStyleItems = h1,h6,address,div,pre,blockquote
+	buttons {
+		formatblock {
+			removeItems = h1,h6,address,div,pre,blockquote
+		}
+		image.options {
+			removeItems = upload, media_upload
+		}
+	}
 	contentCSS = EXT:tmpl_sub/Resources/Public/Css/Rte/rte.css
 	ignoreMainStyleOverride = 1
 	enableWordClean = 1
@@ -17,7 +24,6 @@ RTE.default {
 	classesParagraph = indent
 	classesCharacter = boldFont, italicFont
 	classesCharacter := addToList(boldFont, italicFont)
-	buttons.image.options.removeItems = upload, media_upload
 	proc {
 		allowedClasses = italicFont, boldFont, external-link, external-link-new-window, internal-link, internal-link-new-window, download, mail, align-left, align-center, align-right, csc-frame-frame1, csc-frame-frame2, component-items, action-items, component-items-ordered, action-items-ordered, indent
 		allowTags = caption, thead, table, tbody, th, tr, td, span, img, p, h2, h3, h4, h5, a, ol, ul, li, i, em, b, strong, strike, s, pre, abbr, blockquote, div, sub, sup, u, br
@@ -25,7 +31,7 @@ RTE.default {
 		HTMLparser_rte {
 			allowTags < RTE.default.proc.allowTags
 			denyTags < RTE.default.proc.denyTags
-			removeTags = font
+			removeTags = center, font, link, o:p, sdfield, meta, style, title, strike, u
 			removeComments = 1
 			keepNonMatchedTags = 0
 		}
@@ -45,6 +51,13 @@ RTE.default {
 			tags.b.remap = strong
 			tags.i.remap = em
 			htmlSpecialChars = 0
+		}
+		HTMLparser_db {
+			tags {
+				span {
+					allowedAttribs := addToList(itemscope,itemtype,itemprop)
+				}
+			}
 		}
 	}
 }

@@ -1,5 +1,11 @@
+/Resources/Public/Css/pz2.css.map
+/Resources/Public/Css/main.css.map
+/Build/logs/jshint.xml
 .sass-cache
 node_modules
-Build
-build
-/Resources/Private/Js/SUB.js
+Resources/Public/Css/main.css
+Resources/Public/Js/Site.min.js
+.gradle
+Build/bower
+/Resources/Public/Css/pz2.css
+Resources/Private/Js/SUB.js

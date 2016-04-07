@@ -357,7 +357,7 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = [
         ],
     ],
     'fileName' => [
-        'defaultToHTMLsuffixOnPrev' => FALSE,
+        'defaultToHTMLsuffixOnPrev' => false,
         'index' => [
             'sub.rss' => [
                 'keyValues' => [
@@ -367,4 +367,3 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT'] = [
         ],
     ],
 ];
-?>

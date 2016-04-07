@@ -29,7 +29,6 @@ namespace Subugoe\TmplSub\ViewHelpers;
  */
 class CommaExploderViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 {
-
     /**
      * Returns an array out of a commaseparated list of integers
      *
@@ -38,31 +37,28 @@ class CommaExploderViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractV
      */
     public function render($commaList)
     {
-
         $intVals = [];
         if (strpos($commaList, ',')) {
             $intVals = explode(',', $commaList);
 
-            // only values larger than zero will be included
+                // only values larger than zero will be included
             $intVals = array_filter($intVals, function ($matches) {
                 if (intval($matches) > 0) {
-                    return TRUE;
+                    return true;
                 }
             });
-            // remove spaces
+                // remove spaces
             array_walk($intVals, function ($val, $key) use (&$intVals) {
                 $intVals[$key] = trim($val);
             });
-
-        } elseif ((int)$commaList > 0) {
+        } elseif ((int) $commaList > 0) {
             array_push($intVals, $commaList);
         }
         if (count($intVals) > 0) {
             $return = $intVals;
         } else {
-            $return = NULL;
+            $return = null;
         }
         return $return;
     }
-
 }
