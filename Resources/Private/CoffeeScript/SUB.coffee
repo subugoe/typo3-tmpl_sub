@@ -111,22 +111,6 @@ $ ->
       # Add class to ancestor that does not get re-rendered for every new result
       $('#pazpar2').toggleClass('pz2-show-facets')
     )
-    
-  $('.datatable').DataTable({
-    language: {
-      search: "Suche:",
-      lengthMenu: "Zeige _MENU_ Einträge",
-      info: "_START_ bis _END_ von _TOTAL_ Einträgen",
-      infoFiltered: "(gefiltert aus insgesamt _MAX_ Elementen)",
-      infoPostFix: "",
-      paginate: {
-        first: "Erste",
-        previous: "Vorherige",
-        next: "Nächste",
-        last: "Letzte"
-      },
-    }
-  });
 
 initMenus = ->
   $('.nav_list.-secondary').hide()

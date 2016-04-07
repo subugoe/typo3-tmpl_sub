@@ -1,6 +1,7 @@
 {namespace ce = Subugoe\TmplSub\ViewHelpers}
 <ce:addJavaScript src="typo3conf/ext/tmpl_sub/Resources/Public/Js/jquery.dataTables.min.js" />
 <ce:addJavaScript src="typo3conf/ext/tmpl_sub/Resources/Public/Js/dataTables.material.min.js" />
+<ce:addJavaScript src="typo3conf/ext/tmpl_sub/Resources/Public/Js/datatable-config.js" />
 <table class="datatable" data-page-length="20" data-length-menu="[ 20, 50, 75, 100 ]">
 	<ce:explode data="{data.bodytext}" as="items">
 		<f:for each="{items}" as="item" iteration="lectureIterator">
