@@ -29,6 +29,7 @@
 .news .more {
 	@include icon('angle-right', $link-color, false, true);
 	position: relative;
+	white-space: nowrap;
 
 	&::before {
 		float: none;
