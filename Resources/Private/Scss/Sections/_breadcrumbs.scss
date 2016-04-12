@@ -10,7 +10,7 @@
 
 		+ li {
 			@include icon('angle-right', $text-color-light);
-			padding: 0 .25em;
+			padding-left: .25em;
 		}
 	}
 }
