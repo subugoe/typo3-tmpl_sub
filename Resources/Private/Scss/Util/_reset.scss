@@ -141,3 +141,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+button,
+input,
+select,
+textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
