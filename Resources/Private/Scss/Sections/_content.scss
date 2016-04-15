@@ -50,8 +50,8 @@
 		font-weight: 300;
 	}
 
-	article + article h1 {
-		margin-top: $grid * 1.5;
+	article + article {
+		margin-top: ($grid * 1.5);
 	}
 
 	h2 {
@@ -288,5 +288,9 @@
 		p {
 			margin: 0;
 		}
+	}
+
+	:last-child:not(:only-child) {
+		margin-bottom: 0;
 	}
 }
