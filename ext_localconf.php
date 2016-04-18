@@ -90,6 +90,20 @@ tt_content.tmplsub_lectures {
 }
 ');
 
+$openingHoursTypoScriptSetup = trim('
+tt_content.tmplsub_openinghours = COA
+tt_content.tmplsub_openinghours {
+    10 = < lib.stdheader
+    20 = FLUIDTEMPLATE
+    20 {
+        file = {$plugin.tx_tmplsub.view.templateRootPath}ContentElements/OpeningHours.html
+        partialRootPath = {$plugin.tx_tmplsub.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_tmplsub.view.layoutRootPath}
+    }
+}
+');
+
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
     $_EXTKEY,
     'setup',
@@ -101,6 +115,13 @@ tt_content.tmplsub_lectures {
     $_EXTKEY,
     'setup',
     $lectureFluidContentElementTypoScriptSetup,
+    43
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+    $_EXTKEY,
+    'setup',
+    $openingHoursTypoScriptSetup,
     43
 );
 
