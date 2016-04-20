@@ -1,0 +1,50 @@
+// Fake table styles on opening hours because working with real tables would be
+// too much of a hassle for editors ¬_¬
+
+.opening-hours {
+	@extend %clearfix;
+
+	// Sector
+	h2 {
+		clear: left;
+		color: $text-color;
+		font: inherit;
+		font-weight: bold;
+		margin: 0;
+
+		> a {
+			@include link;
+		}
+
+		~ h2 {
+			@extend %clearfix;
+			padding-top: $grid;
+		}
+	}
+
+	// Weeksdays
+	h2 + p,
+	h2 + p + p + p,
+	h2 + p + p + p + p + p,
+	h2 + p + p + p + p + p + p + p {
+		clear: left;
+		float: left;
+		margin-bottom: 0;
+		padding-right: .5em;
+		width: 7em;
+
+		@include respond-to(tiny) {
+			float: none;
+		}
+	}
+
+	// Hours
+	h2 + p + p,
+	h2 + p + p + p + p,
+	h2 + p + p + p + p + p + p,
+	h2 + p + p + p + p + p + p + p + p {
+		float: left;
+		margin-bottom: 0;
+		width: auto;
+	}
+}
