@@ -1,6 +1,5 @@
-@mixin hide_print() {
+@mixin hide-print {
 	@media print {
 		display: none;
 	}
-
 }

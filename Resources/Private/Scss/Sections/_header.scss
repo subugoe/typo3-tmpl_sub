@@ -22,7 +22,7 @@
 	font-size: $font-size-small;
 	padding: ceil($grid / 4) $grid floor($grid / 4);
 
-	@include hide_print;
+	@include hide-print;
 
 	@include respond-to(large) {
 		padding: ceil($grid / 4) ($grid / 2) floor($grid / 4);

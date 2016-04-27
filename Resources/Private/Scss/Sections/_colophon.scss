@@ -1,7 +1,7 @@
 .colophon {
 	@extend %full-width-background;
 	@include auto-color($brand-color);
-	@include hide_print;
+	@include hide-print;
 
 	background: $brand-color;
 	position: relative;
