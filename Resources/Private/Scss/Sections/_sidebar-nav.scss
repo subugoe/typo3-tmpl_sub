@@ -12,6 +12,8 @@
 		display: table;
 	}
 
+	@include hide_print;
+
 	&::before {
 		background-color: $shadow-light;
 		background-size: $grid;
