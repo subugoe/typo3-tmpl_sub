@@ -4,6 +4,10 @@ html {
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: scroll;
+
+	@media print {
+		height: auto;
+	}
 }
 
 *,
@@ -12,12 +16,21 @@ html {
 	box-sizing: inherit;
 	margin: 0;
 	padding: 0;
+
+	@media print {
+		color: black !important;
+	}
 }
 
 body {
 	margin: 0 auto;
 	max-width: $site-width;
 	min-height: 100%;
+
+	@media print {
+		margin: 0;
+		max-width: none;
+	}
 
 	@include respond-to(large) {
 		box-shadow: 0 0 $grid rgba($black, .5);

@@ -3,6 +3,13 @@
 	padding-right: 0;
 	width: (10 * $grid);
 
+	@media print {
+		border-top: $border-width solid black;
+		margin-top: $grid;
+		padding: ($grid - $border-width) 0 0;
+		width: auto;
+	}
+
 	@include respond-to(medium) {
 		border-top: $border-width solid $border-color;
 		padding: ($grid - $border-width) 0 0;
@@ -18,9 +25,14 @@
 		border-left: $border-width solid $border-color;
 		padding-left: ($grid - $border-width);
 
+		@media print {
+			border: 0;
+			padding: 0;
+		}
+
 		@include respond-to(medium) {
 			border: 0;
-			padding-left: 0;
+			padding: 0;
 		}
 	}
 

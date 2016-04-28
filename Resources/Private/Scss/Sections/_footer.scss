@@ -1,5 +1,6 @@
 .footer {
 	@extend %clearfix;
+	@include hide-print;
 	background: $white;
 	max-width: $site-width;
 	padding: ($grid * 1.5) ($grid / 2) ($grid / 2);

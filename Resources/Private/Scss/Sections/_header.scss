@@ -17,12 +17,13 @@
 
 .header_bar {
 	@extend %clearfix;
-
 	background: $white;
 	font-size: $font-size-small;
 	padding: ceil($grid / 4) $grid floor($grid / 4);
 
-	@include hide-print;
+	@media print {
+		padding: 0;
+	}
 
 	@include respond-to(large) {
 		padding: ceil($grid / 4) ($grid / 2) floor($grid / 4);
@@ -30,6 +31,7 @@
 }
 
 .header_image {
+	@include hide-print;
 	border-bottom: ($grid / 2) solid $white;
 	max-height: (10 * $grid);
 	margin: 0 $grid;
@@ -58,6 +60,7 @@
 }
 
 .header_language {
+	@include hide-print;
 	float: right;
 
 	@include respond-to(large) {
@@ -114,6 +117,12 @@
 		display: block;
 		height: 100%;
 		min-height: (1.5 * $grid);
+
+		> span {
+			@media print {
+				display: block;
+			}
+		}
 	}
 }
 
@@ -195,6 +204,7 @@
 .header_top {
 	@extend %header_element;
 	@extend %full-width-background;
+	@include hide-print;
 	background: $brand-color;
 	padding: $grid;
 

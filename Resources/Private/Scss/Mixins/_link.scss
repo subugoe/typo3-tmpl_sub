@@ -22,4 +22,8 @@
 			color: $white;
 		}
 	}
+
+	@media print {
+		box-shadow: none;
+	}
 }
