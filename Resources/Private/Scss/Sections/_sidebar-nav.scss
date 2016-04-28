@@ -2,6 +2,8 @@
 
 .sidebar-nav {
 	@include icon('info-circle', $text-color-light);
+	@include hide-print;
+
 	background: $shadow-light;
 	display: none;
 	margin: 0 0 $grid;

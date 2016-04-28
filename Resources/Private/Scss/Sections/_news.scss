@@ -1,4 +1,8 @@
 .news {
+	.article + .article {
+		margin-top: $grid;
+	}
+
 	// Reset styles inherited from site header and footer
 	.header,
 	.footer {

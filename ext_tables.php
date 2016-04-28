@@ -119,6 +119,29 @@ $TCA['tt_content']['columns']['pi_flexform']['config']['ds']['*,tmplsub_lectures
     'after'
 );
 
+
+/**
+ * Register Custom Fluid Content Element
+ */
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+        'Opening Hours',
+        'tmplsub_openinghours',
+        'content-image'
+
+    ],
+    'textmedia',
+    'after'
+);
+
+/**
+ * Prepare TCA for Custom Fluid Content Element
+ */
+$TCA['tt_content']['types']['tmplsub_openinghours'] = $TCA['tt_content']['types']['text'];
+
+
 // mandatory fields for the backend
 $TCA['be_users']['columns']['email']['config']['eval'] = 'trim,required';
 $TCA['be_users']['columns']['realName']['config']['eval'] = 'trim,required';

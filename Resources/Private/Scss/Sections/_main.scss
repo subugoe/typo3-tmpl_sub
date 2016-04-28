@@ -3,14 +3,24 @@
 	margin: 0 auto;
 	max-width: $site-width;
 	padding: 0 $grid;
+
+	@media print {
+		margin: 0;
+		padding: 0;
+	}
 }
 
 .main_left {
 	@include column(large);
+	@include hide-print;
 	background: $white;
 	max-width: (11 * $grid); // Prevent width adjustment when text does not fit
 	padding-left: 0;
 	width: (11 * $grid);
+
+	@media print {
+		display: none;
+	}
 
 	@include respond-to(large) {
 		@include off-canvas;
@@ -26,6 +36,11 @@
 	padding-right: 0;
 	position: relative;
 
+	@media print {
+		display: block;
+		padding: 0;
+	}
+
 	@include respond-to(large) {
 		padding: 0 ($grid / 2); // Prevent off-canvas from popping through
 		margin: 0 (-$grid);
@@ -36,6 +51,10 @@
 	display: table;
 	table-layout: fixed;
 	width: 100%;
+
+	@media print {
+		display: block;
+	}
 }
 
 .main_logo,
