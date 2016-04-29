@@ -11,6 +11,15 @@
 		+ li {
 			@include icon('angle-right', $text-color-light);
 			padding-left: .25em;
+
+			@media print {
+				&::before {
+					background: none;
+					content: '/';
+					line-height: 1;
+					text-align: center;
+				}
+			}
 		}
 	}
 }
