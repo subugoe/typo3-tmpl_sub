@@ -254,3 +254,11 @@ lib.rootline.10 {
 		wrap = <li>|</li>
 	}
 [end]
+
+[globalVar = TSFE:id = 3]
+	lib.rootline.10 {
+		special = rootline
+		special.range = 0|-2
+	}
+	lib.rootline >
+[end]

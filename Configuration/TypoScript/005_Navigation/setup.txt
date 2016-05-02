@@ -12,6 +12,22 @@ lib.navInterface {
 			ATagParams = class="nav_link"
 		}
 
+		# Now override class if the shortcut is pointing to the current page
+		NO.ATagParams.override.cObject = COA
+		NO.ATagParams.override.cObject {
+			if {
+				value = 4
+				equals.field = doktype
+				isTrue = 1
+				isTrue.if {
+					value.data = TSFE:page|uid
+					equals.field = shortcut
+				}
+			}
+			10 = TEXT
+			10.value = class="nav_link -current"
+		}
+
 		IFSUB = 1
 		IFSUB {
 			wrapItemAndSub = <li class="nav_item -has-children">|</li>
