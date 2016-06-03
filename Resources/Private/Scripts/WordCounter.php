@@ -146,6 +146,7 @@ $data = [
     689,
 
 ];
+echo 'pageId, contentElementTitle, characterCount' . PHP_EOL;
 
 foreach ($data as $page) {
 
@@ -153,7 +154,7 @@ foreach ($data as $page) {
     $db = $GLOBALS['TYPO3_DB'];
 
     $query = $db->exec_SELECTQuery(
-    'bodytext, header',
+    'pid, bodytext, header',
     'tt_content',
     'deleted = 0 AND hidden = 0 AND pid = ' . $page
     );
@@ -163,6 +164,6 @@ foreach ($data as $page) {
 
         $wordCount = strlen(strip_tags($results['bodytext']));
 
-        echo '<br>' . $wordCount . '<br><br>';
+        echo $wordCount . PHP_EOL;
     }
 }
