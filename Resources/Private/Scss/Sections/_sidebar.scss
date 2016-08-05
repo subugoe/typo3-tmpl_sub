@@ -67,6 +67,7 @@
 
 	ul {
 		@extend %clearfix;
+		margin-bottom: $grid;
 	}
 
 	li {

@@ -50,7 +50,8 @@
 		font-weight: 300;
 	}
 
-	article + article {
+	article + article,
+	a + article { // Needed for inserted anchors on English site
 		margin-top: ($grid * 1.5);
 	}
 
