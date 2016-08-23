@@ -7,7 +7,7 @@
 <ol class="alphabet-list">
 	<f:for each="{titles}" as="title" key="letter" iteration="titleIteration">
 		<li class="alphabet-list_item" id="{letter}">
-			<span class="alphabet-list_letter">{letter}</span>
+			<h2 class="alphabet-list_letter">{letter}</h2>
 			<ol class="alphabet-list_sub-list">
 				<f:for each="{title}" as="entry">
 					<li><f:link.action controller="{linkController}" extensionName="{linkExtensionName}" action="{linkAction}" arguments="{entry.linkObject}" pluginName="{linkPluginName}">{entry.title}</f:link.action></li>
