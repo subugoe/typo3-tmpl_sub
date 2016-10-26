@@ -1,9 +1,8 @@
 <?php
-//$TYPO3_CONF_VARS['FE']['addRootLineFields'] .= ',tx_realurl_pathsegment';
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array (
     '_DEFAULT' => array (
         'init' => array (
-            //'enableCHashCache' => 1,
+            'enableCHashCache' => 1,
             'appendMissingSlash' => 'ifNotFile,redirect',
             'enableUrlDecodeCache' => 1,
             'enableUrlEncodeCache' => 1,
@@ -13,10 +12,10 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array (
         ),
         'pagePath' => array (
             'type' => 'user',
-            //'userFunc' => 'EXT:realurl/class.tx_realurl_advanced.php:&tx_realurl_advanced->main',
-            //deprecated: 'spaceCharacter' => '-',
+            'userFunc' => 'EXT:realurl/class.tx_realurl_advanced.php:&tx_realurl_advanced->main',
+            'spaceCharacter' => '-',
             'languageGetVar' => 'L',
-		        'languageField' => 'sys_language_uid',
+		    'languageField' => 'sys_language_uid',
             'expireDays' => 7,
             'rootpage_id' => 3,
             'dontResolveShortcuts' => 1
@@ -56,8 +55,8 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array (
                         'languageExceptionUids' => '',
                         'languageField' => 'sys_language_uid',
                         'transOrigPointerField' => 'l10n_parent',
-                        //'autoUpdate' => 1,
-                        //'expireDays' => 180,
+                        'autoUpdate' => 1,
+                        'expireDays' => 180,
                     )
                 )
             ),

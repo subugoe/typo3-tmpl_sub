@@ -3,7 +3,7 @@
 	<f:for each="{categories}" as="category">
 		<f:if condition="{category.shortcut}">
 			<f:then>
-				<f:link.page pageUid="{category.shortcut}" additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category}}}">
+				<f:link.page pageUid="{category.shortcut}" additionalParams="{tx_news_pi1:{overwriteDemand:{categories: category.uid}}}">
 					{category.title}</f:link.page>&nbsp
 			</f:then>
 			<f:else>
