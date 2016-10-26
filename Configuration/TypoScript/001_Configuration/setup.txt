@@ -18,6 +18,7 @@ config {
 	removeDefaultJS = 1
 	disablePrefixComment = 1
 	simulateStaticDocuments = 0
+	#absRefPrefix = https://subj.dev/
 	baseURL = {$baseURL}
 	tx_realurl_enable = 1
 	index_enable = 1
