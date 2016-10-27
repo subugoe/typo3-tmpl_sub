@@ -7,7 +7,7 @@
 			<!--<li>{pageUid}</li>-->
 			<li>
 				<!-- Feedback -->
-				<f:link.page pageUid="290" noCacheHash="true" rel="nofollow" additionalParams="{tx_nkwuserfeedback:{page:'{currentPid}'}}">
+				<f:link.page pageUid="290" noCacheHash="true" rel="nofollow" additionalParams="{feedbackPage:'{f:cObject(typoscriptObjectPath:\'lib.currentPage\')}'}">
 					<f:translate key="page.feedBack" />
 				</f:link.page>
 			</li>
