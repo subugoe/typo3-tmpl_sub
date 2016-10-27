@@ -146,6 +146,17 @@ lib.buecher {
 
 ## setup for book restoration donation - end ##
 
+## Feedback Form with Powermail instead of nkwuserfeedback
+lib.currentPage = TEXT
+lib.currentPage.data = TSFE:id
+
+plugin.tx_powermail.settings.setup.prefill {
+	feedbackpage = TEXT
+	feedbackpage.data = GP:feedbackPage
+	feedbackpage.intval = 1
+		}
+## Feedback Formular - end ##
+
 page.includeJSFooterlibs.powermailJQuery >
 ## Validation translation
 
