@@ -71,7 +71,11 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = [
                         'useUniqueCache_conf' => [
                             'strtolower' => 1,
                             'spaceCharacter' => '-'
-                        ]
+                        ],
+                        'languageGetVar' => 'L',
+                        'languageExceptionUids' => '',
+                        'languageField' => 'sys_language_uid',
+                        'transOrigPointerField' => 'l10n_parent',
                     ]
                 ]
             ],
