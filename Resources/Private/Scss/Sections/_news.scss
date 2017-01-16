@@ -1,4 +1,8 @@
 .news {
+	.article {
+		clear: both;
+	}
+
 	.article + .article {
 		margin-top: $grid;
 	}

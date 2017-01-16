@@ -84,19 +84,6 @@ lib.bottom2 {
 			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.twitter
 			stdWrap.wrap = <i class="fa fa-twitter"></i>|
 		}
-		# Ihre Meinung
-		40 < .20
-		40 {
-			typolink {
-				parameter = 207
-				title = TEXT
-				title {
-					data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.opinion
-				}
-			}
-			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.opinion
-			stdWrap.wrap = <i class="fa fa-pencil"></i>|
-		}
 		# Frag die SUB
 		50 < .20
 		50 {

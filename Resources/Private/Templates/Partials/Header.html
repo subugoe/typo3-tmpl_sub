@@ -1,3 +1,4 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace s=Subugoe\TmplSub\ViewHelpers}
 <header class="header" data-role="header">
 	<s:pageHeader />
@@ -18,7 +19,14 @@
 			<f:cObject typoscriptObjectPath="lib.rootline" />
 		</div>
 		<div class="header_language">
-			<f:link.page additionalParams="{L:\"{f:translate(key:'page.language.switchId')}\"}" addQueryString="TRUE"><f:translate key="page.language" /></f:link.page>
+			<f:if condition="{v:page.language()}==0">
+				<f:then>
+					<f:link.page additionalParams="{L:1}" addQueryString="TRUE"><f:translate key="page.language" /></f:link.page>
+				</f:then>
+				<f:else>
+					<f:link.page additionalParams="{L:0}" addQueryString="TRUE"><f:translate key="page.language" /></f:link.page>
+				</f:else>
+			</f:if>
 		</div>
 	</div>
 	<s:bigPicture />
