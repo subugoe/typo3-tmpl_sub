@@ -1,15 +1,5 @@
 <?php
 
-/***************************************************************
- * Extension Manager/Repository config file for ext "tmpl_sub".
- *
- * Auto generated 11-12-2012 12:13
- *
- * Manual updates:
- * Only the data in the array - everything else is removed by next
- * writing. "version" and "dependencies" must not be touched!
- ***************************************************************/
-
 $EM_CONF[$_EXTKEY] = [
     'title' => 'SUB Template',
     'description' => 'Configuration and Resources for SUB Template',
@@ -31,7 +21,10 @@ $EM_CONF[$_EXTKEY] = [
     'lockType' => '',
     'version' => '2.0.0',
     'constraints' => [
-        'depends' => [],
+        'depends' => [
+            'typo3' => '7.6.0-7.6.99',
+            'php' => '5.5.0-7.0.99'
+        ],
         'conflicts' => [],
         'suggests' => [],
     ],
