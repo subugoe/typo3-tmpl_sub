@@ -5,7 +5,7 @@
 		<f:for each="{items}" as="item">
 			<ce:explode data="{item}" delimiter="|" as="link">
 				<li>
-					<f:link.typolink parameter="{link.1}"><i class="fa fa-{link.0}"></i> {link.2}</f:link.typolink></li>
+					<ce:typolink parameter="{link.1}"><i class="fa fa-{link.0}"></i> {link.2}</ce:typolink></li>
 			</ce:explode>
 		</f:for>
 	</ul>
