@@ -182,3 +182,10 @@ mod.wizards.newContentElement.wizardItems.common {
     }
     show := addToList(tmplsub_lectures)
 }
+
+##################
+### Workspaces ###
+##################
+
+# Workspace notifications email subject
+tx_version.workspaces.stageNotificationEmail.subject = ###NEXT_STAGE###: ###ELEMENT_NAME### (TYPO3 workspace note)
