@@ -1,0 +1,77 @@
+### PLUGINS ###
+
+lib.tx_standorte.storagePid.value = {$tx_standorte.persistence.storagePid}
+module.tx_standorte.persistence.storagePid = {$plugin.tx_standorte.persistence.storagePid}
+
+plugin {
+    # tx_nkwsubmenu
+    tx_nkwsubmenu_pi2 {
+        landing = {$ids.keywordslandingpage}
+    }
+
+    # tx_nkwsubstaff
+    tx_nkwsubstaff {
+        department.detailsID = {$plugin.nkwsubstaff.detailsID.department}
+        staff.detailsID = {$plugin.nkwsubstaff.detailsID.staff}
+    }
+
+    # tx_nkwuserfeedback_pi1
+    tx_nkwuserfeedback_pi1 {
+        mail {
+            tomail = {$plugin.nkwuserfeedback.pi1.mail.tomail}
+            fromname = {$plugin.nkwuserfeedback.pi1.mail.fromname}
+            frommail = {$plugin.nkwuserfeedback.pi1.mail.frommail}
+            subjectprefix = {$plugin.nkwuserfeedback.pi1.mail.subjectprefix}
+        }
+    }
+
+    # standorte
+    tx_standorte {
+        persistence.storagePid = {$plugin.tx_standorte.persistence.storagePid}
+    }
+
+    # Schulungen
+    tx_schulungen {
+        persistence.storagePid = {$plugin.tx_schulungen.persistence.storagePid}
+    }
+
+    # TABs
+    tx_subtabs {
+        persistence.storagePid = 1200
+    }
+
+    tx_pagebrowse_pi1 {
+        _LOCAL_LANG {
+            default {
+                text_next = Next ›
+                text_last = Last »
+                text_prev = ‹ Previous
+                text_first = « First
+            }
+
+            de {
+                text_next = Nächste ›
+                text_last = Letzte »
+                text_prev = ‹ Vorherige
+                text_first = « Erste
+            }
+        }
+    }
+
+    tx_pazpar2 {
+        settings {
+            CSSPath = EXT:tmpl_sub/Resources/Public/Css/pz2.css
+        }
+    }
+
+    tx_pazpar2_pazpar2neuerwerbungen.settings {
+        pz2-neuerwerbungenCSSPath >
+    }
+}
+
+tmplsub_lectures = FLUIDTEMPLATE
+tmplsub_lectures {
+    file = EXT:tmpl_sub/Resources/Private/Templates/ContentElements/Lectures.html
+    partialRootPath = EXT:tmpl_sub/Resources/Private/Partials/
+    layoutRootPath = EXT:tmpl_sub/Resources/Private/Layouts
+}

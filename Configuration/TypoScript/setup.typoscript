@@ -1,0 +1,6 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_sub/Configuration/TypoScript/001_Configuration/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_sub/Configuration/TypoScript/005_Navigation/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_sub/Configuration/TypoScript/006_BreadCrumbs/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tmpl_sub/Configuration/TypoScript/007_Bottom/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:subtabs/Configuration/TypoScript/setup.txt">
