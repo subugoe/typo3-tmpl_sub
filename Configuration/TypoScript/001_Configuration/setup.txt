@@ -30,10 +30,6 @@ config {
 	concatenateCss = {$config.concatenateCompress}
 	compressCss = {$config.concatenateCompress}
 
-	tx_piwik {
-		piwik_host = {$plugin.piwik.host}
-		piwik_idsite = {$plugin.piwik.id}
-	}
 }
 
 ### Language = en ###
