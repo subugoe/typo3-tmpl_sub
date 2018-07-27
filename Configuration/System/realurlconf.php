@@ -320,6 +320,10 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = [
                             'languageField' => 'sys_language_uid',
                             'transOrigPointerField' => 'l18n_parent',
                         ],
+                        'languageGetVar' => 'L',
+                        'languageExceptionUids' => '',
+                        'languageField' => 'sys_language_uid',
+                        'transOrigPointerField' => 'l18n_parent',
                     ],
                 ],
                 'bibliothek' => [
