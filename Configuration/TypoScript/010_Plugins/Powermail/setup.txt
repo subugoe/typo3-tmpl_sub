@@ -9,7 +9,7 @@ plugin.tx_powermail {
 
 ## setup for Abholtheke dropdown list ##
 
-# visible recipient dropdown list for the user
+# visible recipient dropdown list for the user (regular library card)
 lib.recipient = COA
 lib.recipient {
 	10 = TEXT
@@ -18,7 +18,32 @@ lib.recipient {
 	20 = CONTENT
 	20 {
 		table = fe_users
-		select.pidInList = {$fe_userPid}
+		select {
+			pidInList = {$fe_userPid}
+			where = fe_users.usergroup = 1
+		}
+		renderObj = COA
+		renderObj {
+			10 = TEXT
+			10.field = name
+			10.wrap = |[\n]
+		}
+	}
+}
+
+# visible recipient dropdown list for the user (library card for guests)
+lib.recipientGuest = COA
+lib.recipientGuest {
+	10 = TEXT
+	10.value = Bitte wählen|[\n]
+
+	20 = CONTENT
+	20 {
+		table = fe_users
+		select {
+			pidInList = {$fe_userPid}
+			where = fe_users.usergroup = 2
+		}
 		renderObj = COA
 		renderObj {
 			10 = TEXT
