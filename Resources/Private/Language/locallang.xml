@@ -51,6 +51,7 @@
 			<label index="label.toTop">↑</label>
 			<label index="social.facebook">SUB on Facebook</label>
 			<label index="social.twitter">SUB on Twitter</label>
+			<label index="social.mastodon">SUB on Mastodon</label>
 			<label index="social.instagram">SUB on Instagram</label>
 			<label index="social.opinion">Your opinion</label>
 			<label index="social.ask">Ask a librarian</label>
@@ -108,6 +109,7 @@
 			<label index="label.toTop">↑</label>
 			<label index="social.facebook">SUB bei Facebook</label>
 			<label index="social.twitter">SUB bei Twitter</label>
+			<label index="social.mastodon">SUB bei Mastodon</label>
 			<label index="social.instagram">SUB bei Instagram</label>
 			<label index="social.opinion">Ihre Meinung</label>
 			<label index="social.ask">Frag die SUB</label>
