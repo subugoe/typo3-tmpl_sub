@@ -71,6 +71,23 @@ lib.bottom2 {
 			ATagBeforeWrap = 1
 			stdWrap.wrap = <i class="fa fa-facebook-square"></i>|
 		}
+		# Mastodon
+		25 = TEXT
+		25 {
+			typolink {
+				parameter = https://openbiblio.social/@subugoe
+				title = TEXT
+				title {
+					data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.mastodon
+				}
+				ATagParams = class="external-link-new-window" rel="me"
+				extTarget = _blank
+			}
+			data = LLL:EXT:tmpl_sub/Resources/Private/Language/locallang.xml:social.mastodon
+			wrap = <li class="colophon_item -indent">|</li>
+			ATagBeforeWrap = 1
+			stdWrap.wrap = <i class="fa fa-mastodon"></i>|
+		}
 		# Twitter
 		30 < .20
 		30 {
